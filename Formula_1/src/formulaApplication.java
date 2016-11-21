@@ -2,7 +2,7 @@ public class formulaApplication {
 
 	public static void main(String[] args) {
 
-		System.out.println("No, no sick shit yo!");
+		System.out.println("Test if there is sick shit yo!");
 		
 	}
 
