@@ -1,10 +1,9 @@
-
 public class formulaApplication {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub 
-		//test text
 
+		System.out.println("Test if there is sick shit yo!");
+		System.out.println("test");
+		
 	}
-
 }
