@@ -10,7 +10,7 @@ Contributors to this project:
 <br/>
 Victor Wernet
 NetID: 4554582
-![alt tag](https://scontent-ams3-1.xx.fbcdn.net/v/t1.0-1/c181.0.533.533/s160x160/13567416_10207076749024818_7651325443489886871_n.jpg?oh=4443dc63be6945b8c1b6459652d0b088&oe=58B893F2)
+![alt tag](https://github.com/mrgunior/A2B-Project/tree/master/pictures/victorwernet.png "Victor Wernet")
 <br/>
 -Thijmen Langendam
 <br/>
