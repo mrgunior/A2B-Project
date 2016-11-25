@@ -10,7 +10,7 @@ Contributors to this project:
 <br/>
 Victor Wernet
 NetID: 4554582
-![alt tag](https://github.com/mrgunior/A2B-Project/tree/master/pictures/victorwernet.png "Victor Wernet")
+![alt tag](https://github.com/mrgunior/A2B-Project/pictures/victorwernet.png "Victor Wernet")
 <br/>
 -Thijmen Langendam
 <br/>
