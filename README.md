@@ -5,6 +5,6 @@ Contributors to this project:
 
 -Rowdy Chotkan: rchotkan
 -Mika Kuijpers
--Victor
+-Victor Wernet
 -Thijmen Langendam
--Nichelle
+-Nichelle Fleming
