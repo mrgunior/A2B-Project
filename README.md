@@ -7,4 +7,6 @@ Contributors to this project:
 | Victor Wernet | Mika Kuijpers | Thijmen Langendam      | Nichelle Fleming | Rowdy Chotkan |
 | ------------- |:-------------:| ----------------------:|-----------------:|--------------:|
 | 4554582       |               |                        |                  |               |
-|http://tinyurl.com/haegpqr|    |                        |                  |               |
+| ![alt tag](http://tinyurl.com/haegpqr "Victor Wernet")|   |                        |                  |               |
+
+
