@@ -8,7 +8,7 @@ Contributors to this project:
 
 | Victor Wernet | Mika Kuijpers | Thijmen Langendam      | Nichelle Fleming | Rowdy Chotkan |
 | ------------- |:-------------:| ----------------------:|-----------------:|--------------:|
-| vwernet       | mikakuijpers  |                        | nfleming         |rchotkan       |
-| ![alt tag](http://tinyurl.com/haegpqr "Victor Wernet")| ![alt tag](https://s22.postimg.org/p0shwlzfz/image.png "Mika Kuijpers")  |                        |![alt tag](http://tinyurl.com/gsxds2g "Nichelle Fleming") |![alt tag](https://goo.gl/gqYjek "Rowdy Chotkan")|
+| vwernet       | mikakuijpers  | tlangendam             | nfleming         |rchotkan       |
+| ![alt tag](http://tinyurl.com/haegpqr "Victor Wernet")| ![alt tag](http://i.picresize.com/images/2016/11/26/NLcbA.png "Mika Kuijpers")  | ![alt tag](http://i.picresize.com/images/2016/11/26/6B9XO.png "Thijmen Langendam")|![alt tag](http://i.picresize.com/images/2016/11/26/s8xH1.jpg "Nichelle Fleming") |![alt tag](http://i.imgur.com/rehT4LV.jpg "Rowdy Chotkan")|
 
 
