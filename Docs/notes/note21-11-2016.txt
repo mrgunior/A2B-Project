@@ -38,3 +38,5 @@ brainstorming -> see what you will have and what you will be doing.
 game data -> uml of the application
 gui architecture -> open new window/or reopen in the same window. MVC 
 HDD storage -> json 
+
+
