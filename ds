@@ -1,0 +1,26 @@
+[33mcommit f994b77d91ee5c7aa62959e419f009d98a7a9c19[m
+Merge: 55d13ee 7531060
+Author: NFleming-Wernet <prinses_nicky@hotmail.com>
+Date:   Sat Nov 26 22:13:52 2016 +0100
+
+    Merging conflict fixed
+    Merge branch 'master' of https://github.com/mrgunior/A2B-Project
+
+[33mcommit 55d13eecce2d688bbb37ae4128fecd7a0807def4[m
+Author: NFleming-Wernet <prinses_nicky@hotmail.com>
+Date:   Sat Nov 26 22:04:49 2016 +0100
+
+    Created WriteToFile.java for writing json to a file.
+
+[33mcommit 7531060800551f65209455fc80949baa14e88fe4[m
+Merge: b976475 701871b
+Author: InvictusRMC <rowdy_chotkan@msn.com>
+Date:   Sat Nov 26 21:21:08 2016 +0100
+
+    Merge branch 'master' of https://github.com/mrgunior/OOP-Project
+
+[33mcommit b9764750332d6fbf33fe543a18f8acc640891c69[m
+Author: InvictusRMC <rowdy_chotkan@msn.com>
+Date:   Sat Nov 26 21:20:49 2016 +0100
+
+    Finished Victory Screen sketch
