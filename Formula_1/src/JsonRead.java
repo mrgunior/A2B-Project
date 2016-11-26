@@ -25,21 +25,12 @@ public class JsonRead
             String username = (String) jsonObject.get("Username");
             int budget = Integer.parseInt((String)jsonObject.get("Budget"));
             
+            System.out.println(budget);
+            
             //getting keys that have arrays
             JSONArray car1 = (JSONArray) jsonObject.get("Car1");
             JSONArray car2 = (JSONArray) jsonObject.get("Car2");
-            JSONArray driver1 = (JSONArray) jsonObject.get("d1");
-            
-            //creating the arrays into iterations
-            Iterator<String> car1Iterator = car1.iterator();
-            Iterator<String> car2Iterator = car2.iterator();
-            Iterator<String> driver1Iterator = driver1.iterator();
-            
-            //printoutContent of array driver1Iterator
-            while (driver1Iterator.hasNext()) 
-            {
-                System.out.println(driver1Iterator.next());
-            }
+            JSONArray driver1 = (JSONArray) jsonObject.get("Driver1");
         } 
         
         catch (Exception e) 
