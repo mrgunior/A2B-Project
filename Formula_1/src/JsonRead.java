@@ -22,8 +22,7 @@ public class JsonRead
             JSONObject jsonObject = (JSONObject) obj;
  
             //getting the values of specific keys
-            String author = (String) jsonObject.get("Username");
-            String teamname = (String) jsonObject.get("Teamname");
+            String username = (String) jsonObject.get("Username");
             int budget = Integer.parseInt((String)jsonObject.get("Budget"));
             
             //getting keys that have arrays
