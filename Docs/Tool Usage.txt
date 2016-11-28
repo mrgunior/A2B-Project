@@ -7,5 +7,10 @@ Git Shell
 GitHub Web
 GitHub Desktop
 Gimp 2.0
+Gliffy
+Google Drive
+Slack
+SmartGit
 SourceTree
 Trello
+WhatsApp
