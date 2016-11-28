@@ -1,0 +1,8 @@
+Add here what tools you are using for this project:
+
+Eclipse
+Git Shell
+GitHub Web
+GitHub Desktop
+Gimp 2.0
+Trello
