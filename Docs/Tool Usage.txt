@@ -1,8 +1,11 @@
 Add here what tools you are using for this project:
 
+Adobe Illustrator
+Adobe Photoshop
 Eclipse
 Git Shell
 GitHub Web
 GitHub Desktop
 Gimp 2.0
+SourceTree
 Trello
