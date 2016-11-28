@@ -1,8 +1,8 @@
 Datum: 21-11-2016
 Victor Wernet
 
-eerste punt: secratert
-tweede punt: respect, samen oplossingen zoeken, secreterat control the meeting (if something is taking too much time)
+eerste punt: secretary
+tweede punt: respect, help eachother find solutions, also pay attention (if something is taking too much time)
 
 Bas is costumer and is the one checking the status of the process of the application
 If there are problems related with code please ask bas for assistance
