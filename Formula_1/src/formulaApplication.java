@@ -1,8 +1,10 @@
 import java.awt.Button;
 
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.VPos;
 import javafx.scene.Group;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -20,38 +22,12 @@ public class formulaApplication extends Application
 		launch(args);
 	}
 	
-	public void start(Stage stage)
+	public void start(Stage stage) throws Exception
 	{
-		stage.setTitle("Formula 1 Manager");
-		
-		Group root = new Group();
+		Parent root = FXMLLoader.load(getClass().getResource("/MainMenu.fxml"));
 		Scene theScene = new Scene(root);
-		stage.setScene(theScene);
-		
-		Canvas canvas = new Canvas(1920*.90, 1080*.90);
-		root.getChildren().add(canvas);
-		
-		
-		GraphicsContext gc = canvas.getGraphicsContext2D();
-		
-		gc.setFill(Color.GRAY);
-		gc.fillRect(0, 0, canvas.getWidth(), canvas.getHeight());
-		
-		gc.setFill(Color.RED);
-		gc.setStroke(Color.BLACK);
-		gc.setLineWidth(2);
-		Font font = Font.font("Impact", FontWeight.BOLD, 120);
-		gc.setFont(font);
-		gc.setTextAlign(TextAlignment.CENTER);
-		gc.setTextBaseline(VPos.CENTER);
-		gc.fillText("FORMULA 1 MANAGER", canvas.getWidth()/2, canvas.getHeight()/2);
-		gc.strokeText("FORMULA 1 MANAGER", canvas.getWidth()/2, canvas.getHeight()/2);
-		
-		Button startNewGame = new Button("Start New Game");
-		Button resumeGame = new Button("Resume Game");
-		Button Highscores = new Button("Highscores");
-		Button exitGame = new Button("Exit Game");
-		
+		stage.setTitle("Formula 1 Manager");
+		stage.setScene(theScene);	
 		stage.show();
 	}
 }
