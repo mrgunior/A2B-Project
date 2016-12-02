@@ -9,9 +9,14 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-
+<!-- 
+	FXML is a XML-based user interface markup language for designing
+	controller GUIController.java
+ -->
 <AnchorPane id="root" maxHeight="1080.0" maxWidth="1920.0" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUIController">
    <children>
+   
+   	  <!-- Background image and settings-->
       <ImageView fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
             <Image url="@../images/menu/menuBackground.jpg" />
@@ -20,6 +25,8 @@
             <Rectangle2D />
          </viewport>
       </ImageView>
+      
+      <!-- Formula string and settings -->
       <Text fill="#ff2800" layoutX="31.0" layoutY="117.0" strokeType="OUTSIDE" text="FORMULA 1 ">
          <font>
             <Font name="NFS font" size="96.0" />
@@ -35,6 +42,8 @@
             </LinearGradient>
          </stroke>
       </Text>
+      
+      <!-- Manager string and settings-->
       <Text fill="#ff2800" layoutX="143.0" layoutY="197.0" strokeType="OUTSIDE" text="MANAGER">
          <font>
             <Font name="NFS font" size="96.0" />
@@ -50,14 +59,25 @@
             </LinearGradient>
          </stroke>
       </Text>
+      
+      <!-- 
+      	StartGame.png button and settings
+      	if the image is clicked onAction is triggered and will call the startNewGame() in GUIController.java 
+      -->
       <Button layoutY="230.0" mnemonicParsing="false" onAction="#startNewGame" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-text-fill: transparent;" text="Button">
          <graphic>
-            <ImageView fitHeight="180.0" fitWidth="452.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: transparent;">
+            <ImageView fitHeight="180.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: transparent;">
                <image>
                   <Image url="@../images/menu/StartGame.png" />
                </image>
             </ImageView>
-         </graphic></Button>
+         </graphic>
+      </Button>
+         
+      <!-- 
+      	Resume.png button and settings
+      	if the image is clicked onAction is triggered and will call the resume() in GUIController.java 
+      -->   
       <Button layoutY="319.0" mnemonicParsing="false" onAction="#resume" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-text-fill: transparent;" text="Button">
          <graphic>
             <ImageView fitHeight="180.0" fitWidth="452.0" onMouseClicked="#resume" pickOnBounds="true" preserveRatio="true">
@@ -67,6 +87,11 @@
             </ImageView>
          </graphic>
       </Button>
+      
+      <!-- 
+      	Options.png button and settings
+      	if the image is clicked onAction is triggered and will call the options() in GUIController.java 
+      --> 
       <Button layoutY="412.0" mnemonicParsing="false" onAction="#options" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-text-fill: transparent;" text="Button">
          <graphic>
             <ImageView fitHeight="180.0" fitWidth="452.0" onMouseClicked="#options" pickOnBounds="true" preserveRatio="true">
@@ -76,6 +101,11 @@
             </ImageView>
          </graphic>
       </Button>
+      
+      <!-- 
+      	HighScores.png button and settings
+      	if the image is clicked onAction is triggered and will call the highscores() in GUIController.java 
+      --> 
       <Button layoutY="501.0" mnemonicParsing="false" onAction="#highscores" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-text-fill: transparent;" text="Button">
          <graphic>
             <ImageView fitHeight="180.0" fitWidth="452.0" onMouseClicked="#highscores" pickOnBounds="true" preserveRatio="true">
@@ -85,6 +115,11 @@
             </ImageView>
          </graphic>
       </Button>
+      
+      <!-- 
+      	Exit.png button and settings
+      	if the image is clicked onAction is triggered and will call the exit() in GUIController.java 
+      --> 
       <Button layoutY="600.0" mnemonicParsing="false" onAction="#exit" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-text-fill: transparent;" text="Button">
          <graphic>
             <ImageView fitHeight="180.0" fitWidth="452.0" onMouseClicked="#exit" pickOnBounds="true" preserveRatio="true">
