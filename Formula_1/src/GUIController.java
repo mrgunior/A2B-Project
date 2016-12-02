@@ -23,7 +23,7 @@ public class GUIController implements Initializable
 	private void startNewGame(ActionEvent event) throws IOException
 	{
 		System.out.println("Starting new game...");
-		Parent root = FXMLLoader.load(this.getClass().getResource("NewGame.fxml"));
+		Parent root = FXMLLoader.load(this.getClass().getResource("/NewGame.fxml"));
 		Scene scene = new Scene(root);
 		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		stage.setScene(scene);
