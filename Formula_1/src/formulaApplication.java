@@ -27,7 +27,7 @@ public class formulaApplication extends Application
 		Parent root = FXMLLoader.load(getClass().getResource("/MainMenu.fxml"));
 		Scene theScene = new Scene(root);
 		stage.setTitle("Formula 1 Manager");
-		stage.setScene(theScene);	
+		stage.setScene(theScene);
 		stage.show();
 	}
 }

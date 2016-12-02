@@ -24,6 +24,11 @@ public class GUIController implements Initializable
 		System.out.println("Resume");
 	}
 	@FXML
+	private void options(ActionEvent event)
+	{
+		System.out.println("Options");
+	}
+	@FXML
 	private void highscores(ActionEvent event)
 	{
 		System.out.println("Show highscores");
@@ -33,4 +38,5 @@ public class GUIController implements Initializable
 	{
 		System.out.println("Exit");
 	}
+	
 }
