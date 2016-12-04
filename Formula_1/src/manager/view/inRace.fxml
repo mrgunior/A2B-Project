@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="880.0" layoutX="100.0" layoutY="100.0" stroke="BLACK" strokeType="INSIDE" width="1720.0">
+         <fill>
+            <RadialGradient centerX="1.0" centerY="0.49523809523809526" cycleMethod="REFLECT" radius="0.5">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </fill>
+      </Rectangle>
+      <ImageView fitHeight="878.0" fitWidth="84.0" layoutX="1571.0" layoutY="101.0" AnchorPane.bottomAnchor="102.0" AnchorPane.leftAnchor="1571.0" AnchorPane.rightAnchor="265.0" AnchorPane.topAnchor="101.0">
+         <image>
+            <Image url="@../../../../picturesOfApplicationPages/Project%20image%20source/finish.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="36.0" layoutX="200.0" layoutY="129.0" rotate="-90.0">
+         <image>
+            <Image url="@../../../../picturesOfApplicationPages/Project%20image%20source/racecars2d/racecars2d/cars/pitstop_car_19.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="36.0" layoutX="200.0" layoutY="164.0" rotate="-90.0">
+         <image>
+            <Image url="@../../../../picturesOfApplicationPages/Project%20image%20source/racecars2d/racecars2d/cars/pitstop_car_20.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="36.0" layoutX="200.0" layoutY="199.0" rotate="-90.0">
+         <image>
+            <Image url="@../../../../picturesOfApplicationPages/Project%20image%20source/racecars2d/racecars2d/cars/pitstop_car_1.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="36.0" layoutX="200.0" layoutY="234.0" rotate="-90.0">
+         <image>
+            <Image url="@../../../../picturesOfApplicationPages/Project%20image%20source/racecars2d/racecars2d/cars/pitstop_car_2.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="36.0" layoutX="200.0" layoutY="304.0" rotate="-90.0">
+         <image>
+            <Image url="@../../../../picturesOfApplicationPages/Project%20image%20source/racecars2d/racecars2d/cars/pitstop_car_3.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="36.0" layoutX="200.0" layoutY="269.0" rotate="-90.0">
+         <image>
+            <Image url="@../../../../picturesOfApplicationPages/Project%20image%20source/racecars2d/racecars2d/cars/pitstop_car_4.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="36.0" layoutX="200.0" layoutY="339.0" rotate="-90.0">
+         <image>
+            <Image url="@../../../../picturesOfApplicationPages/Project%20image%20source/racecars2d/racecars2d/cars/pitstop_car_5.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="36.0" layoutX="200.0" layoutY="374.0" rotate="-90.0">
+         <image>
+            <Image url="@../../../../picturesOfApplicationPages/Project%20image%20source/racecars2d/racecars2d/cars/pitstop_car_6.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="36.0" layoutX="200.0" layoutY="409.0" rotate="-90.0">
+         <image>
+            <Image url="@../../../../picturesOfApplicationPages/Project%20image%20source/racecars2d/racecars2d/cars/pitstop_car_7.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="36.0" layoutX="200.0" layoutY="444.0" rotate="-90.0">
+         <image>
+            <Image url="@../../../../picturesOfApplicationPages/Project%20image%20source/racecars2d/racecars2d/cars/pitstop_car_8.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="36.0" layoutX="200.0" layoutY="479.0" rotate="-90.0">
+         <image>
+            <Image url="@../../../../picturesOfApplicationPages/Project%20image%20source/racecars2d/racecars2d/cars/pitstop_car_9.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="36.0" layoutX="200.0" layoutY="514.0" rotate="-90.0">
+         <image>
+            <Image url="@../../../../picturesOfApplicationPages/Project%20image%20source/racecars2d/racecars2d/cars/pitstop_car_10.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="36.0" layoutX="200.0" layoutY="549.0" rotate="-90.0">
+         <image>
+            <Image url="@../../../../picturesOfApplicationPages/Project%20image%20source/racecars2d/racecars2d/cars/pitstop_car_11.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="36.0" layoutX="200.0" layoutY="584.0" rotate="-90.0">
+         <image>
+            <Image url="@../../../../picturesOfApplicationPages/Project%20image%20source/racecars2d/racecars2d/cars/pitstop_car_12.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="36.0" layoutX="200.0" layoutY="619.0" rotate="-90.0">
+         <image>
+            <Image url="@../../../../picturesOfApplicationPages/Project%20image%20source/racecars2d/racecars2d/cars/pitstop_car_13.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="36.0" layoutX="200.0" layoutY="654.0" rotate="-90.0">
+         <image>
+            <Image url="@../../../../picturesOfApplicationPages/Project%20image%20source/racecars2d/racecars2d/cars/pitstop_car_14.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="36.0" layoutX="200.0" layoutY="759.0" rotate="-90.0">
+         <image>
+            <Image url="@../../../../picturesOfApplicationPages/Project%20image%20source/racecars2d/racecars2d/cars/pitstop_car_15.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="36.0" layoutX="200.0" layoutY="794.0" rotate="-90.0">
+         <image>
+            <Image url="@../../../../picturesOfApplicationPages/Project%20image%20source/racecars2d/racecars2d/cars/pitstop_car_16.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="36.0" layoutX="200.0" layoutY="829.0" rotate="-90.0">
+         <image>
+            <Image url="@../../../../picturesOfApplicationPages/Project%20image%20source/racecars2d/racecars2d/cars/pitstop_car_17.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="36.0" layoutX="200.0" layoutY="862.0" rotate="-90.0">
+         <image>
+            <Image url="@../../../../picturesOfApplicationPages/Project%20image%20source/racecars2d/racecars2d/cars/pitstop_car_18.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="36.0" layoutX="200.0" layoutY="724.0" rotate="-90.0">
+         <image>
+            <Image url="@../../../../picturesOfApplicationPages/Project%20image%20source/racecars2d/racecars2d/cars/pitstop_car_11.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="36.0" layoutX="200.0" layoutY="689.0" rotate="-90.0">
+         <image>
+            <Image url="@../../../../picturesOfApplicationPages/Project%20image%20source/racecars2d/racecars2d/cars/pitstop_car_8.png" />
+         </image>
+      </ImageView>
+      <Text fill="#2ce16b" layoutX="691.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="02:13:45:104:105" wrappingWidth="948.03125">
+         <font>
+            <Font name="Digital-7" size="96.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
