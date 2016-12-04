@@ -1,3 +1,4 @@
+package manager.controller;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -12,7 +13,7 @@ import javafx.scene.Scene;
 import javafx.stage.Popup;
 import javafx.stage.Stage;
 
-public class GUIController implements Initializable
+public class MainMenuController implements Initializable
 {
 	@Override
 	public void initialize(URL location, ResourceBundle resources)
@@ -24,7 +25,8 @@ public class GUIController implements Initializable
 	private void startNewGame(ActionEvent event) throws IOException
 	{
 		System.out.println("Starting new game...");
-		Parent root = FXMLLoader.load(this.getClass().getResource("/NewGame.fxml"));
+		Parent root = FXMLLoader.load(this.getClass().getResource("../view/ChooseTeam.fxml"));
+		System.out.println(root.getChildrenUnmodifiable().get(1).toString());
 		Scene scene = new Scene(root);
 		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		stage.setScene(scene);
@@ -46,14 +48,7 @@ public class GUIController implements Initializable
 	@FXML
 	private void highscores(ActionEvent event) throws IOException
 	{
-		System.out.println("Show highscores");
-		Popup popup = new Popup();
-		PopupController controller = new PopupController();
-		FXMLLoader loader = new FXMLLoader(getClass().getResource("/NewGame.fxml"));
-		loader.setController(controller);
-		popup.getContent().add((Parent)loader.load());
-		popup.show(((Node) event.getSource()).getScene().getWindow(), 0, 0);
-		popup.hide();
+		System.out.println("Highscores");
 	}
 
 	@FXML

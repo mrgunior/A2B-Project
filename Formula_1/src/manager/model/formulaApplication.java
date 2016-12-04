@@ -1,3 +1,4 @@
+package manager.model;
 import java.awt.Button;
 import java.net.URL;
 
@@ -25,7 +26,7 @@ public class formulaApplication extends Application
 	
 	public void start(Stage stage) throws Exception
 	{
-		Parent root = FXMLLoader.load(getClass().getResource("/MainMenu.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource("../view/MainMenu.fxml"));
 		Scene theScene = new Scene(root);
 		stage.setTitle("Formula 1 Manager");
 		stage.setScene(theScene);
