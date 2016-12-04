@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -58,78 +58,48 @@
             </LinearGradient>
          </stroke>
       </Text>
-      <VBox layoutX="-21.0" layoutY="657.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="33.0">
+      <VBox layoutX="-21.0" layoutY="657.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="20.0">
          <children>
-            
-            <!-- 
-            	StartGame.png button and settings
-            	if the image is clicked onAction is triggered and will call the startNewGame() in GUIController.java 
-            -->
-            <Button mnemonicParsing="false" onAction="#startNewGame" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-text-fill: transparent;" text="Button">
-               <graphic>
-                  <ImageView fitHeight="180.0" fitWidth="452.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: transparent;">
-                     <image>
-                        <Image url="@../../../images/menu/StartGame.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-               
-            <!-- 
-            	Resume.png button and settings
-            	if the image is clicked onAction is triggered and will call the resume() in GUIController.java 
-            -->   
-            <Button mnemonicParsing="false" onAction="#resume" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-text-fill: transparent;" text="Button">
-               <graphic>
-                  <ImageView fitHeight="180.0" fitWidth="452.0" onMouseClicked="#resume" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../images/menu/Resume.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            
-            <!-- 
-            	Options.png button and settings
-            	if the image is clicked onAction is triggered and will call the options() in GUIController.java 
-            --> 
-            <Button mnemonicParsing="false" onAction="#options" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-text-fill: transparent;" text="Button">
-               <graphic>
-                  <ImageView fitHeight="180.0" fitWidth="452.0" onMouseClicked="#options" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../images/menu/Options.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            
-            <!-- 
-            	HighScores.png button and settings
-            	if the image is clicked onAction is triggered and will call the highscores() in GUIController.java 
-            --> 
-            <Button mnemonicParsing="false" onAction="#highscores" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-text-fill: transparent;" text="Button">
-               <graphic>
-                  <ImageView fitHeight="180.0" fitWidth="452.0" onMouseClicked="#highscores" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../images/menu/HighScores.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            
-            <!-- 
-            	Exit.png button and settings
-            	if the image is clicked onAction is triggered and will call the exit() in GUIController.java 
-            --> 
-            <Button mnemonicParsing="false" onAction="#exit" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-text-fill: transparent;" text="Button">
-               <graphic>
-                  <ImageView fitHeight="180.0" fitWidth="452.0" onMouseClicked="#exit" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../images/menu/Exit.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
+            <ImageView fx:id="startGame" fitHeight="180.0" fitWidth="452.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: transparent;">
+               <image>
+                  <Image url="@../../../images/menu/StartGame.png" />
+               </image>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </ImageView>
+            <ImageView fx:id="resume" fitHeight="180.0" fitWidth="452.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/menu/Resume.png" />
+               </image>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </ImageView>
+            <ImageView fx:id="options" fitHeight="180.0" fitWidth="452.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/menu/Options.png" />
+               </image>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </ImageView>
+            <ImageView fx:id="highscores" fitHeight="180.0" fitWidth="452.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/menu/HighScores.png" />
+               </image>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </ImageView>
+            <ImageView fx:id="exit" fitHeight="180.0" fitWidth="452.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/menu/Exit.png" />
+               </image>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </ImageView>
          </children>
       </VBox>
    </children>

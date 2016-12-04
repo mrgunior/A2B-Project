@@ -19,6 +19,18 @@ import javafx.stage.Stage;
 
 public class formulaApplication extends Application
 {
+	static boolean fullscreen = false;
+	static boolean resizable = false;
+	
+	public static boolean isFullscreen()
+	{
+		return fullscreen;
+	}
+	public static boolean isResizable()
+	{
+		return resizable;
+	}
+	
 	public static void main(String[] args)
 	{
 		launch(args);
@@ -30,6 +42,8 @@ public class formulaApplication extends Application
 		Scene theScene = new Scene(root);
 		stage.setTitle("Formula 1 Manager");
 		stage.setScene(theScene);
+		stage.setFullScreen(fullscreen);
+		stage.setResizable(resizable);
 		stage.show();
 	}
 }
