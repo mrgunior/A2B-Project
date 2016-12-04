@@ -46,14 +46,14 @@
             <Image url="@../../../../picturesOfApplicationPages/Project%20image%20source/racecars2d/racecars2d/cars/pitstop_car_2.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="90.0" fitWidth="36.0" layoutX="200.0" layoutY="304.0" rotate="-90.0">
-         <image>
-            <Image url="@../../../../picturesOfApplicationPages/Project%20image%20source/racecars2d/racecars2d/cars/pitstop_car_3.png" />
-         </image>
-      </ImageView>
       <ImageView fitHeight="90.0" fitWidth="36.0" layoutX="200.0" layoutY="269.0" rotate="-90.0">
          <image>
             <Image url="@../../../../picturesOfApplicationPages/Project%20image%20source/racecars2d/racecars2d/cars/pitstop_car_4.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="36.0" layoutX="200.0" layoutY="304.0" rotate="-90.0">
+         <image>
+            <Image url="@../../../../picturesOfApplicationPages/Project%20image%20source/racecars2d/racecars2d/cars/pitstop_car_3.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="90.0" fitWidth="36.0" layoutX="200.0" layoutY="339.0" rotate="-90.0">
@@ -106,6 +106,16 @@
             <Image url="@../../../../picturesOfApplicationPages/Project%20image%20source/racecars2d/racecars2d/cars/pitstop_car_14.png" />
          </image>
       </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="36.0" layoutX="200.0" layoutY="689.0" rotate="-90.0">
+         <image>
+            <Image url="@../../../../picturesOfApplicationPages/Project%20image%20source/racecars2d/racecars2d/cars/pitstop_car_8.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="36.0" layoutX="200.0" layoutY="724.0" rotate="-90.0">
+         <image>
+            <Image url="@../../../../picturesOfApplicationPages/Project%20image%20source/racecars2d/racecars2d/cars/pitstop_car_11.png" />
+         </image>
+      </ImageView>
       <ImageView fitHeight="90.0" fitWidth="36.0" layoutX="200.0" layoutY="759.0" rotate="-90.0">
          <image>
             <Image url="@../../../../picturesOfApplicationPages/Project%20image%20source/racecars2d/racecars2d/cars/pitstop_car_15.png" />
@@ -126,19 +136,9 @@
             <Image url="@../../../../picturesOfApplicationPages/Project%20image%20source/racecars2d/racecars2d/cars/pitstop_car_18.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="90.0" fitWidth="36.0" layoutX="200.0" layoutY="724.0" rotate="-90.0">
-         <image>
-            <Image url="@../../../../picturesOfApplicationPages/Project%20image%20source/racecars2d/racecars2d/cars/pitstop_car_11.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="90.0" fitWidth="36.0" layoutX="200.0" layoutY="689.0" rotate="-90.0">
-         <image>
-            <Image url="@../../../../picturesOfApplicationPages/Project%20image%20source/racecars2d/racecars2d/cars/pitstop_car_8.png" />
-         </image>
-      </ImageView>
-      <Text fill="#2ce16b" layoutX="691.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="02:13:45:104:105" wrappingWidth="948.03125">
+      <Text fill="#2ce16b" layoutX="691.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="02:13:45:104:105" wrappingWidth="948.03125">
          <font>
-            <Font name="Digital-7" size="96.0" />
+            <Font name="Haettenschweiler" size="96.0" />
          </font>
       </Text>
    </children>
