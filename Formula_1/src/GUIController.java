@@ -9,6 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.stage.Popup;
 import javafx.stage.Stage;
 
 public class GUIController implements Initializable
@@ -43,15 +44,22 @@ public class GUIController implements Initializable
 	}
 
 	@FXML
-	private void highscores(ActionEvent event)
+	private void highscores(ActionEvent event) throws IOException
 	{
 		System.out.println("Show highscores");
+		Popup popup = new Popup();
+		PopupController controller = new PopupController();
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("/NewGame.fxml"));
+		loader.setController(controller);
+		popup.getContent().add((Parent)loader.load());
+		popup.show(((Node) event.getSource()).getScene().getWindow(), 0, 0);
+		popup.hide();
 	}
 
 	@FXML
 	private void exit(ActionEvent event)
 	{
-		System.out.println("Exit");
+		System.exit(0);
 	}
 
 }

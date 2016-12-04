@@ -1,1 +1,12 @@
-{"Car2":["Mercedes","best"],"Car1":["Mercedes","good"],"Username":"","Driver1":["Max Verstappen",33,92,91,98,94.1,20.8],"Budget":"200000000"}
+{
+	"Car2":[
+		"Mercedes",
+		"best"],
+	"Car1":[
+		"Mercedes",
+		"good"],
+	"Username":"",
+	"Driver1":
+		["Max Verstappen",33,92,91,98,94.1,20.8],
+	"Budget":"200000000"
+}
