@@ -58,7 +58,7 @@
             </LinearGradient>
          </stroke>
       </Text>
-      <ImageView fx:id="options" fitHeight="135.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0">
+      <ImageView fx:id="settings" fitHeight="135.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0">
          <image>
             <Image url="@../../../images/menu/Settings.png" />
          </image>

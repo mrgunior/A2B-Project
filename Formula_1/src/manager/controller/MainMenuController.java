@@ -1,35 +1,29 @@
 package manager.controller;
-import manager.model.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
 
-public class MainMenuController implements Initializable
+public class MainMenuController extends Controller implements Initializable
 {
 	// Background
 	@FXML
 	private AnchorPane root;
 	@FXML
 	private ImageView background;
+	
 	// Buttons
 	@FXML
 	private ImageView startGame;
 	@FXML
 	private ImageView resume;
 	@FXML
-	private ImageView options;
+	private ImageView settings;
 	@FXML
 	private ImageView highscores;
 	@FXML
@@ -41,16 +35,15 @@ public class MainMenuController implements Initializable
 		background.fitWidthProperty().bind(root.widthProperty());
 		background.fitHeightProperty().bind(root.heightProperty());
 		
-		// Events startGame
+		/// START GAME
 		startGame.setOnMousePressed(event -> {
 			try
 			{
-				startGame(event);
+				gotoFxmlScene(event, "ChooseTeam");
 			} catch (IOException e)
 			{
 				e.printStackTrace();
 			}
-
 		});
 		startGame.setOnMouseEntered(event -> {
 			startGame.setImage(new Image("file:images/menu/StartGameHover.png"));
@@ -60,16 +53,15 @@ public class MainMenuController implements Initializable
 		});
 		
 		
-		// Events resume
+		/// RESUME
 		resume.setOnMousePressed(event -> {
 			try
 			{
-				resume(event);
+				gotoFxmlScene(event, "Resume");
 			} catch (IOException e)
 			{
 				e.printStackTrace();
 			}
-
 		});
 		resume.setOnMouseEntered(event -> {
 			resume.setImage(new Image("file:images/menu/ResumeHover.png"));
@@ -77,35 +69,17 @@ public class MainMenuController implements Initializable
 		resume.setOnMouseExited(event -> {
 			resume.setImage(new Image("file:images/menu/Resume.png"));
 		});
-		
-		// Events options
-		options.setOnMousePressed(event -> {
-			try
-			{
-				options(event);
-			} catch (IOException e)
-			{
-				e.printStackTrace();
-			}
 
-		});		
-		options.setOnMouseEntered(event -> {
-			options.setImage(new Image("file:images/menu/SettingsHover.png"));
-		});
-		options.setOnMouseExited(event -> {
-			options.setImage(new Image("file:images/menu/Settings.png"));
-		});
 		
-		// Events highscores
+		/// HIGHSCORES
 		highscores.setOnMousePressed(event -> {
 			try
 			{
-				highscores(event);
+				gotoFxmlScene(event, "HighScores");
 			} catch (IOException e)
 			{
 				e.printStackTrace();
 			}
-
 		});		
 		highscores.setOnMouseEntered(event -> {
 			highscores.setImage(new Image("file:images/menu/HighScoresHover.png"));
@@ -114,16 +88,10 @@ public class MainMenuController implements Initializable
 			highscores.setImage(new Image("file:images/menu/HighScores.png"));
 		});
 		
-		// Events exit
+		
+		/// EXIT
 		exit.setOnMousePressed(event -> {
-			try
-			{
-				exit(event);
-			} catch (IOException e)
-			{
-				e.printStackTrace();
-			}
-
+			System.exit(0);
 		});		
 		exit.setOnMouseEntered(event -> {
 			exit.setImage(new Image("file:images/menu/ExitIconHover.png"));
@@ -131,41 +99,23 @@ public class MainMenuController implements Initializable
 		exit.setOnMouseExited(event -> {
 			exit.setImage(new Image("file:images/menu/ExitIcon.png"));
 		});
+		
+		
+		/// SETTINGS
+		settings.setOnMousePressed(event -> {
+			try
+			{
+				gotoFxmlScene(event, "Settings");
+			} catch (IOException e)
+			{
+				e.printStackTrace();
+			}
+		});		
+		settings.setOnMouseEntered(event -> {
+			settings.setImage(new Image("file:images/menu/SettingsHover.png"));
+		});
+		settings.setOnMouseExited(event -> {
+			settings.setImage(new Image("file:images/menu/Settings.png"));
+		});
 	}	
-	
-	private void startGame(MouseEvent event) throws IOException
-	{
-		gotoFxmlScene(event, "ChooseTeam");
-	}
-
-	private void resume(MouseEvent event) throws IOException
-	{
-		gotoFxmlScene(event, "Resume");
-	}
-
-	private void options(MouseEvent event) throws IOException
-	{
-		gotoFxmlScene(event, "Options");
-	}
-
-	private void highscores(MouseEvent event) throws IOException
-	{
-		gotoFxmlScene(event, "Highscores");
-	}
-
-	private void exit(MouseEvent event) throws IOException
-	{
-		System.exit(0);
-	}
-	
-	private void gotoFxmlScene(MouseEvent event, String name) throws IOException
-	{
-		Parent root = FXMLLoader.load(this.getClass().getResource("../view/" + name + ".fxml"));
-		Scene scene = new Scene(root);
-		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-		stage.setScene(scene);
-		stage.setFullScreen(formulaApplication.isFullscreen());
-		stage.setResizable(formulaApplication.isResizable());
-		stage.show();
-	}
 }

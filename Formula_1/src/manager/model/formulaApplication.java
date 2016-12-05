@@ -1,4 +1,5 @@
 package manager.model;
+
 import java.awt.Button;
 import java.net.URL;
 
@@ -19,7 +20,7 @@ import javafx.stage.Stage;
 
 public class formulaApplication extends Application
 {
-	static boolean fullscreen = false;
+	static boolean fullscreen = true;
 	static boolean resizable = true;
 	
 	public static boolean isFullscreen()
