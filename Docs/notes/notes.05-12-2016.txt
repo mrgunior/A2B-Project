@@ -1,0 +1,78 @@
+Date: 05-12-2016
+Secretary: Thijmen Langendam
+
+Attendance: 
+Bas (TA)
+Mika
+Rowdy
+Thijmen
+Victor 
+
+Nichelle is sick at home
+
+-------------------------------------------------------------------
+
+Notes:
+
+!!! No more editing to the code right before a demo or presentation !!!
+
+During the meeting we each said what our tasks from last week were, including the time it took to finish these tasks.
+It's good if someone takes the initiative to help others when his own tasks are not enough to fill the weekly 10h.
+Everyone takes his own time to do something, but don't let your hours depend on other work, make a list of things that have to be done and do them.
+
+It's not needed for someone who doesn't work at someone to understand every single line, do learn the global function though.
+
+!!! Make sure you commit/push your work before there is a meeting, even if you are going to be sick !!!
+
+It's good we use Trello as tool, update the Trello cards when the day is over.
+
+-------------------------------------------------------------------
+
+Feedback on our group:
+
+We are a small group, but we're doing well.
+Happy with the GUI, but it's lacking features
+There's good communication within the group.
+No notes of improvement.
+Not the best group but that's because of the group size.
+
+-------------------------------------------------------------------
+
+JSON Read/Write demo:
+
+Nichelle has the demo, but is sick so we couldn't deliver it.
+
+-------------------------------------------------------------------
+
+Application demo:
+
+Change the program so every menu is not a screen on it's own, or doesn't look like it.
+!!! Forgot the car/team customization screen !!!
+Program is nice, clean and not too busy.
+!!! Missing summary of personal and AI data !!!
+
+-------------------------------------------------------------------
+
+To-Do (tips):
+
+Tip: Change the window within the scene, or look up how to do this.
+--> Our program doesn't create a new window, it goes from fullscreen to windowed, back to fullscreen on a new screen.
+Conclusion: We need to fix the fullscreen/windowed switching when going back or forth.
+
+Tip: Important that we keep working on the GUI, since it is one of the main aspects of the game, and needs to be done before you are starting with code.
+--> Is the application done?
+----> No? See where you can help, because a GUI is important
+----> Yes? Great!
+Conclusion: Finish the GUI asap
+
+Tip: Race simulation
+--> During the race you'll use a lot of parameters, weather, car specs, driver stats etc.
+Create a class which has all results of the race, sorted by time. Created before the race starts.
+During the simulation, change those values with small changes based on the race track and weather etc.
+This way you can keep adding unique parameters, instead of having a formula for each race track.
+Conclusion: Keep track of results before the race simulation even starts, then change those results with the race parameters.
+
+Tip: Simulation Formula
+--> There is no need for a specific formula that has a nice time.
+You can just create a rank where the players finish, and make some fake finishing times based on those results.
+Conclusion: No need for complicated formula's, you can make your work alot easier.
