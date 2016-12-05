@@ -8,6 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 
 public class MainMenuController extends Controller implements Initializable
 {
@@ -28,6 +29,8 @@ public class MainMenuController extends Controller implements Initializable
 	private ImageView highscores;
 	@FXML
 	private ImageView exit;
+	@FXML
+	private Text race;
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources)
@@ -117,5 +120,17 @@ public class MainMenuController extends Controller implements Initializable
 		settings.setOnMouseExited(event -> {
 			settings.setImage(new Image("file:images/menu/Settings.png"));
 		});
+		
+		
+		// RACE
+		race.setOnMousePressed(event -> {
+			try
+			{
+				gotoFxmlScene(event, "inRace");
+			} catch (IOException e)
+			{
+				e.printStackTrace();
+			}
+		});	
 	}	
 }

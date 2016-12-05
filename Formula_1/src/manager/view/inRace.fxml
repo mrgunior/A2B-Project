@@ -127,7 +127,7 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="85.0" layoutX="750.0" layoutY="14.0" stroke="BLACK" strokeType="INSIDE" width="420.0" />
       <Text fill="#2ce16b" layoutX="761.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="02:13:45:104" wrappingWidth="412.03131103515625">
          <font>
-            <Font name="Digital-7" size="96.0" />
+            <Font size="74.0" />
          </font>
       </Text>
    </children>
