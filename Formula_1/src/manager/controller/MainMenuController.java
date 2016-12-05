@@ -13,10 +13,17 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class MainMenuController implements Initializable
 {
+	// Background
+	@FXML
+	private AnchorPane root;
+	@FXML
+	private ImageView background;
+	// Buttons
 	@FXML
 	private ImageView startGame;
 	@FXML
@@ -31,6 +38,9 @@ public class MainMenuController implements Initializable
 	@Override
 	public void initialize(URL location, ResourceBundle resources)
 	{
+		background.fitWidthProperty().bind(root.widthProperty());
+		background.fitHeightProperty().bind(root.heightProperty());
+		
 		// Events startGame
 		startGame.setOnMousePressed(event -> {
 			try
@@ -80,10 +90,10 @@ public class MainMenuController implements Initializable
 
 		});		
 		options.setOnMouseEntered(event -> {
-			options.setImage(new Image("file:images/menu/OptionsHover.png"));
+			options.setImage(new Image("file:images/menu/SettingsHover.png"));
 		});
 		options.setOnMouseExited(event -> {
-			options.setImage(new Image("file:images/menu/Options.png"));
+			options.setImage(new Image("file:images/menu/Settings.png"));
 		});
 		
 		// Events highscores
@@ -116,10 +126,10 @@ public class MainMenuController implements Initializable
 
 		});		
 		exit.setOnMouseEntered(event -> {
-			exit.setImage(new Image("file:images/menu/ExitHover.png"));
+			exit.setImage(new Image("file:images/menu/ExitIconHover.png"));
 		});
 		exit.setOnMouseExited(event -> {
-			exit.setImage(new Image("file:images/menu/Exit.png"));
+			exit.setImage(new Image("file:images/menu/ExitIcon.png"));
 		});
 	}	
 	

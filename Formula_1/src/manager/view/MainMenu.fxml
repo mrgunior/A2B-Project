@@ -15,11 +15,11 @@
 	controller GUIController.java
  -->
 
-<AnchorPane id="root" maxHeight="1080.0" maxWidth="1920.0" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="manager.controller.MainMenuController">
+<AnchorPane id="root" fx:id="root" maxHeight="1080.0" maxWidth="1920.0" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="manager.controller.MainMenuController">
    <children>
    
                	  <!-- Background image and settings-->
-      <ImageView fitHeight="1080.0" fitWidth="1920.0">
+      <ImageView fx:id="background" fitHeight="1080.0" fitWidth="1920.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <image>
             <Image url="@../../../images/menu/menuBackground.jpg" />
          </image>
@@ -58,6 +58,16 @@
             </LinearGradient>
          </stroke>
       </Text>
+      <ImageView fx:id="options" fitHeight="135.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0">
+         <image>
+            <Image url="@../../../images/menu/Settings.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="exit" fitHeight="128.0" fitWidth="152.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <image>
+            <Image url="@../../../images/menu/ExitIcon.png" />
+         </image>
+      </ImageView>
       <VBox layoutX="-21.0" layoutY="657.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="20.0">
          <children>
             <ImageView fx:id="startGame" fitHeight="180.0" fitWidth="452.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: transparent;">
@@ -76,25 +86,9 @@
                   <Insets top="20.0" />
                </VBox.margin>
             </ImageView>
-            <ImageView fx:id="options" fitHeight="180.0" fitWidth="452.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../images/menu/Options.png" />
-               </image>
-               <VBox.margin>
-                  <Insets top="20.0" />
-               </VBox.margin>
-            </ImageView>
             <ImageView fx:id="highscores" fitHeight="180.0" fitWidth="452.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../images/menu/HighScores.png" />
-               </image>
-               <VBox.margin>
-                  <Insets top="20.0" />
-               </VBox.margin>
-            </ImageView>
-            <ImageView fx:id="exit" fitHeight="180.0" fitWidth="452.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../images/menu/Exit.png" />
                </image>
                <VBox.margin>
                   <Insets top="20.0" />

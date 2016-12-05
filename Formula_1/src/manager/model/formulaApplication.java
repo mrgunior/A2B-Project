@@ -20,7 +20,7 @@ import javafx.stage.Stage;
 public class formulaApplication extends Application
 {
 	static boolean fullscreen = false;
-	static boolean resizable = false;
+	static boolean resizable = true;
 	
 	public static boolean isFullscreen()
 	{

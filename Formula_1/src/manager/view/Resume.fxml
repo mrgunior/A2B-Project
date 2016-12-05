@@ -44,6 +44,6 @@
             </LinearGradient>
          </stroke>
       </Text>
-      <ProgressIndicator layoutX="814.0" layoutY="407.0" prefHeight="266.0" prefWidth="291.0" />
+      <ProgressIndicator layoutX="814.0" layoutY="407.0" prefHeight="266.0" prefWidth="291.0" style="-fx-progress-color: #dd3900;" />
    </children>
 </AnchorPane>
