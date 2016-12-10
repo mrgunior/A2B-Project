@@ -20,27 +20,52 @@ import javafx.stage.Stage;
 
 public class formulaApplication extends Application
 {
+	// Static setting variables
 	static boolean fullscreen = true;
 	static boolean resizable = true;
 	
+	// Static scene to change screen
+	static private Scene theScene;
+	
+	// Getters and setters
 	public static boolean isFullscreen()
 	{
 		return fullscreen;
 	}
+	public static void setFullscreen(boolean fullscreenSetting)
+	{
+		fullscreen = fullscreenSetting;
+	}
+	
 	public static boolean isResizable()
 	{
 		return resizable;
 	}
+	public static void setResizable(boolean resizableSetting)
+	{
+		resizable = resizableSetting;
+	}
 	
+	public static Scene getScene()
+	{
+		return theScene;
+	}
+	public static void setSceneRoot(Parent parentRoot)
+	{
+		theScene.setRoot(parentRoot);
+	}
+	
+	// Launch application
 	public static void main(String[] args)
 	{
 		launch(args);
 	}
 	
+	// Setup for stage
 	public void start(Stage stage) throws Exception
 	{
 		Parent root = FXMLLoader.load(getClass().getResource("../view/MainMenu.fxml"));
-		Scene theScene = new Scene(root);
+		theScene = new Scene(root);
 		stage.setTitle("Formula 1 Manager");
 		stage.setScene(theScene);
 		stage.setFullScreen(fullscreen);

@@ -8,6 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 public class SettingsController extends Controller implements Initializable
 {
@@ -28,7 +29,7 @@ public class SettingsController extends Controller implements Initializable
 		back.setOnMousePressed(event -> {
 			try
 			{
-				gotoFxmlScene(event, "MainMenu");
+				gotoFxmlScene(event, "MainMenu", (Stage) back.getScene().getWindow());
 			} catch (IOException e)
 			{
 				e.printStackTrace();

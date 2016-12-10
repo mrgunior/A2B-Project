@@ -5,10 +5,12 @@ import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 public class MainMenuController extends Controller implements Initializable
 {
@@ -42,7 +44,7 @@ public class MainMenuController extends Controller implements Initializable
 		startGame.setOnMousePressed(event -> {
 			try
 			{
-				gotoFxmlScene(event, "ChooseTeam");
+				gotoFxmlScene(event, "ChooseTeam", (Stage) startGame.getScene().getWindow());
 			} catch (IOException e)
 			{
 				e.printStackTrace();
@@ -60,7 +62,7 @@ public class MainMenuController extends Controller implements Initializable
 		resume.setOnMousePressed(event -> {
 			try
 			{
-				gotoFxmlScene(event, "Resume");
+				gotoFxmlScene(event, "Resume", (Stage) resume.getScene().getWindow());
 			} catch (IOException e)
 			{
 				e.printStackTrace();
@@ -78,7 +80,7 @@ public class MainMenuController extends Controller implements Initializable
 		highscores.setOnMousePressed(event -> {
 			try
 			{
-				gotoFxmlScene(event, "HighScores");
+				gotoFxmlScene(event, "HighScores", (Stage) highscores.getScene().getWindow());
 			} catch (IOException e)
 			{
 				e.printStackTrace();
@@ -108,7 +110,7 @@ public class MainMenuController extends Controller implements Initializable
 		settings.setOnMousePressed(event -> {
 			try
 			{
-				gotoFxmlScene(event, "Settings");
+				gotoFxmlScene(event, "Settings", (Stage) settings.getScene().getWindow());
 			} catch (IOException e)
 			{
 				e.printStackTrace();
@@ -126,7 +128,7 @@ public class MainMenuController extends Controller implements Initializable
 		race.setOnMousePressed(event -> {
 			try
 			{
-				gotoFxmlScene(event, "inRace");
+				gotoFxmlScene(event, "inRace", (Stage) race.getScene().getWindow());
 			} catch (IOException e)
 			{
 				e.printStackTrace();

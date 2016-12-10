@@ -15,12 +15,14 @@ import manager.model.formulaApplication;
 
 public class Controller
 {	
-	public void gotoFxmlScene(MouseEvent event, String name) throws IOException
+	public void gotoFxmlScene(MouseEvent event, String name, Stage stage) throws IOException
 	{
 		Parent root = FXMLLoader.load(this.getClass().getResource("../view/" + name + ".fxml"));
-		Scene scene = new Scene(root);
-		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		Scene scene = formulaApplication.getScene();
+		formulaApplication.setSceneRoot(root);
+		//Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		
+		stage.setFullScreen(formulaApplication.isFullscreen());
 		stage.setScene(scene);
 		stage.setFullScreen(formulaApplication.isFullscreen());
 		stage.setResizable(formulaApplication.isResizable());
