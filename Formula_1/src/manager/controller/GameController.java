@@ -1,4 +1,4 @@
-package manager.model;
+package manager.controller;
  
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -8,6 +8,8 @@ import java.util.Iterator;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+
+import manager.model.Profile;
  
 /**
  * @author Victor
