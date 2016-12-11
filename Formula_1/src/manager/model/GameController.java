@@ -15,23 +15,26 @@ import org.json.simple.parser.JSONParser;
  * version 0.4
  */
  
-public class GameData {
+public class GameController {
 
 	public static void main(String[] args) throws IOException {
-		writeJsonObjectToFile();
+		//writeJsonObjectToFile();
 		readJsonObjectAndInitialize();
 	}
 	
+	
+	//from what it reads it will make an object out of it.
     @SuppressWarnings("unchecked")
     public static Profile readJsonObjectAndInitialize(){
         JSONParser parser = new JSONParser();
  
         try {
  
+        	//###########################Parse##########################
             Object obj = parser.parse(new FileReader("./data.dat"));
- 
             JSONObject jsonObject = (JSONObject) obj;
  
+            //###########################Objects########################
             //getting the teamname
             String teamname = (String) jsonObject.get("Teamname");
             
@@ -40,12 +43,20 @@ public class GameData {
             
             //getting highscore
             String highscore = (String) jsonObject.get("Highscore");
-                        
+            
+          //###########################Arrays###########################
+            //loop will be implemented
             //getting car1
-            JSONArray car1 = (JSONArray) jsonObject.get("Car1");
+            JSONArray car1Array = (JSONArray) jsonObject.get("Car1");
+            JSONObject brandObject = (JSONObject) car1Array.get(0);
+            String brandValueOfCar1 = (String)brandObject.get("Brand");
+            System.out.println("Brand: " + brandValueOfCar1);
             
             //getting car2
-            JSONArray car2 = (JSONArray) jsonObject.get("Car2");
+            JSONArray car2Array = (JSONArray) jsonObject.get("Car2");
+            brandObject = (JSONObject) car2Array.get(0);
+            String brandValueOfCar2 = (String) brandObject.get("Brand");
+            System.out.println("Brand: " + brandValueOfCar2);
             
             //drivers. Will use a for loop the next time to optimize this
             //next update
@@ -62,17 +73,16 @@ public class GameData {
             JSONArray driver11 = (JSONArray) jsonObject.get("Driver11");
  
             System.out.println("Teamname: " + teamname);
-            System.out.println("Car1: " + car1);
             System.out.println("Budget: " + budget);
             System.out.println("Highscore: " + highscore);
             
-            Iterator<String> iteratordriver = driver1.iterator();
+            //Iterator<String> iteratordriver = driver1.iterator();
             
             //just printing out a specific driver to test to see if it is working
-            while (iteratordriver.hasNext()) {
+            /*while (iteratordriver.hasNext()) {
                 
             	System.out.println(iteratordriver.next());
-            }
+            }*/
             
         } catch (Exception e) {
             e.printStackTrace();
@@ -80,7 +90,7 @@ public class GameData {
         
         Profile profile;
         
-        //returns back an object of your user profile
+        //returns back an object of your user profile that was loaded from the json object
 		return null;
     }
     
@@ -92,32 +102,43 @@ public class GameData {
     	//for example: 
     	//int budget = profile.getBudget();
     	
+    	//###########################User Profile#########################
     	JSONObject obj = new JSONObject();
 		obj.put("Teamname", "");
 		obj.put("Budget", "2000000");
 		obj.put("Highscore", "");
-
-		//optimization needed
+				
+		//###########################Car 1################################
+		//car parts.. will adjust it to become:
+		//parts.put("Brand", profile.getBrand()); etc
+		JSONObject partsOfCar1 = new JSONObject();
+		partsOfCar1 .put("Brand", "Ferrari");
+		partsOfCar1 .put("Engine", "Toyota");
+		
 		JSONArray car1 = new JSONArray();
-		car1.add("Brand");
-		car1.add("Engine");
+		car1.add(partsOfCar1 );
 		obj.put("Car1", car1);
 		
+		//###########################Car 2################################
+		JSONObject partsOfCar2 = new JSONObject();
+		partsOfCar2 .put("Brand", "Ferrari");
+		partsOfCar2 .put("Engine", "mercedes");
+		
 		JSONArray car2 = new JSONArray();
-		car2.add("Brand");
-		car2.add("Engine");
+		car2.add(partsOfCar2);
 		obj.put("Car2", car2);
 		
-		//need to be optimized if we have 11 drivers!
-		JSONArray driver1 = new JSONArray();
-		driver1.add("Victor Wernet");
-		driver1.add("1");
-		driver1.add("2");
-		driver1.add("3");
-		driver1.add("4");
-		driver1.add("5");
-		driver1.add("6");
-		obj.put("Driver1", driver1);
+		//###########################Drivers##############################
+		JSONArray driver = new JSONArray();
+		driver.add("Victor Wernet");
+		driver.add("1");
+		driver.add("2");
+		driver.add("3");
+		driver.add("4");
+		driver.add("5");
+		driver.add("6");
+		//put it to the obj
+		obj.put("Drivers", driver);
 		
 		// try-with-resources statement based on post comment below :)
 		try (FileWriter file = new FileWriter("./data.dat")) {
@@ -126,5 +147,5 @@ public class GameData {
 			System.out.println("\nJSON Object: " + obj+"\n");
 		}
     	
-    }
+    }  
 }

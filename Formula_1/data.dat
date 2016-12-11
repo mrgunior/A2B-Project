@@ -1,1 +1,1 @@
-{"Car2":["Brand","Engine"],"Car1":["Brand","Engine"],"Driver1":["Victor Wernet","1","2","3","4","5","6"],"Highscore":"","Teamname":"","Budget":"2000000"}
+{"Car2":[{"Brand":"Ferrari","Engine":"mercedes"}],"Car1":[{"Brand":"Ferrari","Engine":"Toyota"}],"Drivers":["Victor Wernet","1","2","3","4","5","6"],"Highscore":"","Teamname":"","Budget":"2000000"}
