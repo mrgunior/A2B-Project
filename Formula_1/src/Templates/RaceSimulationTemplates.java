@@ -1,5 +1,9 @@
 package Templates;
 
+import java.util.Random;
+import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
+
 public class RaceSimulationTemplates {
 
 	/* Using drivers:
@@ -19,136 +23,236 @@ public class RaceSimulationTemplates {
 	
 	public static void main(String args[]) {
 		
-		//NO RANDOMIZATION HAS BEEN ADDED YET
+		Scanner sc = new Scanner(System.in);
 		
-		/* Version 1 has the least difference in results between drivers
-		 * Results lie between 10 and 50
-		 * Depending on driver, car and track difficulty
-		 * Since we are adding a randomizer between 0.8 and 1.2 the results will be strongly modified by the randomization
-		 */
-		testVersion1();
+		System.out.println("Want to test with our without randomzation? (Y/N): ");
+		char choice = sc.next().charAt(0);
 		
-		/* Version 2 Has more difference in results between drivers than version 1, but less than version 3
-		 * Results lie between 50 and 190
-		 * Depending on driver, car and track difficulty
-		 * Since we are adding a randomizer between 0.8 and 1.2 the results will be moderately modified by the randomization
-		 */
-		testVersion2();
+		while (!(choice == 'Y' || choice == 'N')) {
+			System.out.println("Incorrect input: ");
+		}
 		
-		/* Version 3 Has the most difference in results between drivers
-		 * Results lie between 200 and 750
-		 * Depending on driver, car and track difficulty
-		 * Since we are adding a randomizer between 0.8 and 1.2 the results will be slightly modified by the randomization
-		 */
-		testVersion3();
+		
+		System.out.println("Which version do you want to test? (1/2/3): ");
+		int choice2 = sc.nextInt();
+		
+		switch (choice2) {
+		case 1:
+			if (choice == 'Y') {
+				/* Version '1 Has the most difference in results between drivers
+				 * Results lie between 8 and 60 when using randomizer
+				 * Depending on driver, car and track difficulty
+				 * Since we are adding a randomizer between 0.8 and 1.2 the results will be slightly modified by the randomization
+				 */
+				double random = random();
+				System.out.println("Using random value " + random());
+				try {
+					TimeUnit.SECONDS.sleep(1);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				testVersion1(random);
+			} else {
+				/* Version 1 has the least difference in results between drivers
+				 * Results lie between 10 and 50
+				 * Depending on driver, car and track difficulty
+				 * Since we are adding a randomizer between 0.8 and 1.2 the results will be strongly modified by the randomization
+				 */
+				testVersion1(0);
+			}
+			break;
+		case 2:
+			if (choice == 'Y') {
+				/* Version 1 Has the most difference in results between drivers
+				 * Results lie between 40 and 230 when using randomizer
+				 * Depending on driver, car and track difficulty
+				 * Since we are adding a randomizer between 0.8 and 1.2 the results will be slightly modified by the randomization
+				 */
+				double random = random();
+				System.out.println("Using random value " + random());
+				try {
+					TimeUnit.SECONDS.sleep(1);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				testVersion2(random);
+			} else {
+				/* Version 2 Has more difference in results between drivers than version 1, but less than version 3
+				 * Results lie between 50 and 190
+				 * Depending on driver, car and track difficulty
+				 * Since we are adding a randomizer between 0.8 and 1.2 the results will be moderately modified by the randomization
+				 */
+				testVersion2(0);
+			}
+			break;
+		case 3:
+			if (choice == 'Y') {
+				/* Version 3 Has the most difference in results between drivers
+				 * Results lie between 160 and 900 when using randomizer
+				 * Depending on driver, car and track difficulty
+				 * Since we are adding a randomizer between 0.8 and 1.2 the results will be slightly modified by the randomization
+				 */
+				double random = random();
+				System.out.println("Using random value " + random());
+				try {
+					TimeUnit.SECONDS.sleep(1);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				testVersion3(random);
+			} else {
+				/* Version 3 Has the most difference in results between drivers
+				 * Results lie between 200 and 750
+				 * Depending on driver, car and track difficulty
+				 * Since we are adding a randomizer between 0.8 and 1.2 the results will be slightly modified by the randomization
+				 */
+				testVersion3(0);
+			}
+			break;
+		default:
+			System.out.println("Incorrect input, aborting.");
+		}
 		
 	}
 	
-	public static double version1(int avgCar, int avgDriver, double trackDiff) {
+	public static double version1(int avgCar, int avgDriver, double trackDiff, double random) {
 		
 		//The higher the result, the faster the driver has finished
 		double result = 0;
 		
 		result = (avgCar + avgDriver)/2;
 		result = result * (1/trackDiff);
+		result = result * random;
 		
 		return result;
 		
 	}
 	
-	public static double version2(int avgCar, int avgDriver, double trackDiff) {
+	public static double version2(int avgCar, int avgDriver, double trackDiff, double random) {
 		
 		//The higher the result, the faster the driver has finished
 		double result = 0;
 		
 		result = (avgCar + avgDriver);
 		result = result * (2/trackDiff);
+		result = result * random;
 		
 		return result;
 		
 	}
 	
-	public static double version3(int avgCar, int avgDriver, double trackDiff) {
+	public static double version3(int avgCar, int avgDriver, double trackDiff, double random) {
 		
 		//The higher the result, the faster the driver has finished
 		double result = 0;
 		
 		result = (avgCar + avgDriver)*2;
 		result = result * (4/trackDiff);
+		result = result * random;
 		
 		return result;
 		
 	}
 	
-	public static void testVersion1() {
+	private static double random() {
+
+		Random value = new Random();
+		double random = 0.8 + (1.2 - 0.8) * value.nextDouble();
+		
+		return random;
+		
+	}
+	
+	public static void testVersion1(double randomInput) {
+		
+		double random = randomInput;
+		
+		if (random < 0.8 || random > 1.2) {
+			random = 1;
+		}
 		
 		System.out.println("Simulation version 1...\n");
-		System.out.println("M. Verstappen, Maxed Car, Silverstone: " + version1(91, 96, 2.6));
-		System.out.println("M. Verstappen, Average Car, Silverstone: " + version1(64, 96, 2.6));
-		System.out.println("M. Verstappen, Stock Car, Silverstone: " + version1(50, 96, 2.6) + "\n");
-		System.out.println("M. Verstappen, Maxed Car, Monte Carlo: " + version1(91, 96, 4.7));
-		System.out.println("M. Verstappen, Average Car, Monte Carlo: " + version1(64, 96, 4.7));
-		System.out.println("M. Verstappen, Stock Car, Monte Carlo: " + version1(50, 96, 4.7) + "\n");
-		System.out.println("F. Alonso, Maxed Car, Silverstone: " + version1(91, 84, 2.6));
-		System.out.println("F. Alonso, Average Car, Silverstone: " + version1(64, 84, 2.6));
-		System.out.println("F. Alonso, Stock Car, Silverstone: " + version3(50, 84, 2.6) + "\n");
-		System.out.println("F. Alonso, Maxed Car, Monte Carlo: " + version1(91, 84, 4.7));
-		System.out.println("F. Alonso, Average Car, Monte Carlo: " + version1(64, 84, 4.7));
-		System.out.println("F. Alonso, Stock Car, Monte Carlo: " + version1(50, 84, 4.7) + "\n");
-		System.out.println("F. Nasr, Maxed Car, Silverstone: " + version1(91, 77, 2.6));
-		System.out.println("F. Nasr, Average Car, Silverstone: " + version1(64, 77, 2.6));
-		System.out.println("F. Nasr, Stock Car, Silverstone: " + version1(50, 77, 2.6) + "\n");
-		System.out.println("F. Nasr, Maxed Car, Monte Carlo: " + version1(91, 77, 4.7));
-		System.out.println("F. Nasr, Average Car, Monte Carlo: " + version1(64, 77, 4.7));
-		System.out.println("F. Nasr, Stock Car, Monte Carlo: " + version1(50, 77, 4.7) + "\n\n\n");
+		System.out.println("M. Verstappen, Maxed Car, Silverstone: " + version1(91, 96, 2.6, random));
+		System.out.println("M. Verstappen, Average Car, Silverstone: " + version1(64, 96, 2.6, random));
+		System.out.println("M. Verstappen, Stock Car, Silverstone: " + version1(50, 96, 2.6, random) + "\n");
+		System.out.println("M. Verstappen, Maxed Car, Monte Carlo: " + version1(91, 96, 4.7, random));
+		System.out.println("M. Verstappen, Average Car, Monte Carlo: " + version1(64, 96, 4.7, random));
+		System.out.println("M. Verstappen, Stock Car, Monte Carlo: " + version1(50, 96, 4.7, random) + "\n");
+		System.out.println("F. Alonso, Maxed Car, Silverstone: " + version1(91, 84, 2.6, random));
+		System.out.println("F. Alonso, Average Car, Silverstone: " + version1(64, 84, 2.6, random));
+		System.out.println("F. Alonso, Stock Car, Silverstone: " + version3(50, 84, 2.6, random) + "\n");
+		System.out.println("F. Alonso, Maxed Car, Monte Carlo: " + version1(91, 84, 4.7, random));
+		System.out.println("F. Alonso, Average Car, Monte Carlo: " + version1(64, 84, 4.7, random));
+		System.out.println("F. Alonso, Stock Car, Monte Carlo: " + version1(50, 84, 4.7, random) + "\n");
+		System.out.println("F. Nasr, Maxed Car, Silverstone: " + version1(91, 77, 2.6, random));
+		System.out.println("F. Nasr, Average Car, Silverstone: " + version1(64, 77, 2.6, random));
+		System.out.println("F. Nasr, Stock Car, Silverstone: " + version1(50, 77, 2.6, random) + "\n");
+		System.out.println("F. Nasr, Maxed Car, Monte Carlo: " + version1(91, 77, 4.7, random));
+		System.out.println("F. Nasr, Average Car, Monte Carlo: " + version1(64, 77, 4.7, random));
+		System.out.println("F. Nasr, Stock Car, Monte Carlo: " + version1(50, 77, 4.7, random) + "\n\n\n");
 		
 	}
 	
-	public static void testVersion2() {
+	public static void testVersion2(double randomInput) {
+		
+		double random = randomInput;
+		
+		if (random < 0.8 || random > 1.2) {
+			random = 1;
+		}
 		
 		System.out.println("Simulation version 2...\n");
-		System.out.println("M. Verstappen, Maxed Car, Silverstone: " + version2(91, 96, 2.6));
-		System.out.println("M. Verstappen, Average Car, Silverstone: " + version2(64, 96, 2.6));
-		System.out.println("M. Verstappen, Stock Car, Silverstone: " + version2(50, 96, 2.6) + "\n");
-		System.out.println("M. Verstappen, Maxed Car, Monte Carlo: " + version2(91, 96, 4.7));
-		System.out.println("M. Verstappen, Average Car, Monte Carlo: " + version2(64, 96, 4.7));
-		System.out.println("M. Verstappen, Stock Car, Monte Carlo: " + version2(50, 96, 4.7) + "\n");
-		System.out.println("F. Alonso, Maxed Car, Silverstone: " + version2(91, 84, 2.6));
-		System.out.println("F. Alonso, Average Car, Silverstone: " + version2(64, 84, 2.6));
-		System.out.println("F. Alonso, Stock Car, Silverstone: " + version2(50, 84, 2.6) + "\n");
-		System.out.println("F. Alonso, Maxed Car, Monte Carlo: " + version2(91, 84, 4.7));
-		System.out.println("F. Alonso, Average Car, Monte Carlo: " + version2(64, 84, 4.7));
-		System.out.println("F. Alonso, Stock Car, Monte Carlo: " + version2(50, 84, 4.7) + "\n");
-		System.out.println("F. Nasr, Maxed Car, Silverstone: " + version2(91, 77, 2.6));
-		System.out.println("F. Nasr, Average Car, Silverstone: " + version2(64, 77, 2.6));
-		System.out.println("F. Nasr, Stock Car, Silverstone: " + version2(50, 77, 2.6) + "\n");
-		System.out.println("F. Nasr, Maxed Car, Monte Carlo: " + version2(91, 77, 4.7));
-		System.out.println("F. Nasr, Average Car, Monte Carlo: " + version2(64, 77, 4.7));
-		System.out.println("F. Nasr, Stock Car, Monte Carlo: " + version2(50, 77, 4.7) + "\n\n\n");
+		System.out.println("M. Verstappen, Maxed Car, Silverstone: " + version2(91, 96, 2.6, random));
+		System.out.println("M. Verstappen, Average Car, Silverstone: " + version2(64, 96, 2.6, random));
+		System.out.println("M. Verstappen, Stock Car, Silverstone: " + version2(50, 96, 2.6, random) + "\n");
+		System.out.println("M. Verstappen, Maxed Car, Monte Carlo: " + version2(91, 96, 4.7, random));
+		System.out.println("M. Verstappen, Average Car, Monte Carlo: " + version2(64, 96, 4.7, random));
+		System.out.println("M. Verstappen, Stock Car, Monte Carlo: " + version2(50, 96, 4.7, random) + "\n");
+		System.out.println("F. Alonso, Maxed Car, Silverstone: " + version2(91, 84, 2.6, random));
+		System.out.println("F. Alonso, Average Car, Silverstone: " + version2(64, 84, 2.6, random));
+		System.out.println("F. Alonso, Stock Car, Silverstone: " + version2(50, 84, 2.6, random) + "\n");
+		System.out.println("F. Alonso, Maxed Car, Monte Carlo: " + version2(91, 84, 4.7, random));
+		System.out.println("F. Alonso, Average Car, Monte Carlo: " + version2(64, 84, 4.7, random));
+		System.out.println("F. Alonso, Stock Car, Monte Carlo: " + version2(50, 84, 4.7, random) + "\n");
+		System.out.println("F. Nasr, Maxed Car, Silverstone: " + version2(91, 77, 2.6, random));
+		System.out.println("F. Nasr, Average Car, Silverstone: " + version2(64, 77, 2.6, random));
+		System.out.println("F. Nasr, Stock Car, Silverstone: " + version2(50, 77, 2.6, random) + "\n");
+		System.out.println("F. Nasr, Maxed Car, Monte Carlo: " + version2(91, 77, 4.7, random));
+		System.out.println("F. Nasr, Average Car, Monte Carlo: " + version2(64, 77, 4.7, random));
+		System.out.println("F. Nasr, Stock Car, Monte Carlo: " + version2(50, 77, 4.7, random) + "\n\n\n");
 		
 	}
 	
-	public static void testVersion3() {
+	public static void testVersion3(double randomInput) {
+		
+		double random = randomInput;
+		
+		if (random < 0.8 || random > 1.2) {
+			random = 1;
+		}
 		
 		System.out.println("Simulation version 3...\n");
-		System.out.println("M. Verstappen, Maxed Car, Silverstone: " + version3(91, 96, 2.6));
-		System.out.println("M. Verstappen, Average Car, Silverstone: " + version3(64, 96, 2.6));
-		System.out.println("M. Verstappen, Stock Car, Silverstone: " + version3(50, 96, 2.6) + "\n");
-		System.out.println("M. Verstappen, Maxed Car, Monte Carlo: " + version3(91, 96, 4.7));
-		System.out.println("M. Verstappen, Average Car, Monte Carlo: " + version3(64, 96, 4.7));
-		System.out.println("M. Verstappen, Stock Car, Monte Carlo: " + version3(50, 96, 4.7) + "\n");
-		System.out.println("F. Alonso, Maxed Car, Silverstone: " + version3(91, 84, 2.6));
-		System.out.println("F. Alonso, Average Car, Silverstone: " + version3(64, 84, 2.6));
-		System.out.println("F. Alonso, Stock Car, Silverstone: " + version3(50, 84, 2.6) + "\n");
-		System.out.println("F. Alonso, Maxed Car, Monte Carlo: " + version3(91, 84, 4.7));
-		System.out.println("F. Alonso, Average Car, Monte Carlo: " + version3(64, 84, 4.7));
-		System.out.println("F. Alonso, Stock Car, Monte Carlo: " + version3(50, 84, 4.7) + "\n");
-		System.out.println("F. Nasr, Maxed Car, Silverstone: " + version3(91, 77, 2.6));
-		System.out.println("F. Nasr, Average Car, Silverstone: " + version3(64, 77, 2.6));
-		System.out.println("F. Nasr, Stock Car, Silverstone: " + version3(50, 77, 2.6) + "\n");
-		System.out.println("F. Nasr, Maxed Car, Monte Carlo: " + version3(91, 77, 4.7));
-		System.out.println("F. Nasr, Average Car, Monte Carlo: " + version3(64, 77, 4.7));
-		System.out.println("F. Nasr, Stock Car, Monte Carlo: " + version3(50, 77, 4.7) + "\n\n\n");
+		System.out.println("M. Verstappen, Maxed Car, Silverstone: " + version3(91, 96, 2.6, random));
+		System.out.println("M. Verstappen, Average Car, Silverstone: " + version3(64, 96, 2.6, random));
+		System.out.println("M. Verstappen, Stock Car, Silverstone: " + version3(50, 96, 2.6, random) + "\n");
+		System.out.println("M. Verstappen, Maxed Car, Monte Carlo: " + version3(91, 96, 4.7, random));
+		System.out.println("M. Verstappen, Average Car, Monte Carlo: " + version3(64, 96, 4.7, random));
+		System.out.println("M. Verstappen, Stock Car, Monte Carlo: " + version3(50, 96, 4.7, random) + "\n");
+		System.out.println("F. Alonso, Maxed Car, Silverstone: " + version3(91, 84, 2.6, random));
+		System.out.println("F. Alonso, Average Car, Silverstone: " + version3(64, 84, 2.6, random));
+		System.out.println("F. Alonso, Stock Car, Silverstone: " + version3(50, 84, 2.6, random) + "\n");
+		System.out.println("F. Alonso, Maxed Car, Monte Carlo: " + version3(91, 84, 4.7, random));
+		System.out.println("F. Alonso, Average Car, Monte Carlo: " + version3(64, 84, 4.7, random));
+		System.out.println("F. Alonso, Stock Car, Monte Carlo: " + version3(50, 84, 4.7, random) + "\n");
+		System.out.println("F. Nasr, Maxed Car, Silverstone: " + version3(91, 77, 2.6, random));
+		System.out.println("F. Nasr, Average Car, Silverstone: " + version3(64, 77, 2.6, random));
+		System.out.println("F. Nasr, Stock Car, Silverstone: " + version3(50, 77, 2.6, random) + "\n");
+		System.out.println("F. Nasr, Maxed Car, Monte Carlo: " + version3(91, 77, 4.7, random));
+		System.out.println("F. Nasr, Average Car, Monte Carlo: " + version3(64, 77, 4.7, random));
+		System.out.println("F. Nasr, Stock Car, Monte Carlo: " + version3(50, 77, 4.7, random) + "\n\n\n");
 		
 	}
 	
