@@ -1,3 +1,5 @@
+package Templates;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -13,11 +15,11 @@ public class RaceSimulationTemplates {
 	 * Sebastian Vettel: 	Average 94
 	 * Daniel Ricciardo:	Average 92.3
 	 * Kimi Raikkonnen:		Average 90.7
-	 * Sergio Mendoza:		Average 85.7
+	 * Sergio Pérez:		Average 85.7
 	 * Fernando Alonso: 	Average 84
 	 * Valtteri Bottas:		Average 82.3
 	 * Nicolas Hulkenberg:	Average 79.7
-	 * Carloz Junior:		Average 79
+	 * Carloz Sainz Junior:	Average 79
 	 * Kevin Magnussen:		Average 78.7
 	 * Felipe Massa:		Average 77.7
 	 * Jensen Button:		Average 77.3
@@ -27,7 +29,7 @@ public class RaceSimulationTemplates {
 	 * Marcus Ericsson		Average 75
 	 * Daniil Kvyat			Average 74
 	 * Jolyon Palmer		Average 72
-	 * Esteban Ocon			Average 71
+	 * Rio Haryanto			Average 71
 	 * Esteban Gutierrez	Average 70 
 	 * 
 	 * Using Cars:
@@ -43,13 +45,14 @@ public class RaceSimulationTemplates {
 	//Filling the lists with driver names and their averages
 	static List<String> drivers = getDriverList();
 	static double[] driverAvg = getDriverAvg();
+	static int[] scores = getEmptyScores();
 
 	public static void main(String args[]) {
 
 		Scanner sc = new Scanner(System.in);
 
 		//Asking the user if he wants randomization
-		System.out.print("Want to test with our without randomzation? (Y/N): ");
+		System.out.print("Do you want to test with our without randomzation? (Y/N): ");
 		char choice = sc.next().charAt(0);
 
 		//If the user inputs anything else than a Y or N, re-ask the user
@@ -58,25 +61,75 @@ public class RaceSimulationTemplates {
 			choice = sc.next().charAt(0);
 		}
 
-		//White space for neat console results
-		System.out.print("\n");
+		int races = 1;
 		
+		if (choice == 'Y') {
+			System.out.print("How much races do you want to race? Between 1 and 20, higher will be set to 20, lower to 1: ");
+			races = sc.nextInt();
+
+			if (races < 1) {
+				races = 1;
+			} else if (races > 20) {
+				races = 20;
+			}
+		}
+
 		if (choice == 'Y') {
 			/* Version 1 Has the most difference in results between drivers
 			 * Results lie between 40 and 230 when using randomizer
 			 * Depending on driver, car and track difficulty
 			 * Since we are adding a randomizer between 0.8 and 1.2 the results will be slightly modified by the randomization
 			 */
-			testVersion(1);
+			for (int i = 1; i <= races; i++) {
+				System.out.println("\nResult of race " + i);
+				testVersion(1);
+			}
+			
+			System.out.print("\n");
+			
+			for (int j = 0; j < 22; j++) {
+				
+				int biggest = 0;
+
+				for (int k = 0; k < 22; k++) {
+					if (scores[k] > scores[biggest]) {
+						biggest = k;
+					}
+				}
+				
+				if (scores[biggest] != 0) {
+					System.out.println(drivers.get(biggest) + " ended the season with " + scores[biggest] + " points.");
+					scores[biggest] = 0;
+				}
+			}
+			
+			System.out.println("The rest ended with 0 points");
+			
 		} else {
 			/* Version 2 Has more difference in results between drivers than version 1, but less than version 3
 			 * Results lie between 50 and 190, but are the same every time it will be run
 			 * Depending on driver, car and track difficulty
 			 * Since we are adding a randomizer between 0.8 and 1.2 the results will be moderately modified by the randomization
 			 */
+			System.out.println("Without randomization the results are always the same, only displaying one race");
+			System.out.println("\nResult of race");
 			testVersion(0);
 		}
 
+		sc.close();
+
+	}
+
+	private static int[] getEmptyScores() {
+
+		int[] scores = new int[22];
+		
+		for (int i = 0; i < 22; i++) {
+			scores[i] = 0;
+		}
+		
+		return scores;
+		
 	}
 
 	private static double[] getDriverAvg() {
@@ -118,28 +171,28 @@ public class RaceSimulationTemplates {
 		List<String> drivers= new ArrayList<String>();
 
 		//Adding the driver names manually (This will be in external files later on)
-		drivers.add("M. Verstappen");
-		drivers.add("N. Rosberg");
-		drivers.add("L. Hamilton");
-		drivers.add("S. Vettel");
-		drivers.add("D. Ricciardo");
-		drivers.add("K. Raikkonnen");
-		drivers.add("S.P. Mendoza");
-		drivers.add("F. Alonso");
-		drivers.add("V. Bottas");
-		drivers.add("N. Hulkenberg");
-		drivers.add("C.S. Junior");
-		drivers.add("K. Magnussen");
-		drivers.add("F. Massa");
-		drivers.add("J. Button");
-		drivers.add("F. Nasr");
-		drivers.add("R. Grosjean");
-		drivers.add("P. Wehrlein");
-		drivers.add("M. Ericsson");
-		drivers.add("D. Kvyat");
-		drivers.add("J. Palmer");
-		drivers.add("E. Ocon");
-		drivers.add("E. Guttierrez");
+		drivers.add("M. Verstappen"); //
+		drivers.add("N. Rosberg"); //
+		drivers.add("L. Hamilton"); //
+		drivers.add("S. Vettel"); //
+		drivers.add("D. Ricciardo"); //
+		drivers.add("K. Räikkönnen"); //
+		drivers.add("S. Pérez"); //
+		drivers.add("F. Alonso"); //
+		drivers.add("V. Bottas"); //
+		drivers.add("N. Hülkenberg"); //
+		drivers.add("C. Sainz Jr."); //
+		drivers.add("K. Magnussen"); //
+		drivers.add("F. Massa"); //
+		drivers.add("J. Button"); //
+		drivers.add("F. Nasr"); //
+		drivers.add("R. Grosjean"); //
+		drivers.add("P. Wehrlein"); //
+		drivers.add("M. Ericsson"); //
+		drivers.add("D. Kvyat"); //
+		drivers.add("J. Palmer"); //
+		drivers.add("R. Haryanto"); //
+		drivers.add("E. Guttiérrez"); //
 
 		return drivers;
 	}
@@ -178,6 +231,18 @@ public class RaceSimulationTemplates {
 		double results[] = new double[22];
 
 		if (random == 0) {
+
+			System.out.print("Racing");
+			for (int l = 0; l < 5; l++) {
+				System.out.print(".");
+				try {
+					TimeUnit.MILLISECONDS.sleep(500);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+			System.out.print("\n");
+
 			for (int i = 0; i < 22; i++) {
 				if (i == 0) {
 					System.out.println("Finished 1st: " + drivers.get(i));
@@ -192,6 +257,15 @@ public class RaceSimulationTemplates {
 				} else {
 					System.out.println("Finished " + (i+1) + "th: " + drivers.get(i));
 				}
+
+				for (int l = 0; l < 4; l++) {
+					try {
+						TimeUnit.MILLISECONDS.sleep(70);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				}
+
 			}
 		} else {
 			for (int i = 0; i < 22; i++) {
@@ -201,6 +275,18 @@ public class RaceSimulationTemplates {
 		}
 
 		if (random != 0) {
+
+			System.out.print("Racing");
+			for (int l = 0; l < 5; l++) {
+				System.out.print(".");
+				try {
+					TimeUnit.MILLISECONDS.sleep(500);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+			System.out.print("\n");
+
 			for (int k = 0; k < 22; k ++) {
 
 				int biggest = 0;
@@ -211,15 +297,20 @@ public class RaceSimulationTemplates {
 					}
 				}
 
+				double timeout = results[biggest];
+
 				if (k == 0) {
 					System.out.println("Finished 1st: " + drivers.get(biggest));
 					results[biggest] = 0;
+					scores[biggest] = scores[biggest] + 25;
 				} else if (k == 1) {
 					System.out.println("Finished 2nd: " + drivers.get(biggest));
 					results[biggest] = 0;
+					scores[biggest] = scores[biggest] + 18;
 				} else if (k == 2) {
 					System.out.println("Finished 3rd: " + drivers.get(biggest));
 					results[biggest] = 0;
+					scores[biggest] = scores[biggest] + 15;
 				} else if (k == 20) {
 					System.out.println("Finished 21st: " + drivers.get(biggest));
 					results[biggest] = 0;
@@ -229,6 +320,38 @@ public class RaceSimulationTemplates {
 				} else {
 					System.out.println("Finished " + (k+1) + "th: " + drivers.get(biggest));
 					results[biggest] = 0;
+					switch (k) {
+					case 3:
+						scores[biggest] = scores[biggest] + 12;
+						break;
+					case 4:
+						scores[biggest] = scores[biggest] + 10;
+						break;
+					case 5:
+						scores[biggest] = scores[biggest] + 8;
+						break;
+					case 6:
+						scores[biggest] = scores[biggest] + 6;
+						break;
+					case 7:
+						scores[biggest] = scores[biggest] + 4;
+						break;
+					case 8:
+						scores[biggest] = scores[biggest] + 2;
+						break;
+					case 9:
+						scores[biggest] = scores[biggest] + 1;
+						break;
+					default:
+						break;
+					}
+				}
+				for (int l = 0; l < 4; l++) {
+					try {
+						TimeUnit.MILLISECONDS.sleep((long) timeout);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
 				}
 
 			}
