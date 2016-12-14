@@ -1,4 +1,5 @@
 package manager.controller;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -8,9 +9,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class SettingsController extends Controller implements Initializable
+public class ChooseTeamController extends Controller implements Initializable
 {
 	// Background
 	@FXML
@@ -21,6 +23,8 @@ public class SettingsController extends Controller implements Initializable
 	// Scene elements
 	@FXML
 	private ImageView back;
+	@FXML
+	private Text next;
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources)
@@ -28,20 +32,26 @@ public class SettingsController extends Controller implements Initializable
 		background.fitWidthProperty().bind(root.widthProperty());
 		background.fitHeightProperty().bind(root.heightProperty());
 		
-		back.setOnMousePressed(event -> {
+		// Click
+		next.setOnMousePressed(event -> {
 			try
 			{
-				gotoFxmlScene(event, "MainMenu", (Stage) back.getScene().getWindow());
+				gotoFxmlScene(event, "ChooseDriver", (Stage) next.getScene().getWindow());
 			} catch (IOException e)
 			{
 				e.printStackTrace();
 			}
 		});
-		back.setOnMouseEntered(event -> {
-			back.setImage(new Image("file:images/menu/BackHover.png"));
+		// Hover on
+		next.setOnMouseEntered(event -> {
+			//next.setImage(new Image("file:images/menu/NextHover.png"));
 		});
-		back.setOnMouseExited(event -> {
-			back.setImage(new Image("file:images/menu/Back.png"));
+		// Hover off
+		next.setOnMouseExited(event -> {
+			//next.setImage(new Image("file:images/menu/Next.png"));
 		});
-	}	
+		
+	}
+	
+	
 }

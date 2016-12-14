@@ -18,7 +18,7 @@
 	controller GUIController.java
  -->
 
-<AnchorPane id="root" fx:id="root" maxHeight="1080.0" maxWidth="1920.0" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="manager.controller.ChooseTeamController">
+<AnchorPane id="root" fx:id="root" maxHeight="1080.0" maxWidth="1920.0" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="manager.controller.HighScoresController">
    <children>
    
    	  <!-- Background image and settings-->
@@ -32,7 +32,7 @@
       </ImageView>
       
       <!-- Formula string and settings -->
-      <Text fill="#ff2800" layoutX="704.0" layoutY="200.0" strokeType="OUTSIDE" text="Choose Team" textAlignment="CENTER">
+      <Text fill="#ff2800" layoutX="720.0" layoutY="188.0" strokeType="OUTSIDE" text="TEMPLATE" textAlignment="CENTER">
          <font>
             <Font name="Haettenschweiler" size="130.0" />
          </font>
@@ -47,7 +47,7 @@
             </LinearGradient>
          </stroke>
       </Text>
-      <HBox id="teamsContainer" layoutX="100.0" layoutY="275.0" prefHeight="700.0" prefWidth="1700.0">
+      <HBox id="teamsContainer" layoutX="87.0" layoutY="285.0" prefHeight="700.0" prefWidth="1700.0">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0000004b" height="700.0" stroke="#00000097" strokeType="OUTSIDE" strokeWidth="3.0" width="1700.0" HBox.hgrow="ALWAYS">
                <HBox.margin>
@@ -58,10 +58,10 @@
             <VBox id="teamsRight" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS" />
          </children>
       </HBox>
-      <Text fx:id="next" fill="#320500" layoutX="1750.0" layoutY="1065.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Next">
-         <font>
-            <Font name="Haettenschweiler" size="65.0" />
-         </font>
-      </Text>
+      <ImageView fx:id="back" fitHeight="75.0" fitWidth="263.0" layoutX="33.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="50.0">
+         <image>
+            <Image url="@../../../images/menu/Back.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
