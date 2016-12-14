@@ -1,0 +1,29 @@
+Date: 12-12-2016
+Secretary: Thijmen Langendam
+
+Attendance: 
+Bas (TA)
+Mika
+Thijmen
+
+Rowdy is sick at home
+Victor personal came up
+Nichelle personal came up.
+
+-------------------------------------------------------------------
+
+Notes:
+
+Week progress:
+Thijmen:
+	Improved race simulation
+	Sort results
+Mika:
+	Fixed fullscreen bug
+	Some work on gui
+
+Sorting, java has sorting functions built in
+
+Focus now on getting the game up and running
+Gamedata should be done
+The backbone of the game should be working like a command line game
