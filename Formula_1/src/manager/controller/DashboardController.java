@@ -1,5 +1,6 @@
 package manager.controller;
 
+import manager.model.formulaApplication;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -24,15 +25,13 @@ public class DashboardController extends Controller implements Initializable
 	// Scene elements
 	@FXML
 	private ImageView back;
-	
+
 	@FXML
-	private Rectangle carManagement;
+	private Rectangle carManagement, teamManagement, standings, race;
+
+	// Testing
 	@FXML
-	private Rectangle teamManagement;
-	@FXML
-	private Rectangle standings;
-	@FXML
-	private Rectangle race;
+	private Text teamName, balance;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources)
@@ -40,6 +39,9 @@ public class DashboardController extends Controller implements Initializable
 		background.fitWidthProperty().bind(root.widthProperty());
 		background.fitHeightProperty().bind(root.heightProperty());
 		
+		teamName.setText(formulaApplication.getTeamName());
+
+		// Car Management Button
 		carManagement.setOnMousePressed(event -> {
 			try
 			{
@@ -50,11 +52,14 @@ public class DashboardController extends Controller implements Initializable
 			}
 		});
 		carManagement.setOnMouseEntered(event -> {
-			//carManagement.setImage(new Image("file:images/menu/BackHover.png"));
+			// carManagement.setImage(new
+			// Image("file:images/menu/BackHover.png"));
 		});
 		carManagement.setOnMouseExited(event -> {
-			//carManagement.setImage(new Image("file:images/menu/Back.png"));
+			// carManagement.setImage(new Image("file:images/menu/Back.png"));
 		});
+
+		// Team Management Button
 		teamManagement.setOnMousePressed(event -> {
 			try
 			{
@@ -65,12 +70,14 @@ public class DashboardController extends Controller implements Initializable
 			}
 		});
 		teamManagement.setOnMouseEntered(event -> {
-			//teamManagement.setImage(new Image("file:images/menu/BackHover.png"));
+			// teamManagement.setImage(new
+			// Image("file:images/menu/BackHover.png"));
 		});
 		teamManagement.setOnMouseExited(event -> {
-			//teamManagement.setImage(new Image("file:images/menu/Back.png"));
+			// teamManagement.setImage(new Image("file:images/menu/Back.png"));
 		});
-		
+
+		// Standings Button
 		standings.setOnMousePressed(event -> {
 			try
 			{
@@ -81,12 +88,13 @@ public class DashboardController extends Controller implements Initializable
 			}
 		});
 		standings.setOnMouseEntered(event -> {
-			//standings.setImage(new Image("file:images/menu/BackHover.png"));
+			// standings.setImage(new Image("file:images/menu/BackHover.png"));
 		});
 		standings.setOnMouseExited(event -> {
-			//standings.setImage(new Image("file:images/menu/Back.png"));
+			// standings.setImage(new Image("file:images/menu/Back.png"));
 		});
-		
+
+		// Race Button
 		race.setOnMousePressed(event -> {
 			try
 			{
@@ -97,10 +105,23 @@ public class DashboardController extends Controller implements Initializable
 			}
 		});
 		race.setOnMouseEntered(event -> {
-			//carManagement.setImage(new Image("file:images/menu/BackHover.png"));
+			// carManagement.setImage(new
+			// Image("file:images/menu/BackHover.png"));
 		});
 		race.setOnMouseExited(event -> {
-			//carManagement.setImage(new Image("file:images/menu/Back.png"));
+			// carManagement.setImage(new Image("file:images/menu/Back.png"));
+		});
+
+		// Team Text
+		teamName.setOnMousePressed(event -> {
+			String currentTeamName = formulaApplication.getTeamName();
+			teamName.setText(currentTeamName);
+		});
+
+		// Balance Text
+		balance.setOnMousePressed(event -> {
+			String currentBalance = Integer.toString(formulaApplication.getBalance());
+			balance.setText(currentBalance);
 		});
 	}
 }

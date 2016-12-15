@@ -11,6 +11,7 @@ public class formulaApplication extends Application
 	// Static setting variables
 	static boolean fullscreen = true;
 	static boolean resizable = true;
+	static private String teamName = "";
 	
 	// Static scene to change screen
 	static private Scene theScene;
@@ -41,6 +42,20 @@ public class formulaApplication extends Application
 	public static void setSceneRoot(Parent parentRoot)
 	{
 		theScene.setRoot(parentRoot);
+	}
+	
+	// Testing methods
+	public static String getTeamName()
+	{
+		return teamName;
+	}
+	public static void setTeamName(String name)
+	{
+		teamName = name;
+	}
+	public static int getBalance()
+	{
+		return 50000000;
 	}
 	
 	// Launch application
