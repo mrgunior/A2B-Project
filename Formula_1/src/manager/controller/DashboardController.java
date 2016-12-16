@@ -40,6 +40,7 @@ public class DashboardController extends Controller implements Initializable
 		background.fitHeightProperty().bind(root.heightProperty());
 		
 		teamName.setText(formulaApplication.getTeamName());
+		balance.setText(Integer.toString(formulaApplication.getBalance()));
 
 		// Car Management Button
 		carManagement.setOnMousePressed(event -> {
@@ -122,6 +123,23 @@ public class DashboardController extends Controller implements Initializable
 		balance.setOnMousePressed(event -> {
 			String currentBalance = Integer.toString(formulaApplication.getBalance());
 			balance.setText(currentBalance);
+		});
+		
+		back.setOnMousePressed(event -> {
+			try
+			{
+				gotoFxmlScene(event, "MainMenu", (Stage) back.getScene().getWindow());
+			} catch (IOException e)
+			{
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		});
+		back.setOnMouseEntered(event -> {
+			back.setImage(new Image("file:images/menu/BackHover.png"));
+		});
+		back.setOnMouseExited(event -> {
+			back.setImage(new Image("file:images/menu/Back.png"));
 		});
 	}
 }

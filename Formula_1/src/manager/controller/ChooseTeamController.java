@@ -39,8 +39,8 @@ public class ChooseTeamController extends Controller implements Initializable
 	Color teamNotSelectedColor = new Color(0, 0, 0, 0);
 	
 	// Selector variable
-	Rectangle currentlySelected;
-	String currentlySelectedString;
+	Rectangle currentlySelected = null;
+	String currentlySelectedString = "";
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources)
@@ -53,9 +53,12 @@ public class ChooseTeamController extends Controller implements Initializable
 		next.setOnMousePressed(event -> {
 			try
 			{
-				System.out.println(currentlySelectedString);
-				formulaApplication.setTeamName(currentlySelectedString);
-				gotoFxmlScene(event, "ChooseDriver", (Stage) next.getScene().getWindow());
+				if (!(currentlySelectedString.equals("")))
+				{
+					formulaApplication.setTeamName(currentlySelectedString);
+					gotoFxmlScene(event, "ChooseDriver", (Stage) next.getScene().getWindow());
+				}
+
 			} catch (IOException e)
 			{
 				e.printStackTrace();
@@ -72,70 +75,48 @@ public class ChooseTeamController extends Controller implements Initializable
 		
 		// Team Choices
 		mercedes.setOnMousePressed(event -> {
-			currentlySelected.setFill(teamNotSelectedColor);
-			mercedes.setFill(teamSelectedColor);
-			currentlySelected = mercedes;
-			currentlySelectedString = "Mercedes AMG Petronas";
+			teamClicked(mercedes, "Mercedes AMG Petronas");
 		});
 		redBull.setOnMousePressed(event -> {
-			currentlySelected.setFill(teamNotSelectedColor);
-			redBull.setFill(teamSelectedColor);
-			currentlySelected = redBull;	
-			currentlySelectedString = "Red Bull Racing";
+			teamClicked(redBull, "Red Bull Racing");
 		});
 		ferrari.setOnMousePressed(event -> {
-			currentlySelected.setFill(teamNotSelectedColor);
-			ferrari.setFill(teamSelectedColor);
-			currentlySelected = ferrari;
-			currentlySelectedString = "Scuderia Ferrari";
+			teamClicked(ferrari, "Scuderia Ferrari");
 		});
 		forceIndia.setOnMousePressed(event -> {
-			currentlySelected.setFill(teamNotSelectedColor);
-			forceIndia.setFill(teamSelectedColor);
-			currentlySelected = forceIndia;
-			currentlySelectedString = "Sahara Force India F1";
+			teamClicked(forceIndia, "Sahara Force India F1");
 		});
 		williams.setOnMousePressed(event -> {
-			currentlySelected.setFill(teamNotSelectedColor);
-			williams.setFill(teamSelectedColor);
-			currentlySelected = williams;
-			currentlySelectedString = "Williams Martini Racing";
+			teamClicked(williams, "Williams Martini Racing");
 		});
 		mcLaren.setOnMousePressed(event -> {
-			currentlySelected.setFill(teamNotSelectedColor);
-			mcLaren.setFill(teamSelectedColor);
-			currentlySelected = mcLaren;
-			currentlySelectedString = "McLaren Honda";
+			teamClicked(mcLaren, "McLaren Honda");
 		});
 		toroRosso.setOnMousePressed(event -> {
-			currentlySelected.setFill(teamNotSelectedColor);
-			toroRosso.setFill(teamSelectedColor);
-			currentlySelected = toroRosso;
-			currentlySelectedString = "Scuderia Toro Rosso";
+			teamClicked(toroRosso, "Scuderia Toro Rosso");
 		});
 		haas.setOnMousePressed(event -> {
-			currentlySelected.setFill(teamNotSelectedColor);
-			haas.setFill(teamSelectedColor);
-			currentlySelected = haas;
-			currentlySelectedString = "Haas F1 Team";
+			teamClicked(haas, "Haas F1 Team");
 		});
 		renault.setOnMousePressed(event -> {
-			currentlySelected.setFill(teamNotSelectedColor);
-			renault.setFill(teamSelectedColor);
-			currentlySelected = renault;
-			currentlySelectedString = "Renault";
+			teamClicked(renault, "Renault");
 		});
 		sauber.setOnMousePressed(event -> {
-			currentlySelected.setFill(teamNotSelectedColor);
-			sauber.setFill(teamSelectedColor);
-			currentlySelected = sauber;
-			currentlySelectedString = "Sauber F1 Team";
+			teamClicked(sauber, "Sauber F1 Team");
 		});
 		manor.setOnMousePressed(event -> {
-			currentlySelected.setFill(teamNotSelectedColor);
-			manor.setFill(teamSelectedColor);
-			currentlySelected = manor;
-			currentlySelectedString = "Manor Racing";
+			teamClicked(manor, "Manor Racing");
 		});	
+	}
+	
+	private void teamClicked(Rectangle teamButton, String teamName)
+	{
+		if (!(currentlySelected.equals(null)))
+		{
+			currentlySelected.setFill(teamNotSelectedColor);
+		}
+		teamButton.setFill(teamSelectedColor);
+		currentlySelected = teamButton;
+		currentlySelectedString = teamName;
 	}
 }
