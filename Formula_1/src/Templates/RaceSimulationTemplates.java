@@ -46,65 +46,73 @@ public class RaceSimulationTemplates {
 	static List<String> drivers = getDriverList();
 	static double[] driverAvg = getDriverAvg();
 	static int[] scores = getEmptyScores();
+	static String simulation = "N";
+	static int seasons = 1;
 
 	public static void main(String args[]) {
 
 		Scanner sc = new Scanner(System.in);
 
 		//Asking the user if he wants randomization
-		System.out.print("Do you want to test with our without randomzation? (Y/N): ");
-		char choice = sc.next().charAt(0);
+		System.out.print("Do you want to test with randomzation? (Y/N): ");
+		String randomization = sc.nextLine().toUpperCase();
 
 		//If the user inputs anything else than a Y or N, re-ask the user
-		while (!(choice == 'Y' || choice == 'N')) {
+		while (!(randomization.equals("Y") || randomization.equals("Y"))) {
 			System.out.print("Incorrect input: ");
-			choice = sc.next().charAt(0);
+			randomization = sc.nextLine().toUpperCase();
+		}
+
+		System.out.print("Would you like to test with simulation? (Timeout between finishing): ");
+		simulation = sc.nextLine().toUpperCase();
+
+		while (!(simulation.equals("Y") || simulation.equals("N"))) {
+			System.out.print("Incorrect input: ");
+			simulation = sc.nextLine().toUpperCase();
 		}
 
 		int races = 1;
-		
-		if (choice == 'Y') {
-			System.out.print("How much races do you want to race? Between 1 and 20, higher will be set to 20, lower to 1: ");
+
+		if (randomization.equals("Y")) {
+			System.out.print("How much races do you want to race? Between 1 and 21, higher will be set to 21, lower to 1: ");
 			races = sc.nextInt();
+			if (simulation.equals("N")) {
+				System.out.print("How much seasons would you like to play? (1-10): ");
+				seasons = sc.nextInt();
+				System.out.print("\n");
+			}
 
 			if (races < 1) {
 				races = 1;
-			} else if (races > 20) {
-				races = 20;
+			} else if (races > 21) {
+				races = 21;
 			}
 		}
 
-		if (choice == 'Y') {
+		if (randomization.equals("Y")) {
 			/* Version 1 Has the most difference in results between drivers
 			 * Results lie between 40 and 230 when using randomizer
 			 * Depending on driver, car and track difficulty
 			 * Since we are adding a randomizer between 0.8 and 1.2 the results will be slightly modified by the randomization
 			 */
-			for (int i = 1; i <= races; i++) {
-				System.out.println("\nResult of race " + i);
-				testVersion(1);
-			}
-			
-			System.out.print("\n");
-			
-			for (int j = 0; j < 22; j++) {
-				
-				int biggest = 0;
 
-				for (int k = 0; k < 22; k++) {
-					if (scores[k] > scores[biggest]) {
-						biggest = k;
+			for (int j = 0; j < seasons; j++) {
+				System.out.println("Season " + (j+1) + " of " + seasons);
+				for (int i = 1; i <= races; i++) {
+					if (simulation.equals("Y")) {
+						System.out.println("Result of race " + i);
 					}
+					testVersion(1);
 				}
+
+				getSeasonResults();
 				
-				if (scores[biggest] != 0) {
-					System.out.println(drivers.get(biggest) + " ended the season with " + scores[biggest] + " points.");
-					scores[biggest] = 0;
-				}
 			}
-			
-			System.out.println("The rest ended with 0 points");
-			
+
+			if (simulation.equals("Y")) {
+				System.out.print("\n");
+			}
+
 		} else {
 			/* Version 2 Has more difference in results between drivers than version 1, but less than version 3
 			 * Results lie between 50 and 190, but are the same every time it will be run
@@ -120,16 +128,39 @@ public class RaceSimulationTemplates {
 
 	}
 
+	private static void getSeasonResults() {
+
+		for (int j = 0; j < 22; j++) {
+
+			int biggest = 0;
+
+			for (int k = 0; k < 22; k++) {
+				if (scores[k] > scores[biggest]) {
+					biggest = k;
+				}
+			}
+
+			if (scores[biggest] != 0) {
+				System.out.println(drivers.get(biggest) + " ended the season with " + scores[biggest] + " points.");
+				scores[biggest] = 0;
+			}
+
+		}
+
+		System.out.println("The rest ended with 0 points\n");
+		
+	}
+
 	private static int[] getEmptyScores() {
 
 		int[] scores = new int[22];
-		
+
 		for (int i = 0; i < 22; i++) {
 			scores[i] = 0;
 		}
-		
+
 		return scores;
-		
+
 	}
 
 	private static double[] getDriverAvg() {
@@ -232,16 +263,22 @@ public class RaceSimulationTemplates {
 
 		if (random == 0) {
 
-			System.out.print("Racing");
-			for (int l = 0; l < 5; l++) {
-				System.out.print(".");
-				try {
-					TimeUnit.MILLISECONDS.sleep(500);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
+
+			if (simulation.equals("Y")) {
+				System.out.print("Racing");
+				for (int l = 0; l < 5; l++) {
+					System.out.print(".");
+					try {
+						TimeUnit.MILLISECONDS.sleep(500);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
 				}
 			}
-			System.out.print("\n");
+
+			if (simulation.equals("Y")) {
+				System.out.print("\n");
+			}
 
 			for (int i = 0; i < 22; i++) {
 				if (i == 0) {
@@ -253,7 +290,7 @@ public class RaceSimulationTemplates {
 				} else if (i == 20) {
 					System.out.println("Finished 21st: " + drivers.get(i));
 				} else if (i == 21) {
-					System.out.println("Finished 22nd: " + drivers.get(i));
+					System.out.println("Finished 22nd: " + drivers.get(i) + "\n");
 				} else {
 					System.out.println("Finished " + (i+1) + "th: " + drivers.get(i));
 				}
@@ -276,16 +313,21 @@ public class RaceSimulationTemplates {
 
 		if (random != 0) {
 
-			System.out.print("Racing");
-			for (int l = 0; l < 5; l++) {
-				System.out.print(".");
-				try {
-					TimeUnit.MILLISECONDS.sleep(500);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
+			if (simulation.equals("Y")) {
+				System.out.print("Racing");
+				for (int l = 0; l < 5; l++) {
+					System.out.print(".");
+					try {
+						TimeUnit.MILLISECONDS.sleep(500);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
 				}
 			}
-			System.out.print("\n");
+
+			if (simulation.equals("Y")) {
+				System.out.print("\n");
+			}
 
 			for (int k = 0; k < 22; k ++) {
 
@@ -299,58 +341,105 @@ public class RaceSimulationTemplates {
 
 				double timeout = results[biggest];
 
-				if (k == 0) {
-					System.out.println("Finished 1st: " + drivers.get(biggest));
-					results[biggest] = 0;
-					scores[biggest] = scores[biggest] + 25;
-				} else if (k == 1) {
-					System.out.println("Finished 2nd: " + drivers.get(biggest));
-					results[biggest] = 0;
-					scores[biggest] = scores[biggest] + 18;
-				} else if (k == 2) {
-					System.out.println("Finished 3rd: " + drivers.get(biggest));
-					results[biggest] = 0;
-					scores[biggest] = scores[biggest] + 15;
-				} else if (k == 20) {
-					System.out.println("Finished 21st: " + drivers.get(biggest));
-					results[biggest] = 0;
-				} else if (k == 21) {
-					System.out.println("Finished 22nd: " + drivers.get(biggest));
-					results[biggest] = 0;
+				if (simulation.equals("Y")) {
+					if (k == 0) {
+						System.out.println("Finished 1st: " + drivers.get(biggest));
+						results[biggest] = 0;
+						scores[biggest] = scores[biggest] + 25;
+					} else if (k == 1) {
+						System.out.println("Finished 2nd: " + drivers.get(biggest));
+						results[biggest] = 0;
+						scores[biggest] = scores[biggest] + 18;
+					} else if (k == 2) {
+						System.out.println("Finished 3rd: " + drivers.get(biggest));
+						results[biggest] = 0;
+						scores[biggest] = scores[biggest] + 15;
+					} else if (k == 20) {
+						System.out.println("Finished 21st: " + drivers.get(biggest));
+						results[biggest] = 0;
+					} else if (k == 21) {
+						System.out.println("Finished 22nd: " + drivers.get(biggest));
+						results[biggest] = 0;
+					} else {
+						System.out.println("Finished " + (k+1) + "th: " + drivers.get(biggest));
+						results[biggest] = 0;
+						switch (k) {
+						case 3:
+							scores[biggest] = scores[biggest] + 12;
+							break;
+						case 4:
+							scores[biggest] = scores[biggest] + 10;
+							break;
+						case 5:
+							scores[biggest] = scores[biggest] + 8;
+							break;
+						case 6:
+							scores[biggest] = scores[biggest] + 6;
+							break;
+						case 7:
+							scores[biggest] = scores[biggest] + 4;
+							break;
+						case 8:
+							scores[biggest] = scores[biggest] + 2;
+							break;
+						case 9:
+							scores[biggest] = scores[biggest] + 1;
+							break;
+						default:
+							break;
+						}
+					}
 				} else {
-					System.out.println("Finished " + (k+1) + "th: " + drivers.get(biggest));
-					results[biggest] = 0;
-					switch (k) {
-					case 3:
-						scores[biggest] = scores[biggest] + 12;
-						break;
-					case 4:
-						scores[biggest] = scores[biggest] + 10;
-						break;
-					case 5:
-						scores[biggest] = scores[biggest] + 8;
-						break;
-					case 6:
-						scores[biggest] = scores[biggest] + 6;
-						break;
-					case 7:
-						scores[biggest] = scores[biggest] + 4;
-						break;
-					case 8:
-						scores[biggest] = scores[biggest] + 2;
-						break;
-					case 9:
-						scores[biggest] = scores[biggest] + 1;
-						break;
-					default:
-						break;
+					if (k == 0) {
+						results[biggest] = 0;
+						scores[biggest] = scores[biggest] + 25;
+					} else if (k == 1) {
+						results[biggest] = 0;
+						scores[biggest] = scores[biggest] + 18;
+					} else if (k == 2) {
+						results[biggest] = 0;
+						scores[biggest] = scores[biggest] + 15;
+					} else if (k == 20) {
+						results[biggest] = 0;
+					} else if (k == 21) {
+						results[biggest] = 0;
+					} else {
+						results[biggest] = 0;
+						switch (k) {
+						case 3:
+							scores[biggest] = scores[biggest] + 12;
+							break;
+						case 4:
+							scores[biggest] = scores[biggest] + 10;
+							break;
+						case 5:
+							scores[biggest] = scores[biggest] + 8;
+							break;
+						case 6:
+							scores[biggest] = scores[biggest] + 6;
+							break;
+						case 7:
+							scores[biggest] = scores[biggest] + 4;
+							break;
+						case 8:
+							scores[biggest] = scores[biggest] + 2;
+							break;
+						case 9:
+							scores[biggest] = scores[biggest] + 1;
+							break;
+						default:
+							break;
+						}
 					}
 				}
-				for (int l = 0; l < 4; l++) {
-					try {
-						TimeUnit.MILLISECONDS.sleep((long) timeout);
-					} catch (InterruptedException e) {
-						e.printStackTrace();
+
+				if (simulation.equals("Y")) {
+					for (int l = 0; l < 4; l++) {
+						try {
+							TimeUnit.MILLISECONDS.sleep((long) timeout);
+						} catch (InterruptedException e) {
+							e.printStackTrace();
+						}
 					}
 				}
 
