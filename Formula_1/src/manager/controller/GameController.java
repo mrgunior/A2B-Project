@@ -3,6 +3,7 @@ package manager.controller;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -12,6 +13,7 @@ import org.json.simple.parser.JSONParser;
 
 import manager.model.Car;
 import manager.model.Driver;
+import manager.model.Engine;
 import manager.model.Profile;
  
 /**
@@ -28,7 +30,7 @@ public class GameController {
 	public GameController() throws IOException
 	{
 		readJsonObjectAndInitialize();
-		//writeJsonObjectToFile();
+		writeJsonObjectToFile();
 		
 	}
 	
@@ -61,18 +63,28 @@ public class GameController {
             String brandValueOfCar1 = (String)brandObject.get("Brand");
             System.out.println("Brand: " + brandValueOfCar1);
             
+            String engineValueOfCar1 = (String) brandObject.get("Engine");
+            System.out.println("Engine: " + engineValueOfCar1);
+            
+            Car car1 = new Car(new Driver(), new Engine());
+            
             //getting car2
             JSONArray car2Array = (JSONArray) jsonObject.get("Car2");
             brandObject = (JSONObject) car2Array.get(0);
             String brandValueOfCar2 = (String) brandObject.get("Brand");
             System.out.println("Brand: " + brandValueOfCar2);
             
-            String brandValueOfCar22 = (String) brandObject.get("Engine");
-            System.out.println("Engine: " + brandValueOfCar22);
+            String engineValueOfCar2 = (String) brandObject.get("Engine");
+            System.out.println("Engine: " + engineValueOfCar2);
+        
+            Car car2 = new Car(new Driver(),new Engine());
             
-            //drivers. Will use a for loop the next time to optimize this
-            //if needed otherwise it will stay like this.
-            //next update
+            List<Car> carsList = new ArrayList<Car>();
+            carsList.add(car1);
+            carsList.add(car2);
+            
+            //#########################Drivers##########################
+            List<Driver> driversList = new ArrayList<Driver>();
             
             String[] infos = new String[7];
             infos[0] = "Speed";
@@ -80,23 +92,58 @@ public class GameController {
             infos[2] = "Number";
             infos[3] = "Turning";
             infos[4] = "Name";
-            infos[5] = "Accelaration";
+            infos[5] = "Acceleration";
             infos[6] = "AveragePerformance";
             
             String driverString = "Driver";
+            JSONArray driverArray;
+        	JSONObject object;
+        	
             for(int i = 0; i < 11; i++)
             {
             	driverString+=i;
-            	System.out.println(driverString);
-            	JSONArray driverArray = (JSONArray) jsonObject.get(driverString);
-            	JSONObject object = (JSONObject) driverArray.get(0);
+            	//System.out.println(driverString);
+            	driverArray = (JSONArray) jsonObject.get(driverString);
+            	object = (JSONObject) driverArray.get(0);
+            	
+            	//create 11 drivers
+            	Driver driver = new Driver();
             	
             	for(int d = 0; d < 7; d++)
             	{
                     String valueOfObject = (String)object.get(infos[d]);   
-                    System.out.println(valueOfObject);
+                    System.out.println(infos[d]+": "+valueOfObject);
+                    
+                    switch(d)
+                    {
+                    	case 0 :int speed = Integer.parseInt(valueOfObject);
+                    			driver.setSpeed(speed);
+                    			break;
+                    	case 1 :double salary = Double.parseDouble(valueOfObject);
+                    			driver.setSalary(salary);
+                				break;
+                    	case 2 :int number = Integer.parseInt(valueOfObject);
+                    			driver.setNumber(number);
+                				break;
+                    	case 3 :int turning = Integer.parseInt(valueOfObject);
+                    			driver.setTurning(turning);
+                				break;
+                    	case 4 :driver.setName(valueOfObject);
+                				break;
+                    	case 5 :int acceleration = Integer.parseInt(valueOfObject);
+                    			driver.setAcceleration(acceleration);
+                				break;
+                    	case 6 :double averagePerformance = Double.parseDouble(valueOfObject);
+                    			driver.setAveragePerformance(averagePerformance);
+                				break;
+                		default : 
+                				break;	
+                    }
             	}
             	
+            	//each time it comes out of the inner loop it adds it to the list
+            	driversList.add(driver);
+            	//reset this for each loop
             	driverString = "Driver";
                 
             }
@@ -105,15 +152,16 @@ public class GameController {
             System.out.println("Budget: " + budget);
             System.out.println("Highscore: " + highScore);
            
-            //create the profile
+            //create the profile object
             profile = new Profile(highScore, budget, teamName);
             
-            //Setters
-            /*setDrivers();
+            //Set the drivers to the profile
+            profile.setDrivers(driversList);
         	
-            setCars();
+            //set the cars to the profile
+            profile.setCars(carsList);
         	
-            setDriverToCar(,);*/
+            //setDriverToCar(,);*/
             
         } 
         
@@ -162,11 +210,12 @@ public class GameController {
 		//11 for eleven drivers.
 		for(int i = 0; i < 11; i++)
 		{
+			//standard upon creating a game until you add drivers
 			JSONObject info = new JSONObject();
 			info.put("Name", "A"+i);
 			info.put("Speed", "0");
 			info.put("Number", ""+i);
-			info.put("Accelaration", "0");
+			info.put("Acceleration", "0");
 			info.put("Turning", "0");
 			info.put("AveragePerformance", "0");
 			info.put("Salary", "0");
