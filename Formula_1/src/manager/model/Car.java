@@ -4,6 +4,12 @@ public class Car {
 	private Driver driver;
 	private Engine engine;
 	
+	public Car(Driver driver, Engine engine)
+	{
+		this.driver = driver;
+		this.engine = engine;
+	}
+	
 	//Getters
 	public Driver getDriver(){
 		return this.driver;

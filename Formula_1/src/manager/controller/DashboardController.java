@@ -40,7 +40,7 @@ public class DashboardController extends Controller implements Initializable
 		background.fitHeightProperty().bind(root.heightProperty());
 		
 		teamName.setText(formulaApplication.getTeamName());
-		balance.setText(Integer.toString(formulaApplication.getBalance()));
+		balance.setText(Double.toString(formulaApplication.getBalance()));
 
 		// Car Management Button
 		carManagement.setOnMousePressed(event -> {
@@ -121,7 +121,7 @@ public class DashboardController extends Controller implements Initializable
 
 		// Balance Text
 		balance.setOnMousePressed(event -> {
-			String currentBalance = Integer.toString(formulaApplication.getBalance());
+			String currentBalance = Double.toString(formulaApplication.getBalance());
 			balance.setText(currentBalance);
 		});
 		

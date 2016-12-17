@@ -5,13 +5,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import manager.controller.GameController;
 
 public class formulaApplication extends Application
 {
 	// Static setting variables
 	static boolean fullscreen = true;
 	static boolean resizable = true;
-	static private String teamName = "";
+	private static GameController gamecontroller;
 	
 	// Static scene to change screen
 	static private Scene theScene;
@@ -21,6 +22,7 @@ public class formulaApplication extends Application
 	{
 		return fullscreen;
 	}
+	
 	public static void setFullscreen(boolean fullscreenSetting)
 	{
 		fullscreen = fullscreenSetting;
@@ -30,6 +32,7 @@ public class formulaApplication extends Application
 	{
 		return resizable;
 	}
+	
 	public static void setResizable(boolean resizableSetting)
 	{
 		resizable = resizableSetting;
@@ -39,6 +42,7 @@ public class formulaApplication extends Application
 	{
 		return theScene;
 	}
+	
 	public static void setSceneRoot(Parent parentRoot)
 	{
 		theScene.setRoot(parentRoot);
@@ -47,15 +51,17 @@ public class formulaApplication extends Application
 	// Testing methods
 	public static String getTeamName()
 	{
-		return teamName;
+		//call method in GameController to get the teamname 
+		return gamecontroller.getProfile().getTeamName();
 	}
-	public static void setTeamName(String name)
+	
+	public static void setTeamName(String teamName)
 	{
-		teamName = name;
+		gamecontroller.getProfile().setTeamName(teamName);;
 	}
-	public static int getBalance()
+	public static double getBalance()
 	{
-		return 5123456;
+		return gamecontroller.getProfile().getBudget();
 	}
 	
 	// Launch application
@@ -67,6 +73,9 @@ public class formulaApplication extends Application
 	// Setup for stage
 	public void start(Stage stage) throws Exception
 	{
+		//creates a gamecontroller object at the starting up of the application
+		gamecontroller = new GameController();
+		
 		Parent root = FXMLLoader.load(getClass().getResource("../view/MainMenu.fxml"));
 		theScene = new Scene(root);
 		stage.setTitle("Formula 1 Manager");
