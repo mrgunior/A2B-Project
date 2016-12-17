@@ -63,11 +63,20 @@ public class MainMenuController extends Controller implements Initializable
 		resume.setOnMousePressed(event -> {
 			try
 			{
+				//if the json object that is asked is not equal to empty
 				if (!(formulaApplication.getTeamName().equals("")))
 				{
 					gotoFxmlScene(event, "Dashboard", (Stage) resume.getScene().getWindow());
 				}
-			} catch (IOException e)
+				
+				//if the json object is empty
+				else
+				{
+					System.out.println("user does not exist!");
+				}
+			}
+			
+			catch (IOException e)
 			{
 				e.printStackTrace();
 			}
