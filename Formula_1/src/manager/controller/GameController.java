@@ -29,22 +29,27 @@ public class GameController {
 	public GameController() throws IOException
 	{
 		readJsonObjectAndInitialize();
-		writeJsonObjectToFile();
-		
+		writeJsonObjectToFile();	
 	}
-	
-	//from what it reads it will make an object out of it.
+
+	/**
+	 * from what it reads it will make an object out of it.
+	 */
     public void readJsonObjectAndInitialize(){
         
     	JSONParser parser = new JSONParser();
  
         try {
- 
+        	
+        	/*
+        	 * create the profile first
+			 * create the drivers
+			 * create the cars		
+        	 */
         	//###########################Parse##########################
             Object obj = parser.parse(new FileReader("./data.dat"));
             JSONObject jsonObject = (JSONObject) obj;
  
-            //###########################Objects########################
             //getting the teamname
             String teamName = (String) jsonObject.get("Teamname");
             
@@ -54,114 +59,19 @@ public class GameController {
             //getting highscore
             double highScore = Double.parseDouble(String.valueOf(jsonObject.get("Highscore")));
             
-          //###########################Arrays###########################
-            //loop will be implemented
-            //getting car1
-            JSONArray car1Array = (JSONArray) jsonObject.get("Car1");
-            JSONObject brandObject = (JSONObject) car1Array.get(0);
-            String brandValueOfCar1 = (String)brandObject.get("Brand");
-            System.out.println("Brand: " + brandValueOfCar1);
-            
-            String engineValueOfCar1 = (String) brandObject.get("Engine");
-            System.out.println("Engine: " + engineValueOfCar1);
-            
-            Car car1 = new Car(new Driver(), new Engine("test1", 0.0));
-            
-            //getting car2
-            JSONArray car2Array = (JSONArray) jsonObject.get("Car2");
-            brandObject = (JSONObject) car2Array.get(0);
-            String brandValueOfCar2 = (String) brandObject.get("Brand");
-            System.out.println("Brand: " + brandValueOfCar2);
-            
-            String engineValueOfCar2 = (String) brandObject.get("Engine");
-            System.out.println("Engine: " + engineValueOfCar2);
-        
-            Car car2 = new Car(new Driver(),new Engine("test2",0.0));
-            
-            List<Car> carsList = new ArrayList<Car>();
-            carsList.add(car1);
-            carsList.add(car2);
-            
-            //#########################Drivers##########################
-            List<Driver> driversList = new ArrayList<Driver>();
-            
-            String[] infos = new String[7];
-            infos[0] = "Speed";
-            infos[1] = "Salary";
-            infos[2] = "Number";
-            infos[3] = "Turning";
-            infos[4] = "Name";
-            infos[5] = "Acceleration";
-            infos[6] = "AveragePerformance";
-            
-            String driverString = "Driver";
-            JSONArray driverArray;
-        	JSONObject object;
-        	
-            for(int i = 0; i < 11; i++)
-            {
-            	driverString+=i;
-            	//System.out.println(driverString);
-            	driverArray = (JSONArray) jsonObject.get(driverString);
-            	object = (JSONObject) driverArray.get(0);
-            	
-            	//create 11 drivers
-            	Driver driver = new Driver();
-            	
-            	for(int d = 0; d < 7; d++)
-            	{
-                    String valueOfObject = (String)object.get(infos[d]);   
-                    System.out.println(infos[d]+": "+valueOfObject);
-                    
-                    switch(d)
-                    {
-                    	case 0 :int speed = Integer.parseInt(valueOfObject);
-                    			driver.setSpeed(speed);
-                    			break;
-                    	case 1 :double salary = Double.parseDouble(valueOfObject);
-                    			driver.setSalary(salary);
-                				break;
-                    	case 2 :int number = Integer.parseInt(valueOfObject);
-                    			driver.setNumber(number);
-                				break;
-                    	case 3 :int turning = Integer.parseInt(valueOfObject);
-                    			driver.setTurning(turning);
-                				break;
-                    	case 4 :driver.setName(valueOfObject);
-                				break;
-                    	case 5 :int acceleration = Integer.parseInt(valueOfObject);
-                    			driver.setAcceleration(acceleration);
-                				break;
-                    	case 6 :double averagePerformance = Double.parseDouble(valueOfObject);
-                    			driver.setAveragePerformance(averagePerformance);
-                				break;
-                		default : 
-                				break;	
-                    }
-            	}
-            	
-            	//each time it comes out of the inner loop it adds it to the list
-            	driversList.add(driver);
-            	//reset this for each loop
-            	driverString = "Driver";
-                
-            }
- 
+            //just checking
             System.out.println("Teamname: " + teamName);
             System.out.println("Budget: " + budget);
             System.out.println("Highscore: " + highScore);
            
-            //create the profile object
+            //1.
             profile = new Profile(highScore, budget, teamName);
             
-            //Set the drivers to the profile
-            profile.setDrivers(driversList);
-        	
-            //set the cars to the profile
-            profile.setCars(carsList);
-        	
-            //setDriverToCar(,);*/
+            //2.
+            initializeDriversInProfile(jsonObject);
             
+            //3.
+            initializeCarsInProfile(jsonObject);
         } 
         
         catch (Exception e)
@@ -170,9 +80,125 @@ public class GameController {
         }
     }
     
-    @SuppressWarnings("unchecked")
-	public void writeJsonObjectToFile() throws IOException {
+    /**
+     * initializes the drivers to objects in Profile
+     * @param jsonObject
+     */
+    private void initializeDriversInProfile(JSONObject jsonObject) {
+    	List<Driver> driversList = new ArrayList<Driver>();
+        
+        String[] infos = new String[7];
+        infos[0] = "Speed";
+        infos[1] = "Salary";
+        infos[2] = "Number";
+        infos[3] = "Turning";
+        infos[4] = "Name";
+        infos[5] = "Acceleration";
+        infos[6] = "AveragePerformance";
+        
+        String driverString = "Driver";
+        JSONArray driverArray;
+    	JSONObject object;
     	
+        for(int i = 0; i < 11; i++)
+        {
+        	driverString+=i;
+        	//System.out.println(driverString);
+        	driverArray = (JSONArray) jsonObject.get(driverString);
+        	object = (JSONObject) driverArray.get(0);
+        	
+        	//create 11 drivers
+        	Driver driver = new Driver();
+        	
+        	for(int d = 0; d < 7; d++)
+        	{
+                String valueOfObject = String.valueOf(object.get(infos[d]));   
+                System.out.println(infos[d]+": "+valueOfObject);
+                
+                switch(d)
+                {
+                	case 0 :int speed = Integer.parseInt(valueOfObject);
+                			driver.setSpeed(speed);
+                			break;
+                	case 1 :double salary = Double.parseDouble(valueOfObject);
+                			driver.setSalary(salary);
+            				break;
+                	case 2 :int number = Integer.parseInt(valueOfObject);
+                			driver.setNumber(number);
+            				break;
+                	case 3 :int turning = Integer.parseInt(valueOfObject);
+                			driver.setTurning(turning);
+            				break;
+                	case 4 :driver.setName(valueOfObject);
+            				break;
+                	case 5 :int acceleration = Integer.parseInt(valueOfObject);
+                			driver.setAcceleration(acceleration);
+            				break;
+                	case 6 :double averagePerformance = Double.parseDouble(valueOfObject);
+                			driver.setAveragePerformance(averagePerformance);
+            				break;
+            		default : 
+            				break;	
+                }
+        	}
+        	
+        	//each time it comes out of the inner loop it adds it to the list
+        	driversList.add(driver);
+        	//reset this for each loop
+        	driverString = "Driver";
+        }
+        
+        //Set the drivers to the profile
+        profile.setDrivers(driversList);
+	}
+
+    /**
+     * initializes the cars as objects in profile.
+     * @param jsonObject
+     */
+	private void initializeCarsInProfile(JSONObject jsonObject) 
+	{
+        //getting car1 #################################################
+        JSONArray car = (JSONArray) jsonObject.get("Car1");
+        JSONObject enginenameObject = (JSONObject) car.get(0);
+        String engineNameValue = (String)enginenameObject.get("EngineName");
+        System.out.println("Car1");
+        System.out.println("EngineName: " + engineNameValue);
+        
+        double engineValue = Double.parseDouble(String.valueOf(enginenameObject.get("EngineLevel")));
+        System.out.println("EngineLevel: " + engineValue);
+        
+        Car car1 = new Car(new Driver(), new Engine(engineNameValue, engineValue));
+        
+        //getting car2 ################################################
+        car = (JSONArray) jsonObject.get("Car2");
+        enginenameObject = (JSONObject) car.get(0);
+        engineNameValue = (String) enginenameObject.get("EngineName");
+        System.out.println("Car2");
+        System.out.println("EngineName: " + engineNameValue);
+        
+        engineValue = Double.parseDouble(String.valueOf(enginenameObject.get("EngineLevel")));
+        System.out.println("EngineLevel: " + engineValue);
+    
+        Car car2 = new Car(new Driver(), new Engine(engineNameValue, engineValue));
+        
+        //#############################################################
+        List<Car> carsList = new ArrayList<Car>();
+        carsList.add(car1);
+        carsList.add(car2);
+        
+        //set the cars to the profile
+        profile.setCars(carsList);
+	}
+
+	
+	/**
+	 * Writes everything to the data.dat file in json format
+	 * @throws IOException
+	 */
+	@SuppressWarnings("unchecked")
+	public void writeJsonObjectToFile() throws IOException 
+	{
     	//###########################User Profile#########################
     	
     	JSONObject obj = new JSONObject();
@@ -182,8 +208,6 @@ public class GameController {
 				
 		//###########################Car 1################################
 		
-		//car parts.. will adjust it to become:
-		//parts.put("Brand", profile.getBrand()); etc
 		JSONObject partsOfCar1 = new JSONObject();
 		partsOfCar1.put("EngineName", profile.getCars().get(0).getEngine().getEngineName());
 		partsOfCar1.put("EngineLevel", String.valueOf(profile.getCars().get(0).getEngine().getLevel()));
@@ -194,8 +218,8 @@ public class GameController {
 		
 		//###########################Car 2################################
 		JSONObject partsOfCar2 = new JSONObject();
-		partsOfCar2.put("Brand", profile.getCars().get(1).getEngine().getEngineName());
-		partsOfCar2.put("Engine", String.valueOf(profile.getCars().get(0).getEngine().getLevel()));
+		partsOfCar2.put("EngineName", profile.getCars().get(1).getEngine().getEngineName());
+		partsOfCar2.put("EngineLevel", String.valueOf(profile.getCars().get(0).getEngine().getLevel()));
 		
 		JSONArray car2 = new JSONArray();
 		car2.add(partsOfCar2);
@@ -208,13 +232,13 @@ public class GameController {
 		{
 			//standard upon creating a game until you add drivers
 			JSONObject info = new JSONObject();
-			info.put("Name", "A"+i);
-			info.put("Speed", "0");
-			info.put("Number", ""+i);
-			info.put("Acceleration", "0");
-			info.put("Turning", "0");
-			info.put("AveragePerformance", "0");
-			info.put("Salary", "0");
+			info.put("Name", profile.getDrivers().get(i).getName());
+			info.put("Speed", String.valueOf(profile.getDrivers().get(i).getSpeed()));
+			info.put("Number", String.valueOf(profile.getDrivers().get(i).getNumber()));
+			info.put("Acceleration", profile.getDrivers().get(i).getAcceleration());
+			info.put("Turning", profile.getDrivers().get(i).getTurning());
+			info.put("AveragePerformance", String.valueOf(profile.getDrivers().get(i).getAveragePerformance()));
+			info.put("Salary", String.valueOf(profile.getDrivers().get(i).getSalary()));
 			
 			JSONArray driver = new JSONArray();
 			driver.add(info);
@@ -229,7 +253,10 @@ public class GameController {
 		}
     }
     
-    //very important when needing to access data in the profile
+	/**
+	 * very important when needing to access data in the profile
+	 * @return
+	 */
     public Profile getProfile()
     {
     	return this.profile;
