@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import manager.controller.GameController;
 
 public class formulaApplication extends Application
 {
@@ -12,6 +13,7 @@ public class formulaApplication extends Application
 	static boolean fullscreen = true;
 	static boolean resizable = true;
 	static private String teamName = "";
+	private static GameController gamecontroller;
 	
 	// Static scene to change screen
 	static private Scene theScene;
@@ -47,7 +49,8 @@ public class formulaApplication extends Application
 	// Testing methods
 	public static String getTeamName()
 	{
-		return teamName;
+		//call method in GameController to get the teamname 
+		return gamecontroller.getTeamName();
 	}
 	public static void setTeamName(String name)
 	{
@@ -67,6 +70,9 @@ public class formulaApplication extends Application
 	// Setup for stage
 	public void start(Stage stage) throws Exception
 	{
+		//creates a gamecontroller object
+		gamecontroller = new GameController();
+		
 		Parent root = FXMLLoader.load(getClass().getResource("../view/MainMenu.fxml"));
 		theScene = new Scene(root);
 		stage.setTitle("Formula 1 Manager");

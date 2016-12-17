@@ -4,11 +4,14 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Iterator;
- 
+import java.util.List;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
+import manager.model.Car;
+import manager.model.Driver;
 import manager.model.Profile;
  
 /**
@@ -18,17 +21,21 @@ import manager.model.Profile;
  */
  
 public class GameController {
-
-	public static void main(String[] args) throws IOException {
-		//writeJsonObjectToFile();
+	
+	private Profile profile;
+	
+	//when initialized it will call the readJsonObjectAndInitialize() method to create profile according to the Json file
+	public GameController() throws IOException
+	{
 		readJsonObjectAndInitialize();
+		//writeJsonObjectToFile();
+		
 	}
 	
-	
 	//from what it reads it will make an object out of it.
-    @SuppressWarnings("unchecked")
-    public static Profile readJsonObjectAndInitialize(){
-        JSONParser parser = new JSONParser();
+    public void readJsonObjectAndInitialize(){
+        
+    	JSONParser parser = new JSONParser();
  
         try {
  
@@ -38,13 +45,13 @@ public class GameController {
  
             //###########################Objects########################
             //getting the teamname
-            String teamname = (String) jsonObject.get("Teamname");
+            String teamName = (String) jsonObject.get("Teamname");
             
             //getting the budget
-            String budget = (String) jsonObject.get("Budget");
+            double budget = Double.parseDouble((String) jsonObject.get("Budget"));
             
             //getting highscore
-            String highscore = (String) jsonObject.get("Highscore");
+            double highScore = Double.parseDouble((String) jsonObject.get("Highscore"));
             
           //###########################Arrays###########################
             //loop will be implemented
@@ -60,45 +67,65 @@ public class GameController {
             String brandValueOfCar2 = (String) brandObject.get("Brand");
             System.out.println("Brand: " + brandValueOfCar2);
             
+            String brandValueOfCar22 = (String) brandObject.get("Engine");
+            System.out.println("Engine: " + brandValueOfCar22);
+            
             //drivers. Will use a for loop the next time to optimize this
+            //if needed otherwise it will stay like this.
             //next update
-            JSONArray driver1 = (JSONArray) jsonObject.get("Driver1");
-            JSONArray driver2 = (JSONArray) jsonObject.get("Driver2");
-            JSONArray driver3 = (JSONArray) jsonObject.get("Driver3");
-            JSONArray driver4 = (JSONArray) jsonObject.get("Driver4");
-            JSONArray driver5 = (JSONArray) jsonObject.get("Driver5");
-            JSONArray driver6 = (JSONArray) jsonObject.get("Driver6");
-            JSONArray driver7 = (JSONArray) jsonObject.get("Driver7");
-            JSONArray driver8 = (JSONArray) jsonObject.get("Driver8");
-            JSONArray driver9 = (JSONArray) jsonObject.get("Driver9");
-            JSONArray driver10 = (JSONArray) jsonObject.get("Driver10");
-            JSONArray driver11 = (JSONArray) jsonObject.get("Driver11");
- 
-            System.out.println("Teamname: " + teamname);
-            System.out.println("Budget: " + budget);
-            System.out.println("Highscore: " + highscore);
             
-            //Iterator<String> iteratordriver = driver1.iterator();
+            String[] infos = new String[7];
+            infos[0] = "Speed";
+            infos[1] = "Salary";
+            infos[2] = "Number";
+            infos[3] = "Turning";
+            infos[4] = "Name";
+            infos[5] = "Accelaration";
+            infos[6] = "AveragePerformance";
             
-            //just printing out a specific driver to test to see if it is working
-            /*while (iteratordriver.hasNext()) {
+            String driverString = "Driver";
+            for(int i = 0; i < 11; i++)
+            {
+            	driverString+=i;
+            	System.out.println(driverString);
+            	JSONArray driverArray = (JSONArray) jsonObject.get(driverString);
+            	JSONObject object = (JSONObject) driverArray.get(0);
+            	
+            	for(int d = 0; d < 7; d++)
+            	{
+                    String valueOfObject = (String)object.get(infos[d]);   
+                    System.out.println(valueOfObject);
+            	}
+            	
+            	driverString = "Driver";
                 
-            	System.out.println(iteratordriver.next());
-            }*/
+            }
+ 
+            System.out.println("Teamname: " + teamName);
+            System.out.println("Budget: " + budget);
+            System.out.println("Highscore: " + highScore);
+           
+            //create the profile
+            profile = new Profile(highScore, budget, teamName);
             
-        } catch (Exception e) {
+            //Setters
+            /*setDrivers();
+        	
+            setCars();
+        	
+            setDriverToCar(,);*/
+            
+        } 
+        
+        catch (Exception e)
+        {
             e.printStackTrace();
         }
-        
-        Profile profile;
-        
-        //returns back an object of your user profile that was loaded from the json object
-		return null;
     }
     
     @SuppressWarnings("unchecked")
     //public static void writeJsonObjectToFile(Profile profile){}
-	public static void writeJsonObjectToFile() throws IOException {
+	public void writeJsonObjectToFile() throws IOException {
     	//extract the current value from the object
     	//and write it to the data.dat file
     	//for example: 
@@ -106,41 +133,48 @@ public class GameController {
     	
     	//###########################User Profile#########################
     	JSONObject obj = new JSONObject();
-		obj.put("Teamname", "");
-		obj.put("Budget", "2000000");
-		obj.put("Highscore", "");
+		obj.put("Teamname", "Test");
+		obj.put("Budget", "200.0");
+		obj.put("Highscore", "50.0");
 				
 		//###########################Car 1################################
 		//car parts.. will adjust it to become:
 		//parts.put("Brand", profile.getBrand()); etc
 		JSONObject partsOfCar1 = new JSONObject();
-		partsOfCar1 .put("Brand", "Ferrari");
-		partsOfCar1 .put("Engine", "Toyota");
+		partsOfCar1.put("Brand", "Ferrari");
+		partsOfCar1.put("Engine", "Toyota");
 		
 		JSONArray car1 = new JSONArray();
-		car1.add(partsOfCar1 );
+		car1.add(partsOfCar1);
 		obj.put("Car1", car1);
 		
 		//###########################Car 2################################
 		JSONObject partsOfCar2 = new JSONObject();
-		partsOfCar2 .put("Brand", "Ferrari");
-		partsOfCar2 .put("Engine", "mercedes");
+		partsOfCar2.put("Brand", "Ferrari");
+		partsOfCar2.put("Engine", "mercedes");
 		
 		JSONArray car2 = new JSONArray();
 		car2.add(partsOfCar2);
 		obj.put("Car2", car2);
 		
 		//###########################Drivers##############################
-		JSONArray driver = new JSONArray();
-		driver.add("Victor Wernet");
-		driver.add("1");
-		driver.add("2");
-		driver.add("3");
-		driver.add("4");
-		driver.add("5");
-		driver.add("6");
-		//put it to the obj
-		obj.put("Drivers", driver);
+		
+		//11 for eleven drivers.
+		for(int i = 0; i < 11; i++)
+		{
+			JSONObject info = new JSONObject();
+			info.put("Name", "A"+i);
+			info.put("Speed", "0");
+			info.put("Number", ""+i);
+			info.put("Accelaration", "0");
+			info.put("Turning", "0");
+			info.put("AveragePerformance", "0");
+			info.put("Salary", "0");
+			
+			JSONArray driver = new JSONArray();
+			driver.add(info);
+			obj.put("Driver"+i, driver);
+		}
 		
 		// try-with-resources statement based on post comment below :)
 		try (FileWriter file = new FileWriter("./data.dat")) {
@@ -148,6 +182,10 @@ public class GameController {
 			System.out.println("Json object successfully written to file");
 			System.out.println("\nJSON Object: " + obj+"\n");
 		}
-    	
-    }  
+    }
+    
+    public String getTeamName()
+    {
+    	return profile.getTeamName();
+    }
 }
