@@ -12,7 +12,6 @@ public class formulaApplication extends Application
 	// Static setting variables
 	static boolean fullscreen = true;
 	static boolean resizable = true;
-	static private String teamName = "";
 	private static GameController gamecontroller;
 	
 	// Static scene to change screen
@@ -23,6 +22,7 @@ public class formulaApplication extends Application
 	{
 		return fullscreen;
 	}
+	
 	public static void setFullscreen(boolean fullscreenSetting)
 	{
 		fullscreen = fullscreenSetting;
@@ -32,6 +32,7 @@ public class formulaApplication extends Application
 	{
 		return resizable;
 	}
+	
 	public static void setResizable(boolean resizableSetting)
 	{
 		resizable = resizableSetting;
@@ -41,6 +42,7 @@ public class formulaApplication extends Application
 	{
 		return theScene;
 	}
+	
 	public static void setSceneRoot(Parent parentRoot)
 	{
 		theScene.setRoot(parentRoot);
@@ -50,15 +52,16 @@ public class formulaApplication extends Application
 	public static String getTeamName()
 	{
 		//call method in GameController to get the teamname 
-		return gamecontroller.getTeamName();
+		return gamecontroller.getProfile().getTeamName();
 	}
-	public static void setTeamName(String name)
+	
+	public static void setTeamName(String teamName)
 	{
-		teamName = name;
+		gamecontroller.getProfile().setTeamName(teamName);;
 	}
-	public static int getBalance()
+	public static double getBalance()
 	{
-		return 5123456;
+		return gamecontroller.getProfile().getBudget();
 	}
 	
 	// Launch application
@@ -70,7 +73,7 @@ public class formulaApplication extends Application
 	// Setup for stage
 	public void start(Stage stage) throws Exception
 	{
-		//creates a gamecontroller object
+		//creates a gamecontroller object at the starting up of the application
 		gamecontroller = new GameController();
 		
 		Parent root = FXMLLoader.load(getClass().getResource("../view/MainMenu.fxml"));

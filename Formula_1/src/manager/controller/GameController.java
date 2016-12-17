@@ -4,7 +4,6 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import org.json.simple.JSONArray;
@@ -50,10 +49,10 @@ public class GameController {
             String teamName = (String) jsonObject.get("Teamname");
             
             //getting the budget
-            double budget = Double.parseDouble((String) jsonObject.get("Budget"));
+            double budget = Double.parseDouble(String.valueOf(jsonObject.get("Budget")));
             
             //getting highscore
-            double highScore = Double.parseDouble((String) jsonObject.get("Highscore"));
+            double highScore = Double.parseDouble(String.valueOf(jsonObject.get("Highscore")));
             
           //###########################Arrays###########################
             //loop will be implemented
@@ -66,7 +65,7 @@ public class GameController {
             String engineValueOfCar1 = (String) brandObject.get("Engine");
             System.out.println("Engine: " + engineValueOfCar1);
             
-            Car car1 = new Car(new Driver(), new Engine());
+            Car car1 = new Car(new Driver(), new Engine("test1", 0.0));
             
             //getting car2
             JSONArray car2Array = (JSONArray) jsonObject.get("Car2");
@@ -77,7 +76,7 @@ public class GameController {
             String engineValueOfCar2 = (String) brandObject.get("Engine");
             System.out.println("Engine: " + engineValueOfCar2);
         
-            Car car2 = new Car(new Driver(),new Engine());
+            Car car2 = new Car(new Driver(),new Engine("test2",0.0));
             
             List<Car> carsList = new ArrayList<Car>();
             carsList.add(car1);
@@ -172,25 +171,22 @@ public class GameController {
     }
     
     @SuppressWarnings("unchecked")
-    //public static void writeJsonObjectToFile(Profile profile){}
 	public void writeJsonObjectToFile() throws IOException {
-    	//extract the current value from the object
-    	//and write it to the data.dat file
-    	//for example: 
-    	//int budget = profile.getBudget();
     	
     	//###########################User Profile#########################
+    	
     	JSONObject obj = new JSONObject();
-		obj.put("Teamname", "Test");
-		obj.put("Budget", "200.0");
-		obj.put("Highscore", "50.0");
+		obj.put("Teamname", profile.getTeamName());
+		obj.put("Budget", String.valueOf(profile.getBudget()));
+		obj.put("Highscore", String.valueOf(profile.getHighScore()));
 				
 		//###########################Car 1################################
+		
 		//car parts.. will adjust it to become:
 		//parts.put("Brand", profile.getBrand()); etc
 		JSONObject partsOfCar1 = new JSONObject();
-		partsOfCar1.put("Brand", "Ferrari");
-		partsOfCar1.put("Engine", "Toyota");
+		partsOfCar1.put("EngineName", profile.getCars().get(0).getEngine().getEngineName());
+		partsOfCar1.put("EngineLevel", String.valueOf(profile.getCars().get(0).getEngine().getLevel()));
 		
 		JSONArray car1 = new JSONArray();
 		car1.add(partsOfCar1);
@@ -198,8 +194,8 @@ public class GameController {
 		
 		//###########################Car 2################################
 		JSONObject partsOfCar2 = new JSONObject();
-		partsOfCar2.put("Brand", "Ferrari");
-		partsOfCar2.put("Engine", "mercedes");
+		partsOfCar2.put("Brand", profile.getCars().get(1).getEngine().getEngineName());
+		partsOfCar2.put("Engine", String.valueOf(profile.getCars().get(0).getEngine().getLevel()));
 		
 		JSONArray car2 = new JSONArray();
 		car2.add(partsOfCar2);
@@ -225,7 +221,7 @@ public class GameController {
 			obj.put("Driver"+i, driver);
 		}
 		
-		// try-with-resources statement based on post comment below :)
+		// try-with-resources just in case if things go wrong
 		try (FileWriter file = new FileWriter("./data.dat")) {
 			file.write(obj.toJSONString());
 			System.out.println("Json object successfully written to file");
@@ -233,8 +229,9 @@ public class GameController {
 		}
     }
     
-    public String getTeamName()
+    //very important when needing to access data in the profile
+    public Profile getProfile()
     {
-    	return profile.getTeamName();
+    	return this.profile;
     }
 }
