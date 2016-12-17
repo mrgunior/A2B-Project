@@ -46,7 +46,7 @@ public class DashboardController extends Controller implements Initializable
 		carManagement.setOnMousePressed(event -> {
 			try
 			{
-				gotoFxmlScene(event, "MainMenu", (Stage) carManagement.getScene().getWindow());
+				gotoFxmlScene(event, "CarManagement", (Stage) carManagement.getScene().getWindow());
 			} catch (IOException e)
 			{
 				e.printStackTrace();
@@ -82,7 +82,7 @@ public class DashboardController extends Controller implements Initializable
 		standings.setOnMousePressed(event -> {
 			try
 			{
-				gotoFxmlScene(event, "MainMenu", (Stage) standings.getScene().getWindow());
+				gotoFxmlScene(event, "Standings", (Stage) standings.getScene().getWindow());
 			} catch (IOException e)
 			{
 				e.printStackTrace();

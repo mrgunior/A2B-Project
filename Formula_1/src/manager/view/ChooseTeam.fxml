@@ -41,7 +41,7 @@
             </Text>
          </children>
       </HBox>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0000004b" height="710.0" layoutX="95.0" layoutY="270.0" stroke="#00000097" strokeType="OUTSIDE" strokeWidth="3.0" width="1710.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff99" height="710.0" layoutX="95.0" layoutY="270.0" stroke="#ffffffb2" strokeType="OUTSIDE" strokeWidth="3.0" width="1710.0" />
       <HBox id="teamsContainer" layoutX="100.0" layoutY="275.0" prefHeight="700.0" prefWidth="1700.0" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="275.0">
          <children>
             <GridPane alignment="CENTER" prefHeight="700.0" prefWidth="1700.0">
