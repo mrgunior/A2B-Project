@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<!-- 
+	FXML is a XML-based user interface markup language for designing
+	controller GUIController.java
+ -->
+
+<AnchorPane id="root" fx:id="root" maxHeight="1080.0" maxWidth="1920.0" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="manager.controller.StandingsController">
+   <children>
+   
+   	  <!-- Background image and settings-->
+      <ImageView fx:id="background" fitHeight="1080.0" fitWidth="1920.0" pickOnBounds="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../../../images/menu/menuBackground.jpg" />
+         </image>
+         <viewport>
+            <Rectangle2D />
+         </viewport>
+      </ImageView>
+      <HBox alignment="CENTER" prefHeight="200.0" prefWidth="1920.0">
+         <children>
+            
+            <!-- Formula string and settings -->
+            <Text fill="#ff2800" stroke="WHITE" strokeType="OUTSIDE" text="Result" textAlignment="CENTER">
+               <font>
+                  <Font name="Haettenschweiler" size="130.0" />
+               </font>
+            </Text>
+         </children>
+      </HBox>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff99" height="730.0" layoutX="445.0" layoutY="220.0" stroke="#ffffffb2" strokeType="OUTSIDE" strokeWidth="3.0" width="1010.0" />
+      <HBox id="teamsContainer" alignment="CENTER" layoutX="100.0" layoutY="225.0" prefHeight="720.0" prefWidth="1700.0">
+         <children>
+            <GridPane gridLinesVisible="true" prefHeight="700.0" prefWidth="1000.0">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <GridPane gridLinesVisible="true">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="729.3333129882812" minWidth="10.0" prefWidth="653.3333129882812" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="220.0" minWidth="220.0" prefWidth="220.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Text fx:id="name110" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="1." GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="36.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets right="30.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text fx:id="name1101" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="2." GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="36.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets right="30.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text fx:id="name1102" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="3." GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="36.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets right="30.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text fx:id="name1103" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="4." GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="36.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets right="30.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text fx:id="name1104" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="5." GridPane.halignment="RIGHT" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="36.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets right="30.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text fx:id="name1105" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="6." GridPane.halignment="RIGHT" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="36.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets right="30.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text fx:id="name1106" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="7." GridPane.halignment="RIGHT" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="36.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets right="30.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text fx:id="name1107" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="8." GridPane.halignment="RIGHT" GridPane.rowIndex="8" GridPane.valignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="36.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets right="30.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text fx:id="name1108" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="9." GridPane.halignment="RIGHT" GridPane.rowIndex="9" GridPane.valignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="36.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets right="30.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text fx:id="name1109" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="10." GridPane.halignment="RIGHT" GridPane.rowIndex="10" GridPane.valignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="36.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets right="30.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <ImageView fx:id="logo1" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                           <image>
+                              <Image url="@../../../images/menu/ExitIcon.png" />
+                           </image></ImageView>
+                        <ImageView fx:id="logo2" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                           <image>
+                              <Image url="@../../../images/menu/ExitIcon.png" />
+                           </image></ImageView>
+                        <ImageView fx:id="logo3" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                           <image>
+                              <Image url="@../../../images/menu/ExitIcon.png" />
+                           </image></ImageView>
+                        <ImageView fx:id="logo4" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                           <image>
+                              <Image url="@../../../images/menu/ExitIcon.png" />
+                           </image></ImageView>
+                        <ImageView fx:id="logo5" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                           <image>
+                              <Image url="@../../../images/menu/ExitIcon.png" />
+                           </image></ImageView>
+                        <ImageView fx:id="logo6" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+                           <image>
+                              <Image url="@../../../images/menu/ExitIcon.png" />
+                           </image></ImageView>
+                        <ImageView fx:id="logo7" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+                           <image>
+                              <Image url="@../../../images/menu/ExitIcon.png" />
+                           </image></ImageView>
+                        <ImageView fx:id="logo8" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="CENTER">
+                           <image>
+                              <Image url="@../../../images/menu/ExitIcon.png" />
+                           </image></ImageView>
+                        <ImageView fx:id="logo9" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="9" GridPane.valignment="CENTER">
+                           <image>
+                              <Image url="@../../../images/menu/ExitIcon.png" />
+                           </image></ImageView>
+                        <ImageView fx:id="logo10" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="CENTER">
+                           <image>
+                              <Image url="@../../../images/menu/ExitIcon.png" />
+                           </image></ImageView>
+                        <Text fx:id="name1" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="N. Rosberg" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text fx:id="name2" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="L. Hamilton" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text fx:id="name3" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Driver Name" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text fx:id="name4" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Driver Name" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text fx:id="name5" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Driver Name" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text fx:id="name6" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Driver Name" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text fx:id="name7" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Driver Name" GridPane.columnIndex="2" GridPane.rowIndex="7">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text fx:id="name8" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Driver Name" GridPane.columnIndex="2" GridPane.rowIndex="8">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text fx:id="name9" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Driver Name" GridPane.columnIndex="2" GridPane.rowIndex="9">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text fx:id="name10" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Driver Name" GridPane.columnIndex="2" GridPane.rowIndex="10">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text fx:id="points1" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="+25" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets right="35.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="points2" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="+18" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets right="35.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="points3" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Points" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets right="35.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="points4" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Points" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+                           <GridPane.margin>
+                              <Insets right="35.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="points5" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Points" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
+                           <GridPane.margin>
+                              <Insets right="35.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="points6" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Points" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="6">
+                           <GridPane.margin>
+                              <Insets right="35.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="points7" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Points" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="7">
+                           <GridPane.margin>
+                              <Insets right="35.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="points8" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Points" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="8">
+                           <GridPane.margin>
+                              <Insets right="35.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="points9" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Points" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="9">
+                           <GridPane.margin>
+                              <Insets right="35.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="points10" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Points" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="10">
+                           <GridPane.margin>
+                              <Insets right="35.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="name11010" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Place" GridPane.halignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="36.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                        </Text>
+                        <Text fx:id="name110101" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Team" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="36.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="name1101011" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Driver" GridPane.columnIndex="2">
+                           <font>
+                              <Font name="System Bold" size="36.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text fx:id="name11011" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Points gained" GridPane.columnIndex="3">
+                           <font>
+                              <Font name="System Bold" size="36.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text fx:id="name110111" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Total points" GridPane.columnIndex="4">
+                           <font>
+                              <Font name="System Bold" size="36.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text fx:id="points11" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="305" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets right="35.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text fx:id="points111" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="280" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets right="35.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text fx:id="points112" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Total points" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets right="35.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text fx:id="points1121" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Total points" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets right="35.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text fx:id="points1122" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Total points" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets right="35.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text fx:id="points1123" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Total points" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="6">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets right="35.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text fx:id="points1124" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Total points" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="7">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets right="35.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text fx:id="points1125" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Total points" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="8">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets right="35.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text fx:id="points1126" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Total points" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="9">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets right="35.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text fx:id="points1127" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Total points" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="10">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets right="35.0" />
+                           </GridPane.margin>
+                        </Text>
+                     </children>
+                  </GridPane>
+               </children>
+            </GridPane>
+         </children>
+      </HBox>
+      <ImageView fx:id="back" fitHeight="75.0" fitWidth="263.0" layoutX="29.0" layoutY="1008.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0">
+         <image>
+            <Image url="@../../../images/menu/Back.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

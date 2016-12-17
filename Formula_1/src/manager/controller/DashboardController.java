@@ -40,12 +40,13 @@ public class DashboardController extends Controller implements Initializable
 		background.fitHeightProperty().bind(root.heightProperty());
 		
 		teamName.setText(formulaApplication.getTeamName());
+		balance.setText(Integer.toString(formulaApplication.getBalance()));
 
 		// Car Management Button
 		carManagement.setOnMousePressed(event -> {
 			try
 			{
-				gotoFxmlScene(event, "MainMenu", (Stage) carManagement.getScene().getWindow());
+				gotoFxmlScene(event, "CarManagement", (Stage) carManagement.getScene().getWindow());
 			} catch (IOException e)
 			{
 				e.printStackTrace();
@@ -81,7 +82,7 @@ public class DashboardController extends Controller implements Initializable
 		standings.setOnMousePressed(event -> {
 			try
 			{
-				gotoFxmlScene(event, "MainMenu", (Stage) standings.getScene().getWindow());
+				gotoFxmlScene(event, "Standings", (Stage) standings.getScene().getWindow());
 			} catch (IOException e)
 			{
 				e.printStackTrace();
@@ -122,6 +123,23 @@ public class DashboardController extends Controller implements Initializable
 		balance.setOnMousePressed(event -> {
 			String currentBalance = Integer.toString(formulaApplication.getBalance());
 			balance.setText(currentBalance);
+		});
+		
+		back.setOnMousePressed(event -> {
+			try
+			{
+				gotoFxmlScene(event, "MainMenu", (Stage) back.getScene().getWindow());
+			} catch (IOException e)
+			{
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		});
+		back.setOnMouseEntered(event -> {
+			back.setImage(new Image("file:images/menu/BackHover.png"));
+		});
+		back.setOnMouseExited(event -> {
+			back.setImage(new Image("file:images/menu/Back.png"));
 		});
 	}
 }

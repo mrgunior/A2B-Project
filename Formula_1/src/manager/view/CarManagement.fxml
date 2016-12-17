@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<!-- 
+	FXML is a XML-based user interface markup language for designing
+	controller GUIController.java
+ -->
+
+<AnchorPane id="root" fx:id="root" maxHeight="1080.0" maxWidth="1920.0" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="manager.controller.CarManagementController">
+   <children>
+   
+   	  <!-- Background image and settings-->
+      <ImageView fx:id="background" fitHeight="1080.0" fitWidth="1920.0" pickOnBounds="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../../../images/menu/menuBackground.jpg" />
+         </image>
+         <viewport>
+            <Rectangle2D />
+         </viewport>
+      </ImageView>
+      <HBox alignment="CENTER" prefHeight="200.0" prefWidth="1920.0">
+         <children>
+            
+            <!-- Formula string and settings -->
+            <Text fill="#ff2800" stroke="WHITE" strokeType="OUTSIDE" text="Car Management" textAlignment="CENTER">
+               <font>
+                  <Font name="Haettenschweiler" size="130.0" />
+               </font>
+            </Text>
+         </children>
+      </HBox>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff99" height="710.0" layoutX="95.0" layoutY="220.0" stroke="#ffffffb2" strokeType="OUTSIDE" strokeWidth="3.0" width="1710.0" />
+      <HBox id="teamsContainer" layoutX="100.0" layoutY="225.0" prefHeight="700.0" prefWidth="1700.0">
+         <children>
+            <GridPane prefHeight="700.0" prefWidth="1700.0">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="320.0" minWidth="320.0" prefWidth="320.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="375.0" minWidth="375.0" prefWidth="375.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="225.0" minWidth="225.0" prefWidth="225.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="485.0" minWidth="10.0" prefWidth="394.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Upgrade Type">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="15.0" />
+                     </GridPane.margin>
+                  </Text>
+                  <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Down-Force" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="15.0" />
+                     </GridPane.margin>
+                  </Text>
+                  <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Aerodynamics" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="15.0" />
+                     </GridPane.margin>
+                  </Text>
+                  <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Gearbox" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="15.0" />
+                     </GridPane.margin>
+                  </Text>
+                  <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Engine" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="15.0" />
+                     </GridPane.margin>
+                  </Text>
+                  <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Suspension" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="15.0" />
+                     </GridPane.margin>
+                  </Text>
+                  <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Tires" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="15.0" />
+                     </GridPane.margin>
+                  </Text>
+                  <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Weight Reduction" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="15.0" />
+                     </GridPane.margin>
+                  </Text>
+                  <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Upgrade Name" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="downNextUpgrade" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Retractable Spoiler" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="aeroNextUpgrade" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;aeroNextUpgrade&gt;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="gearboxNextUpgrade" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;gearboxNextUpgrade&gt;" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="engineNextUpgrade" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;engineNextUpgrade&gt;" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="suspNextUpgrade" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;suspNextUpgrade&gt;" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="tiresNextUpgrade" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;tiresNextUpgrade&gt;" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="weightNextUpgrade" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;weightNextUpgrade&gt;" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Next Level" GridPane.columnIndex="2">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="downNextLevel" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="1" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="aeroNextLevel" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;aeroNextLevel&gt;" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="gearboxNextLevel" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;gearboxNextLevel&gt;" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="engineNextLevel" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;engineNextLevel&gt;" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="suspNextLevel" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;suspNextLevel&gt;" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="tiresNextLevel" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;tiresNextLevel&gt;" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="weightNextLevel" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;weightNextLevel&gt;" GridPane.columnIndex="2" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Improvements" GridPane.columnIndex="3">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="downImprov" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Handling +2, Braking +2" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="aeroImprov" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;aeroImprov&gt;" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="gearboxImprov" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;gearboxImprov&gt;" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="engineImprov" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;engineImprov&gt;" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="suspImprov" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;suspImprov&gt;" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="tiresImprov" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;tiresImprov&gt;" GridPane.columnIndex="3" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="weightImprov" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;weightImprov&gt;" GridPane.columnIndex="3" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Price (mil.)" GridPane.columnIndex="4">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="downPrice" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="6.00" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="aeroPrice" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;aeroPrice&gt;" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="gearboxPrice" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;gearboxPrice&gt;" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="enginePrice" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;enginePrice&gt;" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="suspPrice" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;suspPrice&gt;" GridPane.columnIndex="4" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="tiresPrice" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;tiresPrice&gt;" GridPane.columnIndex="4" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="downPrice" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;downPrice&gt;" GridPane.columnIndex="4" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Buy" GridPane.columnIndex="5" GridPane.halignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Text>
+                  <ImageView fx:id="downUpgrade" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                  <ImageView fx:id="aeroUpgrade" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                  <ImageView fx:id="gearboxUpgrade" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                  <ImageView fx:id="engineUpgrade" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+                  <ImageView fx:id="suspUpgrade" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
+                  <ImageView fx:id="tiresUpgrade" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
+                  <ImageView fx:id="downUpgrade" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER" />
+               </children>
+            </GridPane>
+         </children>
+      </HBox>
+      <ImageView fx:id="back" fitHeight="75.0" fitWidth="263.0" layoutX="19.0" layoutY="998.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0">
+         <image>
+            <Image url="@../../../images/menu/Back.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

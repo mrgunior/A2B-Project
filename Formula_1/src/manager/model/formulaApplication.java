@@ -55,7 +55,7 @@ public class formulaApplication extends Application
 	}
 	public static int getBalance()
 	{
-		return 50000000;
+		return 5123456;
 	}
 	
 	// Launch application

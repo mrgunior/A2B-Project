@@ -11,6 +11,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import manager.model.formulaApplication;
 
 public class MainMenuController extends Controller implements Initializable
 {
@@ -62,7 +63,10 @@ public class MainMenuController extends Controller implements Initializable
 		resume.setOnMousePressed(event -> {
 			try
 			{
-				gotoFxmlScene(event, "Resume", (Stage) resume.getScene().getWindow());
+				if (!(formulaApplication.getTeamName().equals("")))
+				{
+					gotoFxmlScene(event, "Dashboard", (Stage) resume.getScene().getWindow());
+				}
 			} catch (IOException e)
 			{
 				e.printStackTrace();
