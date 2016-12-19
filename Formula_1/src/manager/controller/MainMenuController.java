@@ -32,8 +32,6 @@ public class MainMenuController extends Controller implements Initializable
 	private ImageView highscores;
 	@FXML
 	private ImageView exit;
-	@FXML
-	private Text race;
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources)
@@ -136,16 +134,5 @@ public class MainMenuController extends Controller implements Initializable
 			settings.setImage(new Image("file:images/menu/Settings.png"));
 		});
 		
-		
-		// RACE
-		race.setOnMousePressed(event -> {
-			try
-			{
-				gotoFxmlScene(event, "inRace", (Stage) race.getScene().getWindow());
-			} catch (IOException e)
-			{
-				e.printStackTrace();
-			}
-		});	
 	}	
 }

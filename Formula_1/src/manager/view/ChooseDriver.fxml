@@ -49,10 +49,45 @@
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="57.0" stroke="#141414" width="848.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="57.0" stroke="#141414" width="848.0" GridPane.rowIndex="1" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="57.0" stroke="#141414" width="848.0" GridPane.rowIndex="2" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="57.0" stroke="#141414" width="848.0" GridPane.rowIndex="3" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="57.0" stroke="#141414" width="848.0" GridPane.rowIndex="4" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="57.0" stroke="#141414" width="848.0" GridPane.rowIndex="5" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="57.0" stroke="#141414" width="848.0" GridPane.rowIndex="6" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="57.0" stroke="#141414" width="848.0" GridPane.rowIndex="7" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="57.0" stroke="#141414" width="848.0" GridPane.rowIndex="8" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="57.0" stroke="#141414" width="848.0" GridPane.rowIndex="9" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="57.0" stroke="#141414" width="848.0" GridPane.rowIndex="10" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="57.0" stroke="#141414" width="848.0" GridPane.rowIndex="11" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="57.0" stroke="#141414" width="848.0" GridPane.columnIndex="1" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="57.0" stroke="#141414" width="848.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="57.0" stroke="#141414" width="848.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="57.0" stroke="#141414" width="848.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="57.0" stroke="#141414" width="848.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="57.0" stroke="#141414" width="848.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="57.0" stroke="#141414" width="848.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="57.0" stroke="#141414" width="848.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="57.0" stroke="#141414" width="848.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="57.0" stroke="#141414" width="848.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="57.0" stroke="#141414" width="848.0" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="57.0" stroke="#141414" width="848.0" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+               </children>
             </GridPane>
          </children>
       </HBox>

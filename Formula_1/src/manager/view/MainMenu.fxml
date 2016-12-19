@@ -96,10 +96,5 @@
             </ImageView>
          </children>
       </VBox>
-      <Text fx:id="race" fill="#ff3800" layoutX="1174.0" layoutY="1023.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Go to race...">
-         <font>
-            <Font name="Haettenschweiler" size="78.0" />
-         </font>
-      </Text>
    </children>
 </AnchorPane>
