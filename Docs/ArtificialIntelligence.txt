@@ -1,0 +1,26 @@
+## -- What we want -- ##
+
+- One function/method for all 10 opposing teams
+
+- Make the AI buy drivers designated for that team automatically at the start of the season
+
+- Make the AI buy car upgrades when possible to compete with the other teams
+
+-------------------------------------------------------
+
+## -- What we want (optional) -- ##
+
+
+
+-------------------------------------------------------
+
+## -- How I want to do it -- ##
+
+- When using the function/method, give it a variable when accessing it (Team ID)
+	+ For example, updateTeam(int TeamID) {}
+
+- When starting the season, make the team automatically buy their normal drivers.
+	+ If the function is processing Mercedes and Hamilton is taken by user, select one of the non-chosen 2 drivers
+
+- When the Team of the AI has more than 25million dollars, make it buy upgrades.
+	+ For loop, while (balance>25'000'000) { Buy one of the 5 possible upgrades if ((balance - upgrade) > 0) }
