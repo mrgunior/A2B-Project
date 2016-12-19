@@ -24,3 +24,4 @@
 
 - When the Team of the AI has more than 25million dollars, make it buy upgrades.
 	+ For loop, while (balance>25'000'000) { Buy one of the 5 possible upgrades if ((balance - upgrade) > 0) }
+	^ instean of using a loop just check the balance and let them buy an upgrade after every, game. 
