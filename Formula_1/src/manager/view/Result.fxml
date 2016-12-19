@@ -477,9 +477,9 @@
             </GridPane>
          </children>
       </HBox>
-      <ImageView fx:id="back" fitHeight="75.0" fitWidth="263.0" layoutX="29.0" layoutY="1008.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0">
+      <ImageView fx:id="next" fitHeight="113.0" fitWidth="292.0" layoutX="1508.0" layoutY="982.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../images/menu/Back.png" />
+            <Image url="@../../../images/menu/Next.png" />
          </image>
       </ImageView>
    </children>

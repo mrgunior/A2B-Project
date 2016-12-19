@@ -23,7 +23,7 @@ public class ResultController extends Controller implements Initializable
 
 	// Basic Scene elements
 	@FXML
-	private ImageView back;
+	private ImageView next;
 
 	// Team Logos
 	@FXML
@@ -43,22 +43,22 @@ public class ResultController extends Controller implements Initializable
 		background.fitHeightProperty().bind(root.heightProperty());
 
 		// Click
-		back.setOnMousePressed(event -> {
+		next.setOnMousePressed(event -> {
 			try
 			{
-				gotoFxmlScene(event, "Dashboard", (Stage) back.getScene().getWindow());
+				gotoFxmlScene(event, "Dashboard", (Stage) next.getScene().getWindow());
 			} catch (IOException e)
 			{
 				e.printStackTrace();
 			}
 		});
 		// Hover on
-		back.setOnMouseEntered(event -> {
-			back.setImage(new Image("file:images/menu/BackHover.png"));
+		next.setOnMouseEntered(event -> {
+			next.setImage(new Image("file:images/menu/NextHover.png"));
 		});
 		// Hover off
-		back.setOnMouseExited(event -> {
-			back.setImage(new Image("file:images/menu/Back.png"));
+		next.setOnMouseExited(event -> {
+			next.setImage(new Image("file:images/menu/Next.png"));
 		});
 	}
 

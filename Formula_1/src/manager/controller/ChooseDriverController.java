@@ -22,9 +22,7 @@ public class ChooseDriverController extends Controller implements Initializable
 	
 	// Scene elements
 	@FXML
-	private ImageView back;
-	@FXML
-	private Text next;
+	private ImageView next;
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources)
@@ -44,11 +42,11 @@ public class ChooseDriverController extends Controller implements Initializable
 		});
 		// Hover on
 		next.setOnMouseEntered(event -> {
-			//next.setImage(new Image("file:images/menu/NextHover.png"));
+			next.setImage(new Image("file:images/menu/NextHover.png"));
 		});
 		// Hover off
 		next.setOnMouseExited(event -> {
-			//next.setImage(new Image("file:images/menu/Next.png"));
+			next.setImage(new Image("file:images/menu/Next.png"));
 		});
 		
 	}

@@ -183,10 +183,10 @@
             </GridPane>
          </children>
       </HBox>
-      <Text fx:id="next" fill="#320500" layoutX="1730.0" layoutY="1055.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Next">
-         <font>
-            <Font name="Haettenschweiler" size="65.0" />
-         </font>
-      </Text>
+      <ImageView fx:id="next" fitHeight="113.0" fitWidth="292.0" layoutX="1567.0" layoutY="991.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/menu/Next.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
