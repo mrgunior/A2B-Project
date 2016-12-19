@@ -95,31 +95,30 @@ public class RaceSimulationTemplates {
 				if (simulation.equals("Y")) {
 					System.out.println("Result of race " + i + "\n");
 				}
-				
-				int track = (((i+j)*2)%5);
-				
-				if (track == 0) {
+
+				if (i%5 == 0) {
 					System.out.print("Racing on Baku City Circuit, Azerbaijan\n");
 					testVersion(2.33);
-				} else if (track == 1) {
+				} else if (i%5 == 1) {
 					System.out.print("Racing on Spa-Francorchamps, Belgium\n");
 					testVersion(1.33);
-				} else if (track == 2) {
+				} else if (i%5 == 2) {
 					System.out.print("Racing on Silverstone, United Kingdom\n");
 					testVersion(4);
-				} else if (track == 3) {
+				} else if (i%5 == 3) {
 					System.out.print("Racing on Monza, Italy\n");
 					testVersion(2.78);
 				} else {
 					System.out.print("Racing on Monte Carlo, Monaco\n");
 					testVersion(5.32);
 				}
+
 			}
 
 			if (simulation.equals("N")) {
 				System.out.println();
 			}
-			
+
 			getSeasonResults();
 
 		}
@@ -166,7 +165,7 @@ public class RaceSimulationTemplates {
 		return scores;
 
 	}
-	
+
 	private static double[] getCarAvg() {
 
 		double[] carAvg = new double[22];
