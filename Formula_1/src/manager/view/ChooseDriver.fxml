@@ -60,33 +60,162 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="57.0" stroke="#141414" width="848.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="57.0" stroke="#141414" width="848.0" GridPane.rowIndex="1" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="57.0" stroke="#141414" width="848.0" GridPane.rowIndex="2" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="57.0" stroke="#141414" width="848.0" GridPane.rowIndex="3" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="57.0" stroke="#141414" width="848.0" GridPane.rowIndex="4" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="57.0" stroke="#141414" width="848.0" GridPane.rowIndex="5" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="57.0" stroke="#141414" width="848.0" GridPane.rowIndex="6" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="57.0" stroke="#141414" width="848.0" GridPane.rowIndex="7" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="57.0" stroke="#141414" width="848.0" GridPane.rowIndex="8" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="57.0" stroke="#141414" width="848.0" GridPane.rowIndex="9" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="57.0" stroke="#141414" width="848.0" GridPane.rowIndex="10" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="57.0" stroke="#141414" width="848.0" GridPane.rowIndex="11" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="57.0" stroke="#141414" width="848.0" GridPane.columnIndex="1" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="57.0" stroke="#141414" width="848.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="57.0" stroke="#141414" width="848.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="57.0" stroke="#141414" width="848.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="57.0" stroke="#141414" width="848.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="57.0" stroke="#141414" width="848.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="57.0" stroke="#141414" width="848.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="57.0" stroke="#141414" width="848.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="57.0" stroke="#141414" width="848.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="57.0" stroke="#141414" width="848.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="57.0" stroke="#141414" width="848.0" GridPane.columnIndex="1" GridPane.rowIndex="10" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="57.0" stroke="#141414" width="848.0" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="60.0" stroke="#141414" width="845.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="60.0" stroke="#141414" width="845.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="60.0" stroke="#141414" width="845.0" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="60.0" stroke="#141414" width="845.0" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="60.0" stroke="#141414" width="845.0" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="60.0" stroke="#141414" width="845.0" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="60.0" stroke="#141414" width="845.0" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="60.0" stroke="#141414" width="845.0" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="60.0" stroke="#141414" width="845.0" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="CENTER" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="60.0" stroke="#141414" width="845.0" GridPane.halignment="CENTER" GridPane.rowIndex="9" GridPane.valignment="CENTER" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="60.0" stroke="#141414" width="845.0" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="CENTER" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="60.0" stroke="#141414" width="845.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="60.0" stroke="#141414" width="845.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="60.0" stroke="#141414" width="845.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="60.0" stroke="#141414" width="845.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="60.0" stroke="#141414" width="845.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="60.0" stroke="#141414" width="845.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="60.0" stroke="#141414" width="845.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="60.0" stroke="#141414" width="845.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="60.0" stroke="#141414" width="845.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="CENTER" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="60.0" stroke="#141414" width="845.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="9" GridPane.valignment="CENTER" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="60.0" stroke="#141414" width="845.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="CENTER" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Fernando Alonso" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Yu Gothic Regular" size="47.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Valtteri Bottas" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Yu Gothic Regular" size="47.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Jensen Button" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Yu Gothic Regular" size="47.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Marcus Ericsson" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Yu Gothic Regular" size="47.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Romain Grosjean" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Yu Gothic Regular" size="47.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Esteban Gutierrez" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Yu Gothic Regular" size="47.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Lewis Hamilton" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Yu Gothic Regular" size="47.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Rio Haryanto" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Yu Gothic Regular" size="47.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nicolas Hulkenberg" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Yu Gothic Regular" size="47.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Daniil Kvyat" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="9" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Yu Gothic Regular" size="47.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kevin Magnussen" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Yu Gothic Regular" size="47.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Felipe Massa" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Yu Gothic Regular" size="47.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Felipe Nasr" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Yu Gothic Regular" size="47.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Jolyon Palmer" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Yu Gothic Regular" size="47.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sergio Perez" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Yu Gothic Regular" size="47.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kimi Raikkonnen" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Yu Gothic Regular" size="47.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Daniel Ricciardo" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Yu Gothic Regular" size="47.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nico Rosberg" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Yu Gothic Regular" size="47.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Carloz Sainz Jr." textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Yu Gothic Regular" size="47.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Max Verstappen" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Yu Gothic Regular" size="47.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sebastian Vettel" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="9" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Yu Gothic Regular" size="47.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pascal Wehrlein" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Yu Gothic Regular" size="47.0" />
+                     </font>
+                  </Text>
+                  <Rectangle fx:id="alonso" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="60.0" layoutX="13.0" layoutY="13.0" stroke="#141414" width="845.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <Rectangle fx:id="bottas" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="60.0" layoutX="13.0" layoutY="77.0" stroke="#141414" width="845.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                  <Rectangle fx:id="button" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="60.0" layoutX="13.0" layoutY="141.0" stroke="#141414" width="845.0" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                  <Rectangle fx:id="ericsson" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="60.0" layoutX="13.0" layoutY="205.0" stroke="#141414" width="845.0" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                  <Rectangle fx:id="grosjean" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="60.0" layoutX="13.0" layoutY="269.0" stroke="#141414" width="845.0" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+                  <Rectangle fx:id="gutierrez" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="60.0" layoutX="13.0" layoutY="333.0" stroke="#141414" width="845.0" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
+                  <Rectangle fx:id="hamilton" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="60.0" layoutX="13.0" layoutY="397.0" stroke="#141414" width="845.0" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
+                  <Rectangle fx:id="haryanto" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="60.0" layoutX="13.0" layoutY="460.0" stroke="#141414" width="845.0" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER" />
+                  <Rectangle fx:id="hulkenberg" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="60.0" layoutX="13.0" layoutY="523.0" stroke="#141414" width="845.0" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="CENTER" />
+                  <Rectangle fx:id="kvyat" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="60.0" layoutX="13.0" layoutY="523.0" stroke="#141414" width="845.0" GridPane.halignment="CENTER" GridPane.rowIndex="9" GridPane.valignment="CENTER" />
+                  <Rectangle fx:id="magnussen" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="60.0" layoutX="13.0" layoutY="586.0" stroke="#141414" width="845.0" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="CENTER" />
+                  <Rectangle fx:id="massa" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="60.0" layoutX="13.0" layoutY="649.0" stroke="#141414" width="845.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <Rectangle fx:id="nasr" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="60.0" layoutX="863.0" layoutY="13.0" stroke="#141414" width="845.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                  <Rectangle fx:id="palmer" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="60.0" layoutX="863.0" layoutY="77.0" stroke="#141414" width="845.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                  <Rectangle fx:id="perez" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="60.0" layoutX="863.0" layoutY="141.0" stroke="#141414" width="845.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                  <Rectangle fx:id="raikkonnen" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="60.0" layoutX="863.0" layoutY="205.0" stroke="#141414" width="845.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+                  <Rectangle fx:id="ricciardo" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="60.0" layoutX="863.0" layoutY="269.0" stroke="#141414" width="845.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
+                  <Rectangle fx:id="rosberg" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="60.0" layoutX="863.0" layoutY="333.0" stroke="#141414" width="845.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
+                  <Rectangle fx:id="sainz" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="60.0" layoutX="863.0" layoutY="397.0" stroke="#141414" width="845.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER" />
+                  <Rectangle fx:id="verstappen" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="60.0" layoutX="863.0" layoutY="460.0" stroke="#141414" width="845.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="CENTER" />
+                  <Rectangle fx:id="vettel" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="60.0" layoutX="863.0" layoutY="523.0" stroke="#141414" width="845.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="9" GridPane.valignment="CENTER" />
+                  <Rectangle fx:id="wehrlein" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="60.0" layoutX="863.0" layoutY="586.0" stroke="#141414" width="845.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="CENTER" />
                </children>
             </GridPane>
          </children>

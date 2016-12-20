@@ -1,5 +1,7 @@
 package manager.model;
 
+import java.util.ArrayList;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -57,8 +59,14 @@ public class formulaApplication extends Application
 	
 	public static void setTeamName(String teamName)
 	{
-		gamecontroller.getProfile().setTeamName(teamName);;
+		gamecontroller.getProfile().setTeamName(teamName);
 	}
+	
+	public static void setDrivers(ArrayList<Driver> drivers)
+	{
+		gamecontroller.getProfile().setDrivers(drivers);
+	}
+	
 	public static double getBalance()
 	{
 		return gamecontroller.getProfile().getBudget();
