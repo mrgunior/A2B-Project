@@ -6,14 +6,16 @@ public class Car {
 	private int handling;
 	private int braking;
 	private int weight;
+	private Upgrades upgrades;
 	
-	public Car(int speed, int acceleration, int handling, int braking, int weight) {
+	public Car(int speed, int acceleration, int handling, int braking, int weight, Upgrades upgrades) {
 		
 		this.setSpeed(speed);
 		this.setAcceleration(acceleration);
 		this.setHandling(handling);
 		this.setBraking(braking);
 		this.setWeight(weight);
+		this.setUpgrades(upgrades);
 		
 	}
 
@@ -55,6 +57,14 @@ public class Car {
 
 	public void setWeight(int weight) {
 		this.weight = weight;
+	}
+
+	public Upgrades getUpgrades() {
+		return upgrades;
+	}
+
+	public void setUpgrades(Upgrades upgrades) {
+		this.upgrades = upgrades;
 	}
 	
 	
