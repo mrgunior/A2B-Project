@@ -4,7 +4,20 @@ public class Driver {
 	
 	private String name;
 	private int number, speed, acceleration, turning;
-	private double averagePerformance, salary;
+	private double salary;
+
+	private double averagePerformance = (speed*acceleration*turning)/3;
+	
+	public Driver(String name, int number, int speed, int acceleration, int turning, double salary) {
+		
+		this.setAcceleration(acceleration);
+		this.setName(name);
+		this.setNumber(number);
+		this.setSalary(salary);
+		this.setSpeed(speed);
+		this.setTurning(turning);
+		
+	}
 	
 	//Getters
 	public String getName(){
@@ -54,10 +67,6 @@ public class Driver {
 	
 	public void setTurning(int turning){
 		this.turning = turning;
-	}
-	
-	public void setAveragePerformance(double averagePerformance){
-		this.averagePerformance = averagePerformance;
 	}
 	
 	public void setSalary(double salary){
