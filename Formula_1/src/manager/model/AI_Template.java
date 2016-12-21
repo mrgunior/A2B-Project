@@ -24,6 +24,51 @@ public class AI_Template {
 		Upgrades mercedesU = new Upgrades(0, 0, 0, 0, 0, 0, 0);
 		Car mercedesC = new Car(0, 0, 0, 0, 750, mercedesU);
 		Team mercedesT = new Team("Mercedes AMG Petronas", 0, 200, null, null, mercedesC);
+		
+		Upgrades mercedesU = new Upgrades(0, 0, 0, 0, 0, 0, 0);
+		Car mercedesC = new Car(0, 0, 0, 0, 750, mercedesU);
+		Team mercedesT = new Team("Mercedes AMG Petronas", 0, 200, null, null, mercedesC);
+		
+		Upgrades mercedesU = new Upgrades(0, 0, 0, 0, 0, 0, 0);
+		Car mercedesC = new Car(0, 0, 0, 0, 750, mercedesU);
+		Team mercedesT = new Team("Mercedes AMG Petronas", 0, 200, null, null, mercedesC);
+		
+		Upgrades mercedesU = new Upgrades(0, 0, 0, 0, 0, 0, 0);
+		Car mercedesC = new Car(0, 0, 0, 0, 750, mercedesU);
+		Team mercedesT = new Team("Mercedes AMG Petronas", 0, 200, null, null, mercedesC);
+		
+		Upgrades mercedesU = new Upgrades(0, 0, 0, 0, 0, 0, 0);
+		Car mercedesC = new Car(0, 0, 0, 0, 750, mercedesU);
+		Team mercedesT = new Team("Mercedes AMG Petronas", 0, 200, null, null, mercedesC);
+		
+		Upgrades mercedesU = new Upgrades(0, 0, 0, 0, 0, 0, 0);
+		Car mercedesC = new Car(0, 0, 0, 0, 750, mercedesU);
+		Team mercedesT = new Team("Mercedes AMG Petronas", 0, 200, null, null, mercedesC);
+		
+		Upgrades mercedesU = new Upgrades(0, 0, 0, 0, 0, 0, 0);
+		Car mercedesC = new Car(0, 0, 0, 0, 750, mercedesU);
+		Team mercedesT = new Team("Mercedes AMG Petronas", 0, 200, null, null, mercedesC);
+		
+		Upgrades mercedesU = new Upgrades(0, 0, 0, 0, 0, 0, 0);
+		Car mercedesC = new Car(0, 0, 0, 0, 750, mercedesU);
+		Team mercedesT = new Team("Mercedes AMG Petronas", 0, 200, null, null, mercedesC);
+		
+		Upgrades mercedesU = new Upgrades(0, 0, 0, 0, 0, 0, 0);
+		Car mercedesC = new Car(0, 0, 0, 0, 750, mercedesU);
+		Team mercedesT = new Team("Mercedes AMG Petronas", 0, 200, null, null, mercedesC);
+		
+		Upgrades mercedesU = new Upgrades(0, 0, 0, 0, 0, 0, 0);
+		Car mercedesC = new Car(0, 0, 0, 0, 750, mercedesU);
+		Team mercedesT = new Team("Mercedes AMG Petronas", 0, 200, null, null, mercedesC);
+		
+		Upgrades mercedesU = new Upgrades(0, 0, 0, 0, 0, 0, 0);
+		Car mercedesC = new Car(0, 0, 0, 0, 750, mercedesU);
+		Team mercedesT = new Team("Mercedes AMG Petronas", 0, 200, null, null, mercedesC);
+		
+		Upgrades mercedesU = new Upgrades(0, 0, 0, 0, 0, 0, 0);
+		Car mercedesC = new Car(0, 0, 0, 0, 750, mercedesU);
+		Team mercedesT = new Team("Mercedes AMG Petronas", 0, 200, null, null, mercedesC);
+		
 		teams.add(mercedesT);
 		
 		return teams;
