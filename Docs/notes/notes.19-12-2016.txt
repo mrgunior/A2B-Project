@@ -1,0 +1,27 @@
+Date: 19-12-2016
+Secretary: Rowdy Chotkan
+
+Attendance:
+Bas (TA)
+Rowdy
+Mika
+Thijmen
+
+--------------------------------------------------------
+Focus:
+1.	Samenvoegen GUI + Simulatie ? werkend spel
+Next race, overzicht resultaten per race.
+Onderschat samenvoegen niet. Prioriteit
+Simulatie: Van hardcoden afstappen.
+Zorg dat het op iedere pc werkt.
+Upgrades geen musthave
+Na vakantie: Moet functioneren (Basis functies), hierna: uitbreiding.
+2.	Verslag: binnenkort op blackboard criteria.
+
+Uitbreidingen:
+-markt van drivers e.d.
+-drivers luren: simpel: iedereen altijd aangesloten bij team ? luren van ander team.
+	Anders: drivers niet bij team ? huren
+
+
+
