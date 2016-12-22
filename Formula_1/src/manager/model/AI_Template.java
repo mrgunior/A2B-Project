@@ -25,51 +25,62 @@ public class AI_Template {
 		Car mercedesC = new Car(0, 0, 0, 0, 750, mercedesU);
 		Team mercedesT = new Team("Mercedes AMG Petronas", 0, 200, null, null, mercedesC);
 		
-		Upgrades mercedesU = new Upgrades(0, 0, 0, 0, 0, 0, 0);
-		Car mercedesC = new Car(0, 0, 0, 0, 750, mercedesU);
-		Team mercedesT = new Team("Mercedes AMG Petronas", 0, 200, null, null, mercedesC);
+		Upgrades redBullU = new Upgrades(0, 0, 0, 0, 0, 0, 0);
+		Car redBullC = new Car(0, 0, 0, 0, 750, redBullU);
+		Team redBullT = new Team("Red Bull Racing", 0, 200, null, null, redBullC);
 		
-		Upgrades mercedesU = new Upgrades(0, 0, 0, 0, 0, 0, 0);
-		Car mercedesC = new Car(0, 0, 0, 0, 750, mercedesU);
-		Team mercedesT = new Team("Mercedes AMG Petronas", 0, 200, null, null, mercedesC);
+		Upgrades ferrariU = new Upgrades(0, 0, 0, 0, 0, 0, 0);
+		Car ferrariC = new Car(0, 0, 0, 0, 750, ferrariU);
+		Team ferrariT = new Team("Scuderia Ferrari", 0, 200, null, null, ferrariC);
 		
-		Upgrades mercedesU = new Upgrades(0, 0, 0, 0, 0, 0, 0);
-		Car mercedesC = new Car(0, 0, 0, 0, 750, mercedesU);
-		Team mercedesT = new Team("Mercedes AMG Petronas", 0, 200, null, null, mercedesC);
+		Upgrades saharaU = new Upgrades(0, 0, 0, 0, 0, 0, 0);
+		Car saharaC = new Car(0, 0, 0, 0, 750, saharaU);
+		Team saharaT = new Team("Sahara Force India F1", 0, 200, null, null, saharaC);
 		
-		Upgrades mercedesU = new Upgrades(0, 0, 0, 0, 0, 0, 0);
-		Car mercedesC = new Car(0, 0, 0, 0, 750, mercedesU);
-		Team mercedesT = new Team("Mercedes AMG Petronas", 0, 200, null, null, mercedesC);
+		Upgrades martiniU = new Upgrades(0, 0, 0, 0, 0, 0, 0);
+		Car martiniC = new Car(0, 0, 0, 0, 750, martiniU);
+		Team martiniT = new Team("Williams Martini Racing", 0, 200, null, null, martiniC);
 		
-		Upgrades mercedesU = new Upgrades(0, 0, 0, 0, 0, 0, 0);
-		Car mercedesC = new Car(0, 0, 0, 0, 750, mercedesU);
-		Team mercedesT = new Team("Mercedes AMG Petronas", 0, 200, null, null, mercedesC);
+		Upgrades mcLarenU = new Upgrades(0, 0, 0, 0, 0, 0, 0);
+		Car mcLarenC = new Car(0, 0, 0, 0, 750, mcLarenU);
+		Team mcLarenT = new Team("McLaren Honda", 0, 200, null, null, mcLarenC);
 		
-		Upgrades mercedesU = new Upgrades(0, 0, 0, 0, 0, 0, 0);
-		Car mercedesC = new Car(0, 0, 0, 0, 750, mercedesU);
-		Team mercedesT = new Team("Mercedes AMG Petronas", 0, 200, null, null, mercedesC);
+		Upgrades torroRossoU = new Upgrades(0, 0, 0, 0, 0, 0, 0);
+		Car torroRossoC = new Car(0, 0, 0, 0, 750, torroRossoU);
+		Team torroRossoT = new Team("Scuderia Toro Rosso", 0, 200, null, null, torroRossoC);
 		
-		Upgrades mercedesU = new Upgrades(0, 0, 0, 0, 0, 0, 0);
-		Car mercedesC = new Car(0, 0, 0, 0, 750, mercedesU);
-		Team mercedesT = new Team("Mercedes AMG Petronas", 0, 200, null, null, mercedesC);
+		Upgrades haasU = new Upgrades(0, 0, 0, 0, 0, 0, 0);
+		Car haasC = new Car(0, 0, 0, 0, 750, haasU);
+		Team haasT = new Team("Haas F1 Team", 0, 200, null, null, haasC);
 		
-		Upgrades mercedesU = new Upgrades(0, 0, 0, 0, 0, 0, 0);
-		Car mercedesC = new Car(0, 0, 0, 0, 750, mercedesU);
-		Team mercedesT = new Team("Mercedes AMG Petronas", 0, 200, null, null, mercedesC);
+		Upgrades renaultU = new Upgrades(0, 0, 0, 0, 0, 0, 0);
+		Car renaultC = new Car(0, 0, 0, 0, 750, renaultU);
+		Team renaultT = new Team("Renault", 0, 200, null, null, renaultC);
 		
-		Upgrades mercedesU = new Upgrades(0, 0, 0, 0, 0, 0, 0);
-		Car mercedesC = new Car(0, 0, 0, 0, 750, mercedesU);
-		Team mercedesT = new Team("Mercedes AMG Petronas", 0, 200, null, null, mercedesC);
+		Upgrades sauberU = new Upgrades(0, 0, 0, 0, 0, 0, 0);
+		Car sauberC = new Car(0, 0, 0, 0, 750, sauberU);
+		Team sauberT = new Team("Sauber F1 Team", 0, 200, null, null, sauberC);
 		
-		Upgrades mercedesU = new Upgrades(0, 0, 0, 0, 0, 0, 0);
-		Car mercedesC = new Car(0, 0, 0, 0, 750, mercedesU);
-		Team mercedesT = new Team("Mercedes AMG Petronas", 0, 200, null, null, mercedesC);
+		Upgrades manorU = new Upgrades(0, 0, 0, 0, 0, 0, 0);
+		Car manorC = new Car(0, 0, 0, 0, 750, manorU);
+		Team manorT = new Team("Manor Racing", 0, 200, null, null, manorC);
 		
-		Upgrades mercedesU = new Upgrades(0, 0, 0, 0, 0, 0, 0);
-		Car mercedesC = new Car(0, 0, 0, 0, 750, mercedesU);
-		Team mercedesT = new Team("Mercedes AMG Petronas", 0, 200, null, null, mercedesC);
+		Upgrades customU = new Upgrades(0, 0, 0, 0, 0, 0, 0);
+		Car customC = new Car(0, 0, 0, 0, 750, customU);
+		Team customT = new Team("Custom team name here", 0, 200, null, null, customC);
 		
 		teams.add(mercedesT);
+		teams.add(redBullT);
+		teams.add(ferrariT);
+		teams.add(saharaT);
+		teams.add(martiniT);
+		teams.add(mcLarenT);
+		teams.add(torroRossoT);
+		teams.add(haasT);
+		teams.add(renaultT);
+		teams.add(sauberT);
+		teams.add(manorT);
+		teams.add(customT);
 		
 		return teams;
 		

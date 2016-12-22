@@ -106,10 +106,10 @@ public class GameController {
         	driverArray = (JSONArray) jsonObject.get(driverString);
         	object = (JSONObject) driverArray.get(0);
         	
-        	//create 11 drivers
-        	Driver driver = new Driver();
+        	//TODO create 11 drivers
+        	Driver driver = new Driver(driverString, i, i, i, i, i);
         	
-        	for(int d = 0; d < 7; d++)
+        	for(int d = 0; d < 6; d++)
         	{
                 String valueOfObject = String.valueOf(object.get(infos[d]));   
                 System.out.println(infos[d]+": "+valueOfObject);
@@ -132,9 +132,6 @@ public class GameController {
             				break;
                 	case 5 :int acceleration = Integer.parseInt(valueOfObject);
                 			driver.setAcceleration(acceleration);
-            				break;
-                	case 6 :double averagePerformance = Double.parseDouble(valueOfObject);
-                			driver.setAveragePerformance(averagePerformance);
             				break;
             		default : 
             				break;	
@@ -167,7 +164,8 @@ public class GameController {
         double engineValue = Double.parseDouble(String.valueOf(enginenameObject.get("EngineLevel")));
         System.out.println("EngineLevel: " + engineValue);
         
-        Car car1 = new Car(new Driver(), new Engine(engineNameValue, engineValue));
+        //TODO fill in values for car1
+        Car car1 = new Car(0, 0, 0, 0, 0, null);
         
         //getting car2 ################################################
         car = (JSONArray) jsonObject.get("Car2");
@@ -179,7 +177,8 @@ public class GameController {
         engineValue = Double.parseDouble(String.valueOf(enginenameObject.get("EngineLevel")));
         System.out.println("EngineLevel: " + engineValue);
     
-        Car car2 = new Car(new Driver(), new Engine(engineNameValue, engineValue));
+        //TODO fill in values for car2
+        Car car2 = new Car(0, 0, 0, 0, 0, null);
         
         //#############################################################
         List<Car> carsList = new ArrayList<Car>();
@@ -208,8 +207,10 @@ public class GameController {
 		//###########################Car 1################################
 		
 		JSONObject partsOfCar1 = new JSONObject();
-		partsOfCar1.put("EngineName", profile.getCars().get(0).getEngine().getEngineName());
-		partsOfCar1.put("EngineLevel", String.valueOf(profile.getCars().get(0).getEngine().getLevel()));
+		
+		//TODO Remove this or change, no more Engine object
+//		partsOfCar1.put("EngineName", profile.getCars().get(0).getEngine().getEngineName());
+//		partsOfCar1.put("EngineLevel", String.valueOf(profile.getCars().get(0).getEngine().getLevel()));
 		
 		JSONArray car1 = new JSONArray();
 		car1.add(partsOfCar1);
@@ -217,8 +218,10 @@ public class GameController {
 		
 		//###########################Car 2################################
 		JSONObject partsOfCar2 = new JSONObject();
-		partsOfCar2.put("EngineName", profile.getCars().get(1).getEngine().getEngineName());
-		partsOfCar2.put("EngineLevel", String.valueOf(profile.getCars().get(0).getEngine().getLevel()));
+		
+		//TODO Remove this or change, no more Engine object
+//		partsOfCar2.put("EngineName", profile.getCars().get(1).getEngine().getEngineName());
+//		partsOfCar2.put("EngineLevel", String.valueOf(profile.getCars().get(0).getEngine().getLevel()));
 		
 		JSONArray car2 = new JSONArray();
 		car2.add(partsOfCar2);
