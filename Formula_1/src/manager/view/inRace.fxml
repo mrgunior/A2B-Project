@@ -3,132 +3,134 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="manager.controller.RaceController">
    <children>
-      <ImageView fitHeight="1080.0" fitWidth="1920.0">
+      <ImageView>
          <image>
             <Image url="@../../../images/inRace/racetrack.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="ferrari1" fitHeight="90.0" fitWidth="36.0" layoutX="200.0" layoutY="116.0" rotate="-90.0">
+      <ImageView fx:id="ferrari1" fitHeight="35.0" fitWidth="100.0" layoutX="200.0" layoutY="148.0">
          <image>
             <Image url="@../../../images/inRace/carModels/ferrari.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="ferrari2" fitHeight="90.0" fitWidth="36.0" layoutX="200.0" layoutY="151.0" rotate="-90.0">
+      <ImageView fx:id="ferrari2" fitHeight="35.0" fitWidth="100.0" layoutX="200.0" layoutY="183.0">
          <image>
             <Image url="@../../../images/inRace/carModels/ferrari.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="forceIndia1" fitHeight="90.0" fitWidth="36.0" layoutX="200.0" layoutY="186.0" rotate="-90.0">
+      <ImageView fx:id="forceIndia1" fitHeight="35.0" fitWidth="100.0" layoutX="200.0" layoutY="218.0">
          <image>
             <Image url="@../../../images/inRace/carModels/forceIndia.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="forceIndia2" fitHeight="90.0" fitWidth="36.0" layoutX="200.0" layoutY="221.0" rotate="-90.0">
+      <ImageView fx:id="forceIndia2" fitHeight="35.0" fitWidth="100.0" layoutX="200.0" layoutY="253.0">
          <image>
             <Image url="@../../../images/inRace/carModels/forceIndia.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="haas1" fitHeight="90.0" fitWidth="36.0" layoutX="200.0" layoutY="256.0" rotate="-90.0">
+      <ImageView fx:id="haas1" fitHeight="35.0" fitWidth="100.0" layoutX="200.0" layoutY="288.0">
          <image>
             <Image url="@../../../images/inRace/carModels/haas.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="haas2" fitHeight="90.0" fitWidth="36.0" layoutX="200.0" layoutY="291.0" rotate="-90.0">
+      <ImageView fx:id="haas2" fitHeight="35.0" fitWidth="100.0" layoutX="200.0" layoutY="323.0">
          <image>
             <Image url="@../../../images/inRace/carModels/haas.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="honda1" fitHeight="90.0" fitWidth="36.0" layoutX="200.0" layoutY="326.0" rotate="-90.0">
+      <ImageView fx:id="honda1" fitHeight="35.0" fitWidth="100.0" layoutX="200.0" layoutY="358.0">
          <image>
             <Image url="@../../../images/inRace/carModels/honda.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="honda2" fitHeight="90.0" fitWidth="36.0" layoutX="200.0" layoutY="361.0" rotate="-90.0">
+      <ImageView fx:id="honda2" fitHeight="35.0" fitWidth="100.0" layoutX="200.0" layoutY="393.0">
          <image>
             <Image url="@../../../images/inRace/carModels/honda.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="manor1" fitHeight="90.0" fitWidth="36.0" layoutX="200.0" layoutY="396.0" rotate="-90.0">
+      <ImageView fx:id="manor1" fitHeight="35.0" fitWidth="100.0" layoutX="200.0" layoutY="428.0">
          <image>
             <Image url="@../../../images/inRace/carModels/manor.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="manor2" fitHeight="90.0" fitWidth="36.0" layoutX="200.0" layoutY="431.0" rotate="-90.0">
+      <ImageView fx:id="manor2" fitHeight="35.0" fitWidth="100.0" layoutX="200.0" layoutY="463.0">
          <image>
             <Image url="@../../../images/inRace/carModels/manor.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="martini1" fitHeight="90.0" fitWidth="36.0" layoutX="200.0" layoutY="466.0" rotate="-90.0">
+      <ImageView fx:id="williams1" fitHeight="35.0" fitWidth="100.0" layoutX="200.0" layoutY="498.0">
          <image>
             <Image url="@../../../images/inRace/carModels/martini.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="martini2" fitHeight="90.0" fitWidth="36.0" layoutX="200.0" layoutY="501.0" rotate="-90.0">
+      <ImageView fx:id="williams2" fitHeight="35.0" fitWidth="100.0" layoutX="200.0" layoutY="533.0">
          <image>
             <Image url="@../../../images/inRace/carModels/martini.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="mercedes1" fitHeight="90.0" fitWidth="36.0" layoutX="200.0" layoutY="536.0" rotate="-90.0">
+      <ImageView fx:id="mercedes1" fitHeight="35.0" fitWidth="100.0" layoutX="200.0" layoutY="568.0">
          <image>
             <Image url="@../../../images/inRace/carModels/mercedes.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="mercedes2" fitHeight="90.0" fitWidth="36.0" layoutX="200.0" layoutY="571.0" rotate="-90.0">
+      <ImageView fx:id="mercedes2" fitHeight="35.0" fitWidth="100.0" layoutX="200.0" layoutY="603.0">
          <image>
             <Image url="@../../../images/inRace/carModels/mercedes.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="redbull1" fitHeight="90.0" fitWidth="36.0" layoutX="200.0" layoutY="606.0" rotate="-90.0">
+      <ImageView fx:id="redBull1" fitHeight="35.0" fitWidth="100.0" layoutX="200.0" layoutY="638.0">
          <image>
             <Image url="@../../../images/inRace/carModels/redbull.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="redbull2" fitHeight="90.0" fitWidth="36.0" layoutX="200.0" layoutY="641.0" rotate="-90.0">
+      <ImageView fx:id="redBull2" fitHeight="35.0" fitWidth="100.0" layoutX="200.0" layoutY="673.0">
          <image>
             <Image url="@../../../images/inRace/carModels/redbull.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="renault1" fitHeight="90.0" fitWidth="36.0" layoutX="200.0" layoutY="676.0" rotate="-90.0">
+      <ImageView fx:id="renault1" fitHeight="35.0" fitWidth="100.0" layoutX="200.0" layoutY="708.0">
          <image>
             <Image url="@../../../images/inRace/carModels/renault.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="renault2" fitHeight="90.0" fitWidth="36.0" layoutX="200.0" layoutY="711.0" rotate="-90.0">
+      <ImageView fx:id="renault2" fitHeight="35.0" fitWidth="100.0" layoutX="200.0" layoutY="743.0">
          <image>
             <Image url="@../../../images/inRace/carModels/renault.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="torroRosso1" fitHeight="90.0" fitWidth="36.0" layoutX="200.0" layoutY="746.0" rotate="-90.0">
+      <ImageView fx:id="toroRosso1" fitHeight="35.0" fitWidth="100.0" layoutX="200.0" layoutY="778.0">
          <image>
             <Image url="@../../../images/inRace/carModels/torroRosso.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="torroRosso2" fitHeight="90.0" fitWidth="36.0" layoutX="200.0" layoutY="781.0" rotate="-90.0">
+      <ImageView fx:id="toroRosso2" fitHeight="35.0" fitWidth="100.0" layoutX="200.0" layoutY="813.0">
          <image>
             <Image url="@../../../images/inRace/carModels/torroRosso.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="unknown1" fitHeight="90.0" fitWidth="36.0" layoutX="200.0" layoutY="816.0" rotate="-90.0">
+      <ImageView fx:id="sauber1" fitHeight="35.0" fitWidth="100.0" layoutX="200.0" layoutY="848.0">
          <image>
-            <Image url="@../../../images/inRace/carModels/unknown.png" />
+            <Image url="@../../../images/inRace/carModels/sauber.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="unknown2" fitHeight="90.0" fitWidth="36.0" layoutX="200.0" layoutY="849.0" rotate="-90.0">
+      <ImageView fx:id="sauber2" fitHeight="35.0" fitWidth="100.0" layoutX="200.0" layoutY="881.0">
          <image>
-            <Image url="@../../../images/inRace/carModels/unknown.png" />
+            <Image url="@../../../images/inRace/carModels/sauber.png" />
          </image>
       </ImageView>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="85.0" layoutX="750.0" layoutY="14.0" stroke="BLACK" strokeType="INSIDE" width="420.0" />
-      <Text fill="#2ce16b" layoutX="761.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="02:13:45:104" wrappingWidth="412.03131103515625">
+      <Rectangle fx:id="test" arcHeight="5.0" arcWidth="5.0" height="85.0" layoutX="750.0" layoutY="14.0" stroke="BLACK" strokeType="INSIDE" width="420.0" />
+      <Text fx:id="testDriveMethod" fill="#2ce16b" layoutX="761.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="02:13:45:104" wrappingWidth="412.03131103515625">
          <font>
             <Font size="74.0" />
          </font>
       </Text>
+      <Line fx:id="finish" endY="1080.0" layoutX="1656.0" strokeWidth="0.0" />
    </children>
 </AnchorPane>
