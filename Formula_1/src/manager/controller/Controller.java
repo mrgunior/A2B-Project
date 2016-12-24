@@ -1,6 +1,9 @@
 package manager.controller;
 
 import java.io.IOException;
+import java.net.URL;
+
+import org.omg.CORBA.PUBLIC_MEMBER;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,6 +14,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import jdk.internal.dynalink.beans.StaticClass;
 import manager.model.formulaApplication;
 
 public class Controller
@@ -18,12 +22,12 @@ public class Controller
 	public void gotoFxmlScene(MouseEvent event, String name, Stage stage) throws IOException
 	{
 		Parent root = FXMLLoader.load(this.getClass().getResource("../view/" + name + ".fxml"));
-		Scene scene = formulaApplication.getScene();
+		
 		formulaApplication.setSceneRoot(root);
 		//Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		
 		stage.setFullScreen(formulaApplication.isFullscreen());
-		stage.setScene(scene);
+		//stage.setScene(scene);
 		stage.setFullScreen(formulaApplication.isFullscreen());
 		stage.setResizable(formulaApplication.isResizable());
 		stage.show();

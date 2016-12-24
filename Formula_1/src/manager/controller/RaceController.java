@@ -2,18 +2,21 @@ package manager.controller;
 
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.ResourceBundle;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import com.sun.prism.Image;
+import com.sun.org.apache.xerces.internal.util.EntityResolver2Wrapper;
 
+import javafx.animation.AnimationTimer;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Line;
 import javafx.scene.text.Text;
-import manager.model.Car;
+import javafx.util.converter.TimeStringConverter;
+import manager.model.Stopwatch;
 
 public class RaceController extends Controller implements Initializable
 {
@@ -25,99 +28,157 @@ public class RaceController extends Controller implements Initializable
 	// Line for the finish
 	@FXML
 	private Line finish;
+	// Time
+	@FXML
+	private Text time;
 	// All the cars in arraylist
-	private ArrayList<ImageView> cars = new ArrayList<ImageView>();
+	private ArrayList<GUICar> cars = new ArrayList<GUICar>();
+
 	// Variables for GUI
-	private double	finishX;
-	private double	startCarsX	= 200;
-	private long	timerSpeed	= 50;
+	private static double	finishX;
+	private static double	startCarsX		= 50;
+	private static long		timerSpeed		= 25;
+	private static boolean	timerRunning	= true;
+	private String			timeString		= "";
+
+	private int				frames	= 1;
+	private static double	fps		= 60;
+
+	/**
+	 * Getter for finish X value
+	 * @return double - x value of finish
+	 */
+	public static double getFinishX()
+	{
+		return finishX;
+	}
+
+	/**
+	 * Getter for x value of starting position cars
+	 * @return double - x value of starting position cars
+	 */
+	public static double getStartCarsX()
+	{
+		return startCarsX;
+	}
+
+	/**
+	 * Getter for FPS
+	 * @return double - FPS
+	 */
+	public static double getFps()
+	{
+		return fps;
+	}
+
+	/**
+	 * Setter for timer running, timer will stop if the timer is set to false
+	 * @param timerRunning
+	 */
+	public static void setTimerRunning(boolean timerRunning)
+	{
+		RaceController.timerRunning = timerRunning;
+	}
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources)
 	{
-		// Setup variables, arraylist and GUI car position
+		// Setup variables, car arraylist and GUI car position
 		finishX = finish.getLayoutX();
-		addCars();
-		for (ImageView car : cars)
+		addCars(1200000);
+		for (GUICar car : cars)
 		{
-			car.setLayoutX(startCarsX);
+			car.setX(startCarsX);
 		}
 
-		// Actions that will occur every gametick
-		TimerTask gameTickActions = new TimerTask()
+		// Setup stopwatch
+		Stopwatch stopwatch = new Stopwatch();
+
+		// Everything inside handle(){...} will be run every tick
+		AnimationTimer animationTimer = new AnimationTimer()
 		{
 			@Override
-			public void run()
+			public void handle(long now)
 			{
-				for (ImageView car : cars)
+				// Move all cars
+				for (GUICar car : cars)
 				{
-					driveCar(car, calculateSpeed(10000));
+					car.moveCar();
+				}
+				// Reset frames to prevent integer overflow
+				if (frames < 10000000)
+				{
+					frames++;
+				}
+				else
+				{
+					frames = 0;
+				}
+				// Calculate fps, important for calculating the speed of the cars
+				fps = frames / (stopwatch.elapsedTime() / 1000);
+				// Stop updating timer if the timer has been turned off
+				if (timerRunning)
+				{
+					timeString = stopwatch.elapsedTimeString();
+					time.setText(timeString);
 				}
 			}
 		};
 
-		// Create the timer that will run the gametick tasks every <timerSpeed> milliseconds
-		Timer timer = new Timer();
-		timer.schedule(gameTickActions, 1, timerSpeed);
-	}
-
-	/**
-	 * Will move the given car in the positive x with speed given. Will stop if
-	 * the car is at or over the finish line
-	 * 
-	 * @param car - The car that should be moved
-	 * @param speed - The relative x value the car should move
-	 */
-	private void driveCar(ImageView car, double speed)
-	{
-		if (car.getLayoutX() < (finishX - car.getFitWidth()))
-		{
-			car.setLayoutX(car.getLayoutX() + speed * 2);
-		}
-	}
-
-	/**
-	 * Calculate the x value that the car should be moving every gameTick
-	 * 
-	 * @param time - The goal time of the car in milliseconds.
-	 * @return The x value the car should move every gameTick to reach the
-	 *         finish at the right time
-	 */
-	private double calculateSpeed(double time)
-	{
-		// 100 is the width of the car
-		double distance = finishX - startCarsX - 100;
-		double speed = (distance / (time / timerSpeed)) / 2;
-
-		return speed;
+		// Start the animationTimer, everything in the handle(){...} will be run every tick
+		animationTimer.start();
 	}
 
 	/**
 	 * Add all cars to the cars arrayList
 	 */
-	private void addCars()
+	private void addCars(double time)
 	{
-		cars.add(ferrari1);
-		cars.add(ferrari2);
-		cars.add(forceIndia1);
-		cars.add(forceIndia2);
-		cars.add(haas1);
-		cars.add(haas2);
-		cars.add(honda1);
-		cars.add(honda2);
-		cars.add(manor1);
-		cars.add(manor2);
-		cars.add(williams1);
-		cars.add(williams2);
-		cars.add(mercedes1);
-		cars.add(mercedes2);
-		cars.add(redBull1);
-		cars.add(redBull2);
-		cars.add(renault1);
-		cars.add(renault2);
-		cars.add(toroRosso1);
-		cars.add(toroRosso2);
-		cars.add(sauber1);
-		cars.add(sauber2);
+		//TODO Get a better way to add all the cars to the arraylist...
+		GUICar car1 = new GUICar(ferrari1, time);
+		GUICar car2 = new GUICar(ferrari2, time);
+		GUICar car3 = new GUICar(forceIndia1, time);
+		GUICar car4 = new GUICar(forceIndia2, time);
+		GUICar car5 = new GUICar(haas1, time);
+		GUICar car6 = new GUICar(haas2, time);
+		GUICar car7 = new GUICar(honda1, time);
+		GUICar car8 = new GUICar(honda2, time);
+		GUICar car9 = new GUICar(manor1, time);
+		GUICar car10 = new GUICar(manor2, time);
+		GUICar car11 = new GUICar(williams1, time);
+		GUICar car12 = new GUICar(williams2, time);
+		GUICar car13 = new GUICar(mercedes1, time);
+		GUICar car14 = new GUICar(mercedes2, time);
+		GUICar car15 = new GUICar(redBull1, time);
+		GUICar car16 = new GUICar(redBull2, time);
+		GUICar car17 = new GUICar(renault1, time);
+		GUICar car18 = new GUICar(renault2, time);
+		GUICar car19 = new GUICar(toroRosso1, time);
+		GUICar car20 = new GUICar(toroRosso2, time);
+		GUICar car21 = new GUICar(sauber1, time);
+		GUICar car22 = new GUICar(sauber2, time);
+
+		cars.add(car1);
+		cars.add(car2);
+		cars.add(car3);
+		cars.add(car4);
+		cars.add(car5);
+		cars.add(car6);
+		cars.add(car7);
+		cars.add(car8);
+		cars.add(car9);
+		cars.add(car10);
+		cars.add(car11);
+		cars.add(car12);
+		cars.add(car13);
+		cars.add(car14);
+		cars.add(car15);
+		cars.add(car16);
+		cars.add(car17);
+		cars.add(car18);
+		cars.add(car19);
+		cars.add(car20);
+		cars.add(car21);
+		cars.add(car22);
 	}
 }

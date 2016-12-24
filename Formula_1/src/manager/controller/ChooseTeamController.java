@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import javafx.animation.AnimationTimer;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.Image;
@@ -49,73 +50,84 @@ public class ChooseTeamController extends Controller implements Initializable
 		background.fitHeightProperty().bind(root.heightProperty());
 		currentlySelected = mercedes;
 		
-		// Click
-		next.setOnMousePressed(event -> {
-			try
+		AnimationTimer animationTimer = new AnimationTimer()
+		{
+			@Override
+			public void handle(long now)
 			{
-				if (!(currentlySelectedString.equals("")))
-				{
-					formulaApplication.setTeamName(currentlySelectedString);
-					gotoFxmlScene(event, "ChooseDriver", (Stage) next.getScene().getWindow());
-				}
+				// Click
+				next.setOnMousePressed(event -> {
+					try
+					{
+						if (!(currentlySelectedString.equals("")))
+						{
+							formulaApplication.setTeamName(currentlySelectedString);
+							gotoFxmlScene(event, "ChooseDriver", (Stage) next.getScene().getWindow());
+						}
 
-			} catch (IOException e)
-			{
-				e.printStackTrace();
+					} catch (IOException e)
+					{
+						e.printStackTrace();
+					}
+				});
+				// Hover on
+				next.setOnMouseEntered(event -> {
+					next.setImage(new Image("file:images/menu/NextHover.png"));
+				});
+				// Hover off
+				next.setOnMouseExited(event -> {
+					next.setImage(new Image("file:images/menu/Next.png"));
+				});
+				
+				// Team Choices
+				mercedes.setOnMousePressed(event -> {
+					teamClicked(mercedes, "Mercedes AMG Petronas");
+				});
+				redBull.setOnMousePressed(event -> {
+					teamClicked(redBull, "Red Bull Racing");
+				});
+				ferrari.setOnMousePressed(event -> {
+					teamClicked(ferrari, "Scuderia Ferrari");
+				});
+				forceIndia.setOnMousePressed(event -> {
+					teamClicked(forceIndia, "Sahara Force India F1");
+				});
+				williams.setOnMousePressed(event -> {
+					teamClicked(williams, "Williams Martini Racing");
+				});
+				mcLaren.setOnMousePressed(event -> {
+					teamClicked(mcLaren, "McLaren Honda");
+				});
+				toroRosso.setOnMousePressed(event -> {
+					teamClicked(toroRosso, "Scuderia Toro Rosso");
+				});
+				haas.setOnMousePressed(event -> {
+					teamClicked(haas, "Haas F1 Team");
+				});
+				renault.setOnMousePressed(event -> {
+					teamClicked(renault, "Renault");
+				});
+				sauber.setOnMousePressed(event -> {
+					teamClicked(sauber, "Sauber F1 Team");
+				});
+				manor.setOnMousePressed(event -> {
+					teamClicked(manor, "Manor Racing");
+				});	
 			}
-		});
-		// Hover on
-		next.setOnMouseEntered(event -> {
-			next.setImage(new Image("file:images/menu/NextHover.png"));
-		});
-		// Hover off
-		next.setOnMouseExited(event -> {
-			next.setImage(new Image("file:images/menu/Next.png"));
-		});
+		};
 		
-		// Team Choices
-		mercedes.setOnMousePressed(event -> {
-			teamClicked(mercedes, "Mercedes AMG Petronas");
-		});
-		redBull.setOnMousePressed(event -> {
-			teamClicked(redBull, "Red Bull Racing");
-		});
-		ferrari.setOnMousePressed(event -> {
-			teamClicked(ferrari, "Scuderia Ferrari");
-		});
-		forceIndia.setOnMousePressed(event -> {
-			teamClicked(forceIndia, "Sahara Force India F1");
-		});
-		williams.setOnMousePressed(event -> {
-			teamClicked(williams, "Williams Martini Racing");
-		});
-		mcLaren.setOnMousePressed(event -> {
-			teamClicked(mcLaren, "McLaren Honda");
-		});
-		toroRosso.setOnMousePressed(event -> {
-			teamClicked(toroRosso, "Scuderia Toro Rosso");
-		});
-		haas.setOnMousePressed(event -> {
-			teamClicked(haas, "Haas F1 Team");
-		});
-		renault.setOnMousePressed(event -> {
-			teamClicked(renault, "Renault");
-		});
-		sauber.setOnMousePressed(event -> {
-			teamClicked(sauber, "Sauber F1 Team");
-		});
-		manor.setOnMousePressed(event -> {
-			teamClicked(manor, "Manor Racing");
-		});	
+		animationTimer.start();
 	}
 	
 	private void teamClicked(Rectangle teamButton, String teamName)
 	{
 		if (!(currentlySelected.equals(null)))
 		{
-			currentlySelected.setFill(teamNotSelectedColor);
+			//currentlySelected.setFill(teamNotSelectedColor);
+			currentlySelected.setStyle("-fx-fill: rgba(0,0,0,0);");
 		}
-		teamButton.setFill(teamSelectedColor);
+		//teamButton.setFill(teamSelectedColor);
+		teamButton.setStyle("-fx-fill: rgba(0,0,0,0.26);");
 		currentlySelected = teamButton;
 		currentlySelectedString = teamName;
 	}
