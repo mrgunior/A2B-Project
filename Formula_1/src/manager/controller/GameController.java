@@ -100,14 +100,15 @@ public class GameController {
         JSONArray driverArray;
     	JSONObject object;
     	
-        for(int i = 0; i < 11; i++)
+        for(int i = 0; i < 2; i++)
         {
         	driverString+=i;
+        	
         	//System.out.println(driverString);
         	driverArray = (JSONArray) jsonObject.get(driverString);
         	object = (JSONObject) driverArray.get(0);
         	
-        	//create 11 drivers
+        	//create 2 drivers
         	Driver driver = new Driver();
         	
         	for(int d = 0; d < 7; d++)
@@ -227,8 +228,8 @@ public class GameController {
 		
 		//###########################Drivers##############################
 		
-		//11 for eleven drivers.
-		for(int i = 0; i < 11; i++)
+		//2 for eleven drivers.
+		for(int i = 0; i < 2; i++)
 		{
 			//standard upon creating a game until you add drivers
 			JSONObject info = new JSONObject();
@@ -245,8 +246,9 @@ public class GameController {
 			obj.put("Driver"+i, driver);
 		}
 		
-		// try-with-resources just in case if things go wrong
-		try (FileWriter file = new FileWriter("./data.dat")) {
+		//try-with-resources just in case if things go wrong
+		try (FileWriter file = new FileWriter("./data.dat")) 
+		{
 			file.write(obj.toJSONString());
 			System.out.println("Json object successfully written to file");
 			System.out.println("\nJSON Object: " + obj+"\n");
