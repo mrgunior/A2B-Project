@@ -1,5 +1,7 @@
 package manager.controller;
  
+import java.util.Timer;
+import java.util.TimerTask;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -24,14 +26,46 @@ import manager.model.Profile;
 public class GameController {
 	
 	private Profile profile;
+	private Timer timer;
 	
-	//when initialized it will call the readJsonObjectAndInitialize() method to create profile according to the Json file
+	/**
+	 * when initialized it will call the readJsonObjectAndInitialize() method to create profile according to the Json file
+	 * @throws IOException
+	 */
 	public GameController() throws IOException
 	{
 		readJsonObjectAndInitialize();
-		writeJsonObjectToFile();	
+		timer = new Timer();
+		
+		autoSave();
+		
+		//writeJsonObjectToFile();	
 	}
 
+	/**
+	 * Timer to autosave the game after every 2 min
+	 */
+	public void autoSave()
+	{
+		timer.scheduleAtFixedRate(new TimerTask() 
+		{
+			@Override
+			public void run() 
+			{
+				try 
+				{
+					writeJsonObjectToFile();
+				} 
+				
+				catch (IOException e) 
+				{
+					e.printStackTrace();
+				}
+			}
+			
+		}, 2*60*1000, 2*60*1000);
+	}
+	
 	/**
 	 * from what it reads it will make an object out of it.
 	 */

@@ -55,6 +55,7 @@ public class ChooseTeamController extends Controller implements Initializable
 			{
 				if (!(currentlySelectedString.equals("")))
 				{
+					//where team is being set in the Profile object
 					formulaApplication.setTeamName(currentlySelectedString);
 					gotoFxmlScene(event, "ChooseDriver", (Stage) next.getScene().getWindow());
 				}
