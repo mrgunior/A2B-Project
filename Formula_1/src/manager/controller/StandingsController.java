@@ -1,5 +1,6 @@
 package manager.controller;
 
+import manager.model.formulaApplication;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -42,13 +43,17 @@ public class StandingsController extends Controller implements Initializable
 	{
 		background.fitWidthProperty().bind(root.widthProperty());
 		background.fitHeightProperty().bind(root.heightProperty());
+		
+		name1.setText(formulaApplication.getTeamName());
 
 		// Click
 		back.setOnMousePressed(event -> {
 			try
 			{
 				gotoFxmlScene(event, "Dashboard", (Stage) back.getScene().getWindow());
-			} catch (IOException e)
+			} 
+			
+			catch (IOException e)
 			{
 				e.printStackTrace();
 			}

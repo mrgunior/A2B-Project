@@ -169,6 +169,9 @@ public class GameController {
         double engineValue = Double.parseDouble(String.valueOf(enginenameObject.get("EngineLevel")));
         System.out.println("EngineLevel: " + engineValue);
         
+        
+        
+        //NEED FIXING
         Car car1 = new Car(new Driver(), new Engine(engineNameValue, engineValue));
         
         //getting car2 ################################################
@@ -181,9 +184,12 @@ public class GameController {
         engineValue = Double.parseDouble(String.valueOf(enginenameObject.get("EngineLevel")));
         System.out.println("EngineLevel: " + engineValue);
     
+        
+        
+        //NEED FIXING
         Car car2 = new Car(new Driver(), new Engine(engineNameValue, engineValue));
         
-        //#############################################################
+        //Creating an ArrayList########################################
         List<Car> carsList = new ArrayList<Car>();
         carsList.add(car1);
         carsList.add(car2);
