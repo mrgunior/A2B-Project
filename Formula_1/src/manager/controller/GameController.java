@@ -18,9 +18,9 @@ import manager.model.Engine;
 import manager.model.Profile;
  
 /**
- * @author Victor
- * @author nichelle
- * version 0.4
+ * @author Victor Wernet
+ * @author Nichelle Fleming
+ * version 0.6
  */
  
 public class GameController {
@@ -30,6 +30,7 @@ public class GameController {
 	
 	/**
 	 * when initialized it will call the readJsonObjectAndInitialize() method to create profile according to the Json file
+	 * it will create a timer object and call the autoSave() method to save the game every 2 min
 	 * @throws IOException
 	 */
 	public GameController() throws IOException
@@ -38,8 +39,6 @@ public class GameController {
 		timer = new Timer();
 		
 		autoSave();
-		
-		//writeJsonObjectToFile();	
 	}
 
 	/**
@@ -63,7 +62,7 @@ public class GameController {
 				}
 			}
 			
-		}, 2*60*1000, 2*60*1000);
+		}, 2*60*1000, 2*60*1000); //in 1 minute you have 60 seconds and each second is 1000 milliseconds and times that by 2 gives you 2 minutes.
 	}
 	
 	/**
@@ -305,7 +304,7 @@ public class GameController {
 	}
 	
 	/**
-	 * very important when needing to access data in the profile
+	 * very important when needed to access data in the profile object
 	 * @return
 	 */
     public Profile getProfile()
