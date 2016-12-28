@@ -1,6 +1,5 @@
 package manager.controller;
 
-import manager.model.formulaApplication;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -38,13 +37,20 @@ public class StandingsController extends Controller implements Initializable
 	private Text points1, points2, points3, points4, points5, points6, points7, points8, points9, points10, points11, points12, points13, points14,
 			points15, points16, points17, points18, points19, points20, points21, points22;
 
+	public void createListOnScreen(String[] top22)
+	{
+		
+	}
+	
 	@Override
 	public void initialize(URL location, ResourceBundle resources)
 	{
 		background.fitWidthProperty().bind(root.widthProperty());
 		background.fitHeightProperty().bind(root.heightProperty());
 		
-		name1.setText(formulaApplication.getTeamName());
+		//createListOnScreen();
+		
+		//name1.setText(GameController.getTeamName());
 
 		// Click
 		back.setOnMousePressed(event -> {

@@ -262,6 +262,15 @@ public class GameController {
     }
     
 	/**
+	 * 
+	 * @return
+	 */
+	public String[] top22()
+	{
+		return new String[10];
+	}
+	
+	/**
 	 * very important when needing to access data in the profile
 	 * @return
 	 */
