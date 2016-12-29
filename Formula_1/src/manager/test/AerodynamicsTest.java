@@ -25,7 +25,7 @@ public class AerodynamicsTest
 	@Test
 	public void testPriceAtCertainLevelWhenItIsOne()
 	{
-		double methodReturn = Aerodynamics.priceAtCertainLevel(-1);
+		double methodReturn = Aerodynamics.priceAtCertainLevel(1);
 		assertEquals(5.0, methodReturn, 0.001);
 	}
 	

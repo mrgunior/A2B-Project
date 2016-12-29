@@ -65,8 +65,4 @@ public class Profile
 	public void setCars(List<Car> cars){
 		this.cars = cars;
 	}
-	
-	public void setDriverToCar(Driver driver, Car car){
-		car.setDriverToCar(driver);
-	}
 }

@@ -205,7 +205,7 @@ public class GameController {
         
         
         //NEED FIXING
-        Car car1 = new Car(new Driver(), new Engine(engineNameValue, engineValue));
+        Car car1 = new Car(new Engine(engineNameValue, engineValue));
         
         //getting car2 ################################################
         car = (JSONArray) jsonObject.get("Car2");
@@ -220,7 +220,7 @@ public class GameController {
         
         
         //NEED FIXING
-        Car car2 = new Car(new Driver(), new Engine(engineNameValue, engineValue));
+        Car car2 = new Car(new Engine(engineNameValue, engineValue));
         
         //Creating an ArrayList########################################
         List<Car> carsList = new ArrayList<Car>();
