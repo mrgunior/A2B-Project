@@ -6,7 +6,7 @@ public class Aerodynamics
 	public static double priceAtCertainLevel(double level)
 	{
 		//standard level = 0
-		if(level==1)
+		if(level==1 || level<=0)
 		{
 			return 5.0;
 		}

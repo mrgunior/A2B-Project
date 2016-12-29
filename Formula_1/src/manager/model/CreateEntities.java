@@ -5,6 +5,7 @@ package manager.model;
  */
 public class CreateEntities 
 {
+	
 	/**
 	 * 
 	 */
@@ -22,7 +23,7 @@ public class CreateEntities
 	}
 	
 	/**
-	 * Randomly creates teams with the remaining cars, drivers...
+	 * Randomly creates teams with the remaining cars, drivers (after drivers has been selected this method should be called)
 	 */
 	public void createTeams()
 	{
