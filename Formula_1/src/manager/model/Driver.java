@@ -28,6 +28,7 @@ public class Driver {
 	}
 	
 	public double getAveragePerformance(){
+		
 		return this.averagePerformance;
 	}
 	
