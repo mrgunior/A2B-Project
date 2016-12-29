@@ -59,6 +59,7 @@ public class formulaApplication extends Application
 	{
 		gamecontroller.getProfile().setTeamName(teamName);;
 	}
+	
 	public static double getBalance()
 	{
 		return gamecontroller.getProfile().getBudget();

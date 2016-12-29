@@ -117,6 +117,7 @@ public class DashboardController extends Controller implements Initializable
 			// carManagement.setImage(new
 			// Image("file:images/menu/BackHover.png"));
 		});
+		
 		race.setOnMouseExited(event -> {
 			// carManagement.setImage(new Image("file:images/menu/Back.png"));
 		});
