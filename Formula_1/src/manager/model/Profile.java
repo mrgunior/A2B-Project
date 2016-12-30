@@ -48,10 +48,17 @@ public class Profile
 	//Since the budget gets updated when the player uses it for upgrades or
 	//Wins cash, we will use true for subtractions and false for addition.
 	public void setBudget(double amount, boolean state){
-		//if state is true subtract amount from budget 
+		
+		//if state is true subtract amount from budget
+		if(amount<0)
+		{
+			amount = -1*amount;
+		}
+		
 		if(state){
 			this.budget -= amount;
 		}
+		
 		//else state is false and amount gets added to budget
 		else{
 			this.budget += amount;
