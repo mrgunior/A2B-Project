@@ -1,0 +1,25 @@
+package manager.test;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import manager.model.Car;
+import manager.model.Engine;
+import manager.model.Upgrades;
+
+public class CarTest 
+{
+	private Car car;
+	private Engine engine1, engine2;
+	
+	@Before
+	public void setUp()
+	{
+		engine1 = new Engine("TestEngine1", 1.0);
+		engine2 = new Engine("TestEngine2", 1.0);
+		
+		car = new Car(0,0,0,0,0,new Upgrades(0,0,0,0,0,0,0));
+	}
+}

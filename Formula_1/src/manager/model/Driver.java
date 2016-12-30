@@ -16,7 +16,6 @@ public class Driver {
 		this.setSalary(salary);
 		this.setSpeed(speed);
 		this.setTurning(turning);
-		
 	}
 	
 	//Getters

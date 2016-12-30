@@ -190,26 +190,29 @@ public class GameController {
 	{
         //getting car1 #################################################
         JSONArray car = (JSONArray) jsonObject.get("Car1");
+        /*
         JSONObject enginenameObject = (JSONObject) car.get(0);
         String engineNameValue = (String)enginenameObject.get("EngineName");
         System.out.println("Car1");
         System.out.println("EngineName: " + engineNameValue);
         
         double engineValue = Double.parseDouble(String.valueOf(enginenameObject.get("EngineLevel")));
-        System.out.println("EngineLevel: " + engineValue);
+        System.out.println("EngineLevel: " + engineValue);*/
         
         //TODO fill in values for car1
         Car car1 = new Car(0, 0, 0, 0, 0, null);
         
         //getting car2 ################################################
         car = (JSONArray) jsonObject.get("Car2");
+        
+        /* engine object doesn't exist anymore..
         enginenameObject = (JSONObject) car.get(0);
         engineNameValue = (String) enginenameObject.get("EngineName");
         System.out.println("Car2");
         System.out.println("EngineName: " + engineNameValue);
         
         engineValue = Double.parseDouble(String.valueOf(enginenameObject.get("EngineLevel")));
-        System.out.println("EngineLevel: " + engineValue);
+        System.out.println("EngineLevel: " + engineValue);*/
     
         //TODO fill in values for car2
         Car car2 = new Car(0, 0, 0, 0, 0, null);
@@ -242,20 +245,12 @@ public class GameController {
 		
 		JSONObject partsOfCar1 = new JSONObject();
 		
-		//TODO Remove this or change, no more Engine object
-//		partsOfCar1.put("EngineName", profile.getCars().get(0).getEngine().getEngineName());
-//		partsOfCar1.put("EngineLevel", String.valueOf(profile.getCars().get(0).getEngine().getLevel()));
-		
 		JSONArray car1 = new JSONArray();
 		car1.add(partsOfCar1);
 		obj.put("Car1", car1);
 		
 		//###########################Car 2################################
 		JSONObject partsOfCar2 = new JSONObject();
-		
-		//TODO Remove this or change, no more Engine object
-//		partsOfCar2.put("EngineName", profile.getCars().get(1).getEngine().getEngineName());
-//		partsOfCar2.put("EngineLevel", String.valueOf(profile.getCars().get(0).getEngine().getLevel()));
 		
 		JSONArray car2 = new JSONArray();
 		car2.add(partsOfCar2);

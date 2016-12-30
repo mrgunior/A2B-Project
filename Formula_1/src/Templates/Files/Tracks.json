@@ -1,10 +1,7 @@
-Baku City Circuit:
-    Difficulty: 2.33
-Spa-Francorchamps:
-    Difficulty: 1.33
-Silverstone:
-    Difficulty: 4.00
-Monza:
-    Difficulty: 2.78
-Monte Carlo:
-    Difficulty: 5.32
+{
+    "Baku City Circuit":"2.33",
+    "Spa-Francorchamps":"1.33",
+    "Silverstone":"4.00",
+    "Monza":"2.78",
+    "Monte Carlo":"5.32"
+}
