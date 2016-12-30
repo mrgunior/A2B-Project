@@ -1,5 +1,7 @@
 package manager.controller;
  
+import java.util.Timer;
+import java.util.TimerTask;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -15,22 +17,53 @@ import manager.model.Driver;
 import manager.model.Profile;
  
 /**
- * @author Victor
- * @author nichelle
- * version 0.4
+ * @author Victor Wernet
+ * @author Nichelle Fleming
+ * version 0.6
  */
  
 public class GameController {
 	
 	private Profile profile;
+	private Timer timer;
 	
-	//when initialized it will call the readJsonObjectAndInitialize() method to create profile according to the Json file
+	/**
+	 * when initialized it will call the readJsonObjectAndInitialize() method to create profile according to the Json file
+	 * it will create a timer object and call the autoSave() method to save the game every 2 min
+	 * @throws IOException
+	 */
 	public GameController() throws IOException
 	{
 		readJsonObjectAndInitialize();
-		writeJsonObjectToFile();	
+		timer = new Timer();
+		
+		autoSave();
 	}
 
+	/**
+	 * Timer to autosave the game after every 2 min
+	 */
+	public void autoSave()
+	{
+		timer.scheduleAtFixedRate(new TimerTask() 
+		{
+			@Override
+			public void run() 
+			{
+				try 
+				{
+					writeJsonObjectToFile();
+				} 
+				
+				catch (IOException e) 
+				{
+					e.printStackTrace();
+				}
+			}
+			
+		}, 2*60*1000, 2*60*1000); //in 1 minute you have 60 seconds and each second is 1000 milliseconds and times that by 2 gives you 2 minutes.
+	}
+	
 	/**
 	 * from what it reads it will make an object out of it.
 	 */
@@ -99,9 +132,10 @@ public class GameController {
         JSONArray driverArray;
     	JSONObject object;
     	
-        for(int i = 0; i < 11; i++)
+        for(int i = 0; i < 2; i++)
         {
         	driverString+=i;
+        	
         	//System.out.println(driverString);
         	driverArray = (JSONArray) jsonObject.get(driverString);
         	object = (JSONObject) driverArray.get(0);
@@ -180,7 +214,7 @@ public class GameController {
         //TODO fill in values for car2
         Car car2 = new Car(0, 0, 0, 0, 0, null);
         
-        //#############################################################
+        //Creating an ArrayList########################################
         List<Car> carsList = new ArrayList<Car>();
         carsList.add(car1);
         carsList.add(car2);
@@ -229,8 +263,8 @@ public class GameController {
 		
 		//###########################Drivers##############################
 		
-		//11 for eleven drivers.
-		for(int i = 0; i < 11; i++)
+		//2 for eleven drivers.
+		for(int i = 0; i < 2; i++)
 		{
 			//standard upon creating a game until you add drivers
 			JSONObject info = new JSONObject();
@@ -247,8 +281,9 @@ public class GameController {
 			obj.put("Driver"+i, driver);
 		}
 		
-		// try-with-resources just in case if things go wrong
-		try (FileWriter file = new FileWriter("./data.dat")) {
+		//try-with-resources just in case if things go wrong
+		try (FileWriter file = new FileWriter("./data.dat")) 
+		{
 			file.write(obj.toJSONString());
 			System.out.println("Json object successfully written to file");
 			System.out.println("\nJSON Object: " + obj+"\n");
@@ -256,7 +291,16 @@ public class GameController {
     }
     
 	/**
-	 * very important when needing to access data in the profile
+	 * 
+	 * @return
+	 */
+	public String[] top22()
+	{
+		return new String[10];
+	}
+	
+	/**
+	 * very important when needed to access data in the profile object
 	 * @return
 	 */
     public Profile getProfile()

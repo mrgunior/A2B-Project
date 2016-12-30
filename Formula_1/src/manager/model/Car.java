@@ -1,6 +1,7 @@
 package manager.model;
 
 public class Car {
+	
 	private int speed;
 	private int acceleration;
 	private int handling;
@@ -65,8 +66,5 @@ public class Car {
 
 	public void setUpgrades(Upgrades upgrades) {
 		this.upgrades = upgrades;
-	}
-	
-	
-	
+	}	
 }

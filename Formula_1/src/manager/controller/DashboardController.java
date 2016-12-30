@@ -118,7 +118,7 @@ public class DashboardController extends Controller implements Initializable
 				race.setOnMouseExited(event -> {
 					// carManagement.setImage(new Image("file:images/menu/Back.png"));
 				});
-
+			
 				// Team Text
 				teamName.setOnMousePressed(event -> {
 					String currentTeamName = formulaApplication.getTeamName();
@@ -147,6 +147,7 @@ public class DashboardController extends Controller implements Initializable
 				back.setOnMouseExited(event -> {
 					back.setImage(new Image("file:images/menu/Back.png"));
 				});
+
 			}
 		};
 		
