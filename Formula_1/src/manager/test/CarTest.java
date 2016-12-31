@@ -12,27 +12,91 @@ import manager.model.Upgrades;
 public class CarTest 
 {
 	private Car car;
-	private Engine engine1, engine2;
+	private Upgrades upgrades;
 	
 	@Before
 	public void setUp()
-	{
-		engine1 = new Engine("TestEngine1", 1.0);
-		engine2 = new Engine("TestEngine2", 1.0);
-		
-		car = new Car(0,0,0,0,0,new Upgrades(0,0,0,0,0,0,0));
+	{		
+		upgrades = new Upgrades(0,0,0,0,0,0,0);
+		car = new Car(0,0,0,0,0, upgrades);
 	}
 	
 	@Test
-	public void testConstructorCar()
+	public void testGetSpeed()
 	{
-		assertEquals(car.getEngine(), engine1);
+		assertEquals("Speed is equal to speed in Constructor", car.getSpeed(),0);
 	}
 	
 	@Test
-	public void testSetEngine()
+	public void testSetSpeed()
 	{
-		car.setEngine(engine2);
-		assertEquals(car.getEngine(), engine2);
+		car.setSpeed(1);
+		assertEquals("Speed updated correctly via setSpeed()", car.getSpeed(),1);
+	}
+	
+	@Test
+	public void testGetAcceleration()
+	{
+		assertEquals("Acceleration is equal to acceleration in Constructor", car.getAcceleration(),0);
+	}
+	
+	@Test
+	public void testSetAcceleration()
+	{
+		car.setAcceleration(1);
+		assertEquals("Speed updated correctly via setSpeed()", car.getAcceleration(),1);
+	}
+	
+	@Test
+	public void testGetHandling()
+	{
+		assertEquals("Handling is equal to handling in Constructor", car.getHandling(),0);
+	}
+	
+	@Test
+	public void testSetHandling()
+	{
+		car.setHandling(1);
+		assertEquals("Handling updated correctly via setHandling()", car.getHandling(),1);
+	}
+	
+	@Test
+	public void testGetBraking()
+	{
+		assertEquals("Braking is equal to braking in Constructor", car.getBraking(),0);
+	}
+	
+	@Test
+	public void testSetBraking()
+	{
+		car.setBraking(1);
+		assertEquals("Braking updated correctly via setBraking()", car.getBraking(),1);
+	}
+	
+	@Test
+	public void testGetWeight()
+	{
+		assertEquals("Weight is equal to weight in Constructor", car.getWeight(),0);
+	}
+	
+	@Test
+	public void testSetWeight()
+	{
+		car.setWeight(1);
+		assertEquals("Weight updated correctly via setWeight()", car.getWeight(),1);
+	}
+	
+	@Test
+	public void testGetUpgrades()
+	{
+		assertTrue("Objects that are equal should be the same", upgrades.equals(car.getUpgrades()));
+	}
+	
+	@Test
+	public void testSetUpgrades()
+	{
+		Upgrades upgradesTest = new Upgrades(1,1,1,1,0,0,0);
+		car.setUpgrades(upgradesTest);
+		assertTrue("Objects that are equal should be the same", upgradesTest.equals(car.getUpgrades()));
 	}
 }

@@ -17,7 +17,6 @@ public class DriverTest
 	@Before
 	public void setUp() throws Exception 
 	{
-		driver = new Driver();
 		name = "Victor Wernet";
 		number = 33;
 		speed = 80;
@@ -26,55 +25,62 @@ public class DriverTest
 		averagePerformance = 78.6;
 		salary = 3.0; //3 mil
 		
-		//just updating the fields of the driver object.
-		driver.setName(name);
-		driver.setNumber(number);
-		driver.setSpeed(speed);
-		driver.setAcceleration(acceleration);
-		driver.setTurning(turning);
-		driver.setAveragePerformance(averagePerformance);
-		driver.setSalary(salary);
+		driver = new Driver(name, number, speed, acceleration, turning, salary);
 	}
 	
 	@Test
 	public void testGetName()
 	{
-		assertEquals(driver.getName(), name);
+		assertEquals("driver name has been initialized correctly via constructor", driver.getName(), name);
+	}
+	
+	@Test
+	public void testSetName()
+	{
+		driver.setName("Bob");
+		assertTrue("driver name has been set correctly via setName()", driver.getName().equals("Bob"));
 	}
 	
 	@Test
 	public void testGetNumber()
 	{
-		assertEquals(driver.getNumber(), number);
+		assertEquals("driver name has been initialized correctly via constructor", driver.getNumber(), number);
+	}
+	
+	@Test
+	public void testSetNumber()
+	{
+		driver.setNumber(1);
+		assertTrue("driver number has been set correctly via setNumber()", driver.getName().equals("Bob"));
 	}
 	
 	@Test
 	public void testGetSpeed()
 	{
-		assertEquals(driver.getSpeed(), speed);
+		assertEquals("", driver.getSpeed(), speed);
 	}
 	
 	@Test
 	public void testGetAcceleration()
 	{
-		assertEquals(driver.getAcceleration(), acceleration);
+		assertEquals("", driver.getAcceleration(), acceleration);
 	}
 	
 	@Test
 	public void testGetTurning()
 	{
-		assertEquals(driver.getTurning(), turning);
+		assertEquals("", driver.getTurning(), turning);
 	}
 	
 	@Test
 	public void testGetAveragePerformance()
 	{
-		assertEquals(driver.getAveragePerformance(), averagePerformance, 0.001);
+		assertEquals("", driver.getAveragePerformance(), averagePerformance, 0.001);
 	}
 	
 	@Test
 	public void testGetSalary()
 	{
-		assertEquals(driver.getSalary(), salary, 0.001);
+		assertEquals("", driver.getSalary(), salary, 0.001);
 	}
 }

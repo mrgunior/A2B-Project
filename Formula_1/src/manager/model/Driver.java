@@ -10,12 +10,12 @@ public class Driver {
 	
 	public Driver(String name, int number, int speed, int acceleration, int turning, double salary) {
 		
-		this.setAcceleration(acceleration);
-		this.setName(name);
-		this.setNumber(number);
-		this.setSalary(salary);
-		this.setSpeed(speed);
-		this.setTurning(turning);
+		this.name = name;
+		this.number = number;
+		this.speed = speed;
+		this.acceleration = acceleration;
+		this.turning = turning;
+		this.salary = salary;
 	}
 	
 	//Getters

@@ -11,17 +11,16 @@ public class Car {
 	
 	public Car(int speed, int acceleration, int handling, int braking, int weight, Upgrades upgrades) {
 		
-		this.setSpeed(speed);
-		this.setAcceleration(acceleration);
-		this.setHandling(handling);
-		this.setBraking(braking);
-		this.setWeight(weight);
-		this.setUpgrades(upgrades);
-		
+		this.speed = speed;
+		this.acceleration = acceleration;
+		this.handling = handling;
+		this.braking = braking;
+		this.weight = weight;
+		this.upgrades = upgrades;
 	}
 
 	public int getSpeed() {
-		return speed;
+		return this.speed;
 	}
 
 	public void setSpeed(int speed) {
@@ -29,7 +28,7 @@ public class Car {
 	}
 
 	public int getAcceleration() {
-		return acceleration;
+		return this.acceleration;
 	}
 
 	public void setAcceleration(int acceleration) {
@@ -37,7 +36,7 @@ public class Car {
 	}
 
 	public int getHandling() {
-		return handling;
+		return this.handling;
 	}
 
 	public void setHandling(int handling) {
@@ -45,7 +44,7 @@ public class Car {
 	}
 
 	public int getBraking() {
-		return braking;
+		return this.braking;
 	}
 
 	public void setBraking(int braking) {
@@ -53,7 +52,7 @@ public class Car {
 	}
 
 	public int getWeight() {
-		return weight;
+		return this.weight;
 	}
 
 	public void setWeight(int weight) {
@@ -61,7 +60,7 @@ public class Car {
 	}
 
 	public Upgrades getUpgrades() {
-		return upgrades;
+		return this.upgrades;
 	}
 
 	public void setUpgrades(Upgrades upgrades) {

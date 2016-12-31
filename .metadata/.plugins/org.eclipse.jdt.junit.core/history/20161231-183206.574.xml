@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="CarTest" project="Formula_1" tests="6" started="6" failures="0" errors="0" ignored="0">
+  <testsuite name="manager.test.CarTest" time="0.001">
+    <testcase name="testGetSpeed" classname="manager.test.CarTest" time="0.0"/>
+    <testcase name="testGetAcceleration" classname="manager.test.CarTest" time="0.0"/>
+    <testcase name="testSetHandling" classname="manager.test.CarTest" time="0.0"/>
+    <testcase name="testGetHandling" classname="manager.test.CarTest" time="0.0"/>
+    <testcase name="testSetAcceleration" classname="manager.test.CarTest" time="0.0"/>
+    <testcase name="testSetSpeed" classname="manager.test.CarTest" time="0.001"/>
+  </testsuite>
+</testrun>
