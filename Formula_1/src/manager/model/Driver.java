@@ -5,8 +5,7 @@ public class Driver {
 	private String name;
 	private int number, speed, acceleration, turning;
 	private double salary;
-
-	private double averagePerformance = (speed*acceleration*turning)/3;
+	private double averagePerformance = ((double)(speed*acceleration*turning))/(double)3;
 	
 	public Driver(String name, int number, int speed, int acceleration, int turning, double salary) {
 		
@@ -17,9 +16,7 @@ public class Driver {
 		this.turning = turning;
 		this.salary = salary;
 		
-		System.out.println(speed);
-		System.out.println(acceleration);
-		System.out.println(turning+"\n");
+		System.out.println("AverageP: "+averagePerformance+"\n");
 	}
 	
 	//Getters

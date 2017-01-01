@@ -53,7 +53,9 @@ public class DashboardController extends Controller implements Initializable
 					try
 					{
 						gotoFxmlScene(event, "CarManagement", (Stage) carManagement.getScene().getWindow());
-					} catch (IOException e)
+					} 
+					
+					catch (IOException e)
 					{
 						e.printStackTrace();
 					}
@@ -71,7 +73,9 @@ public class DashboardController extends Controller implements Initializable
 					try
 					{
 						gotoFxmlScene(event, "MainMenu", (Stage) teamManagement.getScene().getWindow());
-					} catch (IOException e)
+					} 
+					
+					catch (IOException e)
 					{
 						e.printStackTrace();
 					}
@@ -89,7 +93,9 @@ public class DashboardController extends Controller implements Initializable
 					try
 					{
 						gotoFxmlScene(event, "Standings", (Stage) standings.getScene().getWindow());
-					} catch (IOException e)
+					} 
+					
+					catch (IOException e)
 					{
 						e.printStackTrace();
 					}
@@ -106,7 +112,9 @@ public class DashboardController extends Controller implements Initializable
 					try
 					{
 						gotoFxmlScene(event, "inRace", (Stage) race.getScene().getWindow());
-					} catch (IOException e)
+					} 
+					
+					catch (IOException e)
 					{
 						e.printStackTrace();
 					}
@@ -135,7 +143,9 @@ public class DashboardController extends Controller implements Initializable
 					try
 					{
 						gotoFxmlScene(event, "MainMenu", (Stage) back.getScene().getWindow());
-					} catch (IOException e)
+					} 
+					
+					catch (IOException e)
 					{
 						// TODO Auto-generated catch block
 						e.printStackTrace();

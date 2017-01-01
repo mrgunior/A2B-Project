@@ -72,6 +72,12 @@ public class formulaApplication extends Application
 		return gamecontroller.getProfile().getBudget();
 	}
 	
+	//temporary
+	public static GameController getGameController()
+	{
+		return gamecontroller;
+	}
+	
 	// Launch application
 	public static void main(String[] args)
 	{
@@ -86,7 +92,7 @@ public class formulaApplication extends Application
 		
 		Parent root = FXMLLoader.load(getClass().getResource("../view/MainMenu.fxml"));
 		theScene = new Scene(root);
-		stage.setTitle("Formula 1 Manager");
+		stage.setTitle("Formula 1 Manager v1.0.3");
 		stage.setScene(theScene);
 		stage.setFullScreen(fullscreen);
 		stage.setResizable(resizable);

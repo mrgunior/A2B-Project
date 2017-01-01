@@ -65,6 +65,15 @@ public class GameController {
 	}
 	
 	/**
+	 * 
+	 */
+	public void stopAutoSave()
+	{
+		System.out.println("auto-save stopped");
+		timer.cancel();
+	}
+	
+	/**
 	 * from what it reads it will make an object out of it.
 	 */
     public void readJsonObjectAndInitialize(){

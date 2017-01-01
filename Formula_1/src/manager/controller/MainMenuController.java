@@ -34,6 +34,9 @@ public class MainMenuController extends Controller implements Initializable
 	private ImageView	highscores;
 	@FXML
 	private ImageView	exit;
+	
+	//needs to stop the auto-save. It keeps running even when game closed. 'Temporary solution'
+	GameController gamecontroller = formulaApplication.getGameController();
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources)
@@ -52,6 +55,7 @@ public class MainMenuController extends Controller implements Initializable
 					{
 						gotoFxmlScene(event, "ChooseTeam", (Stage) startGame.getScene().getWindow());
 					}
+					
 					catch (IOException e)
 					{
 						e.printStackTrace();
@@ -100,6 +104,7 @@ public class MainMenuController extends Controller implements Initializable
 					{
 						gotoFxmlScene(event, "HighScores", (Stage) highscores.getScene().getWindow());
 					}
+					
 					catch (IOException e)
 					{
 						e.printStackTrace();
@@ -114,6 +119,8 @@ public class MainMenuController extends Controller implements Initializable
 
 				/// EXIT
 				exit.setOnMousePressed(event -> {
+					
+					gamecontroller.stopAutoSave();
 					System.exit(0);
 				});
 				exit.setOnMouseEntered(event -> {
@@ -129,6 +136,7 @@ public class MainMenuController extends Controller implements Initializable
 					{
 						gotoFxmlScene(event, "Settings", (Stage) settings.getScene().getWindow());
 					}
+					
 					catch (IOException e)
 					{
 						e.printStackTrace();

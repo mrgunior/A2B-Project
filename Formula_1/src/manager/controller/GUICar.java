@@ -3,7 +3,6 @@ package manager.controller;
 import com.sun.org.apache.xml.internal.resolver.Catalog;
 
 import javafx.scene.image.ImageView;
-import manager.model.Race;
 
 public class GUICar
 {
