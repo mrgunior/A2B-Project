@@ -15,7 +15,7 @@ public class DriverTest
 	private double averagePerformance, salary;
 
 	@Before
-	public void setUp() 
+	public void setUp() throws Exception 
 	{
 		name = "Victor Wernet";
 		number = 33;
@@ -96,7 +96,7 @@ public class DriverTest
 	@Test
 	public void testGetAveragePerformance()
 	{
-		assertEquals("Average performance is calculated correctly with regards to arithmetic calculations", driver.getAveragePerformance(), averagePerformance, 0.001);
+		assertEquals("Average performance is calculated correctly with regards to arithmetic calculations", driver.getAveragePerformance()==averagePerformance);
 	}
 	
 	@Test

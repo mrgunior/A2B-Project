@@ -15,14 +15,14 @@ public class DriverTest
 	private double averagePerformance, salary;
 
 	@Before
-	public void setUp() 
+	public void setUp() throws Exception 
 	{
 		name = "Victor Wernet";
 		number = 33;
 		speed = 80;
 		acceleration = 75;
 		turning = 69;
-		averagePerformance = 138000;
+		averagePerformance = 78.6;
 		salary = 3.0; //3 mil
 		
 		driver = new Driver(name, number, speed, acceleration, turning, salary);
@@ -57,7 +57,7 @@ public class DriverTest
 	@Test
 	public void testGetSpeed()
 	{
-		assertEquals("driver speed has been initialized correctly via constructor", driver.getSpeed(), speed);
+		assertEquals("driver name has been initialized correctly via constructor", driver.getSpeed(), speed);
 	}
 	
 	@Test
@@ -70,33 +70,19 @@ public class DriverTest
 	@Test
 	public void testGetAcceleration()
 	{
-		assertEquals("driver acceleration has been initialized correctly via constructor", driver.getAcceleration(), acceleration);
-	}
-	
-	@Test
-	public void testSetAcceleration()
-	{
-		driver.setAcceleration(1);
-		assertTrue("driver acceleration has been set correctly via setAcceleration()", driver.getAcceleration()==1);
+		assertEquals("", driver.getAcceleration(), acceleration);
 	}
 	
 	@Test
 	public void testGetTurning()
 	{
-		assertEquals("driver turning has been initialized correctly via constructor", driver.getTurning(), turning);
-	}
-	
-	@Test
-	public void testSetTurning()
-	{
-		driver.setTurning(1);
-		assertTrue("driver turning has been set correctly via setTurning()", driver.getTurning()==1);
+		assertEquals("", driver.getTurning(), turning);
 	}
 	
 	@Test
 	public void testGetAveragePerformance()
 	{
-		assertEquals("Average performance is calculated correctly with regards to arithmetic calculations", driver.getAveragePerformance(), averagePerformance, 0.001);
+		assertEquals("", driver.getAveragePerformance(), averagePerformance, 0.001);
 	}
 	
 	@Test

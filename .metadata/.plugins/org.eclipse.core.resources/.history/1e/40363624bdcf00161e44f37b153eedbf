@@ -97,6 +97,7 @@ public class DriverTest
 	public void testGetAveragePerformance()
 	{
 		assertEquals("Average performance is calculated correctly with regards to arithmetic calculations", driver.getAveragePerformance(), averagePerformance, 0.001);
+		System.out.println(driver.getAveragePerformance());
 	}
 	
 	@Test

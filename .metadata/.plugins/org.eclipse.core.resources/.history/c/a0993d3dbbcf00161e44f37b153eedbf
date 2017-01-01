@@ -15,7 +15,7 @@ public class DriverTest
 	private double averagePerformance, salary;
 
 	@Before
-	public void setUp() 
+	public void setUp() throws Exception 
 	{
 		name = "Victor Wernet";
 		number = 33;
