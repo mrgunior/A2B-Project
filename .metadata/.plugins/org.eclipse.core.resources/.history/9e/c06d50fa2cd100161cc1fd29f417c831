@@ -108,7 +108,8 @@ public class DriverTest
 	@Test
 	public void testSetSalary()
 	{
-		driver.setSalary(1.0);
-		assertTrue("driver salary has been set correctly via setSalary()", driver.getSalary()==1.0);
+		driver.setTurning(1);
+		assertTrue("driver salary has been set correctly via setTurning()", driver.getTurning()==1);
 	}
+	
 }

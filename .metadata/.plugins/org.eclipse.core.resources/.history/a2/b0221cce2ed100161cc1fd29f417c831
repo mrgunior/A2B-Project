@@ -58,19 +58,19 @@ public class ProfileTest
 	}
 	
 	@Test
-	public void testGetHighScore()
+	public void testHighScore()
 	{
 		assertEquals("Constructor initialized highscore correctly", profile.getHighScore(), highScore, 0.001);
 	}
 	
 	@Test
-	public void testGetBudget()
+	public void testBudget()
 	{
 		assertEquals("Constructor initialized budget correctly", profile.getBudget(), budget, 0.001);
 	}
 	
 	@Test
-	public void testGetTeamName()
+	public void testConstructorProfileTeamName()
 	{
 		assertEquals("Constructor initialized teamname correctly", profile.getTeamName(), teamName);
 	}

@@ -12,8 +12,6 @@ import manager.model.Car;
 import manager.model.Driver;
 import manager.model.Engine;
 import manager.model.Profile;
-import manager.model.Upgrades;
-
 import static org.hamcrest.CoreMatchers.*;
 
 public class ProfileTest 
@@ -21,7 +19,7 @@ public class ProfileTest
 	private Profile profile;
 	private double highScore, budget;
 	private String teamName, name;
-	private int number, speed, acceleration, turning, handling, braking, weight;
+	private int number, speed, acceleration, turning;
 	private double averagePerformance, salary;
 	private Upgrades upgrades;
 	private List<Driver> drivers;
@@ -30,12 +28,9 @@ public class ProfileTest
 	@Before
 	public void setUp()
 	{
-		//profile stuff
 		highScore = 0.0;
 		budget = 200.0;
 		teamName = "TestName";
-		
-		//driver & car stuff
 		name = "Victor Wernet";
 		number = 33;
 		speed = 80;
@@ -44,33 +39,32 @@ public class ProfileTest
 		averagePerformance = 138000.0;
 		salary = 3.0; //3 mil
 		
-		
 		profile = new Profile(highScore, budget, teamName);
-		upgrades = new Upgrades(0,0,0,0,0,0,0);
+		upgrades = new Upgrades(0,0,0,0,0,0,0,0);
 		
 		drivers = new ArrayList<Driver>();
 		drivers.add(new Driver(name, number, speed, acceleration, turning, salary));
 		drivers.add(new Driver(name, number, speed, acceleration, turning, salary));
 		
 		cars = new ArrayList<Car>();
-		cars.add(new Car(speed, acceleration, handling, braking, weight, upgrades));
-		cars.add(new Car(speed, acceleration, handling, braking, weight, upgrades));
+		cars.add(speed, acceleration, handling, braking, weight, upgrades);
+		cars.add();
 	}
 	
 	@Test
-	public void testGetHighScore()
+	public void testConstructorProfileHighScore()
 	{
 		assertEquals("Constructor initialized highscore correctly", profile.getHighScore(), highScore, 0.001);
 	}
 	
 	@Test
-	public void testGetBudget()
+	public void testConstructorProfileBudget()
 	{
 		assertEquals("Constructor initialized budget correctly", profile.getBudget(), budget, 0.001);
 	}
 	
 	@Test
-	public void testGetTeamName()
+	public void testConstructorProfileTeamName()
 	{
 		assertEquals("Constructor initialized teamname correctly", profile.getTeamName(), teamName);
 	}

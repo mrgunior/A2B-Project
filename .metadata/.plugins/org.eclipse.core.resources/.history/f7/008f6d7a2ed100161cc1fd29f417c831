@@ -53,24 +53,24 @@ public class ProfileTest
 		drivers.add(new Driver(name, number, speed, acceleration, turning, salary));
 		
 		cars = new ArrayList<Car>();
-		cars.add(new Car(speed, acceleration, handling, braking, weight, upgrades));
-		cars.add(new Car(speed, acceleration, handling, braking, weight, upgrades));
+		cars.add(speed, acceleration, handling, braking, weight, upgrades);
+		cars.add(speed, acceleration, handling, braking, weight, upgrades);
 	}
 	
 	@Test
-	public void testGetHighScore()
+	public void testConstructorProfileHighScore()
 	{
 		assertEquals("Constructor initialized highscore correctly", profile.getHighScore(), highScore, 0.001);
 	}
 	
 	@Test
-	public void testGetBudget()
+	public void testConstructorProfileBudget()
 	{
 		assertEquals("Constructor initialized budget correctly", profile.getBudget(), budget, 0.001);
 	}
 	
 	@Test
-	public void testGetTeamName()
+	public void testConstructorProfileTeamName()
 	{
 		assertEquals("Constructor initialized teamname correctly", profile.getTeamName(), teamName);
 	}

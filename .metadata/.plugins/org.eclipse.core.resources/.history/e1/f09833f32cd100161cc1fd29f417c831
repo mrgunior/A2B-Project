@@ -104,11 +104,4 @@ public class DriverTest
 	{
 		assertEquals("", driver.getSalary(), salary, 0.001);
 	}
-	
-	@Test
-	public void testSetSalary()
-	{
-		driver.setSalary(1.0);
-		assertTrue("driver salary has been set correctly via setSalary()", driver.getSalary()==1.0);
-	}
 }

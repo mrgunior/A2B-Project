@@ -70,7 +70,7 @@ public class ProfileTest
 	}
 	
 	@Test
-	public void testGetTeamName()
+	public void testConstructorProfileTeamName()
 	{
 		assertEquals("Constructor initialized teamname correctly", profile.getTeamName(), teamName);
 	}
