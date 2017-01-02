@@ -22,8 +22,10 @@ public class DriverTest
 		speed = 80;
 		acceleration = 75;
 		turning = 69;
-		averagePerformance = 138000.0;
+		averagePerformance = 138000;
 		salary = 3.0; //3 mil
+		
+		System.out.println(averagePerformance);
 		
 		driver = new Driver(name, number, speed, acceleration, turning, salary);
 	}
@@ -96,6 +98,7 @@ public class DriverTest
 	@Test
 	public void testGetAveragePerformance()
 	{
+		System.out.println("averagePeformance "+driver.getAveragePerformance());
 		assertEquals("Average performance is calculated correctly with regards to arithmetic calculations", driver.getAveragePerformance(), averagePerformance, 0.001);
 	}
 	

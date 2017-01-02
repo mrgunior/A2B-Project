@@ -5,7 +5,7 @@ public class Driver {
 	private String name;
 	private int number, speed, acceleration, turning;
 	private double salary;
-	private double averagePerformance;
+	private double averagePerformance = ((double)(speed*acceleration*turning))/(double)3;
 	
 	public Driver(String name, int number, int speed, int acceleration, int turning, double salary) {
 		
@@ -39,12 +39,8 @@ public class Driver {
 	}
 	
 	public double getAveragePerformance(){
-		//some how this wasn't working as a field
-		//so I changed it. A bug?
 		
-		this.averagePerformance = ((double)(speed*acceleration*turning))/(double)3;
-		//System.out.println(this.averagePerformance);
-		
+		System.out.println(this.averagePerformance);
 		return this.averagePerformance;
 	}
 	

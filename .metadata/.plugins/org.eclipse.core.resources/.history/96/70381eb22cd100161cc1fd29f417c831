@@ -39,11 +39,8 @@ public class Driver {
 	}
 	
 	public double getAveragePerformance(){
-		//some how this wasn't working as a field
-		//so I changed it. A bug?
-		
 		this.averagePerformance = ((double)(speed*acceleration*turning))/(double)3;
-		//System.out.println(this.averagePerformance);
+		System.out.println(this.averagePerformance);
 		
 		return this.averagePerformance;
 	}

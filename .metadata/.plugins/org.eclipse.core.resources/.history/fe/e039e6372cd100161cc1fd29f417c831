@@ -25,6 +25,8 @@ public class DriverTest
 		averagePerformance = 138000.0;
 		salary = 3.0; //3 mil
 		
+		System.out.println(averagePerformance);
+		
 		driver = new Driver(name, number, speed, acceleration, turning, salary);
 	}
 	

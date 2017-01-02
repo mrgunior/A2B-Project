@@ -22,7 +22,7 @@ public class DriverTest
 		speed = 80;
 		acceleration = 75;
 		turning = 69;
-		averagePerformance = 138000.0;
+		averagePerformance = 138000;
 		salary = 3.0; //3 mil
 		
 		driver = new Driver(name, number, speed, acceleration, turning, salary);

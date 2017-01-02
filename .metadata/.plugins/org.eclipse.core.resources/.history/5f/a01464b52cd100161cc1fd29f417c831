@@ -43,7 +43,7 @@ public class Driver {
 		//so I changed it. A bug?
 		
 		this.averagePerformance = ((double)(speed*acceleration*turning))/(double)3;
-		//System.out.println(this.averagePerformance);
+		System.out.println(this.averagePerformance);
 		
 		return this.averagePerformance;
 	}
