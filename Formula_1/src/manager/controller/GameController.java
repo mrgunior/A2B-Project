@@ -32,9 +32,9 @@ public class GameController {
 	 * it will create a timer object and call the autoSave() method to save the game every 2 min
 	 * @throws IOException
 	 */
-	public GameController() throws IOException
+	public GameController(String jsonFile) throws IOException
 	{
-		readJsonObjectAndInitialize();
+		readJsonObjectAndInitialize(jsonFile);
 		timer = new Timer();
 		
 		autoSave();
@@ -52,7 +52,7 @@ public class GameController {
 			{
 				try 
 				{
-					writeJsonObjectToFile();
+					writeJsonObjectToFile("./data.dat");
 				} 
 				
 				catch (IOException e) 
@@ -65,53 +65,59 @@ public class GameController {
 	}
 	
 	/**
+	 * @throws IOException 
 	 * 
 	 */
-	public void stopAutoSave()
+	public void stopAutoSave() throws IOException
 	{
-		System.out.println("auto-save stopped");
+		//update the json file when the game is closed
+		writeJsonObjectToFile("./data.dat");
+
+		//print status out on console
+		System.out.println("auto-save stopped and game saved");
 		timer.cancel();
 	}
 	
 	/**
 	 * from what it reads it will make an object out of it.
 	 */
-    public void readJsonObjectAndInitialize(){
+    public void readJsonObjectAndInitialize(String jsonFile){
         
     	JSONParser parser = new JSONParser();
  
-        try {
-        	
+        try 
+        {      	
         	/*
         	 * create the profile first
 			 * create the drivers
 			 * create the cars		
         	 */
+        	
         	//###########################Parse##########################
-            Object obj = parser.parse(new FileReader("./data.dat"));
+            Object obj = parser.parse(new FileReader(jsonFile));
             JSONObject jsonObject = (JSONObject) obj;
  
-            //getting the teamname
+            //getting the team name
             String teamName = (String) jsonObject.get("Teamname");
             
             //getting the budget
             double budget = Double.parseDouble(String.valueOf(jsonObject.get("Budget")));
             
-            //getting highscore
+            //getting high score
             double highScore = Double.parseDouble(String.valueOf(jsonObject.get("Highscore")));
             
-            //just checking
+            //Printing them to console
             System.out.println("Teamname: " + teamName);
             System.out.println("Budget: " + budget);
             System.out.println("Highscore: " + highScore);
            
-            //1.
+            //1. create a profile from a json file (data.dat)
             profile = new Profile(highScore, budget, teamName);
             
-            //2.
+            //2. create the drivers from a json file (data.dat)
             initializeDriversInProfile(jsonObject);
             
-            //3.
+            //3. create the cars from a json file (data.dat)
             initializeCarsInProfile(jsonObject);
         } 
         
@@ -241,7 +247,7 @@ public class GameController {
 	 * @throws IOException
 	 */
 	@SuppressWarnings("unchecked")
-	public void writeJsonObjectToFile() throws IOException 
+	public void writeJsonObjectToFile(String jsonFile) throws IOException 
 	{
     	//###########################User Profile#########################
     	
@@ -267,7 +273,7 @@ public class GameController {
 		
 		//###########################Drivers##############################
 		
-		//2 for eleven drivers.
+		//2 for 2 drivers.
 		for(int i = 0; i < 2; i++)
 		{
 			//standard upon creating a game until you add drivers
@@ -286,7 +292,7 @@ public class GameController {
 		}
 		
 		//try-with-resources just in case if things go wrong
-		try (FileWriter file = new FileWriter("./data.dat")) 
+		try (FileWriter file = new FileWriter(jsonFile)) 
 		{
 			file.write(obj.toJSONString());
 			System.out.println("Json object successfully written to file");

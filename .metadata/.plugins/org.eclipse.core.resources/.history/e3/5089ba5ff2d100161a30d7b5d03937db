@@ -1,0 +1,45 @@
+package manager.test;
+
+import java.io.IOException;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import manager.controller.GameController;
+import manager.model.Profile;
+
+public class GameControllerTest 
+{
+	GameController gamecontroller;
+	Profile testProfile;
+	String teamname ="TestTeam", jsonFile = "dataTest.dat";
+	double highScore = 20.0, budget = 200.0;
+	
+	@Before
+	public void setUp() throws IOException
+	{	
+		gamecontroller = new GameController();
+		testProfile = new Profile(highScore, budget, teamname);
+	}
+	
+	//need fixing.
+	@Test(timeout=2*60*1000)
+	public void testAutoSaveItItSavesEvery2Minutes()
+	{
+		//gamecontroller.autoSave();
+	}
+	
+	//need fixing.
+	@Test
+	public void testStopAutoSave() throws IOException
+	{
+		//gamecontroller.stopAutoSave();
+	}
+	
+	@Test
+	public void testReadJsonObjectAndInitializeTeamName()
+	{
+		gamecontroller.readJsonObjectAndInitialize(jsonFile);
+		assertTrue("After readJsonObjectAndInitialize has been called profile should have been created", gamecontroller.getProfile().equals(testProfile));
+	}
+}

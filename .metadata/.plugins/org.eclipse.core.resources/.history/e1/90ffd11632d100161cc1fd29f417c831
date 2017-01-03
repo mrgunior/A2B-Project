@@ -1,0 +1,12 @@
+package manager.test;
+
+import org.junit.Test;
+
+public class GameControllerTest 
+{
+	@Test(timeout=2*60*1000)
+	public void testAutoSaveItItSavesEvery2Minutes()
+	{
+		
+	}
+}

@@ -120,7 +120,16 @@ public class MainMenuController extends Controller implements Initializable
 				/// EXIT
 				exit.setOnMousePressed(event -> {
 					
-					gamecontroller.stopAutoSave();
+					try 
+					{
+						gamecontroller.stopAutoSave();
+					} 
+					
+					catch (IOException e) 
+					{
+						e.printStackTrace();
+					}
+					
 					System.exit(0);
 				});
 				exit.setOnMouseEntered(event -> {

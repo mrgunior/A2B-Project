@@ -1,0 +1,10 @@
+package manager.test;
+
+public class GameControllerTest 
+{
+	@Test
+	public void testAutoSaveItItSavesEvery2Minutes()
+	{
+		
+	}
+}

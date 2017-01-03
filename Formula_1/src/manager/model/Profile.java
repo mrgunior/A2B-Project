@@ -55,12 +55,14 @@ public class Profile
 			amount = -1*amount;
 		}
 		
-		if(state){
+		if(state)
+		{
 			this.budget -= amount;
 		}
 		
 		//else state is false and amount gets added to budget
-		else{
+		else
+		{
 			this.budget += amount;
 		}
 	}
