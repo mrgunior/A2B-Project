@@ -1,0 +1,74 @@
+package manager.model;
+
+public class Car {
+	
+	private int speed;
+	private int acceleration;
+	private int handling;
+	private int braking;
+	private int weight;
+	private Upgrades upgrades;
+	
+	public Car(int speed, int acceleration, int handling, int braking, int weight, Upgrades upgrades) {
+		
+		this.speed = speed;
+		this.acceleration = acceleration;
+		this.handling = handling;
+		this.braking = braking;
+		this.weight = weight;
+		this.upgrades = upgrades;
+	}
+
+	public int getSpeed() {
+		return this.speed;
+	}
+
+	public void setSpeed(int speed) {
+		this.speed = speed;
+	}
+
+	public int getAcceleration() {
+		return this.acceleration;
+	}
+
+	public void setAcceleration(int acceleration) {
+		this.acceleration = acceleration;
+	}
+
+	public int getHandling() {
+		return this.handling;
+	}
+
+	public void setHandling(int handling) {
+		this.handling = handling;
+	}
+
+	public int getBraking() {
+		return this.braking;
+	}
+
+	public void setBraking(int braking) {
+		this.braking = braking;
+	}
+
+	public int getWeight() {
+		return this.weight;
+	}
+
+	public void setWeight(int weight) {
+		this.weight = weight;
+	}
+
+	public Upgrades getUpgrades() {
+		return this.upgrades;
+	}
+
+	public void setUpgrades(Upgrades upgrades) {
+		this.upgrades = upgrades;
+	}
+	
+	public String toString()
+	{
+		return "Car[speed: "+ this.speed+", braking: "+ this.braking+", acceleration: ";
+	}
+}

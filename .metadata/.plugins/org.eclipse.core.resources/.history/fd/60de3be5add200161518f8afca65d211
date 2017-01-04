@@ -1,0 +1,106 @@
+package manager.model;
+
+public class Driver {
+	
+	private String name;
+	private int number, speed, acceleration, turning;
+	private double salary;
+	private double averagePerformance;
+	
+	public Driver(String name, int number, int speed, int acceleration, int turning, double salary) {
+		
+<<<<<<< HEAD
+		this.name = name;
+		this.number = number;
+		this.speed = speed;
+		this.acceleration = acceleration;
+		this.turning = turning;
+		this.salary = salary;
+=======
+		this.setName(name);
+		this.setNumber(number);
+		this.setSpeed(speed);
+		this.setAcceleration(acceleration);
+		this.setTurning(turning);
+		this.setSalary(salary);
+		
+		updateAveragePerformance();
+>>>>>>> 245fa386758405ac938ade21738dabeb53515e17
+	}
+	
+	public Driver()
+	{
+		// TODO Set variables to default values
+		this.setName("Default Driver Name");
+		this.setNumber(999);
+		this.setSpeed(999);
+		this.setAcceleration(999);
+		this.setTurning(999);
+		this.setSalary(999);
+		
+		updateAveragePerformance();
+	}
+
+	//Getters
+	public String getName(){
+		return this.name;
+	}
+	
+	public int getNumber(){
+		return this.number;
+	}
+	
+	public int getSpeed(){
+		return this.speed;
+	}
+	
+	public int getAcceleration(){
+		return this.acceleration;
+	}
+	
+	public int getTurning(){
+		return this.turning;
+	}
+	
+	public double getAveragePerformance(){
+		//some how this wasn't working as a field
+		//so I changed it. A bug?
+		
+		this.averagePerformance = ((double)(speed*acceleration*turning))/(double)3;
+		//System.out.println(this.averagePerformance);
+		
+		return this.averagePerformance;
+	}
+	
+	public double getSalary(){
+		return this.salary;
+	}
+	
+	//Setters
+	public void setName(String name){
+		this.name = name;
+	}
+	
+	public void setNumber(int number){
+		this.number = number;
+	}
+	
+	public void setSpeed(int speed){
+		this.speed = speed;
+		updateAveragePerformance();
+	}
+	
+	public void setAcceleration(int acceleration){
+		this.acceleration = acceleration;
+		updateAveragePerformance();
+	}
+	
+	public void setTurning(int turning){
+		this.turning = turning;
+		updateAveragePerformance();
+	}
+	
+	public void setSalary(double salary){
+		this.salary = salary;
+	}
+}

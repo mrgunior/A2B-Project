@@ -1,0 +1,179 @@
+package manager.test;
+
+import static org.junit.Assert.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import manager.model.Car;
+import manager.model.Driver;
+import manager.model.Engine;
+import manager.model.Profile;
+import manager.model.Upgrades;
+
+import static org.hamcrest.CoreMatchers.*;
+
+public class ProfileTest
+{
+<<<<<<< HEAD
+	private Profile profile;
+	private double highScore, budget;
+	private String teamName, name;
+	private int number, speed, acceleration, turning, handling, braking, weight;
+	private double averagePerformance, salary;
+	private Upgrades upgrades;
+	private List<Driver> drivers;
+	private List<Car> cars;
+	
+=======
+	private Profile			profile;
+	private double			highScore, budget;
+	private String			teamName;
+	private List<Driver>	drivers;
+	private List<Car>		cars;
+
+>>>>>>> 245fa386758405ac938ade21738dabeb53515e17
+	@Before
+	public void setUp()
+	{
+		//profile stuff
+		highScore = 0.0;
+		budget = 200.0;
+		teamName = "TestName";
+<<<<<<< HEAD
+		
+		//driver & car stuff
+		name = "Victor Wernet";
+		number = 33;
+		speed = 80;
+		acceleration = 75;
+		turning = 69;
+		averagePerformance = 138000.0;
+		salary = 3.0; //3 mil
+		
+		
+		profile = new Profile(highScore, budget, teamName);
+		upgrades = new Upgrades(0,0,0,0,0,0,0);
+		
+		drivers = new ArrayList<Driver>();
+		drivers.add(new Driver(name, number, speed, acceleration, turning, salary));
+		drivers.add(new Driver(name, number, speed, acceleration, turning, salary));
+		
+		cars = new ArrayList<Car>();
+		cars.add(new Car(speed, acceleration, handling, braking, weight, upgrades));
+		cars.add(new Car(speed, acceleration, handling, braking, weight, upgrades));
+=======
+
+		profile = new Profile(highScore, budget, teamName);
+
+		drivers = new ArrayList<Driver>();
+		drivers.add(new Driver());
+		drivers.add(new Driver());
+
+		cars = new ArrayList<Car>();
+		// TODO No engines in car, something else for the tests should be here
+		// cars.add(new Car(new Engine("Engine1", 1.0)));
+		// cars.add(new Car(new Engine("Engine2", 1.0)));
+>>>>>>> 245fa386758405ac938ade21738dabeb53515e17
+	}
+
+	@Test
+	public void testGetHighScore()
+	{
+		assertEquals("Constructor initialized highscore correctly", profile.getHighScore(), highScore, 0.001);
+	}
+
+	@Test
+	public void testGetBudget()
+	{
+		assertEquals("Constructor initialized budget correctly", profile.getBudget(), budget, 0.001);
+	}
+
+	@Test
+	public void testGetTeamName()
+	{
+		assertEquals("Constructor initialized teamname correctly", profile.getTeamName(), teamName);
+	}
+
+	@Test
+	public void testGetDrivers()
+	{
+		profile.setDrivers(drivers);
+		assertThat("Method set drivers is setting it correctly", drivers, is(profile.getDrivers()));
+	}
+
+	@Test
+	public void testGetCars()
+	{
+		profile.setCars(cars);
+		assertThat("Method set cars is setting it correctly", cars, is(profile.getCars()));
+	}
+
+	@Test
+	public void testSetHighScore()
+	{
+		profile.setHighScore(2.0);
+		assertEquals("Method set highscore is setting it correctly", profile.getHighScore(), 2.0, 0.001);
+	}
+
+	@Test
+	public void testSetTeamName()
+	{
+		profile.setTeamName(teamName);
+		assertEquals("Method set teamname is setting it correctly", profile.getTeamName(), "TestName");
+	}
+
+	@Test
+	public void testSetBudgetIf()
+	{
+		profile.setBudget(50.0, true);
+		assertTrue("Budget is 150.0", profile.getBudget() == 150.0);
+	}
+
+	@Test
+	public void testSetBudgetElse()
+	{
+		profile.setBudget(50.0, false);
+		assertTrue("Budget is 250.0", profile.getBudget() == 250.0);
+	}
+
+	@Test
+	public void testSetBudgetNegativeNumber()
+	{
+		profile.setBudget(-50.0, false);
+		assertTrue("Method needs to deal with negatives", profile.getBudget() == 250.0);
+	}
+
+	@Test
+	public void testSetDriversEmpty()
+	{
+		profile.setDrivers(new ArrayList<Driver>()); // empty
+		assertEquals("Method set drivers is setting it correctly when empty", profile.getDrivers(),
+				new ArrayList<Driver>());
+	}
+
+	@Test
+	public void testSetDriversNotEmpty()
+	{
+		profile.setDrivers(drivers); // not empty
+		assertEquals("Method set drivers is setting it correctly when full", profile.getDrivers(), drivers);
+	}
+
+	@Test
+	public void testSetCarsEmpty()
+	{
+		profile.setDrivers(new ArrayList<Driver>()); // empty
+		assertEquals("Method set cars is setting it correctly when empty", profile.getDrivers(),
+				new ArrayList<Driver>());
+	}
+
+	@Test
+	public void testSetCarsNotEmpty()
+	{
+		profile.setCars(cars); // not empty
+		assertEquals("Method set cars is setting it correctly when full", profile.getCars(), cars);
+	}
+}
