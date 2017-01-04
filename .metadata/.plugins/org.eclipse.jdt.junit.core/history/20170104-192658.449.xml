@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="GameControllerTest" project="Formula_1" tests="7" started="7" failures="0" errors="0" ignored="0">
+  <testsuite name="manager.test.GameControllerTest" time="0.006">
+    <testcase name="testReadJsonObjectAndInitializeSameCarList" classname="manager.test.GameControllerTest" time="0.0"/>
+    <testcase name="testReadJsonObjectAndInitializeDifferentHighScore" classname="manager.test.GameControllerTest" time="0.0"/>
+    <testcase name="testReadJsonObjectAndInitializeSameTeamName" classname="manager.test.GameControllerTest" time="0.0"/>
+    <testcase name="testReadJsonObjectAndInitializeSameHighScore" classname="manager.test.GameControllerTest" time="0.0"/>
+    <testcase name="testStopAutoSave" classname="manager.test.GameControllerTest" time="0.0"/>
+    <testcase name="testReadJsonObjectAndInitializeSameBudget" classname="manager.test.GameControllerTest" time="0.002"/>
+    <testcase name="testAutoSaveIfItSavesEvery2Minutes" classname="manager.test.GameControllerTest" time="0.004"/>
+  </testsuite>
+</testrun>
