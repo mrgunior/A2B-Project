@@ -15,6 +15,7 @@ import org.json.simple.parser.JSONParser;
 import manager.model.Car;
 import manager.model.Driver;
 import manager.model.Profile;
+import manager.model.Upgrades;
  
 /**
  * @author Victor Wernet
@@ -26,6 +27,7 @@ public class GameController {
 	
 	private Profile profile;
 	private Timer timer;
+	private String jsonFile;
 	
 	/**
 	 * when initialized it will call the readJsonObjectAndInitialize() method to create profile according to the Json file
@@ -34,7 +36,9 @@ public class GameController {
 	 */
 	public GameController(String jsonFile) throws IOException
 	{
-		readJsonObjectAndInitialize(jsonFile);
+		this.jsonFile = jsonFile;
+		
+		readJsonObjectAndInitialize();
 		timer = new Timer();
 		
 		autoSave();
@@ -52,7 +56,7 @@ public class GameController {
 			{
 				try 
 				{
-					writeJsonObjectToFile("./data.dat");
+					writeJsonObjectToFile();
 				} 
 				
 				catch (IOException e) 
@@ -71,7 +75,7 @@ public class GameController {
 	public void stopAutoSave() throws IOException
 	{
 		//update the json file when the game is closed
-		writeJsonObjectToFile("./data.dat");
+		writeJsonObjectToFile();
 
 		//print status out on console
 		System.out.println("auto-save stopped and game saved");
@@ -81,7 +85,7 @@ public class GameController {
 	/**
 	 * from what it reads it will make an object out of it.
 	 */
-    public void readJsonObjectAndInitialize(String jsonFile){
+    public void readJsonObjectAndInitialize(){
         
     	JSONParser parser = new JSONParser();
  
@@ -214,8 +218,7 @@ public class GameController {
         double engineValue = Double.parseDouble(String.valueOf(enginenameObject.get("EngineLevel")));
         System.out.println("EngineLevel: " + engineValue);*/
         
-        //TODO fill in values for car1
-        Car car1 = new Car(0, 0, 0, 0, 0, null);
+        Car car1 = new Car(0, 0, 0, 0, 0, new Upgrades(0,0,0,0,0,0,0));
         
         //getting car2 ################################################
         car = (JSONArray) jsonObject.get("Car2");
@@ -229,8 +232,7 @@ public class GameController {
         engineValue = Double.parseDouble(String.valueOf(enginenameObject.get("EngineLevel")));
         System.out.println("EngineLevel: " + engineValue);*/
     
-        //TODO fill in values for car2
-        Car car2 = new Car(0, 0, 0, 0, 0, null);
+        Car car2 = new Car(0, 0, 0, 0, 0, new Upgrades(0,0,0,0,0,0,0));
         
         //Creating an ArrayList########################################
         List<Car> carsList = new ArrayList<Car>();
@@ -247,29 +249,43 @@ public class GameController {
 	 * @throws IOException
 	 */
 	@SuppressWarnings("unchecked")
-	public void writeJsonObjectToFile(String jsonFile) throws IOException 
+	public void writeJsonObjectToFile() throws IOException 
 	{
     	//###########################User Profile#########################
     	
-    	JSONObject obj = new JSONObject();
-		obj.put("Teamname", profile.getTeamName());
-		obj.put("Budget", String.valueOf(profile.getBudget()));
-		obj.put("Highscore", String.valueOf(profile.getHighScore()));
+    	JSONObject obj = new JSONObject();																	//create JSON object {}
+		obj.put("Teamname", profile.getTeamName());															//"TeamName":""
+		obj.put("Budget", String.valueOf(profile.getBudget()));												//"Budget":""
+		obj.put("Highscore", String.valueOf(profile.getHighScore()));										//"Highscore":""
 				
-		//###########################Car 1################################
+		//###########################Cars################################
 		
-		JSONObject partsOfCar1 = new JSONObject();
+		JSONArray car1 = new JSONArray(); 																	//create an array [], name is added later
 		
-		JSONArray car1 = new JSONArray();
-		car1.add(partsOfCar1);
-		obj.put("Car1", car1);
+		JSONObject standardCarStuff = new JSONObject(); 													//create an object {} to add in the array
+																											//add the key:value to the object		
+		standardCarStuff.put("speed", String.valueOf(profile.getCars().get(0).getSpeed())); 				//"speed":""
+		standardCarStuff.put("acceleration", String.valueOf(profile.getCars().get(0).getAcceleration())); 	//"acceleration":""
+		standardCarStuff.put("handling", String.valueOf(profile.getCars().get(0).getHandling())); 			//"handling":""
+		standardCarStuff.put("braking", String.valueOf(profile.getCars().get(0).getBraking())); 			//"braking":""
+		standardCarStuff.put("weight", String.valueOf(profile.getCars().get(0).getWeight())); 				//"weight":""
 		
-		//###########################Car 2################################
-		JSONObject partsOfCar2 = new JSONObject();
+		JSONArray upgrades = new JSONArray();																//create an array [], name is added later								
+		JSONObject upgradeKeys = new JSONObject();															//create an object {} to add in the array
+																											//add the key:value to the object
+		upgradeKeys.put("down", String.valueOf(profile.getCars().get(0).getUpgrades().getDown()));			//"down":""
+		upgradeKeys.put("aero", String.valueOf(profile.getCars().get(0).getUpgrades().getAero()));			//"aero":""
+		upgradeKeys.put("gearbox", String.valueOf(profile.getCars().get(0).getUpgrades().getGearbox()));	//"gearbox":""
+		upgradeKeys.put("engine", String.valueOf(profile.getCars().get(0).getUpgrades().getEngine()));		//"engine":""
+		upgradeKeys.put("susp", String.valueOf(profile.getCars().get(0).getUpgrades().getSusp()));			//"susp":""
+		upgradeKeys.put("tires", String.valueOf(profile.getCars().get(0).getUpgrades().getTires()));		//"tires":""
+		upgradeKeys.put("weightRed", String.valueOf(profile.getCars().get(0).getUpgrades().getWeightRed()));//"weightRed":""
 		
-		JSONArray car2 = new JSONArray();
-		car2.add(partsOfCar2);
-		obj.put("Car2", car2);
+		upgrades.add(upgradeKeys);																			//we are creating this structure: [{}]
+		standardCarStuff.put("Upgrades", upgrades);															//we are now adding name: "Uprades":[{}]
+		
+		car1.add(standardCarStuff);																			//[,,"Upgrades":[{}]]
+		obj.put("Car1", car1);																				// "Car1":[,,"Upgrades":[{}]] 
 		
 		//###########################Drivers##############################
 		

@@ -88,7 +88,7 @@ public class formulaApplication extends Application
 	public void start(Stage stage) throws Exception
 	{
 		//creates a gamecontroller object at the starting up of the application
-		gamecontroller = new GameController("./data.dat");
+		gamecontroller = new GameController("./data.json");
 		
 		Parent root = FXMLLoader.load(getClass().getResource("../view/MainMenu.fxml"));
 		theScene = new Scene(root);
