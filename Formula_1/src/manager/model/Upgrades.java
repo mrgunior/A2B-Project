@@ -72,4 +72,14 @@ public class Upgrades {
 		this.tires = tires;
 	}
 
+	public String toString(){
+		return "weightRed: " +
+				this.weightRed+", down: " 
+				+this.down+", susp: " 
+				+this.susp+", tires: " 
+				+this.tires+", gearbox: " 
+				+this.gearbox+", aero: " 
+				+this.aero+", engine: " 
+				+this.engine;
+	}
 }

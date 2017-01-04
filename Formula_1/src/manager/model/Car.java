@@ -65,5 +65,15 @@ public class Car {
 
 	public void setUpgrades(Upgrades upgrades) {
 		this.upgrades = upgrades;
-	}	
+	}
+	
+	public String toString(){
+		return "<Car[speed: "+ 
+				this.speed+", braking: "+ 
+				this.braking+", acceleration: "+ 
+				this.acceleration+", weight: " + 
+				this.weight+", handling: " + 
+				this.handling+", Upgrades[" + 
+				this.upgrades.toString()+"]>]>";
+	}
 }

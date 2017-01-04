@@ -308,7 +308,7 @@ public class GameController {
         	//each time it comes out of the inner loop it adds it to the list
         	carsList.add(car);
         	
-        	//reset this for each loop. We are using this to get the second driver
+        	//reset this for each loop. We are using this to get the second car
         	carString = "Car";
         }
         
