@@ -23,7 +23,7 @@ public class DriverTest
 		speed = 80;
 		acceleration = 75;
 		turning = 69;
-		averagePerformance = 78.6;
+		averagePerformance = (speed*acceleration*turning)/3;
 		salary = 3.0; //3 mil
 		
 		//just updating the fields of the driver object.

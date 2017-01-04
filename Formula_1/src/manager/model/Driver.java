@@ -16,6 +16,8 @@ public class Driver {
 		this.setAcceleration(acceleration);
 		this.setTurning(turning);
 		this.setSalary(salary);
+		
+		updateAveragePerformance();
 	}
 	
 	public Driver()
@@ -27,6 +29,8 @@ public class Driver {
 		this.setAcceleration(999);
 		this.setTurning(999);
 		this.setSalary(999);
+		
+		updateAveragePerformance();
 	}
 
 	//Getters
@@ -51,7 +55,7 @@ public class Driver {
 	}
 	
 	public double getAveragePerformance(){
-		
+		updateAveragePerformance();
 		return this.averagePerformance;
 	}
 	
@@ -70,17 +74,25 @@ public class Driver {
 	
 	public void setSpeed(int speed){
 		this.speed = speed;
+		updateAveragePerformance();
 	}
 	
 	public void setAcceleration(int acceleration){
 		this.acceleration = acceleration;
+		updateAveragePerformance();
 	}
 	
 	public void setTurning(int turning){
 		this.turning = turning;
+		updateAveragePerformance();
 	}
 	
 	public void setSalary(double salary){
 		this.salary = salary;
+	}
+	
+	// Other methods
+	public void updateAveragePerformance(){
+		this.averagePerformance = (speed*acceleration*turning)/3;
 	}
 }
