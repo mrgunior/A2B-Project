@@ -154,12 +154,12 @@ public class GameController {
         {
         	driverString+=(i+1);
         	
-        	//System.out.println(driverString);
+        	System.out.println("\n"+driverString);
         	driverArray = (JSONArray) jsonObject.get(driverString);
-        	object = (JSONObject) driverArray.get(0);
+        	object = (JSONObject) driverArray.get(0); //get the first {} object in "Driver1":[{}] and in "Driver2":[{}]
         	
-        	//create 2 drivers
-        	Driver driver = new Driver(driverString, i, i, i, i, i);
+        	//create 2 drivers layout
+        	Driver driver = new Driver("", i, i, i, i, i); //name will be updated in switch case together with the other fields
         	
         	for(int d = 0; d < 6; d++)
         	{
@@ -192,7 +192,8 @@ public class GameController {
         	
         	//each time it comes out of the inner loop it adds it to the list
         	driversList.add(driver);
-        	//reset this for each loop
+        	
+        	//reset this for each loop. We are using this to get the second driver
         	driverString = "Driver";
         }
         
@@ -205,22 +206,111 @@ public class GameController {
      * @param jsonObject
      */
 	private void initializeCarsInProfile(JSONObject jsonObject) 
-	{
-        //getting car1 #################################################
-        JSONArray car = (JSONArray) jsonObject.get("Car1");
-        
-        
-        Car car1 = new Car(0, 0, 0, 0, 0, new Upgrades(0,0,0,0,0,0,0));
-        
-        //getting car2 ################################################
-        car = (JSONArray) jsonObject.get("Car2");
-    
-        Car car2 = new Car(0, 0, 0, 0, 0, new Upgrades(0,0,0,0,0,0,0));
-        
-        //Creating an ArrayList########################################
+	{   
         List<Car> carsList = new ArrayList<Car>();
-        carsList.add(car1);
-        carsList.add(car2);
+		
+        String[] standardCarStuff = new String[5];
+        standardCarStuff[0] = "Speed";
+        standardCarStuff[1] = "Braking";
+        standardCarStuff[2] = "Acceleration";
+        standardCarStuff[3] = "Weight";
+        standardCarStuff[4] = "Handling";
+        
+        String[] upgradeItems = new String[7];
+        upgradeItems[0] = "WeightRed";
+        upgradeItems[1] = "Down";
+        upgradeItems[2] = "Susp";
+        upgradeItems[3] = "Tires";
+        upgradeItems[4] = "Gearbox";
+        upgradeItems[5] = "Aero";
+        upgradeItems[6] = "Engine";
+		
+        String carString = "Car";
+        JSONArray carArray;
+        JSONObject objectCar;
+        JSONObject objectUpgrades;
+        
+        for(int i = 0; i<2; i++)
+        {
+        	carString+=(i+1);
+        	
+        	System.out.println("\n"+carString);
+        	carArray = (JSONArray) jsonObject.get(carString);
+        	objectCar = (JSONObject) carArray.get(0); //get the first {} object in "Driver1":[{}] and in "Driver2":[{}]
+        	objectUpgrades = (JSONObject) objectCar.get("Upgrades"); //now get the object Upgrades in the object Car [{"Upgrades":{}}]
+        	
+        	//create 2 cars layout
+        	Upgrades upgrades = new Upgrades(i, i, i, i, i, i, i);
+        	Car car = new Car(i, i, i, i, i, upgrades); //these will be updated in the switch case
+        	
+        	//get the standard car stuff
+        	for(int c = 0; c<5; c++)
+        	{
+                String valueOfObject = String.valueOf(objectCar.get(standardCarStuff[c]));   
+                System.out.println(standardCarStuff[c]+": "+valueOfObject);
+                
+                switch(c)
+                {
+                	case 0 :int speed = Integer.parseInt(valueOfObject);
+                			car.setSpeed(speed);
+                			break;
+                	case 1 :int braking = Integer.parseInt(valueOfObject);
+                			car.setBraking(braking);
+            				break;
+                	case 2 :int acceleration = Integer.parseInt(valueOfObject);
+                			car.setAcceleration(acceleration);
+            				break;
+                	case 3 :int weight = Integer.parseInt(valueOfObject);
+                			car.setWeight(weight);
+            				break;
+                	case 4 :int handling = Integer.parseInt(valueOfObject);
+                			car.setHandling(handling);
+            				break;
+            		default : //do something else by default
+            				break;	
+                }
+        	}
+        	
+        	//get the upgrade items now in the Upgrades Object
+        	for(int u = 0; u<7; u++)
+        	{
+        		String valueOfObject = String.valueOf(objectUpgrades.get(upgradeItems[u]));  //here i am getting the key:value combination 
+                System.out.println(upgradeItems[u]+": "+valueOfObject);
+                
+                switch(u)
+                {
+                	case 0 :int weightRed = Integer.parseInt(valueOfObject);
+                			upgrades.setWeightRed(weightRed);
+                			break;
+                	case 1 :int down = Integer.parseInt(valueOfObject);
+                			upgrades.setDown(down);
+            				break;
+                	case 2 :int susp = Integer.parseInt(valueOfObject);
+                			upgrades.setSusp(susp);
+            				break;
+                	case 3 :int tires = Integer.parseInt(valueOfObject);
+                			upgrades.setTires(tires);
+            				break;
+                	case 4 :int gearbox = Integer.parseInt(valueOfObject);
+                			upgrades.setGearbox(gearbox);
+            				break;
+                	case 5 :int aero = Integer.parseInt(valueOfObject);
+                			upgrades.setAero(aero);
+                			break;
+                	case 6 :int engine = Integer.parseInt(valueOfObject);
+                			upgrades.setEngine(engine);
+                			break;
+            		default : //do something else by default
+            				break;	
+                }
+        	}
+        	
+        	//each time it comes out of the inner loop it adds it to the list
+        	carsList.add(car);
+        	
+        	//reset this for each loop. We are using this to get the second driver
+        	carString = "Car";
+        }
         
         //set the cars to the profile
         profile.setCars(carsList);
@@ -236,10 +326,10 @@ public class GameController {
 	{
     	//###########################User Profile#########################
     	
-    	JSONObject obj = new JSONObject();																	//create JSON object {}
-		obj.put("Teamname", profile.getTeamName());															//"TeamName":""
-		obj.put("Budget", String.valueOf(profile.getBudget()));												//"Budget":""
-		obj.put("Highscore", String.valueOf(profile.getHighScore()));										//"Highscore":""
+    	JSONObject obj = new JSONObject();																		//create JSON object {}
+		obj.put("Teamname", profile.getTeamName());																//"TeamName":""
+		obj.put("Budget", String.valueOf(profile.getBudget()));													//"Budget":""
+		obj.put("Highscore", String.valueOf(profile.getHighScore()));											//"Highscore":""
 			
 		//2 for 2 drivers and cars.
 		for(int i = 0; i < 2; i++)
@@ -266,25 +356,23 @@ public class GameController {
 			
 			JSONObject standardCarStuff = new JSONObject(); 													//create an object {} to add in the array																												//add the key:value to the object
 			
-			standardCarStuff.put("speed", String.valueOf(profile.getCars().get(i).getSpeed())); 				//"speed":""
-			standardCarStuff.put("acceleration", String.valueOf(profile.getCars().get(i).getAcceleration())); 	//"acceleration":""
-			standardCarStuff.put("handling", String.valueOf(profile.getCars().get(i).getHandling())); 			//"handling":""
-			standardCarStuff.put("braking", String.valueOf(profile.getCars().get(i).getBraking())); 			//"braking":""
-			standardCarStuff.put("weight", String.valueOf(profile.getCars().get(i).getWeight())); 				//"weight":""
-			
-			JSONArray upgrades = new JSONArray();																//create an array [], name is added later								
+			standardCarStuff.put("Speed", String.valueOf(profile.getCars().get(i).getSpeed())); 				//"speed":""
+			standardCarStuff.put("Acceleration", String.valueOf(profile.getCars().get(i).getAcceleration())); 	//"acceleration":""
+			standardCarStuff.put("Handling", String.valueOf(profile.getCars().get(i).getHandling())); 			//"handling":""
+			standardCarStuff.put("Braking", String.valueOf(profile.getCars().get(i).getBraking())); 			//"braking":""
+			standardCarStuff.put("Weight", String.valueOf(profile.getCars().get(i).getWeight())); 				//"weight":""
+																											
 			JSONObject upgradeItems = new JSONObject();															//create an object {} to add in the array
 																												//add the key:value to the object
-			upgradeItems.put("down", String.valueOf(profile.getCars().get(i).getUpgrades().getDown()));			//"down":""
-			upgradeItems.put("aero", String.valueOf(profile.getCars().get(i).getUpgrades().getAero()));			//"aero":""
-			upgradeItems.put("gearbox", String.valueOf(profile.getCars().get(i).getUpgrades().getGearbox()));	//"gearbox":""
-			upgradeItems.put("engine", String.valueOf(profile.getCars().get(i).getUpgrades().getEngine()));		//"engine":""
-			upgradeItems.put("susp", String.valueOf(profile.getCars().get(i).getUpgrades().getSusp()));			//"susp":""
-			upgradeItems.put("tires", String.valueOf(profile.getCars().get(i).getUpgrades().getTires()));		//"tires":""
-			upgradeItems.put("weightRed", String.valueOf(profile.getCars().get(i).getUpgrades().getWeightRed()));//"weightRed":""
-			
-			upgrades.add(upgradeItems);																			//we are creating this structure: [{}]
-			standardCarStuff.put("Upgrades", upgrades);															//we are now adding name: "Uprades":[{}]
+			upgradeItems.put("Down", String.valueOf(profile.getCars().get(i).getUpgrades().getDown()));			//"down":""
+			upgradeItems.put("Aero", String.valueOf(profile.getCars().get(i).getUpgrades().getAero()));			//"aero":""
+			upgradeItems.put("Gearbox", String.valueOf(profile.getCars().get(i).getUpgrades().getGearbox()));	//"gearbox":""
+			upgradeItems.put("Engine", String.valueOf(profile.getCars().get(i).getUpgrades().getEngine()));		//"engine":""
+			upgradeItems.put("Susp", String.valueOf(profile.getCars().get(i).getUpgrades().getSusp()));			//"susp":""
+			upgradeItems.put("Tires", String.valueOf(profile.getCars().get(i).getUpgrades().getTires()));		//"tires":""
+			upgradeItems.put("WeightRed", String.valueOf(profile.getCars().get(i).getUpgrades().getWeightRed()));//"weightRed":""
+																						//we are creating this structure: [{}]
+			standardCarStuff.put("Upgrades", upgradeItems);															//we are now adding name: "Uprades":[{}]
 			
 			car.add(standardCarStuff);																			//[,,"Upgrades":[{}]]
 			obj.put("Car"+(i+1), car);																			// "Car1":[,,"Upgrades":[{}]] 
@@ -294,8 +382,9 @@ public class GameController {
 		try (FileWriter file = new FileWriter(jsonFile)) 
 		{
 			file.write(obj.toJSONString());
-			System.out.println("Json object successfully written to file");
-			System.out.println("\nJSON Object: " + obj+"\n");
+			System.out.println("\n\n##################Write to JSON file section#########################");
+			System.out.println("JSON Object successfully written to file: " + jsonFile);
+			System.out.println("JSON Object: " + obj+"\n");
 		}
     }
     
