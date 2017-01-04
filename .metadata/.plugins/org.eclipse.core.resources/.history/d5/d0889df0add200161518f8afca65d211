@@ -9,12 +9,36 @@ public class Driver {
 	
 	public Driver(String name, int number, int speed, int acceleration, int turning, double salary) {
 		
+<<<<<<< HEAD
 		this.name = name;
 		this.number = number;
 		this.speed = speed;
 		this.acceleration = acceleration;
 		this.turning = turning;
 		this.salary = salary;
+=======
+		this.setName(name);
+		this.setNumber(number);
+		this.setSpeed(speed);
+		this.setAcceleration(acceleration);
+		this.setTurning(turning);
+		this.setSalary(salary);
+		
+		updateAveragePerformance();
+>>>>>>> 245fa386758405ac938ade21738dabeb53515e17
+	}
+	
+	public Driver()
+	{
+		// TODO Set variables to default values
+		this.setName("Default Driver Name");
+		this.setNumber(999);
+		this.setSpeed(999);
+		this.setAcceleration(999);
+		this.setTurning(999);
+		this.setSalary(999);
+		
+		updateAveragePerformance();
 	}
 
 	//Getters
@@ -62,7 +86,7 @@ public class Driver {
 	}
 	
 	public void setSpeed(int speed){
-		this.speed = speed;
+		this.speed = speed);
 	}
 	
 	public void setAcceleration(int acceleration){

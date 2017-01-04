@@ -72,6 +72,7 @@ public class Upgrades {
 		this.tires = tires;
 	}
 
+<<<<<<< HEAD
 	public String toString(){
 		return "weightRed: " +
 				this.weightRed+", down: " 
@@ -81,14 +82,7 @@ public class Upgrades {
 				+this.gearbox+", aero: " 
 				+this.aero+", engine: " 
 				+this.engine;
-	}
-	
-	
-	/*
-	 * (non-Javadoc)
-	 * this is not entirely correct Mika. do instanceOf first and afterswards do field check
-	 * @see java.lang.Object#equals(java.lang.Object)
-	 */
+=======
 	@Override
 	public boolean equals(Object obj)
 	{
@@ -134,5 +128,6 @@ public class Upgrades {
 			return false;
 		}
 		return true;
+>>>>>>> 245fa386758405ac938ade21738dabeb53515e17
 	}
 }

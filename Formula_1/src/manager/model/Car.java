@@ -18,6 +18,11 @@ public class Car {
 		this.weight = weight;
 		this.upgrades = upgrades;
 	}
+	
+	public Car()
+	{
+		//TODO Set all the default values of the car
+	}
 
 	public int getSpeed() {
 		return this.speed;

@@ -85,7 +85,7 @@ public class RaceController extends Controller implements Initializable
 	{
 		// Setup variables, car arraylist and GUI car position
 		finishX = finish.getLayoutX();
-		addCars(1200000);
+		addCars(10000);
 		for (GUICar car : cars)
 		{
 			car.setX(startCarsX);
@@ -134,7 +134,7 @@ public class RaceController extends Controller implements Initializable
 	 */
 	private void addCars(double time)
 	{
-		//TODO Get a better way to add all the cars to the arraylist...
+		//TODO Get a better way to add all the cars to the arraylist
 		GUICar car1 = new GUICar(ferrari1, time);
 		GUICar car2 = new GUICar(ferrari2, time);
 		GUICar car3 = new GUICar(forceIndia1, time);

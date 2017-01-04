@@ -22,10 +22,23 @@ public class DriverTest
 		speed = 80;
 		acceleration = 75;
 		turning = 69;
-		averagePerformance = 138000.0; //(double)(speed*acceleration*turning)/(double)3
+<<<<<<< HEAD
+		averagePerformance = 138000.0;
 		salary = 3.0; //3 mil
 		
 		driver = new Driver(name, number, speed, acceleration, turning, salary);
+=======
+		averagePerformance = (double)(speed*acceleration*turning)/(double)3;
+		salary = 3.0; //3 mil
+		
+		//just updating the fields of the driver object.
+		driver.setName(name);
+		driver.setNumber(number);
+		driver.setSpeed(speed);
+		driver.setAcceleration(acceleration);
+		driver.setTurning(turning);
+		driver.setSalary(salary);
+>>>>>>> 245fa386758405ac938ade21738dabeb53515e17
 	}
 	
 	@Test

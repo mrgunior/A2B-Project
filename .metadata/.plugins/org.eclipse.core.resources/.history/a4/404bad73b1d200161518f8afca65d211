@@ -18,6 +18,7 @@ import static org.hamcrest.CoreMatchers.*;
 
 public class ProfileTest
 {
+<<<<<<< HEAD
 	private Profile profile;
 	private double highScore, budget;
 	private String teamName, name;
@@ -26,7 +27,15 @@ public class ProfileTest
 	private Upgrades upgrades;
 	private List<Driver> drivers;
 	private List<Car> cars;
+	
+=======
+	private Profile			profile;
+	private double			highScore, budget;
+	private String			teamName;
+	private List<Driver>	drivers;
+	private List<Car>		cars;
 
+>>>>>>> 245fa386758405ac938ade21738dabeb53515e17
 	@Before
 	public void setUp()
 	{
@@ -34,6 +43,7 @@ public class ProfileTest
 		highScore = 0.0;
 		budget = 200.0;
 		teamName = "TestName";
+<<<<<<< HEAD
 		
 		//driver & car stuff
 		name = "Victor Wernet";
@@ -43,6 +53,7 @@ public class ProfileTest
 		turning = 69;
 		averagePerformance = 138000.0;
 		salary = 3.0; //3 mil
+		
 		
 		profile = new Profile(highScore, budget, teamName);
 		upgrades = new Upgrades(0,0,0,0,0,0,0);
@@ -54,6 +65,19 @@ public class ProfileTest
 		cars = new ArrayList<Car>();
 		cars.add(new Car(speed, acceleration, handling, braking, weight, upgrades));
 		cars.add(new Car(speed, acceleration, handling, braking, weight, upgrades));
+=======
+
+		profile = new Profile(highScore, budget, teamName);
+
+		drivers = new ArrayList<Driver>();
+		drivers.add(new Driver());
+		drivers.add(new Driver());
+
+		cars = new ArrayList<Car>();
+		// TODO No engines in car, something else for the tests should be here
+		// cars.add(new Car(new Engine("Engine1", 1.0)));
+		// cars.add(new Car(new Engine("Engine2", 1.0)));
+>>>>>>> 245fa386758405ac938ade21738dabeb53515e17
 	}
 
 	@Test

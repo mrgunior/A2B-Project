@@ -13,7 +13,10 @@ public class CarTest
 {
 	private Car car;
 	private Upgrades upgrades;
+	
+	private Engine	engine1, engine2;
 	int speed, acceleration, handling, braking, weight;
+	Upgrades upgrades, upgrades2;
 
 	@Before
 	public void setUp()

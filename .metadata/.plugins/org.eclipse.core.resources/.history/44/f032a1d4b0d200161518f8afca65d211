@@ -83,12 +83,6 @@ public class Upgrades {
 				+this.engine;
 	}
 	
-	
-	/*
-	 * (non-Javadoc)
-	 * this is not entirely correct Mika. do instanceOf first and afterswards do field check
-	 * @see java.lang.Object#equals(java.lang.Object)
-	 */
 	@Override
 	public boolean equals(Object obj)
 	{

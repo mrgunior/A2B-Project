@@ -86,7 +86,7 @@ public class Upgrades {
 	
 	/*
 	 * (non-Javadoc)
-	 * this is not entirely correct Mika. do instanceOf first and afterswards do field check
+	 * this is not entirely correct Mika....
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
 	@Override

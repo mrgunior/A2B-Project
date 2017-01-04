@@ -13,7 +13,10 @@ public class CarTest
 {
 	private Car car;
 	private Upgrades upgrades;
+	
+	private Engine	engine1, engine2;
 	int speed, acceleration, handling, braking, weight;
+	Upgrades upgrades, upgrades2;
 
 	@Before
 	public void setUp()
@@ -83,6 +86,7 @@ public class CarTest
 	@Test
 	public void testSetWeight()
 	{
+<<<<<<< HEAD
 		car.setWeight(1);
 		assertEquals("Weight updated correctly via setWeight()", car.getWeight(),1);
 	}
@@ -99,6 +103,18 @@ public class CarTest
 		Upgrades upgradesTest = new Upgrades(1,1,1,1,0,0,0);
 		car.setUpgrades(upgradesTest);
 		assertTrue("Objects that are equal should be the same", upgradesTest.equals(car.getUpgrades()));
+=======
+		engine1 = new Engine("TestEngine1", 1.0);
+		engine2 = new Engine("TestEngine2", 1.0);
+
+		speed = 10;
+		acceleration = 20;
+		handling = 30;
+		braking = 40;
+		weight = 50;
+		upgrades = new Upgrades(1, 2, 3, 4, 5, 6, 7);
+		
+		car = new Car(speed, acceleration, handling, braking, weight, upgrades);
 	}
 
 	@Test
@@ -134,6 +150,7 @@ public class CarTest
 	@Test
 	public void testConstructorUpgrades()
 	{
+		// TODO Create Upgrades equals method
 		assertEquals(car.getUpgrades(), upgrades);
 	}
 }

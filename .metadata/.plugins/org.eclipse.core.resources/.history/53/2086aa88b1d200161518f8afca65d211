@@ -34,6 +34,7 @@ public class ProfileTest
 		highScore = 0.0;
 		budget = 200.0;
 		teamName = "TestName";
+<<<<<<< HEAD
 		
 		//driver & car stuff
 		name = "Victor Wernet";

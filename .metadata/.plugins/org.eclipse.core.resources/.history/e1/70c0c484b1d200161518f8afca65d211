@@ -34,6 +34,7 @@ public class ProfileTest
 		highScore = 0.0;
 		budget = 200.0;
 		teamName = "TestName";
+<<<<<<< HEAD
 		
 		//driver & car stuff
 		name = "Victor Wernet";
@@ -43,6 +44,7 @@ public class ProfileTest
 		turning = 69;
 		averagePerformance = 138000.0;
 		salary = 3.0; //3 mil
+		
 		
 		profile = new Profile(highScore, budget, teamName);
 		upgrades = new Upgrades(0,0,0,0,0,0,0);
