@@ -158,7 +158,7 @@ public class GameController {
         	driverArray = (JSONArray) jsonObject.get(driverString);
         	object = (JSONObject) driverArray.get(0);
         	
-        	//create 2 drivers
+        	//TODO create 2 drivers
         	Driver driver = new Driver(driverString, i, i, i, i, i);
         	
         	for(int d = 0; d < 6; d++)

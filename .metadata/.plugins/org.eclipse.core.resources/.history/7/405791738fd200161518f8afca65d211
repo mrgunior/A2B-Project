@@ -138,13 +138,14 @@ public class GameController {
     private void initializeDriversInProfile(JSONObject jsonObject) {
     	List<Driver> driversList = new ArrayList<Driver>();
         
-        String[] infos = new String[6];
+        String[] infos = new String[7];
         infos[0] = "Speed";
         infos[1] = "Salary";
         infos[2] = "Number";
         infos[3] = "Turning";
         infos[4] = "Name";
         infos[5] = "Acceleration";
+        infos[6] = "AveragePerformance";
         
         String driverString = "Driver";
         JSONArray driverArray;
@@ -185,7 +186,10 @@ public class GameController {
                 	case 5 :int acceleration = Integer.parseInt(valueOfObject);
                 			driver.setAcceleration(acceleration);
             				break;
-            		default : //do something else by default
+                	case 6 :int acceleration = Integer.parseInt(valueOfObject);
+        					driver.setAcceleration(acceleration);
+        					break;		
+            		default : 
             				break;	
                 }
         	}
