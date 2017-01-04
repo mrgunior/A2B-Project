@@ -10,14 +10,25 @@ public class Driver {
 	
 	public Driver(String name, int number, int speed, int acceleration, int turning, double salary) {
 		
-		this.setAcceleration(acceleration);
 		this.setName(name);
 		this.setNumber(number);
-		this.setSalary(salary);
 		this.setSpeed(speed);
+		this.setAcceleration(acceleration);
 		this.setTurning(turning);
+		this.setSalary(salary);
 	}
 	
+	public Driver()
+	{
+		// TODO Set variables to default values
+		this.setName("Default Driver Name");
+		this.setNumber(999);
+		this.setSpeed(999);
+		this.setAcceleration(999);
+		this.setTurning(999);
+		this.setSalary(999);
+	}
+
 	//Getters
 	public String getName(){
 		return this.name;

@@ -72,4 +72,50 @@ public class Upgrades {
 		this.tires = tires;
 	}
 
+	@Override
+	public boolean equals(Object obj)
+	{
+		if (this == obj)
+		{
+			return true;
+		}
+		if (obj == null)
+		{
+			return false;
+		}
+		if (!(obj instanceof Upgrades))
+		{
+			return false;
+		}
+		Upgrades other = (Upgrades) obj;
+		if (aero != other.aero)
+		{
+			return false;
+		}
+		if (down != other.down)
+		{
+			return false;
+		}
+		if (engine != other.engine)
+		{
+			return false;
+		}
+		if (gearbox != other.gearbox)
+		{
+			return false;
+		}
+		if (susp != other.susp)
+		{
+			return false;
+		}
+		if (tires != other.tires)
+		{
+			return false;
+		}
+		if (weightRed != other.weightRed)
+		{
+			return false;
+		}
+		return true;
+	}
 }

@@ -32,7 +32,6 @@ public class DriverTest
 		driver.setSpeed(speed);
 		driver.setAcceleration(acceleration);
 		driver.setTurning(turning);
-		driver.setAveragePerformance(averagePerformance);
 		driver.setSalary(salary);
 	}
 	

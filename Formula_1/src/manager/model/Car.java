@@ -19,6 +19,11 @@ public class Car {
 		this.setUpgrades(upgrades);
 		
 	}
+	
+	public Car()
+	{
+		//TODO Set all the default values of the car
+	}
 
 	public int getSpeed() {
 		return speed;
