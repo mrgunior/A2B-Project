@@ -1,0 +1,4 @@
+git rm -rf --cached .metadata/**/*
+git reset HEAD .metadata
+git checkout -- .metadata
+git status
