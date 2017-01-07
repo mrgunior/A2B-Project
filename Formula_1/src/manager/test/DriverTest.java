@@ -16,7 +16,7 @@ public class DriverTest
 
 	@Before
 	public void setUp() 
-	{
+	{ 
 		name = "Victor Wernet";
 		number = 33;
 		speed = 80;
