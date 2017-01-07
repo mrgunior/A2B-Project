@@ -6,48 +6,100 @@ import com.sun.xml.internal.bind.v2.runtime.RuntimeUtil.ToStringAdapter;
 
 import manager.model.Driver;
 
-public class DriverResult implements Comparator<DriverResult>, Comparable<DriverResult>
+public class DriverResult
 {
-	private int number = 0;
-	private String name = "";
-	private double time = 0;
-	
+	/**
+	 * Variables for a single result of a driver (carId is for race simulation)
+	 */
+	private int		carId	= 0;
+	private String	name	= "";
+	private double	time	= 0;
+
+	/**
+	 * Getter for car ID
+	 * 
+	 * @return int - Car ID
+	 */
+	public int getCarId()
+	{
+		return carId;
+	}
+
+	/**
+	 * Getter for driver Name
+	 * 
+	 * @return String - Driver name
+	 */
 	public String getName()
 	{
 		return name;
 	}
-	
+
+	/**
+	 * Getter for result time
+	 * 
+	 * @return double - Result time
+	 */
 	public double getTime()
 	{
 		return time;
 	}
-	
-	public DriverResult()
+
+	/**
+	 * Constructor for a Driver Result
+	 * 
+	 * @param carId - int, car ID for the simulation
+	 * @param name - String, driver name
+	 * @param time - double, result time
+	 */
+	public DriverResult(int carId, String name, double time)
 	{
-		
-	}
-	
-	public DriverResult(int number, String name, double time)
-	{
-		this.number = number;
+		this.carId = carId;
 		this.name = name;
 		this.time = time;
 	}
-	
+
+	/**
+	 * Converts the DriverResult object into a string
+	 * 
+	 * @return String - DriverResult object in string format
+	 */
 	public String toString()
 	{
-		return (name + " (" + number + ") : " + time);
+		return (name + " (" + carId + ") : " + time);
 	}
 
-	@Override
-	public int compareTo(DriverResult driverResult)
+	/**
+	 * Returns the Comparator to sort by result time from low to high
+	 * 
+	 * @return Comparator - Compares by time
+	 */
+	static Comparator<DriverResult> getTimeComparator()
 	{
-		return (this.name).compareTo(driverResult.getName());
+		return new Comparator<DriverResult>()
+		{
+			@Override
+			public int compare(DriverResult dR1, DriverResult dR2)
+			{
+				return (int) (dR1.getTime() - dR2.getTime());
+			}
+		};
 	}
 
-	@Override
-	public int compare(DriverResult dR1, DriverResult dR2)
+	/**
+	 * Returns the Comparator to sort by car ID from low to high
+	 * 
+	 * @return Comparator - Compares by car ID
+	 */
+	static Comparator<DriverResult> getCarIdComparator()
 	{
-		return (int) (dR1.getTime() - dR2.getTime());
+		return new Comparator<DriverResult>()
+		{
+			@Override
+			public int compare(DriverResult dR1, DriverResult dR2)
+			{
+				return (int) (dR1.getCarId() - dR2.getCarId());
+			}
+		};
 	}
 }
