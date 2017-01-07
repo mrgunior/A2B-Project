@@ -366,7 +366,7 @@
 		{
 			"level1": 
 			{
-				"name": "Retractible Spoiler",
+				"name": "Bridgestone Race Tires",
 				"price": 10000000,
 				"positive": 
 				{
@@ -381,7 +381,7 @@
 			},
 			"level2": 
 			{
-				"name": "Carbon Fiber Spoiler",
+				"name": "Continental Race Tires",
 				"price": 12590000,
 				"positive": 
 				{
@@ -396,7 +396,7 @@
 			},
 			"level3": 
 			{
-				"name": "Frontal Wing Upgrade",
+				"name": "GoodYear Race Tires",
 				"price": 16220000,
 				"positive": 
 				{
@@ -411,7 +411,7 @@
 			},
 			"level4": 
 			{
-				"name": "Single Airfoil Wing",
+				"name": "Michelin Race Tires",
 				"price": 21430000,
 				"positive": 
 				{
@@ -426,7 +426,7 @@
 			},
 			"level5": 
 			{
-				"name": "Dual Airfoil Wing",
+				"name": "Pirelli Race Tires",
 				"price": 29110000,
 				"positive": 
 				{

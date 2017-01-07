@@ -2,20 +2,13 @@ package manager.controller;
 
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Random;
 import java.util.ResourceBundle;
-import java.util.Timer;
-import java.util.TimerTask;
-
-import com.sun.org.apache.xerces.internal.util.EntityResolver2Wrapper;
-
 import javafx.animation.AnimationTimer;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Line;
 import javafx.scene.text.Text;
-import javafx.util.converter.TimeStringConverter;
 import manager.model.Stopwatch;
 
 public class RaceController extends Controller implements Initializable
