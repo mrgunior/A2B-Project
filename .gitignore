@@ -12,7 +12,8 @@ local.properties
 # Eclipse Core
 .project
 
-# metadat
+# metadata
+.metadata
 .metadata/
 .plugins/org.eclipse.jdt.core/variablesAndContainers.dat
 .plugins/org.eclipse.core.resources/.projects/*/.location
