@@ -1,4 +1,3 @@
-
 bin/
 tmp/
 *.tmp
@@ -12,6 +11,13 @@ local.properties
 
 # Eclipse Core
 .project
+
+# metadat
+.metadata/
+.plugins/org.eclipse.jdt.core/variablesAndContainers.dat
+.plugins/org.eclipse.core.resources/.projects/*/.location
+.metadata/.plugins/org.eclipse.core.resources/.root 
+.metadata/.plugins/org.eclipse.core.resources/.safetable
 
 # External tool builders
 .externalToolBuilders/
@@ -47,3 +53,4 @@ local.properties
 .springBeans
 
 # Code Recommenders
+.recommenders/
