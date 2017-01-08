@@ -95,12 +95,13 @@ public class GUICar
 	public void moveCar()
 	{
 		// Check if the car has crossed the finish line
-		if (getX() < (finishX - car.getFitWidth()))
+		if (getX() < (finishX - car.getFitWidth() - (car.getFitWidth()/10)))
 		{
 			setX(getX() + carSpeed);
 		}
 		else
 		{
+			setX(finishX - car.getFitWidth());
 			RaceController.setTimerRunning(false);
 		}
 
