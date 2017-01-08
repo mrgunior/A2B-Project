@@ -5,12 +5,8 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.sun.org.apache.xalan.internal.xsltc.compiler.util.CompareGenerator;
-
-import org.hamcrest.*;
-
-import Templates.DriverResult;
-import Templates.Results;
+import manager.model.DriverResult;
+import manager.model.Results;
 
 public class ResultsTest
 {

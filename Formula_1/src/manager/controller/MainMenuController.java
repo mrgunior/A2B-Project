@@ -76,7 +76,7 @@ public class MainMenuController extends Controller implements Initializable
 						// empty
 						if (!(formulaApplication.getTeamName().equals("")))
 						{
-							gotoFxmlScene(event, "Dashboard", (Stage) resume.getScene().getWindow());
+							gotoFxmlScene(event, "Result", (Stage) resume.getScene().getWindow());
 						}
 
 						// if the json object is empty

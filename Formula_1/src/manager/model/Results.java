@@ -1,4 +1,4 @@
-package Templates;
+package manager.model;
 
 import java.util.ArrayList;
 import java.util.Collections;
