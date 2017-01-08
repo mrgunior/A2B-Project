@@ -2,12 +2,19 @@ package manager.test;
 
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import manager.model.Aerodynamics;
 
 public class AerodynamicsTest 
 {
+	@Before
+	public void setUp()
+	{
+		Aerodynamics aerodynamics = new Aerodynamics();
+	}
+	
 	@Test
 	public void testPriceAtCertainLevelWhenItIsZero()
 	{
