@@ -1,5 +1,6 @@
 package manager.controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -12,6 +13,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Line;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 import manager.model.Stopwatch;
 import sun.management.counter.Variability;
 
