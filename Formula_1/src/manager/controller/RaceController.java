@@ -7,15 +7,16 @@ import java.util.ResourceBundle;
 
 import manager.model.DriverResult;
 import manager.model.Results;
+import manager.controller.ResultController;
 import javafx.animation.AnimationTimer;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Line;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import manager.model.Stopwatch;
-import sun.management.counter.Variability;
 
 public class RaceController extends Controller implements Initializable
 {
@@ -30,18 +31,27 @@ public class RaceController extends Controller implements Initializable
 	// Time
 	@FXML
 	private Text time;
+	@FXML
+	private ImageView startRace;
+	@FXML
+	private ImageView gotoResults;
+	
 	// All the cars in arraylist
 	private ArrayList<GUICar> cars = new ArrayList<GUICar>();
 
 	// Variables for GUI
 	private static double	finishX;
 	private static double	startCarsX		= 50;
-	private static long		timerSpeed		= 25;
 	private static boolean	timerRunning	= true;
 	private String			timeString		= "";
 
 	private int				frames	= 1;
 	private static double	fps		= 60;
+	
+	private static boolean raceStarted = false;
+	public static int nFinished = 0;
+	
+	public static Results resultsRace;
 
 	/**
 	 * Getter for finish X value
@@ -72,6 +82,27 @@ public class RaceController extends Controller implements Initializable
 	{
 		return fps;
 	}
+	
+	public static boolean isRaceStarted()
+	{
+		return raceStarted;
+	}
+	
+	public void startRace()
+	{
+		raceStarted = true;
+	}
+	public void stopRace()
+	{
+		raceStarted = false;
+		setTimerRunning(false);
+		gotoResults.setVisible(true);
+	}
+	
+	public static void carFinished()
+	{
+		nFinished += 1;
+	}
 
 	/**
 	 * Setter for timer running, timer will stop if the timer is set to false
@@ -82,6 +113,11 @@ public class RaceController extends Controller implements Initializable
 	{
 		RaceController.timerRunning = timerRunning;
 	}
+	
+	public static void setResults(Results newResults)
+	{
+		resultsRace = newResults;
+	}
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources)
@@ -91,55 +127,78 @@ public class RaceController extends Controller implements Initializable
 
 		// ===== RESULT STARTING =====//
 
-		Results results = new Results();
+		resultsRace = new Results();
 
-		DriverResult result1 = new DriverResult(1, "Result 1", 10000);
-		DriverResult result2 = new DriverResult(2, "Result 2", 3000);
-		DriverResult result3 = new DriverResult(3, "Result 3", 2000);
-		DriverResult result4 = new DriverResult(4, "Result 1", 10000);
-		DriverResult result5 = new DriverResult(5, "Result 2", 3000);
-		DriverResult result6 = new DriverResult(6, "Result 3", 2000);
-		DriverResult result7 = new DriverResult(7, "Result 1", 10000);
-		DriverResult result8 = new DriverResult(8, "Result 2", 3000);
-		DriverResult result9 = new DriverResult(9, "Result 3", 2000);
-		DriverResult result10 = new DriverResult(10, "Result 1", 10000);
-		DriverResult result11 = new DriverResult(11, "Result 2", 3000);
-		DriverResult result12 = new DriverResult(12, "Result 2", 3000);
-		DriverResult result13 = new DriverResult(13, "Result 3", 2000);
-		DriverResult result14 = new DriverResult(14, "Result 1", 10000);
-		DriverResult result15 = new DriverResult(15, "Result 2", 3000);
-		DriverResult result16 = new DriverResult(16, "Result 3", 2000);
-		DriverResult result17 = new DriverResult(17, "Result 1", 10000);
-		DriverResult result18 = new DriverResult(18, "Result 2", 3000);
-		DriverResult result19 = new DriverResult(19, "Result 3", 2000);
-		DriverResult result20 = new DriverResult(20, "Result 1", 10000);
-		DriverResult result21 = new DriverResult(21, "Result 2", 3000);
-		DriverResult result22 = new DriverResult(22, "Result 3", 2000);
+//		DriverResult result1 = new DriverResult(1, "Result 1", 10000);
+//		DriverResult result2 = new DriverResult(2, "Result 2", 3000);
+//		DriverResult result3 = new DriverResult(3, "Result 3", 2000);
+//		DriverResult result4 = new DriverResult(4, "Result 1", 10000);
+//		DriverResult result5 = new DriverResult(5, "Result 2", 3000);
+//		DriverResult result6 = new DriverResult(6, "Result 3", 2000);
+//		DriverResult result7 = new DriverResult(7, "Result 1", 10000);
+//		DriverResult result8 = new DriverResult(8, "Result 2", 3000);
+//		DriverResult result9 = new DriverResult(9, "Result 3", 2000);
+//		DriverResult result10 = new DriverResult(10, "Result 1", 10000);
+//		DriverResult result11 = new DriverResult(11, "Result 2", 3000);
+//		DriverResult result12 = new DriverResult(12, "Result 2", 3000);
+//		DriverResult result13 = new DriverResult(13, "Result 3", 2000);
+//		DriverResult result14 = new DriverResult(14, "Result 1", 10000);
+//		DriverResult result15 = new DriverResult(15, "Result 2", 3000);
+//		DriverResult result16 = new DriverResult(16, "Result 3", 2000);
+//		DriverResult result17 = new DriverResult(17, "Result 1", 10000);
+//		DriverResult result18 = new DriverResult(18, "Result 2", 3000);
+//		DriverResult result19 = new DriverResult(19, "Result 3", 2000);
+//		DriverResult result20 = new DriverResult(20, "Result 1", 10000);
+//		DriverResult result21 = new DriverResult(21, "Result 2", 3000);
+//		DriverResult result22 = new DriverResult(22, "Result 3", 2000);
+		
+		DriverResult result1 = new DriverResult(1, "Car 1", 10000);
+		DriverResult result2 = new DriverResult(2, "Car 2", 6500);
+		DriverResult result3 = new DriverResult(3, "Car 3", 6488);
+		DriverResult result4 = new DriverResult(4, "Car 4", 3522);
+		DriverResult result5 = new DriverResult(5, "Car 5", 3900);
+		DriverResult result6 = new DriverResult(6, "Car 6", 9400);
+		DriverResult result7 = new DriverResult(7, "Car 7", 5300);
+		DriverResult result8 = new DriverResult(8, "Car 8", 4533);
+		DriverResult result9 = new DriverResult(9, "Car 9", 6574);
+		DriverResult result10 = new DriverResult(10, "Car 10", 6252);
+		DriverResult result11 = new DriverResult(11, "Car 11", 7744);
+		DriverResult result12 = new DriverResult(12, "Car 12", 7366);
+		DriverResult result13 = new DriverResult(13, "Car 13", 7335);
+		DriverResult result14 = new DriverResult(14, "Car 14", 8477);
+		DriverResult result15 = new DriverResult(15, "Car 15", 9933);
+		DriverResult result16 = new DriverResult(16, "Car 16", 9399);
+		DriverResult result17 = new DriverResult(17, "Car 17", 6374);
+		DriverResult result18 = new DriverResult(18, "Car 18", 6477);
+		DriverResult result19 = new DriverResult(19, "Car 19", 8833);
+		DriverResult result20 = new DriverResult(20, "Car 20", 9922);
+		DriverResult result21 = new DriverResult(21, "Car 21", 7744);
+		DriverResult result22 = new DriverResult(22, "Car 22", 7263);
 
-		results.addResult(result1);
-		results.addResult(result2);
-		results.addResult(result3);
-		results.addResult(result4);
-		results.addResult(result5);
-		results.addResult(result6);
-		results.addResult(result7);
-		results.addResult(result8);
-		results.addResult(result9);
-		results.addResult(result10);
-		results.addResult(result11);
-		results.addResult(result12);
-		results.addResult(result13);
-		results.addResult(result14);
-		results.addResult(result15);
-		results.addResult(result16);
-		results.addResult(result17);
-		results.addResult(result18);
-		results.addResult(result19);
-		results.addResult(result20);
-		results.addResult(result21);
-		results.addResult(result22);
+		resultsRace.addResult(result1);
+		resultsRace.addResult(result2);
+		resultsRace.addResult(result3);
+		resultsRace.addResult(result4);
+		resultsRace.addResult(result5);
+		resultsRace.addResult(result6);
+		resultsRace.addResult(result7);
+		resultsRace.addResult(result8);
+		resultsRace.addResult(result9);
+		resultsRace.addResult(result10);
+		resultsRace.addResult(result11);
+		resultsRace.addResult(result12);
+		resultsRace.addResult(result13);
+		resultsRace.addResult(result14);
+		resultsRace.addResult(result15);
+		resultsRace.addResult(result16);
+		resultsRace.addResult(result17);
+		resultsRace.addResult(result18);
+		resultsRace.addResult(result19);
+		resultsRace.addResult(result20);
+		resultsRace.addResult(result21);
+		resultsRace.addResult(result22);
 
-		addCarsFromResults(results, 10000);
+		addCarsFromResults(resultsRace, 10000);
 
 		// ===========================//
 
@@ -147,10 +206,13 @@ public class RaceController extends Controller implements Initializable
 		{
 			car.setX(startCarsX);
 		}
-
-		// Setup stopwatch
+		
+		//Hide goto results button
+		gotoResults.setVisible(false);
+		// Setup stopwatch and timer
 		Stopwatch stopwatch = new Stopwatch();
-
+		time.setText(stopwatch.elapsedTimeString());
+		
 		// Everything inside handle(){...} will be run every tick
 		AnimationTimer animationTimer = new AnimationTimer()
 		{
@@ -162,6 +224,9 @@ public class RaceController extends Controller implements Initializable
 				{
 					car.moveCar();
 				}
+				// Get the amount of cars finished
+				nFinished = getNFinished();
+				
 				// Reset frames to prevent integer overflow
 				if (frames < 10000000)
 				{
@@ -180,20 +245,73 @@ public class RaceController extends Controller implements Initializable
 					timeString = stopwatch.elapsedTimeString();
 					time.setText(timeString);
 				}
+				
+				if (nFinished >= 22)
+				{
+					stopRace();
+				}
 			}
 		};
 
-		// Start the animationTimer, everything in the handle(){...} will be run
-		// every tick
-		animationTimer.start();
+		startRace.setOnMousePressed(event -> {
+			startRace.setVisible(false);
+			animationTimer.start();
+			stopwatch.start();
+			timerRunning = true;
+			raceStarted = true;
+		});
+		startRace.setOnMouseEntered(event -> {
+			startRace.setImage(new Image("file:images/menu/StartGameHover.png"));
+		});
+		startRace.setOnMouseExited(event -> {
+			startRace.setImage(new Image("file:images/menu/StartGame.png"));
+		});
+
+		gotoResults.setOnMousePressed(event -> {
+			animationTimer.stop();
+			ResultController.setResults(resultsRace);
+			try
+			{
+				gotoFxmlScene(event, "Result", (Stage) time.getScene().getWindow());
+			}
+			catch (IOException e)
+			{
+				e.printStackTrace();
+			}
+		});
+		gotoResults.setOnMouseEntered(event -> {
+			gotoResults.setImage(new Image("file:images/menu/NextHover.png"));
+		});
+		gotoResults.setOnMouseExited(event -> {
+			gotoResults.setImage(new Image("file:images/menu/Next.png"));
+		});
+		
+		time.setOnMousePressed(event -> {
+			animationTimer.start();
+			stopwatch.start();
+			raceStarted = true;
+		});
 	}
 
+	private int getNFinished()
+	{
+		int returnValue = 0;
+		for (GUICar car : cars)
+		{
+			if (car.isFinished())
+			{
+				returnValue++;
+			}
+		}
+		return returnValue;
+	}
+	
 	/**
 	 * Add all cars to the cars arrayList
 	 */
+	@SuppressWarnings("unused")
 	private void addCars(double time)
 	{
-		// TODO Get a better way to add all the cars to the arraylist
 		GUICar car1 = new GUICar(ferrari1, time);
 		GUICar car2 = new GUICar(ferrari2, time);
 		GUICar car3 = new GUICar(forceIndia1, time);

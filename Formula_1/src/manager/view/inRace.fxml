@@ -132,5 +132,15 @@
          </font>
       </Text>
       <Line fx:id="finish" endY="1080.0" layoutX="1656.0" strokeWidth="0.0" />
+      <ImageView fx:id="gotoResults" fitHeight="113.0" fitWidth="292.0" layoutX="733.0" layoutY="498.0" pickOnBounds="true" preserveRatio="true" scaleX="2.0" scaleY="2.0">
+         <image>
+            <Image url="@../../../images/menu/Next.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="startRace" fitHeight="180.0" fitWidth="452.0" layoutX="750.0" layoutY="504.0" pickOnBounds="true" preserveRatio="true" scaleX="2.0" scaleY="2.0" style="-fx-background-color: transparent;">
+         <image>
+            <Image url="@../../../images/menu/StartGame.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

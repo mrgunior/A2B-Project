@@ -23,6 +23,9 @@ public class GUICar
 
 	// Speed of the car
 	public double carSpeed;
+	
+	public boolean driving = true;
+	private boolean isFinished = false;
 
 	// Array for all the random points for the car
 	private double[] randomPoints;
@@ -64,6 +67,11 @@ public class GUICar
 	{
 		return car.getLayoutX();
 	}
+	
+	public boolean isFinished()
+	{
+		return isFinished;
+	}
 
 	/**
 	 * Generate random points for the car to move towards. Without random points
@@ -95,14 +103,16 @@ public class GUICar
 	public void moveCar()
 	{
 		// Check if the car has crossed the finish line
-		if (getX() < (finishX - car.getFitWidth() - (car.getFitWidth()/10)))
+		if (getX() < (finishX - car.getFitWidth()))
 		{
-			setX(getX() + carSpeed);
+			if (RaceController.isRaceStarted())
+			{
+				setX(getX() + carSpeed);
+			}
 		}
 		else
 		{
-			setX(finishX - car.getFitWidth());
-			RaceController.setTimerRunning(false);
+			isFinished = true;
 		}
 
 		// If the car is past its current goal point, goto next point and
