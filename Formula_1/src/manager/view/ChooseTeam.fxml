@@ -38,13 +38,16 @@
                <font>
                   <Font name="Haettenschweiler" size="130.0" />
                </font>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
             </Text>
          </children>
       </HBox>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff99" height="710.0" layoutX="95.0" layoutY="270.0" stroke="#ffffffb2" strokeType="OUTSIDE" strokeWidth="3.0" width="1710.0" />
-      <HBox id="teamsContainer" layoutX="100.0" layoutY="275.0" prefHeight="700.0" prefWidth="1700.0" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="275.0">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff99" height="710.0" layoutX="95.0" layoutY="270.0" stroke="#ffffffb2" strokeType="OUTSIDE" strokeWidth="3.0" width="1710.0" AnchorPane.bottomAnchor="97.0" AnchorPane.leftAnchor="92.0" AnchorPane.rightAnchor="112.0" AnchorPane.topAnchor="267.0" />
+      <HBox id="teamsContainer" layoutX="100.0" layoutY="275.0" prefHeight="700.0" prefWidth="1700.0" AnchorPane.bottomAnchor="105.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="275.0">
          <children>
-            <GridPane alignment="CENTER" prefHeight="700.0" prefWidth="1700.0">
+            <GridPane alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1700.0" HBox.hgrow="ALWAYS">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -58,132 +61,132 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Text stroke="WHITE" strokeType="OUTSIDE" text="Mercedes AMG Petronas" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <Text stroke="WHITE" strokeType="OUTSIDE" text="Mercedes AMG Petronas" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                      <font>
                         <Font name="Haettenschweiler" size="70.0" />
                      </font>
                   </Text>
-                  <Text stroke="WHITE" strokeType="OUTSIDE" text="Red Bull Racing" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <Text stroke="WHITE" strokeType="OUTSIDE" text="Red Bull Racing" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                      <font>
                         <Font name="Haettenschweiler" size="70.0" />
                      </font>
                   </Text>
-                  <Text stroke="WHITE" strokeType="OUTSIDE" text="Scudera Ferrari" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <Text stroke="WHITE" strokeType="OUTSIDE" text="Scudera Ferrari" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                      <font>
                         <Font name="Haettenschweiler" size="70.0" />
                      </font>
                   </Text>
-                  <Text stroke="WHITE" strokeType="OUTSIDE" text="Sahara Force India" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                  <Text stroke="WHITE" strokeType="OUTSIDE" text="Sahara Force India" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                      <font>
                         <Font name="Haettenschweiler" size="70.0" />
                      </font>
                   </Text>
-                  <Text stroke="WHITE" strokeType="OUTSIDE" text="Williams Martini Racing" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                  <Text stroke="WHITE" strokeType="OUTSIDE" text="Williams Martini Racing" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                      <font>
                         <Font name="Haettenschweiler" size="70.0" />
                      </font>
                   </Text>
-                  <Text stroke="WHITE" strokeType="OUTSIDE" text="McLaren Honda" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                  <Text stroke="WHITE" strokeType="OUTSIDE" text="McLaren Honda" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                      <font>
                         <Font name="Haettenschweiler" size="70.0" />
                      </font>
                   </Text>
-                  <Text stroke="WHITE" strokeType="OUTSIDE" text="Scuderia Toro Rosso" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <Text stroke="WHITE" strokeType="OUTSIDE" text="Scuderia Toro Rosso" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                      <font>
                         <Font name="Haettenschweiler" size="70.0" />
                      </font>
                   </Text>
-                  <Text stroke="WHITE" strokeType="OUTSIDE" text="Haas F1 Team" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <Text stroke="WHITE" strokeType="OUTSIDE" text="Haas F1 Team" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                      <font>
                         <Font name="Haettenschweiler" size="70.0" />
                      </font>
                   </Text>
-                  <Text stroke="WHITE" strokeType="OUTSIDE" text="Renault" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <Text stroke="WHITE" strokeType="OUTSIDE" text="Renault" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                      <font>
                         <Font name="Haettenschweiler" size="70.0" />
                      </font>
                   </Text>
-                  <Text stroke="WHITE" strokeType="OUTSIDE" text="Sauber F1 Team" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                  <Text stroke="WHITE" strokeType="OUTSIDE" text="Sauber F1 Team" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                      <font>
                         <Font name="Haettenschweiler" size="70.0" />
                      </font>
                   </Text>
-                  <Text stroke="WHITE" strokeType="OUTSIDE" text="Manor Racing" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                  <Text stroke="WHITE" strokeType="OUTSIDE" text="Manor Racing" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                      <font>
                         <Font name="Haettenschweiler" size="70.0" />
                      </font>
                   </Text>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
+                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                      <GridPane.margin>
                         <Insets left="20.0" />
                      </GridPane.margin>
                   </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.rowIndex="1">
+                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
                      <GridPane.margin>
                         <Insets left="20.0" />
                      </GridPane.margin>
                   </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.rowIndex="2">
+                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS">
                      <GridPane.margin>
                         <Insets left="20.0" />
                      </GridPane.margin>
                   </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.rowIndex="3">
+                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS">
                      <GridPane.margin>
                         <Insets left="20.0" />
                      </GridPane.margin>
                   </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.rowIndex="4">
+                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.vgrow="ALWAYS">
                      <GridPane.margin>
                         <Insets left="20.0" />
                      </GridPane.margin>
                   </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.rowIndex="5">
+                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5" GridPane.vgrow="ALWAYS">
                      <GridPane.margin>
                         <Insets left="20.0" />
                      </GridPane.margin>
                   </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1">
+                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
                      <GridPane.margin>
                         <Insets left="20.0" />
                      </GridPane.margin>
                   </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
                      <GridPane.margin>
                         <Insets left="20.0" />
                      </GridPane.margin>
                   </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS">
                      <GridPane.margin>
                         <Insets left="20.0" />
                      </GridPane.margin>
                   </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS">
                      <GridPane.margin>
                         <Insets left="20.0" />
                      </GridPane.margin>
                   </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.vgrow="ALWAYS">
                      <GridPane.margin>
                         <Insets left="20.0" />
                      </GridPane.margin>
                   </ImageView>
-                  <Rectangle fx:id="mercedes" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="112.0" stroke="#141414" width="845.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                  <Rectangle fx:id="redBull" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="112.0" stroke="#141414" width="845.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-                  <Rectangle fx:id="ferrari" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="112.0" stroke="#141414" width="845.0" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-                  <Rectangle fx:id="forceIndia" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="112.0" stroke="#141414" width="845.0" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-                  <Rectangle fx:id="williams" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="112.0" stroke="#141414" width="845.0" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
-                  <Rectangle fx:id="mcLaren" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="112.0" stroke="#141414" width="845.0" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
-                  <Rectangle fx:id="toroRosso" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="112.0" stroke="#141414" width="845.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                  <Rectangle fx:id="haas" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="112.0" stroke="#141414" width="845.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-                  <Rectangle fx:id="renault" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="112.0" stroke="#141414" width="845.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-                  <Rectangle fx:id="sauber" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="112.0" stroke="#141414" width="845.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-                  <Rectangle fx:id="manor" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="112.0" stroke="#141414" width="845.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+                  <Rectangle fx:id="mercedes" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="112.0" stroke="#141414" width="845.0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                  <Rectangle fx:id="redBull" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="112.0" stroke="#141414" width="845.0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                  <Rectangle fx:id="ferrari" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="112.0" stroke="#141414" width="845.0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                  <Rectangle fx:id="forceIndia" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="112.0" stroke="#141414" width="845.0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                  <Rectangle fx:id="williams" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="112.0" stroke="#141414" width="845.0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                  <Rectangle fx:id="mcLaren" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="112.0" stroke="#141414" width="845.0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                  <Rectangle fx:id="toroRosso" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="112.0" stroke="#141414" width="845.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                  <Rectangle fx:id="haas" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="112.0" stroke="#141414" width="845.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                  <Rectangle fx:id="renault" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="112.0" stroke="#141414" width="845.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                  <Rectangle fx:id="sauber" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="112.0" stroke="#141414" width="845.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                  <Rectangle fx:id="manor" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="112.0" stroke="#141414" width="845.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
                </children>
             </GridPane>
          </children>
       </HBox>
-      <ImageView fx:id="next" fitHeight="113.0" fitWidth="292.0" layoutX="1567.0" layoutY="991.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="next" fitHeight="113.0" fitWidth="292.0" layoutX="1567.0" layoutY="990.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="6.5714263916015625" AnchorPane.rightAnchor="61.0">
          <image>
             <Image url="@../../../images/menu/Next.png" />
          </image>
