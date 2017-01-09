@@ -15,6 +15,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import manager.model.Driver;
 import manager.model.formulaApplication;
 
 public class ChooseDriverController extends Controller implements Initializable
@@ -60,6 +61,12 @@ public class ChooseDriverController extends Controller implements Initializable
 		next.setOnMousePressed(event -> {
 			try
 			{
+				if(driver1 != null && driver2 != null) {
+					//ArrayList<Driver> drivers = new ArrayList<Driver>();
+					//drivers.add(driver1String);
+					//drivers.add(driver2String);
+					//formulaApplication.setDrivers(drivers);
+				}
 				gotoFxmlScene(event, "Dashboard", (Stage) next.getScene().getWindow());
 			} catch (IOException e)
 			{
@@ -154,16 +161,6 @@ public class ChooseDriverController extends Controller implements Initializable
 	}
 	
 	private void selectDriver(Rectangle driverButton, String driverName){
-		setSelected(driverButton);
-		//setSelected(previouslySelected);
-		
-		/*if (!(currentlySelected.equals(null)))
-		{
-			//currentlySelected.setFill(teamNotSelectedColor);
-			currentlySelected.setStyle("-fx-fill: rgba(0,0,0,0);");
-			previouslySelected.setStyle("-fx-fill: rgba(0,0,0,0);");
-		}
-		*/
 		
 		if(driverName != driver1String && driverName != driver2String){
 		
@@ -178,55 +175,14 @@ public class ChooseDriverController extends Controller implements Initializable
 		driver1 = driverButton;
 		driver1String = driverName;
 		
+		//selecting adequate buttons
 		setSelected(driver1);
 		setSelected(driver2);
 		
 		}
-		/*
-		previouslySelected = currentlySelected;
-		previouslySelectedString = currentlySelectedString;
-		
-		currentlySelected = driverButton;
-		currentlySelectedString = driverName;
-		
-		if (drivers.size() == 0) {
-			System.out.println("test");
-			drivers.add(currentlySelectedString);
-		}
-		else if (drivers.size() == 1) {
-			drivers.add(currentlySelectedString);	
-		}
-		
-		else if (drivers.size() == 2) {
-			drivers.set(0, drivers.get(1));
-			drivers.set(1, currentlySelectedString);
-		}
-		
-		if (!(currentlySelected.equals(null)))
-		{
-			//currentlySelected.setFill(teamNotSelectedColor);
-			currentlySelected.setStyle("-fx-fill: rgba(0,0,0,0);");
-			previouslySelected.setStyle("-fx-fill: rgba(0,0,0,0);");
-		}
-		//teamButton.setFill(teamSelectedColor);
-		
-		
-		/*
-		if (!(currentlySelected.equals(null)))
-		{
-			//currentlySelected.setFill(teamNotSelectedColor);
-			currentlySelected.setStyle("-fx-fill: rgba(0,0,0,0);");
-		}
-		//teamButton.setFill(teamSelectedColor);
-		driverButton.setStyle("-fx-fill: rgba(0,0,0,0.26);");
-		currentlySelected = driverButton;
-		currentlySelectedString = driverName;
-		System.out.println(drivers.length);
-		*/
-		//System.out.println(drivers);
 		
 		System.out.println("#######################DRIVERS#######################");
-		System.out.println("Driver1: " + driver1String + ", Driver2: " + driver2String);
+		System.out.println("Driver1: " + driver1String + ", ID: " + driver1.getId() + ", Driver2: " + driver2String + ", ID: " + driver2.getId());
 		System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 	}
