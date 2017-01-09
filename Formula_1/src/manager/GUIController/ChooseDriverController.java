@@ -1,4 +1,4 @@
-package manager.controller;
+package manager.GUIController;
 
 import java.io.IOException;
 import java.net.URL;
@@ -15,10 +15,11 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import manager.controller.SceneLoadController;
 import manager.model.Driver;
 import manager.model.formulaApplication;
 
-public class ChooseDriverController extends Controller implements Initializable
+public class ChooseDriverController extends SceneLoadController implements Initializable
 {
 	// Background
 	@FXML

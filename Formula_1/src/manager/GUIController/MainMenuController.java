@@ -1,4 +1,4 @@
-package manager.controller;
+package manager.GUIController;
 
 import java.io.IOException;
 import java.net.URL;
@@ -13,9 +13,11 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import manager.controller.SceneLoadController;
+import manager.controller.GameController;
 import manager.model.formulaApplication;
 
-public class MainMenuController extends Controller implements Initializable
+public class MainMenuController extends SceneLoadController implements Initializable
 {
 	// Background
 	@FXML

@@ -14,10 +14,10 @@
 
 <!-- 
 	FXML is a XML-based user interface markup language for designing
-	controller GUIController.java
+	controller GUIController.java 
  -->
 
-<AnchorPane id="root" fx:id="root" maxHeight="1080.0" maxWidth="1920.0" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="manager.controller.ChooseDriverController">
+<AnchorPane id="root" fx:id="root" maxHeight="1080.0" maxWidth="1920.0" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="manager.GUIController.ChooseDriverController">
    <children>
    
    	  <!-- Background image and settings-->

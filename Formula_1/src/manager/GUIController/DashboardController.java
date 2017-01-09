@@ -1,5 +1,6 @@
-package manager.controller;
+package manager.GUIController;
 
+import manager.controller.SceneLoadController;
 import manager.model.formulaApplication;
 import java.io.IOException;
 import java.net.URL;
@@ -15,7 +16,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class DashboardController extends Controller implements Initializable
+public class DashboardController extends SceneLoadController implements Initializable
 {
 	// Background
 	@FXML

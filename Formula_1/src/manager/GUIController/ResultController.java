@@ -1,9 +1,10 @@
-package manager.controller;
+package manager.GUIController;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import manager.controller.SceneLoadController;
 import manager.model.Results;
 import manager.model.Stopwatch;
 import javafx.fxml.FXML;
@@ -14,7 +15,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class ResultController extends Controller implements Initializable
+public class ResultController extends SceneLoadController implements Initializable
 {
 	// Background
 	@FXML

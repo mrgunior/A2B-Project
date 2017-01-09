@@ -1,4 +1,4 @@
-package manager.controller;
+package manager.GUIController;
 
 import java.io.IOException;
 import java.net.URL;
@@ -11,34 +11,37 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import manager.controller.SceneLoadController;
 
-public class CarManagementController extends Controller implements Initializable
+public class StandingsController extends SceneLoadController implements Initializable
 {
 	// Background
 	@FXML
 	private AnchorPane root;
 	@FXML
 	private ImageView background;
-	
-	// Scene elements
+
+	// Basic Scene elements
 	@FXML
 	private ImageView back;
-	
-	// Upgrade Names Text
+
+	// Team Logos
 	@FXML
-	private Text downNextUpgrade, aeroNextUpgrade, gearboxNextUpgrade, engineNextUpgrade, suspNextUpgrade, tiresNextUpgrade, weightNextUpgrade;
+	private ImageView logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8, logo9, logo10, logo11, logo12, logo13, logo14,
+	logo15, logo16, logo17, logo18, logo19, logo20, logo21, logo22;
+	// Standings Names
+	@FXML
+	private Text name1, name2, name3, name4, name5, name6, name7, name8, name9, name10, name11, name12, name13, name14,
+			name15, name16, name17, name18, name19, name20, name21, name22;
 	// Next Level Text
 	@FXML
-	private Text downNextLevel, aeroNextLevel, gearboxNextLevel, engineNextLevel, suspNextLevel, tiresNextLevel, weightNextLevel;
-	// Improvements Text
-	@FXML
-	private Text downImprov, aeroImprov, gearboxImprov, engineImprov, suspImprov, tiresImprov, weightImprov;
-	// Price Text
-	@FXML
-	private Text downPrice, aeroPrice, gearboxPrice, enginePrice, suspPrice, tiresPrice, weightPrice;
-	// Upgrade buttons
-	@FXML
-	private ImageView downUpgrade, aeroUpgrade, gearboxUpgrade, engineUpgrade, suspUpgrade, tiresUpgrade, weightUpgrade;
+	private Text points1, points2, points3, points4, points5, points6, points7, points8, points9, points10, points11, points12, points13, points14,
+			points15, points16, points17, points18, points19, points20, points21, points22;
+
+	public void createListOnScreen(String[] top22)
+	{
+		
+	}
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources)
@@ -46,12 +49,18 @@ public class CarManagementController extends Controller implements Initializable
 		background.fitWidthProperty().bind(root.widthProperty());
 		background.fitHeightProperty().bind(root.heightProperty());
 		
+		//createListOnScreen();
+		
+		//name1.setText(GameController.getTeamName());
+
 		// Click
 		back.setOnMousePressed(event -> {
 			try
 			{
 				gotoFxmlScene(event, "Dashboard", (Stage) back.getScene().getWindow());
-			} catch (IOException e)
+			} 
+			
+			catch (IOException e)
 			{
 				e.printStackTrace();
 			}
@@ -65,6 +74,5 @@ public class CarManagementController extends Controller implements Initializable
 			back.setImage(new Image("file:images/menu/Back.png"));
 		});
 	}
-	
-	
+
 }

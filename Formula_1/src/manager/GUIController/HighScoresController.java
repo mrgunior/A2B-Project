@@ -1,4 +1,4 @@
-package manager.controller;
+package manager.GUIController;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -9,8 +9,9 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import manager.controller.SceneLoadController;
 
-public class HighScoresController extends Controller implements Initializable
+public class HighScoresController extends SceneLoadController implements Initializable
 {
 	// Background
 	@FXML

@@ -1,6 +1,7 @@
 package manager.controller;
 
 import javafx.scene.image.ImageView;
+import manager.GUIController.RaceController;
 
 public class GUICar
 {

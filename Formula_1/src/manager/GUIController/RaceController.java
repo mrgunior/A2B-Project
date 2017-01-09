@@ -1,4 +1,4 @@
-package manager.controller;
+package manager.GUIController;
 
 import java.io.IOException;
 import java.net.URL;
@@ -6,8 +6,10 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import Templates.RaceSimulationTemplates;
+import manager.GUIController.ResultController;
+import manager.controller.SceneLoadController;
+import manager.controller.GUICar;
 import manager.model.Results;
-import manager.controller.ResultController;
 import javafx.animation.AnimationTimer;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -19,7 +21,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import manager.model.Stopwatch;
 
-public class RaceController extends Controller implements Initializable
+public class RaceController extends SceneLoadController implements Initializable
 {
 	// Root for adding nodes
 	@FXML

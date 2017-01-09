@@ -17,7 +17,7 @@ import javafx.stage.Stage;
 import jdk.internal.dynalink.beans.StaticClass;
 import manager.model.formulaApplication;
 
-public class Controller
+public class SceneLoadController
 {	
 	public void gotoFxmlScene(MouseEvent event, String name, Stage stage) throws IOException
 	{
