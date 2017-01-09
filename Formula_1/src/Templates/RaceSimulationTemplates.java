@@ -3,8 +3,8 @@ package Templates;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
+import manager.model.DriverResult;
+import manager.model.Results;
 
 public class RaceSimulationTemplates
 {
@@ -69,38 +69,19 @@ public class RaceSimulationTemplates
 		// }
 		//
 		//
-		getSeasonResults();
+
+		// getSeasonResults();
+
+		Results results = runSimulation(5.32);
+		results.sortResultsByTime();
+		System.out.println("Result: " + results.toString());
 
 		// }
 	}
 
-	private static void getSeasonResults()
-	{
-
-		for (int j = 0; j < 22; j++)
-		{
-
-			int biggest = 0;
-
-			for (int k = 0; k < 22; k++)
-			{
-				if (scores[k] > scores[biggest])
-				{
-					biggest = k;
-				}
-			}
-
-			if (scores[biggest] != 0)
-			{
-				System.out.println(drivers.get(biggest) + " ended the season with " + scores[biggest] + " points.");
-				scores[biggest] = 0;
-			}
-		}
-	}
-
 	private static double[] getDefaultCarAvg()
 	{
-
+		// TODO Read averages from JSON
 		double[] carAvg = new double[22];
 
 		for (int i = 0; i < 22; i++)
@@ -118,6 +99,7 @@ public class RaceSimulationTemplates
 		// Creating an array with all driver stat averages
 		double[] avarages = new double[22];
 
+		// TODO Read driver average from JSON
 		// Adding all driver stat averages, this will be in an external file
 		// later
 		avarages[0] = 96;
@@ -153,6 +135,7 @@ public class RaceSimulationTemplates
 		// Creating an ArrayList that holds the driver names
 		List<String> drivers = new ArrayList<String>();
 
+		// TODO Read drivers from JSON
 		// Adding the driver names manually (This will be in external files
 		// later on)
 		drivers.add("M. Verstappen"); //
@@ -212,8 +195,9 @@ public class RaceSimulationTemplates
 		return random;
 	}
 
-	public static void testVersion(double trackDiff)
+	public static Results runSimulation(double trackDiff)
 	{
+		Results simulationResults = new Results();
 		double results[] = new double[22];
 
 		for (int i = 0; i < 22; i++)
@@ -222,154 +206,16 @@ public class RaceSimulationTemplates
 			double avgDriver = driverAvg[i];
 			double avgCar = carAvg[i];
 			results[i] = calculateResult(avgCar, avgDriver, trackDiff, random);
+
+			// Normalize time for simulation
+			double time = 200 / (results[i] - 30);
+
+			// Create result for the driver and add to the results
+			DriverResult resultForLoop = new DriverResult(i + 1, drivers.get(i), time * 1000);
+			simulationResults.addResult(resultForLoop);
 		}
 
-		// if (simulation.equals("Y")) {
-		// System.out.print("Racing");
-		// for (int l = 0; l < 5; l++) {
-		// System.out.print(".");
-		// try {
-		// TimeUnit.MILLISECONDS.sleep(500);
-		// } catch (InterruptedException e) {
-		// e.printStackTrace();
-		// }
-		// }
-		// }
-
-		// if (simulation.equals("Y")) {
-		// System.out.print("\n");
-		// }
-
-		for (int k = 0; k < 22; k++)
-		{
-
-			int biggest = 0;
-
-			for (int j = 0; j < 22; j++)
-			{
-				if (results[j] > results[biggest])
-				{
-					biggest = j;
-				}
-			}
-
-			// if (simulation.equals("Y")) {
-			// if (k == 0) {
-			// System.out.println("Finished 1st: " + drivers.get(biggest));
-			// results[biggest] = 0;
-			// scores[biggest] = scores[biggest] + 25;
-			// } else if (k == 1) {
-			// System.out.println("Finished 2nd: " + drivers.get(biggest));
-			// results[biggest] = 0;
-			// scores[biggest] = scores[biggest] + 18;
-			// } else if (k == 2) {
-			// System.out.println("Finished 3rd: " + drivers.get(biggest));
-			// results[biggest] = 0;
-			// scores[biggest] = scores[biggest] + 15;
-			// } else if (k == 20) {
-			// System.out.println("Finished 21st: " + drivers.get(biggest));
-			// results[biggest] = 0;
-			// } else if (k == 21) {
-			// System.out.println("Finished 22nd: " + drivers.get(biggest) +
-			// "\n");
-			// results[biggest] = 0;
-			// } else {
-			// System.out.println("Finished " + (k+1) + "th: " +
-			// drivers.get(biggest));
-			// results[biggest] = 0;
-			// switch (k) {
-			// case 3:
-			// scores[biggest] = scores[biggest] + 12;
-			// break;
-			// case 4:
-			// scores[biggest] = scores[biggest] + 10;
-			// break;
-			// case 5:
-			// scores[biggest] = scores[biggest] + 8;
-			// break;
-			// case 6:
-			// scores[biggest] = scores[biggest] + 6;
-			// break;
-			// case 7:
-			// scores[biggest] = scores[biggest] + 4;
-			// break;
-			// case 8:
-			// scores[biggest] = scores[biggest] + 2;
-			// break;
-			// case 9:
-			// scores[biggest] = scores[biggest] + 1;
-			// break;
-			// default:
-			// break;
-			// }
-			// }
-			// } else {
-			if (k == 0)
-			{
-				results[biggest] = 0;
-				scores[biggest] = scores[biggest] + 25;
-			}
-			else if (k == 1)
-			{
-				results[biggest] = 0;
-				scores[biggest] = scores[biggest] + 18;
-			}
-			else if (k == 2)
-			{
-				results[biggest] = 0;
-				scores[biggest] = scores[biggest] + 15;
-			}
-			else if (k == 20)
-			{
-				results[biggest] = 0;
-			}
-			else if (k == 21)
-			{
-				results[biggest] = 0;
-			}
-			else
-			{
-				results[biggest] = 0;
-				switch (k)
-				{
-				case 3:
-					scores[biggest] = scores[biggest] + 12;
-					break;
-				case 4:
-					scores[biggest] = scores[biggest] + 10;
-					break;
-				case 5:
-					scores[biggest] = scores[biggest] + 8;
-					break;
-				case 6:
-					scores[biggest] = scores[biggest] + 6;
-					break;
-				case 7:
-					scores[biggest] = scores[biggest] + 4;
-					break;
-				case 8:
-					scores[biggest] = scores[biggest] + 2;
-					break;
-				case 9:
-					scores[biggest] = scores[biggest] + 1;
-					break;
-				default:
-					break;
-				}
-			}
-
-			// if (simulation.equals("Y")) {
-			// for (int l = 0; l < 4; l++) {
-			// try {
-			// TimeUnit.MILLISECONDS.sleep(40);
-			// } catch (InterruptedException e) {
-			// e.printStackTrace();
-			// }
-			// }
-			// }
-
-		}
-
+		return simulationResults;
 	}
 
 	private static int[] getEmptyScores()

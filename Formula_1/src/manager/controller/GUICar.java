@@ -1,7 +1,5 @@
 package manager.controller;
 
-import com.sun.org.apache.xml.internal.resolver.Catalog;
-
 import javafx.scene.image.ImageView;
 
 public class GUICar
@@ -29,6 +27,13 @@ public class GUICar
 
 	// Array for all the random points for the car
 	private double[] randomPoints;
+	
+	
+	// Testing for drivername next to car
+	/*
+	private String driverName = "TEST123";
+	Text driverNameText;
+	*/
 
 	public GUICar(ImageView car, double goalTime)
 	{
@@ -47,6 +52,35 @@ public class GUICar
 		// Calculate speed
 		carSpeed = calculateSpeed();
 	}
+	
+	public GUICar(ImageView car, double goalTime, String driverName)
+	{
+		this.car = car;
+		this.goalTime = goalTime;
+		// Randomize amount of points for each car
+		nPoints += Math.random() * 5;
+		randomPoints = new double[nPoints + 1];
+
+		// Set starting position
+		setX(startCarsX);
+
+		// Generate all the random points
+		generatePoints();
+
+		// Calculate speed
+		carSpeed = calculateSpeed();
+		
+		
+		
+		// Testing for driver name next to car
+		/*
+		this.driverName = driverName;
+		driverNameText = new Text(car.getLayoutX()-50, car.getLayoutY(), driverName);
+		driverNameText.setLayoutX(car.getLayoutX()-50);
+		driverNameText.setLayoutY(car.getLayoutY());
+		driverNameText.setText(driverName);
+		*/
+	}
 
 	/**
 	 * Setter for X value of the car
@@ -56,6 +90,15 @@ public class GUICar
 	public void setX(double x)
 	{
 		car.setLayoutX(x);
+		
+		// Testing for driver name next to car
+		/*
+		driverNameText.setLayoutX(car.getLayoutX()-50);
+		driverNameText.setLayoutY(car.getLayoutY());
+		driverNameText.setText(driverName);
+		
+		RaceController.addNode(driverNameText);
+		*/
 	}
 
 	/**
@@ -151,5 +194,10 @@ public class GUICar
 		double speed = (distance / time);
 
 		return speed;
+	}
+	
+	public String toString()
+	{
+		return car.toString();
 	}
 }
