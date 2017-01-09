@@ -1,12 +1,15 @@
 package manager.model;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 import manager.controller.GameController;
 
 public class formulaApplication extends Application
@@ -87,7 +90,7 @@ public class formulaApplication extends Application
 	// Setup for stage
 	public void start(Stage stage) throws Exception
 	{
-		//creates a gamecontroller object at the starting up of the application
+		// Creates a gamecontroller object at the starting up of the application
 		gamecontroller = new GameController("./data.json");
 		
 		Parent root = FXMLLoader.load(getClass().getResource("../view/MainMenu.fxml"));
@@ -97,5 +100,19 @@ public class formulaApplication extends Application
 		stage.setFullScreen(fullscreen);
 		stage.setResizable(resizable);
 		stage.show();
+		
+		stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+	          public void handle(WindowEvent we) {
+	              	try
+					{
+						gamecontroller.stopAutoSave();
+					}
+					catch (IOException e)
+					{
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+	          }
+	      });  
 	}
 }
