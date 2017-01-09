@@ -25,6 +25,9 @@ public class RaceController extends Controller implements Initializable
 	private ImageView ferrari1, ferrari2, forceIndia1, forceIndia2, haas1, haas2, honda1, honda2, manor1, manor2,
 			williams1, williams2, mercedes1, mercedes2, redBull1, redBull2, renault1, renault2, toroRosso1, toroRosso2,
 			sauber1, sauber2;
+	
+	ImageView[] carImages = {ferrari1, ferrari2, forceIndia1, forceIndia2, haas1, haas2, honda1, honda2, manor1, manor2, williams1, williams2, mercedes1, mercedes2, redBull1, redBull2, renault1, renault2, toroRosso1, toroRosso2, sauber1, sauber2};
+	
 	// Line for the finish
 	@FXML
 	private Line finish;
@@ -124,7 +127,9 @@ public class RaceController extends Controller implements Initializable
 	{
 		// Setup variables, car arraylist and GUI car position
 		finishX = finish.getLayoutX();
-
+		
+		carImages[0] = ferrari1;
+		
 		// ===== RESULT STARTING =====//
 
 		resultsRace = new Results();
@@ -367,6 +372,19 @@ public class RaceController extends Controller implements Initializable
 		GUICar car1 = null, car2 = null, car3 = null, car4 = null, car5 = null, car6 = null, car7 = null, car8 = null,
 				car9 = null, car10 = null, car11 = null, car12 = null, car13 = null, car14 = null, car15 = null,
 				car16 = null, car17 = null, car18 = null, car19 = null, car20 = null, car21 = null, car22 = null;
+		/*
+		GUICar[] tempCars = {car1, car2, car3, car4, car5, car6, car7, car8,
+				car9, car10, car11, car12, car13, car14, car15,
+				car16, car17, car18, car19, car20, car21, car22};
+		
+		for (int i = 0; i < tempCars.length; i++)
+		{
+			//System.out.println(ferrari1);
+			System.out.println(carImages[i]);
+			tempCars[i] = new GUICar(carImages[i], results.getResult(i).getTime());
+		}
+		 */
+		
 		for (int i = 0; i < results.getResults().size(); i++)
 		{
 			switch (results.getResult(i).getCarId())
@@ -420,6 +438,7 @@ public class RaceController extends Controller implements Initializable
 				break;
 			}
 		}
+		
 		// Add all GUICars
 		cars.add(car1);
 		cars.add(car2);

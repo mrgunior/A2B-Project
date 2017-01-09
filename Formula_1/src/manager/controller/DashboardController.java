@@ -92,7 +92,7 @@ public class DashboardController extends Controller implements Initializable
 				standings.setOnMousePressed(event -> {
 					try
 					{
-						gotoFxmlScene(event, "Result", (Stage) standings.getScene().getWindow());
+						gotoFxmlScene(event, "Standings", (Stage) standings.getScene().getWindow());
 					} 
 					
 					catch (IOException e)

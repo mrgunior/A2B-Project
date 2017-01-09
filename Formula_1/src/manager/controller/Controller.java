@@ -21,7 +21,6 @@ public class Controller
 {	
 	public void gotoFxmlScene(MouseEvent event, String name, Stage stage) throws IOException
 	{
-		System.out.println(name);
 		Parent root = FXMLLoader.load(this.getClass().getResource("../view/" + name + ".fxml"));
 		
 		formulaApplication.setSceneRoot(root);
