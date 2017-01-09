@@ -134,8 +134,8 @@ public class RaceController extends Controller implements Initializable
 
 		// Simulate results and store in results object
 		resultsRace = RaceSimulationTemplates.runSimulation(5.30);
-//		resultsRace.sortResultsByTime();
-//		System.out.println(resultsRace);
+		resultsRace.sortResultsByTime();
+		System.out.println(resultsRace);
 		
 		// Create
 		createCarsFromResults(resultsRace, 10000);
@@ -145,7 +145,7 @@ public class RaceController extends Controller implements Initializable
 		for (int i = 0; i < cars.size(); i++)
 		{
 			
-			System.out.println(cars.get(i));
+//			System.out.println(cars.get(i));
 			cars.get(i).setX(startCarsX);
 		}
 		
@@ -275,7 +275,7 @@ public class RaceController extends Controller implements Initializable
 			switch (results.getResult(i).getCarId())
 			{
 			case 1:
-				tempCars[0] = new GUICar(ferrari1, results.getResult(0).getTime(), results.getResult(0).getName()); break;
+				car1 = new GUICar(ferrari1, results.getResult(0).getTime(), results.getResult(0).getName()); break;
 			case 2:
 				car2 = new GUICar(ferrari2, results.getResult(1).getTime(), results.getResult(1).getName()); break;
 			case 3:
