@@ -112,7 +112,7 @@ public class DashboardController extends SceneLoadController implements Initiali
 				race.setOnMousePressed(event -> {
 					try
 					{
-						gotoFxmlScene(event, "inRace", (Stage) race.getScene().getWindow());
+						gotoFxmlScene(event, "Race", (Stage) race.getScene().getWindow());
 					} 
 					
 					catch (IOException e)

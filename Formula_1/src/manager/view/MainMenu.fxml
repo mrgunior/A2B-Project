@@ -63,7 +63,7 @@
             <Image url="@../../../images/menu/Settings.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="exit" fitHeight="128.0" fitWidth="152.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+      <ImageView fx:id="exit" fitHeight="128.0" fitWidth="128.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
          <image>
             <Image url="@../../../images/menu/ExitIcon.png" />
          </image>

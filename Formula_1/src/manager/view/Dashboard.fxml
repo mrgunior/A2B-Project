@@ -33,25 +33,25 @@
             <Image url="@../../../images/menu/Back.png" />
          </image>
       </ImageView>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0000004b" height="175.0" stroke="#00000097" strokeType="OUTSIDE" strokeWidth="3.0" width="1917.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0000004b" height="175.0" stroke="#00000097" strokeType="OUTSIDE" strokeWidth="0.0" width="1917.0" />
       
                   <!-- Formula string and settings -->
-      <Text fx:id="teamName" fill="#ff2800" layoutX="14.0" layoutY="125.0" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="ROUND" text="&lt;Team Name&gt;" textAlignment="CENTER" AnchorPane.leftAnchor="30.0">
+      <Text fx:id="teamName" fill="#ff2800" layoutX="14.0" layoutY="125.0" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="0.0" text="&lt;Team Name&gt;" textAlignment="CENTER" AnchorPane.leftAnchor="30.0">
          <font>
             <Font name="Haettenschweiler" size="100.0" />
          </font>
       </Text>
-      <Text fill="#ff2800" layoutX="1196.0" layoutY="125.0" stroke="WHITE" strokeType="OUTSIDE" text="Balance:" textAlignment="CENTER">
+      <Text fill="#ff2800" layoutX="1196.0" layoutY="125.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Balance:" textAlignment="CENTER">
          <font>
             <Font name="Haettenschweiler" size="100.0" />
          </font>
       </Text>
-      <Text fx:id="balance" fill="#ff2800" layoutX="1536.0" layoutY="125.0" stroke="WHITE" strokeType="OUTSIDE" text="&lt;balance&gt;" textAlignment="CENTER">
+      <Text fx:id="balance" fill="#ff2800" layoutX="1536.0" layoutY="125.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;balance&gt;" textAlignment="CENTER">
          <font>
             <Font name="Haettenschweiler" size="100.0" />
          </font>
       </Text>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" disable="true" fill="#0000004b" height="650.0" stroke="#00000097" strokeType="OUTSIDE" strokeWidth="3.0" visible="false" width="1820.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="250.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" disable="true" fill="#0000004b" height="650.0" stroke="#00000097" strokeType="OUTSIDE" strokeWidth="0.0" visible="false" width="1820.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="250.0" />
       <GridPane alignment="CENTER" prefHeight="650.0" prefWidth="1820.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="250.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -62,34 +62,34 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0000004b" height="250.0" stroke="#00000097" strokeType="OUTSIDE" strokeWidth="3.0" width="500.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-            <Text fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" text="Car Management" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0000004b" height="250.0" stroke="#00000097" strokeType="OUTSIDE" strokeWidth="0.0" width="500.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <Text fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="Car Management" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <font>
                   <Font name="Haettenschweiler" size="64.0" />
                </font>
             </Text>
-            <Rectangle fx:id="carManagement" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="250.0" stroke="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="3.0" width="500.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0000004b" height="250.0" stroke="#00000097" strokeType="OUTSIDE" strokeWidth="3.0" width="500.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-            <Text fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" text="Race" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <Rectangle fx:id="carManagement" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="250.0" stroke="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" width="500.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0000004b" height="250.0" stroke="#00000097" strokeType="OUTSIDE" strokeWidth="0.0" width="500.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <Text fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="Race" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <font>
                   <Font name="Haettenschweiler" size="64.0" />
                </font>
             </Text>
-            <Rectangle fx:id="race" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="250.0" stroke="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="3.0" width="500.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0000004b" height="250.0" stroke="#00000097" strokeType="OUTSIDE" strokeWidth="3.0" width="500.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-            <Text fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" text="Team Management" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <Rectangle fx:id="race" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="250.0" stroke="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" width="500.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0000004b" height="250.0" stroke="#00000097" strokeType="OUTSIDE" strokeWidth="0.0" width="500.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <Text fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="Team Management" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <font>
                   <Font name="Haettenschweiler" size="64.0" />
                </font>
             </Text>
-            <Rectangle fx:id="teamManagement" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="250.0" stroke="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="3.0" width="500.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0000004b" height="250.0" stroke="#00000097" strokeType="OUTSIDE" strokeWidth="3.0" width="500.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-            <Text fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" text="Standings" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <Rectangle fx:id="teamManagement" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="250.0" stroke="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" width="500.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0000004b" height="250.0" stroke="#00000097" strokeType="OUTSIDE" strokeWidth="0.0" width="500.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <Text fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="Standings" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <font>
                   <Font name="Haettenschweiler" size="64.0" />
                </font>
             </Text>
-            <Rectangle fx:id="standings" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="250.0" stroke="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="3.0" width="500.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <Rectangle fx:id="standings" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="250.0" stroke="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" width="500.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
          </children>
       </GridPane>
    </children>
