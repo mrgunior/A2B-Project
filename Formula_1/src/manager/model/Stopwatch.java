@@ -2,10 +2,6 @@ package manager.model;
 
 import java.text.DecimalFormat;
 
-import org.omg.CORBA.PUBLIC_MEMBER;
-
-import com.sun.org.glassfish.external.statistics.TimeStatistic;
-
 public class Stopwatch
 {
 	// Start time
@@ -108,5 +104,22 @@ public class Stopwatch
 		
 		
 		return timeString;
+	}
+	
+	public static String formatMilli(double milli)
+	{
+		double millisecondsDouble = (int) (milli % 1000);
+		double secondsDouble = (int) (milli / 1000) % 60;
+		double minutesDouble = (int) (milli / (1000 * 60)) % 60;
+
+		DecimalFormat dfMilli = new DecimalFormat("000.#");
+		DecimalFormat dfSeconds = new DecimalFormat("00.#");
+		DecimalFormat dfMinutes = new DecimalFormat("00.#");
+
+		String milliseconds = dfMilli.format(millisecondsDouble);
+		String seconds = dfSeconds.format(secondsDouble);
+		String minutes = dfMinutes.format(minutesDouble);
+
+		return (minutes + ":" + seconds + "." + milliseconds);
 	}
 }
