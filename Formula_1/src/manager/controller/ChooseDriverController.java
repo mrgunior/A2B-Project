@@ -36,11 +36,12 @@ public class ChooseDriverController extends Controller implements Initializable
 	Color teamSelectedColor = new Color(0, 0, 0, .26);
 	Color teamNotSelectedColor = new Color(0, 0, 0, 0);
 	
-	Rectangle currentlySelected = null;
-	Rectangle previouslySelected = null;
+	Rectangle driver1 = null;
+	Rectangle driver2 = null;
 	
-	String currentlySelectedString = "";
-	String previouslySelectedString = "";
+	String driver1String = "";
+	String driver2String = "";
+	
 	ArrayList<String> drivers = new ArrayList<>();
 	
 	@Override
@@ -48,10 +49,13 @@ public class ChooseDriverController extends Controller implements Initializable
 	{
 		background.fitWidthProperty().bind(root.widthProperty());
 		background.fitHeightProperty().bind(root.heightProperty());
-		currentlySelected = alonso;
-		previouslySelected = massa;
+		driver1 = alonso;
+		driver2 = massa;
+		driver1String = "Fernando Alonso";
+		driver2String = "Felipe Massa";
+		setSelected(driver1);
+		setSelected(driver2);
 		// Click
-		
 		
 		next.setOnMousePressed(event -> {
 			try
@@ -150,15 +154,35 @@ public class ChooseDriverController extends Controller implements Initializable
 	}
 	
 	private void selectDriver(Rectangle driverButton, String driverName){
-		driverButton.setStyle("-fx-fill: rgba(0,0,0,0.26);");
+		setSelected(driverButton);
+		//setSelected(previouslySelected);
 		
-		if (!(currentlySelected.equals(null)))
+		/*if (!(currentlySelected.equals(null)))
 		{
 			//currentlySelected.setFill(teamNotSelectedColor);
 			currentlySelected.setStyle("-fx-fill: rgba(0,0,0,0);");
 			previouslySelected.setStyle("-fx-fill: rgba(0,0,0,0);");
 		}
+		*/
 		
+		if(driverName != driver1String && driverName != driver2String){
+		
+		//resetting selected buttons
+		setUnSelected(driver1);
+		setUnSelected(driver2);
+		
+		//switching drivers
+		driver2 = driver1;
+		driver2String = driver1String;
+		
+		driver1 = driverButton;
+		driver1String = driverName;
+		
+		setSelected(driver1);
+		setSelected(driver2);
+		
+		}
+		/*
 		previouslySelected = currentlySelected;
 		previouslySelectedString = currentlySelectedString;
 		
@@ -166,6 +190,7 @@ public class ChooseDriverController extends Controller implements Initializable
 		currentlySelectedString = driverName;
 		
 		if (drivers.size() == 0) {
+			System.out.println("test");
 			drivers.add(currentlySelectedString);
 		}
 		else if (drivers.size() == 1) {
@@ -198,6 +223,12 @@ public class ChooseDriverController extends Controller implements Initializable
 		currentlySelectedString = driverName;
 		System.out.println(drivers.length);
 		*/
+		//System.out.println(drivers);
+		
+		System.out.println("#######################DRIVERS#######################");
+		System.out.println("Driver1: " + driver1String + ", Driver2: " + driver2String);
+		System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+
 	}
 	
 	public void setSelected(Rectangle driverButton)
@@ -205,9 +236,9 @@ public class ChooseDriverController extends Controller implements Initializable
 		driverButton.setStyle("-fx-fill: rgba(0,0,0,0.26);");
 	}
 	
-	public void setUnSelected(Rectangle driver)
+	public void setUnSelected(Rectangle driverButton)
 	{
-		
+		driverButton.setStyle("-fx-fill: rgba(0,0,0,0);");
 	}
 	
 	
