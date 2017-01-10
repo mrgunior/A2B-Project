@@ -8,7 +8,7 @@ public class DriverResult
 	 * Variables for a single result of a driver (carId is for race simulation)
 	 */
 	private int		carId	= 0;
-	private String	name	= "";
+	private Driver driver;
 	private double	time	= 0;
 
 	/**
@@ -37,16 +37,17 @@ public class DriverResult
 	 */
 	public String getName()
 	{
-		return name;
+		return driver.getName();
 	}
-	
-	/**
-	 * Setter for name
-	 * @param name - Name to set for the DriverResult
-	 */
-	public void setName(String name)
+
+	public Driver getDriver()
 	{
-		this.name = name;
+		return driver;
+	}
+
+	public void setDriver(Driver driver)
+	{
+		this.driver = driver;
 	}
 
 	/**
@@ -72,13 +73,13 @@ public class DriverResult
 	 * Constructor for a Driver Result
 	 * 
 	 * @param carId - int, car ID for the simulation
-	 * @param name - String, driver name
+	 * @param driver - String, driver name
 	 * @param time - double, result time
 	 */
-	public DriverResult(int carId, String name, double time)
+	public DriverResult(int carId, Driver driver, double time)
 	{
 		this.carId = carId;
-		this.name = name;
+		this.driver = driver;
 		this.time = time;
 	} 
 
@@ -102,14 +103,14 @@ public class DriverResult
 		{
 			return false;
 		}
-		if (name == null)
+		if (driver.getName() == null)
 		{
-			if (other.name != null)
+			if (other.driver.getName() != null)
 			{
 				return false;
 			}
 		}
-		else if (!name.equals(other.name))
+		else if (!driver.getName().equals(other.driver.getName()))
 		{
 			return false;
 		}
@@ -127,7 +128,7 @@ public class DriverResult
 	 */
 	public String toString()
 	{
-		return (name + " (" + carId + ") : " + time);
+		return (driver.getName() + " (" + carId + ") : " + time);
 	}
 
 	/**

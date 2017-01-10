@@ -1,6 +1,11 @@
 package manager.model;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+
+import manager.controller.GameController;
 
 public class Profile 
 {
@@ -8,6 +13,7 @@ public class Profile
 	private String teamName;
 	private List<Driver> drivers;
 	private List<Car> cars;
+	private ArrayList<Driver> allDrivers;
 	
 	public Profile(double highScore, double budget, String teamName){
 		this.highScore = highScore;
@@ -30,6 +36,10 @@ public class Profile
 	
 	public List<Driver> getDrivers(){
 		return this.drivers;
+	}
+	
+	public ArrayList<Driver> getAllDrivers(){
+		return this.allDrivers;
 	}
 	
 	public List<Car> getCars(){
@@ -71,7 +81,48 @@ public class Profile
 		this.drivers = drivers;
 	}
 	
+	public void setAllDrivers(ArrayList<Driver> drivers){
+		this.allDrivers = drivers;
+	}
+	
 	public void setCars(List<Car> cars){
 		this.cars = cars;
+	}
+	
+	public void resetDriverPoints()
+	{
+		System.out.println("Resetting drivers...");
+		allDrivers.get(1).setPoints(999);
+		for (int i = 0; i < allDrivers.size(); i++)
+		{
+			System.out.println("Before: " + allDrivers.get(i));
+			allDrivers.get(i).setPoints(0);
+			System.out.println("After: " + allDrivers.get(i));
+			System.out.println();
+		}
+		
+		try
+		{
+			GameController.writeDriversToJSON();
+		}
+		catch (IOException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		System.out.println("Drivers reset");
+		System.out.println(allDrivers);
+		
+	}
+	
+	public void sortDriversById()
+	{
+		Collections.sort(drivers, Driver.sortById());
+	}
+	
+	public void sortDriversByPoints()
+	{
+		drivers.sort(Driver.sortByPoints());
 	}
 }

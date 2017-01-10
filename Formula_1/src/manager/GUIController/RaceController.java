@@ -277,13 +277,13 @@ public class RaceController extends SceneLoadController implements Initializable
 			switch (results.getResult(i).getCarId())
 			{
 			case 1:
-				car1 = new GUICar(ferrari1, results.getResult(0).getTime(), results.getResult(0).getName()); break;
+				car1 = new GUICar(ferrari1, results.getResult(0).getTime()); break;
 			case 2:
-				car2 = new GUICar(ferrari2, results.getResult(1).getTime(), results.getResult(1).getName()); break;
+				car2 = new GUICar(ferrari2, results.getResult(1).getTime()); break;
 			case 3:
-				car3 = new GUICar(forceIndia1, results.getResult(2).getTime(), results.getResult(2).getName()); break;
+				car3 = new GUICar(forceIndia1, results.getResult(2).getTime()); break;
 			case 4:
-				car4 = new GUICar(forceIndia2, results.getResult(3).getTime(), results.getResult(3).getName()); break;
+				car4 = new GUICar(forceIndia2, results.getResult(3).getTime()); break;
 			case 5:
 				car5 = new GUICar(haas1, results.getResult(4).getTime()); break;
 			case 6:

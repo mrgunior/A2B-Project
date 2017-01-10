@@ -2,6 +2,9 @@ package manager.controller;
 
 import java.util.Timer;
 import java.util.TimerTask;
+
+import javax.swing.plaf.synth.SynthSeparatorUI;
+
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -27,9 +30,9 @@ import manager.model.Upgrades;
 public class GameController
 {
 
-	private Profile	profile;
-	private Timer	timer;
-	private String	jsonFile;
+	private static Profile	profile;
+	private Timer			timer;
+	private String			jsonFile;
 
 	/**
 	 * when initialized it will call the readJsonObjectAndInitialize() method to create profile according to
@@ -481,14 +484,15 @@ public class GameController
 		try (FileWriter file = new FileWriter(jsonFile))
 		{
 			file.write(obj.toJSONString());
-			System.out.println("\n\n##################Write to JSON file section#########################");
+			System.out.println("\n\n################# Write to JSON file section ########################");
 			System.out.println("JSON Object successfully written to file: " + jsonFile);
 			System.out.println("JSON Object: " + obj + "\n");
 		}
 	}
 
-	public ArrayList<Driver> getDrivers()
+	public static ArrayList<Driver> getDrivers()
 	{
+		System.out.println();
 		String path = "./data/drivers.json";
 		ArrayList<Driver> drivers = new ArrayList<Driver>();
 
@@ -516,8 +520,40 @@ public class GameController
 			// System.out.println(driver);
 		}
 
-		System.out.println(drivers);
+		// System.out.println(drivers);
 		return drivers;
+	}
+
+	public static void writeDriversToJSON() throws IOException
+	{
+		String path = "./data/drivers.json";
+
+		ArrayList<Driver> drivers = profile.getAllDrivers();
+		// System.out.println("##### All drivers:");
+		// System.out.println(" " + drivers);
+
+		JSONObject allDrivers = new JSONObject();
+		for (int i = 0; i < drivers.size(); i++)
+		{
+			JSONObject driver = new JSONObject();
+			driver.put("name", drivers.get(i).getName());
+			driver.put("id", drivers.get(i).getId());
+			driver.put("teamId", drivers.get(i).getTeamId());
+			driver.put("points", drivers.get(i).getPoints());
+			driver.put("number", drivers.get(i).getNumber());
+			driver.put("speed", drivers.get(i).getSpeed());
+			driver.put("acceleration", drivers.get(i).getAcceleration());
+			driver.put("turning", drivers.get(i).getTurning());
+			driver.put("salary", drivers.get(i).getSalary());
+
+			allDrivers.put("" + drivers.get(i).getId() + "", driver);
+		}
+
+		try (FileWriter fileWriter = new FileWriter(path))
+		{
+			// System.out.println(allDrivers.toJSONString());
+			fileWriter.write(allDrivers.toJSONString());
+		}
 	}
 
 	/**
@@ -534,8 +570,8 @@ public class GameController
 	 * 
 	 * @return
 	 */
-	public Profile getProfile()
+	public static Profile getProfile()
 	{
-		return this.profile;
+		return profile;
 	}
 }

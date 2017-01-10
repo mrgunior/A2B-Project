@@ -55,6 +55,7 @@ public class MainMenuController extends SceneLoadController implements Initializ
 				startGame.setOnMousePressed(event -> {
 					try
 					{
+						GameController.getProfile().resetDriverPoints();
 						gotoFxmlScene(event, "ChooseTeam", (Stage) startGame.getScene().getWindow());
 					}
 					
