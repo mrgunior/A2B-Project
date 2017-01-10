@@ -69,6 +69,7 @@ public class ReadUpgrades
 
 				return jsonObjects[jsonObjects.length - 1];
 			}
+			return jsonObject;
 		}
 		catch (IOException | ParseException e)
 		{

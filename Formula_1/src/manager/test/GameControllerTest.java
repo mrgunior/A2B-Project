@@ -39,8 +39,8 @@ public class GameControllerTest
 		cars.add(car1);
 		cars.add(car2);
 		
-		driver1 = new Driver("",0,0,0,0,0.0);
-		driver2 = new Driver("",0,0,0,0,0.0);
+		driver1 = new Driver(0,0,"",0,0,0,0,0,0.0);
+		driver2 = new Driver(0,0,"",0,0,0,0,0,0.0);
 		drivers.add(driver1);
 		drivers.add(driver2);
 		

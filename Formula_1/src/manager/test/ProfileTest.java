@@ -21,7 +21,7 @@ public class ProfileTest
 	private Profile profile;
 	private double highScore, budget;
 	private String teamName, name;
-	private int number, speed, acceleration, turning, handling, braking, weight;
+	private int id, teamId, points, number, speed, acceleration, turning, handling, braking, weight;
 	private double averagePerformance, salary;
 	private Upgrades upgrades;
 	private List<Driver> drivers;
@@ -37,6 +37,9 @@ public class ProfileTest
 		
 		//driver & car stuff
 		name = "Victor Wernet";
+		id = 1;
+		teamId = 2;
+		points = 0;
 		number = 33;
 		speed = 80;
 		acceleration = 75;
@@ -48,8 +51,8 @@ public class ProfileTest
 		upgrades = new Upgrades(0,0,0,0,0,0,0);
 		
 		drivers = new ArrayList<Driver>();
-		drivers.add(new Driver(name, number, speed, acceleration, turning, salary));
-		drivers.add(new Driver(name, number, speed, acceleration, turning, salary));
+		drivers.add(new Driver(id, teamId, name, points, number, speed, acceleration, turning, salary));
+		drivers.add(new Driver(id, teamId, name, points, number, speed, acceleration, turning, salary));
 		
 		cars = new ArrayList<Car>();
 		cars.add(new Car(speed, acceleration, handling, braking, weight, upgrades));
