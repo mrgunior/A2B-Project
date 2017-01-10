@@ -25,14 +25,16 @@ public class RaceController extends SceneLoadController implements Initializable
 {
 	// Root for adding nodes
 	@FXML
-	AnchorPane root;
+	private AnchorPane root;
+	@FXML
+	private ImageView background;
 	// All the cars on the screen
 	@FXML
 	private ImageView ferrari1, ferrari2, forceIndia1, forceIndia2, haas1, haas2, honda1, honda2, manor1, manor2,
 			williams1, williams2, mercedes1, mercedes2, redBull1, redBull2, renault1, renault2, toroRosso1, toroRosso2,
 			sauber1, sauber2;
 	
-	ImageView[] carImages = {ferrari1, ferrari2, forceIndia1, forceIndia2, haas1, haas2, honda1, honda2, manor1, manor2, williams1, williams2, mercedes1, mercedes2, redBull1, redBull2, renault1, renault2, toroRosso1, toroRosso2, sauber1, sauber2};
+	private ImageView[] carImages = {ferrari1, ferrari2, forceIndia1, forceIndia2, haas1, haas2, honda1, honda2, manor1, manor2, williams1, williams2, mercedes1, mercedes2, redBull1, redBull2, renault1, renault2, toroRosso1, toroRosso2, sauber1, sauber2};
 	
 	// Line for the finish
 	@FXML
@@ -131,6 +133,9 @@ public class RaceController extends SceneLoadController implements Initializable
 	@Override
 	public void initialize(URL location, ResourceBundle resources)
 	{
+		background.fitWidthProperty().bind(root.widthProperty());
+		background.fitHeightProperty().bind(root.heightProperty());
+		
 		// Setup variables, car arraylist and GUI car position
 		finishX = finish.getLayoutX();
 
