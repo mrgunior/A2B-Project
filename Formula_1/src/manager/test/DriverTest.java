@@ -5,27 +5,32 @@ import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import com.sun.xml.internal.bind.v2.model.core.ID;
+
 import manager.model.Driver;
 
 public class DriverTest 
 {
 	private Driver driver;
 	private String name;
-	private int number, speed, acceleration, turning;
+	private int id, teamId, number, speed, acceleration, turning;
 	private double averagePerformance, salary;
 
 	@Before
 	public void setUp() 
 	{ 
 		name = "Victor Wernet";
+		id = 1;
+		teamId = 2;
 		number = 33;
 		speed = 80;
 		acceleration = 75;
 		turning = 69;
-		averagePerformance = 138000.0; //(double)(speed*acceleration*turning)/(double)3
+		averagePerformance = 74.0; //(speed*acceleration*turning)/3
 		salary = 3.0; //3 mil
 		
-		driver = new Driver(name, number, speed, acceleration, turning, salary);
+		driver = new Driver(id, teamId, name, number, speed, acceleration, turning, salary);
 	}
 	
 	@Test
@@ -96,6 +101,8 @@ public class DriverTest
 	@Test
 	public void testGetAveragePerformance()
 	{
+		System.out.println(driver.getAveragePerformance());
+		System.out.println(averagePerformance);
 		assertEquals("Average performance is calculated correctly with regards to arithmetic calculations", driver.getAveragePerformance(), averagePerformance, 0.001);
 	}
 	

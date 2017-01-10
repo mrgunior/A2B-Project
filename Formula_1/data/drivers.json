@@ -1,0 +1,24 @@
+{
+	"1": 
+	{
+		"name": "Max Verstappen",
+		"id": "1",
+		"teamId": 1,
+		"number": 33,
+		"speed": 96,
+		"acceleration": 96,
+		"turning": 96,
+		"salary": 15.0
+	},
+	"2": 
+	{
+		"name": "Nico Rosberg",
+		"id": 2,
+		"teamId": 2,
+		"number": 11,
+		"speed": 97,
+		"acceleration": 95,
+		"turning": 93,
+		"salary": 12.0
+	}
+}
