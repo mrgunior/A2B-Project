@@ -4,6 +4,7 @@
 		"name": "Max Verstappen",
 		"id": "1",
 		"teamId": 1,
+		"points": 154,
 		"number": 33,
 		"speed": 96,
 		"acceleration": 96,
@@ -15,10 +16,12 @@
 		"name": "Nico Rosberg",
 		"id": 2,
 		"teamId": 2,
+		"points": 123,
 		"number": 11,
 		"speed": 97,
 		"acceleration": 95,
 		"turning": 93,
 		"salary": 12.0
 	}
+	
 }

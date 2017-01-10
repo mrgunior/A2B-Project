@@ -32,9 +32,8 @@ public class GameController
 	private String	jsonFile;
 
 	/**
-	 * when initialized it will call the readJsonObjectAndInitialize() method to
-	 * create profile according to the Json file it will create a timer object
-	 * and call the autoSave() method to save the game every 2 min
+	 * when initialized it will call the readJsonObjectAndInitialize() method to create profile according to
+	 * the Json file it will create a timer object and call the autoSave() method to save the game every 2 min
 	 * 
 	 * @throws IOException
 	 */
@@ -133,10 +132,8 @@ public class GameController
 				}
 			}
 
-		}, 2 * 60 * 1000, 2 * 60 * 1000); // in 1 minute you have 60 seconds and
-											// each second is 1000 milliseconds
-											// and times that by 2 gives you 2
-											// minutes.
+		}, 2 * 60 * 1000, 2 * 60 * 1000); // in 1 minute you have 60 seconds and each second is 1000
+											// milliseconds and times that by 2 gives you 2 minutes.
 	}
 
 	/**
@@ -228,19 +225,13 @@ public class GameController
 
 			System.out.println("\n" + driverString);
 			driverArray = (JSONArray) jsonObject.get(driverString);
-			object = (JSONObject) driverArray.get(0); // get the first {} object
-														// in "Driver1":[{}] and
-														// in "Driver2":[{}]
+			object = (JSONObject) driverArray.get(0); // get the first {} object in "Driver1":[{}] and in
+														// "Driver2":[{}]
 
 			// create 2 drivers layout
-			Driver driver = new Driver(i, i, "", i, i, i, i, i); // name will be
-																	// updated
-																	// in switch
-																	// case
-																	// together
-																	// with the
-																	// other
-																	// fields
+			Driver driver = new Driver(i, i, "", i, i, i, i, i, i); // name will be updated in switch case
+																	// together with
+																	// the other fields
 
 			for (int d = 0; d < 6; d++)
 			{
@@ -328,20 +319,12 @@ public class GameController
 			objectCar = (JSONObject) carArray.get(0); // get the first {} object
 														// in "Driver1":[{}] and
 														// in "Driver2":[{}]
-			objectUpgrades = (JSONObject) objectCar.get("Upgrades"); // now get
-																		// the
-																		// object
-																		// Upgrades
-																		// in
-																		// the
-																		// object
-																		// Car
-																		// [{"Upgrades":{}}]
+			objectUpgrades = (JSONObject) objectCar.get("Upgrades"); // now get the object Upgrades in the
+																		// object Car [{"Upgrades":{}}]
 
 			// create 2 cars layout
 			Upgrades upgrades = new Upgrades(i, i, i, i, i, i, i);
-			Car car = new Car(i, i, i, i, i, upgrades); // these will be updated
-														// in the switch case
+			Car car = new Car(i, i, i, i, i, upgrades); // these will be updated in the switch case
 
 			// get the standard car stuff
 			for (int c = 0; c < 5; c++)
@@ -379,11 +362,8 @@ public class GameController
 			// get the upgrade items now in the Upgrades Object
 			for (int u = 0; u < 7; u++)
 			{
-				String valueOfObject = String.valueOf(objectUpgrades.get(upgradeItems[u])); // here
-																							// i
-																							// am
-																							// getting
-																							// the
+				String valueOfObject = String.valueOf(objectUpgrades.get(upgradeItems[u])); // here i am
+																							// getting the
 																							// key:value
 																							// combination
 				System.out.println(upgradeItems[u] + ": " + valueOfObject);
@@ -464,21 +444,16 @@ public class GameController
 			info.put("AveragePerformance", String.valueOf(profile.getDrivers().get(i).getAveragePerformance()));// "AveragePerformance":""
 			info.put("Salary", String.valueOf(profile.getDrivers().get(i).getSalary())); // "Salary":""
 
-			JSONArray driver = new JSONArray(); // create an array [], name is
-												// added later
+			JSONArray driver = new JSONArray(); // create an array [], name is added later
 			driver.add(info); // you get this [{}]
 			obj.put("Driver" + (i + 1), driver); // "Driver":[{}]
 
 			// ###########################Cars################################
 
-			JSONArray car = new JSONArray(); // create an array [], name is
-												// added later
+			JSONArray car = new JSONArray(); // create an array [], name is added later
 
-			JSONObject standardCarStuff = new JSONObject(); // create an object
-															// {} to add in the
-															// array //add the
-															// key:value to the
-															// object
+			JSONObject standardCarStuff = new JSONObject(); // create an object {} to add in the array //add
+															// the key:value to the object
 
 			standardCarStuff.put("Speed", String.valueOf(profile.getCars().get(i).getSpeed())); // "speed":""
 			standardCarStuff.put("Acceleration", String.valueOf(profile.getCars().get(i).getAcceleration())); // "acceleration":""
@@ -486,10 +461,8 @@ public class GameController
 			standardCarStuff.put("Braking", String.valueOf(profile.getCars().get(i).getBraking())); // "braking":""
 			standardCarStuff.put("Weight", String.valueOf(profile.getCars().get(i).getWeight())); // "weight":""
 
-			JSONObject upgradeItems = new JSONObject(); // create an object {}
-														// to add in the array
-														// add the key:value to
-														// the object
+			JSONObject upgradeItems = new JSONObject(); // create an object {} to add in the array add the
+														// key:value to the object
 			upgradeItems.put("Down", String.valueOf(profile.getCars().get(i).getUpgrades().getDown())); // "down":""
 			upgradeItems.put("Aero", String.valueOf(profile.getCars().get(i).getUpgrades().getAero())); // "aero":""
 			upgradeItems.put("Gearbox", String.valueOf(profile.getCars().get(i).getUpgrades().getGearbox())); // "gearbox":""
@@ -498,9 +471,7 @@ public class GameController
 			upgradeItems.put("Tires", String.valueOf(profile.getCars().get(i).getUpgrades().getTires())); // "tires":""
 			upgradeItems.put("WeightRed", String.valueOf(profile.getCars().get(i).getUpgrades().getWeightRed()));// "weightRed":""
 			// we are creating this structure: [{}]
-			standardCarStuff.put("Upgrades", upgradeItems); // we are now adding
-															// name:
-															// "Uprades":[{}]
+			standardCarStuff.put("Upgrades", upgradeItems); // we are now adding name: "Uprades":[{}]
 
 			car.add(standardCarStuff); // [,,"Upgrades":[{}]]
 			obj.put("Car" + (i + 1), car); // "Car1":[,,"Upgrades":[{}]]
@@ -522,8 +493,7 @@ public class GameController
 		ArrayList<Driver> drivers = new ArrayList<Driver>();
 
 		// System.out.println();
-		// System.out.println("GameController.getDrivers(): Getting drivers from
-		// " + path);
+		// System.out.println("GameController.getDrivers(): Getting drivers from " + path);
 		// System.out.println("GameController.getDrivers(): Drivers object" +
 		// ReadUpgrades.readNestedJsonObjects(path, new String[] {}) + "");
 
@@ -531,21 +501,21 @@ public class GameController
 		for (int i = 1; i <= nDrivers; i++)
 		{
 			String name = (String) readNestedObject(path, new String[] { i + "", "name" });
+			int points = Integer.parseInt(readNestedObject(path, new String[] { i + "", "points" }).toString());
 			int id = Integer.parseInt(readNestedObject(path, new String[] { i + "", "id" }).toString());
 			int teamId = Integer.parseInt(readNestedObject(path, new String[] { i + "", "teamId" }).toString());
 			int number = Integer.parseInt(readNestedObject(path, new String[] { i + "", "number" }).toString());
 			int speed = Integer.parseInt(readNestedObject(path, new String[] { i + "", "speed" }).toString());
-			int acceleration = Integer
-					.parseInt(readNestedObject(path, new String[] { i + "", "acceleration" }).toString());
+			int acceleration = Integer.parseInt(readNestedObject(path, new String[] { i + "", "acceleration" }).toString());
 			int turning = Integer.parseInt(readNestedObject(path, new String[] { i + "", "turning" }).toString());
 
 			double salary = (double) ReadUpgrades.readNestedJsonObjects(path, new String[] { i + "", "salary" });
 
-			Driver driver = new Driver(id, teamId, name, number, speed, acceleration, turning, salary);
+			Driver driver = new Driver(id, teamId, name, points, number, speed, acceleration, turning, salary);
 			drivers.add(driver);
 			// System.out.println(driver);
 		}
-		
+
 		System.out.println(drivers);
 		return drivers;
 	}

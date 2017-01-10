@@ -1,30 +1,38 @@
 package manager.model;
 
+import java.nio.DoubleBuffer;
+
 public class Driver
 {
 
 	private String	name;
-	private int		id, teamId, number, speed, acceleration, turning;
-	private double	salary;
+	private int		id, teamId, points, number, speed, acceleration, turning;
+	private double	salary, salaryBonus;
 	private double	averagePerformance;
 
-	public Driver(int id, int teamId, String name, int number, int speed, int acceleration, int turning, double salary)
+	public Driver(int id, int teamId, String name, int points, int number, int speed, int acceleration, int turning, double salary)
 	{
 		this.id = id;
 		this.teamId = teamId;
 		this.name = name;
+		this.points = points;
 		this.number = number;
 		this.speed = speed;
 		this.acceleration = acceleration;
 		this.turning = turning;
 		this.salary = salary;
-		this.averagePerformance = getAveragePerformance();
+		calculateAveragePerformance();
 	}
 
 	// Getters
 	public String getName()
 	{
 		return this.name;
+	}
+	
+	public int getPoints()
+	{
+		return this.points;
 	}
 
 	public int getId()
@@ -57,15 +65,14 @@ public class Driver
 		return this.turning;
 	}
 
+	public void calculateAveragePerformance()
+	{
+		this.averagePerformance = (speed + acceleration + turning) / 3;
+	}
+	
 	public double getAveragePerformance()
 	{
-		// some how this wasn't working as a field
-		// so I changed it. A bug?
-
-		this.averagePerformance = (speed + acceleration + turning) / 3;
-		// System.out.println(this.averagePerformance);
-
-		return this.averagePerformance;
+		return averagePerformance;
 	}
 
 	public double getSalary()
@@ -78,7 +85,17 @@ public class Driver
 	{
 		this.name = name;
 	}
-
+	
+	public void setPoints(int points)
+	{
+		this.points = points;
+	}
+	
+	public void addPoints(int points)
+	{
+		this.points += points;
+	}
+	
 	public void setId(int id)
 	{
 		this.id = id;
@@ -117,9 +134,8 @@ public class Driver
 	@Override
 	public String toString()
 	{
-		return "Driver [name=" + name + ", id=" + id + ", teamId=" + teamId + ", number=" + number + ", speed=" + speed
-				+ ", acceleration=" + acceleration + ", turning=" + turning + ", salary=" + salary
-				+ ", averagePerformance=" + averagePerformance + "]";
+		return "Driver [name=" + name + ", id=" + id + ", teamId=" + teamId + ", points=" + points + ", number=" + number + ", speed="
+				+ speed + ", acceleration=" + acceleration + ", turning=" + turning + ", salary=" + salary + ", averagePerformance="
+				+ averagePerformance + "]";
 	}
-
 }

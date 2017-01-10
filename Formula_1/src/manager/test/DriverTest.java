@@ -14,7 +14,7 @@ public class DriverTest
 {
 	private Driver driver;
 	private String name;
-	private int id, teamId, number, speed, acceleration, turning;
+	private int id, teamId, points, number, speed, acceleration, turning;
 	private double averagePerformance, salary;
 
 	@Before
@@ -23,6 +23,7 @@ public class DriverTest
 		name = "Victor Wernet";
 		id = 1;
 		teamId = 2;
+		points = 20;
 		number = 33;
 		speed = 80;
 		acceleration = 75;
@@ -30,7 +31,7 @@ public class DriverTest
 		averagePerformance = 74.0; //(speed*acceleration*turning)/3
 		salary = 3.0; //3 mil
 		
-		driver = new Driver(id, teamId, name, number, speed, acceleration, turning, salary);
+		driver = new Driver(id, teamId, name, points, number, speed, acceleration, turning, salary);
 	}
 	
 	@Test
