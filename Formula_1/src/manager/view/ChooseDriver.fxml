@@ -84,59 +84,114 @@
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="60.0" stroke="#141414" strokeWidth="0.0" width="845.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="CENTER" />
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="60.0" stroke="#141414" strokeWidth="0.0" width="845.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="9" GridPane.valignment="CENTER" />
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="60.0" stroke="#141414" strokeWidth="0.0" width="845.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="CENTER" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Fernando Alonso" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Fernando Alonso" textAlignment="CENTER" translateX="-100.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <font>
                         <Font name="Yu Gothic Regular" size="47.0" />
                      </font>
                   </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Valtteri Bottas" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <Text fx:id="alonsoSalary" fill="RED" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;Salary&gt;" textAlignment="CENTER" translateX="275.0" GridPane.halignment="CENTER">
+                     <font>
+                        <Font size="37.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Valtteri Bottas" textAlignment="CENTER" translateX="-100.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                      <font>
                         <Font name="Yu Gothic Regular" size="47.0" />
                      </font>
                   </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Jensen Button" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <Text fx:id="BottasSalary" fill="RED" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;Salary&gt;" textAlignment="CENTER" translateX="275.0" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="37.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Jensen Button" textAlignment="CENTER" translateX="-100.0" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                      <font>
                         <Font name="Yu Gothic Regular" size="47.0" />
                      </font>
                   </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Marcus Ericsson" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                  <Text fx:id="ButtonSalary" fill="RED" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;Salary&gt;" textAlignment="CENTER" translateX="275.0" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="37.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Marcus Ericsson" textAlignment="CENTER" translateX="-100.0" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
                      <font>
                         <Font name="Yu Gothic Regular" size="47.0" />
                      </font>
                   </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Romain Grosjean" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                  <Text fx:id="ericssonSalary" fill="RED" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;Salary&gt;" textAlignment="CENTER" translateX="275.0" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="37.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Romain Grosjean" textAlignment="CENTER" translateX="-100.0" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
                      <font>
                         <Font name="Yu Gothic Regular" size="47.0" />
                      </font>
                   </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Esteban Gutierrez" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                  <Text fx:id="grosjeanSalary" fill="RED" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;Salary&gt;" textAlignment="CENTER" translateX="275.0" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="37.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Esteban Gutierrez" textAlignment="CENTER" translateX="-100.0" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
                      <font>
                         <Font name="Yu Gothic Regular" size="47.0" />
                      </font>
                   </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Lewis Hamilton" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+                  <Text fx:id="gutierrezSalary" fill="RED" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;Salary&gt;" textAlignment="CENTER" translateX="275.0" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="37.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Lewis Hamilton" textAlignment="CENTER" translateX="-100.0" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
                      <font>
                         <Font name="Yu Gothic Regular" size="47.0" />
                      </font>
                   </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Rio Haryanto" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+                  <Text fx:id="hamiltonSalary" fill="RED" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;Salary&gt;" textAlignment="CENTER" translateX="275.0" GridPane.halignment="CENTER" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="37.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Rio Haryanto" textAlignment="CENTER" translateX="-100.0" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
                      <font>
                         <Font name="Yu Gothic Regular" size="47.0" />
                      </font>
                   </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nicolas Hulkenberg" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="CENTER">
+                  <Text fx:id="haryantoSalary" fill="RED" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;Salary&gt;" textAlignment="CENTER" translateX="275.0" GridPane.halignment="CENTER" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="37.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nicolas Hulkenberg" textAlignment="CENTER" translateX="-100.0" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="CENTER">
                      <font>
                         <Font name="Yu Gothic Regular" size="47.0" />
                      </font>
                   </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Daniil Kvyat" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="9" GridPane.valignment="CENTER">
+                  <Text fx:id="hulkenbergSalary" fill="RED" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;Salary&gt;" textAlignment="CENTER" translateX="275.0" GridPane.halignment="CENTER" GridPane.rowIndex="8">
+                     <font>
+                        <Font size="37.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Daniil Kvyat" textAlignment="CENTER" translateX="-100.0" GridPane.halignment="CENTER" GridPane.rowIndex="9" GridPane.valignment="CENTER">
                      <font>
                         <Font name="Yu Gothic Regular" size="47.0" />
                      </font>
                   </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kevin Magnussen" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="CENTER">
+                  <Text fx:id="kvyatSalary" fill="RED" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;Salary&gt;" textAlignment="CENTER" translateX="275.0" GridPane.halignment="CENTER" GridPane.rowIndex="9">
+                     <font>
+                        <Font size="37.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kevin Magnussen" textAlignment="CENTER" translateX="-100.0" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="CENTER">
                      <font>
                         <Font name="Yu Gothic Regular" size="47.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="magnussenSalary" fill="RED" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;Salary&gt;" textAlignment="CENTER" translateX="275.0" GridPane.halignment="CENTER" GridPane.rowIndex="10">
+                     <font>
+                        <Font size="37.0" />
                      </font>
                   </Text>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Felipe Massa" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
@@ -144,9 +199,19 @@
                         <Font name="Yu Gothic Regular" size="47.0" />
                      </font>
                   </Text>
+                  <Text fx:id="massaSalary" fill="RED" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;Salary&gt;" textAlignment="CENTER" translateX="275.0" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+                     <font>
+                        <Font size="37.0" />
+                     </font>
+                  </Text>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Felipe Nasr" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                      <font>
                         <Font name="Yu Gothic Regular" size="47.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="nasrSalary" fill="RED" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;Salary&gt;" textAlignment="CENTER" translateX="275.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="37.0" />
                      </font>
                   </Text>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Jolyon Palmer" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
@@ -154,9 +219,19 @@
                         <Font name="Yu Gothic Regular" size="47.0" />
                      </font>
                   </Text>
+                  <Text fx:id="palmerSalary" fill="RED" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;Salary&gt;" textAlignment="CENTER" translateX="275.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="37.0" />
+                     </font>
+                  </Text>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sergio Perez" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
                      <font>
                         <Font name="Yu Gothic Regular" size="47.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="perezSalary" fill="RED" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;Salary&gt;" textAlignment="CENTER" translateX="275.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="37.0" />
                      </font>
                   </Text>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kimi Raikkonnen" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
@@ -164,9 +239,19 @@
                         <Font name="Yu Gothic Regular" size="47.0" />
                      </font>
                   </Text>
+                  <Text fx:id="raikkonnenSalary" fill="RED" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;Salary&gt;" textAlignment="CENTER" translateX="275.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="37.0" />
+                     </font>
+                  </Text>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Daniel Ricciardo" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
                      <font>
                         <Font name="Yu Gothic Regular" size="47.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="ricciardoSalary" fill="RED" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;Salary&gt;" textAlignment="CENTER" translateX="275.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="37.0" />
                      </font>
                   </Text>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nico Rosberg" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
@@ -174,9 +259,19 @@
                         <Font name="Yu Gothic Regular" size="47.0" />
                      </font>
                   </Text>
+                  <Text fx:id="rosbergSalary" fill="RED" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;Salary&gt;" textAlignment="CENTER" translateX="275.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="37.0" />
+                     </font>
+                  </Text>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Carloz Sainz Jr." textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
                      <font>
                         <Font name="Yu Gothic Regular" size="47.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="sainzSalary" fill="RED" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;Salary&gt;" textAlignment="CENTER" translateX="275.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="37.0" />
                      </font>
                   </Text>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Max Verstappen" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="CENTER">
@@ -184,14 +279,29 @@
                         <Font name="Yu Gothic Regular" size="47.0" />
                      </font>
                   </Text>
+                  <Text fx:id="verstappenSalary" fill="RED" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;Salary&gt;" textAlignment="CENTER" translateX="275.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="8">
+                     <font>
+                        <Font size="37.0" />
+                     </font>
+                  </Text>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sebastian Vettel" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="9" GridPane.valignment="CENTER">
                      <font>
                         <Font name="Yu Gothic Regular" size="47.0" />
                      </font>
                   </Text>
+                  <Text fx:id="vettelSalary" fill="RED" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;Salary&gt;" textAlignment="CENTER" translateX="275.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="9">
+                     <font>
+                        <Font size="37.0" />
+                     </font>
+                  </Text>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pascal Wehrlein" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="CENTER">
                      <font>
                         <Font name="Yu Gothic Regular" size="47.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="werhleinSalary" fill="RED" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;Salary&gt;" textAlignment="CENTER" translateX="275.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="10">
+                     <font>
+                        <Font size="37.0" />
                      </font>
                   </Text>
                   <Rectangle id="1" fx:id="alonso" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="60.0" layoutX="13.0" layoutY="13.0" stroke="#141414" strokeWidth="0.0" width="845.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
