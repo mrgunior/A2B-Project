@@ -2,7 +2,10 @@ package manager.GUIController;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.ResourceBundle;
+
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -11,7 +14,10 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import manager.controller.GameController;
 import manager.controller.SceneLoadController;
+import manager.model.Driver;
+import manager.model.formulaApplication;
 
 public class StandingsController extends SceneLoadController implements Initializable
 {
@@ -37,6 +43,8 @@ public class StandingsController extends SceneLoadController implements Initiali
 	@FXML
 	private Text points1, points2, points3, points4, points5, points6, points7, points8, points9, points10, points11, points12, points13, points14,
 			points15, points16, points17, points18, points19, points20, points21, points22;
+	
+	private ArrayList<Driver> drivers;
 
 	public void createListOnScreen(String[] top22)
 	{
@@ -49,7 +57,16 @@ public class StandingsController extends SceneLoadController implements Initiali
 		background.fitWidthProperty().bind(root.widthProperty());
 		background.fitHeightProperty().bind(root.heightProperty());
 		
-		//createListOnScreen();
+		//GameController.getProfile().sortDriversByPoints();
+		drivers = GameController.getProfile().getAllDrivers();
+		
+		//System.out.println("Befor sort: " + drivers);
+		//Collections.sort(drivers, Driver.sortByPoints());
+		drivers.sort(Driver.sortByPoints());
+		//System.out.println("After sort: " + drivers);
+		
+		setStandingNames();
+		setStandingPoints();
 		
 		//name1.setText(GameController.getTeamName());
 
@@ -75,4 +92,25 @@ public class StandingsController extends SceneLoadController implements Initiali
 		});
 	}
 
+	private void setStandingNames()
+	{
+		Text[] names = {name1, name2, name3, name4, name5, name6, name7, name8, name9, name10, name11, name12, name13, name14,
+				name15, name16, name17, name18, name19, name20, name21, name22};
+		
+		for (int i = 0; i < drivers.size(); i++)
+		{
+			names[i].setText(drivers.get(i).getName());
+		}
+	}
+	
+	private void setStandingPoints()
+	{
+		Text[] points = {points1, points2, points3, points4, points5, points6, points7, points8, points9, points10, points11, points12, points13, points14,
+				points15, points16, points17, points18, points19, points20, points21, points22};
+		
+		for (int i = 0; i < drivers.size(); i++)
+		{
+			points[i].setText(drivers.get(i).getPoints() + "");
+		}
+	}
 }

@@ -92,7 +92,8 @@ public class formulaApplication extends Application
 	{
 		// Creates a gamecontroller object at the starting up of the application
 		gamecontroller = new GameController("./data.json");
-		gamecontroller.getDrivers();
+		gamecontroller.getProfile().setAllDrivers(GameController.getDrivers());
+		gamecontroller.writeDriversToJSON();
 		
 		Parent root = FXMLLoader.load(getClass().getResource("../view/MainMenu.fxml"));
 		theScene = new Scene(root);

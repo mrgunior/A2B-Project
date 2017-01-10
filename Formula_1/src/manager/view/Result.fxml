@@ -391,7 +391,7 @@
                               <Insets left="10.0" />
                            </GridPane.margin>
                         </Text>
-                        <Text fx:id="points11" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="305" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                        <Text fx:id="totalPoints1" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="305" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
                            <font>
                               <Font size="24.0" />
                            </font>
@@ -399,7 +399,7 @@
                               <Insets right="35.0" />
                            </GridPane.margin>
                         </Text>
-                        <Text fx:id="points111" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="280" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                        <Text fx:id="totalPoints2" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="280" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
                            <font>
                               <Font size="24.0" />
                            </font>
@@ -407,7 +407,7 @@
                               <Insets right="35.0" />
                            </GridPane.margin>
                         </Text>
-                        <Text fx:id="points112" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Total points" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                        <Text fx:id="totalPoints3" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Total points" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
                            <font>
                               <Font size="24.0" />
                            </font>
@@ -415,7 +415,7 @@
                               <Insets right="35.0" />
                            </GridPane.margin>
                         </Text>
-                        <Text fx:id="points1121" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Total points" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+                        <Text fx:id="totalPoints4" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Total points" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
                            <font>
                               <Font size="24.0" />
                            </font>
@@ -423,7 +423,7 @@
                               <Insets right="35.0" />
                            </GridPane.margin>
                         </Text>
-                        <Text fx:id="points1122" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Total points" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
+                        <Text fx:id="totalPoints5" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Total points" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
                            <font>
                               <Font size="24.0" />
                            </font>
@@ -431,7 +431,7 @@
                               <Insets right="35.0" />
                            </GridPane.margin>
                         </Text>
-                        <Text fx:id="points1123" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Total points" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="6">
+                        <Text fx:id="totalPoints6" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Total points" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="6">
                            <font>
                               <Font size="24.0" />
                            </font>
@@ -439,7 +439,7 @@
                               <Insets right="35.0" />
                            </GridPane.margin>
                         </Text>
-                        <Text fx:id="points1124" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Total points" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="7">
+                        <Text fx:id="totalPoints7" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Total points" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="7">
                            <font>
                               <Font size="24.0" />
                            </font>
@@ -447,7 +447,7 @@
                               <Insets right="35.0" />
                            </GridPane.margin>
                         </Text>
-                        <Text fx:id="points1125" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Total points" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="8">
+                        <Text fx:id="totalPoints8" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Total points" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="8">
                            <font>
                               <Font size="24.0" />
                            </font>
@@ -455,7 +455,7 @@
                               <Insets right="35.0" />
                            </GridPane.margin>
                         </Text>
-                        <Text fx:id="points1126" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Total points" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="9">
+                        <Text fx:id="totalPoints9" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Total points" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="9">
                            <font>
                               <Font size="24.0" />
                            </font>
@@ -463,7 +463,7 @@
                               <Insets right="35.0" />
                            </GridPane.margin>
                         </Text>
-                        <Text fx:id="points1127" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Total points" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="10">
+                        <Text fx:id="totalPoints10" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Total points" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="10">
                            <font>
                               <Font size="24.0" />
                            </font>

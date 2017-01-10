@@ -1,6 +1,7 @@
 package manager.model;
 
 import java.nio.DoubleBuffer;
+import java.util.Comparator;
 
 public class Driver
 {
@@ -129,6 +130,40 @@ public class Driver
 	public void setSalary(double salary)
 	{
 		this.salary = salary;
+	}
+	
+	/**
+	 * Returns the Comparator to sort by Id
+	 * 
+	 * @return Comparator - Compares by time
+	 */
+	public static Comparator<Driver> sortById()
+	{
+		return new Comparator<Driver>()
+		{
+			@Override
+			public int compare(Driver d1, Driver d2)
+			{
+				return (int) (d1.getId() - d2.getId());
+			}
+		};
+	}
+	
+	/**
+	 * Returns the Comparator to sort by points
+	 * 
+	 * @return Comparator - Compares by time
+	 */
+	public static Comparator<Driver> sortByPoints()
+	{
+		return new Comparator<Driver>()
+		{
+			@Override
+			public int compare(Driver d1, Driver d2)
+			{
+				return (int) (d2.getPoints() - d1.getPoints());
+			}
+		};
 	}
 
 	@Override

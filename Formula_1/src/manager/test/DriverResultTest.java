@@ -5,21 +5,56 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import manager.model.Driver;
 import manager.model.DriverResult;
 
 public class DriverResultTest
 {
 	private DriverResult driverResult, driverResultTrue, driverResultFalse;
 	private int carId = 5;
-	private String name = "Max Verstappen";
 	private double time = 12500;
+	
+	private Driver driver;
+	private String name;
+	private int id, teamId, points, number, speed, acceleration, turning;
+	private double salary;
+	
+	private Driver driver2;
+	private String name2;
+	private int id2, teamId2, points2, number2, speed2, acceleration2, turning2;
+	private double salary2;
+	
+	
 	
 	@Before
 	public void setUp()
 	{
-		driverResult = new DriverResult(carId, name, time);
-		driverResultTrue = new DriverResult(carId, name, time);
-		driverResultFalse = new DriverResult(3, "Lewis Hamilton", 15000);
+		name = "Victor Wernet";
+		id = 1;
+		teamId = 2;
+		points = 20;
+		number = 33;
+		speed = 80;
+		acceleration = 75;
+		turning = 69;
+		salary = 3.0; //3 mil
+		
+		name2 = "Mika Kuijpers";
+		id2 = 2;
+		teamId2 = 3;
+		points2 = 21;
+		number2 = 34;
+		speed2 = 81;
+		acceleration2 = 76;
+		turning2 = 70;
+		salary2 = 4.0; //3 mil
+		
+		driver = new Driver(id, teamId, name, points, number, speed, acceleration, turning, salary);
+		driver2 = new Driver(id2, teamId2, name2, points2, number2, speed2, acceleration2, turning2, salary2);
+		
+		driverResult = new DriverResult(carId, driver, time);
+		driverResultTrue = new DriverResult(carId, driver, time);
+		driverResultFalse = new DriverResult(3, driver2, 15000);
 	}
 	
 	@Test
@@ -51,7 +86,7 @@ public class DriverResultTest
 	public void testSetName()
 	{
 		String otherName = "Lewis Hamilton";
-		driverResult.setName(otherName);
+		driverResult.getDriver().setName(otherName);
 		assertEquals(otherName, driverResult.getName());
 	}
 
@@ -74,7 +109,7 @@ public class DriverResultTest
 	@Test
 	public void testToString()
 	{
-		assertEquals("Max Verstappen (5) : 12500.0", driverResult.toString());
+		assertEquals("Victor Wernet (5) : 12500.0", driverResult.toString());
 	}
 
 	@Test
@@ -110,7 +145,7 @@ public class DriverResultTest
 	@Test 
 	public void testOtherName()
 	{
-		driverResultTrue.setName("Lewis Hamilton");
+		driverResultTrue.getDriver().setName("Lewis Hamilton");
 		assertNotEquals(driverResult, driverResultTrue);
 	}
 	
@@ -124,15 +159,15 @@ public class DriverResultTest
 	@Test
 	public void testEqualsNameNullOtherNotNull()
 	{
-		driverResult.setName(null);
+		driverResult.getDriver().setName(null);
 		assertNotEquals(driverResult, driverResultTrue);
 	}
 	
 	@Test
 	public void testEqualsNamesNull()
 	{
-		driverResult.setName(null);
-		driverResultTrue.setName(null);
+		driverResult.getDriver().setName(null);
+		driverResultTrue.getDriver().setName(null);
 		assertEquals(driverResult, driverResultTrue);
 	}
 }
