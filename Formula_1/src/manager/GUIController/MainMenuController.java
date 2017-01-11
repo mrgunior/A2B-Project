@@ -15,6 +15,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import manager.controller.SceneLoadController;
 import manager.controller.GameController;
+import manager.model.Profile;
 import manager.model.formulaApplication;
 
 public class MainMenuController extends SceneLoadController implements Initializable
@@ -56,6 +57,7 @@ public class MainMenuController extends SceneLoadController implements Initializ
 					try
 					{
 						GameController.getProfile().resetDriverPoints();
+						Profile.setBudget(200000000);
 						gotoFxmlScene(event, "ChooseTeam", (Stage) startGame.getScene().getWindow());
 					}
 					
