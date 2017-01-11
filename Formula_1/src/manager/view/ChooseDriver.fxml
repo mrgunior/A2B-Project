@@ -8,6 +8,8 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -29,17 +31,6 @@
             <Rectangle2D />
          </viewport>
       </ImageView>
-      <HBox alignment="CENTER" prefHeight="250.0" prefWidth="1920.0">
-         <children>
-            
-            <!-- Formula string and settings -->
-            <Text fill="#ff2800" stroke="WHITE" strokeType="OUTSIDE" text="Choose Driver" textAlignment="CENTER">
-               <font>
-                  <Font name="Haettenschweiler" size="130.0" />
-               </font>
-            </Text>
-         </children>
-      </HBox>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff99" height="710.0" layoutX="95.0" layoutY="270.0" stroke="#ffffffb2" strokeType="OUTSIDE" strokeWidth="3.0" width="1710.0" />
       <HBox id="teamsContainer" layoutX="100.0" layoutY="275.0" prefHeight="700.0" prefWidth="1700.0">
          <children>
@@ -309,10 +300,29 @@
             </GridPane>
          </children>
       </HBox>
-      <ImageView fx:id="next" fitHeight="113.0" fitWidth="292.0" layoutX="1567.0" layoutY="991.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="next" fitHeight="113.0" fitWidth="292.0" layoutX="1567.0" layoutY="991.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.5714263916015625" AnchorPane.rightAnchor="61.0">
          <image>
             <Image url="@../../../images/menu/Next.png" />
          </image>
       </ImageView>
+      <HBox alignment="CENTER" layoutX="-205.0" layoutY="18.0" prefHeight="200.0" prefWidth="1920.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0">
+         <children>
+            <Text fill="#ff2800" strokeType="OUTSIDE" text="Choose Driver" textAlignment="CENTER">
+               <font>
+                  <Font name="Yu Gothic UI Semilight" size="130.0" />
+               </font>
+               <stroke>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#c90707" />
+                        <Stop color="#c90707" offset="0.011494252873563218" />
+                        <Stop color="#e1dcdc" offset="0.8160919540229883" />
+                        <Stop color="#e1dcdc" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </stroke>
+            </Text>
+         </children>
+      </HBox>
    </children>
 </AnchorPane>

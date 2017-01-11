@@ -42,7 +42,7 @@ public class DashboardController extends SceneLoadController implements Initiali
 		background.fitHeightProperty().bind(root.heightProperty());
 		
 		teamName.setText(formulaApplication.getTeamName());
-		balance.setText(Double.toString(formulaApplication.getBalance()));
+		balance.setText("$ " + Double.toString(formulaApplication.getBalance()) + " Million");
 
 		AnimationTimer animationTimer = new AnimationTimer()
 		{	
@@ -62,10 +62,12 @@ public class DashboardController extends SceneLoadController implements Initiali
 					}
 				});
 				carManagement.setOnMouseEntered(event -> {
+					carManagement.setStyle("-fx-fill: rgba(192,192,192,0.2);");
 					// carManagement.setImage(new
 					// Image("file:images/menu/BackHover.png"));
 				});
 				carManagement.setOnMouseExited(event -> {
+					carManagement.setStyle("-fx-fill: rgba(0,0,0,0);");
 					// carManagement.setImage(new Image("file:images/menu/Back.png"));
 				});
 
@@ -82,10 +84,12 @@ public class DashboardController extends SceneLoadController implements Initiali
 					}
 				});
 				teamManagement.setOnMouseEntered(event -> {
+					teamManagement.setStyle("-fx-fill: rgba(192,192,192,0.2);");
 					// teamManagement.setImage(new
 					// Image("file:images/menu/BackHover.png"));
 				});
 				teamManagement.setOnMouseExited(event -> {
+					teamManagement.setStyle("-fx-fill: rgba(0,0,0,0);");
 					// teamManagement.setImage(new Image("file:images/menu/Back.png"));
 				});
 
@@ -102,9 +106,11 @@ public class DashboardController extends SceneLoadController implements Initiali
 					}
 				});
 				standings.setOnMouseEntered(event -> {
+					standings.setStyle("-fx-fill: rgba(192,192,192,0.2);");
 					// standings.setImage(new Image("file:images/menu/BackHover.png"));
 				});
 				standings.setOnMouseExited(event -> {
+					standings.setStyle("-fx-fill: rgba(0,0,0,0);");
 					// standings.setImage(new Image("file:images/menu/Back.png"));
 				});
 
@@ -121,10 +127,12 @@ public class DashboardController extends SceneLoadController implements Initiali
 					}
 				});
 				race.setOnMouseEntered(event -> {
+					race.setStyle("-fx-fill: rgba(192,192,192,0.2);");
 					// carManagement.setImage(new
 					// Image("file:images/menu/BackHover.png"));
 				});
 				race.setOnMouseExited(event -> {
+					race.setStyle("-fx-fill: rgba(0,0,0,0);");
 					// carManagement.setImage(new Image("file:images/menu/Back.png"));
 				});
 			
