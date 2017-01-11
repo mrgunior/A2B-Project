@@ -30,23 +30,6 @@
             <Rectangle2D />
          </viewport>
       </ImageView>
-      
-      <!-- Formula string and settings -->
-      <Text fill="#ff2800" layoutX="720.0" layoutY="188.0" strokeType="OUTSIDE" text="Highscores" textAlignment="CENTER">
-         <font>
-            <Font name="Haettenschweiler" size="130.0" />
-         </font>
-         <stroke>
-            <LinearGradient endX="1.0" endY="1.0">
-               <stops>
-                  <Stop color="#c90707" />
-                  <Stop color="#c90707" offset="0.011494252873563218" />
-                  <Stop color="#e1dcdc" offset="0.8160919540229883" />
-                  <Stop color="#e1dcdc" offset="1.0" />
-               </stops>
-            </LinearGradient>
-         </stroke>
-      </Text>
       <HBox id="teamsContainer" layoutX="87.0" layoutY="285.0" prefHeight="700.0" prefWidth="1700.0">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff99" height="700.0" stroke="#ffffffb2" strokeType="OUTSIDE" strokeWidth="3.0" width="1700.0" HBox.hgrow="ALWAYS">
@@ -63,5 +46,26 @@
             <Image url="@../../../images/menu/Back.png" />
          </image>
       </ImageView>
+      <HBox alignment="CENTER" layoutX="704.0" layoutY="75.716796875" prefHeight="200.0" prefWidth="1920.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0">
+         <children>
+            
+                        <!-- Formula string and settings -->
+            <Text fill="#ff2800" strokeType="OUTSIDE" text="Highscores" textAlignment="CENTER">
+               <font>
+                  <Font name="Yu Gothic UI Semilight" size="130.0" />
+               </font>
+               <stroke>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#c90707" />
+                        <Stop color="#c90707" offset="0.011494252873563218" />
+                        <Stop color="#e1dcdc" offset="0.8160919540229883" />
+                        <Stop color="#e1dcdc" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </stroke>
+            </Text>
+         </children>
+      </HBox>
    </children>
 </AnchorPane>

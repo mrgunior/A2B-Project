@@ -4,6 +4,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.paint.LinearGradient?>
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
@@ -26,22 +27,26 @@
             <Rectangle2D />
          </viewport>
       </ImageView>
-      
-      <!-- Formula string and settings -->
-      <Text fill="#ff2800" layoutX="573.0" layoutY="200.0" strokeType="OUTSIDE" text="Starting New Game">
-         <font>
-            <Font name="Haettenschweiler" size="130.0" />
-         </font>
-         <stroke>
-            <LinearGradient endX="1.0" endY="1.0">
-               <stops>
-                  <Stop color="#c90707" />
-                  <Stop color="#c90707" offset="0.011494252873563218" />
-                  <Stop color="#e1dcdc" offset="0.8160919540229883" />
-                  <Stop color="#e1dcdc" offset="1.0" />
-               </stops>
-            </LinearGradient>
-         </stroke>
-      </Text>
+      <HBox alignment="CENTER" layoutX="573.0" layoutY="59.716796875" prefWidth="1920.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0">
+         <children>
+            
+            <!-- Formula string and settings -->
+            <Text fill="#ff2800" strokeType="OUTSIDE" text="Starting New Game">
+               <font>
+                  <Font name="Yu Gothic UI Semilight" size="130.0" />
+               </font>
+               <stroke>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#c90707" />
+                        <Stop color="#c90707" offset="0.011494252873563218" />
+                        <Stop color="#e1dcdc" offset="0.8160919540229883" />
+                        <Stop color="#e1dcdc" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </stroke>
+            </Text>
+         </children>
+      </HBox>
    </children>
 </AnchorPane>

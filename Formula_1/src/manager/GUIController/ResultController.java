@@ -36,6 +36,9 @@ public class ResultController extends SceneLoadController implements Initializab
 	// Standings Names
 	@FXML
 	private Text name1, name2, name3, name4, name5, name6, name7, name8, name9, name10;
+	@FXML
+	// Timings
+	private Text time1, time2, time3, time4, time5, time6, time7, time8, time9, time10;
 	// Points earned Text
 	@FXML
 	private Text points1, points2, points3, points4, points5, points6, points7, points8, points9, points10;
@@ -93,12 +96,14 @@ public class ResultController extends SceneLoadController implements Initializab
 	{
 		resultsResult.sortResultsByTime();
 
-		Text[] top10 = { name1, name2, name3, name4, name5, name6, name7, name8, name9, name10 };
+		Text[] top10Drivers = { name1, name2, name3, name4, name5, name6, name7, name8, name9, name10 };
+		Text[] top10Timings = { time1, time2, time3, time4, time5, time6, time7, time8, time9, time10 };
 
 		for (int i = 0; i < 10; i++)
 		{
 			resultsResult.getResult(i).getDriver().addPoints(points[i]);
-			top10[i].setText(resultsResult.getResult(i).getName() + " - " + Stopwatch.formatMilli(resultsResult.getResult(i).getTime()));
+			top10Drivers[i].setText(resultsResult.getResult(i).getName());
+			top10Timings[i].setText(Stopwatch.formatMilli(resultsResult.getResult(i).getTime()));
 		}
 	}
 
