@@ -58,28 +58,14 @@ public class ChooseDriverController extends SceneLoadController implements Initi
 		background.fitWidthProperty().bind(root.widthProperty());
 		background.fitHeightProperty().bind(root.heightProperty());
 		
-		alonsoSalary.setText("Free!");
-		bottasSalary.setText("Free!");
-		buttonSalary.setText("Free!");
-		ericssonSalary.setText("Free!");
-		grosjeanSalary.setText("Free!");
-		gutierrezSalary.setText("Free!");
-		hamiltonSalary.setText("Free!");
-		haryantoSalary.setText("Free!");
-		hulkenbergSalary.setText("Free!");
-		kvyatSalary.setText("Free!");
-		magnussenSalary.setText("Free!");
-		massaSalary.setText("Free!");
-		nasrSalary.setText("Free!");
-		palmerSalary.setText("Free!");
-		perezSalary.setText("Free!");
-		raikkonnenSalary.setText("Free!");
-		ricciardoSalary.setText("Free!");
-		rosbergSalary.setText("Free!");
-		sainzSalary.setText("Free!");
-		verstappenSalary.setText("Free!");
-		vettelSalary.setText("Free!");
-		wehrleinSalary.setText("Free!");
+		Text[] salaries = {alonsoSalary, bottasSalary, buttonSalary, ericssonSalary, grosjeanSalary, gutierrezSalary,
+				hamiltonSalary, haryantoSalary, hulkenbergSalary, kvyatSalary, magnussenSalary, massaSalary, nasrSalary,
+				palmerSalary, perezSalary, raikkonnenSalary, ricciardoSalary, rosbergSalary, sainzSalary, verstappenSalary,
+				vettelSalary, wehrleinSalary};
+		
+		for (int i = 0; i < 22; i++) {
+			salaries[i].setText("Free!");
+		}
 		
 		
 		driver1 = alonso;
