@@ -56,7 +56,7 @@ public class Stopwatch
 		}
 		else
 		{
-			return (end - start);
+			return ((end - start)*10);
 		}
 		
 	}
@@ -67,39 +67,44 @@ public class Stopwatch
 	 * 
 	 * @return double - Elapsed time since creation
 	 */
-	public String elapsedTimeString()
+	public String elapsedTimeString(double elapsedTime)
 	{
 		String timeString = "";
 		
 		if (running)
 		{
-			double elapsed = elapsedTime();
+			double elapsed = elapsedTime;
 
 			double millisecondsDouble = (int) (elapsed % 1000);
 			double secondsDouble = (int) (elapsed / 1000) % 60;
 			double minutesDouble = (int) (elapsed / (1000 * 60)) % 60;
+			double hoursDouble = (int) (elapsed / (1000 * 60 * 60)) % 60;
 
 			DecimalFormat dfMilli = new DecimalFormat("000.#");
 			DecimalFormat dfSeconds = new DecimalFormat("00.#");
 			DecimalFormat dfMinutes = new DecimalFormat("00.#");
+			DecimalFormat dfHours = new DecimalFormat("00.#");
 
 			String milliseconds = dfMilli.format(millisecondsDouble);
 			String seconds = dfSeconds.format(secondsDouble);
 			String minutes = dfMinutes.format(minutesDouble);
+			String hours = dfHours.format(hoursDouble);
 
-			timeString = minutes + ":" + seconds + "." + milliseconds;
+			timeString = hours + ":" + minutes + ":" + seconds + "." + milliseconds;
 		}
 		else
 		{
 			DecimalFormat dfMilli = new DecimalFormat("000.#");
 			DecimalFormat dfSeconds = new DecimalFormat("00.#");
 			DecimalFormat dfMinutes = new DecimalFormat("00.#");
+			DecimalFormat dfHours = new DecimalFormat("00.#");
 
 			String milliseconds = dfMilli.format(0);
 			String seconds = dfSeconds.format(0);
 			String minutes = dfMinutes.format(0);
+			String hours = dfHours.format(0);			
 
-			timeString = minutes + ":" + seconds + "." + milliseconds;
+			timeString = hours + ":" + minutes + ":" + seconds + "." + milliseconds;
 		}
 		
 		
@@ -111,15 +116,18 @@ public class Stopwatch
 		double millisecondsDouble = (int) (milli % 1000);
 		double secondsDouble = (int) (milli / 1000) % 60;
 		double minutesDouble = (int) (milli / (1000 * 60)) % 60;
+		double hoursDouble = (int) (milli / (1000 * 60 * 60)) % 60;
 
 		DecimalFormat dfMilli = new DecimalFormat("000.#");
 		DecimalFormat dfSeconds = new DecimalFormat("00.#");
 		DecimalFormat dfMinutes = new DecimalFormat("00.#");
+		DecimalFormat dfHours = new DecimalFormat("00.#");
 
 		String milliseconds = dfMilli.format(millisecondsDouble);
 		String seconds = dfSeconds.format(secondsDouble);
 		String minutes = dfMinutes.format(minutesDouble);
+		String hours = dfHours.format(hoursDouble);
 
-		return (minutes + ":" + seconds + "." + milliseconds);
+		return (hours + ":" + minutes + ":" + seconds + "." + milliseconds);
 	}
 }

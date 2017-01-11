@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -147,10 +148,13 @@
                      </stops>
                   </LinearGradient>
                </fill></Rectangle>
-            <Text fx:id="time" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="00:00.000" wrappingWidth="280.03131103515625" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <Text fx:id="time" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="00:00:00.000" wrappingWidth="359.03131103515625" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <font>
                   <Font name="Yu Gothic UI Light" size="65.0" />
                </font>
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="20.0" />
+               </GridPane.margin>
             </Text>
          </children>
       </GridPane>
