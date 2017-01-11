@@ -51,20 +51,23 @@ public class ChooseDriverController extends SceneLoadController implements Initi
 	String driver1String = "";
 	String driver2String = "";
 
-	ArrayList<String> drivers = new ArrayList<>();
+	ArrayList<Driver> drivers = new ArrayList<>();
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		background.fitWidthProperty().bind(root.widthProperty());
 		background.fitHeightProperty().bind(root.heightProperty());
 		
+		drivers = GameController.getProfile().getAllDrivers();
+		drivers.sort(Driver.sortById());
+		
 		Text[] salaries = {alonsoSalary, bottasSalary, buttonSalary, ericssonSalary, grosjeanSalary, gutierrezSalary,
 				hamiltonSalary, haryantoSalary, hulkenbergSalary, kvyatSalary, magnussenSalary, massaSalary, nasrSalary,
 				palmerSalary, perezSalary, raikkonnenSalary, ricciardoSalary, rosbergSalary, sainzSalary, verstappenSalary,
 				vettelSalary, wehrleinSalary};
-		
+
 		for (int i = 0; i < 22; i++) {
-			salaries[i].setText("Free!");
+			salaries[i].setText("$ " + drivers.get(i).getSalary() + " Mill");
 		}
 		
 		

@@ -300,7 +300,7 @@
             </GridPane>
          </children>
       </HBox>
-      <ImageView fx:id="next" fitHeight="113.0" fitWidth="292.0" layoutX="1567.0" layoutY="991.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.5714263916015625" AnchorPane.rightAnchor="61.0">
+      <ImageView fx:id="next" fitHeight="113.0" fitWidth="292.0" layoutX="1567.0" layoutY="991.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.5" AnchorPane.rightAnchor="60.0">
          <image>
             <Image url="@../../../images/menu/Next.png" />
          </image>

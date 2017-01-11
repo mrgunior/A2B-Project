@@ -50,7 +50,10 @@ public class ChooseTeamController extends SceneLoadController implements Initial
 	{
 		background.fitWidthProperty().bind(root.widthProperty());
 		background.fitHeightProperty().bind(root.heightProperty());
+		
 		currentlySelected = mercedes;
+		currentlySelectedString = "Mercedes AMG Petronas";
+		setSelected(mercedes);
 
 		// Click
 		next.setOnMousePressed(event -> {
