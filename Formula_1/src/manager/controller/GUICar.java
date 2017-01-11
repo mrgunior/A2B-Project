@@ -127,7 +127,7 @@ public class GUICar
 		// Create all the points at the correct interval
 		for (int i = 0; i < randomPoints.length; i++)
 		{
-			randomPoints[i] = startCarsX - car.getFitWidth() + ((finishX - startCarsX) / (nPoints + 2) * (i + 2));
+			randomPoints[i] = startCarsX - (car.getFitWidth()*car.getScaleX()) + ((finishX - startCarsX) / (nPoints + 2) * (i + 2));
 		}
 
 		// Randomize all points
@@ -147,7 +147,7 @@ public class GUICar
 	public void moveCar()
 	{
 		// Check if the car has crossed the finish line
-		if (getX() < (finishX - car.getFitWidth()))
+		if (getX() < (finishX - (car.getFitWidth()*car.getScaleX())))
 		{
 			if (RaceController.isRaceStarted())
 			{
@@ -183,7 +183,7 @@ public class GUICar
 		double distance = randomPoints[currentGoalPoint] - getX();
 		if (currentGoalPoint == nPoints)
 		{
-			distance -= car.getFitWidth();
+			distance -= (car.getFitWidth()*car.getScaleX());
 		}
 
 		// Time is the time the from one point to another (goalTime / all

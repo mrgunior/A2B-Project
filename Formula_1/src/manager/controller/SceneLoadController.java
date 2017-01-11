@@ -24,11 +24,8 @@ public class SceneLoadController
 		Parent root = FXMLLoader.load(this.getClass().getResource("../view/" + name + ".fxml"));
 		
 		formulaApplication.setSceneRoot(root);
-		//Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		
-		stage.setFullScreen(formulaApplication.isFullscreen());
-		//stage.setScene(scene);
-		stage.setFullScreen(formulaApplication.isFullscreen());
+		//stage.setFullScreen(formulaApplication.isFullscreen());
 		stage.setResizable(formulaApplication.isResizable());
 		stage.show();
 	}
