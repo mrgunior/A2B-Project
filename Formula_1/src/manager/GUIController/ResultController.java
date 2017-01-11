@@ -35,10 +35,10 @@ public class ResultController extends SceneLoadController implements Initializab
 	private ImageView logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8, logo9, logo10;
 	// Standings Names
 	@FXML
-	private Text name1, name2, name3, name4, name5, name6, name7, name8, name9, name10;
+	private Text	name1, name2, name3, name4, name5, name6, name7, name8, name9, name10;
 	@FXML
 	// Timings
-	private Text time1, time2, time3, time4, time5, time6, time7, time8, time9, time10;
+	private Text	time1, time2, time3, time4, time5, time6, time7, time8, time9, time10;
 	// Points earned Text
 	@FXML
 	private Text points1, points2, points3, points4, points5, points6, points7, points8, points9, points10;
@@ -103,7 +103,7 @@ public class ResultController extends SceneLoadController implements Initializab
 		{
 			resultsResult.getResult(i).getDriver().addPoints(points[i]);
 			top10Drivers[i].setText(resultsResult.getResult(i).getName());
-			top10Timings[i].setText(Stopwatch.formatMilli(resultsResult.getResult(i).getTime()));
+			top10Timings[i].setText(Stopwatch.formatMilli(resultsResult.getResult(i).getTime() * RaceController.getTimeFactor()));
 		}
 	}
 
@@ -119,22 +119,22 @@ public class ResultController extends SceneLoadController implements Initializab
 		// Set total points text boxes
 		Text[] totalPointsText = { totalPoints1, totalPoints2, totalPoints3, totalPoints4, totalPoints5, totalPoints6, totalPoints7,
 				totalPoints8, totalPoints9, totalPoints10 };
-		
+
 		for (int i = 0; i < 10; i++)
 		{
 			totalPointsText[i].setText(resultsResult.getResult(i).getDriver().getPoints() + "");
 		}
 	}
-	
+
 	public void transferResultsToProfileDrivers()
 	{
 		ArrayList<Driver> drivers = new ArrayList<Driver>();
-		
+
 		for (int i = 0; i < resultsResult.getResults().size(); i++)
 		{
 			drivers.add(resultsResult.getResult(i).getDriver());
 		}
-		
+
 		GameController.getProfile().setAllDrivers(drivers);
 	}
 }

@@ -3,7 +3,10 @@ package manager.GUIController;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.ResourceBundle;
+
+import com.sun.prism.paint.Stop;
 
 import Templates.RaceSimulationTemplates;
 import manager.GUIController.ResultController;
@@ -53,6 +56,7 @@ public class RaceController extends SceneLoadController implements Initializable
 	private static double	startCarsX		= 50;
 	private static boolean	timerRunning	= true;
 	private String			timeString		= "";
+	private static double	timeFactor		= 500;
 
 	private int				frames	= 1;
 	private static double	fps		= 60;
@@ -90,6 +94,11 @@ public class RaceController extends SceneLoadController implements Initializable
 	public static double getFps()
 	{
 		return fps;
+	}
+	
+	public static double getTimeFactor()
+	{
+		return timeFactor;
 	}
 
 	public static boolean isRaceStarted()
@@ -157,7 +166,7 @@ public class RaceController extends SceneLoadController implements Initializable
 		finishX = finish.getLayoutX();
 
 		// Simulate results and store in results object
-		resultsRace = RaceSimulationTemplates.runSimulation(5.30);
+		resultsRace = RaceSimulationTemplates.runSimulation(Math.random()*2+4);
 		resultsRace.sortResultsByTime();
 		System.out.println(resultsRace);
 
@@ -173,7 +182,7 @@ public class RaceController extends SceneLoadController implements Initializable
 		gotoResults.setVisible(false);
 		// Setup stopwatch and timer
 		Stopwatch stopwatch = new Stopwatch();
-		time.setText(stopwatch.elapsedTimeString());
+		time.setText(stopwatch.elapsedTimeString(stopwatch.elapsedTime() * timeFactor));
 
 		// Everything inside handle(){...} will be run every tick
 		AnimationTimer animationTimer = new AnimationTimer()
@@ -204,7 +213,7 @@ public class RaceController extends SceneLoadController implements Initializable
 				// Stop updating timer if the timer has been turned off
 				if (timerRunning)
 				{
-					timeString = stopwatch.elapsedTimeString();
+					timeString = stopwatch.elapsedTimeString(stopwatch.elapsedTime() * timeFactor);
 					time.setText(timeString);
 				}
 
