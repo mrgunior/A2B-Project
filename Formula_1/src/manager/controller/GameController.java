@@ -96,7 +96,7 @@ public class GameController
 							{
 								return (jsonObjects[i - 1].get(jsonRoute[i]));
 							}
-							System.out.println(jsonObjects[i]);
+							//System.out.println(jsonObjects[i]);
 						}
 					}
 				}
