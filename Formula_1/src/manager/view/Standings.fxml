@@ -36,7 +36,7 @@
             <!-- Formula string and settings -->
             <Text fill="#ff2800" stroke="WHITE" strokeType="OUTSIDE" text="Standings" textAlignment="CENTER">
                <font>
-                  <Font name="Haettenschweiler" size="130.0" />
+                  <Font name="Yu Gothic UI Semilight" size="130.0" />
                </font>
             </Text>
          </children>
