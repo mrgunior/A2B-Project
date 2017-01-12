@@ -59,7 +59,7 @@ public class CarManagementController extends SceneLoadController implements Init
 		background.fitWidthProperty().bind(root.widthProperty());
 		background.fitHeightProperty().bind(root.heightProperty());
 
-		car = Profile.getCars().get(1);
+		car = Profile.getCar();
 		upgrades = car.getUpgrades();
 
 		displayUpgrades("down");
@@ -69,8 +69,6 @@ public class CarManagementController extends SceneLoadController implements Init
 		displayUpgrades("susp");
 		displayUpgrades("tires");
 		displayUpgrades("weightRed");
-		
-		
 
 		// Click
 		back.setOnMousePressed(event -> {
