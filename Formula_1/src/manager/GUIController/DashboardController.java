@@ -42,7 +42,7 @@ public class DashboardController extends SceneLoadController implements Initiali
 		background.fitHeightProperty().bind(root.heightProperty());
 		
 		teamName.setText(formulaApplication.getTeamName());
-		balance.setText("$ " + Double.toString(formulaApplication.getBalance()) + " Million");
+		balance.setText("$ " + Double.toString(formulaApplication.getBalance()/1000000) + " Million");
 
 		AnimationTimer animationTimer = new AnimationTimer()
 		{	

@@ -72,6 +72,41 @@ public class Car {
 		this.upgrades = upgrades;
 	}
 	
+	public void upgradeAero()
+	{
+		upgrades.upgradeAero();
+	}
+
+	public void upgradeDown()
+	{
+		upgrades.upgradeDown();
+	}
+
+	public void upgradeEngine()
+	{
+		upgrades.upgradeEngine();
+	}
+
+	public void upgradeGearbox()
+	{
+		upgrades.upgradeGearbox();
+	}
+
+	public void upgradeSusp()
+	{
+		upgrades.upgradeSusp();
+	}
+
+	public void upgradeTires()
+	{
+		upgrades.upgradeTires();
+	}
+
+	public void upgradeWeightRed()
+	{
+		upgrades.upgradeWeightRed();
+	}
+	
 	public String toString(){
 		return "<Car[speed: "+ 
 				this.speed+", braking: "+ 
