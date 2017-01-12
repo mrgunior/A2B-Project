@@ -32,7 +32,7 @@ public class SettingsController extends SceneLoadController implements Initializ
 		back.setOnMousePressed(event -> {
 			try
 			{
-				gotoFxmlScene(event, "MainMenu", (Stage) back.getScene().getWindow());
+				gotoFxmlScene("MainMenu", (Stage) back.getScene().getWindow());
 			} catch (IOException e)
 			{
 				e.printStackTrace();

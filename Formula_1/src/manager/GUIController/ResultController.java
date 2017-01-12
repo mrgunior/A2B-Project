@@ -74,7 +74,7 @@ public class ResultController extends SceneLoadController implements Initializab
 			{
 				transferResultsToProfileDrivers();
 				GameController.writeDriversToJSON();
-				gotoFxmlScene(event, "Dashboard", (Stage) next.getScene().getWindow());
+				gotoFxmlScene("Dashboard", (Stage) next.getScene().getWindow());
 			}
 			catch (IOException e)
 			{

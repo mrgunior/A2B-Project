@@ -11,7 +11,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import jdk.internal.dynalink.beans.StaticClass;
@@ -19,7 +18,7 @@ import manager.model.formulaApplication;
 
 public class SceneLoadController
 {	
-	public void gotoFxmlScene(MouseEvent event, String name, Stage stage) throws IOException
+	public void gotoFxmlScene(String name, Stage stage) throws IOException
 	{
 		Parent root = FXMLLoader.load(this.getClass().getResource("../view/" + name + ".fxml"));
 		
