@@ -7,94 +7,118 @@ import java.util.List;
 
 import manager.controller.GameController;
 
-public class Profile 
+public class Profile
 {
-	private double highScore;
-	private static double budget;
-	private String teamName;
-	private List<Driver> drivers;
-	private static Car car;
-	private ArrayList<Driver> allDrivers;
-	
-	public Profile(double highScore, double budget, String teamName){
+	private double				highScore;
+	private static double		budget;
+	private String				teamName;
+	private List<Driver>		drivers;
+	private static Car			car;
+	private ArrayList<Driver>	allDrivers;
+	private static int			strategy;	// 1 = low risk, 2 = medium risk, 3 = high risk
+
+	public Profile(double highScore, double budget, String teamName)
+	{
 		this.highScore = highScore;
 		Profile.budget = budget;
 		this.teamName = teamName;
 	}
 
-	//Getters
-	public double getHighScore(){
+	// Getters
+	public double getHighScore()
+	{
 		return this.highScore;
 	}
-	
-	public String getTeamName(){
+
+	public String getTeamName()
+	{
 		return this.teamName;
 	}
-	
-	public static double getBudget(){
+
+	public static double getBudget()
+	{
 		return budget;
 	}
-	
-	public List<Driver> getDrivers(){
+
+	public List<Driver> getDrivers()
+	{
 		return this.drivers;
 	}
-	
-	public ArrayList<Driver> getAllDrivers(){
+
+	public ArrayList<Driver> getAllDrivers()
+	{
 		return this.allDrivers;
 	}
-	
-	public static Car getCar(){
+
+	public static Car getCar()
+	{
 		return car;
 	}
-	
-	//Setters
-	public void setHighScore(double score){
+
+	public static int getStrategy()
+	{
+		return strategy;
+	}
+
+	// Setters
+	public void setHighScore(double score)
+	{
 		this.highScore += score;
 	}
-	
-	public void setTeamName(String teamName){
+
+	public void setTeamName(String teamName)
+	{
 		this.teamName = teamName;
 	}
-	
-	//Since the budget gets updated when the player uses it for upgrades or
-	//Wins cash, we will use true for subtractions and false for addition.
-	public static void setBudget(double amount, boolean state){
-		
-		//if state is true subtract amount from budget
-		if(amount<0)
+
+	// Since the budget gets updated when the player uses it for upgrades or
+	// Wins cash, we will use true for subtractions and false for addition.
+	public static void setBudget(double amount, boolean state)
+	{
+
+		// if state is true subtract amount from budget
+		if (amount < 0)
 		{
-			amount = -1*amount;
+			amount = -1 * amount;
 		}
-		
-		if(state)
+
+		if (state)
 		{
 			budget -= amount;
 		}
-		
-		//else state is false and amount gets added to budget
+
+		// else state is false and amount gets added to budget
 		else
 		{
 			budget += amount;
 		}
 	}
-	
+
 	public static void setBudget(double amount)
 	{
 		budget = amount;
 	}
-	
-	public void setDrivers(List<Driver> drivers){
+
+	public void setDrivers(List<Driver> drivers)
+	{
 		this.drivers = drivers;
 	}
-	
-	public void setAllDrivers(ArrayList<Driver> drivers){
+
+	public void setAllDrivers(ArrayList<Driver> drivers)
+	{
 		this.allDrivers = drivers;
 	}
-	
-	public void setCar(Car car){
-		this.car = car;
+
+	public void setCar(Car car)
+	{
+		Profile.car = car;
 	}
-	
+
+	public static void setStrategy(int strategy)
+	{
+		Profile.strategy = strategy;
+	}
+
 	public void resetDriverPoints()
 	{
 		System.out.println("Resetting drivers...");
@@ -106,31 +130,29 @@ public class Profile
 			System.out.println("After: " + allDrivers.get(i));
 			System.out.println();
 		}
-		
+
 		try
 		{
 			GameController.writeDriversToJSON();
 		}
 		catch (IOException e)
 		{
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		System.out.println("Drivers reset");
 		System.out.println(allDrivers);
-		
+
 	}
-	
+
 	public void sortDriversById()
 	{
 		Collections.sort(drivers, Driver.sortById());
 	}
-	
+
 	public void sortDriversByPoints()
 	{
 		drivers.sort(Driver.sortByPoints());
 	}
-
 
 }
