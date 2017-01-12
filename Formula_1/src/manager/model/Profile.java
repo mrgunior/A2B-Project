@@ -116,7 +116,7 @@ public class Profile
 
 	public static void setStrategy(int strategy)
 	{
-		if (strategy > 0 && strategy < 3)
+		if (strategy >= 1 && strategy <= 3)
 		{
 			Profile.strategy = strategy;
 		}

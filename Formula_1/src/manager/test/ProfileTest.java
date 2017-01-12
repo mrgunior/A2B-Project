@@ -108,7 +108,7 @@ public class ProfileTest
 	public void testGetStrategyBig()
 	{
 		Profile.setStrategy(2);
-		Profile.setStrategy(5);
+		Profile.setStrategy(4);
 		assertEquals(2, Profile.getStrategy());
 	}
 
