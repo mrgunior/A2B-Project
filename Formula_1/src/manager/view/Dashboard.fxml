@@ -36,7 +36,7 @@
             <Image url="@../../../images/menu/Back.png" />
          </image>
       </ImageView>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#807b7b47" height="200.0" stroke="#ff2800" strokeType="INSIDE" strokeWidth="0.0" width="1920.0" />
+      <Rectangle fill="#807b7b47" height="200.0" stroke="#ff2800" strokeType="INSIDE" strokeWidth="0.0" width="1920.0" />
       <Text fill="#ff2800" layoutX="8.37109375" layoutY="171.0" stroke="#a4a4a4" strokeType="OUTSIDE" strokeWidth="0.0" text="Balance:" textAlignment="CENTER" AnchorPane.leftAnchor="8.37109375" AnchorPane.topAnchor="79.2763671875">
          <font>
             <Font name="Yu Gothic UI Light" size="85.0" />
@@ -66,7 +66,7 @@
             <Font name="Yu Gothic UI Regular" size="80.0" />
          </font>
       </Text>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" disable="true" fill="#0000004b" height="650.0" stroke="#00000097" strokeType="OUTSIDE" strokeWidth="0.0" visible="false" width="1820.0" AnchorPane.topAnchor="250.0" />
+      <Rectangle arcHeight="0.0" arcWidth="0.0" disable="true" fill="#0000004b" height="650.0" stroke="#00000097" strokeType="OUTSIDE" strokeWidth="0.0" visible="false" width="1820.0" AnchorPane.topAnchor="250.0" />
       <GridPane alignment="CENTER" prefHeight="650.0" prefWidth="1820.0" translateY="20.0" AnchorPane.bottomAnchor="180.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="250.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -77,34 +77,34 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0000004b" height="250.0" stroke="#ffffff00" strokeType="OUTSIDE" strokeWidth="0.0" translateX="50.0" width="550.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <Rectangle fill="#0000004b" height="250.0" stroke="#ffffff00" strokeType="OUTSIDE" strokeWidth="0.0" translateX="50.0" width="550.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
             <Text fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="Car Management" textAlignment="CENTER" translateX="50.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <font>
                   <Font name="Yu Gothic UI Light" size="64.0" />
                </font>
             </Text>
-            <Rectangle fx:id="carManagement" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="250.0" stroke="#7c7a7a96" strokeType="OUTSIDE" translateX="50.0" width="550.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0000004b" height="250.0" stroke="#5b5b5b96" strokeType="OUTSIDE" strokeWidth="0.0" translateX="-50.0" width="550.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <Rectangle fx:id="carManagement" fill="TRANSPARENT" height="250.0" stroke="#7c7a7a96" strokeType="OUTSIDE" translateX="50.0" width="550.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <Rectangle arcHeight="0.0" arcWidth="0.0" fill="#0000004b" height="250.0" stroke="#5b5b5b96" strokeType="OUTSIDE" strokeWidth="0.0" translateX="-50.0" width="550.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
             <Text fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="Race" textAlignment="CENTER" translateX="-50.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <font>
                   <Font name="Yu Gothic UI Light" size="64.0" />
                </font>
             </Text>
-            <Rectangle fx:id="race" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="250.0" stroke="#7c7a7a96" strokeType="OUTSIDE" translateX="-50.0" width="550.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0000004b" height="250.0" stroke="#5b5b5b96" strokeType="OUTSIDE" strokeWidth="0.0" translateX="-50.0" width="550.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <Rectangle fx:id="race" arcHeight="0.0" arcWidth="0.0" fill="TRANSPARENT" height="250.0" stroke="#7c7a7a96" strokeType="OUTSIDE" translateX="-50.0" width="550.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <Rectangle arcHeight="0.0" arcWidth="0.0" fill="#0000004b" height="250.0" stroke="#5b5b5b96" strokeType="OUTSIDE" strokeWidth="0.0" translateX="-50.0" width="550.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
             <Text fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="Team Management" textAlignment="CENTER" translateX="-50.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <font>
                   <Font name="Yu Gothic UI Light" size="64.0" />
                </font>
             </Text>
-            <Rectangle fx:id="teamManagement" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="250.0" stroke="#7c7a7a96" strokeType="OUTSIDE" translateX="-50.0" width="550.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0000004b" height="250.0" stroke="#5b5b5b96" strokeType="OUTSIDE" strokeWidth="0.0" translateX="50.0" width="550.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <Rectangle fx:id="teamManagement" arcHeight="0.0" arcWidth="0.0" fill="TRANSPARENT" height="250.0" stroke="#7c7a7a96" strokeType="OUTSIDE" translateX="-50.0" width="550.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <Rectangle arcHeight="0.0" arcWidth="0.0" fill="#0000004b" height="250.0" stroke="#5b5b5b96" strokeType="OUTSIDE" strokeWidth="0.0" translateX="50.0" width="550.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
             <Text fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="Standings" textAlignment="CENTER" translateX="50.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <font>
                   <Font name="Yu Gothic UI Light" size="64.0" />
                </font>
             </Text>
-            <Rectangle fx:id="standings" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="250.0" stroke="#7c7a7a96" strokeType="OUTSIDE" translateX="50.0" width="550.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <Rectangle fx:id="standings" arcHeight="0.0" arcWidth="0.0" fill="TRANSPARENT" height="250.0" stroke="#7c7a7a96" strokeType="OUTSIDE" translateX="50.0" width="550.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
          </children>
       </GridPane>
    </children>
