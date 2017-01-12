@@ -70,7 +70,7 @@ public class CarManagementController extends SceneLoadController implements Init
 		background.fitWidthProperty().bind(root.widthProperty());
 		background.fitHeightProperty().bind(root.heightProperty());
 
-		car = Profile.getCars().get(0);
+		car = Profile.getCar();
 		upgrades = car.getUpgrades();
 
 		displayUpgrades();
@@ -79,7 +79,7 @@ public class CarManagementController extends SceneLoadController implements Init
 		back.setOnMousePressed(event -> {
 			try
 			{
-				gotoFxmlScene(event, "Dashboard", (Stage) back.getScene().getWindow());
+				gotoFxmlScene("Dashboard", (Stage) back.getScene().getWindow());
 			}
 			catch (IOException e)
 			{

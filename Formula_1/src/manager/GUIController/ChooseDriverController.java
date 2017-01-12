@@ -90,7 +90,7 @@ public class ChooseDriverController extends SceneLoadController implements Initi
 					// formulaApplication.setDrivers(drivers);
 
 				}
-				gotoFxmlScene(event, "Dashboard", (Stage) next.getScene().getWindow());
+				gotoFxmlScene("Dashboard", (Stage) next.getScene().getWindow());
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
