@@ -116,7 +116,10 @@ public class Profile
 
 	public static void setStrategy(int strategy)
 	{
-		Profile.strategy = strategy;
+		if (strategy > 0 && strategy < 3)
+		{
+			Profile.strategy = strategy;
+		}
 	}
 
 	public void resetDriverPoints()
