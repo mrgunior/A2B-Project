@@ -12,7 +12,7 @@ public class Profile
 	private double highScore, budget;
 	private String teamName;
 	private List<Driver> drivers;
-	private static List<Car> cars;
+	private static Car car;
 	private ArrayList<Driver> allDrivers;
 	
 	public Profile(double highScore, double budget, String teamName){
@@ -42,8 +42,8 @@ public class Profile
 		return this.allDrivers;
 	}
 	
-	public static List<Car> getCars(){
-		return cars;
+	public static Car getCar(){
+		return car;
 	}
 	
 	//Setters
@@ -85,8 +85,8 @@ public class Profile
 		this.allDrivers = drivers;
 	}
 	
-	public void setCars(List<Car> cars){
-		this.cars = cars;
+	public void setCar(Car car){
+		this.car = car;
 	}
 	
 	public void resetDriverPoints()
