@@ -3,15 +3,12 @@ package manager.GUIController;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Random;
 import java.util.ResourceBundle;
 
-import com.sun.prism.paint.Stop;
-
-import Templates.RaceSimulationTemplates;
 import manager.GUIController.ResultController;
 import manager.controller.SceneLoadController;
 import manager.controller.GUICar;
+import manager.model.RaceSimulation;
 import manager.model.Results;
 import javafx.animation.AnimationTimer;
 import javafx.fxml.FXML;
@@ -37,6 +34,9 @@ public class RaceController extends SceneLoadController implements Initializable
 	private ImageView ferrari1, ferrari2, forceIndia1, forceIndia2, haas1, haas2, honda1, honda2, manor1, manor2, williams1, williams2,
 			mercedes1, mercedes2, redBull1, redBull2, renault1, renault2, toroRosso1, toroRosso2, sauber1, sauber2;
 
+	private GUICar car1, car2, car3, car4, car5, car6, car7, car8, car9, car10, car11, car12, car13, car14, car15, car16, car17, car18,
+			car19, car20, car21, car22;
+	
 	// Line for the finish
 	@FXML
 	private Line finish;
@@ -95,7 +95,7 @@ public class RaceController extends SceneLoadController implements Initializable
 	{
 		return fps;
 	}
-	
+
 	public static double getTimeFactor()
 	{
 		return timeFactor;
@@ -166,7 +166,7 @@ public class RaceController extends SceneLoadController implements Initializable
 		finishX = finish.getLayoutX();
 
 		// Simulate results and store in results object
-		resultsRace = RaceSimulationTemplates.runSimulation(Math.random()*2+4);
+		resultsRace = RaceSimulation.runSimulation(Math.random() * 2 + 4);
 		resultsRace.sortResultsByTime();
 		System.out.println(resultsRace);
 
@@ -199,9 +199,10 @@ public class RaceController extends SceneLoadController implements Initializable
 				amountFinished = getAmountFinished();
 
 				// Reset frames to prevent integer overflow
-				if (frames < 10000000)
+				if (frames < 100000000)
 				{
 					frames++;
+					System.out.println(frames);
 				}
 				else
 				{
@@ -281,13 +282,7 @@ public class RaceController extends SceneLoadController implements Initializable
 	{
 		// GUICar carX = new GUICar(carName, time)
 		results.sortResultsByCarId();
-		// GUICar car
-		GUICar car1 = null, car2 = null, car3 = null, car4 = null, car5 = null, car6 = null, car7 = null, car8 = null, car9 = null,
-				car10 = null, car11 = null, car12 = null, car13 = null, car14 = null, car15 = null, car16 = null, car17 = null,
-				car18 = null, car19 = null, car20 = null, car21 = null, car22 = null;
-
-		GUICar[] tempCars = { car1, car2, car3, car4, car5, car6, car7, car8, car9, car10, car11, car12, car13, car14, car15, car16, car17,
-				car18, car19, car20, car21, car22 };
+	
 		/*
 		 * for (int i = 0; i < tempCars.length; i++) { //System.out.println(ferrari1);
 		 * System.out.println(carImages[i]); tempCars[i] = new GUICar(carImages[i],
@@ -296,103 +291,140 @@ public class RaceController extends SceneLoadController implements Initializable
 
 		for (int i = 0; i < results.getResults().size(); i++)
 		{
-			// System.out.println(results.getResult(i));
-			switch (results.getResult(i).getCarId())
+			
+			switch (results.getResult(i).getDriver().getTeamId())
 			{
 			case 1:
-				car1 = new GUICar(ferrari1, results.getResult(0).getTime());
+				System.out.println("Ferrari: " + results.getResult(i).getDriver().getName() + ", team: " + results.getResult(i).getDriver().getTeamId());
+				if (car1 == null)
+				{
+					car1 = new GUICar(ferrari1, results.getResult(i).getTime());
+				}
+				else
+				{
+					car2 = new GUICar(ferrari2, results.getResult(i).getTime());
+				}
 				break;
 			case 2:
-				car2 = new GUICar(ferrari2, results.getResult(1).getTime());
+				System.out.println("Force India: " + results.getResult(i).getDriver().getName() + ", team: " + results.getResult(i).getDriver().getTeamId());
+				if (car3 == null)
+				{
+					car3 = new GUICar(forceIndia1, results.getResult(i).getTime());
+				}
+				else
+				{
+					car4 = new GUICar(forceIndia2, results.getResult(i).getTime());
+				}
 				break;
 			case 3:
-				car3 = new GUICar(forceIndia1, results.getResult(2).getTime());
+				System.out.println("Haas: " + results.getResult(i).getDriver().getName() + ", team: " + results.getResult(i).getDriver().getTeamId());
+				if (car5 == null)
+				{
+					car5 = new GUICar(haas1, results.getResult(i).getTime());
+				}
+				else
+				{
+					car6 = new GUICar(haas2, results.getResult(i).getTime());
+				}
 				break;
 			case 4:
-				car4 = new GUICar(forceIndia2, results.getResult(3).getTime());
+				System.out.println("Manor: " + results.getResult(i).getDriver().getName() + ", team: " + results.getResult(i).getDriver().getTeamId());
+				if (car7 == null)
+				{
+					car7 = new GUICar(manor1, results.getResult(i).getTime());
+				}
+				else
+				{
+					car8 = new GUICar(manor2, results.getResult(i).getTime());
+				}
 				break;
 			case 5:
-				car5 = new GUICar(haas1, results.getResult(4).getTime());
+				System.out.println("Honda: " + results.getResult(i).getDriver().getName() + ", team: " + results.getResult(i).getDriver().getTeamId());
+				if (car9 == null)
+				{
+					car9 = new GUICar(honda1, results.getResult(i).getTime());
+				}
+				else
+				{
+					car10 = new GUICar(honda2, results.getResult(i).getTime());
+				}
 				break;
 			case 6:
-				car6 = new GUICar(haas2, results.getResult(5).getTime());
+				System.out.println("Mercedes: " + results.getResult(i).getDriver().getName() + ", team: " + results.getResult(i).getDriver().getTeamId());
+				if (car11 == null)
+				{
+					car11 = new GUICar(mercedes1, results.getResult(i).getTime());
+				}
+				else
+				{
+					car12 = new GUICar(mercedes2, results.getResult(i).getTime());
+				}
 				break;
 			case 7:
-				car7 = new GUICar(honda1, results.getResult(6).getTime());
+				System.out.println("Red Bull: " + results.getResult(i).getDriver().getName() + ", team: " + results.getResult(i).getDriver().getTeamId());
+				if (car13 == null)
+				{
+					car13 = new GUICar(redBull1, results.getResult(i).getTime());
+				}
+				else
+				{
+					car14 = new GUICar(redBull2, results.getResult(i).getTime());
+				}
 				break;
 			case 8:
-				car8 = new GUICar(honda2, results.getResult(7).getTime());
+				System.out.println("Renault: " + results.getResult(i).getDriver().getName() + ", team: " + results.getResult(i).getDriver().getTeamId());
+				if (car15 == null)
+				{
+					car15 = new GUICar(renault1, results.getResult(i).getTime());
+				}
+				else
+				{
+					car16 = new GUICar(renault2, results.getResult(i).getTime());
+				}
 				break;
 			case 9:
-				car9 = new GUICar(manor1, results.getResult(8).getTime());
+				System.out.println("Sauber: " + results.getResult(i).getDriver().getName() + ", team: " + results.getResult(i).getDriver().getTeamId());
+				if (car17 == null)
+				{
+					car17 = new GUICar(sauber1, results.getResult(i).getTime());
+				}
+				else
+				{
+					car18 = new GUICar(sauber2, results.getResult(i).getTime());
+				}
 				break;
 			case 10:
-				car10 = new GUICar(manor2, results.getResult(9).getTime());
+				System.out.println("Toro Rosso: " + results.getResult(i).getDriver().getName() + ", team: " + results.getResult(i).getDriver().getTeamId());
+				if (car19 == null)
+				{
+					car19 = new GUICar(toroRosso1, results.getResult(i).getTime());
+				}
+				else
+				{
+					car20 = new GUICar(toroRosso2, results.getResult(i).getTime());
+				}
 				break;
 			case 11:
-				car11 = new GUICar(williams1, results.getResult(10).getTime());
-				break;
-			case 12:
-				car12 = new GUICar(williams2, results.getResult(11).getTime());
-				break;
-			case 13:
-				car13 = new GUICar(mercedes1, results.getResult(12).getTime());
-				break;
-			case 14:
-				car14 = new GUICar(mercedes2, results.getResult(13).getTime());
-				break;
-			case 15:
-				car15 = new GUICar(redBull1, results.getResult(14).getTime());
-				break;
-			case 16:
-				car16 = new GUICar(redBull2, results.getResult(15).getTime());
-				break;
-			case 17:
-				car17 = new GUICar(renault1, results.getResult(16).getTime());
-				break;
-			case 18:
-				car18 = new GUICar(renault2, results.getResult(17).getTime());
-				break;
-			case 19:
-				car19 = new GUICar(toroRosso1, results.getResult(18).getTime());
-				break;
-			case 20:
-				car20 = new GUICar(toroRosso2, results.getResult(19).getTime());
-				break;
-			case 21:
-				car21 = new GUICar(sauber1, results.getResult(20).getTime());
-				break;
-			case 22:
-				car22 = new GUICar(sauber2, results.getResult(21).getTime());
-				break;
-
-			default:
+				System.out.println("Williams: " + results.getResult(i).getDriver().getName() + ", team: " + results.getResult(i).getDriver().getTeamId());
+				if (car21 == null)
+				{
+					car21 = new GUICar(williams1, results.getResult(i).getTime());
+				}
+				else
+				{
+					car22 = new GUICar(williams2, results.getResult(i).getTime());
+				}
 				break;
 			}
 		}
-
-		// Add all GUICars
-		cars.add(car1);
-		cars.add(car2);
-		cars.add(car3);
-		cars.add(car4);
-		cars.add(car5);
-		cars.add(car6);
-		cars.add(car7);
-		cars.add(car8);
-		cars.add(car9);
-		cars.add(car10);
-		cars.add(car11);
-		cars.add(car12);
-		cars.add(car13);
-		cars.add(car14);
-		cars.add(car15);
-		cars.add(car16);
-		cars.add(car17);
-		cars.add(car18);
-		cars.add(car19);
-		cars.add(car20);
-		cars.add(car21);
-		cars.add(car22);
+		
+		GUICar[] tempCars = {car1, car2, car3, car4, car5, car6, car7, car8, car9, car10, car11, car12, car13, car14, car15, car16, car17,
+				car18, car19, car20, car21, car22};
+		
+		for (int i = 0; i < tempCars.length; i++)
+		{
+			System.out.println(tempCars[i]);
+			cars.add(tempCars[i]);
+		}
 	}
 }
