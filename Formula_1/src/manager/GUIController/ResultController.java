@@ -127,7 +127,7 @@ public class ResultController extends SceneLoadController implements Initializab
 			{
 				resultsResult.getResult(i).getDriver().salaryPercentageBonus(10);;
 			}
-			totalPointsText[i].setText(resultsResult.getResult(i).getDriver().getPoints() + " " + resultsResult.getResult(i).getDriver().getSalary()/1000000);
+			totalPointsText[i].setText(resultsResult.getResult(i).getDriver().getPoints() + "");
 		}
 	}
 
