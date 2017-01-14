@@ -75,7 +75,7 @@ public class DashboardController extends SceneLoadController implements Initiali
 				teamManagement.setOnMousePressed(event -> {
 					try
 					{
-						gotoFxmlScene("MainMenu", (Stage) teamManagement.getScene().getWindow());
+						gotoFxmlScene("TeamManagement", (Stage) teamManagement.getScene().getWindow());
 					} 
 					
 					catch (IOException e)
