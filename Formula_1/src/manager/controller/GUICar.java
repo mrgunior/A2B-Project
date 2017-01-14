@@ -2,6 +2,7 @@ package manager.controller;
 
 import javafx.scene.image.ImageView;
 import manager.GUIController.RaceController;
+import manager.model.formulaApplication;
 
 public class GUICar
 {
@@ -147,7 +148,7 @@ public class GUICar
 	public void moveCar()
 	{
 		// Check if the car has crossed the finish line
-		if (getX() < (finishX - (car.getFitWidth()*car.getScaleX())))
+		if (getX() < (finishX - (car.getFitWidth())))
 		{
 			if (RaceController.isRaceStarted())
 			{
@@ -156,6 +157,7 @@ public class GUICar
 		}
 		else
 		{
+			setX(finishX - (car.getFitWidth()));
 			isFinished = true;
 		}
 

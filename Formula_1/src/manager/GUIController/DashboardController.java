@@ -42,7 +42,7 @@ public class DashboardController extends SceneLoadController implements Initiali
 		background.fitHeightProperty().bind(root.heightProperty());
 		
 		teamName.setText(formulaApplication.getTeamName());
-		balance.setText("$ " + Double.toString(formulaApplication.getBalance()) + " Million");
+		balance.setText("$ " + Double.toString(formulaApplication.getBalance()/1000000) + " Million");
 
 		AnimationTimer animationTimer = new AnimationTimer()
 		{	
@@ -53,7 +53,7 @@ public class DashboardController extends SceneLoadController implements Initiali
 				carManagement.setOnMousePressed(event -> {
 					try
 					{
-						gotoFxmlScene(event, "CarManagement", (Stage) carManagement.getScene().getWindow());
+						gotoFxmlScene("CarManagement", (Stage) carManagement.getScene().getWindow());
 					} 
 					
 					catch (IOException e)
@@ -75,7 +75,7 @@ public class DashboardController extends SceneLoadController implements Initiali
 				teamManagement.setOnMousePressed(event -> {
 					try
 					{
-						gotoFxmlScene(event, "MainMenu", (Stage) teamManagement.getScene().getWindow());
+						gotoFxmlScene("TeamManagement", (Stage) teamManagement.getScene().getWindow());
 					} 
 					
 					catch (IOException e)
@@ -97,7 +97,7 @@ public class DashboardController extends SceneLoadController implements Initiali
 				standings.setOnMousePressed(event -> {
 					try
 					{
-						gotoFxmlScene(event, "Standings", (Stage) standings.getScene().getWindow());
+						gotoFxmlScene("Standings", (Stage) standings.getScene().getWindow());
 					} 
 					
 					catch (IOException e)
@@ -118,7 +118,7 @@ public class DashboardController extends SceneLoadController implements Initiali
 				race.setOnMousePressed(event -> {
 					try
 					{
-						gotoFxmlScene(event, "Race", (Stage) race.getScene().getWindow());
+						gotoFxmlScene("Race", (Stage) race.getScene().getWindow());
 					} 
 					
 					catch (IOException e)
@@ -151,7 +151,7 @@ public class DashboardController extends SceneLoadController implements Initiali
 				back.setOnMousePressed(event -> {
 					try
 					{
-						gotoFxmlScene(event, "MainMenu", (Stage) back.getScene().getWindow());
+						gotoFxmlScene("MainMenu", (Stage) back.getScene().getWindow());
 					} 
 					
 					catch (IOException e)

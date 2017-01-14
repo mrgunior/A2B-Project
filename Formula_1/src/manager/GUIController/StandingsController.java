@@ -74,7 +74,7 @@ public class StandingsController extends SceneLoadController implements Initiali
 		back.setOnMousePressed(event -> {
 			try
 			{
-				gotoFxmlScene(event, "Dashboard", (Stage) back.getScene().getWindow());
+				gotoFxmlScene("Dashboard", (Stage) back.getScene().getWindow());
 			} 
 			
 			catch (IOException e)

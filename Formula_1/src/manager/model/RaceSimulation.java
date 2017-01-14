@@ -1,4 +1,4 @@
-package Templates;
+package manager.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,11 +6,8 @@ import java.util.Random;
 
 import jdk.nashorn.internal.ir.LiteralNode.ArrayLiteralNode;
 import manager.controller.GameController;
-import manager.model.Driver;
-import manager.model.DriverResult;
-import manager.model.Results;
 
-public class RaceSimulationTemplates
+public class RaceSimulation
 {
 
 	/*
@@ -31,7 +28,6 @@ public class RaceSimulationTemplates
 	// Filling the lists with driver names and their averages
 	static ArrayList<Driver>	drivers		= getDriverList();
 	static double[]				carAvg		= getDefaultCarAvg();
-	static int[]				scores		= getEmptyScores();
 
 	public static void main(String args[])
 	{
@@ -116,13 +112,14 @@ public class RaceSimulationTemplates
 		// Generating a random value between 1.1 and 0.9
 		Random value = new Random();
 		double random = 0.9 + (1.1 - 0.9) * value.nextDouble();
-
 		return random;
 	}
 
 	public static Results runSimulation(double trackDiff)
 	{
+		// Real results to be returned
 		Results simulationResults = new Results();
+		// Raw results
 		double results[] = new double[22];
 
 		for (int i = 0; i < 22; i++)
@@ -141,18 +138,5 @@ public class RaceSimulationTemplates
 		}
 
 		return simulationResults;
-	}
-
-	private static int[] getEmptyScores()
-	{
-
-		int[] scores = new int[22];
-
-		for (int i = 0; i < 22; i++)
-		{
-			scores[i] = 0;
-		}
-
-		return scores;
 	}
 }

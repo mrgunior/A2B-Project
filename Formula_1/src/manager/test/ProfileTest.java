@@ -25,7 +25,7 @@ public class ProfileTest
 	private double averagePerformance, salary;
 	private Upgrades upgrades;
 	private List<Driver> drivers;
-	private List<Car> cars;
+	private Car car;
 
 	@Before
 	public void setUp()
@@ -54,9 +54,7 @@ public class ProfileTest
 		drivers.add(new Driver(id, teamId, name, points, number, speed, acceleration, turning, salary));
 		drivers.add(new Driver(id, teamId, name, points, number, speed, acceleration, turning, salary));
 		
-		cars = new ArrayList<Car>();
-		cars.add(new Car(speed, acceleration, handling, braking, weight, upgrades));
-		cars.add(new Car(speed, acceleration, handling, braking, weight, upgrades));
+		car = new Car(speed, acceleration, handling, braking, weight, upgrades);
 	}
 
 	@Test
@@ -68,7 +66,7 @@ public class ProfileTest
 	@Test
 	public void testGetBudget()
 	{
-		assertEquals("Constructor initialized budget correctly", profile.getBudget(), budget, 0.001);
+		assertEquals("Constructor initialized budget correctly", Profile.getBudget(), budget, 0.001);
 	}
 
 	@Test
@@ -83,12 +81,42 @@ public class ProfileTest
 		profile.setDrivers(drivers);
 		assertThat("Method set drivers is setting it correctly", drivers, is(profile.getDrivers()));
 	}
+	
+	@Test
+	public void testGetStrategyTrue()
+	{
+		Profile.setStrategy(2);
+		assertEquals(2, Profile.getStrategy());
+	}
+	
+	@Test
+	public void testGetStrategyFalse()
+	{
+		Profile.setStrategy(1);
+		assertNotEquals(2, Profile.getStrategy());
+	}
+	
+	@Test
+	public void testGetStrategySmall()
+	{
+		Profile.setStrategy(2);
+		Profile.setStrategy(0);
+		assertEquals(2, Profile.getStrategy());
+	}
+	
+	@Test
+	public void testGetStrategyBig()
+	{
+		Profile.setStrategy(2);
+		Profile.setStrategy(4);
+		assertEquals(2, Profile.getStrategy());
+	}
 
 	@Test
 	public void testGetCars()
 	{
-		profile.setCars(cars);
-		assertThat("Method set cars is setting it correctly", cars, is(profile.getCars()));
+		profile.setCar(car);
+		assertThat("Method set cars is setting it correctly", car, is(Profile.getCar()));
 	}
 
 	@Test
@@ -106,24 +134,31 @@ public class ProfileTest
 	}
 
 	@Test
+	public void testSetBudget()
+	{
+		Profile.setBudget(20000000);
+		assertEquals(20000000, Profile.getBudget(), 0.5);
+	}
+	
+	@Test
 	public void testSetBudgetIf()
 	{
-		profile.setBudget(50.0, true);
-		assertTrue("Budget is 150.0", profile.getBudget() == 150.0);
+		Profile.setBudget(50.0, true);
+		assertTrue("Budget is 150.0", Profile.getBudget() == 150.0);
 	}
 
 	@Test
 	public void testSetBudgetElse()
 	{
-		profile.setBudget(50.0, false);
-		assertTrue("Budget is 250.0", profile.getBudget() == 250.0);
+		Profile.setBudget(50.0, false);
+		assertTrue("Budget is 250.0", Profile.getBudget() == 250.0);
 	}
 
 	@Test
 	public void testSetBudgetNegativeNumber()
 	{
-		profile.setBudget(-50.0, false);
-		assertTrue("Method needs to deal with negatives", profile.getBudget() == 250.0);
+		Profile.setBudget(-50.0, false);
+		assertTrue("Method needs to deal with negatives", Profile.getBudget() == 250.0);
 	}
 
 	@Test
@@ -152,7 +187,7 @@ public class ProfileTest
 	@Test
 	public void testSetCarsNotEmpty()
 	{
-		profile.setCars(cars); // not empty
-		assertEquals("Method set cars is setting it correctly when full", profile.getCars(), cars);
+		profile.setCar(car); // not empty
+		assertEquals("Method set cars is setting it correctly when full", Profile.getCar(), car);
 	}
 }

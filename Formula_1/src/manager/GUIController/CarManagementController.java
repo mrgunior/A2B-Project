@@ -1,6 +1,7 @@
 package manager.GUIController;
 
 import java.io.IOException;
+import java.io.NotActiveException;
 import java.net.URL;
 import java.security.KeyStore.PrivateKeyEntry;
 import java.util.ArrayList;
@@ -20,6 +21,7 @@ import manager.controller.SceneLoadController;
 import manager.model.Car;
 import manager.model.Profile;
 import manager.model.Upgrades;
+import manager.model.formulaApplication;
 
 public class CarManagementController extends SceneLoadController implements Initializable
 {
@@ -49,9 +51,19 @@ public class CarManagementController extends SceneLoadController implements Init
 	// Upgrade buttons
 	@FXML
 	private ImageView downUpgrade, aeroUpgrade, gearboxUpgrade, engineUpgrade, suspUpgrade, tiresUpgrade, weightUpgrade;
+	// Balance text
+	@FXML
+	private Text balance;
+
+	private double downPriceDouble, aeroPriceDouble, gearboxPriceDouble, enginePriceDouble, suspPriceDouble, tiresPriceDouble,
+			weightPriceDouble;
 
 	private Car			car;
 	private Upgrades	upgrades;
+	
+	private String maxMessageLong = "Max level achieved!";
+	private String maxMessageShort = "-";
+	private String consoleCantBuyMessage = "Not enough money or level maxed out";
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources)
@@ -59,24 +71,16 @@ public class CarManagementController extends SceneLoadController implements Init
 		background.fitWidthProperty().bind(root.widthProperty());
 		background.fitHeightProperty().bind(root.heightProperty());
 
-		car = Profile.getCars().get(1);
+		car = Profile.getCar();
 		upgrades = car.getUpgrades();
 
-		displayUpgrades("down");
-		displayUpgrades("aero");
-		displayUpgrades("gearbox");
-		displayUpgrades("engine");
-		displayUpgrades("susp");
-		displayUpgrades("tires");
-		displayUpgrades("weightRed");
-		
-		
+		displayUpgrades();
 
 		// Click
 		back.setOnMousePressed(event -> {
 			try
 			{
-				gotoFxmlScene(event, "Dashboard", (Stage) back.getScene().getWindow());
+				gotoFxmlScene("Dashboard", (Stage) back.getScene().getWindow());
 			}
 			catch (IOException e)
 			{
@@ -91,136 +95,283 @@ public class CarManagementController extends SceneLoadController implements Init
 		back.setOnMouseExited(event -> {
 			back.setImage(new Image("file:images/menu/Back.png"));
 		});
+
+		downUpgrade.setOnMousePressed(event -> {
+			System.out.println("Upgrade down");
+			if (Profile.getBudget() > downPriceDouble && car.getUpgrades().getDown() < 5)
+			{
+				car.upgrade("down");
+				Profile.setBudget(downPriceDouble, true);
+			}
+			else
+			{
+				System.out.println(consoleCantBuyMessage);
+			}
+			displayUpgrades();
+		});
+
+		aeroUpgrade.setOnMousePressed(event -> {
+			System.out.println("Upgrade down");
+			if (Profile.getBudget() > aeroPriceDouble && car.getUpgrades().getAero() < 5)
+			{
+				car.upgrade("aero");
+				Profile.setBudget(aeroPriceDouble, true);
+			}
+			else
+			{
+				System.out.println(consoleCantBuyMessage);
+			}
+			displayUpgrades();
+		});
+
+		gearboxUpgrade.setOnMousePressed(event -> {
+			if (Profile.getBudget() > gearboxPriceDouble && car.getUpgrades().getGearbox() < 5)
+			{
+				car.upgrade("gearbox");
+				Profile.setBudget(gearboxPriceDouble, true);
+			}
+			else
+			{
+				System.out.println(consoleCantBuyMessage);
+			}
+			displayUpgrades();
+		});
+
+		engineUpgrade.setOnMousePressed(event -> {
+			if (Profile.getBudget() > enginePriceDouble && car.getUpgrades().getEngine() < 5)
+			{
+				car.upgrade("engine");
+				Profile.setBudget(enginePriceDouble, true);
+			}
+			else
+			{
+				System.out.println(consoleCantBuyMessage);
+			}
+			displayUpgrades();
+		});
+
+		suspUpgrade.setOnMousePressed(event -> {
+			if (Profile.getBudget() > suspPriceDouble && car.getUpgrades().getSusp() < 5)
+			{
+				car.upgrade("susp");
+				Profile.setBudget(suspPriceDouble, true);
+			}
+			else
+			{
+				System.out.println(consoleCantBuyMessage);
+			}
+			displayUpgrades();
+		});
+
+		tiresUpgrade.setOnMousePressed(event -> {
+			if (Profile.getBudget() > tiresPriceDouble && car.getUpgrades().getTires() < 5)
+			{
+				car.upgrade("tires");
+				Profile.setBudget(tiresPriceDouble, true);
+			}
+			else
+			{
+				System.out.println(consoleCantBuyMessage);
+			}
+			displayUpgrades();
+		});
+
+		weightUpgrade.setOnMousePressed(event -> {
+			if (Profile.getBudget() > weightPriceDouble && car.getUpgrades().getWeightRed() < 5)
+			{
+				car.upgrade("weightRed");
+				Profile.setBudget(weightPriceDouble, true);
+			}
+			else
+			{
+				System.out.println(consoleCantBuyMessage);
+			}
+			displayUpgrades();
+		});
 	}
 
-	private void displayEngineUpgrades()
+	private void displayUpgrades()
 	{
-		// System.out.println("=== displayEngineUpgrades() Start\n");
-
-		int engineNextLvl = upgrades.getEngine() + 1;
-		String path = "./data/upgrades.json";
-
-		// Get the specs for the next level
-		JSONObject engineUpgradeSpecs = (JSONObject) GameController.readNestedObject(path,
-				new String[] { "upgrades", "engine", "level" + engineNextLvl });
-
-		// Get the price and name
-		String name = engineUpgradeSpecs.get("name").toString();
-		double price = Double.parseDouble(engineUpgradeSpecs.get("price").toString()) / 1000000;
-
-		JSONObject positive = (JSONObject) engineUpgradeSpecs.get("positive");
-		JSONObject negative = (JSONObject) engineUpgradeSpecs.get("negative");
-		String positiveString = getChanges(positive);
-		String negativeString = getChanges(negative);
-
-		// Set text
-		engineNextUpgrade.setText(name);
-		engineNextLevel.setText("Level " + engineNextLvl);
-		enginePrice.setText("$ " + price + " Mill");
-		engineImprov.setText("Positive: " + positiveString + "\nNegative: " + negativeString);
-
-		// System.out.println("\n=== displayEngineUpgrades() End");
+		balance.setText("$ " + Double.toString(formulaApplication.getBalance() / 1000000) + " Million");
+		displayUpgrades("down");
+		displayUpgrades("aero");
+		displayUpgrades("gearbox");
+		displayUpgrades("engine");
+		displayUpgrades("susp");
+		displayUpgrades("tires");
+		displayUpgrades("weightRed");
+		System.out.println(car);
 	}
 
 	private void displayUpgrades(String type)
 	{
 		// type = "engine"
-		int nextLvl = 0;
+		int curLvl = 0;
 		switch (type)
 		{
 		case "aero":
-			nextLvl = upgrades.getAero();
+			curLvl = upgrades.getAero();
 			break;
 		case "down":
-			nextLvl = upgrades.getDown();
+			curLvl = upgrades.getDown();
 			break;
 		case "engine":
-			nextLvl = upgrades.getEngine();
+			curLvl = upgrades.getEngine();
 			break;
 		case "gearbox":
-			nextLvl = upgrades.getGearbox();
+			curLvl = upgrades.getGearbox();
 			break;
 		case "susp":
-			nextLvl = upgrades.getSusp();
+			curLvl = upgrades.getSusp();
 			break;
 		case "tires":
-			nextLvl = upgrades.getTires();
+			curLvl = upgrades.getTires();
 			break;
 		case "weightRed":
-			nextLvl = upgrades.getWeightRed();
+			curLvl = upgrades.getWeightRed();
 			break;
 		default:
 			break;
 		}
+		int nextLvl = curLvl + 1;
+
 		String path = "./data/upgrades.json";
 
 		// Get the specs for the next level
-		JSONObject upgradeSpecs = (JSONObject) GameController.readNestedObject(path,
-				new String[] { "upgrades", type, "level" + nextLvl });
-
-		// Get the price and name
-		String name = upgradeSpecs.get("name").toString();
-		double price = Double.parseDouble(upgradeSpecs.get("price").toString()) / 1000000;
-
-		JSONObject positive = (JSONObject) upgradeSpecs.get("positive");
-		JSONObject negative = (JSONObject) upgradeSpecs.get("negative");
-		String positiveString = getChanges(positive);
-		String negativeString = getChanges(negative);
+		JSONObject upgradeSpecs = null;
 		
-		switch (type)
+		if (nextLvl <= 5)
 		{
-		case "aero":
-			aeroNextUpgrade.setText(name);
-			aeroNextLevel.setText("Level " + nextLvl);
-			aeroPrice.setText("$ " + price + " Mill");
-			aeroImprov.setText("Positive: " + positiveString + "\nNegative: " + negativeString);
-			break;
-		case "down":
-			downNextUpgrade.setText(name);
-			downNextLevel.setText("Level " + nextLvl);
-			downPrice.setText("$ " + price + " Mill");
-			downImprov.setText("Positive: " + positiveString + "\nNegative: " + negativeString);
-			break;
-		case "engine":
-			engineNextUpgrade.setText(name);
-			engineNextLevel.setText("Level " + nextLvl);
-			enginePrice.setText("$ " + price + " Mill");
-			engineImprov.setText("Positive: " + positiveString + "\nNegative: " + negativeString);
-			break;
-		case "gearbox":
-			gearboxNextUpgrade.setText(name);
-			gearboxNextLevel.setText("Level " + nextLvl);
-			gearboxPrice.setText("$ " + price + " Mill");
-			gearboxImprov.setText("Positive: " + positiveString + "\nNegative: " + negativeString);
-			break;
-		case "susp":
-			suspNextUpgrade.setText(name);
-			suspNextLevel.setText("Level " + nextLvl);
-			suspPrice.setText("$ " + price + " Mill");
-			suspImprov.setText("Positive: " + positiveString + "\nNegative: " + negativeString);
-			break;
-		case "tires":
-			tiresNextUpgrade.setText(name);
-			tiresNextLevel.setText("Level " + nextLvl);
-			tiresPrice.setText("$ " + price + " Mill");
-			tiresImprov.setText("Positive: " + positiveString + "\nNegative: " + negativeString);
-			break;
-		case "weightRed":
-			weightNextUpgrade.setText(name);
-			weightNextLevel.setText("Level " + nextLvl);
-			weightPrice.setText("$ " + price + " Mill");
-			weightImprov.setText("Positive: " + positiveString + "\nNegative: " + negativeString);
-			break;
-		default:
-			break;
-		}
+			upgradeSpecs = (JSONObject) GameController.readNestedObject(path, new String[] { "upgrades", type, "level" + nextLvl });
 
+			// Get the price and name
+			//System.out.println(nextLvl + ", " + upgradeSpecs);
+			String name = upgradeSpecs.get("name").toString();
+			double price = Double.parseDouble(upgradeSpecs.get("price").toString()) / 1000000;
+
+			JSONObject positive = (JSONObject) upgradeSpecs.get("positive");
+			JSONObject negative = (JSONObject) upgradeSpecs.get("negative");
+			String positiveString = getChanges(positive);
+			String negativeString = getChanges(negative);
+
+			switch (type)
+			{
+			case "aero":
+				aeroPriceDouble = Double.parseDouble(upgradeSpecs.get("price").toString());
+				aeroNextUpgrade.setText(name);
+				aeroNextLevel.setText("Level " + nextLvl);
+				aeroPrice.setText("$ " + price + " Mill");
+				aeroImprov.setText("Positive: " + positiveString + "\nNegative: " + negativeString);
+				break;
+			case "down":
+				downPriceDouble = Double.parseDouble(upgradeSpecs.get("price").toString());
+				downNextUpgrade.setText(name);
+				downNextLevel.setText("Level " + nextLvl);
+				downPrice.setText("$ " + price + " Mill");
+				downImprov.setText("Positive: " + positiveString + "\nNegative: " + negativeString);
+				break;
+			case "engine":
+				enginePriceDouble = Double.parseDouble(upgradeSpecs.get("price").toString());
+				engineNextUpgrade.setText(name);
+				engineNextLevel.setText("Level " + nextLvl);
+				enginePrice.setText("$ " + price + " Mill");
+				engineImprov.setText("Positive: " + positiveString + "\nNegative: " + negativeString);
+				break;
+			case "gearbox":
+				gearboxPriceDouble = Double.parseDouble(upgradeSpecs.get("price").toString());
+				gearboxNextUpgrade.setText(name);
+				gearboxNextLevel.setText("Level " + nextLvl);
+				gearboxPrice.setText("$ " + price + " Mill");
+				gearboxImprov.setText("Positive: " + positiveString + "\nNegative: " + negativeString);
+				break;
+			case "susp":
+				suspPriceDouble = Double.parseDouble(upgradeSpecs.get("price").toString());
+				suspNextUpgrade.setText(name);
+				suspNextLevel.setText("Level " + nextLvl);
+				suspPrice.setText("$ " + price + " Mill");
+				suspImprov.setText("Positive: " + positiveString + "\nNegative: " + negativeString);
+				break;
+			case "tires":
+				tiresPriceDouble = Double.parseDouble(upgradeSpecs.get("price").toString());
+				tiresNextUpgrade.setText(name);
+				tiresNextLevel.setText("Level " + nextLvl);
+				tiresPrice.setText("$ " + price + " Mill");
+				tiresImprov.setText("Positive: " + positiveString + "\nNegative: " + negativeString);
+				break;
+			case "weightRed":
+				weightPriceDouble = Double.parseDouble(upgradeSpecs.get("price").toString());
+				weightNextUpgrade.setText(name);
+				weightNextLevel.setText("Level " + nextLvl);
+				weightPrice.setText("$ " + price + " Mill");
+				weightImprov.setText("Positive: " + positiveString + "\nNegative: " + negativeString);
+				break;
+			default:
+				break;
+			}
+		}
+		else
+		{
+			switch (type)
+			{
+			case "aero":
+				//aeroPriceDouble = Double.parseDouble(upgradeSpecs.get("price").toString());
+				aeroNextUpgrade.setText(maxMessageLong);
+				aeroNextLevel.setText(maxMessageShort);
+				aeroPrice.setText(maxMessageShort);
+				aeroImprov.setText(maxMessageLong);
+				break;
+			case "down":
+				//downPriceDouble = Double.parseDouble(upgradeSpecs.get("price").toString());
+				downNextUpgrade.setText(maxMessageLong);
+				downNextLevel.setText(maxMessageShort);
+				downPrice.setText(maxMessageShort);
+				downImprov.setText(maxMessageLong);
+				break;
+			case "engine":
+				//enginePriceDouble = Double.parseDouble(upgradeSpecs.get("price").toString());
+				engineNextUpgrade.setText(maxMessageLong);
+				engineNextLevel.setText(maxMessageShort);
+				enginePrice.setText(maxMessageShort);
+				engineImprov.setText(maxMessageLong);
+				break;
+			case "gearbox":
+				//gearboxPriceDouble = Double.parseDouble(upgradeSpecs.get("price").toString());
+				gearboxNextUpgrade.setText(maxMessageLong);
+				gearboxNextLevel.setText(maxMessageShort);
+				gearboxPrice.setText(maxMessageShort);
+				gearboxImprov.setText(maxMessageLong);
+				break;
+			case "susp":
+				//suspPriceDouble = Double.parseDouble(upgradeSpecs.get("price").toString());
+				suspNextUpgrade.setText(maxMessageLong);
+				suspNextLevel.setText(maxMessageShort);
+				suspPrice.setText(maxMessageShort);
+				suspImprov.setText(maxMessageLong);
+				break;
+			case "tires":
+				//tiresPriceDouble = Double.parseDouble(upgradeSpecs.get("price").toString());
+				tiresNextUpgrade.setText(maxMessageLong);
+				tiresNextLevel.setText(maxMessageShort);
+				tiresPrice.setText(maxMessageShort);
+				tiresImprov.setText(maxMessageLong);
+				break;
+			case "weightRed":
+				//weightPriceDouble = Double.parseDouble(upgradeSpecs.get("price").toString());
+				weightNextUpgrade.setText(maxMessageLong);
+				weightNextLevel.setText(maxMessageShort);
+				weightPrice.setText(maxMessageShort);
+				weightImprov.setText(maxMessageLong);
+				break;
+			default:
+				break;
+			}
+		}
 	}
 
 	private String getChanges(JSONObject jsonObject)
 	{
 		ArrayList<String> positiveList = new ArrayList<String>();
-		//System.out.println(positiveList);
+		// System.out.println(positiveList);
 
 		if (jsonObject.containsKey("speed"))
 		{
@@ -236,7 +387,7 @@ public class CarManagementController extends SceneLoadController implements Init
 			tempString += jsonObject.get("speed").toString();
 
 			positiveList.add(tempString);
-			//System.out.println(positiveList);
+			// System.out.println(positiveList);
 		}
 
 		if (jsonObject.containsKey("acceleration"))
@@ -253,7 +404,7 @@ public class CarManagementController extends SceneLoadController implements Init
 			tempString += jsonObject.get("acceleration").toString();
 
 			positiveList.add(tempString);
-			//System.out.println(positiveList);
+			// System.out.println(positiveList);
 		}
 
 		if (jsonObject.containsKey("handling"))
@@ -270,7 +421,7 @@ public class CarManagementController extends SceneLoadController implements Init
 			tempString += jsonObject.get("handling").toString();
 
 			positiveList.add(tempString);
-			//System.out.println(positiveList);
+			// System.out.println(positiveList);
 		}
 
 		if (jsonObject.containsKey("braking"))
@@ -287,7 +438,7 @@ public class CarManagementController extends SceneLoadController implements Init
 			tempString += jsonObject.get("braking").toString();
 
 			positiveList.add(tempString);
-			//System.out.println(positiveList);
+			// System.out.println(positiveList);
 		}
 
 		if (jsonObject.containsKey("weight"))
@@ -304,7 +455,7 @@ public class CarManagementController extends SceneLoadController implements Init
 			tempString += jsonObject.get("weight").toString();
 
 			positiveList.add(tempString);
-			//System.out.println(positiveList);
+			// System.out.println(positiveList);
 		}
 
 		String positives = "";
@@ -322,8 +473,8 @@ public class CarManagementController extends SceneLoadController implements Init
 		{
 			positives = "none";
 		}
-		
-		//System.out.println(positives);
+
+		// System.out.println(positives);
 
 		return positives;
 	}

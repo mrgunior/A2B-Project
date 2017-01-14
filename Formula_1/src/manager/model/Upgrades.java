@@ -1,11 +1,12 @@
 package manager.model;
 
-public class Upgrades {
-	
+public class Upgrades
+{
+
 	private int down, aero, gearbox, engine, susp, tires, weightRed;
-	
-	public Upgrades (int down, int aero, int gearbox, int engine, int susp, int tires, int weightRed) {
-		
+
+	public Upgrades(int down, int aero, int gearbox, int engine, int susp, int tires, int weightRed)
+	{
 		this.setAero(aero);
 		this.setDown(down);
 		this.setEngine(engine);
@@ -13,80 +14,187 @@ public class Upgrades {
 		this.setSusp(susp);
 		this.setTires(tires);
 		this.setWeightRed(weightRed);
-		
+	}
+	
+	public Upgrades(int createEmptyUpgrades)
+	{
+		if (createEmptyUpgrades == 0)
+		{
+			this.setAero(0);
+			this.setDown(0);
+			this.setEngine(0);
+			this.setGearbox(0);
+			this.setSusp(0);
+			this.setTires(0);
+			this.setWeightRed(0);
+		}
 	}
 
-	public int getDown() {
+	public int getDown()
+	{
 		return down;
 	}
 
-	public void setDown(int down) {
+	public void setDown(int down)
+	{
 		this.down = down;
 	}
 
-	public int getAero() {
+	public int getAero()
+	{
 		return aero;
 	}
 
-	public void setAero(int aero) {
+	public void setAero(int aero)
+	{
 		this.aero = aero;
 	}
 
-	public int getGearbox() {
+	public int getGearbox()
+	{
 		return gearbox;
 	}
 
-	public void setGearbox(int gearbox) {
+	public void setGearbox(int gearbox)
+	{
 		this.gearbox = gearbox;
 	}
 
-	public int getEngine() {
+	public int getEngine()
+	{
 		return engine;
 	}
 
-	public void setEngine(int engine) {
+	public void setEngine(int engine)
+	{
 		this.engine = engine;
 	}
 
-	public int getSusp() {
+	public int getSusp()
+	{
 		return susp;
 	}
 
-	public void setSusp(int susp) {
+	public void setSusp(int susp)
+	{
 		this.susp = susp;
 	}
 
-	public int getWeightRed() {
+	public int getWeightRed()
+	{
 		return weightRed;
 	}
 
-	public void setWeightRed(int weightRed) {
+	public void setWeightRed(int weightRed)
+	{
 		this.weightRed = weightRed;
 	}
 
-	public int getTires() {
+	public int getTires()
+	{
 		return tires;
 	}
 
-	public void setTires(int tires) {
+	public void setTires(int tires)
+	{
 		this.tires = tires;
 	}
-
-	public String toString(){
-		return "weightRed: " +
-				this.weightRed+", down: " 
-				+this.down+", susp: " 
-				+this.susp+", tires: " 
-				+this.tires+", gearbox: " 
-				+this.gearbox+", aero: " 
-				+this.aero+", engine: " 
-				+this.engine;
+	
+	public void upgrade(String type)
+	{
+		switch (type)
+		{
+		case "aero":
+			upgradeAero();
+			break;
+		case "down":
+			upgradeDown();
+			break;
+		case "engine":
+			upgradeEngine();
+			break;
+		case "gearbox":
+			upgradeGearbox();
+			break;
+		case "susp":
+			upgradeSusp();
+			break;
+		case "tires":
+			upgradeTires();
+			break;
+		case "weightRed":
+			upgradeWeightRed();
+			break;
+		default:
+			break;
+		}
 	}
 	
-	
+	public void upgradeAero()
+	{
+		if (aero < 5)
+		{
+			aero++;
+		}
+	}
+
+	public void upgradeDown()
+	{
+		if (down < 5)
+		{
+			down++;
+		}
+	}
+
+	public void upgradeEngine()
+	{
+		if (engine < 5)
+		{
+			engine++;
+		}
+	}
+
+	public void upgradeGearbox()
+	{
+		if (gearbox < 5)
+		{
+			gearbox++;
+		}
+	}
+
+	public void upgradeSusp()
+	{
+		if (susp < 5)
+		{
+			susp++;
+		}
+	}
+
+	public void upgradeTires()
+	{
+		if (tires < 5)
+		{
+			tires++;
+		}
+	}
+
+	public void upgradeWeightRed()
+	{
+		if (weightRed < 5)
+		{
+			weightRed++;
+		}
+	}
+
+	public String toString()
+	{
+		return "weightRed: " + this.weightRed + ", down: " + this.down + ", susp: " + this.susp + ", tires: " + this.tires + ", gearbox: "
+				+ this.gearbox + ", aero: " + this.aero + ", engine: " + this.engine;
+	}
+
 	/*
-	 * (non-Javadoc)
-	 * this is not entirely correct Mika. do instanceOf first and afterswards do field check
+	 * (non-Javadoc) this is not entirely correct Mika. do instanceOf first and afterswards do field check
+	 * 
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
 	@Override
