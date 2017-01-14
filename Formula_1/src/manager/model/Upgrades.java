@@ -7,7 +7,6 @@ public class Upgrades
 
 	public Upgrades(int down, int aero, int gearbox, int engine, int susp, int tires, int weightRed)
 	{
-
 		this.setAero(aero);
 		this.setDown(down);
 		this.setEngine(engine);
@@ -15,7 +14,20 @@ public class Upgrades
 		this.setSusp(susp);
 		this.setTires(tires);
 		this.setWeightRed(weightRed);
-
+	}
+	
+	public Upgrades(int createEmptyUpgrades)
+	{
+		if (createEmptyUpgrades == 0)
+		{
+			this.setAero(0);
+			this.setDown(0);
+			this.setEngine(0);
+			this.setGearbox(0);
+			this.setSusp(0);
+			this.setTires(0);
+			this.setWeightRed(0);
+		}
 	}
 
 	public int getDown()
@@ -87,7 +99,37 @@ public class Upgrades
 	{
 		this.tires = tires;
 	}
-
+	
+	public void upgrade(String type)
+	{
+		switch (type)
+		{
+		case "aero":
+			upgradeAero();
+			break;
+		case "down":
+			upgradeDown();
+			break;
+		case "engine":
+			upgradeEngine();
+			break;
+		case "gearbox":
+			upgradeGearbox();
+			break;
+		case "susp":
+			upgradeSusp();
+			break;
+		case "tires":
+			upgradeTires();
+			break;
+		case "weightRed":
+			upgradeWeightRed();
+			break;
+		default:
+			break;
+		}
+	}
+	
 	public void upgradeAero()
 	{
 		if (aero < 5)
