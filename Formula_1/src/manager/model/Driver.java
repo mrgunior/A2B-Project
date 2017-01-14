@@ -132,6 +132,16 @@ public class Driver
 		this.salary = salary;
 	}
 	
+	public void setSalaryBonus(double salaryBonus)
+	{
+		this.salaryBonus = salaryBonus;
+	}
+	
+	public double getSalaryBonus()
+	{
+		return this.salaryBonus;
+	}
+	
 	/**
 	 * Returns the Comparator to sort by Id
 	 * 
