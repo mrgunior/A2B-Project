@@ -122,18 +122,11 @@ public class Profile
 		}
 	}
 
-	public void resetDriverPoints()
+	public void resetProfile()
 	{
-		System.out.println("Resetting drivers...");
-		allDrivers.get(1).setPoints(999);
-		for (int i = 0; i < allDrivers.size(); i++)
-		{
-			System.out.println("Before: " + allDrivers.get(i));
-			allDrivers.get(i).setPoints(0);
-			System.out.println("After: " + allDrivers.get(i));
-			System.out.println();
-		}
-
+		resetDriverPoints();
+		resetDriverSalaryBonus();
+		
 		try
 		{
 			GameController.writeDriversToJSON();
@@ -142,12 +135,33 @@ public class Profile
 		{
 			e.printStackTrace();
 		}
-
-		System.out.println("Drivers reset");
-		System.out.println(allDrivers);
-
+	}
+	
+	public void resetDriverPoints()
+	{
+		System.out.println("Resetting drivers points...");
+		
+		for (int i = 0; i < allDrivers.size(); i++)
+		{
+			allDrivers.get(i).setPoints(0);
+		}
+		
+		System.out.println("Drivers points reset");
 	}
 
+	public void resetDriverSalaryBonus()
+	{
+		System.out.println("Resetting drivers salary...");
+		
+		for (int i = 0; i < allDrivers.size(); i++)
+		{
+			allDrivers.get(i).setSalaryBonus(1.0);
+			allDrivers.get(i).calculateSalary();
+		}
+
+		System.out.println("Drivers salary reset");
+	}
+	
 	public void sortDriversById()
 	{
 		Collections.sort(drivers, Driver.sortById());

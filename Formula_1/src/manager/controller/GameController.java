@@ -510,8 +510,10 @@ public class GameController
 			int turning = Integer.parseInt(readNestedObject(path, new String[] { i + "", "turning" }).toString());
 
 			double salary = (double) ReadUpgrades.readNestedJsonObjects(path, new String[] { i + "", "salary" });
+			double salaryBonus = (double) ReadUpgrades.readNestedJsonObjects(path, new String[] { i + "", "salaryBonus" });
 
 			Driver driver = new Driver(id, teamId, name, points, number, speed, acceleration, turning, salary);
+			driver.setSalaryBonus(salaryBonus);
 			drivers.add(driver);
 			// System.out.println(driver);
 		}
@@ -542,6 +544,7 @@ public class GameController
 			driver.put("acceleration", drivers.get(i).getAcceleration());
 			driver.put("turning", drivers.get(i).getTurning());
 			driver.put("salary", drivers.get(i).getSalary());
+			driver.put("salaryBonus",  drivers.get(i).getSalaryBonus());
 
 			allDrivers.put("" + drivers.get(i).getId() + "", driver);
 		}

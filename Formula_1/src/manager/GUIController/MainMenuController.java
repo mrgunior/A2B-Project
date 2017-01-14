@@ -56,9 +56,9 @@ public class MainMenuController extends SceneLoadController implements Initializ
 				startGame.setOnMousePressed(event -> {
 					try
 					{
-						GameController.getProfile().resetDriverPoints();
+						GameController.getProfile().resetProfile();
 						Profile.setBudget(200000000);
-            gotoFxmlScene("ChooseTeam", (Stage) startGame.getScene().getWindow());
+						gotoFxmlScene("ChooseTeam", (Stage) startGame.getScene().getWindow());
 					}
 					
 					catch (IOException e)
