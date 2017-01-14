@@ -210,13 +210,14 @@ public class GameController
 	{
 		List<Driver> driversList = new ArrayList<Driver>();
 
-		String[] infos = new String[6];
+		String[] infos = new String[7];
 		infos[0] = "Speed";
 		infos[1] = "Salary";
 		infos[2] = "Number";
 		infos[3] = "Turning";
 		infos[4] = "Name";
 		infos[5] = "Acceleration";
+		infos[6] = "SalaryBonus";
 
 		String driverString = "Driver";
 		JSONArray driverArray;
@@ -236,38 +237,42 @@ public class GameController
 																	// together with
 																	// the other fields
 
-			for (int d = 0; d < 6; d++)
+			for (int d = 0; d < 7; d++)
 			{
 				String valueOfObject = String.valueOf(object.get(infos[d]));
 				System.out.println(infos[d] + ": " + valueOfObject);
 
 				switch (d)
 				{
-				case 0:
-					int speed = Integer.parseInt(valueOfObject);
-					driver.setSpeed(speed);
-					break;
-				case 1:
-					double salary = Double.parseDouble(valueOfObject);
-					driver.setSalary(salary);
-					break;
-				case 2:
-					int number = Integer.parseInt(valueOfObject);
-					driver.setNumber(number);
-					break;
-				case 3:
-					int turning = Integer.parseInt(valueOfObject);
-					driver.setTurning(turning);
-					break;
-				case 4:
-					driver.setName(valueOfObject);
-					break;
-				case 5:
-					int acceleration = Integer.parseInt(valueOfObject);
-					driver.setAcceleration(acceleration);
-					break;
-				default: // do something else by default
-					break;
+					case 0:
+						int speed = Integer.parseInt(valueOfObject);
+						driver.setSpeed(speed);
+						break;
+					case 1:
+						double salary = Double.parseDouble(valueOfObject);
+						driver.setSalary(salary);
+						break;
+					case 2:
+						int number = Integer.parseInt(valueOfObject);
+						driver.setNumber(number);
+						break;
+					case 3:
+						int turning = Integer.parseInt(valueOfObject);
+						driver.setTurning(turning);
+						break;
+					case 4:
+						driver.setName(valueOfObject);
+						break;
+					case 5:
+						int acceleration = Integer.parseInt(valueOfObject);
+						driver.setAcceleration(acceleration);
+						break;
+					case 6:
+						double salaryBonus = Double.parseDouble(valueOfObject);
+						driver.setSalaryBonus(salaryBonus);
+						break;
+					default: // do something else by default
+						break;
 				}
 			}
 
@@ -421,7 +426,7 @@ public class GameController
 		obj.put("Budget", String.valueOf(profile.getBudget())); // "Budget":""
 		obj.put("Highscore", String.valueOf(profile.getHighScore())); // "Highscore":""
 
-		// 2 for 2 drivers and cars.
+		// 2 for 2 drivers and 1 for cars.
 		for (int i = 0; i < 2; i++)
 		{
 			// ###########################Drivers##############################
@@ -435,6 +440,7 @@ public class GameController
 			info.put("Turning", profile.getDrivers().get(i).getTurning()); // "Turning":""
 			info.put("AveragePerformance", String.valueOf(profile.getDrivers().get(i).getAveragePerformance()));// "AveragePerformance":""
 			info.put("Salary", String.valueOf(profile.getDrivers().get(i).getSalary())); // "Salary":""
+			info.put("SalaryBonus", String.valueOf(profile.getDrivers().get(i).getSalaryBonus())); //salaryBonus
 
 			JSONArray driver = new JSONArray(); // create an array [], name is added later
 			driver.add(info); // you get this [{}]
