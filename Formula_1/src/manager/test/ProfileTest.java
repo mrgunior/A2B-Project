@@ -25,7 +25,7 @@ public class ProfileTest
 	private double averagePerformance, salary;
 	private Upgrades upgrades;
 	private List<Driver> drivers;
-	private List<Car> cars;
+	private Car car;
 
 	@Before
 	public void setUp()
@@ -54,9 +54,7 @@ public class ProfileTest
 		drivers.add(new Driver(id, teamId, name, points, number, speed, acceleration, turning, salary));
 		drivers.add(new Driver(id, teamId, name, points, number, speed, acceleration, turning, salary));
 		
-		cars = new ArrayList<Car>();
-		cars.add(new Car(speed, acceleration, handling, braking, weight, upgrades));
-		cars.add(new Car(speed, acceleration, handling, braking, weight, upgrades));
+		car = new Car(speed, acceleration, handling, braking, weight, upgrades);
 	}
 
 	@Test
@@ -87,8 +85,8 @@ public class ProfileTest
 	@Test
 	public void testGetCars()
 	{
-		profile.setCars(cars);
-		assertThat("Method set cars is setting it correctly", cars, is(profile.getCars()));
+		profile.setCar(car);
+		assertThat("Method set cars is setting it correctly", car, is(Profile.getCar()));
 	}
 
 	@Test
@@ -152,7 +150,7 @@ public class ProfileTest
 	@Test
 	public void testSetCarsNotEmpty()
 	{
-		profile.setCars(cars); // not empty
-		assertEquals("Method set cars is setting it correctly when full", profile.getCars(), cars);
+		profile.setCar(car); // not empty
+		assertEquals("Method set cars is setting it correctly when full", Profile.getCar(), car);
 	}
 }

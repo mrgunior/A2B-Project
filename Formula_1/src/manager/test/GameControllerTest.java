@@ -44,7 +44,7 @@ public class GameControllerTest
 		drivers.add(driver1);
 		drivers.add(driver2);
 		
-		testProfile.setCars(cars);
+		testProfile.setCar(car1);
 		testProfile.setDrivers(drivers);
 	}
 	

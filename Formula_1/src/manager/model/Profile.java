@@ -9,15 +9,16 @@ import manager.controller.GameController;
 
 public class Profile 
 {
-	private double highScore, budget;
+	private double highScore;
+	private static double budget;
 	private String teamName;
 	private List<Driver> drivers;
-	private List<Car> cars;
+	private static Car car;
 	private ArrayList<Driver> allDrivers;
 	
 	public Profile(double highScore, double budget, String teamName){
 		this.highScore = highScore;
-		this.budget = budget;
+		Profile.budget = budget;
 		this.teamName = teamName;
 	}
 
@@ -30,8 +31,8 @@ public class Profile
 		return this.teamName;
 	}
 	
-	public double getBudget(){
-		return this.budget;
+	public static double getBudget(){
+		return budget;
 	}
 	
 	public List<Driver> getDrivers(){
@@ -42,8 +43,8 @@ public class Profile
 		return this.allDrivers;
 	}
 	
-	public List<Car> getCars(){
-		return this.cars;
+	public static Car getCar(){
+		return car;
 	}
 	
 	//Setters
@@ -57,7 +58,7 @@ public class Profile
 	
 	//Since the budget gets updated when the player uses it for upgrades or
 	//Wins cash, we will use true for subtractions and false for addition.
-	public void setBudget(double amount, boolean state){
+	public static void setBudget(double amount, boolean state){
 		
 		//if state is true subtract amount from budget
 		if(amount<0)
@@ -67,14 +68,19 @@ public class Profile
 		
 		if(state)
 		{
-			this.budget -= amount;
+			budget -= amount;
 		}
 		
 		//else state is false and amount gets added to budget
 		else
 		{
-			this.budget += amount;
+			budget += amount;
 		}
+	}
+	
+	public static void setBudget(double amount)
+	{
+		budget = amount;
 	}
 	
 	public void setDrivers(List<Driver> drivers){
@@ -85,8 +91,8 @@ public class Profile
 		this.allDrivers = drivers;
 	}
 	
-	public void setCars(List<Car> cars){
-		this.cars = cars;
+	public void setCar(Car car){
+		this.car = car;
 	}
 	
 	public void resetDriverPoints()
@@ -125,4 +131,6 @@ public class Profile
 	{
 		drivers.sort(Driver.sortByPoints());
 	}
+
+
 }

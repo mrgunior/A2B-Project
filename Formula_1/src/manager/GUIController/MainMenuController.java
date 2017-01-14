@@ -15,6 +15,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import manager.controller.SceneLoadController;
 import manager.controller.GameController;
+import manager.model.Profile;
 import manager.model.formulaApplication;
 
 public class MainMenuController extends SceneLoadController implements Initializable
@@ -56,7 +57,8 @@ public class MainMenuController extends SceneLoadController implements Initializ
 					try
 					{
 						GameController.getProfile().resetDriverPoints();
-						gotoFxmlScene(event, "ChooseTeam", (Stage) startGame.getScene().getWindow());
+						Profile.setBudget(200000000);
+            gotoFxmlScene("ChooseTeam", (Stage) startGame.getScene().getWindow());
 					}
 					
 					catch (IOException e)
@@ -79,7 +81,7 @@ public class MainMenuController extends SceneLoadController implements Initializ
 						// empty
 						if (!(formulaApplication.getTeamName().equals("")))
 						{
-							gotoFxmlScene(event, "Dashboard", (Stage) resume.getScene().getWindow());
+							gotoFxmlScene("Dashboard", (Stage) resume.getScene().getWindow());
 						}
 
 						// if the json object is empty
@@ -105,7 +107,7 @@ public class MainMenuController extends SceneLoadController implements Initializ
 				highscores.setOnMousePressed(event -> {
 					try
 					{
-						gotoFxmlScene(event, "HighScores", (Stage) highscores.getScene().getWindow());
+						gotoFxmlScene("HighScores", (Stage) highscores.getScene().getWindow());
 					}
 					
 					catch (IOException e)
@@ -146,7 +148,7 @@ public class MainMenuController extends SceneLoadController implements Initializ
 				settings.setOnMousePressed(event -> {
 					try
 					{
-						gotoFxmlScene(event, "Settings", (Stage) settings.getScene().getWindow());
+						gotoFxmlScene("Settings", (Stage) settings.getScene().getWindow());
 					}
 					
 					catch (IOException e)

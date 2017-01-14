@@ -1,0 +1,37 @@
+Date: 09-01-2017
+Secretary: Victor Wernet
+
+Attendance:
+Bas (TA)
+Rowdy
+Mika
+Victor
+
+---------------------------------
+
+What did we do last week and what are we going to do. 
+Mika: I made the simulation gui and the result that is read from an object and real time upgedate kan worden. 
+Time was also added for each race how long it took
+
+Rowdy: i didn't do alot but worked mostly on the code. And were fixes necassary.
+
+Victor: I worked on the GameController, JSON, auto-save, test-cases & UML
+
+to have a complete working and passing project, making sure all the basic components are there and any functionality that is
+need should be added. Make sure for next week these things are done and for the week after that only bug fixes and testing
+don't add anything else otherwise the game might just not work. 
+
+the report is not just to show that you can code but that you can also can give if you have grown as a 
+software engineer. Also why did you use certain technologies, and we also don't expect to put any code in the report. 
+Presentation you need to make sure you work on in in the last 2 weeks. 
+
+Test cases are not only being judged on the precentage but also how are you testing your classes.
+
+Make sure the game works. Apart from a beautiful gui but that it can be playable. From start to the beginning. 
+So make sure you see what needs to be done and what is still missing. Very important. As said make sure this week 
+it is complete. 
+
+the group asked question related to the rubric. Relating to maven, EclEmma, report, mockito, pull based development 
+and continous integration. Bas also explained what mock is. How it can be used to test if for example certain methods 
+are being called and more in dept.
+

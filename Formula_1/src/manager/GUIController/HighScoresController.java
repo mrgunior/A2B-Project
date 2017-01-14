@@ -30,7 +30,7 @@ public class HighScoresController extends SceneLoadController implements Initial
 		back.setOnMousePressed(event -> {
 			try
 			{
-				gotoFxmlScene(event, "MainMenu", (Stage) back.getScene().getWindow());
+				gotoFxmlScene("MainMenu", (Stage) back.getScene().getWindow());
 			} catch (IOException e)
 			{
 				e.printStackTrace();

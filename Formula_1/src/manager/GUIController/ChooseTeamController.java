@@ -63,7 +63,7 @@ public class ChooseTeamController extends SceneLoadController implements Initial
 				{
 					// where team is being set in the Profile object
 					formulaApplication.setTeamName(currentlySelectedString);
-					gotoFxmlScene(event, "ChooseDriver", (Stage) next.getScene().getWindow());
+					gotoFxmlScene("ChooseDriver", (Stage) next.getScene().getWindow());
 				}
 			}
 

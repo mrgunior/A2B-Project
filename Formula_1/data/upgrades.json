@@ -440,7 +440,7 @@
 				}
 			}
 		},
-		"weight": 
+		"weightRed": 
 		{
 			"level1": 
 			{
@@ -502,7 +502,6 @@
 			{
 				"name": "CarbonG6:G37 Car Frame",
 				"price": 38140000,
-				"": ,
 				"positive": 
 				{
 					"weight": -20,

@@ -240,7 +240,7 @@ public class RaceController extends SceneLoadController implements Initializable
 			ResultController.setResults(resultsRace);
 			try
 			{
-				gotoFxmlScene(event, "Result", (Stage) time.getScene().getWindow());
+				gotoFxmlScene("Result", (Stage) time.getScene().getWindow());
 			}
 			catch (IOException e)
 			{
