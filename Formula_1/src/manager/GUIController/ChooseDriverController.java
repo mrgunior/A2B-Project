@@ -107,6 +107,7 @@ public class ChooseDriverController extends SceneLoadController implements Initi
 		// Team Choices
 		alonso.setOnMousePressed(event -> {
 			selectDriver(alonso, "Fernando Alonso");
+			
 		});
 		bottas.setOnMousePressed(event -> {
 			selectDriver(bottas, "Valtteri Bottas");
