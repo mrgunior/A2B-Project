@@ -63,6 +63,7 @@ public class CarManagementController extends SceneLoadController implements Init
 	
 	private String maxMessageLong = "Max level achieved!";
 	private String maxMessageShort = "-";
+	private String consoleCantBuyMessage = "Not enough money or level maxed out";
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources)
@@ -96,105 +97,96 @@ public class CarManagementController extends SceneLoadController implements Init
 		});
 
 		downUpgrade.setOnMousePressed(event -> {
-			displayUpgrades();
 			System.out.println("Upgrade down");
 			if (Profile.getBudget() > downPriceDouble && car.getUpgrades().getDown() < 5)
 			{
-				car.upgradeDown();
+				car.upgrade("down");
 				Profile.setBudget(downPriceDouble, true);
-				displayUpgrades();
 			}
 			else
 			{
-				System.out.println("Not enough money");
+				System.out.println(consoleCantBuyMessage);
 			}
+			displayUpgrades();
 		});
 
 		aeroUpgrade.setOnMousePressed(event -> {
-			displayUpgrades();
 			System.out.println("Upgrade down");
 			if (Profile.getBudget() > aeroPriceDouble && car.getUpgrades().getAero() < 5)
 			{
-				car.upgradeAero();
+				car.upgrade("aero");
 				Profile.setBudget(aeroPriceDouble, true);
-				displayUpgrades();
 			}
 			else
 			{
-				System.out.println("Not enough money");
+				System.out.println(consoleCantBuyMessage);
 			}
+			displayUpgrades();
 		});
 
 		gearboxUpgrade.setOnMousePressed(event -> {
-			displayUpgrades();
 			if (Profile.getBudget() > gearboxPriceDouble && car.getUpgrades().getGearbox() < 5)
 			{
-				car.upgradeGearbox();
+				car.upgrade("gearbox");
 				Profile.setBudget(gearboxPriceDouble, true);
-				displayUpgrades();
 			}
 			else
 			{
-				System.out.println("Not enough money");
+				System.out.println(consoleCantBuyMessage);
 			}
+			displayUpgrades();
 		});
 
 		engineUpgrade.setOnMousePressed(event -> {
-			displayUpgrades();
 			if (Profile.getBudget() > enginePriceDouble && car.getUpgrades().getEngine() < 5)
 			{
-				car.upgradeEngine();
+				car.upgrade("engine");
 				Profile.setBudget(enginePriceDouble, true);
-				displayUpgrades();
 			}
 			else
 			{
-				System.out.println("Not enough money");
+				System.out.println(consoleCantBuyMessage);
 			}
+			displayUpgrades();
 		});
 
 		suspUpgrade.setOnMousePressed(event -> {
-			displayUpgrades();
 			if (Profile.getBudget() > suspPriceDouble && car.getUpgrades().getSusp() < 5)
 			{
-				car.upgradeSusp();
+				car.upgrade("susp");
 				Profile.setBudget(suspPriceDouble, true);
-				displayUpgrades();
 			}
 			else
 			{
-				System.out.println("Not enough money");
+				System.out.println(consoleCantBuyMessage);
 			}
+			displayUpgrades();
 		});
 
 		tiresUpgrade.setOnMousePressed(event -> {
-			displayUpgrades();
-			System.out.println(Profile.getBudget());
-			System.out.println(tiresPriceDouble);
 			if (Profile.getBudget() > tiresPriceDouble && car.getUpgrades().getTires() < 5)
 			{
-				car.upgradeTires();
+				car.upgrade("tires");
 				Profile.setBudget(tiresPriceDouble, true);
-				displayUpgrades();
 			}
 			else
 			{
-				System.out.println("Not enough money");
+				System.out.println(consoleCantBuyMessage);
 			}
+			displayUpgrades();
 		});
 
 		weightUpgrade.setOnMousePressed(event -> {
-			displayUpgrades();
 			if (Profile.getBudget() > weightPriceDouble && car.getUpgrades().getWeightRed() < 5)
 			{
-				car.upgradeWeightRed();
+				car.upgrade("weightRed");
 				Profile.setBudget(weightPriceDouble, true);
-				displayUpgrades();
 			}
 			else
 			{
-				System.out.println("Not enough money");
+				System.out.println(consoleCantBuyMessage);
 			}
+			displayUpgrades();
 		});
 	}
 
@@ -208,39 +200,40 @@ public class CarManagementController extends SceneLoadController implements Init
 		displayUpgrades("susp");
 		displayUpgrades("tires");
 		displayUpgrades("weightRed");
+		System.out.println(car);
 	}
 
 	private void displayUpgrades(String type)
 	{
 		// type = "engine"
-		int nextLvl = 0;
+		int curLvl = 0;
 		switch (type)
 		{
 		case "aero":
-			nextLvl = upgrades.getAero();
+			curLvl = upgrades.getAero();
 			break;
 		case "down":
-			nextLvl = upgrades.getDown();
+			curLvl = upgrades.getDown();
 			break;
 		case "engine":
-			nextLvl = upgrades.getEngine();
+			curLvl = upgrades.getEngine();
 			break;
 		case "gearbox":
-			nextLvl = upgrades.getGearbox();
+			curLvl = upgrades.getGearbox();
 			break;
 		case "susp":
-			nextLvl = upgrades.getSusp();
+			curLvl = upgrades.getSusp();
 			break;
 		case "tires":
-			nextLvl = upgrades.getTires();
+			curLvl = upgrades.getTires();
 			break;
 		case "weightRed":
-			nextLvl = upgrades.getWeightRed();
+			curLvl = upgrades.getWeightRed();
 			break;
 		default:
 			break;
 		}
-		nextLvl++;
+		int nextLvl = curLvl + 1;
 
 		String path = "./data/upgrades.json";
 
@@ -252,7 +245,7 @@ public class CarManagementController extends SceneLoadController implements Init
 			upgradeSpecs = (JSONObject) GameController.readNestedObject(path, new String[] { "upgrades", type, "level" + nextLvl });
 
 			// Get the price and name
-			System.out.println(nextLvl + ", " + upgradeSpecs);
+			//System.out.println(nextLvl + ", " + upgradeSpecs);
 			String name = upgradeSpecs.get("name").toString();
 			double price = Double.parseDouble(upgradeSpecs.get("price").toString()) / 1000000;
 
