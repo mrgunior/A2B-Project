@@ -126,10 +126,12 @@ public class Profile
 	{
 		resetDriverPoints();
 		resetDriverSalaryBonus();
+		resetCarUpgrades();
 		
 		try
 		{
 			GameController.writeDriversToJSON();
+			formulaApplication.getGameController().writeJsonObjectToFile();
 		}
 		catch (IOException e)
 		{
@@ -139,27 +141,37 @@ public class Profile
 	
 	public void resetDriverPoints()
 	{
-		System.out.println("Resetting drivers points...");
-		
 		for (int i = 0; i < allDrivers.size(); i++)
 		{
 			allDrivers.get(i).setPoints(0);
 		}
 		
-		System.out.println("Drivers points reset");
+		System.out.println("All driver points have been reset...");
 	}
 
 	public void resetDriverSalaryBonus()
 	{
-		System.out.println("Resetting drivers salary...");
-		
 		for (int i = 0; i < allDrivers.size(); i++)
 		{
 			allDrivers.get(i).setSalaryBonus(1.0);
 			allDrivers.get(i).calculateSalary();
 		}
 
-		System.out.println("Drivers salary reset");
+		System.out.println("All driver salaries have been reset...");
+	}
+	
+	public void resetCarUpgrades()
+	{
+		// Set all car stats to 50
+		car.setAcceleration(50);
+		car.setBraking(50);
+		car.setHandling(50);
+		car.setSpeed(50);
+		car.setWeight(50);
+		// Set all upgrades to 0 with an Upgrades object where all the upgrades are level
+		car.setUpgrades(new Upgrades(0));
+		
+		System.out.println("Current car's upgrades have been reset...");
 	}
 	
 	public void sortDriversById()

@@ -1,9 +1,5 @@
 package manager.model;
 
-import org.json.simple.JSONObject;
-
-import manager.controller.GameController;
-
 public class Upgrades
 {
 
@@ -11,7 +7,6 @@ public class Upgrades
 
 	public Upgrades(int down, int aero, int gearbox, int engine, int susp, int tires, int weightRed)
 	{
-
 		this.setAero(aero);
 		this.setDown(down);
 		this.setEngine(engine);
@@ -19,7 +14,20 @@ public class Upgrades
 		this.setSusp(susp);
 		this.setTires(tires);
 		this.setWeightRed(weightRed);
-
+	}
+	
+	public Upgrades(int createEmptyUpgrades)
+	{
+		if (createEmptyUpgrades == 0)
+		{
+			this.setAero(0);
+			this.setDown(0);
+			this.setEngine(0);
+			this.setGearbox(0);
+			this.setSusp(0);
+			this.setTires(0);
+			this.setWeightRed(0);
+		}
 	}
 
 	public int getDown()
