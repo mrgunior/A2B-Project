@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<!-- 
+	FXML is a XML-based user interface markup language for designing
+	controller GUIController.java
+ -->
+
+<AnchorPane id="root" fx:id="root" maxHeight="1080.0" maxWidth="1920.0" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="manager.GUIController.TeamManagementController">
+   <children>
+   
+   	  <!-- Background image and settings-->
+      <ImageView fx:id="background" fitHeight="1080.0" fitWidth="1920.0" pickOnBounds="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../../../images/menu/menuBackground.jpg" />
+         </image>
+         <viewport>
+            <Rectangle2D />
+         </viewport>
+      </ImageView>
+      <HBox alignment="CENTER" prefHeight="200.0" prefWidth="1920.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Text fill="#ff2800" strokeType="OUTSIDE" strokeWidth="0.0" text="Team Management" textAlignment="CENTER" translateY="-10.0">
+               <font>
+                  <Font name="Yu Gothic UI Semilight" size="80.0" />
+               </font>
+               <stroke>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#c90707" />
+                        <Stop color="#c90707" offset="0.011494252873563218" />
+                        <Stop color="#e1dcdc" offset="0.8160919540229883" />
+                        <Stop color="#e1dcdc" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </stroke>
+            </Text>
+         </children>
+      </HBox>
+      <ImageView fx:id="back" fitHeight="75.0" fitWidth="263.0" layoutX="19.0" layoutY="998.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0">
+         <image>
+            <Image url="@../../../images/menu/Back.png" />
+         </image>
+      </ImageView>
+      <GridPane layoutX="860.0" layoutY="495.0" style="-fx-background-color: rgba(255,255,255,0.6); -fx-border-color: rgba(255,255,255,.3); -fx-border-width: 3;" AnchorPane.bottomAnchor="175.0" AnchorPane.leftAnchor="400.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="300.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="ALWAYS" minWidth="100.0" prefWidth="300.0" />
+          <ColumnConstraints hgrow="ALWAYS" minWidth="100.0" prefWidth="300.0" />
+            <ColumnConstraints hgrow="ALWAYS" minWidth="100.0" prefWidth="300.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="50.0" prefHeight="150.0" vgrow="ALWAYS" />
+          <RowConstraints minHeight="50.0" prefHeight="150.0" vgrow="ALWAYS" />
+          <RowConstraints minHeight="50.0" prefHeight="150.0" vgrow="ALWAYS" />
+        </rowConstraints>
+         <children>
+            <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Race Strategy" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+               <font>
+                  <Font name="Yu Gothic UI Semilight" size="50.0" />
+               </font>
+            </Text>
+            <Pane fx:id="lowRiskBack" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(255,255,255,0.1);" GridPane.rowIndex="1" />
+            <Pane fx:id="mediumRiskBack" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(255,255,255,0.1);" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Pane fx:id="highRiskBack" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(255,255,255,0.1);" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Low Risk" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Yu Gothic UI Light" size="35.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Medium Risk" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Yu Gothic UI Light" size="35.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="High Risk" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Yu Gothic UI Light" size="35.0" />
+               </font>
+            </Text>
+            <Pane fx:id="lowRisk" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1" />
+            <Pane fx:id="mediumRisk" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Pane fx:id="highRisk" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Low risk text" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Yu Gothic UI Light" size="25.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Medium Risk Text" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Yu Gothic UI Light" size="25.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="High Risk Text" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Yu Gothic UI Light" size="25.0" />
+               </font>
+            </Text>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

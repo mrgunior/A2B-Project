@@ -67,7 +67,7 @@ public class ChooseDriverController extends SceneLoadController implements Initi
 				vettelSalary, wehrleinSalary};
 
 		for (int i = 0; i < 22; i++) {
-			salaries[i].setText("$ " + drivers.get(i).getSalary() + " Mill");
+			salaries[i].setText("$ " + drivers.get(i).getSalary()/1000000 + " Mill/race");
 		}
 		
 		
@@ -204,8 +204,8 @@ public class ChooseDriverController extends SceneLoadController implements Initi
 		}
 
 		System.out.println("#######################DRIVERS#######################");
-		System.out.println("Driver1: " + driver1String + ", ID: " + driver1.getId() + ", Driver2: " + driver2String
-				+ ", ID: " + driver2.getId());
+		System.out.println("Driver1: " + driver1String + ", ID: " + driver1.getId());
+		System.out.println("Driver2: " + driver2String + ", ID: " + driver2.getId());
 		System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 	}
