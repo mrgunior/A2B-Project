@@ -8,6 +8,7 @@ import java.util.ResourceBundle;
 import manager.controller.GameController;
 import manager.controller.SceneLoadController;
 import manager.model.Driver;
+import manager.model.Profile;
 import manager.model.Results;
 import manager.model.Stopwatch;
 import javafx.fxml.FXML;
@@ -28,7 +29,9 @@ public class ResultController extends SceneLoadController implements Initializab
 
 	// Basic Scene elements
 	@FXML
-	private ImageView next;
+	private ImageView	next;
+	@FXML
+	private Text		resultsText;
 
 	// Team Logos
 	@FXML
@@ -65,6 +68,7 @@ public class ResultController extends SceneLoadController implements Initializab
 		background.fitHeightProperty().bind(root.heightProperty());
 
 		// Set textboxes, names + points
+		resultsText.setText("Results - Race " + Profile.getCurrentRace());
 		setNamesFromResults(resultsResult);
 		setPoints();
 
@@ -74,7 +78,16 @@ public class ResultController extends SceneLoadController implements Initializab
 			{
 				transferResultsToProfileDrivers();
 				GameController.writeDriversToJSON();
-				gotoFxmlScene("Dashboard", (Stage) next.getScene().getWindow());
+				Profile.setCurrentRace(Profile.getCurrentRace() + 1);
+				if (Profile.getCurrentRace() > Profile.getRacesPerSeason())
+				{
+					gotoFxmlScene("Standings", (Stage) next.getScene().getWindow());
+					Profile.setCurrentRace(1);
+				}
+				else
+				{
+					gotoFxmlScene("Dashboard", (Stage) next.getScene().getWindow());
+				}
 			}
 			catch (IOException e)
 			{
@@ -111,7 +124,7 @@ public class ResultController extends SceneLoadController implements Initializab
 	{
 		// Set points earned text boxes
 		Text[] pointsEarnedText = { points1, points2, points3, points4, points5, points6, points7, points8, points9, points10 };
-		
+
 		for (int i = 0; i < 10; i++)
 		{
 			pointsEarnedText[i].setText("+" + points[i]);
@@ -125,7 +138,8 @@ public class ResultController extends SceneLoadController implements Initializab
 		{
 			if (i == 0)
 			{
-				resultsResult.getResult(i).getDriver().salaryPercentageBonus(10);;
+				resultsResult.getResult(i).getDriver().salaryPercentageBonus(10);
+				;
 			}
 			totalPointsText[i].setText(resultsResult.getResult(i).getDriver().getPoints() + "");
 		}

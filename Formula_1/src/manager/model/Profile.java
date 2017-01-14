@@ -16,6 +16,10 @@ public class Profile
 	private static Car			car;
 	private ArrayList<Driver>	allDrivers;
 	private static int			strategy;	// 1 = low risk, 2 = medium risk, 3 = high risk
+	
+	private static int currentRace = 1;
+	private static int currentSeason = 1;
+	private static int racesPerSeason = 2;
 
 	public Profile(double highScore, double budget, String teamName)
 	{
@@ -120,6 +124,36 @@ public class Profile
 		{
 			Profile.strategy = strategy;
 		}
+	}
+	
+	public static int getCurrentRace()
+	{
+		return currentRace;
+	}
+	
+	public static void setCurrentRace(int currentRace)
+	{
+		Profile.currentRace = currentRace;
+	}
+	
+	public static int getCurrentSeason()
+	{
+		return currentSeason;
+	}
+	
+	public static void setCurrentSeason(int currentSeason)
+	{
+		Profile.currentSeason = currentSeason;
+	}
+	
+	public static int getRacesPerSeason()
+	{
+		return racesPerSeason;
+	}
+	
+	public static void setRacesPerSeason(int racesPerSeason)
+	{
+		Profile.racesPerSeason = racesPerSeason;
 	}
 
 	public void resetProfile()

@@ -1,6 +1,8 @@
 package manager.GUIController;
 
+import manager.controller.GameController;
 import manager.controller.SceneLoadController;
+import manager.model.Profile;
 import manager.model.formulaApplication;
 import java.io.IOException;
 import java.net.URL;
@@ -27,6 +29,8 @@ public class DashboardController extends SceneLoadController implements Initiali
 	// Scene elements
 	@FXML
 	private ImageView back;
+	@FXML
+	private Text raceText;
 
 	@FXML
 	private Rectangle carManagement, teamManagement, standings, race;
@@ -42,6 +46,8 @@ public class DashboardController extends SceneLoadController implements Initiali
 		background.fitHeightProperty().bind(root.heightProperty());
 		
 		teamName.setText(formulaApplication.getTeamName());
+		//seasonText.setText("Season " + Profile.getCurrentSeason());
+		raceText.setText(" Race " + Profile.getCurrentRace());
 		balance.setText("$ " + Double.toString(formulaApplication.getBalance()/1000000) + " Million");
 
 		AnimationTimer animationTimer = new AnimationTimer()
