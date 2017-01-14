@@ -1,5 +1,9 @@
 package manager.model;
 
+import org.json.simple.JSONObject;
+
+import manager.controller.GameController;
+
 public class Upgrades
 {
 
@@ -87,7 +91,37 @@ public class Upgrades
 	{
 		this.tires = tires;
 	}
-
+	
+	public void upgrade(String type)
+	{
+		switch (type)
+		{
+		case "aero":
+			upgradeAero();
+			break;
+		case "down":
+			upgradeDown();
+			break;
+		case "engine":
+			upgradeEngine();
+			break;
+		case "gearbox":
+			upgradeGearbox();
+			break;
+		case "susp":
+			upgradeSusp();
+			break;
+		case "tires":
+			upgradeTires();
+			break;
+		case "weightRed":
+			upgradeWeightRed();
+			break;
+		default:
+			break;
+		}
+	}
+	
 	public void upgradeAero()
 	{
 		if (aero < 5)

@@ -1,1 +1,51 @@
-{"Driver2":[{"Speed":"0","Salary":"0.0","Number":"0","SalaryBonus":"1.0","Turning":0,"Acceleration":0,"Name":"","AveragePerformance":"0.0"}],"Car":[{"Speed":"0","Upgrades":{"WeightRed":"1","Down":"1","Susp":"1","Tires":"1","Gearbox":"1","Aero":"1","Engine":"1"},"Braking":"0","Acceleration":"0","Weight":"0","Handling":"0"}],"Driver1":[{"Speed":"0","Salary":"0.0","Number":"0","SalaryBonus":"1.0","Turning":0,"Acceleration":0,"Name":"","AveragePerformance":"0.0"}],"Highscore":"50.0","Teamname":"Mercedes AMG Petronas","Budget":"2.0E8"}
+{
+	"Driver2": 
+	[
+		{
+			"Speed": "0",
+			"Salary": "0.0",
+			"Number": "0",
+			"SalaryBonus": "1.0",
+			"Turning": 0,
+			"Acceleration": 0,
+			"Name": "",
+			"AveragePerformance": "0.0"
+		}
+	],
+	"Car": 
+	[
+		{
+			"Speed": "81",
+			"Upgrades": 
+			{
+				"WeightRed": "5",
+				"Down": "5",
+				"Susp": "5",
+				"Tires": "5",
+				"Gearbox": "5",
+				"Aero": "5",
+				"Engine": "5"
+			},
+			"Braking": "129",
+			"Acceleration": "109",
+			"Weight": "58",
+			"Handling": "134"
+		}
+	],
+	"Driver1": 
+	[
+		{
+			"Speed": "0",
+			"Salary": "0.0",
+			"Number": "0",
+			"SalaryBonus": "1.0",
+			"Turning": 0,
+			"Acceleration": 0,
+			"Name": "",
+			"AveragePerformance": "0.0"
+		}
+	],
+	"Highscore": "50.0",
+	"Teamname": "Mercedes AMG Petronas",
+	"Budget": "1.6999928206E14"
+}
