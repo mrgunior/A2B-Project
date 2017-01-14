@@ -143,32 +143,29 @@ public class RaceController extends SceneLoadController implements Initializable
 	{
 		ImageView[] carImages = { ferrari1, ferrari2, forceIndia1, forceIndia2, haas1, haas2, honda1, honda2, manor1, manor2, williams1,
 				williams2, mercedes1, mercedes2, redBull1, redBull2, renault1, renault2, toroRosso1, toroRosso2, sauber1, sauber2 };
-		// ### FLUID GUI
-
+		
+		// Fluid GUI
 		background.fitWidthProperty().bind(root.widthProperty());
 		background.fitHeightProperty().bind(root.heightProperty());
 		double sceneWidth = formulaApplication.getScene().getWidth();
 		double sceneHeight = formulaApplication.getScene().getHeight();
-		finish.setLayoutX(sceneWidth / 1.159);
+		finishX = sceneWidth / 1.159;
+		finish.setLayoutX(finishX);
 
 		double carStartY = sceneWidth / 12.972972973;
 		for (int i = 0; i < carImages.length; i++)
 		{
 			ImageView carImage = carImages[i];
 			carImage.setLayoutY(carStartY + (i * (sceneHeight / 30.8571428571)));
-			carImage.setScaleX(sceneHeight / 1080);
-			carImage.setScaleY(sceneHeight / 1080);
+			carImage.setFitWidth(100*sceneWidth/1920);
+			carImage.setFitHeight(35*sceneHeight/1080);
 		}
 
-		// ## END FLUID GUI
 
-		// Setup variables, car arraylist and GUI car position
-		finishX = finish.getLayoutX();
 
 		// Simulate results and store in results object
 		resultsRace = RaceSimulation.runSimulation(Math.random() * 2 + 4);
 		resultsRace.sortResultsByTime();
-		System.out.println(resultsRace);
 
 		// Create cars from results
 		createCarsFromResults(resultsRace, 10000);
@@ -180,7 +177,7 @@ public class RaceController extends SceneLoadController implements Initializable
 
 		// Hide goto results button
 		gotoResults.setVisible(false);
-		// Setup stopwatch and timer
+		// Setup stopwatch and timer with time 00:00:00.000
 		Stopwatch stopwatch = new Stopwatch();
 		time.setText(stopwatch.elapsedTimeString(stopwatch.elapsedTime() * timeFactor));
 
@@ -202,7 +199,6 @@ public class RaceController extends SceneLoadController implements Initializable
 				if (frames < 100000000)
 				{
 					frames++;
-					System.out.println(frames);
 				}
 				else
 				{
@@ -257,12 +253,6 @@ public class RaceController extends SceneLoadController implements Initializable
 		gotoResults.setOnMouseExited(event -> {
 			gotoResults.setImage(new Image("file:images/menu/Next.png"));
 		});
-
-		time.setOnMousePressed(event -> {
-			animationTimer.start();
-			stopwatch.start();
-			raceStarted = true;
-		});
 	}
 
 	private int getAmountFinished()
@@ -282,20 +272,12 @@ public class RaceController extends SceneLoadController implements Initializable
 	{
 		// GUICar carX = new GUICar(carName, time)
 		results.sortResultsByCarId();
-	
-		/*
-		 * for (int i = 0; i < tempCars.length; i++) { //System.out.println(ferrari1);
-		 * System.out.println(carImages[i]); tempCars[i] = new GUICar(carImages[i],
-		 * results.getResult(i).getTime()); }
-		 */
 
 		for (int i = 0; i < results.getResults().size(); i++)
 		{
-			
 			switch (results.getResult(i).getDriver().getTeamId())
 			{
 			case 1:
-				System.out.println("Ferrari: " + results.getResult(i).getDriver().getName() + ", team: " + results.getResult(i).getDriver().getTeamId());
 				if (car1 == null)
 				{
 					car1 = new GUICar(ferrari1, results.getResult(i).getTime());
@@ -306,7 +288,6 @@ public class RaceController extends SceneLoadController implements Initializable
 				}
 				break;
 			case 2:
-				System.out.println("Force India: " + results.getResult(i).getDriver().getName() + ", team: " + results.getResult(i).getDriver().getTeamId());
 				if (car3 == null)
 				{
 					car3 = new GUICar(forceIndia1, results.getResult(i).getTime());
@@ -317,7 +298,6 @@ public class RaceController extends SceneLoadController implements Initializable
 				}
 				break;
 			case 3:
-				System.out.println("Haas: " + results.getResult(i).getDriver().getName() + ", team: " + results.getResult(i).getDriver().getTeamId());
 				if (car5 == null)
 				{
 					car5 = new GUICar(haas1, results.getResult(i).getTime());
@@ -328,7 +308,6 @@ public class RaceController extends SceneLoadController implements Initializable
 				}
 				break;
 			case 4:
-				System.out.println("Manor: " + results.getResult(i).getDriver().getName() + ", team: " + results.getResult(i).getDriver().getTeamId());
 				if (car7 == null)
 				{
 					car7 = new GUICar(manor1, results.getResult(i).getTime());
@@ -339,7 +318,6 @@ public class RaceController extends SceneLoadController implements Initializable
 				}
 				break;
 			case 5:
-				System.out.println("Honda: " + results.getResult(i).getDriver().getName() + ", team: " + results.getResult(i).getDriver().getTeamId());
 				if (car9 == null)
 				{
 					car9 = new GUICar(honda1, results.getResult(i).getTime());
@@ -350,7 +328,6 @@ public class RaceController extends SceneLoadController implements Initializable
 				}
 				break;
 			case 6:
-				System.out.println("Mercedes: " + results.getResult(i).getDriver().getName() + ", team: " + results.getResult(i).getDriver().getTeamId());
 				if (car11 == null)
 				{
 					car11 = new GUICar(mercedes1, results.getResult(i).getTime());
@@ -361,7 +338,6 @@ public class RaceController extends SceneLoadController implements Initializable
 				}
 				break;
 			case 7:
-				System.out.println("Red Bull: " + results.getResult(i).getDriver().getName() + ", team: " + results.getResult(i).getDriver().getTeamId());
 				if (car13 == null)
 				{
 					car13 = new GUICar(redBull1, results.getResult(i).getTime());
@@ -372,7 +348,6 @@ public class RaceController extends SceneLoadController implements Initializable
 				}
 				break;
 			case 8:
-				System.out.println("Renault: " + results.getResult(i).getDriver().getName() + ", team: " + results.getResult(i).getDriver().getTeamId());
 				if (car15 == null)
 				{
 					car15 = new GUICar(renault1, results.getResult(i).getTime());
@@ -383,7 +358,6 @@ public class RaceController extends SceneLoadController implements Initializable
 				}
 				break;
 			case 9:
-				System.out.println("Sauber: " + results.getResult(i).getDriver().getName() + ", team: " + results.getResult(i).getDriver().getTeamId());
 				if (car17 == null)
 				{
 					car17 = new GUICar(sauber1, results.getResult(i).getTime());
@@ -394,7 +368,6 @@ public class RaceController extends SceneLoadController implements Initializable
 				}
 				break;
 			case 10:
-				System.out.println("Toro Rosso: " + results.getResult(i).getDriver().getName() + ", team: " + results.getResult(i).getDriver().getTeamId());
 				if (car19 == null)
 				{
 					car19 = new GUICar(toroRosso1, results.getResult(i).getTime());
@@ -405,7 +378,6 @@ public class RaceController extends SceneLoadController implements Initializable
 				}
 				break;
 			case 11:
-				System.out.println("Williams: " + results.getResult(i).getDriver().getName() + ", team: " + results.getResult(i).getDriver().getTeamId());
 				if (car21 == null)
 				{
 					car21 = new GUICar(williams1, results.getResult(i).getTime());
@@ -423,7 +395,6 @@ public class RaceController extends SceneLoadController implements Initializable
 		
 		for (int i = 0; i < tempCars.length; i++)
 		{
-			System.out.println(tempCars[i]);
 			cars.add(tempCars[i]);
 		}
 	}
