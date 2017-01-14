@@ -79,7 +79,7 @@ public class Driver
 	
 	public void salaryPercentageBonus(double percentage)
 	{
-		salaryBonus += percentage;
+		salaryBonus += (percentage/100);
 	}
 
 	public void calculateSalary()

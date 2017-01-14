@@ -111,6 +111,7 @@ public class ResultController extends SceneLoadController implements Initializab
 	{
 		// Set points earned text boxes
 		Text[] pointsEarnedText = { points1, points2, points3, points4, points5, points6, points7, points8, points9, points10 };
+		
 		for (int i = 0; i < 10; i++)
 		{
 			pointsEarnedText[i].setText("+" + points[i]);
@@ -122,7 +123,11 @@ public class ResultController extends SceneLoadController implements Initializab
 
 		for (int i = 0; i < 10; i++)
 		{
-			totalPointsText[i].setText(resultsResult.getResult(i).getDriver().getPoints() + "");
+			if (i == 0)
+			{
+				resultsResult.getResult(i).getDriver().salaryPercentageBonus(10);;
+			}
+			totalPointsText[i].setText(resultsResult.getResult(i).getDriver().getPoints() + " " + resultsResult.getResult(i).getDriver().getSalary()/1000000);
 		}
 	}
 
