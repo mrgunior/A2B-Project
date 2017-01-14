@@ -15,13 +15,13 @@
 		{
 			"Speed": "0",
 			"Upgrades": {
-				"WeightRed": "1",
-				"Down": "1",
-				"Susp": "1",
-				"Tires": "1",
-				"Gearbox": "1",
-				"Aero": "1",
-				"Engine": "1"
+				"WeightRed": "0",
+				"Down": "0",
+				"Susp": "0",
+				"Tires": "0",
+				"Gearbox": "0",
+				"Aero": "0",
+				"Engine": "0"
 			},
 			"Braking": "0",
 			"Acceleration": "0",
@@ -43,5 +43,5 @@
 	],
 	"Highscore": "50.0",
 	"Teamname": "Red Bull Racing",
-	"Budget": "2.0E8"
+	"Budget": "2.00E8"
 }
