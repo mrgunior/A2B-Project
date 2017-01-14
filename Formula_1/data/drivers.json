@@ -19,7 +19,7 @@
 		"id": 22,
 		"salary": 12.0,
 		"speed": 90,
-		"points": 8
+		"points": 0
 	},
 	"12": {
 		"number": 11,
@@ -30,7 +30,7 @@
 		"id": 12,
 		"salary": 12.0,
 		"speed": 97,
-		"points": 25
+		"points": 0
 	},
 	"13": {
 		"number": 33,
@@ -52,7 +52,7 @@
 		"id": 14,
 		"salary": 12.0,
 		"speed": 97,
-		"points": 12
+		"points": 0
 	},
 	"15": {
 		"number": 33,
@@ -74,7 +74,7 @@
 		"id": 16,
 		"salary": 12.0,
 		"speed": 97,
-		"points": 2
+		"points": 0
 	},
 	"17": {
 		"number": 33,
@@ -107,7 +107,7 @@
 		"id": 19,
 		"salary": 15.0,
 		"speed": 96,
-		"points": 15
+		"points": 0
 	},
 	"1": {
 		"number": 14,
@@ -140,7 +140,7 @@
 		"id": 3,
 		"salary": 15.0,
 		"speed": 96,
-		"points": 1
+		"points": 0
 	},
 	"4": {
 		"number": 11,
@@ -151,7 +151,7 @@
 		"id": 4,
 		"salary": 12.0,
 		"speed": 97,
-		"points": 6
+		"points": 0
 	},
 	"5": {
 		"number": 33,
@@ -184,7 +184,7 @@
 		"id": 7,
 		"salary": 15.0,
 		"speed": 96,
-		"points": 10
+		"points": 0
 	},
 	"8": {
 		"number": 11,
@@ -206,7 +206,7 @@
 		"id": 9,
 		"salary": 15.0,
 		"speed": 96,
-		"points": 18
+		"points": 0
 	},
 	"20": {
 		"number": 11,
@@ -217,7 +217,7 @@
 		"id": 20,
 		"salary": 12.0,
 		"speed": 97,
-		"points": 4
+		"points": 0
 	},
 	"10": {
 		"number": 11,
