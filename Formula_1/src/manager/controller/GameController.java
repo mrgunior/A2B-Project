@@ -546,6 +546,12 @@ public class GameController
 			fileWriter.write(allDrivers.toJSONString());
 		}
 	}
+	
+	public ArrayList[] readCarsFromJSON() {
+		
+		JSONParser parser = new JSONParser();
+		
+	}
 
 	/**
 	 * 
