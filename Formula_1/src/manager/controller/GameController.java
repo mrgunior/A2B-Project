@@ -43,6 +43,8 @@ public class GameController
 	public GameController(String jsonFile) throws IOException
 	{
 		this.jsonFile = jsonFile;
+		
+		ArrayList<Car> cars = readCarsFromJSON();
 
 		readJsonObjectAndInitialize();
 		timer = new Timer();
@@ -547,9 +549,45 @@ public class GameController
 		}
 	}
 	
-	public ArrayList[] readCarsFromJSON() {
+	public ArrayList<Car> readCarsFromJSON() {
 		
-		JSONParser parser = new JSONParser();
+		System.out.println();
+		String path = "./data/cars.json";
+		ArrayList<Car> cars = new ArrayList<Car>();
+		
+		int nCars = ((JSONObject) readNestedObject(path, new String[] {})).size();
+		
+		for (int i = 1; i <= nCars; i++) {
+			
+			//Car statistics
+			int speed = Integer.parseInt(readNestedObject(path, new String[] { i + "", "Speed" }).toString());
+			int braking = Integer.parseInt(readNestedObject(path, new String[] { i + "", "Braking" }).toString());
+			int acceleration = Integer.parseInt(readNestedObject(path, new String[] { i + "", "Acceleration" }).toString());
+			int weight = Integer.parseInt(readNestedObject(path, new String[] { i + "", "Weight" }).toString());
+			int handling = Integer.parseInt(readNestedObject(path, new String[] { i + "", "Handling" }).toString());
+			
+			//CarID unused right now
+			int carID = Integer.parseInt(readNestedObject(path, new String[] { i + "", "CarID" }).toString());
+			
+			//Upgrades statistics
+			int down = Integer.parseInt(readNestedObject(path, new String[] { i + "", "Upgrades", "Down" }).toString());
+			int aero = Integer.parseInt(readNestedObject(path, new String[] { i + "", "Upgrades", "Aero" }).toString());
+			int gearbox = Integer.parseInt(readNestedObject(path, new String[] { i + "", "Upgrades", "Gearbox" }).toString());
+			int engine = Integer.parseInt(readNestedObject(path, new String[] { i + "", "Upgrades", "Engine" }).toString());
+			int susp = Integer.parseInt(readNestedObject(path, new String[] { i + "", "Upgrades", "Susp" }).toString());
+			int tires = Integer.parseInt(readNestedObject(path, new String[] { i + "", "Upgrades", "Tires" }).toString());
+			int weightRed = Integer.parseInt(readNestedObject(path, new String[] { i + "", "Upgrades", "WeightRed" }).toString());
+			
+			Upgrades upgrades = new Upgrades(down, aero, gearbox, engine, susp, tires, weightRed);
+			Car car = new Car(speed, acceleration, handling, braking, weight, upgrades);
+			
+			System.out.println("Mika is dik");
+			
+			cars.add(car);
+			
+		}
+		
+		return cars;
 		
 	}
 
