@@ -30,6 +30,20 @@ public class SceneLoadController
 		stage.show();
 	}
 	
+	public void gotoFxmlSceneTimed(String name, Stage stage) throws IOException, InterruptedException
+	{
+		Parent root = FXMLLoader.load(this.getClass().getResource("../view/" + name + ".fxml"));
+		
+		formulaApplication.setSceneRoot(root);
+		
+		//stage.setFullScreen(formulaApplication.isFullscreen());
+		stage.setResizable(formulaApplication.isResizable());
+		
+		Thread.sleep(4000);
+		
+		stage.show();
+	}
+	
 //	public void bindBackground(ImageView _background, AnchorPane _root)
 //	{
 //		_background.fitWidthProperty().bind(_root.widthProperty());
