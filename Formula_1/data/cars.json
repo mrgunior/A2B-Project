@@ -1,0 +1,189 @@
+{
+	"1": {
+		"Speed" : 0,
+		"Upgrades" : {
+			"WeightRed" : 0,
+			"Down" : 0,
+			"Susp" : 0,
+			"Tires" : 0,
+			"Gearbox" : 0,
+			"Aero" : 0,
+			"Engine" : 0
+		},
+		"Braking" : 0,
+		"Acceleration" : 0,
+		"Weight" : 0,
+		"Handling" : 0,
+		"CarID": 1
+	},
+	"2": {
+		"Speed" : 0,
+		"Upgrades" : {
+			"WeightRed" : 0,
+			"Down" : 0,
+			"Susp" : 0,
+			"Tires" : 0,
+			"Gearbox" : 0,
+			"Aero" : 0,
+			"Engine" : 0
+		},
+		"Braking" : 0,
+		"Acceleration" : 0,
+		"Weight" : 0,
+		"Handling" : 0,
+		"CarID": 2
+	},
+	"3": {
+		"Speed" : 0,
+		"Upgrades" : {
+			"WeightRed" : 0,
+			"Down" : 0,
+			"Susp" : 0,
+			"Tires" : 0,
+			"Gearbox" : 0,
+			"Aero" : 0,
+			"Engine" : 0
+		},
+		"Braking" : 0,
+		"Acceleration" : 0,
+		"Weight" : 0,
+		"Handling" : 0,
+		"CarID": 3
+	},
+	"4": {
+		"Speed" : 0,
+		"Upgrades" : {
+			"WeightRed" : 0,
+			"Down" : 0,
+			"Susp" : 0,
+			"Tires" : 0,
+			"Gearbox" : 0,
+			"Aero" : 0,
+			"Engine" : 0
+		},
+		"Braking" : 0,
+		"Acceleration" : 0,
+		"Weight" : 0,
+		"Handling" : 0,
+		"CarID": 4
+	},
+	"5": {
+		"Speed" : 0,
+		"Upgrades" : {
+			"WeightRed" : 0,
+			"Down" : 0,
+			"Susp" : 0,
+			"Tires" : 0,
+			"Gearbox" : 0,
+			"Aero" : 0,
+			"Engine" : 0
+		},
+		"Braking" : 0,
+		"Acceleration" : 0,
+		"Weight" : 0,
+		"Handling" : 0,
+		"CarID": 5
+	},
+	"6": {
+		"Speed" : 0,
+		"Upgrades" : {
+			"WeightRed" : 0,
+			"Down" : 0,
+			"Susp" : 0,
+			"Tires" : 0,
+			"Gearbox" : 0,
+			"Aero" : 0,
+			"Engine" : 0
+		},
+		"Braking" : 0,
+		"Acceleration" : 0,
+		"Weight" : 0,
+		"Handling" : 0,
+		"CarID": 6
+	},
+	"7": {
+		"Speed" : 0,
+		"Upgrades" : {
+			"WeightRed" : 0,
+			"Down" : 0,
+			"Susp" : 0,
+			"Tires" : 0,
+			"Gearbox" : 0,
+			"Aero" : 0,
+			"Engine" : 0
+		},
+		"Braking" : 0,
+		"Acceleration" : 0,
+		"Weight" : 0,
+		"Handling" : 0,
+		"CarID": 7
+	},
+	"8": {
+		"Speed" : 0,
+		"Upgrades" : {
+			"WeightRed" : 0,
+			"Down" : 0,
+			"Susp" : 0,
+			"Tires" : 0,
+			"Gearbox" : 0,
+			"Aero" : 0,
+			"Engine" : 0
+		},
+		"Braking" : 0,
+		"Acceleration" : 0,
+		"Weight" : 0,
+		"Handling" : 0,
+		"CarID": 8
+	},
+	"9": {
+		"Speed" : 0,
+		"Upgrades" : {
+			"WeightRed" : 0,
+			"Down" : 0,
+			"Susp" : 0,
+			"Tires" : 0,
+			"Gearbox" : 0,
+			"Aero" : 0,
+			"Engine" : 0
+		},
+		"Braking" : 0,
+		"Acceleration" : 0,
+		"Weight" : 0,
+		"Handling" : 0,
+		"CarID": 9
+	},
+	"10": {
+		"Speed" : 0,
+		"Upgrades" : {
+			"WeightRed" : 0,
+			"Down" : 0,
+			"Susp" : 0,
+			"Tires" : 0,
+			"Gearbox" : 0,
+			"Aero" : 0,
+			"Engine" : 0
+		},
+		"Braking" : 0,
+		"Acceleration" : 0,
+		"Weight" : 0,
+		"Handling" : 0,
+		"CarID": 10
+	},
+	"11": {
+		"Speed" : 0,
+		"Upgrades" : {
+			"WeightRed" : 0,
+			"Down" : 0,
+			"Susp" : 0,
+			"Tires" : 0,
+			"Gearbox" : 0,
+			"Aero" : 0,
+			"Engine" : 0
+		},
+		"Braking" : 0,
+		"Acceleration" : 0,
+		"Weight" : 0,
+		"Handling" : 0,
+		"CarID": 11
+	}
+}
