@@ -82,7 +82,9 @@ public class ResultController extends SceneLoadController implements Initializab
 				if (Profile.getCurrentRace() > Profile.getRacesPerSeason())
 				{
 					gotoFxmlScene("Standings", (Stage) next.getScene().getWindow());
+
 					Profile.setCurrentRace(1);
+					Profile.setCurrentSeason(Profile.getCurrentSeason() + 1);
 				}
 				else
 				{

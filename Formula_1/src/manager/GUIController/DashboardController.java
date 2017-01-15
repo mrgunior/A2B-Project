@@ -25,6 +25,8 @@ public class DashboardController extends SceneLoadController implements Initiali
 	private AnchorPane root;
 	@FXML
 	private ImageView background;
+	@FXML
+	private Text seasonText;
 
 	// Scene elements
 	@FXML
@@ -46,7 +48,7 @@ public class DashboardController extends SceneLoadController implements Initiali
 		background.fitHeightProperty().bind(root.heightProperty());
 		
 		teamName.setText(formulaApplication.getTeamName());
-		//seasonText.setText("Season " + Profile.getCurrentSeason());
+		seasonText.setText("Season " + Profile.getCurrentSeason());
 		raceText.setText(" Race " + Profile.getCurrentRace());
 		balance.setText("$ " + Double.toString(formulaApplication.getBalance()/1000000) + " Million");
 
