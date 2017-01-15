@@ -71,12 +71,12 @@ public class DashboardController extends SceneLoadController implements Initiali
 					}
 				});
 				carManagement.setOnMouseEntered(event -> {
-					carManagement.setStyle("-fx-background-color: rgba(192,192,192,0.2);");
+					carManagement.setStyle("-fx-background-color: rgba(192,192,192,0.2); -fx-border-color: #7c7a7a96; -fx-border-width: 1;");
 					// carManagement.setImage(new
 					// Image("file:images/menu/BackHover.png"));
 				});
 				carManagement.setOnMouseExited(event -> {
-					carManagement.setStyle("-fx-background-color: rgba(0,0,0,0);");
+					carManagement.setStyle("-fx-background-color: rgba(0,0,0,0); -fx-border-color: #7c7a7a96; -fx-border-width: 1;");
 					// carManagement.setImage(new Image("file:images/menu/Back.png"));
 				});
 
@@ -93,12 +93,12 @@ public class DashboardController extends SceneLoadController implements Initiali
 					}
 				});
 				teamManagement.setOnMouseEntered(event -> {
-					teamManagement.setStyle("-fx-background-color: rgba(192,192,192,0.2);");
+					teamManagement.setStyle("-fx-background-color: rgba(192,192,192,0.2); -fx-border-color: #7c7a7a96; -fx-border-width: 1;");
 					// teamManagement.setImage(new
 					// Image("file:images/menu/BackHover.png"));
 				});
 				teamManagement.setOnMouseExited(event -> {
-					teamManagement.setStyle("-fx-background-color: rgba(0,0,0,0);");
+					teamManagement.setStyle("-fx-background-color: rgba(0,0,0,0); -fx-border-color: #7c7a7a96; -fx-border-width: 1;");
 					// teamManagement.setImage(new Image("file:images/menu/Back.png"));
 				});
 
@@ -115,11 +115,11 @@ public class DashboardController extends SceneLoadController implements Initiali
 					}
 				});
 				standings.setOnMouseEntered(event -> {
-					standings.setStyle("-fx-background-color: rgba(192,192,192,0.2);");
+					standings.setStyle("-fx-background-color: rgba(192,192,192,0.2); -fx-border-color: #7c7a7a96; -fx-border-width: 1;");
 					// standings.setImage(new Image("file:images/menu/BackHover.png"));
 				});
 				standings.setOnMouseExited(event -> {
-					standings.setStyle("-fx-background-color: rgba(0,0,0,0);");
+					standings.setStyle("-fx-background-color: rgba(0,0,0,0); -fx-border-color: #7c7a7a96; -fx-border-width: 1;");
 					// standings.setImage(new Image("file:images/menu/Back.png"));
 				});
 
@@ -136,12 +136,12 @@ public class DashboardController extends SceneLoadController implements Initiali
 					}
 				});
 				race.setOnMouseEntered(event -> {
-					race.setStyle("-fx-background-color: rgba(192,192,192,0.2);");
+					race.setStyle("-fx-background-color: rgba(192,192,192,0.2); -fx-border-color: #7c7a7a96; -fx-border-width: 1;");
 					// carManagement.setImage(new
 					// Image("file:images/menu/BackHover.png"));
 				});
 				race.setOnMouseExited(event -> {
-					race.setStyle("-fx-background-color: rgba(0,0,0,0);");
+					race.setStyle("-fx-background-color: rgba(0,0,0,0); -fx-border-color: #7c7a7a96; -fx-border-width: 1;");
 					// carManagement.setImage(new Image("file:images/menu/Back.png"));
 				});
 			
