@@ -9,18 +9,18 @@ import manager.controller.GameController;
 
 public class Profile
 {
-	private double				highScore;
-	private static double		budget;
-	private String				teamName;
-	private List<Driver>		drivers;
-	private static Car			car;
-	private ArrayList<Driver>	allDrivers;
-	private static int			strategy;	// 1 = low risk, 2 = medium risk, 3 = high risk
-	
-	private static int currentRace = 1;
-	private static int currentSeason = 1;
-	private static int racesPerSeason = 2;
-	private static int teamID;
+	private double						highScore;
+	private static double				budget;
+	private String						teamName;
+	private static List<Driver>			drivers;
+	private static Car					car;
+	private static ArrayList<Driver>	allDrivers;
+	private static int					strategy;	// 1 = low risk, 2 = medium risk, 3 = high risk
+
+	private static int	currentRace		= 1;
+	private static int	currentSeason	= 1;
+	private static int	racesPerSeason	= 2;
+	private static int	teamID;
 
 	public Profile(double highScore, double budget, String teamName)
 	{
@@ -45,14 +45,14 @@ public class Profile
 		return budget;
 	}
 
-	public List<Driver> getDrivers()
+	public static List<Driver> getDrivers()
 	{
-		return this.drivers;
+		return drivers;
 	}
 
-	public ArrayList<Driver> getAllDrivers()
+	public static ArrayList<Driver> getAllDrivers()
 	{
-		return this.allDrivers;
+		return allDrivers;
 	}
 
 	public static Car getCar()
@@ -126,32 +126,32 @@ public class Profile
 			Profile.strategy = strategy;
 		}
 	}
-	
+
 	public static int getCurrentRace()
 	{
 		return currentRace;
 	}
-	
+
 	public static void setCurrentRace(int currentRace)
 	{
 		Profile.currentRace = currentRace;
 	}
-	
+
 	public static int getCurrentSeason()
 	{
 		return currentSeason;
 	}
-	
+
 	public static void setCurrentSeason(int currentSeason)
 	{
 		Profile.currentSeason = currentSeason;
 	}
-	
+
 	public static int getRacesPerSeason()
 	{
 		return racesPerSeason;
 	}
-	
+
 	public static void setRacesPerSeason(int racesPerSeason)
 	{
 		Profile.racesPerSeason = racesPerSeason;
@@ -162,7 +162,7 @@ public class Profile
 		resetDriverPoints();
 		resetDriverSalaryBonus();
 		resetCarUpgrades();
-		
+
 		try
 		{
 			GameController.writeDriversToJSON();
@@ -173,14 +173,14 @@ public class Profile
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void resetDriverPoints()
 	{
 		for (int i = 0; i < allDrivers.size(); i++)
 		{
 			allDrivers.get(i).setPoints(0);
 		}
-		
+
 		System.out.println("All driver points have been reset...");
 	}
 
@@ -194,7 +194,7 @@ public class Profile
 
 		System.out.println("All driver salaries have been reset...");
 	}
-	
+
 	public void resetCarUpgrades()
 	{
 		// Set all car stats to 50
@@ -205,10 +205,10 @@ public class Profile
 		car.setWeight(50);
 		// Set all upgrades to 0 with an Upgrades object where all the upgrades are level
 		car.setUpgrades(new Upgrades(0));
-		
+
 		System.out.println("Current car's upgrades have been reset...");
 	}
-	
+
 	public void sortDriversById()
 	{
 		Collections.sort(drivers, Driver.sortById());
@@ -219,12 +219,12 @@ public class Profile
 		drivers.sort(Driver.sortByPoints());
 	}
 
-	public static int getTeamID() 
+	public static int getTeamID()
 	{
 		return teamID;
 	}
-	
-	public static void setTeamID(int teamID) 
+
+	public static void setTeamID(int teamID)
 	{
 		Profile.teamID = teamID;
 	}

@@ -5,15 +5,20 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import com.sun.jndi.url.iiopname.iiopnameURLContextFactory;
+
 import manager.controller.GameController;
 import manager.controller.SceneLoadController;
 import manager.model.Driver;
 import manager.model.Profile;
 import manager.model.Results;
+import manager.model.Standings;
 import manager.model.Stopwatch;
 import manager.model.formulaApplication;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -77,11 +82,49 @@ public class ResultController extends SceneLoadController implements Initializab
 		next.setOnMousePressed(event -> {
 			try
 			{
+				// Handle salaries
+				double currentBudget = Profile.getBudget();
+				double salaries = 0;
+				double winBonus = 0;
+				
+				for (int i = 0; i < resultsResult.getResults().size(); i++)
+				{
+					int teamId = resultsResult.getResult(i).getDriver().getTeamId();
+					
+					if (teamId == Profile.getTeamID())
+					{
+						salaries += resultsResult.getResult(i).getDriver().getSalary();
+					}
+				}
+				
+				resultsResult.sortResultsByTime();
+				if (resultsResult.getResult(0).getDriver().getTeamId() == Profile.getTeamID())
+				{
+					winBonus = 17500000;
+				}
+				
+				Profile.setBudget(currentBudget - salaries + winBonus);
+				
+				// Set all drivers in profile and write to JSON
 				transferResultsToProfileDrivers();
 				GameController.writeDriversToJSON();
+				
+				// Handle amount of races and seasons
 				Profile.setCurrentRace(Profile.getCurrentRace() + 1);
 				if (Profile.getCurrentRace() > Profile.getRacesPerSeason())
 				{
+					Standings standings = new Standings();
+					
+					if (standings.getStandings().get(Profile.getTeamID() - 1) == standings.getMaxScore())
+					{
+						Alert alert = new Alert(AlertType.INFORMATION);
+						alert.setTitle("Test alert");
+						alert.setHeaderText("Your team ended first in the championship!");
+						alert.setContentText("Your team has earned $200 million");
+						alert.showAndWait();
+						Profile.setBudget(Profile.getBudget() + 200000000);
+					}
+					
 					gotoFxmlScene("Standings", (Stage) next.getScene().getWindow());
 
 					Profile.setCurrentRace(1);
@@ -143,7 +186,6 @@ public class ResultController extends SceneLoadController implements Initializab
 			if (i == 0)
 			{
 				resultsResult.getResult(i).getDriver().salaryPercentageBonus(10);
-				;
 			}
 			totalPointsText[i].setText(resultsResult.getResult(i).getDriver().getPoints() + "");
 		}
