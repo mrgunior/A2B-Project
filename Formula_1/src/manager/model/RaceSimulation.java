@@ -1,4 +1,4 @@
-package Templates;
+package manager.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,11 +6,8 @@ import java.util.Random;
 
 import jdk.nashorn.internal.ir.LiteralNode.ArrayLiteralNode;
 import manager.controller.GameController;
-import manager.model.Driver;
-import manager.model.DriverResult;
-import manager.model.Results;
 
-public class RaceSimulationTemplates
+public class RaceSimulation
 {
 
 	/*
@@ -30,9 +27,8 @@ public class RaceSimulationTemplates
 
 	// Filling the lists with driver names and their averages
 	static ArrayList<Driver>	drivers		= getDriverList();
-	static double[]				carAvg		= getDefaultCarAvg();
-	static int[]				scores		= getEmptyScores();
-
+	static ArrayList<Car>		cars 		= getCarList();
+	
 	public static void main(String args[])
 	{
 
@@ -72,23 +68,15 @@ public class RaceSimulationTemplates
 		System.out.println("Result: " + results.toString());
 	}
 
-	private static double[] getDefaultCarAvg()
-	{
-		// TODO Read averages from JSON
-		double[] carAvg = new double[22];
-
-		for (int i = 0; i < 22; i++)
-		{
-			carAvg[i] = 50;
-		}
-
-		return carAvg;
-
-	}
-
 	private static ArrayList<Driver> getDriverList()
 	{
 		return GameController.getDrivers();
+	}
+	
+	private static ArrayList<Car> getCarList() {
+		
+		return GameController.readCarsFromJSON();
+		
 	}
 
 	public static double calculateResult(double avgCar, double avgDriver, double trackDiff, double random)
@@ -116,21 +104,35 @@ public class RaceSimulationTemplates
 		// Generating a random value between 1.1 and 0.9
 		Random value = new Random();
 		double random = 0.9 + (1.1 - 0.9) * value.nextDouble();
-
 		return random;
 	}
 
 	public static Results runSimulation(double trackDiff)
 	{
+		// Real results to be returned
 		Results simulationResults = new Results();
+		// Raw results
 		double results[] = new double[22];
 
 		for (int i = 0; i < 22; i++)
 		{
 			double random = random();
-			//double avgDriver = driverAvg[i];
-			double avgCar = carAvg[i];
-			results[i] = calculateResult(avgCar, drivers.get(i).getAveragePerformance(), trackDiff, random);
+
+			Car car;
+			if (drivers.get(i).getTeamId() == Profile.getTeamID())
+			{
+				car = Profile.getCar();
+			}
+			else
+			{
+				car = cars.get(drivers.get(i).getTeamId()-1);
+			}
+			double carAverage = 0;
+			carAverage = ((car.getAcceleration() + car.getBraking() + car.getHandling() + car.getSpeed())/4);
+			
+			double driverAverage = drivers.get(i).getAveragePerformance();
+			
+			results[i] = calculateResult(carAverage, driverAverage, trackDiff, random);
 
 			// Normalize time for simulation
 			double time = 200 / (results[i] - 30);
@@ -141,18 +143,5 @@ public class RaceSimulationTemplates
 		}
 
 		return simulationResults;
-	}
-
-	private static int[] getEmptyScores()
-	{
-
-		int[] scores = new int[22];
-
-		for (int i = 0; i < 22; i++)
-		{
-			scores[i] = 0;
-		}
-
-		return scores;
 	}
 }

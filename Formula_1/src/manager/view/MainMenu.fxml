@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -62,11 +63,17 @@
          <image>
             <Image url="@../../../images/menu/Settings.png" />
          </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </ImageView>
       <ImageView fx:id="exit" fitHeight="128.0" fitWidth="128.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
          <image>
             <Image url="@../../../images/menu/ExitIcon.png" />
          </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </ImageView>
       <VBox layoutX="-21.0" layoutY="657.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="20.0">
          <children>
@@ -77,6 +84,9 @@
                <VBox.margin>
                   <Insets top="20.0" />
                </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </ImageView>
             <ImageView fx:id="resume" fitHeight="180.0" fitWidth="452.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -85,6 +95,9 @@
                <VBox.margin>
                   <Insets top="20.0" />
                </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </ImageView>
             <ImageView fx:id="highscores" fitHeight="180.0" fitWidth="452.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -93,6 +106,9 @@
                <VBox.margin>
                   <Insets top="20.0" />
                </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </ImageView>
          </children>
       </VBox>

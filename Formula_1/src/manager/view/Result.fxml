@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -34,7 +35,7 @@
       </ImageView>
       <HBox alignment="CENTER" prefHeight="200.0" prefWidth="1920.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Text fill="#ff2800" strokeType="OUTSIDE" text="Results">
+            <Text fx:id="resultsText" fill="#ff2800" strokeType="OUTSIDE" text="Results">
                <font>
                   <Font name="Yu Gothic UI Semilight" size="130.0" />
                </font>
@@ -590,6 +591,9 @@
          <image>
             <Image url="@../../../images/menu/Next.png" />
          </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </ImageView>
    </children>
 </AnchorPane>

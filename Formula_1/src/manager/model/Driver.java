@@ -1,6 +1,5 @@
 package manager.model;
 
-import java.nio.DoubleBuffer;
 import java.util.Comparator;
 
 public class Driver
@@ -8,7 +7,8 @@ public class Driver
 
 	private String	name;
 	private int		id, teamId, points, number, speed, acceleration, turning;
-	private double	salary, salaryBonus;
+	private double	salary;
+	private double	salaryBonus	= 1;
 	private double	averagePerformance;
 
 	public Driver(int id, int teamId, String name, int points, int number, int speed, int acceleration, int turning, double salary)
@@ -30,7 +30,7 @@ public class Driver
 	{
 		return this.name;
 	}
-	
+
 	public int getPoints()
 	{
 		return this.points;
@@ -70,15 +70,35 @@ public class Driver
 	{
 		this.averagePerformance = (speed + acceleration + turning) / 3;
 	}
-	
+
 	public double getAveragePerformance()
 	{
+		calculateAveragePerformance();
 		return averagePerformance;
+	}
+	
+	public void salaryPercentageBonus(double percentage)
+	{
+		salaryBonus += (percentage/100);
+	}
+
+	public void calculateSalary()
+	{
+		calculateAveragePerformance();
+		double avgPerf = getAveragePerformance();
+		double salaryFactor = 100000;
+		this.salary = (avgPerf * salaryFactor * salaryBonus);
 	}
 
 	public double getSalary()
 	{
+		calculateSalary();
 		return this.salary;
+	}
+	
+	public double getSalaryBonus()
+	{
+		return this.salaryBonus;
 	}
 
 	// Setters
@@ -86,17 +106,17 @@ public class Driver
 	{
 		this.name = name;
 	}
-	
+
 	public void setPoints(int points)
 	{
 		this.points = points;
 	}
-	
+
 	public void addPoints(int points)
 	{
 		this.points += points;
 	}
-	
+
 	public void setId(int id)
 	{
 		this.id = id;
@@ -132,6 +152,11 @@ public class Driver
 		this.salary = salary;
 	}
 	
+	public void setSalaryBonus(double salaryBonus)
+	{
+		this.salaryBonus = salaryBonus;
+	}
+
 	/**
 	 * Returns the Comparator to sort by Id
 	 * 
@@ -148,7 +173,7 @@ public class Driver
 			}
 		};
 	}
-	
+
 	/**
 	 * Returns the Comparator to sort by points
 	 * 

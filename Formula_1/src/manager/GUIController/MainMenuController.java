@@ -16,6 +16,7 @@ import javafx.stage.Stage;
 import manager.controller.SceneLoadController;
 import manager.controller.GameController;
 import manager.model.Profile;
+import manager.model.Standings;
 import manager.model.formulaApplication;
 
 public class MainMenuController extends SceneLoadController implements Initializable
@@ -56,9 +57,9 @@ public class MainMenuController extends SceneLoadController implements Initializ
 				startGame.setOnMousePressed(event -> {
 					try
 					{
-						GameController.getProfile().resetDriverPoints();
+						GameController.getProfile().resetProfile();
 						Profile.setBudget(200000000);
-            gotoFxmlScene("ChooseTeam", (Stage) startGame.getScene().getWindow());
+						gotoFxmlScene("ChooseTeam", (Stage) startGame.getScene().getWindow());
 					}
 					
 					catch (IOException e)
@@ -75,6 +76,8 @@ public class MainMenuController extends SceneLoadController implements Initializ
 
 				/// RESUME
 				resume.setOnMousePressed(event -> {
+					Standings standings = new Standings();
+					System.out.println(standings.toString());
 					try
 					{
 						// if the json object that is asked is not equal to

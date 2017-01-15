@@ -3,8 +3,6 @@ package manager.controller;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import javax.swing.plaf.synth.SynthSeparatorUI;
-
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -15,7 +13,6 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-
 import Templates.ReadUpgrades;
 import manager.model.Car;
 import manager.model.Driver;
@@ -48,8 +45,8 @@ public class GameController
 		timer = new Timer();
 
 		autoSave();
-	}
-
+	}	
+	
 	public static Object readNestedObject(String jsonPath, String[] jsonRoute)
 	{
 		JSONParser parser = new JSONParser();
@@ -172,6 +169,9 @@ public class GameController
 			JSONObject jsonObject = (JSONObject) obj;
 
 			// getting the team name
+			int teamID = Integer.parseInt(String.valueOf(jsonObject.get("TeamID")));
+			
+			// getting the team name
 			String teamName = (String) jsonObject.get("Teamname");
 
 			// getting the budget
@@ -179,14 +179,27 @@ public class GameController
 
 			// getting high score
 			double highScore = Double.parseDouble(String.valueOf(jsonObject.get("Highscore")));
+			
+			// getting high score
+			int currentRace = Integer.parseInt(String.valueOf(jsonObject.get("CurrentRace").toString()));
+						
+			// getting high score
+			int currentSeason = Integer.parseInt(String.valueOf(jsonObject.get("CurrentSeason").toString()));
 
 			// Printing them to console
+			System.out.println("TeamID: " + teamID);
 			System.out.println("Teamname: " + teamName);
 			System.out.println("Budget: " + budget);
 			System.out.println("Highscore: " + highScore);
+			System.out.println("CurrentRace: " + currentRace);
+			System.out.println("CurrentSeason: " + currentSeason);
 
 			// 1. create a profile from a json file (data.dat)
 			profile = new Profile(highScore, budget, teamName);
+			
+			Profile.setTeamID(teamID);
+			Profile.setCurrentRace(currentRace);
+			Profile.setCurrentSeason(currentSeason);
 
 			// 2. create the drivers from a json file (data.dat)
 			initializeDriversInProfile(jsonObject);
@@ -210,13 +223,14 @@ public class GameController
 	{
 		List<Driver> driversList = new ArrayList<Driver>();
 
-		String[] infos = new String[6];
+		String[] infos = new String[7];
 		infos[0] = "Speed";
 		infos[1] = "Salary";
 		infos[2] = "Number";
 		infos[3] = "Turning";
 		infos[4] = "Name";
 		infos[5] = "Acceleration";
+		infos[6] = "SalaryBonus";
 
 		String driverString = "Driver";
 		JSONArray driverArray;
@@ -236,38 +250,42 @@ public class GameController
 																	// together with
 																	// the other fields
 
-			for (int d = 0; d < 6; d++)
+			for (int d = 0; d < 7; d++)
 			{
 				String valueOfObject = String.valueOf(object.get(infos[d]));
 				System.out.println(infos[d] + ": " + valueOfObject);
 
 				switch (d)
 				{
-				case 0:
-					int speed = Integer.parseInt(valueOfObject);
-					driver.setSpeed(speed);
-					break;
-				case 1:
-					double salary = Double.parseDouble(valueOfObject);
-					driver.setSalary(salary);
-					break;
-				case 2:
-					int number = Integer.parseInt(valueOfObject);
-					driver.setNumber(number);
-					break;
-				case 3:
-					int turning = Integer.parseInt(valueOfObject);
-					driver.setTurning(turning);
-					break;
-				case 4:
-					driver.setName(valueOfObject);
-					break;
-				case 5:
-					int acceleration = Integer.parseInt(valueOfObject);
-					driver.setAcceleration(acceleration);
-					break;
-				default: // do something else by default
-					break;
+					case 0:
+						int speed = Integer.parseInt(valueOfObject);
+						driver.setSpeed(speed);
+						break;
+					case 1:
+						double salary = Double.parseDouble(valueOfObject);
+						driver.setSalary(salary);
+						break;
+					case 2:
+						int number = Integer.parseInt(valueOfObject);
+						driver.setNumber(number);
+						break;
+					case 3:
+						int turning = Integer.parseInt(valueOfObject);
+						driver.setTurning(turning);
+						break;
+					case 4:
+						driver.setName(valueOfObject);
+						break;
+					case 5:
+						int acceleration = Integer.parseInt(valueOfObject);
+						driver.setAcceleration(acceleration);
+						break;
+					case 6:
+						double salaryBonus = Double.parseDouble(valueOfObject);
+						driver.setSalaryBonus(salaryBonus);
+						break;
+					default: // do something else by default
+						break;
 				}
 			}
 
@@ -417,11 +435,14 @@ public class GameController
 		// ###########################User Profile#########################
 
 		JSONObject obj = new JSONObject(); // create JSON object {}
+		obj.put("TeamID", Profile.getTeamID()); //teamID
 		obj.put("Teamname", profile.getTeamName()); // "TeamName":""
-		obj.put("Budget", String.valueOf(profile.getBudget())); // "Budget":""
+		obj.put("Budget", String.valueOf(Profile.getBudget())); // "Budget":""
 		obj.put("Highscore", String.valueOf(profile.getHighScore())); // "Highscore":""
+		obj.put("CurrentRace", String.valueOf(Profile.getCurrentRace())); // "CurrentRace":""
+		obj.put("CurrentSeason", String.valueOf(Profile.getCurrentSeason())); // "CurrentRace":""
 
-		// 2 for 2 drivers and cars.
+		// 2 for 2 drivers and 1 for cars.
 		for (int i = 0; i < 2; i++)
 		{
 			// ###########################Drivers##############################
@@ -435,6 +456,7 @@ public class GameController
 			info.put("Turning", profile.getDrivers().get(i).getTurning()); // "Turning":""
 			info.put("AveragePerformance", String.valueOf(profile.getDrivers().get(i).getAveragePerformance()));// "AveragePerformance":""
 			info.put("Salary", String.valueOf(profile.getDrivers().get(i).getSalary())); // "Salary":""
+			info.put("SalaryBonus", String.valueOf(profile.getDrivers().get(i).getSalaryBonus())); //salaryBonus
 
 			JSONArray driver = new JSONArray(); // create an array [], name is added later
 			driver.add(info); // you get this [{}]
@@ -504,8 +526,10 @@ public class GameController
 			int turning = Integer.parseInt(readNestedObject(path, new String[] { i + "", "turning" }).toString());
 
 			double salary = (double) ReadUpgrades.readNestedJsonObjects(path, new String[] { i + "", "salary" });
+			double salaryBonus = (double) ReadUpgrades.readNestedJsonObjects(path, new String[] { i + "", "salaryBonus" });
 
 			Driver driver = new Driver(id, teamId, name, points, number, speed, acceleration, turning, salary);
+			driver.setSalaryBonus(salaryBonus);
 			drivers.add(driver);
 			// System.out.println(driver);
 		}
@@ -536,6 +560,7 @@ public class GameController
 			driver.put("acceleration", drivers.get(i).getAcceleration());
 			driver.put("turning", drivers.get(i).getTurning());
 			driver.put("salary", drivers.get(i).getSalary());
+			driver.put("salaryBonus",  drivers.get(i).getSalaryBonus());
 
 			allDrivers.put("" + drivers.get(i).getId() + "", driver);
 		}
@@ -546,14 +571,45 @@ public class GameController
 			fileWriter.write(allDrivers.toJSONString());
 		}
 	}
-
-	/**
-	 * 
-	 * @return
-	 */
-	public String[] top22()
-	{
-		return new String[10];
+	
+	public static ArrayList<Car> readCarsFromJSON() {
+		
+		System.out.println();
+		String path = "./data/cars.json";
+		ArrayList<Car> cars = new ArrayList<Car>();
+		
+		int nCars = ((JSONObject) readNestedObject(path, new String[] {})).size();
+		
+		for (int i = 1; i <= nCars; i++) {
+			
+			//Car statistics
+			int speed = Integer.parseInt(readNestedObject(path, new String[] { i + "", "Speed" }).toString());
+			int braking = Integer.parseInt(readNestedObject(path, new String[] { i + "", "Braking" }).toString());
+			int acceleration = Integer.parseInt(readNestedObject(path, new String[] { i + "", "Acceleration" }).toString());
+			int weight = Integer.parseInt(readNestedObject(path, new String[] { i + "", "Weight" }).toString());
+			int handling = Integer.parseInt(readNestedObject(path, new String[] { i + "", "Handling" }).toString());
+			
+			//CarID unused right now
+			int carID = Integer.parseInt(readNestedObject(path, new String[] { i + "", "CarID" }).toString());
+			
+			//Upgrades statistics
+			int down = Integer.parseInt(readNestedObject(path, new String[] { i + "", "Upgrades", "Down" }).toString());
+			int aero = Integer.parseInt(readNestedObject(path, new String[] { i + "", "Upgrades", "Aero" }).toString());
+			int gearbox = Integer.parseInt(readNestedObject(path, new String[] { i + "", "Upgrades", "Gearbox" }).toString());
+			int engine = Integer.parseInt(readNestedObject(path, new String[] { i + "", "Upgrades", "Engine" }).toString());
+			int susp = Integer.parseInt(readNestedObject(path, new String[] { i + "", "Upgrades", "Susp" }).toString());
+			int tires = Integer.parseInt(readNestedObject(path, new String[] { i + "", "Upgrades", "Tires" }).toString());
+			int weightRed = Integer.parseInt(readNestedObject(path, new String[] { i + "", "Upgrades", "WeightRed" }).toString());
+			
+			Upgrades upgrades = new Upgrades(down, aero, gearbox, engine, susp, tires, weightRed);
+			Car car = new Car(speed, acceleration, handling, braking, weight, upgrades);
+			
+			cars.add(car);
+			
+		}
+		
+		return cars;
+		
 	}
 
 	/**
