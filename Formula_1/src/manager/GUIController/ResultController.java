@@ -11,6 +11,7 @@ import manager.model.Driver;
 import manager.model.Profile;
 import manager.model.Results;
 import manager.model.Stopwatch;
+import manager.model.formulaApplication;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.Image;
@@ -84,6 +85,7 @@ public class ResultController extends SceneLoadController implements Initializab
 					gotoFxmlScene("Standings", (Stage) next.getScene().getWindow());
 
 					Profile.setCurrentRace(1);
+					GameController.getProfile().resetDriverPoints();
 					Profile.setCurrentSeason(Profile.getCurrentSeason() + 1);
 				}
 				else

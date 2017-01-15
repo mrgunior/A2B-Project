@@ -49,7 +49,7 @@ public class StandingsController extends SceneLoadController implements Initiali
 	
 	private ArrayList<Driver> drivers;
 	
-	private static String standingsString = "Standings" + " S" + Profile.getCurrentSeason() + "R" + Profile.getCurrentRace();
+	private static String standingsString;
 
 	public void createListOnScreen(String[] top22)
 	{
@@ -65,10 +65,17 @@ public class StandingsController extends SceneLoadController implements Initiali
 		drivers = GameController.getProfile().getAllDrivers();
 		drivers.sort(Driver.sortByPoints());
 		
+		System.out.println("current:      " + Profile.getCurrentRace());
+		System.out.println("races/season: " + Profile.getRacesPerSeason());
+		
 		if (Profile.getCurrentRace() > Profile.getRacesPerSeason())
 		{
 			standingsString = "Final standings S" + Profile.getCurrentSeason();
 			Profile.setCurrentRace(1);
+		}
+		else
+		{
+			standingsString = "Standings" + " S" + Profile.getCurrentSeason() + "R" + Profile.getCurrentRace();
 		}
 		
 		standingsText.setText(standingsString);
