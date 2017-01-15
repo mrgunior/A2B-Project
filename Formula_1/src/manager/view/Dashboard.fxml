@@ -72,7 +72,7 @@
          </font>
       </Text>
       <Rectangle arcHeight="0.0" arcWidth="0.0" disable="true" fill="#0000004b" height="650.0" stroke="#00000097" strokeType="OUTSIDE" strokeWidth="0.0" visible="false" width="1820.0" AnchorPane.topAnchor="250.0" />
-      <HBox layoutX="50.0" layoutY="270.0" AnchorPane.bottomAnchor="180.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="250.0">
+      <HBox alignment="CENTER" layoutX="50.0" layoutY="270.0" nodeOrientation="LEFT_TO_RIGHT" AnchorPane.bottomAnchor="180.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="250.0">
          <children>
             <GridPane alignment="CENTER" prefHeight="650.0" prefWidth="1820.0" translateY="20.0">
               <columnConstraints>
