@@ -42,8 +42,6 @@ public class GameController
 	public GameController(String jsonFile) throws IOException
 	{
 		this.jsonFile = jsonFile;
-		
-		ArrayList<Car> cars = readCarsFromJSON();
 
 		readJsonObjectAndInitialize();
 		timer = new Timer();
@@ -569,7 +567,7 @@ public class GameController
 		}
 	}
 	
-	public ArrayList<Car> readCarsFromJSON() {
+	public static ArrayList<Car> readCarsFromJSON() {
 		
 		System.out.println();
 		String path = "./data/cars.json";
