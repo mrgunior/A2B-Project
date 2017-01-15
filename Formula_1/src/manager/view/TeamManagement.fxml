@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -33,9 +34,9 @@
       </ImageView>
       <HBox alignment="CENTER" prefHeight="200.0" prefWidth="1920.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Text fill="#ff2800" strokeType="OUTSIDE" strokeWidth="0.0" text="Team Management" textAlignment="CENTER" translateY="-10.0">
+            <Text fill="#ff2800" strokeType="OUTSIDE" text="Team Management" textAlignment="CENTER">
                <font>
-                  <Font name="Yu Gothic UI Semilight" size="80.0" />
+                  <Font name="Yu Gothic UI Semilight" size="100.0" />
                </font>
                <stroke>
                   <LinearGradient endX="1.0" endY="1.0">
@@ -54,6 +55,9 @@
          <image>
             <Image url="@../../../images/menu/Back.png" />
          </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </ImageView>
       <GridPane layoutX="860.0" layoutY="495.0" style="-fx-background-color: rgba(255,255,255,0.6); -fx-border-color: rgba(255,255,255,.3); -fx-border-width: 3;" AnchorPane.bottomAnchor="175.0" AnchorPane.leftAnchor="400.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="300.0">
         <columnConstraints>
@@ -72,9 +76,18 @@
                   <Font name="Yu Gothic UI Semilight" size="50.0" />
                </font>
             </Text>
-            <Pane fx:id="lowRiskBack" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(255,255,255,0.1);" GridPane.rowIndex="1" />
-            <Pane fx:id="mediumRiskBack" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(255,255,255,0.1);" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Pane fx:id="highRiskBack" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(255,255,255,0.1);" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Pane fx:id="lowRiskBack" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(255,255,255,0.1);" GridPane.rowIndex="1">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Pane>
+            <Pane fx:id="mediumRiskBack" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(255,255,255,0.1);" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Pane>
+            <Pane fx:id="highRiskBack" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(255,255,255,0.1);" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Pane>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Low Risk" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <font>
                   <Font name="Yu Gothic UI Light" size="35.0" />
@@ -90,9 +103,18 @@
                   <Font name="Yu Gothic UI Light" size="35.0" />
                </font>
             </Text>
-            <Pane fx:id="lowRisk" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1" />
-            <Pane fx:id="mediumRisk" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Pane fx:id="highRisk" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Pane fx:id="lowRisk" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Pane>
+            <Pane fx:id="mediumRisk" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Pane>
+            <Pane fx:id="highRisk" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Pane>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Low risk text" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                <font>
                   <Font name="Yu Gothic UI Light" size="25.0" />
@@ -109,6 +131,9 @@
                </font>
             </Text>
          </children>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
       </GridPane>
    </children>
 </AnchorPane>

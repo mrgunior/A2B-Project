@@ -10,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
@@ -34,7 +35,7 @@ public class ChooseTeamController extends SceneLoadController implements Initial
 
 	// Team buttons
 	@FXML
-	private Rectangle mercedes, redBull, ferrari, forceIndia, williams, mcLaren, toroRosso, haas, renault, sauber,
+	private Pane mercedes, redBull, ferrari, forceIndia, williams, mcLaren, toroRosso, haas, renault, sauber,
 			manor;
 
 	// Color variables
@@ -42,7 +43,7 @@ public class ChooseTeamController extends SceneLoadController implements Initial
 	Color	teamNotSelectedColor	= new Color(0, 0, 0, 0);
 
 	// Selector variable
-	Rectangle	currentlySelected		= null;
+	Pane	currentlySelected		= null;
 	String		currentlySelectedString	= "";
 
 	@Override
@@ -117,7 +118,7 @@ public class ChooseTeamController extends SceneLoadController implements Initial
 		});
 	}
 
-	private void teamClicked(Rectangle teamButton, String teamName)
+	private void teamClicked(Pane teamButton, String teamName)
 	{
 		setUnSelected(currentlySelected);
 		setSelected(teamButton);
@@ -126,13 +127,13 @@ public class ChooseTeamController extends SceneLoadController implements Initial
 		currentlySelectedString = teamName;
 	}
 
-	public void setSelected(Rectangle driverButton)
+	public void setSelected(Pane driverButton)
 	{
-		driverButton.setStyle("-fx-fill: rgba(0,0,0,0.26);");
+		driverButton.setStyle("-fx-background-color: rgba(0,0,0,0.26);");
 	}
 
-	public void setUnSelected(Rectangle driverButton)
+	public void setUnSelected(Pane driverButton)
 	{
-		driverButton.setStyle("-fx-fill: rgba(0,0,0,0);");
+		driverButton.setStyle("-fx-background-color: rgba(0,0,0,0);");
 	}
 }

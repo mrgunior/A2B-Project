@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.paint.LinearGradient?>
 <?import javafx.scene.paint.Stop?>
@@ -35,6 +38,9 @@
          <image>
             <Image url="@../../../images/menu/Back.png" />
          </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </ImageView>
       <Rectangle fill="#807b7b47" height="200.0" stroke="#ff2800" strokeType="INSIDE" strokeWidth="0.0" width="1920.0" />
       <Text fill="#ff2800" layoutX="8.0" layoutY="171.0" stroke="#a4a4a4" strokeType="OUTSIDE" strokeWidth="0.0" text="Balance:" textAlignment="CENTER" AnchorPane.leftAnchor="8.37109375" AnchorPane.topAnchor="79.2763671875">
@@ -44,7 +50,7 @@
       </Text>
       <HBox alignment="CENTER" layoutX="622.0" layoutY="-12.91015625" prefWidth="1920.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="-12.91015625">
          <children>
-            <Text fx:id="teamName" fill="#ff2800" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;Team Name&gt;" textAlignment="CENTER">
+            <Text fx:id="teamName" fill="#ff2800" strokeType="OUTSIDE" text="&lt;Team Name&gt;" textAlignment="CENTER">
                <font>
                   <Font name="Yu Gothic UI Semilight" size="100.0" />
                </font>
@@ -66,7 +72,7 @@
             <Font name="Yu Gothic UI Semilight" size="80.0" />
          </font>
       </Text>
-      <Text fx:id="seasonText" fill="#ff2800" layoutX="1589.0" layoutY="175.0" stroke="#a4a4a4" strokeType="OUTSIDE" strokeWidth="0.0" text="Season 1" textAlignment="CENTER" AnchorPane.topAnchor="88.671875">
+      <Text fx:id="seasonText" fill="#ff2800" layoutX="1589.0" layoutY="175.0" stroke="#a4a4a4" strokeType="OUTSIDE" strokeWidth="0.0" text="Season 1" textAlignment="CENTER" AnchorPane.rightAnchor="34.3984375" AnchorPane.topAnchor="88.671875">
          <font>
             <Font name="Yu Gothic UI Semilight" size="80.0" />
          </font>
@@ -84,34 +90,78 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Rectangle fill="#0000004b" height="250.0" stroke="#ffffff00" strokeType="OUTSIDE" strokeWidth="0.0" translateX="50.0" width="550.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #0000004b;" translateX="50.0">
+                     <GridPane.margin>
+                        <Insets bottom="37.5" left="180.0" right="180.0" top="37.5" />
+                     </GridPane.margin>
+                  </Pane>
                   <Text fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="Car Management" textAlignment="CENTER" translateX="50.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <font>
                         <Font name="Yu Gothic UI Light" size="64.0" />
                      </font>
                   </Text>
-                  <Rectangle fx:id="carManagement" fill="TRANSPARENT" height="250.0" stroke="#7c7a7a96" strokeType="OUTSIDE" translateX="50.0" width="550.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                  <Rectangle arcHeight="0.0" arcWidth="0.0" fill="#0000004b" height="250.0" stroke="#5b5b5b96" strokeType="OUTSIDE" strokeWidth="0.0" translateX="-50.0" width="550.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                  <Pane fx:id="carManagement" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #7c7a7a96; -fx-border-width: 1;" translateX="50.0">
+                     <GridPane.margin>
+                        <Insets bottom="37.5" left="180.0" right="180.0" top="37.5" />
+                     </GridPane.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Pane>
+                  <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #0000004b;" translateX="-50.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets bottom="37.5" left="180.0" right="180.0" top="37.5" />
+                     </GridPane.margin>
+                  </Pane>
                   <Text fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="Race" textAlignment="CENTER" translateX="-50.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                      <font>
                         <Font name="Yu Gothic UI Light" size="64.0" />
                      </font>
                   </Text>
-                  <Rectangle fx:id="race" arcHeight="0.0" arcWidth="0.0" fill="TRANSPARENT" height="250.0" stroke="#7c7a7a96" strokeType="OUTSIDE" translateX="-50.0" width="550.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-                  <Rectangle arcHeight="0.0" arcWidth="0.0" fill="#0000004b" height="250.0" stroke="#5b5b5b96" strokeType="OUTSIDE" strokeWidth="0.0" translateX="-50.0" width="550.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <Pane fx:id="race" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #7c7a7a96; -fx-border-width: 1;" translateX="-50.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets bottom="37.5" left="180.0" right="180.0" top="37.5" />
+                     </GridPane.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Pane>
+                  <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #0000004b;" translateX="-50.0" GridPane.columnIndex="1">
+                     <GridPane.margin>
+                        <Insets bottom="37.5" left="180.0" right="180.0" top="37.5" />
+                     </GridPane.margin>
+                  </Pane>
                   <Text fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="Team Management" textAlignment="CENTER" translateX="-50.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <font>
                         <Font name="Yu Gothic UI Light" size="64.0" />
                      </font>
                   </Text>
-                  <Rectangle fx:id="teamManagement" arcHeight="0.0" arcWidth="0.0" fill="TRANSPARENT" height="250.0" stroke="#7c7a7a96" strokeType="OUTSIDE" translateX="-50.0" width="550.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                  <Rectangle arcHeight="0.0" arcWidth="0.0" fill="#0000004b" height="250.0" stroke="#5b5b5b96" strokeType="OUTSIDE" strokeWidth="0.0" translateX="50.0" width="550.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                  <Pane fx:id="teamManagement" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #7c7a7a96; -fx-border-width: 1;" translateX="-50.0" GridPane.columnIndex="1">
+                     <GridPane.margin>
+                        <Insets bottom="37.5" left="180.0" right="180.0" top="37.5" />
+                     </GridPane.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Pane>
+                  <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #0000004b;" translateX="50.0" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets bottom="37.5" left="180.0" right="180.0" top="37.5" />
+                     </GridPane.margin>
+                  </Pane>
                   <Text fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="Standings" textAlignment="CENTER" translateX="50.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                      <font>
                         <Font name="Yu Gothic UI Light" size="64.0" />
                      </font>
                   </Text>
-                  <Rectangle fx:id="standings" arcHeight="0.0" arcWidth="0.0" fill="TRANSPARENT" height="250.0" stroke="#7c7a7a96" strokeType="OUTSIDE" translateX="50.0" width="550.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                  <Pane fx:id="standings" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #7c7a7a96; -fx-border-width: 1;" translateX="50.0" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets bottom="37.5" left="180.0" right="180.0" top="37.5" />
+                     </GridPane.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Pane>
                </children>
             </GridPane>
          </children>

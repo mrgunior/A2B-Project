@@ -12,6 +12,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -29,7 +30,7 @@ public class DashboardController extends SceneLoadController implements Initiali
 	private ImageView back;
 
 	@FXML
-	private Rectangle carManagement, teamManagement, standings, race;
+	private Pane carManagement, teamManagement, standings, race;
 
 	// Testing
 	@FXML
@@ -62,12 +63,12 @@ public class DashboardController extends SceneLoadController implements Initiali
 					}
 				});
 				carManagement.setOnMouseEntered(event -> {
-					carManagement.setStyle("-fx-fill: rgba(192,192,192,0.2);");
+					carManagement.setStyle("-fx-background-color: rgba(192,192,192,0.2);");
 					// carManagement.setImage(new
 					// Image("file:images/menu/BackHover.png"));
 				});
 				carManagement.setOnMouseExited(event -> {
-					carManagement.setStyle("-fx-fill: rgba(0,0,0,0);");
+					carManagement.setStyle("-fx-background-color: rgba(0,0,0,0);");
 					// carManagement.setImage(new Image("file:images/menu/Back.png"));
 				});
 
@@ -84,12 +85,12 @@ public class DashboardController extends SceneLoadController implements Initiali
 					}
 				});
 				teamManagement.setOnMouseEntered(event -> {
-					teamManagement.setStyle("-fx-fill: rgba(192,192,192,0.2);");
+					teamManagement.setStyle("-fx-background-color: rgba(192,192,192,0.2);");
 					// teamManagement.setImage(new
 					// Image("file:images/menu/BackHover.png"));
 				});
 				teamManagement.setOnMouseExited(event -> {
-					teamManagement.setStyle("-fx-fill: rgba(0,0,0,0);");
+					teamManagement.setStyle("-fx-background-color: rgba(0,0,0,0);");
 					// teamManagement.setImage(new Image("file:images/menu/Back.png"));
 				});
 
@@ -106,11 +107,11 @@ public class DashboardController extends SceneLoadController implements Initiali
 					}
 				});
 				standings.setOnMouseEntered(event -> {
-					standings.setStyle("-fx-fill: rgba(192,192,192,0.2);");
+					standings.setStyle("-fx-background-color: rgba(192,192,192,0.2);");
 					// standings.setImage(new Image("file:images/menu/BackHover.png"));
 				});
 				standings.setOnMouseExited(event -> {
-					standings.setStyle("-fx-fill: rgba(0,0,0,0);");
+					standings.setStyle("-fx-background-color: rgba(0,0,0,0);");
 					// standings.setImage(new Image("file:images/menu/Back.png"));
 				});
 
@@ -127,12 +128,12 @@ public class DashboardController extends SceneLoadController implements Initiali
 					}
 				});
 				race.setOnMouseEntered(event -> {
-					race.setStyle("-fx-fill: rgba(192,192,192,0.2);");
+					race.setStyle("-fx-background-color: rgba(192,192,192,0.2);");
 					// carManagement.setImage(new
 					// Image("file:images/menu/BackHover.png"));
 				});
 				race.setOnMouseExited(event -> {
-					race.setStyle("-fx-fill: rgba(0,0,0,0);");
+					race.setStyle("-fx-background-color: rgba(0,0,0,0);");
 					// carManagement.setImage(new Image("file:images/menu/Back.png"));
 				});
 			

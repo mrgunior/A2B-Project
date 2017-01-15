@@ -9,10 +9,10 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.paint.LinearGradient?>
 <?import javafx.scene.paint.Stop?>
-<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
@@ -68,130 +68,157 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Text stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Mercedes AMG Petronas" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                  <Text stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Mercedes AMG Petronas" textAlignment="CENTER" translateY="-5.0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                      <font>
                         <Font name="Yu Gothic UI Light" size="70.0" />
                      </font>
                   </Text>
-                  <Text stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Red Bull Racing" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                  <Text stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Red Bull Racing" textAlignment="CENTER" translateY="-5.0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                      <font>
                         <Font name="Yu Gothic UI Light" size="70.0" />
                      </font>
                   </Text>
-                  <Text stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Scudera Ferrari" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                  <Text stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Scudera Ferrari" textAlignment="CENTER" translateY="-5.0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                      <font>
                         <Font name="Yu Gothic UI Light" size="70.0" />
                      </font>
                   </Text>
-                  <Text stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Sahara Force India" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                  <Text stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Sahara Force India" textAlignment="CENTER" translateY="-5.0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                      <font>
                         <Font name="Yu Gothic UI Light" size="70.0" />
                      </font>
                   </Text>
-                  <Text stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Williams Martini Racing" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                  <Text stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Williams Martini Racing" textAlignment="CENTER" translateY="-5.0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                      <font>
                         <Font name="Yu Gothic UI Light" size="70.0" />
                      </font>
                   </Text>
-                  <Text stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="McLaren Honda" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                  <Text stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="McLaren Honda" textAlignment="CENTER" translateY="-5.0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                      <font>
                         <Font name="Yu Gothic UI Light" size="70.0" />
                      </font>
                   </Text>
-                  <Text stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Scuderia Toro Rosso" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                  <Text stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Scuderia Toro Rosso" textAlignment="CENTER" translateY="-5.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                      <font>
                         <Font name="Yu Gothic UI Light" size="70.0" />
                      </font>
                   </Text>
-                  <Text stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Haas F1 Team" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                  <Text stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Haas F1 Team" textAlignment="CENTER" translateY="-5.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                      <font>
                         <Font name="Yu Gothic UI Light" size="70.0" />
                      </font>
                   </Text>
-                  <Text stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Renault" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                  <Text stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Renault" textAlignment="CENTER" translateY="-5.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                      <font>
                         <Font name="Yu Gothic UI Light" size="70.0" />
                      </font>
                   </Text>
-                  <Text stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Sauber F1 Team" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                  <Text stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Sauber F1 Team" textAlignment="CENTER" translateY="-5.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                      <font>
                         <Font name="Yu Gothic UI Light" size="70.0" />
                      </font>
                   </Text>
-                  <Text stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Manor Racing" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                  <Text stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Manor Racing" textAlignment="CENTER" translateY="-5.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                      <font>
                         <Font name="Yu Gothic UI Light" size="70.0" />
                      </font>
                   </Text>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                  <Pane fx:id="mercedes" prefHeight="200.0" prefWidth="200.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                      <GridPane.margin>
-                        <Insets left="20.0" />
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                      </GridPane.margin>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+                  </Pane>
+                  <Pane fx:id="redBull" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                      <GridPane.margin>
-                        <Insets left="20.0" />
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                      </GridPane.margin>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS">
+                  </Pane>
+                  <Pane fx:id="ferrari" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                      <GridPane.margin>
-                        <Insets left="20.0" />
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                      </GridPane.margin>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS">
+                  </Pane>
+                  <Pane fx:id="forceIndia" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                      <GridPane.margin>
-                        <Insets left="20.0" />
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                      </GridPane.margin>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.vgrow="ALWAYS">
+                  </Pane>
+                  <Pane fx:id="williams" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                      <GridPane.margin>
-                        <Insets left="20.0" />
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                      </GridPane.margin>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5" GridPane.vgrow="ALWAYS">
+                  </Pane>
+                  <Pane fx:id="mcLaren" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="5">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                      <GridPane.margin>
-                        <Insets left="20.0" />
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                      </GridPane.margin>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                  </Pane>
+                  <Pane fx:id="toroRosso" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                      <GridPane.margin>
-                        <Insets left="20.0" />
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                      </GridPane.margin>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+                  </Pane>
+                  <Pane fx:id="haas" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                      <GridPane.margin>
-                        <Insets left="20.0" />
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                      </GridPane.margin>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS">
+                  </Pane>
+                  <Pane fx:id="renault" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                      <GridPane.margin>
-                        <Insets left="20.0" />
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                      </GridPane.margin>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS">
+                  </Pane>
+                  <Pane fx:id="sauber" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                      <GridPane.margin>
-                        <Insets left="20.0" />
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                      </GridPane.margin>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.vgrow="ALWAYS">
+                  </Pane>
+                  <Pane fx:id="manor" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                      <GridPane.margin>
-                        <Insets left="20.0" />
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                      </GridPane.margin>
-                  </ImageView>
-                  <Rectangle fx:id="mercedes" arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="112.0" stroke="#141414" strokeWidth="0.0" width="845.0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
-                  <Rectangle fx:id="redBull" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="112.0" stroke="#141414" strokeWidth="0.0" width="845.0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
-                  <Rectangle fx:id="ferrari" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="112.0" stroke="#141414" strokeWidth="0.0" width="845.0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
-                  <Rectangle fx:id="forceIndia" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="112.0" stroke="#141414" strokeWidth="0.0" width="845.0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
-                  <Rectangle fx:id="williams" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="112.0" stroke="#141414" strokeWidth="0.0" width="845.0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
-                  <Rectangle fx:id="mcLaren" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="112.0" stroke="#141414" strokeWidth="0.0" width="845.0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
-                  <Rectangle fx:id="toroRosso" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="112.0" stroke="#141414" strokeWidth="0.0" width="845.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
-                  <Rectangle fx:id="haas" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="112.0" stroke="#141414" strokeWidth="0.0" width="845.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
-                  <Rectangle fx:id="renault" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="112.0" stroke="#141414" strokeWidth="0.0" width="845.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
-                  <Rectangle fx:id="sauber" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="112.0" stroke="#141414" strokeWidth="0.0" width="845.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
-                  <Rectangle fx:id="manor" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="112.0" stroke="#141414" strokeWidth="0.0" width="845.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                  </Pane>
+                  <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                  </Pane>
                </children>
                <cursor>
-                  <Cursor fx:constant="HAND" />
+                  <Cursor fx:constant="DEFAULT" />
                </cursor>
             </GridPane>
          </children>
@@ -200,6 +227,9 @@
          <image>
             <Image url="@../../../images/menu/Next.png" />
          </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </ImageView>
    </children>
 </AnchorPane>

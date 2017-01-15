@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -45,6 +46,9 @@
          <image>
             <Image url="@../../../images/menu/Back.png" />
          </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </ImageView>
       <HBox alignment="CENTER" layoutX="704.0" layoutY="75.716796875" prefHeight="200.0" prefWidth="1920.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0">
          <children>
