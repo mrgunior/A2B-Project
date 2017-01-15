@@ -37,7 +37,7 @@
          </image>
       </ImageView>
       <Rectangle fill="#807b7b47" height="200.0" stroke="#ff2800" strokeType="INSIDE" strokeWidth="0.0" width="1920.0" />
-      <Text fill="#ff2800" layoutX="8.37109375" layoutY="171.0" stroke="#a4a4a4" strokeType="OUTSIDE" strokeWidth="0.0" text="Balance:" textAlignment="CENTER" AnchorPane.leftAnchor="8.37109375" AnchorPane.topAnchor="79.2763671875">
+      <Text fill="#ff2800" layoutX="8.0" layoutY="171.0" stroke="#a4a4a4" strokeType="OUTSIDE" strokeWidth="0.0" text="Balance:" textAlignment="CENTER" AnchorPane.leftAnchor="8.37109375" AnchorPane.topAnchor="79.2763671875">
          <font>
             <Font name="Yu Gothic UI Light" size="85.0" />
          </font>
@@ -61,7 +61,12 @@
             </Text>
          </children>
       </HBox>
-      <Text fx:id="balance" fill="#216a2a" layoutX="8.37109375" layoutY="175.6044921875" stroke="#a4a4a4" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;balance&gt;" textAlignment="CENTER" translateX="325.0" AnchorPane.topAnchor="89.2763671875">
+      <Text fx:id="balance" fill="#216a2a" layoutX="8.0" layoutY="175.0" stroke="#a4a4a4" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;balance&gt;" textAlignment="CENTER" translateX="325.0" AnchorPane.topAnchor="89.2763671875">
+         <font>
+            <Font name="Yu Gothic UI Regular" size="80.0" />
+         </font>
+      </Text>
+      <Text fx:id="seasonText" fill="#ff2800" layoutX="1589.0" layoutY="175.0" stroke="#a4a4a4" strokeType="OUTSIDE" strokeWidth="0.0" text="Season 1" textAlignment="CENTER" AnchorPane.topAnchor="88.671875">
          <font>
             <Font name="Yu Gothic UI Regular" size="80.0" />
          </font>
