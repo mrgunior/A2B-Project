@@ -42,7 +42,7 @@
             <Font name="Yu Gothic UI Semilight" size="85.0" />
          </font>
       </Text>
-      <HBox alignment="CENTER" layoutX="622.0" layoutY="-12.91015625" prefWidth="1920.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="-12.91015625">
+      <HBox alignment="CENTER" layoutX="622.0" layoutY="-12.91015625" prefWidth="1920.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-12.91015625">
          <children>
             <Text fx:id="teamName" fill="#ff2800" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;Team Name&gt;" textAlignment="CENTER">
                <font>
@@ -66,7 +66,7 @@
             <Font name="Yu Gothic UI Semilight" size="80.0" />
          </font>
       </Text>
-      <Text fx:id="seasonText" fill="#ff2800" layoutX="1589.0" layoutY="175.0" stroke="#a4a4a4" strokeType="OUTSIDE" strokeWidth="0.0" text="Season 1" textAlignment="CENTER" AnchorPane.topAnchor="88.671875">
+      <Text fx:id="seasonText" fill="#ff2800" layoutX="1589.0" layoutY="175.0" stroke="#a4a4a4" strokeType="OUTSIDE" strokeWidth="0.0" text="Season 1" textAlignment="CENTER" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="88.671875">
          <font>
             <Font name="Yu Gothic UI Semilight" size="80.0" />
          </font>
