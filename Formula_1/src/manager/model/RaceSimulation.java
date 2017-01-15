@@ -118,11 +118,21 @@ public class RaceSimulation
 		{
 			double random = random();
 
-			Car car = cars.get(drivers.get(i).getTeamId()-1);
-			double average = 1;
-			average = ((car.getAcceleration() + car.getBraking() + car.getHandling() + car.getSpeed())/4);
+			Car car;
+			if (drivers.get(i).getTeamId() == Profile.getTeamID())
+			{
+				car = Profile.getCar();
+			}
+			else
+			{
+				car = cars.get(drivers.get(i).getTeamId()-1);
+			}
+			double carAverage = 0;
+			carAverage = ((car.getAcceleration() + car.getBraking() + car.getHandling() + car.getSpeed())/4);
+			
 			double driverAverage = drivers.get(i).getAveragePerformance();
-			results[i] = calculateResult(average, driverAverage, trackDiff, random);
+			
+			results[i] = calculateResult(carAverage, driverAverage, trackDiff, random);
 
 			// Normalize time for simulation
 			double time = 200 / (results[i] - 30);
