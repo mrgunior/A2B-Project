@@ -1,6 +1,6 @@
 {
 	"1": {
-		"Speed" : 0,
+		"Speed" : 50,
 		"Upgrades" : {
 			"WeightRed" : 0,
 			"Down" : 0,
@@ -10,14 +10,14 @@
 			"Aero" : 0,
 			"Engine" : 0
 		},
-		"Braking" : 0,
-		"Acceleration" : 0,
-		"Weight" : 0,
-		"Handling" : 0,
+		"Braking" : 50,
+		"Acceleration" : 50,
+		"Weight" : 750,
+		"Handling" : 50,
 		"CarID": 1
 	},
 	"2": {
-		"Speed" : 0,
+		"Speed" : 50,
 		"Upgrades" : {
 			"WeightRed" : 0,
 			"Down" : 0,
@@ -27,14 +27,14 @@
 			"Aero" : 0,
 			"Engine" : 0
 		},
-		"Braking" : 0,
-		"Acceleration" : 0,
-		"Weight" : 0,
-		"Handling" : 0,
+		"Braking" : 50,
+		"Acceleration" : 50,
+		"Weight" : 750,
+		"Handling" : 50,
 		"CarID": 2
 	},
 	"3": {
-		"Speed" : 0,
+		"Speed" : 50,
 		"Upgrades" : {
 			"WeightRed" : 0,
 			"Down" : 0,
@@ -44,14 +44,14 @@
 			"Aero" : 0,
 			"Engine" : 0
 		},
-		"Braking" : 0,
-		"Acceleration" : 0,
-		"Weight" : 0,
-		"Handling" : 0,
+		"Braking" : 50,
+		"Acceleration" : 50,
+		"Weight" : 750,
+		"Handling" : 50,
 		"CarID": 3
 	},
 	"4": {
-		"Speed" : 0,
+		"Speed" : 50,
 		"Upgrades" : {
 			"WeightRed" : 0,
 			"Down" : 0,
@@ -61,14 +61,14 @@
 			"Aero" : 0,
 			"Engine" : 0
 		},
-		"Braking" : 0,
-		"Acceleration" : 0,
-		"Weight" : 0,
-		"Handling" : 0,
+		"Braking" : 50,
+		"Acceleration" : 50,
+		"Weight" : 750,
+		"Handling" : 50,
 		"CarID": 4
 	},
 	"5": {
-		"Speed" : 0,
+		"Speed" : 50,
 		"Upgrades" : {
 			"WeightRed" : 0,
 			"Down" : 0,
@@ -78,14 +78,14 @@
 			"Aero" : 0,
 			"Engine" : 0
 		},
-		"Braking" : 0,
-		"Acceleration" : 0,
-		"Weight" : 0,
-		"Handling" : 0,
+		"Braking" : 50,
+		"Acceleration" : 50,
+		"Weight" : 750,
+		"Handling" : 50,
 		"CarID": 5
 	},
 	"6": {
-		"Speed" : 0,
+		"Speed" : 50,
 		"Upgrades" : {
 			"WeightRed" : 0,
 			"Down" : 0,
@@ -95,14 +95,14 @@
 			"Aero" : 0,
 			"Engine" : 0
 		},
-		"Braking" : 0,
-		"Acceleration" : 0,
-		"Weight" : 0,
-		"Handling" : 0,
+		"Braking" : 50,
+		"Acceleration" : 50,
+		"Weight" : 750,
+		"Handling" : 50,
 		"CarID": 6
 	},
 	"7": {
-		"Speed" : 0,
+		"Speed" : 50,
 		"Upgrades" : {
 			"WeightRed" : 0,
 			"Down" : 0,
@@ -112,14 +112,14 @@
 			"Aero" : 0,
 			"Engine" : 0
 		},
-		"Braking" : 0,
-		"Acceleration" : 0,
-		"Weight" : 0,
-		"Handling" : 0,
+		"Braking" : 50,
+		"Acceleration" : 50,
+		"Weight" : 750,
+		"Handling" : 50,
 		"CarID": 7
 	},
 	"8": {
-		"Speed" : 0,
+		"Speed" : 50,
 		"Upgrades" : {
 			"WeightRed" : 0,
 			"Down" : 0,
@@ -129,14 +129,14 @@
 			"Aero" : 0,
 			"Engine" : 0
 		},
-		"Braking" : 0,
-		"Acceleration" : 0,
-		"Weight" : 0,
-		"Handling" : 0,
+		"Braking" : 50,
+		"Acceleration" : 50,
+		"Weight" : 750,
+		"Handling" : 50,
 		"CarID": 8
 	},
 	"9": {
-		"Speed" : 0,
+		"Speed" : 50,
 		"Upgrades" : {
 			"WeightRed" : 0,
 			"Down" : 0,
@@ -146,14 +146,14 @@
 			"Aero" : 0,
 			"Engine" : 0
 		},
-		"Braking" : 0,
-		"Acceleration" : 0,
-		"Weight" : 0,
-		"Handling" : 0,
+		"Braking" : 50,
+		"Acceleration" : 50,
+		"Weight" : 750,
+		"Handling" : 50,
 		"CarID": 9
 	},
 	"10": {
-		"Speed" : 0,
+		"Speed" : 50,
 		"Upgrades" : {
 			"WeightRed" : 0,
 			"Down" : 0,
@@ -163,14 +163,14 @@
 			"Aero" : 0,
 			"Engine" : 0
 		},
-		"Braking" : 0,
-		"Acceleration" : 0,
-		"Weight" : 0,
-		"Handling" : 0,
+		"Braking" : 50,
+		"Acceleration" : 50,
+		"Weight" : 750,
+		"Handling" : 50,
 		"CarID": 10
 	},
 	"11": {
-		"Speed" : 0,
+		"Speed" : 50,
 		"Upgrades" : {
 			"WeightRed" : 0,
 			"Down" : 0,
@@ -180,10 +180,10 @@
 			"Aero" : 0,
 			"Engine" : 0
 		},
-		"Braking" : 0,
-		"Acceleration" : 0,
-		"Weight" : 0,
-		"Handling" : 0,
+		"Braking" : 50,
+		"Acceleration" : 50,
+		"Weight" : 750,
+		"Handling" : 50,
 		"CarID": 11
 	}
 }

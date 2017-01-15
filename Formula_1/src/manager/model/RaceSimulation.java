@@ -27,8 +27,8 @@ public class RaceSimulation
 
 	// Filling the lists with driver names and their averages
 	static ArrayList<Driver>	drivers		= getDriverList();
-	static double[]				carAvg		= getDefaultCarAvg();
-
+	static ArrayList<Car>		cars 		= getCarList();
+	
 	public static void main(String args[])
 	{
 
@@ -68,23 +68,15 @@ public class RaceSimulation
 		System.out.println("Result: " + results.toString());
 	}
 
-	private static double[] getDefaultCarAvg()
-	{
-		// TODO Read averages from JSON
-		double[] carAvg = new double[22];
-
-		for (int i = 0; i < 22; i++)
-		{
-			carAvg[i] = 50;
-		}
-
-		return carAvg;
-
-	}
-
 	private static ArrayList<Driver> getDriverList()
 	{
 		return GameController.getDrivers();
+	}
+	
+	private static ArrayList<Car> getCarList() {
+		
+		return GameController.readCarsFromJSON();
+		
 	}
 
 	public static double calculateResult(double avgCar, double avgDriver, double trackDiff, double random)
@@ -125,9 +117,22 @@ public class RaceSimulation
 		for (int i = 0; i < 22; i++)
 		{
 			double random = random();
-			//double avgDriver = driverAvg[i];
-			double avgCar = carAvg[i];
-			results[i] = calculateResult(avgCar, drivers.get(i).getAveragePerformance(), trackDiff, random);
+
+			Car car;
+			if (drivers.get(i).getTeamId() == Profile.getTeamID())
+			{
+				car = Profile.getCar();
+			}
+			else
+			{
+				car = cars.get(drivers.get(i).getTeamId()-1);
+			}
+			double carAverage = 0;
+			carAverage = ((car.getAcceleration() + car.getBraking() + car.getHandling() + car.getSpeed())/4);
+			
+			double driverAverage = drivers.get(i).getAveragePerformance();
+			
+			results[i] = calculateResult(carAverage, driverAverage, trackDiff, random);
 
 			// Normalize time for simulation
 			double time = 200 / (results[i] - 30);

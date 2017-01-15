@@ -3,8 +3,6 @@ package manager.controller;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import javax.swing.plaf.synth.SynthSeparatorUI;
-
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -15,7 +13,6 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-
 import Templates.ReadUpgrades;
 import manager.model.Car;
 import manager.model.Driver;
@@ -43,15 +40,13 @@ public class GameController
 	public GameController(String jsonFile) throws IOException
 	{
 		this.jsonFile = jsonFile;
-		
-		ArrayList<Car> cars = readCarsFromJSON();
 
 		readJsonObjectAndInitialize();
 		timer = new Timer();
 
 		autoSave();
-	}
-
+	}	
+	
 	public static Object readNestedObject(String jsonPath, String[] jsonRoute)
 	{
 		JSONParser parser = new JSONParser();
@@ -174,6 +169,9 @@ public class GameController
 			JSONObject jsonObject = (JSONObject) obj;
 
 			// getting the team name
+			int teamID = Integer.parseInt(String.valueOf(jsonObject.get("TeamID")));
+			
+			// getting the team name
 			String teamName = (String) jsonObject.get("Teamname");
 
 			// getting the budget
@@ -181,14 +179,27 @@ public class GameController
 
 			// getting high score
 			double highScore = Double.parseDouble(String.valueOf(jsonObject.get("Highscore")));
+			
+			// getting high score
+			int currentRace = Integer.parseInt(String.valueOf(jsonObject.get("CurrentRace").toString()));
+						
+			// getting high score
+			int currentSeason = Integer.parseInt(String.valueOf(jsonObject.get("CurrentSeason").toString()));
 
 			// Printing them to console
+			System.out.println("TeamID: " + teamID);
 			System.out.println("Teamname: " + teamName);
 			System.out.println("Budget: " + budget);
 			System.out.println("Highscore: " + highScore);
+			System.out.println("CurrentRace: " + currentRace);
+			System.out.println("CurrentSeason: " + currentSeason);
 
 			// 1. create a profile from a json file (data.dat)
 			profile = new Profile(highScore, budget, teamName);
+			
+			Profile.setTeamID(teamID);
+			Profile.setCurrentRace(currentRace);
+			Profile.setCurrentSeason(currentSeason);
 
 			// 2. create the drivers from a json file (data.dat)
 			initializeDriversInProfile(jsonObject);
@@ -424,9 +435,12 @@ public class GameController
 		// ###########################User Profile#########################
 
 		JSONObject obj = new JSONObject(); // create JSON object {}
+		obj.put("TeamID", Profile.getTeamID()); //teamID
 		obj.put("Teamname", profile.getTeamName()); // "TeamName":""
-		obj.put("Budget", String.valueOf(profile.getBudget())); // "Budget":""
+		obj.put("Budget", String.valueOf(Profile.getBudget())); // "Budget":""
 		obj.put("Highscore", String.valueOf(profile.getHighScore())); // "Highscore":""
+		obj.put("CurrentRace", String.valueOf(Profile.getCurrentRace())); // "CurrentRace":""
+		obj.put("CurrentSeason", String.valueOf(Profile.getCurrentSeason())); // "CurrentRace":""
 
 		// 2 for 2 drivers and 1 for cars.
 		for (int i = 0; i < 2; i++)
@@ -558,7 +572,7 @@ public class GameController
 		}
 	}
 	
-	public ArrayList<Car> readCarsFromJSON() {
+	public static ArrayList<Car> readCarsFromJSON() {
 		
 		System.out.println();
 		String path = "./data/cars.json";
@@ -590,23 +604,12 @@ public class GameController
 			Upgrades upgrades = new Upgrades(down, aero, gearbox, engine, susp, tires, weightRed);
 			Car car = new Car(speed, acceleration, handling, braking, weight, upgrades);
 			
-			System.out.println("Mika is dik");
-			
 			cars.add(car);
 			
 		}
 		
 		return cars;
 		
-	}
-
-	/**
-	 * 
-	 * @return
-	 */
-	public String[] top22()
-	{
-		return new String[10];
 	}
 
 	/**

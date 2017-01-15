@@ -35,7 +35,7 @@
          <children>
             
             <!-- Formula string and settings -->
-            <Text fill="#ff2800" stroke="WHITE" strokeType="OUTSIDE" text="Standings" textAlignment="CENTER">
+            <Text fx:id="standingsText" fill="#ff2800" stroke="WHITE" strokeType="OUTSIDE" text="Standings" textAlignment="CENTER">
                <font>
                   <Font name="Yu Gothic UI Semilight" size="130.0" />
                </font>
