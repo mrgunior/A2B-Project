@@ -3,8 +3,6 @@ package manager.controller;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import javax.swing.plaf.synth.SynthSeparatorUI;
-
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -15,7 +13,6 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-
 import Templates.ReadUpgrades;
 import manager.model.Car;
 import manager.model.Driver;
@@ -33,6 +30,8 @@ public class GameController
 	private static Profile	profile;
 	private Timer			timer;
 	private String			jsonFile;
+	
+
 
 	/**
 	 * when initialized it will call the readJsonObjectAndInitialize() method to create profile according to
@@ -50,8 +49,8 @@ public class GameController
 		timer = new Timer();
 
 		autoSave();
-	}
-
+	}	
+	
 	public static Object readNestedObject(String jsonPath, String[] jsonRoute)
 	{
 		JSONParser parser = new JSONParser();
@@ -181,14 +180,24 @@ public class GameController
 
 			// getting high score
 			double highScore = Double.parseDouble(String.valueOf(jsonObject.get("Highscore")));
+			
+			// getting high score
+			int currentRace = Integer.parseInt(String.valueOf(jsonObject.get("CurrentRace").toString()));
+						
+			// getting high score
+			int currentSeason = Integer.parseInt(String.valueOf(jsonObject.get("CurrentSeason").toString()));
 
 			// Printing them to console
 			System.out.println("Teamname: " + teamName);
 			System.out.println("Budget: " + budget);
 			System.out.println("Highscore: " + highScore);
+			System.out.println("CurrentRace: " + currentRace);
+			System.out.println("CurrentSeason: " + currentSeason);
 
 			// 1. create a profile from a json file (data.dat)
 			profile = new Profile(highScore, budget, teamName);
+			Profile.setCurrentRace(currentRace);
+			Profile.setCurrentSeason(currentSeason);
 
 			// 2. create the drivers from a json file (data.dat)
 			initializeDriversInProfile(jsonObject);
@@ -425,8 +434,10 @@ public class GameController
 
 		JSONObject obj = new JSONObject(); // create JSON object {}
 		obj.put("Teamname", profile.getTeamName()); // "TeamName":""
-		obj.put("Budget", String.valueOf(profile.getBudget())); // "Budget":""
+		obj.put("Budget", String.valueOf(Profile.getBudget())); // "Budget":""
 		obj.put("Highscore", String.valueOf(profile.getHighScore())); // "Highscore":""
+		obj.put("CurrentRace", String.valueOf(Profile.getCurrentRace())); // "CurrentRace":""
+		obj.put("CurrentSeason", String.valueOf(Profile.getCurrentSeason())); // "CurrentRace":""
 
 		// 2 for 2 drivers and 1 for cars.
 		for (int i = 0; i < 2; i++)

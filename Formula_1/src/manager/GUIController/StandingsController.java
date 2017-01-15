@@ -17,6 +17,7 @@ import javafx.stage.Stage;
 import manager.controller.GameController;
 import manager.controller.SceneLoadController;
 import manager.model.Driver;
+import manager.model.Profile;
 import manager.model.formulaApplication;
 
 public class StandingsController extends SceneLoadController implements Initializable
@@ -30,6 +31,8 @@ public class StandingsController extends SceneLoadController implements Initiali
 	// Basic Scene elements
 	@FXML
 	private ImageView back;
+	@FXML
+	Text standingsText;
 
 	// Team Logos
 	@FXML
@@ -45,6 +48,8 @@ public class StandingsController extends SceneLoadController implements Initiali
 			points15, points16, points17, points18, points19, points20, points21, points22;
 	
 	private ArrayList<Driver> drivers;
+	
+	private static String standingsString = "Standings" + " S" + Profile.getCurrentSeason() + "R" + Profile.getCurrentRace();
 
 	public void createListOnScreen(String[] top22)
 	{
@@ -57,14 +62,16 @@ public class StandingsController extends SceneLoadController implements Initiali
 		background.fitWidthProperty().bind(root.widthProperty());
 		background.fitHeightProperty().bind(root.heightProperty());
 		
-		//GameController.getProfile().sortDriversByPoints();
 		drivers = GameController.getProfile().getAllDrivers();
-		
-		//System.out.println("Befor sort: " + drivers);
-		//Collections.sort(drivers, Driver.sortByPoints());
 		drivers.sort(Driver.sortByPoints());
-		//System.out.println("After sort: " + drivers);
 		
+		if (Profile.getCurrentRace() > Profile.getRacesPerSeason())
+		{
+			standingsString = "Final standings S" + Profile.getCurrentSeason();
+			Profile.setCurrentRace(1);
+		}
+		
+		standingsText.setText(standingsString);
 		setStandingNames();
 		setStandingPoints();
 		
@@ -92,6 +99,11 @@ public class StandingsController extends SceneLoadController implements Initiali
 		});
 	}
 
+	public static void setStandingsString(String text)
+	{
+		standingsString = text;
+	}
+	
 	private void setStandingNames()
 	{
 		Text[] names = {name1, name2, name3, name4, name5, name6, name7, name8, name9, name10, name11, name12, name13, name14,

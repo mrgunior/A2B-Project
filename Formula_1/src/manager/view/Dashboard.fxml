@@ -92,7 +92,7 @@
                   </Text>
                   <Rectangle fx:id="carManagement" fill="TRANSPARENT" height="250.0" stroke="#7c7a7a96" strokeType="OUTSIDE" translateX="50.0" width="550.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
                   <Rectangle arcHeight="0.0" arcWidth="0.0" fill="#0000004b" height="250.0" stroke="#5b5b5b96" strokeType="OUTSIDE" strokeWidth="0.0" translateX="-50.0" width="550.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-                  <Text fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="Race" textAlignment="CENTER" translateX="-50.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <Text fx:id="raceText" fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="Race" textAlignment="CENTER" translateX="-50.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                      <font>
                         <Font name="Yu Gothic UI Light" size="64.0" />
                      </font>
