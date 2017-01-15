@@ -19,6 +19,7 @@ import javafx.stage.Stage;
 import manager.controller.GameController;
 import manager.controller.SceneLoadController;
 import manager.model.Driver;
+import manager.model.Profile;
 import manager.model.formulaApplication;
 
 public class ChooseDriverController extends SceneLoadController implements Initializable {
@@ -90,6 +91,8 @@ public class ChooseDriverController extends SceneLoadController implements Initi
 					// formulaApplication.setDrivers(drivers);
 
 				}
+				
+				GameController.writeJsonObjectToFile();
 				gotoFxmlScene("Dashboard", (Stage) next.getScene().getWindow());
 			} catch (IOException e) {
 				e.printStackTrace();

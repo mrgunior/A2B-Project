@@ -29,7 +29,7 @@ public class GameController
 
 	private static Profile	profile;
 	private Timer			timer;
-	private String			jsonFile;
+	private static String			jsonFile;
 
 	/**
 	 * when initialized it will call the readJsonObjectAndInitialize() method to create profile according to
@@ -430,7 +430,7 @@ public class GameController
 	 * @throws IOException
 	 */
 	@SuppressWarnings("unchecked")
-	public void writeJsonObjectToFile() throws IOException
+	public static void writeJsonObjectToFile() throws IOException
 	{
 		// ###########################User Profile#########################
 
