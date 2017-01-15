@@ -12,10 +12,13 @@ import manager.controller.SceneLoadController;
 import manager.model.Driver;
 import manager.model.Profile;
 import manager.model.Results;
+import manager.model.Standings;
 import manager.model.Stopwatch;
 import manager.model.formulaApplication;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -103,6 +106,18 @@ public class ResultController extends SceneLoadController implements Initializab
 				Profile.setCurrentRace(Profile.getCurrentRace() + 1);
 				if (Profile.getCurrentRace() > Profile.getRacesPerSeason())
 				{
+					Standings standings = new Standings();
+					
+					if (standings.getStandings().get(Profile.getTeamID() - 1) == standings.getMaxScore())
+					{
+						Alert alert = new Alert(AlertType.INFORMATION);
+						alert.setTitle("Test alert");
+						alert.setHeaderText("Your team ended first in the championship!");
+						alert.setContentText("Your team has earned $200 million");
+						alert.showAndWait();
+						Profile.setBudget(Profile.getBudget() + 200000000);
+					}
+					
 					gotoFxmlScene("Standings", (Stage) next.getScene().getWindow());
 
 					Profile.setCurrentRace(1);
