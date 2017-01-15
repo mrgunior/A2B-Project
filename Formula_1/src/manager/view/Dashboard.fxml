@@ -113,7 +113,7 @@
                         <Insets bottom="37.5" left="180.0" right="180.0" top="37.5" />
                      </GridPane.margin>
                   </Pane>
-                  <Text fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="Race" textAlignment="CENTER" translateX="-50.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <Text fx:id="raceText" fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;raceText&gt;" textAlignment="CENTER" translateX="-50.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                      <font>
                         <Font name="Yu Gothic UI Light" size="64.0" />
                      </font>
