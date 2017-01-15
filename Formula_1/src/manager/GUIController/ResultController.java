@@ -85,6 +85,7 @@ public class ResultController extends SceneLoadController implements Initializab
 				// Handle salaries
 				double currentBudget = Profile.getBudget();
 				double salaries = 0;
+				double winBonus = 0;
 				
 				for (int i = 0; i < resultsResult.getResults().size(); i++)
 				{
@@ -96,7 +97,13 @@ public class ResultController extends SceneLoadController implements Initializab
 					}
 				}
 				
-				Profile.setBudget(currentBudget - salaries);
+				resultsResult.sortResultsByTime();
+				if (resultsResult.getResult(0).getDriver().getTeamId() == Profile.getTeamID())
+				{
+					winBonus = 17500000;
+				}
+				
+				Profile.setBudget(currentBudget - salaries + winBonus);
 				
 				// Set all drivers in profile and write to JSON
 				transferResultsToProfileDrivers();
