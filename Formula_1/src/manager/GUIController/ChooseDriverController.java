@@ -11,6 +11,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
@@ -32,8 +33,8 @@ public class ChooseDriverController extends SceneLoadController implements Initi
 	private ImageView next;
 
 	@FXML
-	private Rectangle alonso, bottas, button, ericsson, grosjean, gutierrez, hamilton, haryanto, hulkenberg, kvyat,
-			magnussen, massa, nasr, palmer, perez, raikkonnen, ricciardo, rosberg, sainz, verstappen, vettel, wehrlein;
+	private Pane alonso, bottas, button, ericsson, grosjean, gutierrez, hamilton, haryanto, hulkenberg, kvyat,
+	magnussen, massa, nasr, palmer, perez, raikkonnen, ricciardo, rosberg, sainz, verstappen, vettel, wehrlein;
 
 	@FXML
 	private Text alonsoSalary, bottasSalary, buttonSalary, ericssonSalary, grosjeanSalary, gutierrezSalary,
@@ -45,8 +46,8 @@ public class ChooseDriverController extends SceneLoadController implements Initi
 	Color teamSelectedColor = new Color(0, 0, 0, .26);
 	Color teamNotSelectedColor = new Color(0, 0, 0, 0);
 
-	Rectangle driver1 = null;
-	Rectangle driver2 = null;
+	Pane driver1 = null;
+	Pane driver2 = null;
 
 	String driver1String = "";
 	String driver2String = "";
@@ -69,7 +70,6 @@ public class ChooseDriverController extends SceneLoadController implements Initi
 		for (int i = 0; i < 22; i++) {
 			salaries[i].setText("$ " + drivers.get(i).getSalary()/1000000 + " Mill/race");
 		}
-		
 		
 		driver1 = alonso;
 		driver2 = massa;
@@ -182,7 +182,7 @@ public class ChooseDriverController extends SceneLoadController implements Initi
 		});
 	}
 
-	private void selectDriver(Rectangle driverButton, String driverName) {
+	private void selectDriver(Pane driverButton, String driverName) {
 
 		if (driverName != driver1String && driverName != driver2String) {
 
@@ -210,12 +210,15 @@ public class ChooseDriverController extends SceneLoadController implements Initi
 
 	}
 
-	public void setSelected(Rectangle driverButton) {
-		driverButton.setStyle("-fx-fill: rgba(0,0,0,0.26);");
+	public void setSelected(Pane driverButton) {
+		driverButton.setStyle("-fx-background-color: rgba(0,0,0,0.26);");
+	//	driverButton.setStyle("-fx-border-width: 2;");
 	}
 
-	public void setUnSelected(Rectangle driverButton) {
-		driverButton.setStyle("-fx-fill: rgba(0,0,0,0);");
+	public void setUnSelected(Pane driverButton) {
+		driverButton.setStyle("-fx-background-color: rgba(0,0,0,0);");
+	//	driverButton.setStyle("-fx-border-width:  0;");
+		
 	}
 
 }
