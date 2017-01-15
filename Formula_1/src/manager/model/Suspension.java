@@ -6,7 +6,7 @@ public class Suspension
 	public static double priceAtCertainLevel(double level)
 	{
 		//standard level = 0
-		if(level==1)
+		if(level<=1)
 		{
 			return 4.0;
 		}
