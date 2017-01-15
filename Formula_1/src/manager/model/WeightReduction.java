@@ -6,7 +6,7 @@ public class WeightReduction
 	public static double priceAtCertainLevel(double level)
 	{
 		//standard level = 0
-		if(level==1)
+		if(level<=1)
 		{
 			return 20.0;
 		}

@@ -6,7 +6,7 @@ public class DownForce
 	public static double priceAtCertainLevel(double level)
 	{
 		//standard level = 0
-		if(level==1  || level<=0)
+		if(level<=1)
 		{
 			return 6.0;
 		}
