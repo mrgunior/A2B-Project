@@ -162,6 +162,8 @@ public class Profile
 		resetDriverPoints();
 		resetDriverSalaryBonus();
 		resetCarUpgrades();
+		Profile.setCurrentSeason(1);
+		Profile.setCurrentRace(1);
 
 		try
 		{
