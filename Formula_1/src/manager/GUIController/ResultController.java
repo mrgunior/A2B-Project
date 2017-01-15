@@ -5,6 +5,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import com.sun.jndi.url.iiopname.iiopnameURLContextFactory;
+
 import manager.controller.GameController;
 import manager.controller.SceneLoadController;
 import manager.model.Driver;
@@ -77,8 +79,27 @@ public class ResultController extends SceneLoadController implements Initializab
 		next.setOnMousePressed(event -> {
 			try
 			{
+				// Handle salaries
+				double currentBudget = Profile.getBudget();
+				double salaries = 0;
+				
+				for (int i = 0; i < resultsResult.getResults().size(); i++)
+				{
+					int teamId = resultsResult.getResult(i).getDriver().getTeamId();
+					
+					if (teamId == Profile.getTeamID())
+					{
+						salaries += resultsResult.getResult(i).getDriver().getSalary();
+					}
+				}
+				
+				Profile.setBudget(currentBudget - salaries);
+				
+				// Set all drivers in profile and write to JSON
 				transferResultsToProfileDrivers();
 				GameController.writeDriversToJSON();
+				
+				// Handle amount of races and seasons
 				Profile.setCurrentRace(Profile.getCurrentRace() + 1);
 				if (Profile.getCurrentRace() > Profile.getRacesPerSeason())
 				{
@@ -143,7 +164,6 @@ public class ResultController extends SceneLoadController implements Initializab
 			if (i == 0)
 			{
 				resultsResult.getResult(i).getDriver().salaryPercentageBonus(10);
-				;
 			}
 			totalPointsText[i].setText(resultsResult.getResult(i).getDriver().getPoints() + "");
 		}

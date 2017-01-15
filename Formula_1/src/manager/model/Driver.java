@@ -84,6 +84,7 @@ public class Driver
 
 	public void calculateSalary()
 	{
+		calculateAveragePerformance();
 		double avgPerf = getAveragePerformance();
 		double salaryFactor = 100000;
 		this.salary = (avgPerf * salaryFactor * salaryBonus);
