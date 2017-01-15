@@ -30,8 +30,6 @@ public class GameController
 	private static Profile	profile;
 	private Timer			timer;
 	private String			jsonFile;
-	
-
 
 	/**
 	 * when initialized it will call the readJsonObjectAndInitialize() method to create profile according to
@@ -173,6 +171,9 @@ public class GameController
 			JSONObject jsonObject = (JSONObject) obj;
 
 			// getting the team name
+			int teamID = Integer.parseInt(String.valueOf(jsonObject.get("TeamID")));
+			
+			// getting the team name
 			String teamName = (String) jsonObject.get("Teamname");
 
 			// getting the budget
@@ -188,6 +189,7 @@ public class GameController
 			int currentSeason = Integer.parseInt(String.valueOf(jsonObject.get("CurrentSeason").toString()));
 
 			// Printing them to console
+			System.out.println("TeamID: " + teamID);
 			System.out.println("Teamname: " + teamName);
 			System.out.println("Budget: " + budget);
 			System.out.println("Highscore: " + highScore);
@@ -196,6 +198,8 @@ public class GameController
 
 			// 1. create a profile from a json file (data.dat)
 			profile = new Profile(highScore, budget, teamName);
+			
+			Profile.setTeamID(teamID);
 			Profile.setCurrentRace(currentRace);
 			Profile.setCurrentSeason(currentSeason);
 
@@ -433,6 +437,7 @@ public class GameController
 		// ###########################User Profile#########################
 
 		JSONObject obj = new JSONObject(); // create JSON object {}
+		obj.put("TeamID", Profile.getTeamID()); //teamID
 		obj.put("Teamname", profile.getTeamName()); // "TeamName":""
 		obj.put("Budget", String.valueOf(Profile.getBudget())); // "Budget":""
 		obj.put("Highscore", String.valueOf(profile.getHighScore())); // "Highscore":""
@@ -601,23 +606,12 @@ public class GameController
 			Upgrades upgrades = new Upgrades(down, aero, gearbox, engine, susp, tires, weightRed);
 			Car car = new Car(speed, acceleration, handling, braking, weight, upgrades);
 			
-			System.out.println("Mika is dik");
-			
 			cars.add(car);
 			
 		}
 		
 		return cars;
 		
-	}
-
-	/**
-	 * 
-	 * @return
-	 */
-	public String[] top22()
-	{
-		return new String[10];
 	}
 
 	/**

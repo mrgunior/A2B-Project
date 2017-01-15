@@ -20,6 +20,7 @@ public class Profile
 	private static int currentRace = 1;
 	private static int currentSeason = 1;
 	private static int racesPerSeason = 2;
+	private static int teamID;
 
 	public Profile(double highScore, double budget, String teamName)
 	{
@@ -216,6 +217,16 @@ public class Profile
 	public void sortDriversByPoints()
 	{
 		drivers.sort(Driver.sortByPoints());
+	}
+
+	public static int getTeamID() 
+	{
+		return teamID;
+	}
+	
+	public static void setTeamID(int teamID) 
+	{
+		Profile.teamID = teamID;
 	}
 
 }
