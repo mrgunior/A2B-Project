@@ -1,5 +1,6 @@
 package manager.controller;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
@@ -12,12 +13,17 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import jdk.internal.dynalink.beans.StaticClass;
 import manager.model.formulaApplication;
 
 public class SceneLoadController
 {	
+	MediaPlayer mediaPlayer;
+	
 	public void gotoFxmlScene(String name, Stage stage) throws IOException
 	{
 		Parent root = FXMLLoader.load(this.getClass().getResource("../view/" + name + ".fxml"));
@@ -29,20 +35,23 @@ public class SceneLoadController
 		stage.show();
 	}
 	
-	public void gotoFxmlSceneTimed(String name, Stage stage) throws IOException, InterruptedException
-	{
-		Parent root = FXMLLoader.load(this.getClass().getResource("../view/" + name + ".fxml"));
-		
-		formulaApplication.setSceneRoot(root);
-		
-		//stage.setFullScreen(formulaApplication.isFullscreen());
-		stage.setResizable(formulaApplication.isResizable());
-		
-		Thread.sleep(4000);
-		
-		stage.show();
+	public void playAudio(String name) {
+	String musicFile = "audio/" + name;
+	Media sound = new Media(new File(musicFile).toURI().toString());
+	mediaPlayer = new MediaPlayer(sound);
+	mediaPlayer.play();
 	}
 	
+	public void StopAudio(String name) {
+		mediaPlayer.stop();
+	}
+	
+	public Duration getAudioDuration(String name) {
+		String musicFile = "audio/" + name;
+
+		Media sound = new Media(new File(musicFile).toURI().toString());
+		return sound.getDuration();
+	}
 //	public void bindBackground(ImageView _background, AnchorPane _root)
 //	{
 //		_background.fitWidthProperty().bind(_root.widthProperty());
