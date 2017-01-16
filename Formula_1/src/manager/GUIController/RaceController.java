@@ -222,7 +222,7 @@ public class RaceController extends SceneLoadController implements Initializable
 		};
 
 		startRace.setOnMousePressed(event -> {
-			playAudio("race.wav");
+			playAudio("race.wav", 1.0);
 			startRace.setVisible(false);
 			animationTimer.start();
 			stopwatch.start();

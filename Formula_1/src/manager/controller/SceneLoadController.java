@@ -35,12 +35,14 @@ public class SceneLoadController
 		stage.show();
 	}
 	
-	public void playAudio(String name) {
-	String musicFile = "audio/" + name;
-	Media sound = new Media(new File(musicFile).toURI().toString());
-	mediaPlayer = new MediaPlayer(sound);
-	mediaPlayer.play();
-	}
+	public void playAudio(String name, Double volume) {
+		String musicFile = "audio/" + name;
+		Media sound = new Media(new File(musicFile).toURI().toString());
+		mediaPlayer = new MediaPlayer(sound);
+		mediaPlayer.setVolume(volume);
+		mediaPlayer.play();
+		}
+		
 	
 	public void StopAudio(String name) {
 		mediaPlayer.stop();
