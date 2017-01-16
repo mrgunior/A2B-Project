@@ -117,6 +117,8 @@ public class ChooseDriverController extends SceneLoadController implements Initi
 					gamecontroller.initializeDriversInProfile(obj);
 
 				}
+				
+				GameController.writeJsonObjectToFile();
 				gotoFxmlScene("Dashboard", (Stage) next.getScene().getWindow());
 			} catch (IOException e) {
 				e.printStackTrace();
