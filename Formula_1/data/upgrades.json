@@ -6,7 +6,7 @@
 			"level1": 
 			{
 				"name": "Retractible Spoiler",
-				"price": 6000000,
+				"price": 12000000,
 				"positive": 
 				{
 					"handling": 2,
@@ -20,7 +20,7 @@
 			"level2": 
 			{
 				"name": "Carbon Fiber Spoiler",
-				"price": 7850000,
+				"price": 15700000,
 				"positive": 
 				{
 					"handling": 3,
@@ -35,7 +35,7 @@
 			"level3": 
 			{
 				"name": "Frontal Wing Upgrade",
-				"price": 10690000,
+				"price": 21380000,
 				"positive": 
 				{
 					"handling": 4,
@@ -50,7 +50,7 @@
 			"level4": 
 			{
 				"name": "Single Airfoil Wing",
-				"price": 15260000,
+				"price": 30520000,
 				"positive": 
 				{
 					"handling": 6,
@@ -65,7 +65,7 @@
 			"level5": 
 			{
 				"name": "Dual Airfoil Wing",
-				"price": 22960000,
+				"price": 45920000,
 				"positive": 
 				{
 					"handling": 7,
@@ -83,7 +83,7 @@
 			"level1": 
 			{
 				"name": "Reduced Frontal Pressure",
-				"price": 5000000,
+				"price": 10000000,
 				"positive": 
 				{
 					"speed": 1
@@ -109,7 +109,7 @@
 			"level3": 
 			{
 				"name": "Reduced Turbulence",
-				"price": 9050000,
+				"price": 18100000,
 				"positive": 
 				{
 					"speed": 3
@@ -122,7 +122,7 @@
 			"level4": 
 			{
 				"name": "Bodywork Conversion",
-				"price": 13170000,
+				"price": 26340000,
 				"positive": 
 				{
 					"speed": 4
@@ -136,7 +136,7 @@
 			"level5": 
 			{
 				"name": "Computer Generated Airflow",
-				"price": 20410000,
+				"price": 40820000,
 				"positive": 
 				{
 					"speed": 5
@@ -153,7 +153,7 @@
 			"level1": 
 			{
 				"name": "Gear Selection Transmission",
-				"price": 5000000,
+				"price": 10000000,
 				"positive": 
 				{
 					"acceleration": 1
@@ -166,7 +166,7 @@
 			"level2": 
 			{
 				"name": "Semi-Automatic Transmission",
-				"price": 6070000,
+				"price": 12140000,
 				"positive": 
 				{
 					"acceleration": 2
@@ -179,7 +179,7 @@
 			"level3": 
 			{
 				"name": "Manual Transmission",
-				"price": 7530000,
+				"price": 15060000,
 				"positive": 
 				{
 					"acceleration": 3
@@ -192,7 +192,7 @@
 			"level4": 
 			{
 				"name": "CTV Transmission",
-				"price": 9590000,
+				"price": 19180000,
 				"positive": 
 				{
 					"acceleration": 4
@@ -205,7 +205,7 @@
 			"level5": 
 			{
 				"name": "Computer Generated Airflow",
-				"price": 12580000,
+				"price": 25160000,
 				"positive": 
 				{
 					"acceleration": 5
@@ -221,7 +221,7 @@
 			"level1": 
 			{
 				"name": "External Combustion Engine",
-				"price": 8000000,
+				"price": 16000000,
 				"positive": 
 				{
 					"speed": 1,
@@ -235,7 +235,7 @@
 			"level2": 
 			{
 				"name": "Internal Combustion Engine",
-				"price": 11880000,
+				"price": 23760000,
 				"positive": 
 				{
 					"speed": 2,
@@ -249,7 +249,7 @@
 			"level3": 
 			{
 				"name": "V6 Engine",
-				"price": 19000000,
+				"price": 38000000,
 				"positive": 
 				{
 					"speed": 3,
@@ -263,7 +263,7 @@
 			"level4": 
 			{
 				"name": "V8 Engine",
-				"price": 33250000,
+				"price": 66500000,
 				"positive": 
 				{
 					"speed": 4,
@@ -277,7 +277,7 @@
 			"level5": 
 			{
 				"name": "Short Stroke Engine",
-				"price": 64710000,
+				"price": 129420000,
 				"positive": 
 				{
 					"speed": 5,
@@ -294,7 +294,7 @@
 			"level1": 
 			{
 				"name": "Leaf Spring",
-				"price": 4000000,
+				"price": 8000000,
 				"positive": 
 				{
 					"handling": 1,
@@ -308,7 +308,7 @@
 			"level2": 
 			{
 				"name": "Torsion Beam Suspension",
-				"price": 5660000,
+				"price": 11320000,
 				"positive": 
 				{
 					"handling": 2,
@@ -322,7 +322,7 @@
 			"level3": 
 			{
 				"name": "Street Suspension",
-				"price": 8720000,
+				"price": 17440000,
 				"positive": 
 				{
 					"handling": 3,
@@ -336,7 +336,7 @@
 			"level4": 
 			{
 				"name": "Coil Spring",
-				"price": 14990000,
+				"price": 29980000,
 				"positive": 
 				{
 					"handling": 5,
@@ -350,7 +350,7 @@
 			"level5": 
 			{
 				"name": "Race Suspension",
-				"price": 29500000,
+				"price": 59000000,
 				"positive": 
 				{
 					"handling": 6,
@@ -367,7 +367,7 @@
 			"level1": 
 			{
 				"name": "Retractible Spoiler",
-				"price": 10000000,
+				"price": 20000000,
 				"positive": 
 				{
 					"braking": 5,
@@ -382,7 +382,7 @@
 			"level2": 
 			{
 				"name": "Carbon Fiber Spoiler",
-				"price": 12590000,
+				"price": 25180000,
 				"positive": 
 				{
 					"braking": 6,
@@ -397,7 +397,7 @@
 			"level3": 
 			{
 				"name": "Frontal Wing Upgrade",
-				"price": 16220000,
+				"price": 32440000,
 				"positive": 
 				{
 					"braking": 7,
@@ -412,7 +412,7 @@
 			"level4": 
 			{
 				"name": "Single Airfoil Wing",
-				"price": 21430000,
+				"price": 42860000,
 				"positive": 
 				{
 					"braking": 8,
@@ -427,7 +427,7 @@
 			"level5": 
 			{
 				"name": "Dual Airfoil Wing",
-				"price": 29110000,
+				"price": 58220000,
 				"positive": 
 				{
 					"braking": 9,
@@ -445,7 +445,7 @@
 			"level1": 
 			{
 				"name": "Light Body Panels",
-				"price": 20000000,
+				"price": 40000000,
 				"positive": 
 				{
 					"weight": -10,
@@ -459,7 +459,7 @@
 			"level2": 
 			{
 				"name": "Aluminum Chassis",
-				"price": 23230000,
+				"price": 46460000,
 				"positive": 
 				{
 					"weight": -12,
@@ -473,7 +473,7 @@
 			"level3": 
 			{
 				"name": "Weight Reduced Tires",
-				"price": 27190000,
+				"price": 54380000,
 				"positive": 
 				{
 					"weight": -15,
@@ -487,7 +487,7 @@
 			"level4": 
 			{
 				"name": "Lightweight Engine",
-				"price": 32070000,
+				"price": 64140000,
 				"positive": 
 				{
 					"weight": -18,
@@ -501,7 +501,7 @@
 			"level5": 
 			{
 				"name": "CarbonG6:G37 Car Frame",
-				"price": 38140000,
+				"price": 76280000,
 				"positive": 
 				{
 					"weight": -20,

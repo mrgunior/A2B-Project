@@ -82,6 +82,7 @@ public class ResultController extends SceneLoadController implements Initializab
 		resultsText.setText("Results - Race " + Profile.getCurrentRace());
 		setNamesFromResults(resultsResult);
 		setPoints();
+		setLogos();
 
 		Standings standings = new Standings();
 		resultsResult.sortResultsByTime();
@@ -186,6 +187,17 @@ public class ResultController extends SceneLoadController implements Initializab
 				resultsResult.getResult(i).getDriver().salaryPercentageBonus(10);
 			}
 			totalPointsText[i].setText(resultsResult.getResult(i).getDriver().getPoints() + "");
+		}
+	}
+	
+	private void setLogos()
+	{
+		ImageView[] logos = new ImageView[] { logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8, logo9, logo10};
+		resultsResult.sortResultsByTime();
+		
+		for (int i = 0; i < logos.length; i++)
+		{
+			logos[i].setImage(new Image("file:images/Logos/" + resultsResult.getResult(i).getDriver().getTeamId() + ".png"));
 		}
 	}
 
