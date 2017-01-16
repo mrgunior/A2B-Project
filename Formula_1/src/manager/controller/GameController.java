@@ -27,9 +27,10 @@ import manager.model.Upgrades;
 public class GameController
 {
 
-	private static Profile	profile;
-	private Timer			timer;
-	private static String			jsonFile;
+	private static Profile				profile;
+	private Timer						timer;
+	private static String				jsonFile;
+	private static ArrayList<Driver>	drivers;
 
 	/**
 	 * when initialized it will call the readJsonObjectAndInitialize() method to create profile according to
@@ -45,8 +46,8 @@ public class GameController
 		timer = new Timer();
 
 		autoSave();
-	}	
-	
+	}
+
 	public static Object readNestedObject(String jsonPath, String[] jsonRoute)
 	{
 		JSONParser parser = new JSONParser();
@@ -93,7 +94,7 @@ public class GameController
 							{
 								return (jsonObjects[i - 1].get(jsonRoute[i]));
 							}
-							//System.out.println(jsonObjects[i]);
+							// System.out.println(jsonObjects[i]);
 						}
 					}
 				}
@@ -120,11 +121,11 @@ public class GameController
 			@Override
 			public void run()
 			{
-				getDrivers();
+				readDrivers();
 				try
 				{
 					writeJsonObjectToFile();
-					writeDriversToJSON(); //is this really working as expected??
+					writeDriversToJSON(); // is this really working as expected??
 				}
 
 				catch (IOException e)
@@ -171,7 +172,7 @@ public class GameController
 
 			// getting the team name
 			int teamID = Integer.parseInt(String.valueOf(jsonObject.get("TeamID")));
-			
+
 			// getting the team name
 			String teamName = (String) jsonObject.get("Teamname");
 
@@ -180,10 +181,10 @@ public class GameController
 
 			// getting high score
 			double highScore = Double.parseDouble(String.valueOf(jsonObject.get("Highscore")));
-			
+
 			// getting high score
 			int currentRace = Integer.parseInt(String.valueOf(jsonObject.get("CurrentRace").toString()));
-						
+
 			// getting high score
 			int currentSeason = Integer.parseInt(String.valueOf(jsonObject.get("CurrentSeason").toString()));
 
@@ -197,7 +198,7 @@ public class GameController
 
 			// 1. create a profile from a json file (data.dat)
 			profile = new Profile(highScore, budget, teamName);
-			
+
 			Profile.setTeamID(teamID);
 			Profile.setCurrentRace(currentRace);
 			Profile.setCurrentSeason(currentSeason);
@@ -258,35 +259,35 @@ public class GameController
 
 				switch (d)
 				{
-					case 0:
-						int speed = Integer.parseInt(valueOfObject);
-						driver.setSpeed(speed);
-						break;
-					case 1:
-						double salary = Double.parseDouble(valueOfObject);
-						driver.setSalary(salary);
-						break;
-					case 2:
-						int number = Integer.parseInt(valueOfObject);
-						driver.setNumber(number);
-						break;
-					case 3:
-						int turning = Integer.parseInt(valueOfObject);
-						driver.setTurning(turning);
-						break;
-					case 4:
-						driver.setName(valueOfObject);
-						break;
-					case 5:
-						int acceleration = Integer.parseInt(valueOfObject);
-						driver.setAcceleration(acceleration);
-						break;
-					case 6:
-						double salaryBonus = Double.parseDouble(valueOfObject);
-						driver.setSalaryBonus(salaryBonus);
-						break;
-					default: // do something else by default
-						break;
+				case 0:
+					int speed = Integer.parseInt(valueOfObject);
+					driver.setSpeed(speed);
+					break;
+				case 1:
+					double salary = Double.parseDouble(valueOfObject);
+					driver.setSalary(salary);
+					break;
+				case 2:
+					int number = Integer.parseInt(valueOfObject);
+					driver.setNumber(number);
+					break;
+				case 3:
+					int turning = Integer.parseInt(valueOfObject);
+					driver.setTurning(turning);
+					break;
+				case 4:
+					driver.setName(valueOfObject);
+					break;
+				case 5:
+					int acceleration = Integer.parseInt(valueOfObject);
+					driver.setAcceleration(acceleration);
+					break;
+				case 6:
+					double salaryBonus = Double.parseDouble(valueOfObject);
+					driver.setSalaryBonus(salaryBonus);
+					break;
+				default: // do something else by default
+					break;
 				}
 			}
 
@@ -310,23 +311,23 @@ public class GameController
 	public void initializeCarsInProfile(JSONObject jsonObject)
 	{
 		String[] standardCarStuff = new String[5];
-		standardCarStuff[0] = "Speed";
-		standardCarStuff[1] = "Braking";
-		standardCarStuff[2] = "Acceleration";
-		standardCarStuff[3] = "Weight";
-		standardCarStuff[4] = "Handling";
+		standardCarStuff[0] = "speed";
+		standardCarStuff[1] = "braking";
+		standardCarStuff[2] = "acceleration";
+		standardCarStuff[3] = "weight";
+		standardCarStuff[4] = "handling";
 
 		String[] upgradeItems = new String[7];
-		upgradeItems[0] = "WeightRed";
-		upgradeItems[1] = "Down";
-		upgradeItems[2] = "Susp";
-		upgradeItems[3] = "Tires";
-		upgradeItems[4] = "Gearbox";
-		upgradeItems[5] = "Aero";
-		upgradeItems[6] = "Engine";
+		upgradeItems[0] = "weightRed";
+		upgradeItems[1] = "down";
+		upgradeItems[2] = "susp";
+		upgradeItems[3] = "tires";
+		upgradeItems[4] = "gearbox";
+		upgradeItems[5] = "aero";
+		upgradeItems[6] = "engine";
 
 		int i = 0;
-		
+
 		String carString = "Car";
 		JSONArray carArray;
 		JSONObject objectCar;
@@ -335,10 +336,10 @@ public class GameController
 		System.out.println("\n" + carString);
 		carArray = (JSONArray) jsonObject.get(carString);
 		objectCar = (JSONObject) carArray.get(0); // get the first {} object
-												  // in "Car":[{}] and
-		
+													// in "Car":[{}] and
+
 		objectUpgrades = (JSONObject) objectCar.get("Upgrades"); // now get the object Upgrades in the
-																 // object Car [{"Upgrades":{}}]
+																	// object Car [{"Upgrades":{}}]
 
 		// create 2 cars layout
 		Upgrades upgrades = new Upgrades(i, i, i, i, i, i, i);
@@ -352,28 +353,28 @@ public class GameController
 
 			switch (c)
 			{
-				case 0:
-					int speed = Integer.parseInt(valueOfObject);
-					car.setSpeed(speed);
-					break;
-				case 1:
-					int braking = Integer.parseInt(valueOfObject);
-					car.setBraking(braking);
-					break;
-				case 2:
-					int acceleration = Integer.parseInt(valueOfObject);
-					car.setAcceleration(acceleration);
-					break;
-				case 3:
-					int weight = Integer.parseInt(valueOfObject);
-					car.setWeight(weight);
-					break;
-				case 4:
-					int handling = Integer.parseInt(valueOfObject);
-					car.setHandling(handling);
-					break;
-				default: // do something else by default
-					break;
+			case 0:
+				int speed = Integer.parseInt(valueOfObject);
+				car.setSpeed(speed);
+				break;
+			case 1:
+				int braking = Integer.parseInt(valueOfObject);
+				car.setBraking(braking);
+				break;
+			case 2:
+				int acceleration = Integer.parseInt(valueOfObject);
+				car.setAcceleration(acceleration);
+				break;
+			case 3:
+				int weight = Integer.parseInt(valueOfObject);
+				car.setWeight(weight);
+				break;
+			case 4:
+				int handling = Integer.parseInt(valueOfObject);
+				car.setHandling(handling);
+				break;
+			default: // do something else by default
+				break;
 			}
 		}
 
@@ -388,36 +389,36 @@ public class GameController
 
 			switch (u)
 			{
-				case 0:
-					int weightRed = Integer.parseInt(valueOfObject);
-					upgrades.setWeightRed(weightRed);
-					break;
-				case 1:
-					int down = Integer.parseInt(valueOfObject);
-					upgrades.setDown(down);
-					break;
-				case 2:
-					int susp = Integer.parseInt(valueOfObject);
-					upgrades.setSusp(susp);
-					break;
-				case 3:
-					int tires = Integer.parseInt(valueOfObject);
-					upgrades.setTires(tires);
-					break;
-				case 4:
-					int gearbox = Integer.parseInt(valueOfObject);
-					upgrades.setGearbox(gearbox);
-					break;
-				case 5:
-					int aero = Integer.parseInt(valueOfObject);
-					upgrades.setAero(aero);
-					break;
-				case 6:
-					int engine = Integer.parseInt(valueOfObject);
-					upgrades.setEngine(engine);
-					break;
-				default: // do something else by default
-					break;
+			case 0:
+				int weightRed = Integer.parseInt(valueOfObject);
+				upgrades.setWeightRed(weightRed);
+				break;
+			case 1:
+				int down = Integer.parseInt(valueOfObject);
+				upgrades.setDown(down);
+				break;
+			case 2:
+				int susp = Integer.parseInt(valueOfObject);
+				upgrades.setSusp(susp);
+				break;
+			case 3:
+				int tires = Integer.parseInt(valueOfObject);
+				upgrades.setTires(tires);
+				break;
+			case 4:
+				int gearbox = Integer.parseInt(valueOfObject);
+				upgrades.setGearbox(gearbox);
+				break;
+			case 5:
+				int aero = Integer.parseInt(valueOfObject);
+				upgrades.setAero(aero);
+				break;
+			case 6:
+				int engine = Integer.parseInt(valueOfObject);
+				upgrades.setEngine(engine);
+				break;
+			default: // do something else by default
+				break;
 			}
 		}
 
@@ -436,7 +437,7 @@ public class GameController
 		// ###########################User Profile#########################
 
 		JSONObject obj = new JSONObject(); // create JSON object "":{}
-		obj.put("TeamID", Profile.getTeamID()); //teamID
+		obj.put("TeamID", Profile.getTeamID()); // teamID
 		obj.put("Teamname", profile.getTeamName()); // "TeamName":""
 		obj.put("Budget", String.valueOf(Profile.getBudget())); // "Budget":""
 		obj.put("Highscore", String.valueOf(profile.getHighScore())); // "Highscore":""
@@ -457,14 +458,14 @@ public class GameController
 			info.put("turning", Profile.getDrivers().get(i).getTurning()); // "Turning":""
 			info.put("averagePerformance", String.valueOf(Profile.getDrivers().get(i).getAveragePerformance()));// "AveragePerformance":""
 			info.put("salary", String.valueOf(Profile.getDrivers().get(i).getSalary())); // "Salary":""
-			info.put("salaryBonus", String.valueOf(Profile.getDrivers().get(i).getSalaryBonus())); //salaryBonus
+			info.put("salaryBonus", String.valueOf(Profile.getDrivers().get(i).getSalaryBonus())); // salaryBonus
 
 			JSONArray driver = new JSONArray(); // create an array [], name is added later
 			driver.add(info); // you get this [{}]
 			obj.put("Driver" + (i + 1), driver); // "Driver":[{}]
-			
+
 		}
-		
+
 		// ###########################Cars################################
 
 		JSONArray car = new JSONArray(); // create an array [], name is added later
@@ -472,20 +473,20 @@ public class GameController
 		JSONObject standardCarStuff = new JSONObject(); // create an object {} to add in the array //add
 														// the key:value to the object
 
-		standardCarStuff.put("Speed", String.valueOf(Profile.getCar().getSpeed())); 				// "speed":""
-		standardCarStuff.put("Acceleration", String.valueOf(Profile.getCar().getAcceleration())); 	// "acceleration":""
-		standardCarStuff.put("Handling", String.valueOf(Profile.getCar().getHandling())); 			// "handling":""
-		standardCarStuff.put("Braking", String.valueOf(Profile.getCar().getBraking())); 			// "braking":""
-		standardCarStuff.put("Weight", String.valueOf(Profile.getCar().getWeight())); 				// "weight":""
+		standardCarStuff.put("Speed", String.valueOf(Profile.getCar().getSpeed())); // "speed":""
+		standardCarStuff.put("Acceleration", String.valueOf(Profile.getCar().getAcceleration())); // "acceleration":""
+		standardCarStuff.put("Handling", String.valueOf(Profile.getCar().getHandling())); // "handling":""
+		standardCarStuff.put("Braking", String.valueOf(Profile.getCar().getBraking())); // "braking":""
+		standardCarStuff.put("Weight", String.valueOf(Profile.getCar().getWeight())); // "weight":""
 
 		JSONObject upgradeItems = new JSONObject(); // create an object {} to add in the array add the
 													// key:value to the object
-		upgradeItems.put("Down", String.valueOf(Profile.getCar().getUpgrades().getDown())); 		// "down":""
-		upgradeItems.put("Aero", String.valueOf(Profile.getCar().getUpgrades().getAero())); 		// "aero":""
-		upgradeItems.put("Gearbox", String.valueOf(Profile.getCar().getUpgrades().getGearbox())); 	// "gearbox":""
-		upgradeItems.put("Engine", String.valueOf(Profile.getCar().getUpgrades().getEngine())); 	// "engine":""
-		upgradeItems.put("Susp", String.valueOf(Profile.getCar().getUpgrades().getSusp())); 		// "susp":""
-		upgradeItems.put("Tires", String.valueOf(Profile.getCar().getUpgrades().getTires())); 		// "tires":""
+		upgradeItems.put("Down", String.valueOf(Profile.getCar().getUpgrades().getDown())); // "down":""
+		upgradeItems.put("Aero", String.valueOf(Profile.getCar().getUpgrades().getAero())); // "aero":""
+		upgradeItems.put("Gearbox", String.valueOf(Profile.getCar().getUpgrades().getGearbox())); // "gearbox":""
+		upgradeItems.put("Engine", String.valueOf(Profile.getCar().getUpgrades().getEngine())); // "engine":""
+		upgradeItems.put("Susp", String.valueOf(Profile.getCar().getUpgrades().getSusp())); // "susp":""
+		upgradeItems.put("Tires", String.valueOf(Profile.getCar().getUpgrades().getTires())); // "tires":""
 		upgradeItems.put("WeightRed", String.valueOf(Profile.getCar().getUpgrades().getWeightRed()));// "weightRed":""
 		// we are creating this structure: [{}]
 		standardCarStuff.put("Upgrades", upgradeItems); // we are now adding name: "Uprades":[{}]
@@ -505,9 +506,14 @@ public class GameController
 
 	public static ArrayList<Driver> getDrivers()
 	{
+		return drivers;
+	}
+	
+	public static void readDrivers()
+	{
 		System.out.println();
 		String path = "./data/drivers.json";
-		ArrayList<Driver> drivers = new ArrayList<Driver>();
+		ArrayList<Driver> readDrivers = new ArrayList<Driver>();
 
 		// System.out.println();
 		// System.out.println("GameController.getDrivers(): Getting drivers from " + path);
@@ -531,12 +537,12 @@ public class GameController
 
 			Driver driver = new Driver(id, teamId, name, points, number, speed, acceleration, turning, salary);
 			driver.setSalaryBonus(salaryBonus);
-			drivers.add(driver);
+			readDrivers.add(driver);
 			// System.out.println(driver);
 		}
 
 		// System.out.println(drivers);
-		return drivers;
+		drivers =  readDrivers;
 	}
 
 	@SuppressWarnings("unchecked")
@@ -561,10 +567,10 @@ public class GameController
 			driver.put("acceleration", drivers.get(i).getAcceleration());
 			driver.put("turning", drivers.get(i).getTurning());
 			driver.put("salary", drivers.get(i).getSalary());
-			driver.put("salaryBonus",  drivers.get(i).getSalaryBonus());
+			driver.put("salaryBonus", drivers.get(i).getSalaryBonus());
 
 			allDrivers.put("" + drivers.get(i).getId() + "", driver);
-			
+
 			System.out.println(allDrivers);
 		}
 
@@ -574,28 +580,30 @@ public class GameController
 			fileWriter.write(allDrivers.toJSONString());
 		}
 	}
-	
-	public static ArrayList<Car> readCarsFromJSON() {
-		
+
+	public static ArrayList<Car> readCarsFromJSON()
+	{
+
 		System.out.println();
 		String path = "./data/cars.json";
 		ArrayList<Car> cars = new ArrayList<Car>();
-		
+
 		int nCars = ((JSONObject) readNestedObject(path, new String[] {})).size();
-		
-		for (int i = 1; i <= nCars; i++) {
-			
-			//Car statistics
+
+		for (int i = 1; i <= nCars; i++)
+		{
+
+			// Car statistics
 			int speed = Integer.parseInt(readNestedObject(path, new String[] { i + "", "Speed" }).toString());
 			int braking = Integer.parseInt(readNestedObject(path, new String[] { i + "", "Braking" }).toString());
 			int acceleration = Integer.parseInt(readNestedObject(path, new String[] { i + "", "Acceleration" }).toString());
 			int weight = Integer.parseInt(readNestedObject(path, new String[] { i + "", "Weight" }).toString());
 			int handling = Integer.parseInt(readNestedObject(path, new String[] { i + "", "Handling" }).toString());
-			
-			//CarID unused right now
+
+			// CarID unused right now
 			int carID = Integer.parseInt(readNestedObject(path, new String[] { i + "", "CarID" }).toString());
-			
-			//Upgrades statistics
+
+			// Upgrades statistics
 			int down = Integer.parseInt(readNestedObject(path, new String[] { i + "", "Upgrades", "Down" }).toString());
 			int aero = Integer.parseInt(readNestedObject(path, new String[] { i + "", "Upgrades", "Aero" }).toString());
 			int gearbox = Integer.parseInt(readNestedObject(path, new String[] { i + "", "Upgrades", "Gearbox" }).toString());
@@ -603,16 +611,16 @@ public class GameController
 			int susp = Integer.parseInt(readNestedObject(path, new String[] { i + "", "Upgrades", "Susp" }).toString());
 			int tires = Integer.parseInt(readNestedObject(path, new String[] { i + "", "Upgrades", "Tires" }).toString());
 			int weightRed = Integer.parseInt(readNestedObject(path, new String[] { i + "", "Upgrades", "WeightRed" }).toString());
-			
+
 			Upgrades upgrades = new Upgrades(down, aero, gearbox, engine, susp, tires, weightRed);
 			Car car = new Car(speed, acceleration, handling, braking, weight, upgrades);
-			
+
 			cars.add(car);
-			
+
 		}
-		
+
 		return cars;
-		
+
 	}
 
 	/**
