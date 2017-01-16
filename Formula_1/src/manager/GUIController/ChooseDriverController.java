@@ -6,6 +6,9 @@ import java.sql.Array;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.Image;
@@ -19,6 +22,7 @@ import javafx.stage.Stage;
 import manager.controller.GameController;
 import manager.controller.SceneLoadController;
 import manager.model.Driver;
+import manager.model.Profile;
 import manager.model.formulaApplication;
 
 public class ChooseDriverController extends SceneLoadController implements Initializable {
@@ -42,6 +46,9 @@ public class ChooseDriverController extends SceneLoadController implements Initi
 			palmerSalary, perezSalary, raikkonnenSalary, ricciardoSalary, rosbergSalary, sainzSalary, verstappenSalary,
 			vettelSalary, wehrleinSalary;
 	
+	//click count needs to be 2 in order for the drivers to be set
+	private int clickCount = 0;
+	
 	// Color variables
 	Color teamSelectedColor = new Color(0, 0, 0, .26);
 	Color teamNotSelectedColor = new Color(0, 0, 0, 0);
@@ -59,7 +66,8 @@ public class ChooseDriverController extends SceneLoadController implements Initi
 		background.fitWidthProperty().bind(root.widthProperty());
 		background.fitHeightProperty().bind(root.heightProperty());
 		
-		drivers = GameController.getProfile().getAllDrivers();
+		GameController.getProfile();
+		drivers = Profile.getAllDrivers();
 		drivers.sort(Driver.sortById());
 		
 		Text[] salaries = {alonsoSalary, bottasSalary, buttonSalary, ericssonSalary, grosjeanSalary, gutierrezSalary,
@@ -183,10 +191,12 @@ public class ChooseDriverController extends SceneLoadController implements Initi
 		});
 	}
 
+	@SuppressWarnings("unchecked")
 	private void selectDriver(Pane driverButton, String driverName) {
 
 		if (driverName != driver1String && driverName != driver2String) {
 
+			
 			// resetting selected buttons
 			setUnSelected(driver1);
 			setUnSelected(driver2);
@@ -201,14 +211,39 @@ public class ChooseDriverController extends SceneLoadController implements Initi
 			// selecting adequate buttons
 			setSelected(driver1);
 			setSelected(driver2);
-
+			
+			clickCount++;
+			
 		}
-
-		System.out.println("#######################DRIVERS#######################");
-		System.out.println("Driver1: " + driver1String + ", ID: " + driver1.getId());
-		System.out.println("Driver2: " + driver2String + ", ID: " + driver2.getId());
-		System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
-
+		
+		if(clickCount==2)
+		{
+			String dataPath = "./data/drivers.json";
+			
+			JSONObject obj = new JSONObject();
+			
+			JSONObject jsonDriverObject1 = (JSONObject)GameController.readNestedObject(dataPath, new String[] { driver1.getId() });
+			JSONObject jsonDriverObject2 = (JSONObject)GameController.readNestedObject(dataPath, new String[] { driver2.getId() });
+			
+			JSONArray driverArray1 = new JSONArray(); // create an array [], name is added later
+			driverArray1.add(jsonDriverObject1); // you get this [{}]
+			obj.put("Driver1", driverArray1);
+			
+			JSONArray driverArray2 = new JSONArray(); // create an array [], name is added later
+			driverArray2.add(jsonDriverObject2); // you get this [{}]
+			obj.put("Driver2", driverArray2);
+			
+			System.out.println("#######################DRIVER#######################");
+			System.out.println("Driver1: " + driver1String + ", ID: " + driver1.getId());
+			System.out.println("Driver2: " + driver2String + ", ID: " + driver2.getId());
+			
+			System.out.println(obj);
+			
+			GameController gamecontroller = formulaApplication.getGameController();
+			gamecontroller.initializeDriversInProfile(obj);
+			
+			clickCount = 0; //reset it if game wasn't closed but want to start over
+		}
 	}
 
 	public void setSelected(Pane driverButton) {

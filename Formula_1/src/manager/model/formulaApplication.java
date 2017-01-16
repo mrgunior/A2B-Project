@@ -57,22 +57,23 @@ public class formulaApplication extends Application
 	public static String getTeamName()
 	{
 		//call method in GameController to get the teamname 
-		return gamecontroller.getProfile().getTeamName();
+		return GameController.getProfile().getTeamName();
 	}
 	
 	public static void setTeamName(String teamName)
 	{
-		gamecontroller.getProfile().setTeamName(teamName);
+		GameController.getProfile().setTeamName(teamName);
 	}
 	
 	public static void setDrivers(ArrayList<Driver> drivers)
 	{
-		gamecontroller.getProfile().setDrivers(drivers);
+		GameController.getProfile().setDrivers(drivers);
 	}
 	
 	public static double getBalance()
 	{
-		return gamecontroller.getProfile().getBudget();
+		GameController.getProfile();
+		return Profile.getBudget();
 	}
 	
 	//temporary
