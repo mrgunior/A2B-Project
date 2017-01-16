@@ -1,4 +1,4 @@
-package manager.controller;
+package manager.model;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -14,10 +14,6 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import Templates.ReadUpgrades;
-import manager.model.Car;
-import manager.model.Driver;
-import manager.model.Profile;
-import manager.model.Upgrades;
 
 /**
  * @author Victor Wernet

@@ -5,8 +5,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import manager.controller.GameController;
-
 public class Profile
 {
 	private double						highScore;

@@ -2,7 +2,6 @@ package manager.controller;
 
 import javafx.scene.image.ImageView;
 import manager.GUIController.RaceController;
-import manager.model.formulaApplication;
 
 public class GUICar
 {

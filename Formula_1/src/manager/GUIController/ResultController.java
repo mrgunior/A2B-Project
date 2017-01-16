@@ -7,9 +7,9 @@ import java.util.ResourceBundle;
 
 import com.sun.jndi.url.iiopname.iiopnameURLContextFactory;
 
-import manager.controller.GameController;
 import manager.controller.SceneLoadController;
 import manager.model.Driver;
+import manager.model.GameController;
 import manager.model.Profile;
 import manager.model.Results;
 import manager.model.Standings;

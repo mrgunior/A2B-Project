@@ -2,11 +2,8 @@ package manager.model;
 
 import org.json.simple.JSONObject;
 
-import manager.controller.GameController;
-
 public class Car
 {
-
 	private int			speed;
 	private int			acceleration;
 	private int			handling;
@@ -18,18 +15,12 @@ public class Car
 
 	public Car(int speed, int acceleration, int handling, int braking, int weight, Upgrades upgrades)
 	{
-
 		this.speed = speed;
 		this.acceleration = acceleration;
 		this.handling = handling;
 		this.braking = braking;
 		this.weight = weight;
 		this.upgrades = upgrades;
-	}
-
-	public Car()
-	{
-		// TODO Set all the default values of the car
 	}
 
 	public int getSpeed()

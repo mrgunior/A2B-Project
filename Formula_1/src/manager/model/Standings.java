@@ -3,8 +3,6 @@ package manager.model;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import manager.controller.GameController;
-
 public class Standings
 {
 	private static ArrayList<Integer> standings;

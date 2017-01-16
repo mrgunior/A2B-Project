@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Random;
 
 import jdk.nashorn.internal.ir.LiteralNode.ArrayLiteralNode;
-import manager.controller.GameController;
 
 public class RaceSimulation
 {

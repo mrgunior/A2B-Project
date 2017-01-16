@@ -1,7 +1,7 @@
 package manager.GUIController;
 
-import manager.controller.GameController;
 import manager.controller.SceneLoadController;
+import manager.model.GameController;
 import manager.model.Profile;
 import manager.model.formulaApplication;
 import java.io.IOException;

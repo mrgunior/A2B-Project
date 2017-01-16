@@ -79,7 +79,12 @@ public class Driver
 	
 	public void salaryPercentageBonus(double percentage)
 	{
-		salaryBonus += (percentage/100);
+		this.salaryBonus += (percentage/100);
+	}
+	
+	public double getSalaryPercentageBonus()
+	{
+		return this.salaryBonus;
 	}
 
 	public void calculateSalary()
@@ -115,6 +120,11 @@ public class Driver
 	public void addPoints(int points)
 	{
 		this.points += points;
+	}
+	
+	public int getAddPoints()
+	{
+		return this.points;
 	}
 
 	public void setId(int id)

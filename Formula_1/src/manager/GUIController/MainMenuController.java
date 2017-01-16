@@ -12,7 +12,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import manager.controller.SceneLoadController;
-import manager.controller.GameController;
+import manager.model.GameController;
 import manager.model.Profile;
 import manager.model.Standings;
 import manager.model.formulaApplication;

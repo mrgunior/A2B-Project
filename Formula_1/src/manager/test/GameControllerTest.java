@@ -10,11 +10,12 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import manager.controller.GameController;
 import manager.model.Profile;
 import manager.model.Upgrades;
 import manager.model.Car;
 import manager.model.Driver;
+import manager.model.GameController;
+
 import static org.hamcrest.CoreMatchers.*;
 
 public class GameControllerTest 

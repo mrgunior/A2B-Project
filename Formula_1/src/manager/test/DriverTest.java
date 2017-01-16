@@ -47,6 +47,75 @@ public class DriverTest
 		assertTrue("driver name has been set correctly via setName()", driver.getName().equals("Bob"));
 	}
 	
+
+	@Test
+	public void testGetPoints()
+	{
+		assertEquals("driver points has been initialized correctly via constructor", driver.getPoints(), points);
+	}
+	
+	@Test
+	public void testSetPoints()
+	{
+		driver.setPoints(10);
+		assertTrue("driver points has been set correctly via setPoints()", driver.getPoints()==10);
+	}
+	
+	@Test
+	public void testGetId()
+	{
+		assertEquals("driver id has been initialized correctly via constructor", driver.getId(), id);
+	}
+	
+	@Test
+	public void testSetId()
+	{
+		driver.setId(10);
+		assertTrue("driver id has been set correctly via setId()", driver.getId()==10);
+	}
+	
+	@Test
+	public void testgetTeamId()
+	{
+		assertEquals("driver team id has been initialized correctly via constructor", driver.getTeamId(), teamId);
+	}
+	
+	@Test
+	public void testSetTeamId()
+	{
+		driver.setTeamId(10);
+		assertTrue("driver team id has been set correctly via setTeamId()", driver.getTeamId()==10);
+	}
+
+	@Test
+	public void testSalaryPercentageBonus()
+	{
+		double value = 1.01;
+		driver.salaryPercentageBonus(1);
+		assertEquals("driver salary percentage bonus been initialized correctly via method", driver.getSalaryPercentageBonus(), value, 0.01);
+	}
+	
+	@Test
+	public void testgetSalaryBonus()
+	{
+		assertEquals("driver salary bonus is correctly fixed", driver.getSalaryBonus(), 1, 0.01);
+	}
+	
+
+	@Test
+	public void testGetAddPoints()
+	{
+		driver.addPoints(1);
+		assertEquals("driver points been initialized correctly via method", driver.getAddPoints(), 21);
+	}
+	
+	@Test
+	public void testSetSalaryBonus()
+	{
+		driver.setSalaryBonus(10);
+		assertTrue("driver salary bonus is correctly fixed via method", driver.getSalaryBonus()==10);
+	}
+	
 	@Test
 	public void testGetNumber()
 	{
