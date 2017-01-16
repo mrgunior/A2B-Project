@@ -81,8 +81,7 @@ public class StandingsController extends SceneLoadController implements Initiali
 		standingsText.setText(standingsString);
 		setStandingNames();
 		setStandingPoints();
-		
-		//name1.setText(GameController.getTeamName());
+		//setStandingLogos();
 
 		// Click
 		back.setOnMousePressed(event -> {
@@ -111,7 +110,7 @@ public class StandingsController extends SceneLoadController implements Initiali
 		standingsString = text;
 	}
 	
-	private void setStandingNames()
+	private void setStandingNames()  
 	{
 		Text[] names = {name1, name2, name3, name4, name5, name6, name7, name8, name9, name10, name11, name12, name13, name14,
 				name15, name16, name17, name18, name19, name20, name21, name22};
@@ -130,6 +129,17 @@ public class StandingsController extends SceneLoadController implements Initiali
 		for (int i = 0; i < drivers.size(); i++)
 		{
 			points[i].setText(drivers.get(i).getPoints() + "");
+		}
+	}
+	
+	public void setStandingLogos()
+	{
+		ImageView[] logos = new ImageView[] {logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8, logo9, logo10, logo11, logo12, logo13, logo14,
+				logo15, logo16, logo17, logo18, logo19, logo20, logo21, logo22};
+		
+		for (int i = 0; i < logos.length; i++)
+		{
+			logos[i].setImage(new Image("file:images/logos/" + drivers.get(i).getTeamId() + ".png"));
 		}
 	}
 }
