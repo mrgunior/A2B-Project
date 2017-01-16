@@ -124,6 +124,7 @@ public class GameController
 				try
 				{
 					writeJsonObjectToFile();
+					writeDriversToJSON(); //is this really working as expected??
 				}
 
 				catch (IOException e)
@@ -543,7 +544,7 @@ public class GameController
 	{
 		String path = "./data/drivers.json";
 
-		ArrayList<Driver> drivers = profile.getAllDrivers();
+		ArrayList<Driver> drivers = Profile.getAllDrivers();
 		// System.out.println("##### All drivers:");
 		// System.out.println(" " + drivers);
 
@@ -563,6 +564,8 @@ public class GameController
 			driver.put("salaryBonus",  drivers.get(i).getSalaryBonus());
 
 			allDrivers.put("" + drivers.get(i).getId() + "", driver);
+			
+			System.out.println(allDrivers);
 		}
 
 		try (FileWriter fileWriter = new FileWriter(path))

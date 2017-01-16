@@ -94,7 +94,9 @@ public class formulaApplication extends Application
 		// Creates a gamecontroller object at the starting up of the application
 		gamecontroller = new GameController("./data.json");
 		GameController.getProfile().setAllDrivers(GameController.getDrivers());
-		GameController.writeDriversToJSON();
+		
+		//why this?? why are you writing everything after reading it from the json to the json?? @Mika
+		//GameController.writeDriversToJSON();
 		
 		Parent root = FXMLLoader.load(getClass().getResource("../view/MainMenu.fxml"));
 		theScene = new Scene(root);

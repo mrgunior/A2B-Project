@@ -196,7 +196,6 @@ public class ChooseDriverController extends SceneLoadController implements Initi
 
 		if (driverName != driver1String && driverName != driver2String) {
 
-			
 			// resetting selected buttons
 			setUnSelected(driver1);
 			setUnSelected(driver2);
@@ -242,7 +241,7 @@ public class ChooseDriverController extends SceneLoadController implements Initi
 			GameController gamecontroller = formulaApplication.getGameController();
 			gamecontroller.initializeDriversInProfile(obj);
 			
-			clickCount = 0; //reset it if game wasn't closed but want to start over
+			clickCount = 1; //reset it if game wasn't closed but want to start over
 		}
 	}
 
