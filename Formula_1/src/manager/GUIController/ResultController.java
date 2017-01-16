@@ -116,7 +116,7 @@ public class ResultController extends SceneLoadController implements Initializab
 
 				resultsResult.sortResultsByTime();
 				if (resultsResult.getResult(0).getDriver().getTeamId() == Profile.getTeamID()) {
-					winBonus = 17500000;
+					winBonus += 17500000;
 				}
 
 				Profile.setBudget(currentBudget - salaries + winBonus);
