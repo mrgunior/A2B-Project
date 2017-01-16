@@ -45,10 +45,7 @@ public class ChooseDriverController extends SceneLoadController implements Initi
 			hamiltonSalary, haryantoSalary, hulkenbergSalary, kvyatSalary, magnussenSalary, massaSalary, nasrSalary,
 			palmerSalary, perezSalary, raikkonnenSalary, ricciardoSalary, rosbergSalary, sainzSalary, verstappenSalary,
 			vettelSalary, wehrleinSalary;
-	
-	//click count needs to be 2 in order for the drivers to be set
-	private int clickCount = 0;
-	
+		
 	// Color variables
 	Color teamSelectedColor = new Color(0, 0, 0, .26);
 	Color teamNotSelectedColor = new Color(0, 0, 0, 0);
@@ -76,7 +73,7 @@ public class ChooseDriverController extends SceneLoadController implements Initi
 				vettelSalary, wehrleinSalary};
 
 		for (int i = 0; i < 22; i++) {
-			salaries[i].setText("$ " + drivers.get(i).getSalary()/1000000 + " Mill/race");
+			salaries[i].setText("$ " + drivers.get(i).getSalary()/1000000 + " Mil/race");
 		}
 		
 		driver1 = alonso;
@@ -90,12 +87,34 @@ public class ChooseDriverController extends SceneLoadController implements Initi
 		next.setOnMousePressed(event -> {
 
 			try {
-				if (driver1 != null && driver2 != null) {
-					//######################Some Code For Setting Drivers###########################
-					// ArrayList<Driver> drivers = new ArrayList<Driver>();
-					// drivers.add(driver1String);
-					// drivers.add(driver2String);
-					// formulaApplication.setDrivers(drivers);
+				
+				if (driver1 != null && driver2 != null) 
+				{		
+					String dataPath = "./data/drivers.json";
+					
+					JSONObject obj = new JSONObject();
+					
+					JSONObject jsonDriverObject1 = (JSONObject)GameController.readNestedObject(dataPath, new String[] { driver1.getId() });
+					JSONObject jsonDriverObject2 = (JSONObject)GameController.readNestedObject(dataPath, new String[] { driver2.getId() });
+					
+					JSONArray driverArray1 = new JSONArray(); // create an array [], name is added later
+					driverArray1.add(jsonDriverObject1); // you get this [{}]
+					obj.put("Driver1", driverArray1);
+					
+					JSONArray driverArray2 = new JSONArray(); // create an array [], name is added later
+					driverArray2.add(jsonDriverObject2); // you get this [{}]
+					obj.put("Driver2", driverArray2);
+					
+					System.out.println(obj);
+					
+					int d1 = Integer.parseInt(driver1.getId());
+					int d2 = Integer.parseInt(driver2.getId());
+					
+					Profile.setBudget(drivers.get(d1).getSalary(), true);
+					Profile.setBudget(drivers.get(d2).getSalary(), true);
+					
+					GameController gamecontroller = formulaApplication.getGameController();
+					gamecontroller.initializeDriversInProfile(obj);
 
 				}
 				gotoFxmlScene("Dashboard", (Stage) next.getScene().getWindow());
@@ -209,39 +228,11 @@ public class ChooseDriverController extends SceneLoadController implements Initi
 
 			// selecting adequate buttons
 			setSelected(driver1);
-			setSelected(driver2);
-			
-			clickCount++;
-			
-		}
-		
-		if(clickCount==2)
-		{
-			String dataPath = "./data/drivers.json";
-			
-			JSONObject obj = new JSONObject();
-			
-			JSONObject jsonDriverObject1 = (JSONObject)GameController.readNestedObject(dataPath, new String[] { driver1.getId() });
-			JSONObject jsonDriverObject2 = (JSONObject)GameController.readNestedObject(dataPath, new String[] { driver2.getId() });
-			
-			JSONArray driverArray1 = new JSONArray(); // create an array [], name is added later
-			driverArray1.add(jsonDriverObject1); // you get this [{}]
-			obj.put("Driver1", driverArray1);
-			
-			JSONArray driverArray2 = new JSONArray(); // create an array [], name is added later
-			driverArray2.add(jsonDriverObject2); // you get this [{}]
-			obj.put("Driver2", driverArray2);
+			setSelected(driver2);		
 			
 			System.out.println("#######################DRIVER#######################");
 			System.out.println("Driver1: " + driver1String + ", ID: " + driver1.getId());
 			System.out.println("Driver2: " + driver2String + ", ID: " + driver2.getId());
-			
-			System.out.println(obj);
-			
-			GameController gamecontroller = formulaApplication.getGameController();
-			gamecontroller.initializeDriversInProfile(obj);
-			
-			clickCount = 1; //reset it if game wasn't closed but want to start over
 		}
 	}
 
