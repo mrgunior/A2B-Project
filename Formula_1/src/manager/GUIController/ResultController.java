@@ -104,7 +104,6 @@ public class ResultController extends SceneLoadController implements Initializab
 				// Handle salaries
 				double currentBudget = Profile.getBudget();
 				double salaries = 0;
-				winBonus = 0;
 
 				for (int i = 0; i < resultsResult.getResults().size(); i++) {
 					int teamId = resultsResult.getResult(i).getDriver().getTeamId();
@@ -114,12 +113,7 @@ public class ResultController extends SceneLoadController implements Initializab
 					}
 				}
 
-				resultsResult.sortResultsByTime();
-				if (resultsResult.getResult(0).getDriver().getTeamId() == Profile.getTeamID()) {
-					winBonus = 17500000;
-				}
-
-				Profile.setBudget(currentBudget - salaries + winBonus);
+				Profile.setBudget(Profile.getBudget() - salaries + winBonus);
 
 				// Set all drivers in profile and write to JSON
 				transferResultsToProfileDrivers();

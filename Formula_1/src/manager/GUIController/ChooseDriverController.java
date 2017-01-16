@@ -82,16 +82,7 @@ public class ChooseDriverController extends SceneLoadController implements Initi
 
 		next.setOnMousePressed(event -> {
 
-			try {
-				if (driver1 != null && driver2 != null) {
-					//######################Some Code For Setting Drivers###########################
-					// ArrayList<Driver> drivers = new ArrayList<Driver>();
-					// drivers.add(driver1String);
-					// drivers.add(driver2String);
-					// formulaApplication.setDrivers(drivers);
-
-				}
-				
+			try {				
 				GameController.writeJsonObjectToFile();
 				gotoFxmlScene("Dashboard", (Stage) next.getScene().getWindow());
 			} catch (IOException e) {

@@ -113,8 +113,8 @@ public class RaceController extends SceneLoadController implements Initializable
 
 	public void stopRace()
 	{
-		raceStarted = false;
-		setTimerRunning(false);
+		//raceStarted = false;
+		//setTimerRunning(false);
 		gotoResults.setVisible(true);
 	}
 

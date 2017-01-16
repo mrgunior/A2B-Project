@@ -157,8 +157,9 @@ public class GUICar
 		}
 		else
 		{
-			setX(finishX - (car.getFitWidth()));
+			//setX(finishX - (car.getFitWidth()));
 			isFinished = true;
+			carSpeed = calculateSpeed();
 		}
 
 		// If the car is past its current goal point, goto next point and
@@ -186,6 +187,8 @@ public class GUICar
 		if (currentGoalPoint == nPoints)
 		{
 			distance -= (car.getFitWidth()*car.getScaleX());
+			car.setLayoutX(car.getLayoutX() + 2);
+			
 		}
 
 		// Time is the time the from one point to another (goalTime / all
