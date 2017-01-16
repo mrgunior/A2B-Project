@@ -136,6 +136,11 @@ public class GameController
 											// milliseconds and times that by 2 gives you 2 minutes.
 	}
 
+	public void setTeams()
+	{
+		
+	}
+	
 	/**
 	 * @throws IOException
 	 * 
