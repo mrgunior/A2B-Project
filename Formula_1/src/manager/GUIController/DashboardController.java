@@ -54,7 +54,7 @@ public class DashboardController extends SceneLoadController implements Initiali
 		teamName.setText(formulaApplication.getTeamName());
 		seasonText.setText("Season " + Profile.getCurrentSeason());
 		raceText.setText(" Race " + Profile.getCurrentRace());
-		balance.setText("$ " + numberFormat.format(Double.toString(formulaApplication.getBalance()/1000000) + " Million"));
+		balance.setText("$ " + numberFormat.format(formulaApplication.getBalance()/1000000).toString() + " Million");
 
 		AnimationTimer animationTimer = new AnimationTimer()
 		{	
