@@ -113,8 +113,8 @@ public class RaceController extends SceneLoadController implements Initializable
 
 	public void stopRace()
 	{
-		raceStarted = false;
-		setTimerRunning(false);
+		//raceStarted = false;
+		//setTimerRunning(false);
 		gotoResults.setVisible(true);
 	}
 
@@ -157,7 +157,7 @@ public class RaceController extends SceneLoadController implements Initializable
 		{
 			ImageView carImage = carImages[i];
 			carImage.setLayoutY(carStartY + (i * (sceneHeight / 30.8571428571)));
-			carImage.setFitWidth(100*sceneWidth/1920);
+			carImage.setFitWidth(200*sceneWidth/1920);
 			carImage.setFitHeight(35*sceneHeight/1080);
 		}
 

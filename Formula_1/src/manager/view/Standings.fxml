@@ -3,14 +3,15 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
@@ -42,10 +43,9 @@
             </Text>
          </children>
       </HBox>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff99" height="730.0" layoutX="95.0" layoutY="220.0" stroke="#ffffffb2" strokeType="OUTSIDE" strokeWidth="3.0" width="1710.0" />
-      <HBox id="teamsContainer" layoutX="100.0" layoutY="225.0" prefHeight="720.0" prefWidth="1700.0">
+      <HBox id="teamsContainer" layoutX="100.0" layoutY="225.0" prefHeight="720.0" prefWidth="1700.0" AnchorPane.bottomAnchor="135.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="225.0">
          <children>
-            <GridPane gridLinesVisible="true" prefHeight="700.0" prefWidth="1700.0">
+            <GridPane gridLinesVisible="true" prefHeight="700.0" prefWidth="1700.0" style="-fx-background-color: rgba(255,255,255,0.6); -fx-border-color: rgba(255,255,255,.7); -fx-border-width: 4;">
               <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -695,5 +695,43 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
+      <Pane fx:id="popup" layoutX="670.0" layoutY="350.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" visible="false">
+         <children>
+            <Pane prefHeight="75.0" prefWidth="600.0" style="-fx-background-color: #ff2800;">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="75.0" prefWidth="600.0">
+                     <children>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Congratulations!" translateY="-5.0">
+                           <font>
+                              <Font name="Yu Gothic UI Regular" size="50.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </HBox>
+               </children>
+            </Pane>
+            <HBox alignment="CENTER" layoutY="75.0" prefHeight="325.0" prefWidth="600.0">
+               <children>
+                  <Text lineSpacing="15.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You've won the season and are awarded $200 million!" textAlignment="CENTER" translateY="-40.0" wrappingWidth="550.0">
+                     <font>
+                        <Font name="Yu Gothic UI Light" size="37.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox prefHeight="400.0" prefWidth="600.0">
+               <children>
+                  <Button fx:id="popupNext" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #ff2800;" text="Continue" textFill="WHITE" translateX="425.0" translateY="325.0">
+                     <font>
+                        <Font name="Yu Gothic UI Semibold" size="25.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

@@ -17,6 +17,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import manager.controller.SceneLoadController;
+import manager.model.Profile;
 import manager.model.formulaApplication;
 
 public class ChooseTeamController extends SceneLoadController implements Initializable
@@ -35,8 +36,7 @@ public class ChooseTeamController extends SceneLoadController implements Initial
 
 	// Team buttons
 	@FXML
-	private Pane mercedes, redBull, ferrari, forceIndia, williams, mcLaren, toroRosso, haas, renault, sauber,
-			manor;
+	private Pane mercedes, redBull, ferrari, forceIndia, williams, mcLaren, toroRosso, haas, renault, sauber, manor;
 
 	// Color variables
 	Color	teamSelectedColor		= new Color(0, 0, 0, .26);
@@ -44,16 +44,18 @@ public class ChooseTeamController extends SceneLoadController implements Initial
 
 	// Selector variable
 	Pane	currentlySelected		= null;
-	String		currentlySelectedString	= "";
+	String	currentlySelectedString	= "";
+	int currentlySelectedTeamID = 6;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources)
 	{
 		background.fitWidthProperty().bind(root.widthProperty());
 		background.fitHeightProperty().bind(root.heightProperty());
-		
+
 		currentlySelected = mercedes;
 		currentlySelectedString = "Mercedes AMG Petronas";
+
 		setSelected(mercedes);
 
 		// Click
@@ -64,6 +66,7 @@ public class ChooseTeamController extends SceneLoadController implements Initial
 				{
 					// where team is being set in the Profile object
 					formulaApplication.setTeamName(currentlySelectedString);
+					Profile.setTeamID(currentlySelectedTeamID);
 					gotoFxmlScene("ChooseDriver", (Stage) next.getScene().getWindow());
 				}
 			}
@@ -84,47 +87,48 @@ public class ChooseTeamController extends SceneLoadController implements Initial
 
 		// Team Choices
 		mercedes.setOnMousePressed(event -> {
-			teamClicked(mercedes, "Mercedes AMG Petronas");
+			teamClicked(mercedes, "Mercedes AMG Petronas", 6);
 		});
 		redBull.setOnMousePressed(event -> {
-			teamClicked(redBull, "Red Bull Racing");
+			teamClicked(redBull, "Red Bull Racing", 7);
 		});
 		ferrari.setOnMousePressed(event -> {
-			teamClicked(ferrari, "Scuderia Ferrari");
+			teamClicked(ferrari, "Scuderia Ferrari", 1);
 		});
 		forceIndia.setOnMousePressed(event -> {
-			teamClicked(forceIndia, "Sahara Force India F1");
+			teamClicked(forceIndia, "Sahara Force India F1", 2);
 		});
 		williams.setOnMousePressed(event -> {
-			teamClicked(williams, "Williams Martini Racing");
+			teamClicked(williams, "Williams Martini Racing", 11);
 		});
 		mcLaren.setOnMousePressed(event -> {
-			teamClicked(mcLaren, "McLaren Honda");
+			teamClicked(mcLaren, "McLaren Honda", 5);
 		});
 		toroRosso.setOnMousePressed(event -> {
-			teamClicked(toroRosso, "Scuderia Toro Rosso");
+			teamClicked(toroRosso, "Scuderia Toro Rosso", 10);
 		});
 		haas.setOnMousePressed(event -> {
-			teamClicked(haas, "Haas F1 Team");
+			teamClicked(haas, "Haas F1 Team", 3);
 		});
 		renault.setOnMousePressed(event -> {
-			teamClicked(renault, "Renault");
+			teamClicked(renault, "Renault", 8);
 		});
 		sauber.setOnMousePressed(event -> {
-			teamClicked(sauber, "Sauber F1 Team");
+			teamClicked(sauber, "Sauber F1 Team", 9);
 		});
 		manor.setOnMousePressed(event -> {
-			teamClicked(manor, "Manor Racing");
+			teamClicked(manor, "Manor Racing", 4);
 		});
 	}
 
-	private void teamClicked(Pane teamButton, String teamName)
+	private void teamClicked(Pane teamButton, String teamName, int teamId)
 	{
 		setUnSelected(currentlySelected);
 		setSelected(teamButton);
 
 		currentlySelected = teamButton;
 		currentlySelectedString = teamName;
+		currentlySelectedTeamID = teamId;
 	}
 
 	public void setSelected(Pane driverButton)
