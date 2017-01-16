@@ -2,9 +2,11 @@ package manager.GUIController;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -13,7 +15,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import manager.controller.GameController;
@@ -55,12 +56,14 @@ public class ChooseDriverController extends SceneLoadController implements Initi
 
 	ArrayList<Driver> drivers = new ArrayList<>();
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		background.fitWidthProperty().bind(root.widthProperty());
 		background.fitHeightProperty().bind(root.heightProperty());
 		
-		drivers = GameController.getProfile().getAllDrivers();
+		GameController.getProfile();
+		drivers = Profile.getAllDrivers();
 		drivers.sort(Driver.sortById());
 		
 		Text[] salaries = {alonsoSalary, bottasSalary, buttonSalary, ericssonSalary, grosjeanSalary, gutierrezSalary,
@@ -78,23 +81,44 @@ public class ChooseDriverController extends SceneLoadController implements Initi
 		driver2String = "Felipe Massa";
 		setSelected(driver1);
 		setSelected(driver2);
-		// Click
 
 		next.setOnMousePressed(event -> {
 
 			try {
-				if (driver1 != null && driver2 != null) {
-					//######################Some Code For Setting Drivers###########################
-					// ArrayList<Driver> drivers = new ArrayList<Driver>();
-					// drivers.add(driver1String);
-					// drivers.add(driver2String);
-					// formulaApplication.setDrivers(drivers);
-
+				if (driver1 != null && driver2 != null) 
+				{		
+					String dataPath = "./data/drivers.json";
+					
+					JSONObject obj = new JSONObject();
+					
+					JSONObject jsonDriverObject1 = (JSONObject)GameController.readNestedObject(dataPath, new String[] { driver1.getId() });
+					JSONObject jsonDriverObject2 = (JSONObject)GameController.readNestedObject(dataPath, new String[] { driver2.getId() });
+					
+					JSONArray driverArray1 = new JSONArray(); // create an array [], name is added later
+					driverArray1.add(jsonDriverObject1); // you get this [{}]
+					obj.put("Driver1", driverArray1);
+					
+					JSONArray driverArray2 = new JSONArray(); // create an array [], name is added later
+					driverArray2.add(jsonDriverObject2); // you get this [{}]
+					obj.put("Driver2", driverArray2);
+					
+					System.out.println(obj);
+					
+					int d1 = Integer.parseInt(driver1.getId());
+					int d2 = Integer.parseInt(driver2.getId());
+					
+					Profile.setBudget(drivers.get(d1).getSalary(), true);
+					Profile.setBudget(drivers.get(d2).getSalary(), true);
+					
+					GameController gamecontroller = formulaApplication.getGameController();
+					gamecontroller.initializeDriversInProfile(obj);
 				}
 				
 				GameController.writeJsonObjectToFile();
 				gotoFxmlScene("Dashboard", (Stage) next.getScene().getWindow());
-			} catch (IOException e) {
+			} 
+			
+			catch (IOException e) {
 				e.printStackTrace();
 			}
 		});
