@@ -94,6 +94,7 @@ public class ResultController extends SceneLoadController implements Initializab
 		for (int i = 0; i < points.length; i++) {
 			if (resultsResult.getResult(i).getDriver().getTeamId() == Profile.getTeamID()) {
 				winBonus += points[i] * 1000000;
+				System.out.println(winBonus);
 			}
 		}
 
@@ -125,6 +126,8 @@ public class ResultController extends SceneLoadController implements Initializab
 				GameController.writeDriversToJSON();
 
 				// Handle amount of races and seasons
+				Profile.setCurrentRace(Profile.getCurrentRace() + 1);
+				System.out.println(Profile.getCurrentRace() + " > " + Profile.getRacesPerSeason());
 				if (Profile.getCurrentRace() > Profile.getRacesPerSeason()) {
 
 					gotoFxmlScene("Standings", (Stage) next.getScene().getWindow());
@@ -133,7 +136,6 @@ public class ResultController extends SceneLoadController implements Initializab
 					GameController.getProfile().resetDriverPoints();
 					Profile.setCurrentSeason(Profile.getCurrentSeason() + 1);
 				} else {
-					Profile.setCurrentRace(Profile.getCurrentRace()+1);
 					gotoFxmlScene("Dashboard", (Stage) next.getScene().getWindow());
 				}
 			} catch (IOException e) {
