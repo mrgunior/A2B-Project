@@ -6,6 +6,7 @@ import manager.model.Profile;
 import manager.model.formulaApplication;
 import java.io.IOException;
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.util.ResourceBundle;
 
 import javafx.animation.AnimationTimer;
@@ -47,11 +48,13 @@ public class DashboardController extends SceneLoadController implements Initiali
 	{
 		background.fitWidthProperty().bind(root.widthProperty());
 		background.fitHeightProperty().bind(root.heightProperty());
+
+		DecimalFormat numberFormat = new DecimalFormat("#.00");
 		
 		teamName.setText(formulaApplication.getTeamName());
 		seasonText.setText("Season " + Profile.getCurrentSeason());
 		raceText.setText(" Race " + Profile.getCurrentRace());
-		balance.setText("$ " + Double.toString(formulaApplication.getBalance()/1000000) + " Million");
+		balance.setText("$ " + numberFormat.format(Double.toString(formulaApplication.getBalance()/1000000) + " Million"));
 
 		AnimationTimer animationTimer = new AnimationTimer()
 		{	
