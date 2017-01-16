@@ -225,13 +225,13 @@ public class GameController
 		List<Driver> driversList = new ArrayList<Driver>();
 
 		String[] infos = new String[7];
-		infos[0] = "speed";
-		infos[1] = "salary";
-		infos[2] = "number";
-		infos[3] = "turning";
-		infos[4] = "name";
-		infos[5] = "acceleration";
-		infos[6] = "salaryBonus";
+		infos[0] = "Speed";
+		infos[1] = "Salary";
+		infos[2] = "Number";
+		infos[3] = "Turning";
+		infos[4] = "Name";
+		infos[5] = "Acceleration";
+		infos[6] = "SalaryBonus";
 
 		String driverString = "Driver";
 		JSONArray driverArray;
