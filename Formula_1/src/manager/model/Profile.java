@@ -134,7 +134,9 @@ public class Profile
 
 	public static void setCurrentRace(int currentRace)
 	{
+		if(currentRace <= racesPerSeason){
 		Profile.currentRace = currentRace;
+		}
 	}
 
 	public static int getCurrentSeason()
