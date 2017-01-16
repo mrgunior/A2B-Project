@@ -132,6 +132,10 @@ public class StandingsController extends SceneLoadController implements Initiali
 		
 		for (int i = 0; i < drivers.size(); i++)
 		{
+			if (drivers.get(i).getTeamId() == Profile.getTeamID())
+			{
+				names[i].setStyle("-fx-fill: green;");
+			}
 			names[i].setText(drivers.get(i).getName());
 		}
 	}
