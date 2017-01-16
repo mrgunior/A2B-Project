@@ -124,7 +124,6 @@ public class GameController
 				try
 				{
 					writeJsonObjectToFile();
-					writeDriversToJSON(); //is this really working as expected??
 				}
 
 				catch (IOException e)
@@ -202,10 +201,10 @@ public class GameController
 			Profile.setCurrentRace(currentRace);
 			Profile.setCurrentSeason(currentSeason);
 
-			// 2. create the drivers from a json file (data.json)
+			// 2. create the drivers from a json file (data.dat)
 			initializeDriversInProfile(jsonObject);
 
-			// 3. create the cars from a json file (data.json)
+			// 3. create the cars from a json file (data.dat)
 			initializeCarsInProfile(jsonObject);
 		}
 
@@ -220,18 +219,18 @@ public class GameController
 	 * 
 	 * @param jsonObject
 	 */
-	public void initializeDriversInProfile(JSONObject jsonObject)
+	private void initializeDriversInProfile(JSONObject jsonObject)
 	{
 		List<Driver> driversList = new ArrayList<Driver>();
 
 		String[] infos = new String[7];
-		infos[0] = "speed";
-		infos[1] = "salary";
-		infos[2] = "number";
-		infos[3] = "turning";
-		infos[4] = "name";
-		infos[5] = "acceleration";
-		infos[6] = "salaryBonus";
+		infos[0] = "Speed";
+		infos[1] = "Salary";
+		infos[2] = "Number";
+		infos[3] = "Turning";
+		infos[4] = "Name";
+		infos[5] = "Acceleration";
+		infos[6] = "SalaryBonus";
 
 		String driverString = "Driver";
 		JSONArray driverArray;
@@ -307,7 +306,7 @@ public class GameController
 	 * 
 	 * @param jsonObject
 	 */
-	public void initializeCarsInProfile(JSONObject jsonObject)
+	private void initializeCarsInProfile(JSONObject jsonObject)
 	{
 		String[] standardCarStuff = new String[5];
 		standardCarStuff[0] = "Speed";
@@ -435,7 +434,7 @@ public class GameController
 	{
 		// ###########################User Profile#########################
 
-		JSONObject obj = new JSONObject(); // create JSON object "":{}
+		JSONObject obj = new JSONObject(); // create JSON object {}
 		obj.put("TeamID", Profile.getTeamID()); //teamID
 		obj.put("Teamname", profile.getTeamName()); // "TeamName":""
 		obj.put("Budget", String.valueOf(Profile.getBudget())); // "Budget":""
@@ -450,14 +449,14 @@ public class GameController
 
 			// standard upon creating a game until you add drivers
 			JSONObject info = new JSONObject(); // create an object {}
-			info.put("name", Profile.getDrivers().get(i).getName()); // "Name":""
-			info.put("speed", String.valueOf(Profile.getDrivers().get(i).getSpeed())); // "Speed":""
-			info.put("number", String.valueOf(Profile.getDrivers().get(i).getNumber())); // "Number":""
-			info.put("acceleration", Profile.getDrivers().get(i).getAcceleration()); // "Acceleration":""
-			info.put("turning", Profile.getDrivers().get(i).getTurning()); // "Turning":""
-			info.put("averagePerformance", String.valueOf(Profile.getDrivers().get(i).getAveragePerformance()));// "AveragePerformance":""
-			info.put("salary", String.valueOf(Profile.getDrivers().get(i).getSalary())); // "Salary":""
-			info.put("salaryBonus", String.valueOf(Profile.getDrivers().get(i).getSalaryBonus())); //salaryBonus
+			info.put("Name", profile.getDrivers().get(i).getName()); // "Name":""
+			info.put("Speed", String.valueOf(profile.getDrivers().get(i).getSpeed())); // "Speed":""
+			info.put("Number", String.valueOf(profile.getDrivers().get(i).getNumber())); // "Number":""
+			info.put("Acceleration", profile.getDrivers().get(i).getAcceleration()); // "Acceleration":""
+			info.put("Turning", profile.getDrivers().get(i).getTurning()); // "Turning":""
+			info.put("AveragePerformance", String.valueOf(profile.getDrivers().get(i).getAveragePerformance()));// "AveragePerformance":""
+			info.put("Salary", String.valueOf(profile.getDrivers().get(i).getSalary())); // "Salary":""
+			info.put("SalaryBonus", String.valueOf(profile.getDrivers().get(i).getSalaryBonus())); //salaryBonus
 
 			JSONArray driver = new JSONArray(); // create an array [], name is added later
 			driver.add(info); // you get this [{}]
@@ -544,7 +543,7 @@ public class GameController
 	{
 		String path = "./data/drivers.json";
 
-		ArrayList<Driver> drivers = Profile.getAllDrivers();
+		ArrayList<Driver> drivers = profile.getAllDrivers();
 		// System.out.println("##### All drivers:");
 		// System.out.println(" " + drivers);
 
@@ -564,8 +563,6 @@ public class GameController
 			driver.put("salaryBonus",  drivers.get(i).getSalaryBonus());
 
 			allDrivers.put("" + drivers.get(i).getId() + "", driver);
-			
-			System.out.println(allDrivers);
 		}
 
 		try (FileWriter fileWriter = new FileWriter(path))

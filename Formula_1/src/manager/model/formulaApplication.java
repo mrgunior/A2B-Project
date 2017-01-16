@@ -57,23 +57,22 @@ public class formulaApplication extends Application
 	public static String getTeamName()
 	{
 		//call method in GameController to get the teamname 
-		return GameController.getProfile().getTeamName();
+		return gamecontroller.getProfile().getTeamName();
 	}
 	
 	public static void setTeamName(String teamName)
 	{
-		GameController.getProfile().setTeamName(teamName);
+		gamecontroller.getProfile().setTeamName(teamName);
 	}
 	
 	public static void setDrivers(ArrayList<Driver> drivers)
 	{
-		GameController.getProfile().setDrivers(drivers);
+		gamecontroller.getProfile().setDrivers(drivers);
 	}
 	
 	public static double getBalance()
 	{
-		GameController.getProfile();
-		return Profile.getBudget();
+		return gamecontroller.getProfile().getBudget();
 	}
 	
 	//temporary
@@ -94,9 +93,7 @@ public class formulaApplication extends Application
 		// Creates a gamecontroller object at the starting up of the application
 		gamecontroller = new GameController("./data.json");
 		GameController.getProfile().setAllDrivers(GameController.getDrivers());
-		
-		//why this?? why are you writing everything after reading it from the json to the json?? @Mika
-		//GameController.writeDriversToJSON();
+		GameController.writeDriversToJSON();
 		
 		Parent root = FXMLLoader.load(getClass().getResource("../view/MainMenu.fxml"));
 		theScene = new Scene(root);
