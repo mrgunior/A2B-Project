@@ -77,7 +77,7 @@ public class ResultController extends SceneLoadController implements Initializab
 		resultsText.setText("Results - Race " + Profile.getCurrentRace());
 		setNamesFromResults(resultsResult);
 		setPoints();
-		//setLogos();
+		setLogos();
 
 		// Click
 		next.setOnMousePressed(event -> {
@@ -199,7 +199,7 @@ public class ResultController extends SceneLoadController implements Initializab
 		
 		for (int i = 0; i < logos.length; i++)
 		{
-			logos[i].setImage(new Image("file:images/logos/" + resultsResult.getResult(i).getDriver().getTeamId() + ".png"));
+			logos[i].setImage(new Image("file:images/Logos/" + resultsResult.getResult(i).getDriver().getTeamId() + ".png"));
 		}
 	}
 

@@ -81,7 +81,7 @@ public class StandingsController extends SceneLoadController implements Initiali
 		standingsText.setText(standingsString);
 		setStandingNames();
 		setStandingPoints();
-		//setStandingLogos();
+		setStandingLogos();
 
 		// Click
 		back.setOnMousePressed(event -> {
@@ -139,7 +139,7 @@ public class StandingsController extends SceneLoadController implements Initiali
 		
 		for (int i = 0; i < logos.length; i++)
 		{
-			logos[i].setImage(new Image("file:images/logos/" + drivers.get(i).getTeamId() + ".png"));
+			logos[i].setImage(new Image("file:images/Logos/" + drivers.get(i).getTeamId() + ".png"));
 		}
 	}
 }
