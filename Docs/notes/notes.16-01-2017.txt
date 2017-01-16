@@ -1,0 +1,42 @@
+General scrum team meeting 
+
+Date: 16-01-2017
+Secretary: Thijmen Langendam
+
+Attendance: 
+Bas (TA)
+Mika
+Rowdy
+Thijmen
+Victor 
+
+Reflection
+Demo (Importance, Full Screen is most important, FXML is least important):
+Fix going back to full screen
+Fix 200mil bonus when going to standings screen
+Maybe standings per team screen
+Risk screen working and also risk screen for car
+Selectable Drivers
+Artificial Intelligence
+Faster reacting screens with FXML
+
+Rapport:
+Abstract
+Woensdag inleveren 12.00
+bas.boe@gmail.com
+
+Vickie:
+Con's: None
+Pro's: Help is always there, nice progress and conflict resolving is good.
+
+Miku:
+Con's: None
+Pro's: Everything
+
+Mitchell:
+Con's: None
+Pro's: Problems are solved together and teamwork is good.
+
+Kast:
+Con's: Communication
+Pro's: Rest
