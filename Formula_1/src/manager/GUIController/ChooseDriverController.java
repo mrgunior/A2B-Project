@@ -84,10 +84,6 @@ public class ChooseDriverController extends SceneLoadController implements Initi
 
 		next.setOnMousePressed(event -> {
 
-<<<<<<< HEAD
-			try {				
-				GameController.writeJsonObjectToFile();
-=======
 			try {
 				if (driver1 != null && driver2 != null) 
 				{		
@@ -119,7 +115,6 @@ public class ChooseDriverController extends SceneLoadController implements Initi
 				}
 				
 				//GameController.writeJsonObjectToFile();
->>>>>>> ChooseDriverControllerBudgetUpdate
 				gotoFxmlScene("Dashboard", (Stage) next.getScene().getWindow());
 			} 
 			

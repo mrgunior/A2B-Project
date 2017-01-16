@@ -1,6 +1,5 @@
 package manager.GUIController;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -11,12 +10,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-<<<<<<< HEAD
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-import javafx.scene.text.Text;
-=======
->>>>>>> ChooseDriverControllerBudgetUpdate
 import javafx.stage.Stage;
 import manager.controller.SceneLoadController;
 import manager.controller.GameController;
