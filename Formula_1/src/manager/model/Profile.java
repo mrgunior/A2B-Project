@@ -106,12 +106,12 @@ public class Profile
 
 	public void setDrivers(List<Driver> drivers)
 	{
-		Profile.drivers = drivers;
+		this.drivers = drivers;
 	}
 
 	public void setAllDrivers(ArrayList<Driver> drivers)
 	{
-		Profile.allDrivers = drivers;
+		this.allDrivers = drivers;
 	}
 
 	public void setCar(Car car)
@@ -170,7 +170,6 @@ public class Profile
 			GameController.writeDriversToJSON();
 			formulaApplication.getGameController().writeJsonObjectToFile();
 		}
-		
 		catch (IOException e)
 		{
 			e.printStackTrace();
