@@ -57,6 +57,8 @@ public class MainMenuController extends SceneLoadController implements Initializ
 				startGame.setOnMousePressed(event -> {
 					try
 					{
+						//this was change to make the screen go faster from main to select team
+						//it kept writing to json right away
 						GameController.getProfile().resetProfile();
 						Profile.setBudget(200000000);
 						gotoFxmlScene("ChooseTeam", (Stage) startGame.getScene().getWindow());
