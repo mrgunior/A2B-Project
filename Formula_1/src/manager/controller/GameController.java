@@ -39,7 +39,7 @@ public class GameController
 	 */
 	public GameController(String jsonFile) throws IOException
 	{
-		this.jsonFile = jsonFile;
+		GameController.jsonFile = jsonFile;
 
 		readJsonObjectAndInitialize();
 		timer = new Timer();
