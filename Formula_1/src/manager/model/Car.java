@@ -113,34 +113,8 @@ public class Car
 		upgrades.upgrade(type);
 
 		// Getting level
-		int curLvl = 0;
-		switch (type)
-		{
-		case "aero":
-			curLvl = upgrades.getAero();
-			break;
-		case "down":
-			curLvl = upgrades.getDown();
-			break;
-		case "engine":
-			curLvl = upgrades.getEngine();
-			break;
-		case "gearbox":
-			curLvl = upgrades.getGearbox();
-			break;
-		case "susp":
-			curLvl = upgrades.getSusp();
-			break;
-		case "tires":
-			curLvl = upgrades.getTires();
-			break;
-		case "weightRed":
-			curLvl = upgrades.getWeightRed();
-			break;
-		default:
-			break;
-		}
-		
+		int curLvl = getCurrentLevel(type);
+
 		if (curLvl <= 5)
 		{
 			// Getting all the upgrade info of the next level
@@ -217,6 +191,29 @@ public class Car
 			incrementHandling(handlingAmount);
 			incrementBraking(brakingAmount);
 			incrementWeight(weightAmount);
+		}
+	}
+	
+	public int getCurrentLevel(String type)
+	{
+		switch (type)
+		{
+		case "aero":
+			return upgrades.getAero();
+		case "down":
+			return upgrades.getDown();
+		case "engine":
+			return upgrades.getEngine();
+		case "gearbox":
+			return upgrades.getGearbox();
+		case "susp":
+			return upgrades.getSusp();	
+		case "tires":
+			return upgrades.getTires();
+		case "weightRed":
+			return upgrades.getWeightRed();
+		default:
+			return 0;
 		}
 	}
 
