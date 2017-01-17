@@ -10,8 +10,8 @@ public class Car
 	private int			braking;
 	private int			weight;
 	private Upgrades	upgrades;
-	private enum carVar{eSpeed, eAcceleration, eHandling, eBraking, eWeight, eUpgrades, eOther};
-	private enum upgradesVar{eDown, eAero, eGearbox, eEngine, eSusp, eTires, eWeightRed, eOther};
+	private enum carVar{speed, acceleration, handling, braking, weight, upgrades, eOther};
+	private enum upgradesVar {down, aero, gearbox, engine, susp, tires, weightRed, eOther};
 	
 	private String upgradesJsonPath = "./data/upgrades.json";
 
@@ -138,19 +138,19 @@ public class Car
 
 					switch (carVar.valueOf(upgradeTypes[i]))
 					{
-					case eSpeed:
+					case speed:
 						speedAmount = amount;
 						break;
-					case eAcceleration:
+					case acceleration:
 						accelerationAmount = amount;
 						break;
-					case eHandling:
+					case handling:
 						handlingAmount = amount;
 						break;
-					case eBraking:
+					case braking:
 						brakingAmount = amount;
 						break;
-					case eWeight:
+					case weight:
 						weightAmount = amount;
 						break;
 					default:
@@ -166,19 +166,19 @@ public class Car
 
 					switch (carVar.valueOf(upgradeTypes[i]))
 					{
-					case eSpeed:
+					case speed:
 						speedAmount = amount;
 						break;
-					case eAcceleration:
+					case acceleration:
 						accelerationAmount = amount;
 						break;
-					case eHandling:
+					case handling:
 						handlingAmount = amount;
 						break;
-					case eBraking:
+					case braking:
 						brakingAmount = amount;
 						break;
-					case eWeight:
+					case weight:
 						weightAmount = amount;
 						break;
 					default:
@@ -200,19 +200,19 @@ public class Car
 	{
 		switch (upgradesVar.valueOf(type))
 		{
-		case eAero:
+		case aero:
 			return upgrades.getAero();
-		case eDown:
+		case down:
 			return upgrades.getDown();
-		case eEngine:
+		case engine:
 			return upgrades.getEngine();
-		case eGearbox:
+		case gearbox:
 			return upgrades.getGearbox();
-		case eSusp:
+		case susp:
 			return upgrades.getSusp();	
-		case eTires:
+		case tires:
 			return upgrades.getTires();
-		case eWeightRed:
+		case weightRed:
 			return upgrades.getWeightRed();
 		default:
 			return 0;
