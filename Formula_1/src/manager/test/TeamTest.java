@@ -186,4 +186,69 @@ public class TeamTest {
 		assertEquals("Constructor correctly set new team car", team.getCar(), newCar);
 	}
 	
+	@Test
+	public void testEqualsItself() {
+		assertTrue("A team should equal itself.", team.equals(team));
+	}
+	
+	@Test
+	public void testEqualSimilar() {
+		Team testTeam = new Team(teamName, teamID, balance, driver1, driver2, car);
+		assertTrue("A team should equal another team with same values.", team.equals(testTeam));
+	}
+	
+	@Test
+	public void testEqualsNull() {
+		assertFalse("A team should not equal null.", team.equals(null));
+	}
+	
+	@Test
+	public void testEqualsNullTeam() {
+		Team testTeam = new Team(null, 0, 0, null, null, null);
+		assertFalse("A team should not equal an empty team.", team.equals(testTeam));
+	}
+	
+	@Test
+	public void testEqualsWithDifferentName() {
+		Team testTeam = new Team(teamName, teamID, balance, driver1, driver2, car);
+		testTeam.setName("Hello world!");
+		assertFalse("A team should not equal a team with different Name.", team.equals(testTeam));
+	}
+	
+	@Test
+	public void testEqualsWithDifferentBalance() {
+		Team testTeam = new Team(teamName, teamID, balance, driver1, driver2, car);
+		testTeam.setBalance(500);
+		assertFalse("A team should not equal a team with different Balance.", team.equals(testTeam));
+	}
+	
+	@Test
+	public void testEqualsWithDifferentTeamID() {
+		Team testTeam = new Team(teamName, teamID, balance, driver1, driver2, car);
+		testTeam.setTeamID(1);
+		assertFalse("A team should not equal a team with different TeamID.", team.equals(testTeam));
+	}
+	
+	@Test
+	public void testEqualsWithDifferentDriver1() {
+		Team testTeam = new Team(teamName, teamID, balance, driver1, driver2, car);
+		testTeam.setDriver1(driver2);
+		assertFalse("A team should not equal a team with different Driver1.", team.equals(testTeam));
+	}
+	
+	@Test
+	public void testEqualsWithDifferentDriver2() {
+		Team testTeam = new Team(teamName, teamID, balance, driver1, driver2, car);
+		testTeam.setDriver2(driver1);
+		assertFalse("A team should not equal a team with different Driver2.", team.equals(testTeam));
+	}
+	
+	@Test
+	public void testEqualsWithDifferentCar() {
+		Team testTeam = new Team(teamName, teamID, balance, driver1, driver2, car);
+		Car testCar = new Car(0, cacceleration, chandling, cbraking, cweight, cupgrades);
+		testTeam.setCar(testCar);
+		assertFalse("A team should not equal a team with different Car.", team.equals(testTeam));
+	}
+	
 }

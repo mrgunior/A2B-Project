@@ -78,4 +78,25 @@ public class Engine
 	{
 		this.level = level;
 	}
+	
+	public boolean equals(Engine obj) {
+		
+		if (this == obj) {
+			return true;
+		}
+		if (!(obj instanceof Engine)) {
+			return false;
+		}
+		Engine other = (Engine) obj;
+		
+		if (!(engineName.equals(other.getEngineName()))) {
+			return false;
+		}
+		
+		if (level != other.getLevel()) {
+			return false;
+		}
+		
+		return true;
+	}
 }

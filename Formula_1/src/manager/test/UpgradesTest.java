@@ -15,15 +15,7 @@ public class UpgradesTest {
 	@Before
 	public void SetUp() {
 		
-		down = 0;
-		aero = 0;
-		gearbox = 0;
-		engine = 0;
-		susp = 0;
-		tires = 0;
-		weightRed = 0;
-		
-		upgrades = new Upgrades(down, aero, gearbox, engine, susp, tires, weightRed);
+		upgrades = new Upgrades(0);
 		
 	}
 	
@@ -123,13 +115,13 @@ public class UpgradesTest {
 		
 		Upgrades upgradedupgrades = new Upgrades(upgradeddown, upgradedaero, upgradedgearbox, upgradedengine, upgradedsusp, upgradedtires, upgradedweightRed);
 		
-		upgrades.upgrade("aero");
-		upgrades.upgrade("down");
-		upgrades.upgrade("engine");
-		upgrades.upgrade("gearbox");
-		upgrades.upgrade("susp");
-		upgrades.upgrade("tires");
-		upgrades.upgrade("weightRed");
+		upgrades.upgrade("eAero");
+		upgrades.upgrade("eDown");
+		upgrades.upgrade("eEngine");
+		upgrades.upgrade("eGearbox");
+		upgrades.upgrade("eSusp");
+		upgrades.upgrade("eTires");
+		upgrades.upgrade("eWeightRed");
 		
 		assertEquals("Constructor correctly upgraded every component", upgrades, upgradedupgrades);
 	}
@@ -143,7 +135,116 @@ public class UpgradesTest {
 	public void testEquals() {
 		Upgrades upgrades2 = new Upgrades(down, aero, gearbox, engine, susp, tires, weightRed);
 		
-		assertTrue(upgrades.equals(upgrades2));
+		assertTrue("These two upgrades should equal.", upgrades.equals(upgrades2));
+	}
+	
+	@Test
+	public void testNotEquals() {
+
+		int upgradeddown = 1;
+		int upgradedaero = 1;
+		int upgradedgearbox = 1;
+		int upgradedengine = 1;
+		int upgradedsusp = 1;
+		int upgradedtires = 1;
+		int upgradedweightRed = 1;
+		
+		Upgrades upgradedupgrades = new Upgrades(upgradeddown, upgradedaero, upgradedgearbox, upgradedengine, upgradedsusp, upgradedtires, upgradedweightRed);
+		
+		assertFalse("These 2 upgrades shouldn't equal.", upgrades.equals(upgradedupgrades));	
+	}
+	
+	@Test
+	public void testNonObjectEquals() {
+		int testInteger = 0;
+		assertFalse("An integer and object shouldn't equal.", upgrades.equals(testInteger));
+	}
+	
+	@Test
+	public void testNullEquals() {
+		assertFalse("An upgrades object shouldn't equal null.", upgrades.equals(null));
+	}
+	
+	@Test
+	public void testEqualsItself() {
+		assertTrue("An object should equal itself.", upgrades.equals(upgrades));
+	}
+	
+	@Test
+	public void testDifferentValues1() {
+		Upgrades testUpgrade = new Upgrades(0);
+		upgrades.upgrade("eAero");
+		assertFalse("The testupgrade shouldn't equal the upgrades with everything at 0", upgrades.equals(testUpgrade));
+	}
+	
+	@Test
+	public void testDifferentValues2() {
+		Upgrades testUpgrade = new Upgrades(0);
+		upgrades.upgrade("eDown");
+		assertFalse("The testupgrade shouldn't equal the upgrades with everything at 0", upgrades.equals(testUpgrade));
+	}
+	
+	@Test
+	public void testDifferentValues3() {
+		Upgrades testUpgrade = new Upgrades(0);
+		upgrades.upgrade("eEngine");
+		assertFalse("The testupgrade shouldn't equal the upgrades with everything at 0", upgrades.equals(testUpgrade));
+	}
+	
+	@Test
+	public void testDifferentValues4() {
+		Upgrades testUpgrade = new Upgrades(0);
+		upgrades.upgrade("eGearbox");
+		assertFalse("The testupgrade shouldn't equal the upgrades with everything at 0", upgrades.equals(testUpgrade));
+	}
+	
+	@Test
+	public void testDifferentValues5() {
+		Upgrades testUpgrade = new Upgrades(0);
+		upgrades.upgrade("eSusp");
+		assertFalse("The testupgrade shouldn't equal the upgrades with everything at 0", upgrades.equals(testUpgrade));
+	}
+	
+	@Test
+	public void testDifferentValues6() {
+		Upgrades testUpgrade = new Upgrades(0);
+		upgrades.upgrade("eTires");
+		assertFalse("The testupgrade shouldn't equal the upgrades with everything at 0", upgrades.equals(testUpgrade));
+	}
+	
+	@Test
+	public void testDifferentValues7() {
+		Upgrades testUpgrade = new Upgrades(0);
+		upgrades.upgrade("eWeightRed");
+		assertFalse("The testupgrade shouldn't equal the upgrades with everything at 0", upgrades.equals(testUpgrade));
+	}
+	
+	@Test
+	public void testUpgradeMaxUpgradedUpgrades() {
+		Upgrades testUpgrade = new Upgrades(5,5,5,5,5,5,5);
+		Upgrades testUpgrade2 = new Upgrades(5,5,5,5,5,5,5);
+		testUpgrade.upgrade("eAero");
+		testUpgrade.upgrade("eDown");
+		testUpgrade.upgrade("eEngine");
+		testUpgrade.upgrade("eGearbox");
+		testUpgrade.upgrade("eSusp");
+		testUpgrade.upgrade("eTires");
+		testUpgrade.upgrade("eWeightRed");
+		assertTrue("Upgrades should still be at 5, as this is the max level and cannot be further upgraded.", testUpgrade.equals(testUpgrade2));		
+	}
+	
+	@Test
+	public void testUpgradingNonExistingComponent() {
+		Upgrades testUpgrade = new Upgrades(0);
+		Upgrades testUpgrade2 = new Upgrades(0);
+		testUpgrade.upgrade("eOther");
+		assertTrue("Upgrade shouldn't have upgraded anything as OOP is an invalid part", testUpgrade.equals(testUpgrade2));
+	}
+	
+	@Test
+	public void testWrongInitialization() {
+		Upgrades testUpgrade = new Upgrades(1);
+		assertTrue("Wrongly Initialized upgrades should be set to 0", upgrades.equals(testUpgrade));
 	}
 	
 }
