@@ -26,7 +26,20 @@ public class SceneLoadController
 	
 	public void gotoFxmlScene(String name, Stage stage) throws IOException
 	{
-		Parent root = FXMLLoader.load(this.getClass().getResource("../view/" + name + ".fxml"));
+		Parent root = null;
+		SceneFile sceneFile = GameController.getSceneCatalog().getScene(name);
+		if (sceneFile == null || name.equals("Race"))
+		{
+			System.out.println("Found a new scene " + name);
+			root = FXMLLoader.load(this.getClass().getResource("../view/" + name + ".fxml"));
+		}
+		else
+		{
+			System.out.println("Using stored scene " + sceneFile.getName());
+			root = sceneFile.getRoot();
+		}
+		GameController.getSceneCatalog().addSceneFile(new SceneFile(name, root));
+		
 		
 		formulaApplication.setSceneRoot(root);
 		

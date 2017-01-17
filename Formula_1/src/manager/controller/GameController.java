@@ -30,6 +30,8 @@ public class GameController
 	private static Profile	profile;
 	private Timer			timer;
 	private static String			jsonFile;
+	
+	private static SceneCatalog sceneCatalog;
 
 	/**
 	 * when initialized it will call the readJsonObjectAndInitialize() method to create profile according to
@@ -40,6 +42,7 @@ public class GameController
 	public GameController(String jsonFile) throws IOException
 	{
 		GameController.jsonFile = jsonFile;
+		GameController.setSceneCatalog(new SceneCatalog());
 
 		readJsonObjectAndInitialize();
 		timer = new Timer();
@@ -625,5 +628,13 @@ public class GameController
 	public static Profile getProfile()
 	{
 		return profile;
+	}
+
+	public static SceneCatalog getSceneCatalog() {
+		return sceneCatalog;
+	}
+
+	public static void setSceneCatalog(SceneCatalog sceneCatalog) {
+		GameController.sceneCatalog = sceneCatalog;
 	}
 }
