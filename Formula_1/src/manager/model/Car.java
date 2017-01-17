@@ -10,8 +10,8 @@ public class Car
 	private int			braking;
 	private int			weight;
 	private Upgrades	upgrades;
-	private enum carVar{speed, acceleration, handling, braking, weight, upgrades, eOther};
-	private enum upgradesVar {down, aero, gearbox, engine, susp, tires, weightRed, eOther};
+	private enum carVar{speed, acceleration, handling, braking, weight, upgrades, other};
+	private enum upgradesVar {down, aero, gearbox, engine, susp, tires, weightRed, other};
 	
 	private String upgradesJsonPath = "./data/upgrades.json";
 

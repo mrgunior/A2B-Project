@@ -205,16 +205,7 @@ public class CarTest {
 	{
 		int input = 5;
 		upgrades.setAero(input);
-		int output = car.getCurrentLevel("eAero");
-		assertEquals(input, output);
-	}
-	
-	@Test
-	public void testCurrentLevelAeroSameHash()
-	{
-		int input = 5;
-		upgrades.setAero(input);
-		int output = car.getCurrentLevel("eAero");
+		int output = car.getCurrentLevel("aero");
 		assertEquals(input, output);
 	}
 	
@@ -223,7 +214,7 @@ public class CarTest {
 	{
 		int input = 5;
 		upgrades.setDown(input);
-		int output = car.getCurrentLevel("eDown");
+		int output = car.getCurrentLevel("down");
 		assertEquals(input, output);
 	}
 	
@@ -232,7 +223,7 @@ public class CarTest {
 	{
 		int input = 5;
 		upgrades.setEngine(input);
-		int output = car.getCurrentLevel("eEngine");
+		int output = car.getCurrentLevel("engine");
 		assertEquals(input, output);
 	}
 	
@@ -241,7 +232,7 @@ public class CarTest {
 	{
 		int input = 5;
 		upgrades.setGearbox(input);
-		int output = car.getCurrentLevel("eGearbox");
+		int output = car.getCurrentLevel("gearbox");
 		assertEquals(input, output);
 	}
 	
@@ -250,7 +241,7 @@ public class CarTest {
 	{
 		int input = 5;
 		upgrades.setSusp(input);
-		int output = car.getCurrentLevel("eSusp");
+		int output = car.getCurrentLevel("susp");
 		assertEquals(input, output);
 	}
 	
@@ -260,7 +251,7 @@ public class CarTest {
 	{
 		int input = 5;
 		upgrades.setTires(input);
-		int output = car.getCurrentLevel("eTires");
+		int output = car.getCurrentLevel("tires");
 		assertEquals(input, output);
 	}
 	
@@ -270,14 +261,14 @@ public class CarTest {
 	{
 		int input = 5;
 		upgrades.setWeightRed(input);
-		int output = car.getCurrentLevel("eWeightRed");
+		int output = car.getCurrentLevel("weightRed");
 		assertEquals(input, output);
 	}
 	
 	@Test
 	public void testCurrentLevelDefault()
 	{
-		int output = car.getCurrentLevel("eOther");
+		int output = car.getCurrentLevel("other");
 		assertEquals(0, output);
 	}
 	

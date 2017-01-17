@@ -4,7 +4,8 @@ public class Upgrades
 {
 
 	private int down, aero, gearbox, engine, susp, tires, weightRed;
-	private enum upgradesVar {down, aero, gearbox, engine, susp, tires, weightRed, eOther};
+	private enum upgradeType{down, aero, gearbox, engine, susp, tires, weightRed, other};
+
 
 	public Upgrades(int down, int aero, int gearbox, int engine, int susp, int tires, int weightRed)
 	{
@@ -103,7 +104,7 @@ public class Upgrades
 	
 	public void upgrade(String type)
 	{
-		switch (upgradesVar.valueOf(type))
+		switch (upgradeType.valueOf(type))
 		{
 		case aero:
 			upgradeAero();
