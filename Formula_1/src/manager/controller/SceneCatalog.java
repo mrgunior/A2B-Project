@@ -41,4 +41,9 @@ public class SceneCatalog
 			sceneFiles.add(sceneFile);
 		}
 	}
+	
+	public String toString()
+	{
+		return sceneFiles.toString();
+	}
 }

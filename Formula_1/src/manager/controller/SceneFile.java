@@ -32,4 +32,9 @@ public class SceneFile
 	{
 		this.root = root;
 	}
+	
+	public String toString()
+	{
+		return name;
+	}
 }

@@ -27,6 +27,7 @@ public class SceneLoadController
 	public void gotoFxmlScene(String name, Stage stage) throws IOException
 	{
 		Parent root = null;
+		System.out.println("Using SceneCatalog " + GameController.getSceneCatalog());
 		SceneFile sceneFile = GameController.getSceneCatalog().getScene(name);
 		if (sceneFile == null || name.equals("Race"))
 		{
