@@ -107,9 +107,6 @@ public class ChooseDriverController extends SceneLoadController implements Initi
 					int d1 = Integer.parseInt(driver1.getId());
 					int d2 = Integer.parseInt(driver2.getId());
 					
-					Profile.setBudget(drivers.get(d1).getSalary(), true);
-					Profile.setBudget(drivers.get(d2).getSalary(), true);
-					
 					GameController gamecontroller = formulaApplication.getGameController();
 					gamecontroller.initializeDriversInProfile(obj);
 				}
