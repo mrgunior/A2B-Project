@@ -64,6 +64,7 @@ public class CarManagementController extends SceneLoadController implements Init
 	private String maxMessageLong = "Max level achieved!";
 	private String maxMessageShort = "-";
 	private String consoleCantBuyMessage = "Not enough money or level maxed out";
+	private int soundNumber;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources)
@@ -71,6 +72,8 @@ public class CarManagementController extends SceneLoadController implements Init
 		background.fitWidthProperty().bind(root.widthProperty());
 		background.fitHeightProperty().bind(root.heightProperty());
 
+		soundNumber = 1;
+		
 		car = Profile.getCar();
 		upgrades = car.getUpgrades();
 
@@ -81,6 +84,7 @@ public class CarManagementController extends SceneLoadController implements Init
 			try
 			{
 				gotoFxmlScene("Dashboard", (Stage) back.getScene().getWindow());
+				playAudio("carDrivingAway.mp3", 1.0);
 			}
 			catch (IOException e)
 			{
@@ -102,6 +106,13 @@ public class CarManagementController extends SceneLoadController implements Init
 			{
 				car.upgrade("down");
 				Profile.setBudget(downPriceDouble, true);
+				if (soundNumber == 1) {
+					playSound(1);
+					soundNumber = 2;
+				} else {
+					playSound(2);
+					soundNumber = 1;
+				}
 			}
 			else
 			{
@@ -116,6 +127,13 @@ public class CarManagementController extends SceneLoadController implements Init
 			{
 				car.upgrade("aero");
 				Profile.setBudget(aeroPriceDouble, true);
+				if (soundNumber == 1) {
+					playSound(1);
+					soundNumber = 2;
+				} else {
+					playSound(2);
+					soundNumber = 1;
+				}
 			}
 			else
 			{
@@ -129,6 +147,13 @@ public class CarManagementController extends SceneLoadController implements Init
 			{
 				car.upgrade("gearbox");
 				Profile.setBudget(gearboxPriceDouble, true);
+				if (soundNumber == 1) {
+					playSound(1);
+					soundNumber = 2;
+				} else {
+					playSound(2);
+					soundNumber = 1;
+				}
 			}
 			else
 			{
@@ -142,6 +167,13 @@ public class CarManagementController extends SceneLoadController implements Init
 			{
 				car.upgrade("engine");
 				Profile.setBudget(enginePriceDouble, true);
+				if (soundNumber == 1) {
+					playSound(1);
+					soundNumber = 2;
+				} else {
+					playSound(2);
+					soundNumber = 1;
+				}
 			}
 			else
 			{
@@ -155,6 +187,13 @@ public class CarManagementController extends SceneLoadController implements Init
 			{
 				car.upgrade("susp");
 				Profile.setBudget(suspPriceDouble, true);
+				if (soundNumber == 1) {
+					playSound(1);
+					soundNumber = 2;
+				} else {
+					playSound(2);
+					soundNumber = 1;
+				}
 			}
 			else
 			{
@@ -168,6 +207,13 @@ public class CarManagementController extends SceneLoadController implements Init
 			{
 				car.upgrade("tires");
 				Profile.setBudget(tiresPriceDouble, true);
+				if (soundNumber == 1) {
+					playSound(1);
+					soundNumber = 2;
+				} else {
+					playSound(2);
+					soundNumber = 1;
+				}
 			}
 			else
 			{
@@ -181,6 +227,13 @@ public class CarManagementController extends SceneLoadController implements Init
 			{
 				car.upgrade("weightRed");
 				Profile.setBudget(weightPriceDouble, true);
+				if (soundNumber == 1) {
+					playSound(1);
+					soundNumber = 2;
+				} else {
+					playSound(2);
+					soundNumber = 1;
+				}
 			}
 			else
 			{
@@ -188,6 +241,14 @@ public class CarManagementController extends SceneLoadController implements Init
 			}
 			displayUpgrades();
 		});
+	}
+	
+	private void playSound(int i) {
+		if (i == 1) {
+			playAudio("pitSound1.mp3", 6.0);
+		} else if (i == 2) {
+			playAudio("pitSound2.mp3", 6.0);
+		}
 	}
 
 	private void displayUpgrades()
