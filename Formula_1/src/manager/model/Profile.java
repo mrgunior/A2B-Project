@@ -169,6 +169,7 @@ public class Profile
 			formulaApplication.getGameController();
 			GameController.writeJsonObjectToFile();
 		}
+		
 		catch (IOException e)
 		{
 			e.printStackTrace();

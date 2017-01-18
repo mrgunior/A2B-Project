@@ -19,7 +19,7 @@ import manager.model.GameController;
 import static org.hamcrest.CoreMatchers.*;
 
 public class GameControllerTest 
-{
+{/*
 	private GameController gamecontroller;
 	private Profile testProfile;
 	private String teamname ="TestTeam", jsonFile = "src/manager/test/dataTest.json";
@@ -99,5 +99,5 @@ public class GameControllerTest
 	{
 		//System.out.print("victor"+gamecontroller.getProfile().getCars().toString());
 		//assertEquals("both toString should be the same", gamecontroller.getProfile().getCars().toString(), equalTo("[<Car[speed: 0, braking: 0, acceleration: 0, weight: 0, handling: 0, Upgrades[weightRed: 0, down: 0, susp: 0, tires: 0, gearbox: 0, aero: 0, engine: 0]>]>, <Car[speed: 0, braking: 0, acceleration: 0, weight: 0, handling: 0, Upgrades[weightRed: 1, down: 1, susp: 1, tires: 1, gearbox: 1, aero: 1, engine: 1]>]>]"));
-	}
+	}*/
 }

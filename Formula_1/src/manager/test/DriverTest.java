@@ -5,9 +5,6 @@ import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
-
-import com.sun.xml.internal.bind.v2.model.core.ID;
-
 import manager.model.Driver;
 
 public class DriverTest 
@@ -179,13 +176,120 @@ public class DriverTest
 	@Test
 	public void testGetSalary()
 	{
-		assertEquals("", driver.getSalary(), salary, 0.001);
+		assertEquals("Salary should be equal", driver.getSalary(), 1480000.0, 0.001);
 	}
 	
 	@Test
 	public void testSetSalary()
 	{
-		driver.setSalary(1.0);
-		assertTrue("driver salary has been set correctly via setSalary()", driver.getSalary()==1.0);
+		driver.setSalaryBonus(4.0);
+		assertTrue("driver salary has been set correctly via setSalary()", driver.getSalary()==5920000.0);
+	}
+	
+	@Test
+	public void testEqualsSameObject()
+	{
+		assertTrue("Objects that are the same should be the same", driver.equals(driver));
+	}
+	
+	@Test
+	public void testEqualsNull()
+	{
+		assertFalse("Objects that is null is not equal", driver.equals(null));
+	}
+	
+	@Test
+	public void testEqualsNotInstanceOfDriver()
+	{
+		assertFalse("Objects that is not a driver object is not equal", driver.equals(new Object()));
+	}
+	
+	@Test
+	public void testEqualsObjectIsEqualAcceleration()
+	{
+		assertFalse("Objects that are of the same instance but with different values are not equal", driver.equals(new Driver(id, teamId, name, points, number, speed, 50, turning, salary)));
+	}
+	
+	@Test
+	public void testEqualsObjectIsEqualAveragePerformance()
+	{
+		assertFalse("Objects that are of the same instance but with different values are not equal", driver.equals(new Driver(id, teamId, name, points, number, 10, acceleration, 50, salary)));
+	}
+	
+	@Test
+	public void testEqualsObjectIsEqualId()
+	{
+		assertTrue("Objects that are of the same instance but with different values are not equal", driver.equals(new Driver(1, teamId, name, points, number, speed, acceleration, turning, salary)));
+	}
+	
+	@Test
+	public void testEqualsObjectNameIsEqualToNull()
+	{
+		driver.setName(null);
+		Driver driver2 = new Driver(id, teamId, name, points, number, speed, acceleration, turning, salary);
+		driver2.setName("victor wernet");
+		assertFalse("Objects that are of the same instance but with different values are not equal", driver.equals(driver2));
+	}
+		
+	@Test
+	public void testEqualsObjectNameIsEqualToNullBoth()
+	{
+		assertFalse("Objects that are of the same instance but with different values are not equal", driver.equals(new Driver(id, teamId, null, points, number, speed, acceleration, turning, salary)));
+	}
+	
+	@Test
+	public void testEqualsNumberIsNotEqual()
+	{
+		assertFalse("Objects that are of the same instance but with different values are not equal",driver.equals(new Driver(id, teamId, name, points, 444, speed, acceleration, turning, salary)));
+	}
+	
+	@Test
+	public void testEqualsPointIsNotEqual()
+	{
+		assertFalse("Objects that are of the same instance but with different values are not equal",driver.equals(new Driver(id, teamId, name, 444, number, speed, acceleration, turning, salary)));
+	}
+	
+	@Test
+	public void testEqualsSalaryIsNotEqual()
+	{
+		assertFalse("Objects that are of the same instance but with different values are not equal",driver.equals(new Driver(id, teamId, name, points, number, speed, acceleration, turning, 444)));
+	}
+	
+	@Test
+	public void testEqualsSalaryBonusIsNotEqual()
+	{
+		driver.salaryPercentageBonus(2);
+		assertFalse("Objects that are of the same instance but with different values are not equal",driver.equals(new Driver(id, teamId, name, points, number, speed, acceleration, turning, salary)));
+	}
+	
+	@Test
+	public void testEqualsSpeedIsNotEqual()
+	{
+		driver.setSpeed(44);
+		assertFalse("Objects that are of the same instance but with different values are not equal",driver.equals(new Driver(id, teamId, name, points, number, speed, acceleration, turning, salary)));
+	}
+	
+	@Test
+	public void testEqualsTeamIdIsNotEqual()
+	{
+		assertFalse("Objects that are of the same instance but with different values are not equal",driver.equals(new Driver(id, 44, name, points, number, speed, acceleration, turning, salary)));
+	}
+	
+	@Test
+	public void testEqualsTurningIsNotEqual()
+	{
+		driver.setTurning(444);
+		assertFalse("Objects that are of the same instance but with different values are not equal",driver.equals(new Driver(id, teamId, name, points, number, speed, acceleration, turning, salary)));
+	}
+	
+	@Test
+	public void testEqualsObjectIsCompletelyNotEquals()
+	{
+		assertFalse("Objects that are of the same instance but with different values are not equal",driver.equals(new Driver(444, 444, "something else", 444, 444, 444, 444, 444, 444.0)));
+	}
+	
+	public void testComparatorSortById()
+	{
+		
 	}
 }

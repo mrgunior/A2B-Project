@@ -131,11 +131,6 @@ public class GameController
 		}, 2 * 60 * 1000, 2 * 60 * 1000); // in 1 minute you have 60 seconds and each second is 1000
 											// milliseconds and times that by 2 gives you 2 minutes.
 	}
-
-	public void setTeams()
-	{
-		
-	}
 	
 	/**
 	 * @throws IOException
