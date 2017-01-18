@@ -84,6 +84,7 @@ public class CarManagementController extends SceneLoadController implements Init
 			try
 			{
 				gotoFxmlScene("Dashboard", (Stage) back.getScene().getWindow());
+				playAudio("click.wav", 6.0);
 				playAudio("carDrivingAway.mp3", 1.0);
 			}
 			catch (IOException e)
@@ -94,6 +95,7 @@ public class CarManagementController extends SceneLoadController implements Init
 		// Hover on
 		back.setOnMouseEntered(event -> {
 			back.setImage(new Image("file:images/menu/BackHover.png"));
+			playAudio("hover.wav", 6.0);
 		});
 		// Hover off
 		back.setOnMouseExited(event -> {
@@ -120,6 +122,10 @@ public class CarManagementController extends SceneLoadController implements Init
 			}
 			displayUpgrades();
 		});
+		
+		downUpgrade.setOnMouseEntered(event -> {
+			playAudio("hover.wav", 6.0);
+		});
 
 		aeroUpgrade.setOnMousePressed(event -> {
 			System.out.println("Upgrade down");
@@ -142,6 +148,10 @@ public class CarManagementController extends SceneLoadController implements Init
 			displayUpgrades();
 		});
 
+		aeroUpgrade.setOnMouseEntered(event -> {
+			playAudio("hover.wav", 6.0);
+		});
+
 		gearboxUpgrade.setOnMousePressed(event -> {
 			if (Profile.getBudget() > gearboxPriceDouble && car.getUpgrades().getGearbox() < 5)
 			{
@@ -161,7 +171,11 @@ public class CarManagementController extends SceneLoadController implements Init
 			}
 			displayUpgrades();
 		});
-
+		
+		gearboxUpgrade.setOnMouseEntered(event -> {
+			playAudio("hover.wav", 6.0);
+		});
+		
 		engineUpgrade.setOnMousePressed(event -> {
 			if (Profile.getBudget() > enginePriceDouble && car.getUpgrades().getEngine() < 5)
 			{
@@ -180,6 +194,10 @@ public class CarManagementController extends SceneLoadController implements Init
 				System.out.println(consoleCantBuyMessage);
 			}
 			displayUpgrades();
+		});
+		
+		engineUpgrade.setOnMouseEntered(event -> {
+			playAudio("hover.wav", 6.0);
 		});
 
 		suspUpgrade.setOnMousePressed(event -> {
@@ -201,6 +219,10 @@ public class CarManagementController extends SceneLoadController implements Init
 			}
 			displayUpgrades();
 		});
+		
+		suspUpgrade.setOnMouseEntered(event -> {
+			playAudio("hover.wav", 6.0);
+		});
 
 		tiresUpgrade.setOnMousePressed(event -> {
 			if (Profile.getBudget() > tiresPriceDouble && car.getUpgrades().getTires() < 5)
@@ -221,6 +243,10 @@ public class CarManagementController extends SceneLoadController implements Init
 			}
 			displayUpgrades();
 		});
+		
+		tiresUpgrade.setOnMouseEntered(event -> {
+			playAudio("hover.wav", 6.0);
+		});
 
 		weightUpgrade.setOnMousePressed(event -> {
 			if (Profile.getBudget() > weightPriceDouble && car.getUpgrades().getWeightRed() < 5)
@@ -240,6 +266,10 @@ public class CarManagementController extends SceneLoadController implements Init
 				System.out.println(consoleCantBuyMessage);
 			}
 			displayUpgrades();
+		});
+		
+		weightUpgrade.setOnMouseEntered(event -> {
+			playAudio("hover.wav", 6.0);
 		});
 	}
 	

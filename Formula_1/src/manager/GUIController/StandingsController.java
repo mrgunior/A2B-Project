@@ -100,11 +100,17 @@ public class StandingsController extends SceneLoadController implements Initiali
 		
 		popupNext.setOnMousePressed(event -> {
 			popup.setVisible(false);
+			playAudio("click.wav", 6.0);
+		});
+		
+		popupNext.setOnMouseEntered(event -> {
+			playAudio("hover.wav", 6.0);
 		});
 		
 		back.setOnMousePressed(event -> {
 			try {
 				gotoFxmlScene("Dashboard", (Stage) back.getScene().getWindow());
+				playAudio("click.wav", 6.0);
 			}
 
 			catch (IOException e) {
@@ -114,6 +120,7 @@ public class StandingsController extends SceneLoadController implements Initiali
 		// Hover on
 		back.setOnMouseEntered(event -> {
 			back.setImage(new Image("file:images/menu/BackHover.png"));
+			playAudio("hover.wav", 6.0);
 		});
 		// Hover off
 		back.setOnMouseExited(event -> {

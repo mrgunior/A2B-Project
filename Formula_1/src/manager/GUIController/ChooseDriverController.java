@@ -115,6 +115,8 @@ public class ChooseDriverController extends SceneLoadController implements Initi
 				}
 				
 				//GameController.writeJsonObjectToFile();
+
+				playAudio("click.wav", 6.0);
 				gotoFxmlScene("Dashboard", (Stage) next.getScene().getWindow());
 			} 
 			
@@ -125,6 +127,7 @@ public class ChooseDriverController extends SceneLoadController implements Initi
 		// Hover on
 		next.setOnMouseEntered(event -> {
 			next.setImage(new Image("file:images/menu/NextHover.png"));
+			playAudio("hover.wav", 6.0);
 		});
 		// Hover off
 		next.setOnMouseExited(event -> {
@@ -134,78 +137,100 @@ public class ChooseDriverController extends SceneLoadController implements Initi
 		// Team Choices
 		alonso.setOnMousePressed(event -> {
 			selectDriver(alonso, "Fernando Alonso");
+			playAudio("click.wav", 6.0);
 		});
 		bottas.setOnMousePressed(event -> {
 			selectDriver(bottas, "Valtteri Bottas");
+			playAudio("click.wav", 6.0);
 		});
 		button.setOnMousePressed(event -> {
 			selectDriver(button, "Jensen Button");
+			playAudio("click.wav", 6.0);
 		});
 		ericsson.setOnMousePressed(event -> {
 			selectDriver(ericsson, "Marcus Ericsson");
+			playAudio("click.wav", 6.0);
 		});
 		grosjean.setOnMousePressed(event -> {
 			selectDriver(grosjean, "Romain Grosjean");
+			playAudio("click.wav", 6.0);
 		});
 		gutierrez.setOnMousePressed(event -> {
 			selectDriver(gutierrez, "Esteban Gutierrez");
+			playAudio("click.wav", 6.0);
 		});
 		hamilton.setOnMousePressed(event -> {
 			selectDriver(hamilton, "Lewis Hamilton");
+			playAudio("click.wav", 6.0);
 		});
 		haryanto.setOnMousePressed(event -> {
 			selectDriver(haryanto, "Rio Haryanto");
+			playAudio("click.wav", 6.0);
 		});
 		hulkenberg.setOnMousePressed(event -> {
 			selectDriver(hulkenberg, "Nicolas Hulkenberg");
+			playAudio("click.wav", 6.0);
 		});
 		kvyat.setOnMousePressed(event -> {
 			selectDriver(kvyat, "Daniil Kvyat");
+			playAudio("click.wav", 6.0);
 		});
 		magnussen.setOnMousePressed(event -> {
 			selectDriver(magnussen, "Kevin Magnussen");
+			playAudio("click.wav", 6.0);
 		});
 		massa.setOnMousePressed(event -> {
 			selectDriver(massa, "Felipe Massa");
+			playAudio("click.wav", 6.0);
 		});
 		nasr.setOnMousePressed(event -> {
 			selectDriver(nasr, "Felipe Nasr");
+			playAudio("click.wav", 6.0);
 		});
 
 		palmer.setOnMousePressed(event -> {
 			selectDriver(palmer, "Jolyon Palmer");
+			playAudio("click.wav", 6.0);
 		});
 
 		perez.setOnMousePressed(event -> {
 			selectDriver(perez, "Sergio Perez");
+			playAudio("click.wav", 6.0);
 		});
 
 		raikkonnen.setOnMousePressed(event -> {
 			selectDriver(raikkonnen, "Kimi Raikkonnen");
+			playAudio("click.wav", 6.0);
 		});
 
 		ricciardo.setOnMousePressed(event -> {
 			selectDriver(ricciardo, "Daniel Ricciardo");
+			playAudio("click.wav", 6.0);
 		});
 
 		rosberg.setOnMousePressed(event -> {
 			selectDriver(rosberg, "Nico Rosberg");
+			playAudio("click.wav", 6.0);
 		});
 
 		sainz.setOnMousePressed(event -> {
 			selectDriver(sainz, "Carloz Sainz Jr.");
+			playAudio("click.wav", 6.0);
 		});
 
 		verstappen.setOnMousePressed(event -> {
 			selectDriver(verstappen, "Max Verstappen");
+			playAudio("click.wav", 6.0);
 		});
 
 		vettel.setOnMousePressed(event -> {
 			selectDriver(vettel, "Sebastian Vettel");
+			playAudio("click.wav", 6.0);
 		});
 
 		wehrlein.setOnMousePressed(event -> {
 			selectDriver(wehrlein, "Pascal Wehrlein");
+			playAudio("click.wav", 6.0);
 		});
 	}
 
