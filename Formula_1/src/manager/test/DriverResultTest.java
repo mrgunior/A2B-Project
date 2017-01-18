@@ -145,6 +145,7 @@ public class DriverResultTest
 	@Test 
 	public void testOtherName()
 	{
+		driverResult.getDriver().setName("Max Verstappen");
 		driverResultTrue.getDriver().setName("Lewis Hamilton");
 		assertNotEquals(driverResult, driverResultTrue);
 	}
@@ -160,14 +161,24 @@ public class DriverResultTest
 	public void testEqualsNameNullOtherNotNull()
 	{
 		driverResult.getDriver().setName(null);
-		assertNotEquals(driverResult, driverResultTrue);
+		driverResultFalse.getDriver().setName("Name");
+		assertFalse(driverResult.equals(driverResultTrue));
 	}
 	
 	@Test
 	public void testEqualsNamesNull()
 	{
 		driverResult.getDriver().setName(null);
-		driverResultTrue.getDriver().setName(null);
+		driverResultFalse.getDriver().setName(null);
 		assertEquals(driverResult, driverResultTrue);
+	}	
+	
+	@Test
+	public void testEqualsNamesDifferent()
+	{
+		// driver.getName().equals(other.driver.getName())
+		driverResult.getDriver().getName();
+		driverResultFalse.getDriver().getName();
+		assertNotEquals(driverResult, driverResultFalse);
 	}
 }
