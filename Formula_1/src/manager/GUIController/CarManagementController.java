@@ -96,7 +96,7 @@ public class CarManagementController extends SceneLoadController implements Init
 		// Hover on
 		back.setOnMouseEntered(event -> {
 			back.setImage(new Image("file:images/menu/BackHover.png"));
-			playAudio("hover.wav", 6.0);
+			playAudio("hover.wav", 1.0);
 		});
 		// Hover off
 		back.setOnMouseExited(event -> {
@@ -125,7 +125,7 @@ public class CarManagementController extends SceneLoadController implements Init
 		});
 		
 		downUpgrade.setOnMouseEntered(event -> {
-			playAudio("hover.wav", 6.0);
+			playAudio("hover.wav", 1.0);
 		});
 
 		aeroUpgrade.setOnMousePressed(event -> {
@@ -150,7 +150,7 @@ public class CarManagementController extends SceneLoadController implements Init
 		});
 
 		aeroUpgrade.setOnMouseEntered(event -> {
-			playAudio("hover.wav", 6.0);
+			playAudio("hover.wav", 1.0);
 		});
 
 		gearboxUpgrade.setOnMousePressed(event -> {
@@ -174,7 +174,7 @@ public class CarManagementController extends SceneLoadController implements Init
 		});
 		
 		gearboxUpgrade.setOnMouseEntered(event -> {
-			playAudio("hover.wav", 6.0);
+			playAudio("hover.wav", 1.0);
 		});
 		
 		engineUpgrade.setOnMousePressed(event -> {
@@ -198,7 +198,7 @@ public class CarManagementController extends SceneLoadController implements Init
 		});
 		
 		engineUpgrade.setOnMouseEntered(event -> {
-			playAudio("hover.wav", 6.0);
+			playAudio("hover.wav", 1.0);
 		});
 
 		suspUpgrade.setOnMousePressed(event -> {
@@ -222,7 +222,7 @@ public class CarManagementController extends SceneLoadController implements Init
 		});
 		
 		suspUpgrade.setOnMouseEntered(event -> {
-			playAudio("hover.wav", 6.0);
+			playAudio("hover.wav", 1.0);
 		});
 
 		tiresUpgrade.setOnMousePressed(event -> {
@@ -246,7 +246,7 @@ public class CarManagementController extends SceneLoadController implements Init
 		});
 		
 		tiresUpgrade.setOnMouseEntered(event -> {
-			playAudio("hover.wav", 6.0);
+			playAudio("hover.wav", 1.0);
 		});
 
 		weightUpgrade.setOnMousePressed(event -> {
@@ -270,7 +270,7 @@ public class CarManagementController extends SceneLoadController implements Init
 		});
 		
 		weightUpgrade.setOnMouseEntered(event -> {
-			playAudio("hover.wav", 6.0);
+			playAudio("hover.wav", 1.0);
 		});
 	}
 	

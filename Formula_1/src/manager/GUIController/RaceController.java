@@ -222,7 +222,7 @@ public class RaceController extends SceneLoadController implements Initializable
 		};
 
 		startRace.setOnMousePressed(event -> {
-			playAudio("click.wav", 6.0);
+			playAudio("click.wav", 1.0);
 			playAudio("race.wav", .7);
 			startRace.setVisible(false);
 			animationTimer.start();
@@ -232,7 +232,7 @@ public class RaceController extends SceneLoadController implements Initializable
 		});
 		startRace.setOnMouseEntered(event -> {
 			startRace.setImage(new Image("file:images/menu/StartGameHover.png"));
-			playAudio("hover.wav", 6.0);
+			playAudio("hover.wav", 1.0);
 		});
 		startRace.setOnMouseExited(event -> {
 			startRace.setImage(new Image("file:images/menu/StartGame.png"));
@@ -244,7 +244,7 @@ public class RaceController extends SceneLoadController implements Initializable
 			try
 			{
 				gotoFxmlScene("Result", (Stage) time.getScene().getWindow());
-				playAudio("click.wav", 6.0);
+				playAudio("click.wav", 1.0);
 			}
 			catch (IOException e)
 			{
@@ -253,7 +253,7 @@ public class RaceController extends SceneLoadController implements Initializable
 		});
 		gotoResults.setOnMouseEntered(event -> {
 			gotoResults.setImage(new Image("file:images/menu/NextHover.png"));
-			playAudio("hover.wav", 6.0);
+			playAudio("hover.wav", 1.0);
 		});
 		gotoResults.setOnMouseExited(event -> {
 			gotoResults.setImage(new Image("file:images/menu/Next.png"));

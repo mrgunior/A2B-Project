@@ -66,7 +66,7 @@ public class DashboardController extends SceneLoadController implements Initiali
 					try
 					{
 						gotoFxmlScene("CarManagement", (Stage) carManagement.getScene().getWindow());
-						playAudio("click.wav", 6.0);
+						playAudio("click.wav", 1.0);
 						playAudio("carDrivingAway.wav", 1.0);
 
 					} 
@@ -78,7 +78,7 @@ public class DashboardController extends SceneLoadController implements Initiali
 				});
 				carManagement.setOnMouseEntered(event -> {
 					carManagement.setStyle("-fx-background-color: rgba(192,192,192,0.2); -fx-border-color: #7c7a7a96; -fx-border-width: 1;");
-					playAudio("hover.wav", 6.0);
+					playAudio("hover.wav", 1.0);
 					// carManagement.setImage(new
 					// Image("file:images/menu/BackHover.png"));
 				});
@@ -92,7 +92,7 @@ public class DashboardController extends SceneLoadController implements Initiali
 					try
 					{
 						gotoFxmlScene("TeamManagement", (Stage) teamManagement.getScene().getWindow());
-						playAudio("click.wav", 6.0);
+						playAudio("click.wav", 1.0);
 					} 
 					
 					catch (IOException e)
@@ -102,7 +102,7 @@ public class DashboardController extends SceneLoadController implements Initiali
 				});
 				teamManagement.setOnMouseEntered(event -> {
 					teamManagement.setStyle("-fx-background-color: rgba(192,192,192,0.2); -fx-border-color: #7c7a7a96; -fx-border-width: 1;");
-					playAudio("hover.wav", 6.0);
+					playAudio("hover.wav", 1.0);
 					// teamManagement.setImage(new
 					// Image("file:images/menu/BackHover.png"));
 				});
@@ -116,7 +116,7 @@ public class DashboardController extends SceneLoadController implements Initiali
 					try
 					{
 						gotoFxmlScene("Standings", (Stage) standings.getScene().getWindow());
-						playAudio("click.wav", 6.0);
+						playAudio("click.wav", 1.0);
 					} 
 					
 					catch (IOException e)
@@ -126,7 +126,7 @@ public class DashboardController extends SceneLoadController implements Initiali
 				});
 				standings.setOnMouseEntered(event -> {
 					standings.setStyle("-fx-background-color: rgba(192,192,192,0.2); -fx-border-color: #7c7a7a96; -fx-border-width: 1;");
-					playAudio("hover.wav", 6.0);
+					playAudio("hover.wav", 1.0);
 					// standings.setImage(new Image("file:images/menu/BackHover.png"));
 				});
 				standings.setOnMouseExited(event -> {
@@ -139,7 +139,7 @@ public class DashboardController extends SceneLoadController implements Initiali
 					try
 					{
 						gotoFxmlScene("Race", (Stage) race.getScene().getWindow());
-						playAudio("click.wav", 6.0);
+						playAudio("click.wav", 1.0);
 					} 
 					
 					catch (IOException e)
@@ -149,7 +149,7 @@ public class DashboardController extends SceneLoadController implements Initiali
 				});
 				race.setOnMouseEntered(event -> {
 					race.setStyle("-fx-background-color: rgba(192,192,192,0.2); -fx-border-color: #7c7a7a96; -fx-border-width: 1;");
-					playAudio("hover.wav", 6.0);
+					playAudio("hover.wav", 1.0);
 					// carManagement.setImage(new
 					// Image("file:images/menu/BackHover.png"));
 				});
@@ -161,14 +161,14 @@ public class DashboardController extends SceneLoadController implements Initiali
 				// Team Text
 				teamName.setOnMousePressed(event -> {
 					String currentTeamName = formulaApplication.getTeamName();
-					playAudio("click.wav", 6.0);
+					playAudio("click.wav", 1.0);
 					teamName.setText(currentTeamName);
 				});
 
 				// Balance Text
 				balance.setOnMousePressed(event -> {
 					String currentBalance = Double.toString(formulaApplication.getBalance());
-					playAudio("click.wav", 6.0);
+					playAudio("click.wav", 1.0);
 					balance.setText(currentBalance);
 				});
 				
@@ -176,7 +176,7 @@ public class DashboardController extends SceneLoadController implements Initiali
 					try
 					{
 						gotoFxmlScene("MainMenu", (Stage) back.getScene().getWindow());
-						playAudio("click.wav", 6.0);
+						playAudio("click.wav", 1.0);
 					} 
 					
 					catch (IOException e)
@@ -187,7 +187,7 @@ public class DashboardController extends SceneLoadController implements Initiali
 				});
 				back.setOnMouseEntered(event -> {
 					back.setImage(new Image("file:images/menu/BackHover.png"));
-					playAudio("hover.wav", 6.0);
+					playAudio("hover.wav", 1.0);
 				});
 				back.setOnMouseExited(event -> {
 					back.setImage(new Image("file:images/menu/Back.png"));
