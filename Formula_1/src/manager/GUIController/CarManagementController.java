@@ -84,7 +84,7 @@ public class CarManagementController extends SceneLoadController implements Init
 			try
 			{
 				gotoFxmlScene("Dashboard", (Stage) back.getScene().getWindow());
-				playAudio("carDrivingAway.mp3", 1.0);
+				playAudio("carDrivingAway.wav", 1.0);
 			}
 			catch (IOException e)
 			{
@@ -245,9 +245,9 @@ public class CarManagementController extends SceneLoadController implements Init
 	
 	private void playSound(int i) {
 		if (i == 1) {
-			playAudio("pitSound1.mp3", 6.0);
+			playAudio("pitSound1.wav", 1.0);
 		} else if (i == 2) {
-			playAudio("pitSound2.mp3", 6.0);
+			playAudio("pitSound2.wav", 1.0);
 		}
 	}
 
