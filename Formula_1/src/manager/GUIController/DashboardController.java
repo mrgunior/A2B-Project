@@ -67,7 +67,8 @@ public class DashboardController extends SceneLoadController implements Initiali
 					{
 						gotoFxmlScene("CarManagement", (Stage) carManagement.getScene().getWindow());
 						playAudio("click.wav", 6.0);
-						playAudio("carDrivingAway.mp3", 1.0);
+						playAudio("carDrivingAway.wav", 1.0);
+
 					} 
 					
 					catch (IOException e)
