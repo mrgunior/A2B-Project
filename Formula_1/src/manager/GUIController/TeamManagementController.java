@@ -44,18 +44,21 @@ public class TeamManagementController extends SceneLoadController implements Ini
 		displaySelected();
 
 		lowRisk.setOnMousePressed(event -> {
+			playAudio("click.wav", 6.0);
 			Profile.setStrategy(1);
 			selected = 1;
 			displaySelected();
 		});
 
 		mediumRisk.setOnMousePressed(event -> {
+			playAudio("click.wav", 6.0);
 			Profile.setStrategy(2);
 			selected = 2;
 			displaySelected();
 		});
 
 		highRisk.setOnMousePressed(event -> {
+			playAudio("click.wav", 6.0);
 			Profile.setStrategy(3);
 			selected = 3;
 			displaySelected();
@@ -65,6 +68,7 @@ public class TeamManagementController extends SceneLoadController implements Ini
 			try
 			{
 				gotoFxmlScene("Dashboard", (Stage) back.getScene().getWindow());
+				playAudio("click.wav", 6.0);
 			}
 			catch (IOException e)
 			{
@@ -73,6 +77,7 @@ public class TeamManagementController extends SceneLoadController implements Ini
 		});
 		back.setOnMouseEntered(event -> {
 			back.setImage(new Image("file:images/menu/BackHover.png"));
+			playAudio("hover.wav", 6.0);
 		});
 		back.setOnMouseExited(event -> {
 			back.setImage(new Image("file:images/menu/Back.png"));
