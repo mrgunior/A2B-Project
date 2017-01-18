@@ -50,8 +50,7 @@ public class MainMenuController extends SceneLoadController implements Initializ
 		mediaPlayer.play();
 		*/
 		
-		playAudio("maintheme.mp3", 0.7);
-
+		playAudio("maintheme.mp3", 0.4);
 		
 		background.fitWidthProperty().bind(root.widthProperty());
 		background.fitHeightProperty().bind(root.heightProperty());
