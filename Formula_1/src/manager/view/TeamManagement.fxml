@@ -115,17 +115,17 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Pane>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Low risk will decrease performance, but also decrease the crash chance" textAlignment="CENTER" wrappingWidth="300.0" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Low risk will slightly decrease performance, but also decrease the crash chance (2%)" textAlignment="CENTER" wrappingWidth="300.0" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                <font>
                   <Font name="Yu Gothic UI Light" size="25.0" />
                </font>
             </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Medium risk has average performance, and average crash chance" textAlignment="CENTER" wrappingWidth="300.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Medium risk has normal performance, and average crash chance (7%)" textAlignment="CENTER" wrappingWidth="300.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                <font>
                   <Font name="Yu Gothic UI Light" size="25.0" />
                </font>
             </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="High risk will increase performance, but will also increase the crash chance" textAlignment="CENTER" wrappingWidth="300.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="High risk will greatly increase performance, but will also increase the crash chance (15%)" textAlignment="CENTER" wrappingWidth="300.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                <font>
                   <Font name="Yu Gothic UI Light" size="25.0" />
                </font>

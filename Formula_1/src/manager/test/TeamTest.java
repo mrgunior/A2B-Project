@@ -15,7 +15,7 @@ public class TeamTest {
 	private Team team;
 	private String teamName, driver1Name, driver2Name;
 	private int teamID, balance, id1, points1, number1, speed1, acceleration1, turning1, id2, points2, number2, speed2, acceleration2, turning2;
-	private int down, aero, gearbox, engine, susp, tires, weightRed, cspeed, cacceleration, chandling, cbraking, cweight, ccrashChance;
+	private int down, aero, gearbox, engine, susp, tires, weightRed, cspeed, cacceleration, chandling, cbraking, cweight, ccrashChance, criskMultiplier;
 	private double salary1, salary2;
 	private Driver driver1, driver2;
 	private Upgrades cupgrades;
@@ -63,8 +63,9 @@ public class TeamTest {
 		cbraking = 50;
 		cweight = 50;
 		ccrashChance = 0;
+		criskMultiplier = 0;
 		
-		car = new Car(cspeed, cacceleration, chandling, cbraking, cweight, cupgrades, ccrashChance);
+		car = new Car(cspeed, cacceleration, chandling, cbraking, cweight, cupgrades, ccrashChance, criskMultiplier);
 		
 		teamName = "testTeam";
 		balance = 200;
@@ -180,8 +181,9 @@ public class TeamTest {
 		int cbraking = 51;
 		int cweight = 51;
 		int ccrashChance = 1;
+		int criskMultiplier = 1;
 		
-		Car newCar = new Car(cspeed, cacceleration, chandling, cbraking, cweight, newCUpgrades, ccrashChance);
+		Car newCar = new Car(cspeed, cacceleration, chandling, cbraking, cweight, newCUpgrades, ccrashChance, criskMultiplier);
 		
 		team.setCar(newCar);
 		
@@ -248,7 +250,7 @@ public class TeamTest {
 	@Test
 	public void testEqualsWithDifferentCar() {
 		Team testTeam = new Team(teamName, teamID, balance, driver1, driver2, car);
-		Car testCar = new Car(0, cacceleration, chandling, cbraking, cweight, cupgrades, ccrashChance);
+		Car testCar = new Car(0, cacceleration, chandling, cbraking, cweight, cupgrades, ccrashChance, criskMultiplier);
 		testTeam.setCar(testCar);
 		assertFalse("A team should not equal a team with different Car.", team.equals(testTeam));
 	}

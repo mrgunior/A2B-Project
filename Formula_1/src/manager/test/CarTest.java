@@ -16,7 +16,7 @@ public class CarTest {
 	@Before
 	public void setUp() {
 		upgrades = new Upgrades(0, 0, 0, 0, 0, 0, 0);
-		car = new Car(0, 0, 0, 0, 0, upgrades, 0);
+		car = new Car(0, 0, 0, 0, 0, upgrades, 0, 0);
 	}
 	
 	@Test
@@ -28,6 +28,17 @@ public class CarTest {
 	public void testSetCrashChance() {
 		car.setCrashChance(1);
 		assertEquals("Crash chance updated correctly via setCrashChance()", car.getCrashChance(), 1);
+	}
+	
+	@Test
+	public void testGetRiskMultiplier() {
+		assertEquals("Risk multiplier is equal to risk multiplier in Constructor", car.getRiskMultiplier(), 0);
+	}
+	
+	@Test
+	public void testSetRiskMultiplier() {
+		car.setRiskMultiplier(1);
+		assertEquals("Risk multiplier updated correctly via setRiskMultiplier()", car.getRiskMultiplier(), 1);
 	}
 
 	@Test

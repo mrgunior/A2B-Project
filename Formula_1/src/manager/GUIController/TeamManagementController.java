@@ -49,7 +49,8 @@ public class TeamManagementController extends SceneLoadController implements Ini
 		lowRisk.setOnMousePressed(event -> {
 			playAudio("click.wav", 1.0);
 			Profile.setStrategy(1);
-			userCar.setCrashChance(1);
+			userCar.setCrashChance(2);
+			userCar.setRiskMultiplier(97);
 			try {
 				GameController.writeJsonObjectToFile();
 			} catch (IOException e) {
@@ -63,7 +64,8 @@ public class TeamManagementController extends SceneLoadController implements Ini
 		mediumRisk.setOnMousePressed(event -> {
 			playAudio("click.wav", 1.0);
 			Profile.setStrategy(2);
-			userCar.setCrashChance(4);
+			userCar.setCrashChance(7);
+			userCar.setRiskMultiplier(100);
 			try {
 				GameController.writeJsonObjectToFile();
 			} catch (IOException e) {
@@ -77,7 +79,8 @@ public class TeamManagementController extends SceneLoadController implements Ini
 		highRisk.setOnMousePressed(event -> {
 			playAudio("click.wav", 1.0);
 			Profile.setStrategy(3);
-			userCar.setCrashChance(10);
+			userCar.setCrashChance(15);
+			userCar.setRiskMultiplier(105);
 			try {
 				GameController.writeJsonObjectToFile();
 			} catch (IOException e) {

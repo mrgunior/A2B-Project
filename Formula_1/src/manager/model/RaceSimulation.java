@@ -138,9 +138,11 @@ public class RaceSimulation
 			double carAverage = 0;
 			carAverage = ((car.getAcceleration() + car.getBraking() + car.getHandling() + car.getSpeed())/4);
 			
-			Car userCar = Profile.getCar();
-			double crashChance = userCar.getCrashChance();
+			double crashChance = car.getCrashChance();
 			crashChance = crashChance/100;
+			
+			double riskMultiplier = car.getRiskMultiplier();
+			riskMultiplier = riskMultiplier/100;
 			
 			if (randomCrashChance <= crashChance) {
 				hasCrashed = true;
@@ -151,8 +153,10 @@ public class RaceSimulation
 			
 			if (hasCrashed) {
 				results[i] = 9999999;
+				System.out.println("This car has a risk multiplier of " + riskMultiplier + ", but crashed.");
 			} else {
-				results[i] = calculateResult(carAverage, driverAverage, trackDiff, random);
+				results[i] = calculateResult(carAverage, driverAverage, trackDiff, random) * riskMultiplier;
+				System.out.println("This car has a risk multiplier of " + riskMultiplier);
 			}
 
 			// Normalize time for simulation
