@@ -147,7 +147,7 @@ public class GUICar
 	public void moveCar()
 	{
 		// Check if the car has crossed the finish line
-		if (carSpeed >= 99999) {
+		if (goalTime >= 99999) {
 			isFinished = true;
 		} else {
 		if (getX() < (finishX - (car.getFitWidth())))

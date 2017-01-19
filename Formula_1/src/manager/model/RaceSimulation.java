@@ -160,7 +160,7 @@ public class RaceSimulation
 
 			// Normalize time for simulation
 			if (results[i] == 9999999) {
-				time = 0;
+				time = Double.MAX_VALUE/1000;
 			} else {
 				time = 200 / (results[i] - 30);
 			}
