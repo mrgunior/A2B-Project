@@ -226,8 +226,7 @@ public class DriverTest
 	public void testEqualsObjectNameIsEqualToNull()
 	{
 		driver.setName(null);
-		Driver driver2 = new Driver(id, teamId, name, points, number, speed, acceleration, turning, salary);
-		driver2.setName("victor wernet");
+		Driver driver2 = new Driver(id, teamId, "vic", points, number, speed, acceleration, turning, salary);
 		assertFalse("Objects that are of the same instance but with different values are not equal", driver.equals(driver2));
 	}
 		
@@ -288,8 +287,47 @@ public class DriverTest
 		assertFalse("Objects that are of the same instance but with different values are not equal",driver.equals(new Driver(444, 444, "something else", 444, 444, 444, 444, 444, 444.0)));
 	}
 	
+	@Test
+	public void testToString()
+	{
+		assertEquals("toString should be equal to",driver.toString(), "Driver [name=Victor Wernet, id=1, teamId=2, points=20, number=33, speed=80, acceleration=75, turning=69, salary=3.0, averagePerformance=74.0]");
+	}
+	
+	@Test
 	public void testComparatorSortById()
 	{
+		Driver driver2 = new Driver(5, 0, "Name", 0, 0, 0, 0, 0, 0);
 		
+		int sortOutput = 0;
+		int rawOutput = Driver.sortById().compare(driver, driver2);
+		
+		if (rawOutput < 0){
+			sortOutput = -1;
+		}
+		
+		else if (rawOutput > 0){
+			sortOutput = 1;
+		}
+		// If driver1.id < driver2.id
+		assertEquals(-1, sortOutput);
+	}
+	
+	@Test
+	public void testComparatorSortByPoints()
+	{
+		Driver driver2 = new Driver(5, 0, "Name", 0, 0, 0, 0, 0, 0);
+		
+		int sortOutput = 0;
+		int rawOutput = Driver.sortByPoints().compare(driver, driver2);
+		
+		if (rawOutput < 0){
+			sortOutput = -1;
+		}
+		
+		else if (rawOutput > 0){
+			sortOutput = 1;
+		}
+		// If driver1.id < driver2.id
+		assertEquals(-1, sortOutput);
 	}
 }

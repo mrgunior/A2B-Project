@@ -99,7 +99,7 @@ public class formulaApplication extends Application
 		
 		Parent root = FXMLLoader.load(getClass().getResource("../view/MainMenu.fxml"));
 		theScene = new Scene(root);
-		stage.setTitle("Formula 1 Manager v1.0.4");
+		stage.setTitle("Formula 1 Manager v1.6.2");
 		stage.setScene(theScene);
 		stage.setFullScreen(fullscreen);
 		stage.setResizable(resizable);

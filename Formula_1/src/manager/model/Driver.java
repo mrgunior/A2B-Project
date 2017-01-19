@@ -188,7 +188,7 @@ public class Driver
 		if (id != other.id) {
 			return false;
 		}
-		if (name == null && other.getName() != null) {
+		if (name == null && (other.getName() != null)) {
 			return false;
 		} else if (!name.equals(other.name)) {
 			return false;

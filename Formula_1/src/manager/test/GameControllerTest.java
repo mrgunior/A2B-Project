@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.json.simple.JSONObject;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -19,7 +20,7 @@ import manager.model.GameController;
 import static org.hamcrest.CoreMatchers.*;
 
 public class GameControllerTest 
-{/*
+{
 	private GameController gamecontroller;
 	private Profile testProfile;
 	private String teamname ="TestTeam", jsonFile = "src/manager/test/dataTest.json";
@@ -73,31 +74,32 @@ public class GameControllerTest
 	@Test
 	public void testReadJsonObjectAndInitializeDifferentHighScore()
 	{
-		assertFalse("After readJsonObjectAndInitialize has been called profile should have been created", gamecontroller.getProfile().equals(testProfile));
+		assertFalse("After readJsonObjectAndInitialize has been called profile should have been created", GameController.getProfile().equals(testProfile));
 	}
 	
 	@Test
 	public void testReadJsonObjectAndInitializeSameHighScore()
 	{	
-		assertTrue("After readJsonObjectAndInitialize has been called profile should have been created", gamecontroller.getProfile().getHighScore() == testProfile.getHighScore());
+		assertTrue("After readJsonObjectAndInitialize has been called profile should have been created", GameController.getProfile().getHighScore() == testProfile.getHighScore());
 	}
 	
 	@Test
 	public void testReadJsonObjectAndInitializeSameBudget()
 	{
-		assertTrue("After readJsonObjectAndInitialize has been called profile should have been created", gamecontroller.getProfile().getBudget() == testProfile.getBudget());
+		GameController.getProfile();
+		assertTrue("After readJsonObjectAndInitialize has been called profile should have been created", Profile.getBudget() == Profile.getBudget());
 	}
 	
 	@Test
 	public void testReadJsonObjectAndInitializeSameTeamName()
 	{
-		assertTrue("After readJsonObjectAndInitialize has been called profile should have been created", gamecontroller.getProfile().getTeamName().equals(testProfile.getTeamName()));
+		assertTrue("After readJsonObjectAndInitialize has been called profile should have been created", GameController.getProfile().getTeamName().equals(testProfile.getTeamName()));
 	}
 	
 	@Test
 	public void testReadJsonObjectAndInitializeSameCarList()
 	{
-		//System.out.print("victor"+gamecontroller.getProfile().getCars().toString());
-		//assertEquals("both toString should be the same", gamecontroller.getProfile().getCars().toString(), equalTo("[<Car[speed: 0, braking: 0, acceleration: 0, weight: 0, handling: 0, Upgrades[weightRed: 0, down: 0, susp: 0, tires: 0, gearbox: 0, aero: 0, engine: 0]>]>, <Car[speed: 0, braking: 0, acceleration: 0, weight: 0, handling: 0, Upgrades[weightRed: 1, down: 1, susp: 1, tires: 1, gearbox: 1, aero: 1, engine: 1]>]>]"));
-	}*/
+		JSONObject jsonDriverObject = (JSONObject)GameController.readNestedObject("./data.json", new String[] { "Car1" });
+		System.out.println("victor"+jsonDriverObject);
+	}
 }
