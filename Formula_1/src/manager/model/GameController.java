@@ -26,6 +26,7 @@ public class GameController
 	private static Profile	profile;
 	private Timer			timer;
 	private static String			jsonFile;
+	private static ArrayList<Car> cars;
 
 	/**
 	 * when initialized it will call the readJsonObjectAndInitialize() method to create profile according to
@@ -309,12 +310,13 @@ public class GameController
 	 */
 	private void initializeCarsInProfile(JSONObject jsonObject)
 	{
-		String[] standardCarStuff = new String[5];
+		String[] standardCarStuff = new String[6];
 		standardCarStuff[0] = "Speed";
 		standardCarStuff[1] = "Braking";
 		standardCarStuff[2] = "Acceleration";
 		standardCarStuff[3] = "Weight";
 		standardCarStuff[4] = "Handling";
+		standardCarStuff[5] = "CrashChance";
 
 		String[] upgradeItems = new String[7];
 		upgradeItems[0] = "WeightRed";
@@ -345,7 +347,7 @@ public class GameController
 		Car car = new Car(i, i, i, i, i, upgrades, i); // these will be updated in the switch case
 
 		// get the standard car stuff
-		for (int c = 0; c < 5; c++)
+		for (int c = 0; c < 6; c++)
 		{
 			String valueOfObject = String.valueOf(objectCar.get(standardCarStuff[c]));
 			System.out.println(standardCarStuff[c] + ": " + valueOfObject);
@@ -371,6 +373,10 @@ public class GameController
 				case 4:
 					int handling = Integer.parseInt(valueOfObject);
 					car.setHandling(handling);
+					break;
+				case 5:
+					int crashChance = Integer.parseInt(valueOfObject);
+					car.setCrashChance(crashChance);
 					break;
 				default: // do something else by default
 					break;
@@ -477,6 +483,7 @@ public class GameController
 		standardCarStuff.put("Handling", String.valueOf(Profile.getCar().getHandling())); 			// "handling":""
 		standardCarStuff.put("Braking", String.valueOf(Profile.getCar().getBraking())); 			// "braking":""
 		standardCarStuff.put("Weight", String.valueOf(Profile.getCar().getWeight())); 				// "weight":""
+		standardCarStuff.put("CrashChance", String.valueOf(Profile.getCar().getCrashChance()));		// "crashChance":""
 
 		JSONObject upgradeItems = new JSONObject(); // create an object {} to add in the array add the
 													// key:value to the object
@@ -577,7 +584,7 @@ public class GameController
 		
 		System.out.println();
 		String path = "./data/cars.json";
-		ArrayList<Car> cars = new ArrayList<Car>();
+		cars = new ArrayList<Car>();
 		
 		int nCars = ((JSONObject) readNestedObject(path, new String[] {})).size();
 		

@@ -12,6 +12,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import manager.controller.SceneLoadController;
+import manager.model.Car;
+import manager.model.GameController;
 import manager.model.Profile;
 
 public class TeamManagementController extends SceneLoadController implements Initializable
@@ -30,6 +32,7 @@ public class TeamManagementController extends SceneLoadController implements Ini
 	private int		selected;
 	private String	styleSelected	= "-fx-background-color: rgba(255,255,255,0.3);";
 	private String	styleUnselected	= "-fx-background-color: rgba(255,255,255,0.1);";
+	private Car userCar = Profile.getCar();
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources)
@@ -46,6 +49,13 @@ public class TeamManagementController extends SceneLoadController implements Ini
 		lowRisk.setOnMousePressed(event -> {
 			playAudio("click.wav", 1.0);
 			Profile.setStrategy(1);
+			userCar.setCrashChance(1);
+			try {
+				GameController.writeJsonObjectToFile();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			selected = 1;
 			displaySelected();
 		});
@@ -53,6 +63,13 @@ public class TeamManagementController extends SceneLoadController implements Ini
 		mediumRisk.setOnMousePressed(event -> {
 			playAudio("click.wav", 1.0);
 			Profile.setStrategy(2);
+			userCar.setCrashChance(4);
+			try {
+				GameController.writeJsonObjectToFile();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			selected = 2;
 			displaySelected();
 		});
@@ -60,6 +77,13 @@ public class TeamManagementController extends SceneLoadController implements Ini
 		highRisk.setOnMousePressed(event -> {
 			playAudio("click.wav", 1.0);
 			Profile.setStrategy(3);
+			userCar.setCrashChance(10);
+			try {
+				GameController.writeJsonObjectToFile();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			selected = 3;
 			displaySelected();
 		});

@@ -70,7 +70,6 @@ public class SceneLoadController
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			System.out.println(i);
 			mainthemePlayer.setVolume(i);
 			i = i - 0.1;
 		}
@@ -87,7 +86,6 @@ public class SceneLoadController
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			System.out.println(i);
 			racesoundPlayer.setVolume(i);
 			i = i - 0.1;
 		}

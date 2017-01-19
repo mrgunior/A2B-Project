@@ -138,13 +138,13 @@ public class RaceSimulation
 			double carAverage = 0;
 			carAverage = ((car.getAcceleration() + car.getBraking() + car.getHandling() + car.getSpeed())/4);
 			
-			double crashChance = car.getCrashChance();
+			Car userCar = Profile.getCar();
+			double crashChance = userCar.getCrashChance();
 			crashChance = crashChance/100;
 			
 			if (randomCrashChance <= crashChance) {
 				hasCrashed = true;
 				RaceController.carFinished();
-				System.out.println("car has crashed");
 			}
 			
 			double driverAverage = drivers.get(i).getAveragePerformance();
