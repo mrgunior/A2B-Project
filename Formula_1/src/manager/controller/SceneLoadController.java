@@ -3,6 +3,7 @@ package manager.controller;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.concurrent.TimeUnit;
 
 import org.omg.CORBA.PUBLIC_MEMBER;
 
@@ -24,7 +25,7 @@ public class SceneLoadController
 {	
 
 
-	static Media maintheme = new Media(new File(new String("audio/mainTheme.mp3")).toURI().toString());
+	static Media maintheme = new Media(new File(new String("audio/maintheme.wav")).toURI().toString());
 	static Media racesound = new Media(new File(new String("audio/race.wav")).toURI().toString());
 	public static MediaPlayer mainthemePlayer = new MediaPlayer(maintheme);
 	public static MediaPlayer racesoundPlayer = new MediaPlayer(racesound);
@@ -33,7 +34,6 @@ public class SceneLoadController
 
 	public void startMaintheme() {
 		mainthemePlayer.stop();
-		mainthemePlayer.setVolume(0.2);
 		mainthemePlayer.play();
 	}
 	
@@ -61,6 +61,40 @@ public class SceneLoadController
 		mediaPlayer.play();
 	}
 
+	public void fadeOutMaintheme(){
+		double i = 1;
+		while(i > 0.1){
+			try {
+				TimeUnit.MILLISECONDS.sleep(150);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			System.out.println(i);
+			mainthemePlayer.setVolume(i);
+			i = i - 0.1;
+		}
+		mainthemePlayer.setVolume(1.0);
+		mainthemePlayer.pause();
+	}
+	
+	public void fadeOutRaceSound(){
+		double i = 1;
+		while(i > 0.1){
+			try {
+				TimeUnit.MILLISECONDS.sleep(150);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			System.out.println(i);
+			racesoundPlayer.setVolume(i);
+			i = i - 0.1;
+		}
+		racesoundPlayer.setVolume(1.0);
+		racesoundPlayer.stop();
+	}
+	
 	public void StopAudio(String name) {
 		mediaPlayer.stop();
 	}
