@@ -89,6 +89,7 @@ public class ResultController extends SceneLoadController implements Initializab
 		// Handle amount of races and seasons
 		if (resultsResult.getResult(0).getDriver().getTeamId() == Profile.getTeamID()) {
 			popup.setVisible(true);
+			playAudio("victory.wav", 0.8);
 		}
 
 		for (int i = 0; i < points.length; i++) {

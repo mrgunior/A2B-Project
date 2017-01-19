@@ -223,7 +223,7 @@ public class RaceController extends SceneLoadController implements Initializable
 
 		startRace.setOnMousePressed(event -> {
 			playAudio("click.wav", 1.0);
-			playAudio("race.wav", .7);
+			playRaceSound();
 			startRace.setVisible(false);
 			animationTimer.start();
 			stopwatch.start();
@@ -244,6 +244,8 @@ public class RaceController extends SceneLoadController implements Initializable
 			try
 			{
 				gotoFxmlScene("Result", (Stage) time.getScene().getWindow());
+				fadeOutRaceSound();
+				resumeMaintheme();
 				playAudio("click.wav", 1.0);
 			}
 			catch (IOException e)
