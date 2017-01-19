@@ -74,7 +74,7 @@ public class StandingsController extends SceneLoadController implements Initiali
 		Profile.setCurrentRace(Profile.getCurrentRace() + 1);
 		
 		if (Profile.getCurrentRace() > Profile.getRacesPerSeason()) {
-			if (standings.getStandings().get(Profile.getTeamID() - 1) == standings.getMaxScore()) {
+			if (standings.getStandings().get(Profile.getTeamID() - 1) == standings.getMaxScore() && Profile.getCurrentRace() == Profile.getRacesPerSeason()) {
 				popup.setVisible(true);
 				Profile.setBudget(Profile.getBudget() + 200000000);
 			}

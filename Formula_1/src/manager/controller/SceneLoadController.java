@@ -22,7 +22,55 @@ import manager.model.formulaApplication;
 
 public class SceneLoadController
 {	
-	MediaPlayer mediaPlayer;
+
+
+	static Media maintheme = new Media(new File(new String("audio/mainTheme.mp3")).toURI().toString());
+	static Media racesound = new Media(new File(new String("audio/race.wav")).toURI().toString());
+	public static MediaPlayer mainthemePlayer = new MediaPlayer(maintheme);
+	public static MediaPlayer racesoundPlayer = new MediaPlayer(racesound);
+	public static MediaPlayer mediaPlayer;
+
+
+	public void startMaintheme() {
+		mainthemePlayer.stop();
+		mainthemePlayer.setVolume(0.2);
+		mainthemePlayer.play();
+	}
+	
+	public void playRaceSound() {
+		racesoundPlayer.play();
+	}
+	
+	public void stopRaceSound() {
+		racesoundPlayer.stop();
+	}
+	
+	public void pauseMaintheme() {
+		mainthemePlayer.pause();
+	}
+	
+	public void resumeMaintheme() {
+		mainthemePlayer.play();
+	}
+
+	public void playAudio(String name, Double volume) {
+		String musicFile = "audio/" + name;
+		Media sound = new Media(new File(musicFile).toURI().toString());
+		mediaPlayer = new MediaPlayer(sound);
+		mediaPlayer.setVolume(volume);
+		mediaPlayer.play();
+	}
+
+	public void StopAudio(String name) {
+		mediaPlayer.stop();
+	}
+
+	public Duration getAudioDuration(String name) {
+		String musicFile = "audio/" + name;
+
+		Media sound = new Media(new File(musicFile).toURI().toString());
+		return sound.getDuration();
+	}
 	
 	public void gotoFxmlScene(String name, Stage stage) throws IOException
 	{
@@ -35,25 +83,6 @@ public class SceneLoadController
 		stage.show();
 	}
 	
-	public void playAudio(String name, Double volume) {
-		String musicFile = "audio/" + name;
-		Media sound = new Media(new File(musicFile).toURI().toString());
-		mediaPlayer = new MediaPlayer(sound);
-		mediaPlayer.setVolume(volume);
-		mediaPlayer.play();
-		}
-		
-	
-	public void StopAudio(String name) {
-		mediaPlayer.stop();
-	}
-	
-	public Duration getAudioDuration(String name) {
-		String musicFile = "audio/" + name;
-
-		Media sound = new Media(new File(musicFile).toURI().toString());
-		return sound.getDuration();
-	}
 //	public void bindBackground(ImageView _background, AnchorPane _root)
 //	{
 //		_background.fitWidthProperty().bind(_root.widthProperty());
