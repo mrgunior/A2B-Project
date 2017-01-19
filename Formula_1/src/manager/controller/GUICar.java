@@ -1,5 +1,7 @@
 package manager.controller;
 
+import java.util.Random;
+
 import javafx.scene.image.ImageView;
 import manager.GUIController.RaceController;
 
@@ -144,11 +146,22 @@ public class GUICar
 	 * Move the car will the car has reached the finish line. Recalculate speed
 	 * if the car has reached a point.
 	 */
+	double speed = 2 * Random();
+	boolean crashed = false;;
+	
 	public void moveCar()
 	{
 		// Check if the car has crossed the finish line
 		if (goalTime >= 99999) {
 			isFinished = true;
+			double random = Random();
+			if (random < 0.496 || random > 0.504) {
+				if (!crashed) {
+					setX(getX() + carSpeed);
+				}
+			} else {
+				crashed = true;
+			}
 		} else {
 		if (getX() < (finishX - (car.getFitWidth())))
 		{
@@ -179,6 +192,12 @@ public class GUICar
 		}
 	}
 
+	private double Random() {
+		Random value = new Random();
+		double random = value.nextDouble();
+		return random;
+	}
+
 	/**
 	 * Calculate the speed of the car to arrive at the destination at a given
 	 * time
@@ -200,12 +219,14 @@ public class GUICar
 		// Time is the time the from one point to another (goalTime / all
 		// points) divided by the time of one frame (1000 /
 		// RaceController.getFps())
-		if (goalTime != 9999999){
+		if (goalTime <= 9999999){
 			// Speed is the distance divided by time
 			double time = ((goalTime / (nPoints + 1)) / (1000 / RaceController.getFps()));
 			speed = (distance / time);
+		} else {
+			Random value = new Random();
+			speed = 2 + (4 - 2) * value.nextDouble();
 		}
-		
 		return speed;
 	}
 	

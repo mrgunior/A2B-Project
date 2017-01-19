@@ -1,10 +1,7 @@
 package manager.model;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
-
-import jdk.nashorn.internal.ir.LiteralNode.ArrayLiteralNode;
 import manager.GUIController.RaceController;
 
 public class RaceSimulation
