@@ -244,7 +244,7 @@ public class RaceController extends SceneLoadController implements Initializable
 			try
 			{
 				gotoFxmlScene("Result", (Stage) time.getScene().getWindow());
-				stopRaceSound();
+				fadeOutRaceSound();
 				resumeMaintheme();
 				playAudio("click.wav", 1.0);
 			}
