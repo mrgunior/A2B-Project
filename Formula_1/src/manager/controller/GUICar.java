@@ -147,11 +147,16 @@ public class GUICar
 	public void moveCar()
 	{
 		// Check if the car has crossed the finish line
+		if (carSpeed >= 99999) {
+			isFinished = true;
+		} else {
 		if (getX() < (finishX - (car.getFitWidth())))
 		{
 			if (RaceController.isRaceStarted())
 			{
-				setX(getX() + carSpeed);
+				if (carSpeed != 9999999) {
+					setX(getX() + carSpeed);
+				}
 			}
 		}
 		else
@@ -159,6 +164,7 @@ public class GUICar
 			//setX(finishX - (car.getFitWidth()));
 			isFinished = true;
 			carSpeed = calculateSpeed();
+		}
 		}
 
 		// If the car is past its current goal point, goto next point and
@@ -183,6 +189,7 @@ public class GUICar
 	{
 		// Distance from the car to the current point
 		double distance = randomPoints[currentGoalPoint] - getX();
+		double speed = 0;
 		if (currentGoalPoint == nPoints)
 		{
 			distance -= (car.getFitWidth()*car.getScaleX());
@@ -193,11 +200,12 @@ public class GUICar
 		// Time is the time the from one point to another (goalTime / all
 		// points) divided by the time of one frame (1000 /
 		// RaceController.getFps())
-		double time = ((goalTime / (nPoints + 1)) / (1000 / RaceController.getFps()));
-
-		// Speed is the distance divided by time
-		double speed = (distance / time);
-
+		if (goalTime != 9999999){
+			// Speed is the distance divided by time
+			double time = ((goalTime / (nPoints + 1)) / (1000 / RaceController.getFps()));
+			speed = (distance / time);
+		}
+		
 		return speed;
 	}
 	

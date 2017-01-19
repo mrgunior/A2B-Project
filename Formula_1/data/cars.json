@@ -14,7 +14,8 @@
 		"Acceleration" : 50,
 		"Weight" : 750,
 		"Handling" : 50,
-		"CarID": 1
+		"CarID": 1,
+		"CrashChance": 100
 	},
 	"2": {
 		"Speed" : 50,
@@ -31,7 +32,8 @@
 		"Acceleration" : 50,
 		"Weight" : 750,
 		"Handling" : 50,
-		"CarID": 2
+		"CarID": 2,
+		"CrashChance": 0
 	},
 	"3": {
 		"Speed" : 50,
@@ -48,7 +50,8 @@
 		"Acceleration" : 50,
 		"Weight" : 750,
 		"Handling" : 50,
-		"CarID": 3
+		"CarID": 3,
+		"CrashChance": 0
 	},
 	"4": {
 		"Speed" : 50,
@@ -65,7 +68,8 @@
 		"Acceleration" : 50,
 		"Weight" : 750,
 		"Handling" : 50,
-		"CarID": 4
+		"CarID": 4,
+		"CrashChance": 0
 	},
 	"5": {
 		"Speed" : 50,
@@ -82,7 +86,8 @@
 		"Acceleration" : 50,
 		"Weight" : 750,
 		"Handling" : 50,
-		"CarID": 5
+		"CarID": 5,
+		"CrashChance": 0
 	},
 	"6": {
 		"Speed" : 50,
@@ -99,7 +104,8 @@
 		"Acceleration" : 50,
 		"Weight" : 750,
 		"Handling" : 50,
-		"CarID": 6
+		"CarID": 6,
+		"CrashChance": 0
 	},
 	"7": {
 		"Speed" : 50,
@@ -116,7 +122,8 @@
 		"Acceleration" : 50,
 		"Weight" : 750,
 		"Handling" : 50,
-		"CarID": 7
+		"CarID": 7,
+		"CrashChance": 0
 	},
 	"8": {
 		"Speed" : 50,
@@ -133,7 +140,8 @@
 		"Acceleration" : 50,
 		"Weight" : 750,
 		"Handling" : 50,
-		"CarID": 8
+		"CarID": 8,
+		"CrashChance": 0
 	},
 	"9": {
 		"Speed" : 50,
@@ -150,7 +158,8 @@
 		"Acceleration" : 50,
 		"Weight" : 750,
 		"Handling" : 50,
-		"CarID": 9
+		"CarID": 9,
+		"CrashChance": 0
 	},
 	"10": {
 		"Speed" : 50,
@@ -167,7 +176,8 @@
 		"Acceleration" : 50,
 		"Weight" : 750,
 		"Handling" : 50,
-		"CarID": 10
+		"CarID": 10,
+		"CrashChance": 0
 	},
 	"11": {
 		"Speed" : 50,
@@ -184,6 +194,7 @@
 		"Acceleration" : 50,
 		"Weight" : 750,
 		"Handling" : 50,
-		"CarID": 11
+		"CarID": 11,
+		"CrashChance": 0
 	}
 }

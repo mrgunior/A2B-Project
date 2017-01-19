@@ -10,10 +10,11 @@ public class Car
 	private int			braking;
 	private int			weight;
 	private Upgrades	upgrades;
+	private int		crashChance;
 	
 	private String upgradesJsonPath = "./data/upgrades.json";
 
-	public Car(int speed, int acceleration, int handling, int braking, int weight, Upgrades upgrades)
+	public Car(int speed, int acceleration, int handling, int braking, int weight, Upgrades upgrades, int crashChance)
 	{
 		this.speed = speed;
 		this.acceleration = acceleration;
@@ -21,6 +22,15 @@ public class Car
 		this.braking = braking;
 		this.weight = weight;
 		this.upgrades = upgrades;
+		this.crashChance = crashChance;
+	}
+	
+	public int getCrashChance() {
+		return this.crashChance;
+	}
+	
+	public void setCrashChance(int crashChance) {
+		this.crashChance = crashChance;
 	}
 
 	public int getSpeed()

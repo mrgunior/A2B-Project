@@ -16,7 +16,18 @@ public class CarTest {
 	@Before
 	public void setUp() {
 		upgrades = new Upgrades(0, 0, 0, 0, 0, 0, 0);
-		car = new Car(0, 0, 0, 0, 0, upgrades);
+		car = new Car(0, 0, 0, 0, 0, upgrades, 0);
+	}
+	
+	@Test
+	public void testGetCrashChance() {
+		assertEquals("Crash chance is equal to crash chance in Constructor", car.getCrashChance(), 0);
+	}
+	
+	@Test
+	public void testSetCrashChance() {
+		car.setCrashChance(1);
+		assertEquals("Crash chance updated correctly via setCrashChance()", car.getCrashChance(), 1);
 	}
 
 	@Test

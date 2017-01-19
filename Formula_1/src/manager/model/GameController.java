@@ -342,7 +342,7 @@ public class GameController
 
 		// create 2 cars layout
 		Upgrades upgrades = new Upgrades(i, i, i, i, i, i, i);
-		Car car = new Car(i, i, i, i, i, upgrades); // these will be updated in the switch case
+		Car car = new Car(i, i, i, i, i, upgrades, i); // these will be updated in the switch case
 
 		// get the standard car stuff
 		for (int c = 0; c < 5; c++)
@@ -603,7 +603,10 @@ public class GameController
 			int weightRed = Integer.parseInt(readNestedObject(path, new String[] { i + "", "Upgrades", "WeightRed" }).toString());
 			
 			Upgrades upgrades = new Upgrades(down, aero, gearbox, engine, susp, tires, weightRed);
-			Car car = new Car(speed, acceleration, handling, braking, weight, upgrades);
+			
+			int crashChance = Integer.parseInt(readNestedObject(path, new String[] { i + "", "CrashChance" }).toString());
+			
+			Car car = new Car(speed, acceleration, handling, braking, weight, upgrades, crashChance);
 			
 			cars.add(car);
 			
