@@ -6,6 +6,7 @@ public class Upgrades
 	private int down, aero, gearbox, engine, susp, tires, weightRed;
 	private enum upgradeType{down, aero, gearbox, engine, susp, tires, weightRed, other};
 
+
 	public Upgrades(int down, int aero, int gearbox, int engine, int susp, int tires, int weightRed)
 	{
 		this.setAero(aero);

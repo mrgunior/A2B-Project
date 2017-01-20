@@ -10,6 +10,30 @@ public class Stopwatch
 	
 	private boolean running = false;
 
+	public double getStart() {
+		return start;
+	}
+
+	public void setStart(double start) {
+		this.start = start;
+	}
+
+	public double getEnd() {
+		return end;
+	}
+
+	public void setEnd(double end) {
+		this.end = end;
+	}
+
+	public boolean isRunning() {
+		return running;
+	}
+
+	public void setRunning(boolean running) {
+		this.running = running;
+	}
+
 	public Stopwatch()
 	{
 		start = System.currentTimeMillis();
@@ -56,7 +80,7 @@ public class Stopwatch
 		}
 		else
 		{
-			return ((end - start)*10);
+			return ((end - start)*1);
 		}
 		
 	}

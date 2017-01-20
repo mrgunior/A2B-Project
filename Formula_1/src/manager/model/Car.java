@@ -10,6 +10,10 @@ public class Car
 	private int			braking;
 	private int			weight;
 	private Upgrades	upgrades;
+  
+	private enum carVar{speed, acceleration, handling, braking, weight, upgrades, other};
+	private enum upgradesVar {down, aero, gearbox, engine, susp, tires, weightRed, other};
+  
 	private int			crashChance;
 	private int 		riskMultiplier;
 	
@@ -119,6 +123,11 @@ public class Car
 	{
 		this.weight += amount;
 	}
+	
+	public carVar[] getCarVar()
+	{
+		return carVar.values();
+	}
 
 	public void upgrade(String type)
 	{
@@ -138,97 +147,90 @@ public class Car
 			System.out.println("All upgrades:  " + upgradeSpecs);
 
 			int speedAmount = 0, accelerationAmount = 0, handlingAmount = 0, brakingAmount = 0, weightAmount = 0;
+			int[] upgradeAmounts = new int[] {speedAmount, accelerationAmount, handlingAmount, brakingAmount, weightAmount};
+			
 			String[] upgradeTypes = new String[] { "speed", "acceleration", "handling", "braking", "weight" };
+			
 			for (int i = 0; i < upgradeTypes.length; i++)
 			{
 				if (positive.get(upgradeTypes[i]) != null)
 				{
 					int amount = Integer.parseInt(positive.get(upgradeTypes[i]).toString());
-					System.out.println(upgradeTypes[i] + ": " + amount);
+					//System.out.println(upgradeTypes[i] + ": " + amount);
 
-					switch (upgradeTypes[i])
-					{
-					case "speed":
-						speedAmount = amount;
-						break;
-					case "acceleration":
-						accelerationAmount = amount;
-						break;
-					case "handling":
-						handlingAmount = amount;
-						break;
-					case "braking":
-						brakingAmount = amount;
-						break;
-					case "weightRed":
-						weightAmount = amount;
-						break;
-					default:
-						break;
-					}
+					setUpgradeAmounts(amount, upgradeTypes[i], upgradeAmounts);
 				}
 
 				if (negative.get(upgradeTypes[i]) != null)
 				{
-
 					int amount = Integer.parseInt(negative.get(upgradeTypes[i]).toString());
-					System.out.println(upgradeTypes[i] + ": " + amount);
+					//System.out.println(upgradeTypes[i] + ": " + amount);
 
-					switch (upgradeTypes[i])
-					{
-					case "speed":
-						speedAmount = amount;
-						break;
-					case "acceleration":
-						accelerationAmount = amount;
-						break;
-					case "handling":
-						handlingAmount = amount;
-						break;
-					case "braking":
-						brakingAmount = amount;
-						break;
-					case "weightRed":
-						weightAmount = amount;
-						break;
-					default:
-						break;
-					}
+					setUpgradeAmounts(amount, upgradeTypes[i], upgradeAmounts);
 				}
 
 			}
 
-			incrementSpeed(speedAmount);
-			incrementAcceleration(accelerationAmount);
-			incrementHandling(handlingAmount);
-			incrementBraking(brakingAmount);
-			incrementWeight(weightAmount);
+			incrementSpeed(upgradeAmounts[0]);
+			incrementAcceleration(upgradeAmounts[1]);
+			incrementHandling(upgradeAmounts[2]);
+			incrementBraking(upgradeAmounts[3]);
+			incrementWeight(upgradeAmounts[4]);
 		}
 	}
 	
+	/**
+	 * Used only to split up the upgrade method
+	 * @param type - The type that needs to be upgraded
+	 * @return int - The current level of the upgrade type
+	 */
 	public int getCurrentLevel(String type)
 	{
-		switch (type)
+		switch (upgradesVar.valueOf(type))
 		{
-		case "aero":
+		case aero:
 			return upgrades.getAero();
-		case "down":
+		case down:
 			return upgrades.getDown();
-		case "engine":
+		case engine:
 			return upgrades.getEngine();
-		case "gearbox":
+		case gearbox:
 			return upgrades.getGearbox();
-		case "susp":
+		case susp:
 			return upgrades.getSusp();	
-		case "tires":
+		case tires:
 			return upgrades.getTires();
-		case "weightRed":
+		case weightRed:
 			return upgrades.getWeightRed();
 		default:
 			return 0;
 		}
 	}
 
+	public void setUpgradeAmounts(int amount, String upgradeType, int[] upgradeAmounts)
+	{
+		switch (carVar.valueOf(upgradeType))
+		{
+		case speed:
+			upgradeAmounts[0] = amount;
+			break;
+		case acceleration:
+			upgradeAmounts[1] = amount;
+			break;
+		case handling:
+			upgradeAmounts[2] = amount;
+			break;
+		case braking:
+			upgradeAmounts[3] = amount;
+			break;
+		case weight:
+			upgradeAmounts[4] = amount;
+			break;
+		default:
+			break;
+		}
+	}
+	
 	public void upgradeAero()
 	{
 		upgrades.upgradeAero();

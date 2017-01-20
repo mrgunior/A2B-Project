@@ -188,4 +188,20 @@ public class DriverTest
 		driver.setSalary(1.0);
 		assertTrue("driver salary has been set correctly via setSalary()", driver.getSalary()==1.0);
 	}
+	
+	@Test
+	public void testComparator()
+	{
+		Driver tempDriver = new Driver(0, 0, "Name", 0, 0, 0, 0, 0, 0);
+		tempDriver.setId(5);
+		driver.setId(1);
+		
+		int sortOutput = 0;
+		int rawOutput = Driver.sortById().compare(driver, tempDriver);
+		
+		sortOutput = rawOutput / Math.abs(rawOutput);
+		
+		// If driver1.id < driver2.id
+		assertEquals(-1, sortOutput);
+	}
 }
