@@ -1,1 +1,52 @@
-{"CurrentRace":"1","Driver2":[{"number":"11","acceleration":95,"salaryBonus":"1.0","turning":93,"name":"Nico Rosberg","averagePerformance":"95.0","salary":"1900000.0","speed":"97"}],"Car":[{"Speed":"50","Upgrades":{"WeightRed":"0","Down":"0","Susp":"0","Tires":"0","Gearbox":"0","Aero":"0","Engine":"0"},"CrashChance":"15","Braking":"50","RiskMultiplier":"105","Acceleration":"50","Weight":"50","Handling":"50"}],"CurrentSeason":"2","Driver1":[{"number":"33","acceleration":86,"salaryBonus":"1.0","turning":85,"name":"Sergio Perez","averagePerformance":"85.0","salary":"1700000.0","speed":"86"}],"Highscore":"50.0","Teamname":"Mercedes AMG Petronas","Budget":"2.3903E8","TeamID":6}
+{
+	"CurrentRace": "1",
+	"Driver2": [
+		{
+			"number": "11",
+			"acceleration": 95,
+			"salaryBonus": "1.0",
+			"turning": 93,
+			"name": "Nico Rosberg",
+			"averagePerformance": "95.0",
+			"salary": "1900000.0",
+			"speed": "97"
+		}
+	],
+	"Car": [
+		{
+			"Speed": "50",
+			"Upgrades": {
+				"WeightRed": "0",
+				"Down": "0",
+				"Susp": "0",
+				"Tires": "0",
+				"Gearbox": "0",
+				"Aero": "0",
+				"Engine": "0"
+			},
+			"CrashChance": "15",
+			"Braking": "50",
+			"RiskMultiplier": "105",
+			"Acceleration": "50",
+			"Weight": "50",
+			"Handling": "50"
+		}
+	],
+	"CurrentSeason": "2",
+	"Driver1": [
+		{
+			"number": "33",
+			"acceleration": 86,
+			"salaryBonus": "1.0",
+			"turning": 85,
+			"name": "Sergio Perez",
+			"averagePerformance": "85.0",
+			"salary": "1700000.0",
+			"speed": "86"
+		}
+	],
+	"Highscore": "50.0",
+	"Teamname": "Mercedes AMG Petronas",
+	"Budget": "2.3903E8",
+	"TeamID": 6
+}

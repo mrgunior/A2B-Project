@@ -98,7 +98,8 @@ public class GameControllerTest
 	public void testReadCarsFromJsonOne()
 	{
 		ArrayList<Car> carsTest = GameController.readCarsFromJSON("./JsonTestFilesDontTouch/carsTest.json");
-		assertEquals("Car lists is correctly read and initialized at index 1",carsTest.get(1).toString(),"<Car[speed: 50, braking: 50, acceleration: 50, weight: 550, handling: 50, Upgrades[weightRed: 0, down: 0, susp: 0, tires: 0, gearbox: 0, aero: 0, engine: 0]>]>");
+		System.out.println("zx"+carsTest.get(1).toString());
+		assertEquals("Car lists is correctly read and initialized at index 1",carsTest.get(1).toString(),"<Car[speed: 50, braking: 50, acceleration: 50, weight: 750, handling: 50, Upgrades[weightRed: 0, down: 0, susp: 0, tires: 0, gearbox: 0, aero: 0, engine: 0]>]>");
 	}
 		
 	@Test

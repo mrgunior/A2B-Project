@@ -1,20 +1,22 @@
 {
 	"1": {
-		"Speed" : 50,
-		"Upgrades" : {
-			"WeightRed" : 0,
-			"Down" : 0,
-			"Susp" : 0,
-			"Tires" : 0,
-			"Gearbox" : 0,
-			"Aero" : 0,
-			"Engine" : 0
-		},
-		"Braking" : 50,
-		"Acceleration" : 50,
-		"Weight" : 750,
-		"Handling" : 50,
-		"CarID": 1
+			"Speed" : 50,
+			"Upgrades" : {
+				"WeightRed" : 0,
+				"Down" : 0,
+				"Susp" : 0,
+				"Tires" : 0,
+				"Gearbox" : 0,
+				"Aero" : 0,
+				"Engine" : 0
+			},
+			"Braking" : 50,
+			"Acceleration" : 50,
+			"Weight" : 750,
+			"Handling" : 50,
+			"CarID": 1,
+			"CrashChance": 7,
+			"RiskMultiplier": 100
 	},
 	"2": {
 		"Speed" : 50,
@@ -29,8 +31,10 @@
 		},
 		"Braking" : 50,
 		"Acceleration" : 50,
-		"Weight" : 550,
+		"Weight" : 750,
 		"Handling" : 50,
-		"CarID": 2
+		"CarID": 2,
+		"CrashChance": 7,
+		"RiskMultiplier": 100
 	}
 }
