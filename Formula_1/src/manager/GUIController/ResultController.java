@@ -89,6 +89,7 @@ public class ResultController extends SceneLoadController implements Initializab
 		// Handle amount of races and seasons
 		if (resultsResult.getResult(0).getDriver().getTeamId() == Profile.getTeamID()) {
 			popup.setVisible(true);
+			playAudio("victory.wav", 0.8);
 		}
 
 		for (int i = 0; i < points.length; i++) {
@@ -101,6 +102,7 @@ public class ResultController extends SceneLoadController implements Initializab
 		// Click
 		next.setOnMousePressed(event -> {
 			try {
+				playAudio("click.wav", 1.0);
 				// Handle salaries
 				double currentBudget = Profile.getBudget();
 				double salaries = 0;
@@ -139,10 +141,16 @@ public class ResultController extends SceneLoadController implements Initializab
 
 		popupNext.setOnMousePressed(event -> {
 			popup.setVisible(false);
+			playAudio("click.wav", 1.0);
+		});
+		
+		popupNext.setOnMouseEntered(event -> {
+			playAudio("hover.wav", 1.0);
 		});
 		// Hover on
 		next.setOnMouseEntered(event -> {
 			next.setImage(new Image("file:images/menu/NextHover.png"));
+			playAudio("hover.wav", 1.0);
 		});
 		// Hover off
 		next.setOnMouseExited(event -> {

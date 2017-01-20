@@ -1,5 +1,6 @@
 package manager.GUIController;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -10,6 +11,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import manager.controller.SceneLoadController;
 import manager.model.GameController;
@@ -50,8 +53,20 @@ public class MainMenuController extends SceneLoadController implements Initializ
 		mediaPlayer.play();
 		*/
 		
-		playAudio("maintheme.mp3", 0.7);
-
+		//String musicFile = "audio/maintheme.mp3";
+		//Media sound = new Media(new File(musicFile).toURI().toString());
+		//musicPlayer = new MediaPlayer(sound);
+		
+		//if(musicPlayer.getStatus() != null){
+		//System.out.println("%$%#$%#$%#$%#$%" + musicPlayer.getStatus());
+		//musicPlayer.stop();
+		//}
+		
+		//musicPlayer = new MediaPlayer(sound);
+		//musicPlayer.play();
+		startMaintheme();
+		
+		//playAudio("maintheme.mp3", 0.3);
 		
 		background.fitWidthProperty().bind(root.widthProperty());
 		background.fitHeightProperty().bind(root.heightProperty());
@@ -68,6 +83,7 @@ public class MainMenuController extends SceneLoadController implements Initializ
 						GameController.getProfile().resetProfile();
 						Profile.setBudget(200000000);
 						gotoFxmlScene("ChooseTeam", (Stage) startGame.getScene().getWindow());
+						playAudio("click.wav", 1.0);
 					}
 					
 					catch (IOException e)
@@ -77,6 +93,7 @@ public class MainMenuController extends SceneLoadController implements Initializ
 				});
 				startGame.setOnMouseEntered(event -> {
 					startGame.setImage(new Image("file:images/menu/StartGameHover.png"));
+					playAudio("hover.wav", 1.0);
 				});
 				startGame.setOnMouseExited(event -> {
 					startGame.setImage(new Image("file:images/menu/StartGame.png"));
@@ -93,6 +110,7 @@ public class MainMenuController extends SceneLoadController implements Initializ
 						if (!(formulaApplication.getTeamName().equals("")))
 						{
 							gotoFxmlScene("Dashboard", (Stage) resume.getScene().getWindow());
+							playAudio("click.wav", 1.0);
 						}
 
 						// if the json object is empty
@@ -109,6 +127,7 @@ public class MainMenuController extends SceneLoadController implements Initializ
 				});
 				resume.setOnMouseEntered(event -> {
 					resume.setImage(new Image("file:images/menu/ResumeHover.png"));
+					playAudio("hover.wav", 1.0);
 				});
 				resume.setOnMouseExited(event -> {
 					resume.setImage(new Image("file:images/menu/Resume.png"));
@@ -119,6 +138,7 @@ public class MainMenuController extends SceneLoadController implements Initializ
 					try
 					{
 						gotoFxmlScene("HighScores", (Stage) highscores.getScene().getWindow());
+						playAudio("click.wav", 1.0);
 					}
 					
 					catch (IOException e)
@@ -128,6 +148,7 @@ public class MainMenuController extends SceneLoadController implements Initializ
 				});
 				highscores.setOnMouseEntered(event -> {
 					highscores.setImage(new Image("file:images/menu/HighScoresHover.png"));
+					playAudio("hover.wav", 1.0);
 				});
 				highscores.setOnMouseExited(event -> {
 					highscores.setImage(new Image("file:images/menu/HighScores.png"));
@@ -139,6 +160,7 @@ public class MainMenuController extends SceneLoadController implements Initializ
 					try 
 					{
 						gamecontroller.stopAutoSave();
+						playAudio("click.wav", 1.0);
 					} 
 					
 					catch (IOException e) 
@@ -150,6 +172,7 @@ public class MainMenuController extends SceneLoadController implements Initializ
 				});
 				exit.setOnMouseEntered(event -> {
 					exit.setImage(new Image("file:images/menu/ExitIconHover.png"));
+					playAudio("hover.wav", 1.0);
 				});
 				exit.setOnMouseExited(event -> {
 					exit.setImage(new Image("file:images/menu/ExitIcon.png"));
@@ -160,6 +183,7 @@ public class MainMenuController extends SceneLoadController implements Initializ
 					try
 					{
 						gotoFxmlScene("Settings", (Stage) settings.getScene().getWindow());
+						playAudio("click.wav", 1.0);
 					}
 					
 					catch (IOException e)
@@ -169,6 +193,7 @@ public class MainMenuController extends SceneLoadController implements Initializ
 				});
 				settings.setOnMouseEntered(event -> {
 					settings.setImage(new Image("file:images/menu/SettingsHover.png"));
+					playAudio("hover.wav", 1.0);
 				});
 				settings.setOnMouseExited(event -> {
 					settings.setImage(new Image("file:images/menu/Settings.png"));
