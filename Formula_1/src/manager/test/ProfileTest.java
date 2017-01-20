@@ -20,7 +20,7 @@ public class ProfileTest
 	private Profile profile;
 	private double highScore, budget;
 	private String teamName, name;
-	private int id, teamId, points, number, speed, acceleration, turning, handling, braking, weight;
+	private int id, teamId, points, number, speed, acceleration, turning, handling, braking, weight, crashChance, riskMultiplier;
 	private double averagePerformance, salary;
 	private Upgrades upgrades;
 	private List<Driver> drivers;
@@ -43,6 +43,8 @@ public class ProfileTest
 		speed = 80;
 		acceleration = 75;
 		turning = 69;
+		crashChance = 0;
+		riskMultiplier = 0;
 		averagePerformance = 138000.0;
 		salary = 3.0; //3 mil
 		
@@ -53,7 +55,7 @@ public class ProfileTest
 		drivers.add(new Driver(id, teamId, name, points, number, speed, acceleration, turning, salary));
 		drivers.add(new Driver(id, teamId, name, points, number, speed, acceleration, turning, salary));
 		
-		car = new Car(speed, acceleration, handling, braking, weight, upgrades);
+		car = new Car(speed, acceleration, handling, braking, weight, upgrades, crashChance, riskMultiplier);
 	}
 
 	@Test

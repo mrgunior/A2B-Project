@@ -35,8 +35,8 @@ public class GameControllerTest
 		gamecontroller = new GameController(jsonFile);
 		testProfile = new Profile(highScore, budget, teamname);
 		
-		car1 = new Car(0,0,0,0,0, new Upgrades(0,0,0,0,0,0,0));
-		car2 = new Car(0,0,0,0,0, new Upgrades(1,1,1,1,1,1,1));
+		car1 = new Car(0,0,0,0,0, new Upgrades(0,0,0,0,0,0,0), 0, 0);
+		car2 = new Car(0,0,0,0,0, new Upgrades(1,1,1,1,1,1,1), 0, 0);
 		cars.add(car1);
 		cars.add(car2);
 		

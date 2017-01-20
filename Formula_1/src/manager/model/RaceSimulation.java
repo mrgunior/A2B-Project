@@ -1,10 +1,8 @@
 package manager.model;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
-
-import jdk.nashorn.internal.ir.LiteralNode.ArrayLiteralNode;
+import manager.GUIController.RaceController;
 
 public class RaceSimulation
 {
@@ -105,6 +103,13 @@ public class RaceSimulation
 		double random = 0.9 + (1.1 - 0.9) * value.nextDouble();
 		return random;
 	}
+	
+	private static double crashedRandom() {
+		// Generating a random value between 0.0 and 1.0
+		Random value = new Random();
+		double random = value.nextDouble();
+		return random;
+	}
 
 	public static Results runSimulation(double trackDiff)
 	{
@@ -116,8 +121,12 @@ public class RaceSimulation
 		for (int i = 0; i < 22; i++)
 		{
 			double random = random();
-
+			double randomCrashChance = crashedRandom();
+			boolean hasCrashed = false;
+			double time = 0;
+			
 			Car car;
+			
 			if (drivers.get(i).getTeamId() == Profile.getTeamID())
 			{
 				car = Profile.getCar();
@@ -129,12 +138,33 @@ public class RaceSimulation
 			double carAverage = 0;
 			carAverage = ((car.getAcceleration() + car.getBraking() + car.getHandling() + car.getSpeed())/4);
 			
+			double crashChance = car.getCrashChance();
+			crashChance = crashChance/100;
+			
+			double riskMultiplier = car.getRiskMultiplier();
+			riskMultiplier = riskMultiplier/100;
+			
+			if (randomCrashChance <= crashChance) {
+				hasCrashed = true;
+				RaceController.carFinished();
+			}
+			
 			double driverAverage = drivers.get(i).getAveragePerformance();
 			
-			results[i] = calculateResult(carAverage, driverAverage, trackDiff, random);
+			if (hasCrashed) {
+				results[i] = 9999999;
+				System.out.println("This car has a risk multiplier of " + riskMultiplier + ", but crashed.");
+			} else {
+				results[i] = calculateResult(carAverage, driverAverage, trackDiff, random) * riskMultiplier;
+				System.out.println("This car has a risk multiplier of " + riskMultiplier);
+			}
 
 			// Normalize time for simulation
-			double time = 200 / (results[i] - 30);
+			if (results[i] == 9999999) {
+				time = Double.MAX_VALUE/1000;
+			} else {
+				time = 200 / (results[i] - 30);
+			}
 
 			// Create result for the driver and add to the results
 			DriverResult resultForLoop = new DriverResult(i + 1, drivers.get(i), time * 1000);

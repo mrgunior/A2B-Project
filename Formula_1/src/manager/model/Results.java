@@ -49,6 +49,10 @@ public class Results
 	{
 		return results.get(index);
 	}
+	
+	public int getLength() {
+		return results.size();
+	}
 
 	/**
 	 * Getter for all DriverResult objects

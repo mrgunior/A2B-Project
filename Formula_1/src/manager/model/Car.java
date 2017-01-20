@@ -10,12 +10,16 @@ public class Car
 	private int			braking;
 	private int			weight;
 	private Upgrades	upgrades;
+  
 	private enum carVar{speed, acceleration, handling, braking, weight, upgrades, other};
 	private enum upgradesVar {down, aero, gearbox, engine, susp, tires, weightRed, other};
+  
+	private int			crashChance;
+	private int 		riskMultiplier;
 	
 	private String upgradesJsonPath = "./data/upgrades.json";
 
-	public Car(int speed, int acceleration, int handling, int braking, int weight, Upgrades upgrades)
+	public Car(int speed, int acceleration, int handling, int braking, int weight, Upgrades upgrades, int crashChance, int riskMultiplier)
 	{
 		this.speed = speed;
 		this.acceleration = acceleration;
@@ -23,6 +27,16 @@ public class Car
 		this.braking = braking;
 		this.weight = weight;
 		this.upgrades = upgrades;
+		this.crashChance = crashChance;
+		this.riskMultiplier = riskMultiplier;
+	}
+	
+	public int getCrashChance() {
+		return this.crashChance;
+	}
+	
+	public void setCrashChance(int crashChance) {
+		this.crashChance = crashChance;
 	}
 
 	public int getSpeed()
@@ -256,5 +270,13 @@ public class Car
 	{
 		return "<Car[speed: " + this.speed + ", braking: " + this.braking + ", acceleration: " + this.acceleration + ", weight: "
 				+ this.weight + ", handling: " + this.handling + ", Upgrades[" + this.upgrades.toString() + "]>]>";
+	}
+
+	public void setRiskMultiplier(int riskMultiplier) {
+		this.riskMultiplier = riskMultiplier;		
+	}
+	
+	public int getRiskMultiplier() {
+		return riskMultiplier;
 	}
 }
