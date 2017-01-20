@@ -162,6 +162,8 @@ public class Profile
 		resetCarUpgrades();
 		Profile.setCurrentSeason(1);
 		Profile.setCurrentRace(1);
+		Profile.getCar().setCrashChance(7);
+		Profile.getCar().setRiskMultiplier(100);
 
 		try
 		{

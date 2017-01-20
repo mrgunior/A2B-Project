@@ -14,7 +14,9 @@
 		"Acceleration" : 50,
 		"Weight" : 750,
 		"Handling" : 50,
-		"CarID": 1
+		"CarID": 1,
+		"CrashChance": 7,
+		"RiskMultiplier": 100
 	},
 	"2": {
 		"Speed" : 50,
@@ -31,7 +33,9 @@
 		"Acceleration" : 50,
 		"Weight" : 750,
 		"Handling" : 50,
-		"CarID": 2
+		"CarID": 2,
+		"CrashChance": 7,
+		"RiskMultiplier": 100
 	},
 	"3": {
 		"Speed" : 50,
@@ -48,7 +52,9 @@
 		"Acceleration" : 50,
 		"Weight" : 750,
 		"Handling" : 50,
-		"CarID": 3
+		"CarID": 3,
+		"CrashChance": 7,
+		"RiskMultiplier": 100
 	},
 	"4": {
 		"Speed" : 50,
@@ -65,7 +71,9 @@
 		"Acceleration" : 50,
 		"Weight" : 750,
 		"Handling" : 50,
-		"CarID": 4
+		"CarID": 4,
+		"CrashChance": 7,
+		"RiskMultiplier": 100
 	},
 	"5": {
 		"Speed" : 50,
@@ -82,7 +90,9 @@
 		"Acceleration" : 50,
 		"Weight" : 750,
 		"Handling" : 50,
-		"CarID": 5
+		"CarID": 5,
+		"CrashChance": 7,
+		"RiskMultiplier": 100
 	},
 	"6": {
 		"Speed" : 50,
@@ -99,7 +109,9 @@
 		"Acceleration" : 50,
 		"Weight" : 750,
 		"Handling" : 50,
-		"CarID": 6
+		"CarID": 6,
+		"CrashChance": 7,
+		"RiskMultiplier": 100
 	},
 	"7": {
 		"Speed" : 50,
@@ -116,7 +128,9 @@
 		"Acceleration" : 50,
 		"Weight" : 750,
 		"Handling" : 50,
-		"CarID": 7
+		"CarID": 7,
+		"CrashChance": 7,
+		"RiskMultiplier": 100
 	},
 	"8": {
 		"Speed" : 50,
@@ -133,7 +147,9 @@
 		"Acceleration" : 50,
 		"Weight" : 750,
 		"Handling" : 50,
-		"CarID": 8
+		"CarID": 8,
+		"CrashChance": 7,
+		"RiskMultiplier": 100
 	},
 	"9": {
 		"Speed" : 50,
@@ -150,7 +166,9 @@
 		"Acceleration" : 50,
 		"Weight" : 750,
 		"Handling" : 50,
-		"CarID": 9
+		"CarID": 9,
+		"CrashChance": 7,
+		"RiskMultiplier": 100
 	},
 	"10": {
 		"Speed" : 50,
@@ -167,7 +185,9 @@
 		"Acceleration" : 50,
 		"Weight" : 750,
 		"Handling" : 50,
-		"CarID": 10
+		"CarID": 10,
+		"CrashChance": 7,
+		"RiskMultiplier": 100
 	},
 	"11": {
 		"Speed" : 50,
@@ -184,6 +204,8 @@
 		"Acceleration" : 50,
 		"Weight" : 750,
 		"Handling" : 50,
-		"CarID": 11
+		"CarID": 11,
+		"CrashChance": 7,
+		"RiskMultiplier": 100
 	}
 }
