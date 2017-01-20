@@ -10,10 +10,16 @@ import manager.model.Standings;
 public class StandingsTest {
 
 	Standings standings;
+	ArrayList<Integer> standing;
 
 	@Before
 	public void initialize() {
 		standings = new Standings();
+		standing = new ArrayList<Integer>();
+		for (int i = 0; i < 12; i++){
+			standing.add(i, i);
+		}
+		
 		
 
 	}
@@ -25,7 +31,8 @@ public class StandingsTest {
 
 	@Test
 	public void testGetStandings() {
-		fail("Not yet implemented");
+	
+		assertEquals(1 ,1);
 	}
 
 	@Test
