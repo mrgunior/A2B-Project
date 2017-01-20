@@ -60,7 +60,6 @@ public class GameController
 			{
 				if (jsonObject.containsKey(jsonRoute[0]))
 				{
-					System.out.println("json"+jsonObject.get(jsonRoute[0]));
 					if (jsonObject.get(jsonRoute[0]) instanceof JSONObject)
 					{
 						jsonObjects[0] = (JSONObject) jsonObject.get(jsonRoute[0]);
@@ -89,7 +88,6 @@ public class GameController
 							}
 							else
 							{
-								System.out.println("zx"+jsonObjects[i - 1].get(jsonRoute[i]));
 								return (jsonObjects[i - 1].get(jsonRoute[i]));
 							}
 							//System.out.println(jsonObjects[i]);
