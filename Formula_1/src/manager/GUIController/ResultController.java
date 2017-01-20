@@ -118,7 +118,7 @@ public class ResultController extends SceneLoadController implements Initializab
 
 				// Set all drivers in profile and write to JSON
 				transferResultsToProfileDrivers();
-				GameController.writeDriversToJSON();
+				GameController.writeDriversToJSON("./data/drivers.json");
 
 				// Handle amount of races and seasons
 				Profile.setCurrentRace(Profile.getCurrentRace() + 1);

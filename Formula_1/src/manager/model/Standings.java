@@ -22,7 +22,7 @@ public class Standings
 	
 	private static void calculateStandings()
 	{
-		ArrayList<Driver> drivers = GameController.getDrivers();
+		ArrayList<Driver> drivers = GameController.getDrivers("./data/drivers.json");
 		
 		for (int i = 1; i <= 11; i++)
 		{

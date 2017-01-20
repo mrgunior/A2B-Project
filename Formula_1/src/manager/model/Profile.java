@@ -165,7 +165,7 @@ public class Profile
 
 		try
 		{
-			GameController.writeDriversToJSON();
+			GameController.writeDriversToJSON("./data/drivers.json");
 			formulaApplication.getGameController();
 			GameController.writeJsonObjectToFile();
 		}

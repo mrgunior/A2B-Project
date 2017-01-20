@@ -1,0 +1,26 @@
+{
+	"11": {
+		"number": 20,
+		"acceleration": 82,
+		"salaryBonus": 1.0,
+		"turning": 78,
+		"teamId": 8,
+		"name": "Kevin Magnussen",
+		"id": 11,
+		"salary": 1560000.0,
+		"speed": 76,
+		"points": 444
+	},
+	"22": {
+		"number": 11,
+		"acceleration": 78,
+		"salaryBonus": 1.0,
+		"turning": 74,
+		"teamId": 4,
+		"name": "Pascal Wehrlein",
+		"id": 22,
+		"salary": 1500000.0,
+		"speed": 74,
+		"points": 444
+	}
+}
