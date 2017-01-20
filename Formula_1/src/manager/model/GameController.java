@@ -60,6 +60,7 @@ public class GameController
 			{
 				if (jsonObject.containsKey(jsonRoute[0]))
 				{
+					System.out.println("json"+jsonObject.get(jsonRoute[0]));
 					if (jsonObject.get(jsonRoute[0]) instanceof JSONObject)
 					{
 						jsonObjects[0] = (JSONObject) jsonObject.get(jsonRoute[0]);
@@ -88,6 +89,7 @@ public class GameController
 							}
 							else
 							{
+								System.out.println("zx"+jsonObjects[i - 1].get(jsonRoute[i]));
 								return (jsonObjects[i - 1].get(jsonRoute[i]));
 							}
 							//System.out.println(jsonObjects[i]);
@@ -97,6 +99,7 @@ public class GameController
 
 				return jsonObjects[jsonObjects.length - 1];
 			}
+			
 			return jsonObject;
 		}
 		catch (IOException | ParseException e)
@@ -117,7 +120,7 @@ public class GameController
 			@Override
 			public void run()
 			{
-				getDrivers();
+				//getDrivers("./data/drivers.json");
 				try
 				{
 					writeJsonObjectToFile();
@@ -131,11 +134,6 @@ public class GameController
 
 		}, 2 * 60 * 1000, 2 * 60 * 1000); // in 1 minute you have 60 seconds and each second is 1000
 											// milliseconds and times that by 2 gives you 2 minutes.
-	}
-
-	public void setTeams()
-	{
-		
 	}
 	
 	/**
@@ -257,37 +255,45 @@ public class GameController
 				String valueOfObject = String.valueOf(object.get(infos[d]));
 				System.out.println(infos[d] + ": " + valueOfObject);
 
-				switch (d)
+				if(d==0)
 				{
-					case 0:
-						int speed = Integer.parseInt(valueOfObject);
-						driver.setSpeed(speed);
-						break;
-					case 1:
-						double salary = Double.parseDouble(valueOfObject);
-						driver.setSalary(salary);
-						break;
-					case 2:
-						int number = Integer.parseInt(valueOfObject);
-						driver.setNumber(number);
-						break;
-					case 3:
-						int turning = Integer.parseInt(valueOfObject);
-						driver.setTurning(turning);
-						break;
-					case 4:
-						driver.setName(valueOfObject);
-						break;
-					case 5:
-						int acceleration = Integer.parseInt(valueOfObject);
-						driver.setAcceleration(acceleration);
-						break;
-					case 6:
-						double salaryBonus = Double.parseDouble(valueOfObject);
-						driver.setSalaryBonus(salaryBonus);
-						break;
-					default: // do something else by default
-						break;
+					int speed = Integer.parseInt(valueOfObject);
+					driver.setSpeed(speed);
+				}
+				
+				if(d==1)
+				{
+					double salary = Double.parseDouble(valueOfObject);
+					driver.setSalary(salary);
+				}
+				
+				if(d==2)
+				{
+					int number = Integer.parseInt(valueOfObject);
+					driver.setNumber(number);
+				}
+				
+				if(d==3)
+				{
+					int turning = Integer.parseInt(valueOfObject);
+					driver.setTurning(turning);
+				}
+				
+				if(d==4)
+				{
+					driver.setName(valueOfObject);
+				}
+				
+				if(d==5)
+				{
+					int acceleration = Integer.parseInt(valueOfObject);
+					driver.setAcceleration(acceleration);
+				}
+				
+				if(d==6)
+				{
+					double salaryBonus = Double.parseDouble(valueOfObject);
+					driver.setSalaryBonus(salaryBonus);
 				}
 			}
 
@@ -516,10 +522,9 @@ public class GameController
 		}
 	}
 
-	public static ArrayList<Driver> getDrivers()
+	public static ArrayList<Driver> getDrivers(String path)
 	{
 		System.out.println();
-		String path = "./data/drivers.json";
 		ArrayList<Driver> drivers = new ArrayList<Driver>();
 
 		// System.out.println();
@@ -553,10 +558,8 @@ public class GameController
 	}
 
 	@SuppressWarnings("unchecked")
-	public static void writeDriversToJSON() throws IOException
+	public static void writeDriversToJSON(String path) throws IOException
 	{
-		String path = "./data/drivers.json";
-
 		ArrayList<Driver> drivers = Profile.getAllDrivers();
 		// System.out.println("##### All drivers:");
 		// System.out.println(" " + drivers);
@@ -586,11 +589,10 @@ public class GameController
 		}
 	}
 	
-	public static ArrayList<Car> readCarsFromJSON() {
+	public static ArrayList<Car> readCarsFromJSON(String path) {
 		
 		System.out.println();
-		String path = "./data/cars.json";
-		cars = new ArrayList<Car>();
+		ArrayList<Car> cars = new ArrayList<Car>();
 		
 		int nCars = ((JSONObject) readNestedObject(path, new String[] {})).size();
 		

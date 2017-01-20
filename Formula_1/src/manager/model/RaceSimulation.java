@@ -67,12 +67,12 @@ public class RaceSimulation
 
 	private static ArrayList<Driver> getDriverList()
 	{
-		return GameController.getDrivers();
+		return GameController.getDrivers("./data/drivers.json");
 	}
 	
 	private static ArrayList<Car> getCarList() {
 		
-		return GameController.readCarsFromJSON();
+		return GameController.readCarsFromJSON("./data/cars.json");
 		
 	}
 

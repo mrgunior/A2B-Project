@@ -92,14 +92,14 @@ public class formulaApplication extends Application
 	{
 		// Creates a gamecontroller object at the starting up of the application
 		gamecontroller = new GameController("./data.json");
-		GameController.getProfile().setAllDrivers(GameController.getDrivers());
+		GameController.getProfile().setAllDrivers(GameController.getDrivers("./data/drivers.json"));
 		
 		//why this?? why are you writing everything after reading it from the json to the json?? @Mika
 		//GameController.writeDriversToJSON();
 		
 		Parent root = FXMLLoader.load(getClass().getResource("../view/MainMenu.fxml"));
 		theScene = new Scene(root);
-		stage.setTitle("Formula 1 Manager v1.0.4");
+		stage.setTitle("Formula 1 Manager v1.6.2");
 		stage.setScene(theScene);
 		stage.setFullScreen(fullscreen);
 		stage.setResizable(resizable);
