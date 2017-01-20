@@ -62,6 +62,8 @@ public class DriverResultTest
 	{
 		assertTrue(driverResult instanceof DriverResult);
 	}
+	
+	
 	@Test
 	public void testGetCarId()
 	{
@@ -76,6 +78,7 @@ public class DriverResultTest
 		assertEquals(otherCarId, driverResult.getCarId());
 	}
 
+	
 	@Test
 	public void testGetName()
 	{
@@ -90,6 +93,7 @@ public class DriverResultTest
 		assertEquals(otherName, driverResult.getName());
 	}
 
+	
 	@SuppressWarnings("deprecation")
 	@Test
 	public void testGetTime()
@@ -105,12 +109,7 @@ public class DriverResultTest
 		driverResult.setTime(otherTime);
 		assertEquals(otherTime, driverResult.getTime(), 1);
 	}
-
-	@Test
-	public void testToString()
-	{
-		assertEquals("Victor Wernet (5) : 12500.0", driverResult.toString());
-	}
+	
 
 	@Test
 	public void testEqualsSame()
@@ -119,15 +118,9 @@ public class DriverResultTest
 	}
 	
 	@Test
-	public void testEqualsTrue()
+	public void testEqualsNull()
 	{
-		assertTrue(driverResult.equals(driverResultTrue));
-	}
-	
-	@Test
-	public void testEqualsFalse()
-	{
-		assertNotEquals(driverResult, driverResultFalse);
+		assertNotEquals(driverResult, null);
 	}
 	
 	@Test
@@ -136,19 +129,41 @@ public class DriverResultTest
 		assertNotEquals(driverResult, new Object());
 	}
 	
+	
 	@Test
-	public void testEqualsNull()
+	public void testEqualsTrue()
 	{
-		assertNotEquals(driverResult, null);
+		assertEquals(driverResult, driverResultTrue);
 	}
 	
-	@Test 
-	public void testOtherName()
+	
+	@Test
+	public void testBothDriversNull()
 	{
-		driverResult.getDriver().setName("Max Verstappen");
-		driverResultTrue.getDriver().setName("Lewis Hamilton");
-		assertNotEquals(driverResult, driverResultTrue);
+		DriverResult driverRes1 = new DriverResult(1, driver, 1);
+		driverRes1.setDriver(null);
+		DriverResult driverRes2 = new DriverResult(1, driver2, 1);
+		driverRes2.setDriver(null);
+		assertEquals(driverRes1, driverRes2);
 	}
+	
+	@Test
+	public void testFirstNullSecondNotNull()
+	{
+		DriverResult driverRes1 = new DriverResult(1, driver, 1);
+		driverRes1.setDriver(null);
+		DriverResult driverRes2 = new DriverResult(1, driver2, 1);
+		assertNotEquals(driverRes1, driverRes2);
+	}
+	
+	@Test
+	public void testSameDriverResultButDriversNotEqual()
+	{
+		DriverResult driverRes1 = new DriverResult(1, driver, 1);
+		DriverResult driverRes2 = new DriverResult(1, driver2, 1);
+		assertNotEquals(driverRes1, driverRes2);
+	}
+	
 	
 	@Test 
 	public void testEqualsOtherTime()
@@ -162,7 +177,7 @@ public class DriverResultTest
 	{
 		driverResult.getDriver().setName(null);
 		driverResultFalse.getDriver().setName("Name");
-		assertFalse(driverResult.equals(driverResultTrue));
+		assertFalse(driverResult.equals(driverResultFalse));
 	}
 	
 	@Test
@@ -180,5 +195,17 @@ public class DriverResultTest
 		driverResult.getDriver().getName();
 		driverResultFalse.getDriver().getName();
 		assertNotEquals(driverResult, driverResultFalse);
+	}
+	
+	@Test
+	public void testEqualsFalse()
+	{
+		assertNotEquals(driverResult, driverResultFalse);
+	}
+
+	@Test
+	public void testToString()
+	{
+		assertEquals("Victor Wernet (5) : 12500.0", driverResult.toString());
 	}
 }
