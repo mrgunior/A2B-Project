@@ -7,11 +7,14 @@ import org.junit.Test;
 
 import manager.model.Car;
 import manager.model.Upgrades;
+import sun.reflect.generics.tree.VoidDescriptor;
 
 public class CarTest {
 	private Car car;
 	private Upgrades upgrades;
 	int speed, acceleration, handling, braking, weight;
+	private enum carVar{speed, acceleration, handling, braking, weight, upgrades, other};
+	private enum upgradesVar {down, aero, gearbox, engine, susp, tires, weightRed, other};
 
 	@Before
 	public void setUp() {
@@ -19,6 +22,7 @@ public class CarTest {
 		car = new Car(0, 0, 0, 0, 0, upgrades);
 	}
 
+	
 	@Test
 	public void testGetSpeed() {
 		assertEquals("Speed is equal to speed in Constructor", car.getSpeed(), 0);
@@ -30,6 +34,7 @@ public class CarTest {
 		assertEquals("Speed updated correctly via setSpeed()", car.getSpeed(), 1);
 	}
 
+	
 	@Test
 	public void testGetAcceleration() {
 		assertEquals("Acceleration is equal to acceleration in Constructor", car.getAcceleration(), 0);
@@ -41,6 +46,7 @@ public class CarTest {
 		assertEquals("Speed updated correctly via setSpeed()", car.getAcceleration(), 1);
 	}
 
+	
 	@Test
 	public void testGetHandling() {
 		assertEquals("Handling is equal to handling in Constructor", car.getHandling(), 0);
@@ -52,6 +58,7 @@ public class CarTest {
 		assertEquals("Handling updated correctly via setHandling()", car.getHandling(), 1);
 	}
 
+	
 	@Test
 	public void testGetBraking() {
 		assertEquals("Braking is equal to braking in Constructor", car.getBraking(), 0);
@@ -63,6 +70,7 @@ public class CarTest {
 		assertEquals("Braking updated correctly via setBraking()", car.getBraking(), 1);
 	}
 
+	
 	@Test
 	public void testGetWeight() {
 		assertEquals("Weight is equal to weight in Constructor", car.getWeight(), 0);
@@ -74,6 +82,7 @@ public class CarTest {
 		assertEquals("Weight updated correctly via setWeight()", car.getWeight(), 1);
 	}
 
+	
 	@Test
 	public void testGetUpgrades() {
 		assertTrue("Objects that are equal should be the same", upgrades.equals(car.getUpgrades()));
@@ -86,6 +95,7 @@ public class CarTest {
 		assertTrue("Objects that are equal should be the same", upgradesTest.equals(car.getUpgrades()));
 	}
 
+	
 	@Test
 	public void testConstructorCarSpeed() {
 		assertEquals(car.getSpeed(), speed);
@@ -116,6 +126,7 @@ public class CarTest {
 		assertEquals(car.getUpgrades(), upgrades);
 	}
 
+	
 	@Test
 	public void testIncrementSpeed() {
 		int incrementAmount = 2;
@@ -151,6 +162,7 @@ public class CarTest {
 		assertEquals(weight + incrementAmount, car.getWeight());
 	}
 
+	
 	@Test
 	public void testUpgradeAero()
 	{
@@ -200,6 +212,7 @@ public class CarTest {
 		assertEquals(1, car.getUpgrades().getWeightRed());
 	}
 	
+	
 	@Test
 	public void testCurrentLevelAero()
 	{
@@ -245,7 +258,6 @@ public class CarTest {
 		assertEquals(input, output);
 	}
 	
-	
 	@Test
 	public void testCurrentLevelTires()
 	{
@@ -254,7 +266,6 @@ public class CarTest {
 		int output = car.getCurrentLevel("tires");
 		assertEquals(input, output);
 	}
-	
 	
 	@Test
 	public void testCurrentLevelWeightRed()
@@ -272,8 +283,116 @@ public class CarTest {
 		assertEquals(0, output);
 	}
 	
+	
 	@Test
-	public void testToString() {
+	public void testSetUpgradeAmountsSpeed()
+	{
+		int speedAmount = 0, accelerationAmount = 0, handlingAmount = 0, brakingAmount = 0, weightAmount = 0;
+		int[] upgradeAmounts = new int[] {speedAmount, accelerationAmount, handlingAmount, brakingAmount, weightAmount};
+		
+		car.setUpgradeAmounts(5, "speed", upgradeAmounts);
+		speedAmount = upgradeAmounts[0];
+		
+		assertEquals(5, speedAmount);
+	}
+	
+	@Test
+	public void testSetUpgradeAmountsAcceleration()
+	{
+		int speedAmount = 0, accelerationAmount = 0, handlingAmount = 0, brakingAmount = 0, weightAmount = 0;
+		int[] upgradeAmounts = new int[] {speedAmount, accelerationAmount, handlingAmount, brakingAmount, weightAmount};
+		
+		car.setUpgradeAmounts(8, "acceleration", upgradeAmounts);
+		accelerationAmount = upgradeAmounts[1];
+		
+		assertEquals(8, accelerationAmount);
+	}
+	
+	@Test
+	public void testSetUpgradeAmountsHandling()
+	{
+		int speedAmount = 0, accelerationAmount = 0, handlingAmount = 0, brakingAmount = 0, weightAmount = 0;
+		int[] upgradeAmounts = new int[] {speedAmount, accelerationAmount, handlingAmount, brakingAmount, weightAmount};
+		
+		car.setUpgradeAmounts(3, "handling", upgradeAmounts);
+		handlingAmount = upgradeAmounts[2];
+		
+		assertEquals(3, handlingAmount);
+	}
+	
+	@Test
+	public void testSetUpgradeAmountsBraking()
+	{
+		int speedAmount = 0, accelerationAmount = 0, handlingAmount = 0, brakingAmount = 0, weightAmount = 0;
+		int[] upgradeAmounts = new int[] {speedAmount, accelerationAmount, handlingAmount, brakingAmount, weightAmount};
+		
+		car.setUpgradeAmounts(2, "braking", upgradeAmounts);
+		brakingAmount = upgradeAmounts[3];
+		
+		assertEquals(2, brakingAmount);
+	}
+	
+	@Test
+	public void testSetUpgradeAmountsWeight()
+	{
+		int speedAmount = 0, accelerationAmount = 0, handlingAmount = 0, brakingAmount = 0, weightAmount = 0;
+		int[] upgradeAmounts = new int[] {speedAmount, accelerationAmount, handlingAmount, brakingAmount, weightAmount};
+		
+		car.setUpgradeAmounts(7, "weight", upgradeAmounts);
+		weightAmount = upgradeAmounts[4];
+		
+		assertEquals(7, weightAmount);
+	}
+	
+	@Test
+	public void testSetUpgradeAmountsOther()
+	{
+		int speedAmount = 0, accelerationAmount = 0, handlingAmount = 0, brakingAmount = 0, weightAmount = 0;
+		int[] upgradeAmounts = new int[] {speedAmount, accelerationAmount, handlingAmount, brakingAmount, weightAmount};
+		
+		car.setUpgradeAmounts(7, "other", upgradeAmounts);
+		
+		for (int i = 0; i < upgradeAmounts.length; i++)
+		{
+			assertEquals(0, upgradeAmounts[i]);
+		}
+	}
+	
+	
+	@Test
+	public void testUpgradeLevelLessThan5()
+	{
+		car.getUpgrades().setTires(3);
+		
+		car.upgrade("tires");
+		
+		assertEquals(4, car.getUpgrades().getTires());
+	}
+	
+	@Test
+	public void testUpgradeLevelIs5()
+	{
+		car.getUpgrades().setTires(5);
+		
+		car.upgrade("tires");
+		
+		assertEquals(5, car.getUpgrades().getTires());
+	}
+	
+	@Test
+	public void testUpgradeLevelIMoreThan5()
+	{
+		car.getUpgrades().setTires(6);
+		
+		car.upgrade("tires");
+		
+		assertEquals(6, car.getUpgrades().getTires());
+	}
+	
+	
+	@Test
+	public void testToString() 
+	{
 		assertEquals(
 				"<Car[speed: 0, braking: 0, acceleration: 0, weight: 0, handling: 0, Upgrades[weightRed: 0, down: 0, susp: 0, tires: 0, gearbox: 0, aero: 0, engine: 0]>]>",
 				car.toString());
