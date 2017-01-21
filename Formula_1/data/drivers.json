@@ -103,7 +103,7 @@
 		"teamId": 6,
 		"name": "Nico Rosberg",
 		"id": 18,
-		"salary": 2090000.0000000002,
+		"salary": 2090000.0,
 		"speed": 97,
 		"points": 25
 	},
