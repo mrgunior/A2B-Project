@@ -84,6 +84,9 @@ public class MainMenuController extends SceneLoadController implements Initializ
 						Profile.setBudget(200000000);
 						gotoFxmlScene("ChooseTeam", (Stage) startGame.getScene().getWindow());
 						playAudio("click.wav", 1.0);
+						Profile.setStrategy(2);
+						Profile.getCar().setCrashChance(7);
+						Profile.getCar().setRiskMultiplier(100);
 					}
 					
 					catch (IOException e)
@@ -103,6 +106,9 @@ public class MainMenuController extends SceneLoadController implements Initializ
 				resume.setOnMousePressed(event -> {
 					Standings standings = new Standings();
 					System.out.println(standings.toString());
+					Profile.setStrategy(2);
+					Profile.getCar().setCrashChance(7);
+					Profile.getCar().setRiskMultiplier(100);
 					try
 					{
 						// if the json object that is asked is not equal to
