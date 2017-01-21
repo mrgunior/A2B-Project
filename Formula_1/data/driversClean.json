@@ -1,16 +1,4 @@
 {
-	"11": {
-		"number": 20,
-		"acceleration": 82,
-		"salaryBonus": 1.0,
-		"turning": 78,
-		"teamId": 8,
-		"name": "Kevin Magnussen",
-		"id": 11,
-		"salary": 1560000.0,
-		"speed": 76,
-		"points": 0
-	},
 	"22": {
 		"number": 11,
 		"acceleration": 78,
@@ -21,6 +9,18 @@
 		"id": 22,
 		"salary": 1500000.0,
 		"speed": 74,
+		"points": 0
+	},
+	"11": {
+		"number": 20,
+		"acceleration": 82,
+		"salaryBonus": 1.0,
+		"turning": 78,
+		"teamId": 8,
+		"name": "Kevin Magnussen",
+		"id": 11,
+		"salary": 1560000.0,
+		"speed": 76,
 		"points": 0
 	},
 	"12": {
@@ -59,12 +59,24 @@
 		"speed": 73,
 		"points": 0
 	},
+	"15": {
+		"number": 33,
+		"acceleration": 86,
+		"salaryBonus": 1.0,
+		"turning": 85,
+		"teamId": 2,
+		"name": "Sergio Perez",
+		"id": 15,
+		"salary": 1700000.0,
+		"speed": 86,
+		"points": 0
+	},
 	"16": {
 		"number": 11,
 		"acceleration": 90,
 		"salaryBonus": 1.0,
 		"turning": 90,
-		"teamId": 6,
+		"teamId": 1,
 		"name": "Kimi Raikkonnen",
 		"id": 16,
 		"salary": 1800000.0,
@@ -86,12 +98,12 @@
 	"18": {
 		"number": 11,
 		"acceleration": 95,
-		"salaryBonus": 1.0,
+		"salaryBonus": 1.1,
 		"turning": 93,
 		"teamId": 6,
 		"name": "Nico Rosberg",
 		"id": 18,
-		"salary": 1900000.0,
+		"salary": 1090000.0,
 		"speed": 97,
 		"points": 0
 	},
@@ -179,6 +191,18 @@
 		"speed": 72,
 		"points": 0
 	},
+	"7": {
+		"number": 33,
+		"acceleration": 95,
+		"salaryBonus": 1.0,
+		"turning": 95,
+		"teamId": 6,
+		"name": "Lewis Hamilton",
+		"id": 7,
+		"salary": 1880000.0,
+		"speed": 94,
+		"points": 0
+	},
 	"8": {
 		"number": 11,
 		"acceleration": 70,
@@ -215,6 +239,18 @@
 		"speed": 96,
 		"points": 0
 	},
+	"21": {
+		"number": 33,
+		"acceleration": 94,
+		"salaryBonus": 1.0,
+		"turning": 94,
+		"teamId": 1,
+		"name": "Sebastian Vettel",
+		"id": 21,
+		"salary": 1880000.0,
+		"speed": 94,
+		"points": 0
+	},
 	"10": {
 		"number": 11,
 		"acceleration": 70,
@@ -225,18 +261,6 @@
 		"id": 10,
 		"salary": 1480000.0,
 		"speed": 78,
-		"points": 0
-	},
-	"21": {
-		"number": 33,
-		"acceleration": 94,
-		"salaryBonus": 1.0,
-		"turning": 94,
-		"teamId": 2,
-		"name": "Sebastian Vettel",
-		"id": 21,
-		"salary": 1880000.0,
-		"speed": 94,
 		"points": 0
 	}
 }

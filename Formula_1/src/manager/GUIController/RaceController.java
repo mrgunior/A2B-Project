@@ -160,9 +160,7 @@ public class RaceController extends SceneLoadController implements Initializable
 			carImage.setFitWidth(200*sceneWidth/1920);
 			carImage.setFitHeight(35*sceneHeight/1080);
 		}
-
-
-
+		
 		// Simulate results and store in results object
 		resultsRace = RaceSimulation.runSimulation(Math.random() * 2 + 4);
 		resultsRace.sortResultsByTime();

@@ -8,6 +8,9 @@ import java.util.ResourceBundle;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
+import com.sun.corba.se.impl.ior.GenericTaggedProfile;
+import com.sun.xml.internal.ws.resources.TubelineassemblyMessages;
+
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.Image;
@@ -84,6 +87,9 @@ public class ChooseDriverController extends SceneLoadController implements Initi
 
 		next.setOnMousePressed(event -> {
 
+				/*
+				 * Might be a little inefficient, will adjust this.
+				 */
 			try {
 				if (driver1 != null && driver2 != null) 
 				{		
@@ -106,9 +112,52 @@ public class ChooseDriverController extends SceneLoadController implements Initi
 					
 					int d1 = Integer.parseInt(driver1.getId());
 					int d2 = Integer.parseInt(driver2.getId());
-					
+								
+					int counter = 1;
+					int backUpTeamId1 = 0;
+					int backUpTeamId2 = 0;
+					for(int i = 0; i<22; i++)
+					{
+						//this will only be executed 2 times
+						if(d1 == Profile.getAllDrivers().get(i).getId() || d2 == Profile.getAllDrivers().get(i).getId())
+						{
+							if(d1 == Profile.getAllDrivers().get(i).getId())
+							{
+								//back it up so I can see later how to re-arrange them
+								backUpTeamId1 = Profile.getAllDrivers().get(i).getTeamId();
+							}
+								
+							else
+							{
+								//back it up so I can see later how to re-arrange them
+								backUpTeamId2 = Profile.getAllDrivers().get(i).getTeamId();
+							}
+							
+							Profile.getAllDrivers().get(i).setTeamId(0);
+						}
+						
+						//will only be executed 2 times;
+						if(Profile.getAllDrivers().get(i).getTeamId()==Profile.getTeamID())
+						{
+							if(counter==1)
+							{
+								Profile.getAllDrivers().get(i).setTeamId(backUpTeamId1);
+								counter++;
+							}
+							
+							else
+							{
+								Profile.getAllDrivers().get(i).setTeamId(backUpTeamId2);
+								counter=1; //reset
+							}
+						}
+					}
+								
 					GameController gamecontroller = formulaApplication.getGameController();
+					int teamID = Profile.getTeamID(); //save it first other wise it will get 
+													  //over written after initializeDriversInProfile() is called
 					gamecontroller.initializeDriversInProfile(obj);
+					Profile.setTeamID(teamID);
 				}
 				
 				//GameController.writeJsonObjectToFile();

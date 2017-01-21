@@ -131,7 +131,8 @@ public class RaceSimulation
 			{
 				car = Profile.getCar();
 			}
-			else
+			
+			else 
 			{
 				car = cars.get(drivers.get(i).getTeamId()-1);
 			}

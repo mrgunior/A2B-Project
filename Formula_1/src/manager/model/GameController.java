@@ -17,7 +17,7 @@ import Templates.ReadUpgrades;
 
 /**
  * @author Victor Wernet
- * @author Nichelle Fleming version 0.6
+ * @author Nichelle Fleming version 0.8
  */
 
 public class GameController
@@ -122,6 +122,7 @@ public class GameController
 				try
 				{
 					writeJsonObjectToFile();
+					writeDriversToJSON("./data/drivers.json");
 				}
 
 				catch (IOException e)
@@ -143,6 +144,8 @@ public class GameController
 		// update the json file when the game is closed
 		writeJsonObjectToFile();
 
+		writeDriversToJSON("./data/drivers.json");
+		
 		// print status out on console
 		System.out.println("auto-save stopped and game saved");
 		timer.cancel();
@@ -441,7 +444,7 @@ public class GameController
 	}
 
 	/**
-	 * Writes everything to the data.dat file in json format
+	 * Writes everything to the data.json file in json format
 	 * 
 	 * @throws IOException
 	 */
@@ -531,24 +534,33 @@ public class GameController
 		// ReadUpgrades.readNestedJsonObjects(path, new String[] {}) + "");
 
 		int nDrivers = ((JSONObject) readNestedObject(path, new String[] {})).size();
+		int driverId1 = Profile.getDrivers().get(0).getId();
+		int driverId2 = Profile.getDrivers().get(1).getId();
+		System.out.println("driver 1: " + driverId1);
+		System.out.println("driver 2: " + driverId2);
+		System.out.println("nDrivers: " + nDrivers);
+		
 		for (int i = 1; i <= nDrivers; i++)
 		{
-			String name = (String) readNestedObject(path, new String[] { i + "", "name" });
-			int points = Integer.parseInt(readNestedObject(path, new String[] { i + "", "points" }).toString());
-			int id = Integer.parseInt(readNestedObject(path, new String[] { i + "", "id" }).toString());
-			int teamId = Integer.parseInt(readNestedObject(path, new String[] { i + "", "teamId" }).toString());
-			int number = Integer.parseInt(readNestedObject(path, new String[] { i + "", "number" }).toString());
-			int speed = Integer.parseInt(readNestedObject(path, new String[] { i + "", "speed" }).toString());
-			int acceleration = Integer.parseInt(readNestedObject(path, new String[] { i + "", "acceleration" }).toString());
-			int turning = Integer.parseInt(readNestedObject(path, new String[] { i + "", "turning" }).toString());
-
-			double salary = (double) ReadUpgrades.readNestedJsonObjects(path, new String[] { i + "", "salary" });
-			double salaryBonus = (double) ReadUpgrades.readNestedJsonObjects(path, new String[] { i + "", "salaryBonus" });
-
-			Driver driver = new Driver(id, teamId, name, points, number, speed, acceleration, turning, salary);
-			driver.setSalaryBonus(salaryBonus);
-			drivers.add(driver);
-			// System.out.println(driver);
+			if(i != driverId1 && i != driverId2)
+			{
+				String name = (String) readNestedObject(path, new String[] { i + "", "name" });
+				int points = Integer.parseInt(readNestedObject(path, new String[] { i + "", "points" }).toString());
+				int id = Integer.parseInt(readNestedObject(path, new String[] { i + "", "id" }).toString());
+				int teamId = Integer.parseInt(readNestedObject(path, new String[] { i + "", "teamId" }).toString());
+				int number = Integer.parseInt(readNestedObject(path, new String[] { i + "", "number" }).toString());
+				int speed = Integer.parseInt(readNestedObject(path, new String[] { i + "", "speed" }).toString());
+				int acceleration = Integer.parseInt(readNestedObject(path, new String[] { i + "", "acceleration" }).toString());
+				int turning = Integer.parseInt(readNestedObject(path, new String[] { i + "", "turning" }).toString());
+	
+				double salary = (double) ReadUpgrades.readNestedJsonObjects(path, new String[] { i + "", "salary" });
+				double salaryBonus = (double) ReadUpgrades.readNestedJsonObjects(path, new String[] { i + "", "salaryBonus" });
+	
+				Driver driver = new Driver(id, teamId, name, points, number, speed, acceleration, turning, salary);
+				driver.setSalaryBonus(salaryBonus);
+				drivers.add(driver);
+				System.out.println("Driver: " + i + " " +driver);
+			}
 		}
 
 		// System.out.println(drivers);
@@ -565,19 +577,23 @@ public class GameController
 		JSONObject allDrivers = new JSONObject();
 		for (int i = 0; i < drivers.size(); i++)
 		{
-			JSONObject driver = new JSONObject();
-			driver.put("name", drivers.get(i).getName());
-			driver.put("id", drivers.get(i).getId());
-			driver.put("teamId", drivers.get(i).getTeamId());
-			driver.put("points", drivers.get(i).getPoints());
-			driver.put("number", drivers.get(i).getNumber());
-			driver.put("speed", drivers.get(i).getSpeed());
-			driver.put("acceleration", drivers.get(i).getAcceleration());
-			driver.put("turning", drivers.get(i).getTurning());
-			driver.put("salary", drivers.get(i).getSalary());
-			driver.put("salaryBonus",  drivers.get(i).getSalaryBonus());
-
-			allDrivers.put("" + drivers.get(i).getId() + "", driver);
+			if(drivers.get(i).getTeamId()!=0)
+			{
+				JSONObject driver = new JSONObject();
+				driver.put("name", drivers.get(i).getName());
+				driver.put("id", drivers.get(i).getId());
+				driver.put("teamId", drivers.get(i).getTeamId());
+				driver.put("points", drivers.get(i).getPoints());
+				driver.put("number", drivers.get(i).getNumber());
+				driver.put("speed", drivers.get(i).getSpeed());
+				driver.put("acceleration", drivers.get(i).getAcceleration());
+				driver.put("turning", drivers.get(i).getTurning());
+				driver.put("salary", drivers.get(i).getSalary());
+				driver.put("salaryBonus",  drivers.get(i).getSalaryBonus());
+				
+	
+				allDrivers.put("" + drivers.get(i).getId() + "", driver);
+			}
 		}
 
 		try (FileWriter fileWriter = new FileWriter(path))

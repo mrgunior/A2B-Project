@@ -80,6 +80,9 @@ public class MainMenuController extends SceneLoadController implements Initializ
 				startGame.setOnMousePressed(event -> {
 					try
 					{
+						//when user starts a new game then this must happen to refresh
+						//the drivers.json later on
+						GameController.getProfile().setAllDrivers(GameController.getDrivers("./data/driversClean.json"));
 						GameController.getProfile().resetProfile();
 						Profile.setBudget(200000000);
 						gotoFxmlScene("ChooseTeam", (Stage) startGame.getScene().getWindow());

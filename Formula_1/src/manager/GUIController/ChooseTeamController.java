@@ -66,6 +66,7 @@ public class ChooseTeamController extends SceneLoadController implements Initial
 				{
 					// where team is being set in the Profile object
 					formulaApplication.setTeamName(currentlySelectedString);
+					System.out.println("Selecte team: " +currentlySelectedString);
 					Profile.setTeamID(currentlySelectedTeamID);
 					gotoFxmlScene("ChooseDriver", (Stage) next.getScene().getWindow());
 					playAudio("click.wav", 1.0);
