@@ -153,10 +153,8 @@ public class RaceSimulation
 			
 			if (hasCrashed) {
 				results[i] = 9999999;
-				System.out.println("This car has a risk multiplier of " + riskMultiplier + ", but crashed.");
 			} else {
 				results[i] = calculateResult(carAverage, driverAverage, trackDiff, random) * riskMultiplier;
-				System.out.println("This car has a risk multiplier of " + riskMultiplier);
 			}
 
 			// Normalize time for simulation
