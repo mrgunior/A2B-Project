@@ -87,7 +87,8 @@ public class RaceSimulationTest {
 
 	@Test
 	public void testRandom() {
-		
+		assertEquals(0.9043956591864711, RaceSimulation.random(true), 0.00000000001);
+		assertEquals(1.0, RaceSimulation.random(false), 0.1);
 	}
 	@Test
 	public void testRunSimulation() {
