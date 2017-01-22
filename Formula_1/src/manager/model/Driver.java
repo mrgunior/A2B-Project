@@ -77,6 +77,11 @@ public class Driver
 		return averagePerformance;
 	}
 	
+	public void setAveragePerformance(double averagePerformance)
+	{
+		this.averagePerformance = averagePerformance;
+	}
+	
 	public void salaryPercentageBonus(double percentage)
 	{
 		this.salaryBonus += (percentage/100);

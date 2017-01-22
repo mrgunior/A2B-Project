@@ -67,7 +67,7 @@ public class StandingsController extends SceneLoadController implements Initiali
 		background.fitWidthProperty().bind(root.widthProperty());
 		background.fitHeightProperty().bind(root.heightProperty());
 
-		drivers = GameController.getProfile().getAllDrivers();
+		drivers = Profile.getAllDrivers();
 		drivers.sort(Driver.sortByPoints());
 
 		Standings standings = new Standings();

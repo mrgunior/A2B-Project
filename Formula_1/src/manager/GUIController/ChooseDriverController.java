@@ -65,7 +65,6 @@ public class ChooseDriverController extends SceneLoadController implements Initi
 		background.fitWidthProperty().bind(root.widthProperty());
 		background.fitHeightProperty().bind(root.heightProperty());
 		
-		GameController.getProfile();
 		drivers = Profile.getAllDrivers();
 		drivers.sort(Driver.sortById());
 		
@@ -74,7 +73,9 @@ public class ChooseDriverController extends SceneLoadController implements Initi
 				palmerSalary, perezSalary, raikkonnenSalary, ricciardoSalary, rosbergSalary, sainzSalary, verstappenSalary,
 				vettelSalary, wehrleinSalary};
 
-		for (int i = 0; i < 22; i++) {
+		for (int i = 0; i < 22; i++) 
+		{
+			System.out.println(Profile.getAllDrivers().get(i).toString());
 			salaries[i].setText("$ " + drivers.get(i).getSalary()/1000000 + " Mill/race");
 		}
 		
@@ -118,25 +119,36 @@ public class ChooseDriverController extends SceneLoadController implements Initi
 					int backUpTeamId2 = 0;
 					for(int i = 0; i<22; i++)
 					{
-						//this will only be executed 2 times
-						if(d1 == Profile.getAllDrivers().get(i).getId() || d2 == Profile.getAllDrivers().get(i).getId())
+						if(d1 == Profile.getAllDrivers().get(i).getId())
 						{
-							if(d1 == Profile.getAllDrivers().get(i).getId())
-							{
-								//back it up so I can see later how to re-arrange them
-								backUpTeamId1 = Profile.getAllDrivers().get(i).getTeamId();
-							}
-								
-							else
-							{
-								//back it up so I can see later how to re-arrange them
-								backUpTeamId2 = Profile.getAllDrivers().get(i).getTeamId();
-							}
+							//back it up so I can see later how to re-arrange them
+							backUpTeamId1 = Profile.getAllDrivers().get(i).getTeamId();
 							
+							/*
+							 * Why zero? when they need to be written back to the driver.json
+							 * the loop will ignore drivers with teamId 0;
+							 */
 							Profile.getAllDrivers().get(i).setTeamId(0);
 						}
 						
-						//will only be executed 2 times;
+						if(d2 == Profile.getAllDrivers().get(i).getId())
+						{
+							//back it up so I can see later how to re-arrange them
+							backUpTeamId2 = Profile.getAllDrivers().get(i).getTeamId();
+							
+							/*
+							 * Why zero? when they need to be written back to the driver.json
+							 * the loop will ignore drivers with teamId 0;
+							 */
+							Profile.getAllDrivers().get(i).setTeamId(0); 
+						}
+					}
+					
+					//why a second loop? one driver might have been skipped that we need
+					for(int i = 0; i<22; i++)
+					{
+						//here 2 drivers already have a teamId that is equal to zero
+						//so nothing will happen to them
 						if(Profile.getAllDrivers().get(i).getTeamId()==Profile.getTeamID())
 						{
 							if(counter==1)
@@ -148,7 +160,7 @@ public class ChooseDriverController extends SceneLoadController implements Initi
 							else
 							{
 								Profile.getAllDrivers().get(i).setTeamId(backUpTeamId2);
-								counter=1; //reset
+								counter=0;
 							}
 						}
 					}
@@ -158,12 +170,16 @@ public class ChooseDriverController extends SceneLoadController implements Initi
 													  //over written after initializeDriversInProfile() is called
 					gamecontroller.initializeDriversInProfile(obj);
 					Profile.setTeamID(teamID);
+					
+					GameController.writeJsonObjectToFile();
+					GameController.writeDriversToJSON("./data/drivers.json");
 				}
-				
-				//GameController.writeJsonObjectToFile();
 
 				playAudio("click.wav", 1.0);
 				gotoFxmlScene("Dashboard", (Stage) next.getScene().getWindow());
+				
+				//start the autosave
+				GameController.autoSave(); 
 			} 
 			
 			catch (IOException e) {

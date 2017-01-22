@@ -92,7 +92,6 @@ public class formulaApplication extends Application
 	{
 		// Creates a gamecontroller object at the starting up of the application
 		gamecontroller = new GameController("./data.json");
-		GameController.getProfile().setAllDrivers(GameController.getDrivers("./data/drivers.json"));
 		
 		Parent root = FXMLLoader.load(getClass().getResource("../view/MainMenu.fxml"));
 		theScene = new Scene(root);
@@ -106,7 +105,7 @@ public class formulaApplication extends Application
 	          public void handle(WindowEvent we) {
 	              	try
 					{
-						gamecontroller.stopAutoSave();
+						GameController.stopAutoSave();
 					}
 					catch (IOException e)
 					{

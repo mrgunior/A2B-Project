@@ -3,14 +3,13 @@
 	"Driver2": [
 		{
 			"number": "33",
-			"acceleration": 86,
+			"acceleration": 94,
 			"salaryBonus": "1.0",
-			"turning": 85,
-			"name": "Sergio Perez",
-			"id": 15,
-			"averagePerformance": "85.0",
-			"salary": "1700000.0",
-			"speed": "86"
+			"turning": 90,
+			"name": "Daniel Ricciardo",
+			"id": "17",
+			"salary": "1840000.0",
+			"speed": "93"
 		}
 	],
 	"Car": [
@@ -36,19 +35,18 @@
 	"CurrentSeason": "1",
 	"Driver1": [
 		{
-			"number": "33",
-			"acceleration": 95,
+			"number": "11",
+			"acceleration": 69,
 			"salaryBonus": "1.0",
-			"turning": 95,
-			"name": "Lewis Hamilton",
-			"id": "7",
-			"averagePerformance": "94.0",
-			"salary": "1880000.0",
-			"speed": "94"
+			"turning": 69,
+			"name": "Esteban Gutierrez",
+			"id": "6",
+			"salary": "1400000.0",
+			"speed": "72"
 		}
 	],
 	"Highscore": "50.0",
-	"Teamname": "Scuderia Ferrari",
+	"Teamname": "Renault",
 	"Budget": "2.0E8",
-	"TeamID": 1
+	"TeamID": 8
 }
