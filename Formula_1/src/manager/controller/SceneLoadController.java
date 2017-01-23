@@ -7,6 +7,8 @@ import java.util.concurrent.TimeUnit;
 
 import org.omg.CORBA.PUBLIC_MEMBER;
 
+import com.sun.org.apache.bcel.internal.generic.NEW;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -29,8 +31,11 @@ public class SceneLoadController
 
 	static Media maintheme = new Media(new File(new String("audio/maintheme.wav")).toURI().toString());
 	static Media racesound = new Media(new File(new String("audio/race.wav")).toURI().toString());
+	static Media failSound = new Media(new File(new String("audio/fail.wav")).toURI().toString());
+	
 	public static MediaPlayer mainthemePlayer = new MediaPlayer(maintheme);
 	public static MediaPlayer racesoundPlayer = new MediaPlayer(racesound);
+	public static MediaPlayer failSoundPlayer = new MediaPlayer(failSound);
 	public static MediaPlayer mediaPlayer;
 	
 	public static boolean isMuted = false;
@@ -46,6 +51,16 @@ public class SceneLoadController
 			mainthemePlayer.setVolume(volume);
 		}
 		mainthemePlayer.play();
+		}
+	}
+	
+	public void playFailSound() {
+		if(isMuted != true){
+			failSoundPlayer.stop();
+			if(effectsVolume != -1.0) {
+				failSoundPlayer.setVolume(effectsVolume);
+			}
+			failSoundPlayer.play();
 		}
 	}
 	
