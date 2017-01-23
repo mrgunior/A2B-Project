@@ -20,6 +20,7 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 import jdk.internal.dynalink.beans.StaticClass;
 import manager.model.formulaApplication;
+import manager.model.GameController;
 
 public class SceneLoadController
 {	
@@ -35,6 +36,31 @@ public class SceneLoadController
 	public void startMaintheme() {
 		mainthemePlayer.stop();
 		mainthemePlayer.play();
+	}
+	
+	public void gotoFxmlScene(String name, Stage stage) throws IOException
+	{
+		Parent root = null;
+		//System.out.println("Using SceneCatalog " + GameController.getSceneCatalog());
+		SceneFile sceneFile = GameController.getSceneCatalog().getScene(name);
+		if (sceneFile == null || name.equals("Race"))
+		{
+			//System.out.println("Found a new scene " + name);
+			root = FXMLLoader.load(this.getClass().getResource("../view/" + name + ".fxml"));
+		}
+		else
+		{
+			//System.out.println("Using stored scene " + sceneFile.getName());
+			root = sceneFile.getRoot();
+		}
+		GameController.getSceneCatalog().addSceneFile(new SceneFile(name, root));
+		
+		
+		formulaApplication.setSceneRoot(root);
+		
+		//stage.setFullScreen(formulaApplication.isFullscreen());
+		stage.setResizable(formulaApplication.isResizable());
+		stage.show();
 	}
 	
 	public void playRaceSound() {
@@ -104,16 +130,16 @@ public class SceneLoadController
 		return sound.getDuration();
 	}
 	
-	public void gotoFxmlScene(String name, Stage stage) throws IOException
-	{
-		Parent root = FXMLLoader.load(this.getClass().getResource("../view/" + name + ".fxml"));
-		
-		formulaApplication.setSceneRoot(root);
-		
-		//stage.setFullScreen(formulaApplication.isFullscreen());
-		stage.setResizable(formulaApplication.isResizable());
-		stage.show();
-	}
+//	public void gotoFxmlScene(String name, Stage stage) throws IOException
+//	{
+//		Parent root = FXMLLoader.load(this.getClass().getResource("../view/" + name + ".fxml"));
+//		
+//		formulaApplication.setSceneRoot(root);
+//		
+//		//stage.setFullScreen(formulaApplication.isFullscreen());
+//		stage.setResizable(formulaApplication.isResizable());
+//		stage.show();
+//	}
 	
 //	public void bindBackground(ImageView _background, AnchorPane _root)
 //	{
