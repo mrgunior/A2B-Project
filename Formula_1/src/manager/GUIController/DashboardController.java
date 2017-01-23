@@ -8,10 +8,12 @@ import java.io.IOException;
 import java.net.URL;
 import java.text.DecimalFormat;
 import java.util.ResourceBundle;
+import java.util.concurrent.TimeUnit;
 
 import javafx.animation.AnimationTimer;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -30,6 +32,11 @@ public class DashboardController extends SceneLoadController implements Initiali
 	@FXML
 	private Text seasonText;
 
+	@FXML
+	private Button popupNext;
+	
+	@FXML
+	private Pane popup;
 	// Scene elements
 	@FXML
 	private ImageView back;
@@ -56,6 +63,18 @@ public class DashboardController extends SceneLoadController implements Initiali
 		raceText.setText(" Race " + Profile.getCurrentRace());
 		balance.setText("$ " + numberFormat.format(formulaApplication.getBalance()/1000000).toString() + " Million");
 
+		if(Profile.getBudget() <= -20000000){
+			popup.setVisible(true);
+			try {
+				TimeUnit.MILLISECONDS.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			playAudio("fail.wav", 1.0);
+			
+		}
+		
 		AnimationTimer animationTimer = new AnimationTimer()
 		{	
 			@Override
@@ -85,6 +104,15 @@ public class DashboardController extends SceneLoadController implements Initiali
 					// carManagement.setImage(new Image("file:images/menu/Back.png"));
 				});
 
+				popupNext.setOnMousePressed(event -> { 
+					try {
+						gotoFxmlScene("MainMenu", (Stage) popupNext.getScene().getWindow());
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				});
+				
 				// Team Management Button
 				teamManagement.setOnMousePressed(event -> {
 					try
