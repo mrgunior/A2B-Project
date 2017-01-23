@@ -14,21 +14,19 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import Templates.ReadUpgrades;
-import manager.controller.SceneCatalog;
 
 /**
  * @author Victor Wernet
- * @author Nichelle Fleming version 0.6
+ * @author Nichelle Fleming version 0.8
  */
 
 public class GameController
 {
 
 	private static Profile	profile;
-	private Timer			timer;
+	private static Timer			timer;
 	private static String			jsonFile;
 	
-	private static SceneCatalog sceneCatalog;
 	private static ArrayList<Car> cars;
 
 	/**
@@ -40,12 +38,9 @@ public class GameController
 	public GameController(String jsonFile) throws IOException
 	{
 		GameController.jsonFile = jsonFile;
-		GameController.setSceneCatalog(new SceneCatalog());
 
 		readJsonObjectAndInitialize();
 		timer = new Timer();
-
-		autoSave();
 	}	
 	
 	public static Object readNestedObject(String jsonPath, String[] jsonRoute)
@@ -115,17 +110,17 @@ public class GameController
 	/**
 	 * Timer to autosave the game after every 2 min
 	 */
-	public void autoSave()
+	public static void autoSave()
 	{
 		timer.scheduleAtFixedRate(new TimerTask()
 		{
 			@Override
 			public void run()
 			{
-				//getDrivers("./data/drivers.json");
 				try
 				{
 					writeJsonObjectToFile();
+					writeDriversToJSON("./data/drivers.json");
 				}
 
 				catch (IOException e)
@@ -134,7 +129,7 @@ public class GameController
 				}
 			}
 
-		}, 2 * 60 * 1000, 2 * 60 * 1000); // in 1 minute you have 60 seconds and each second is 1000
+		}, 2 * 60 * 1000, 1 * 60 * 1000); // in 1 minute you have 60 seconds and each second is 1000
 											// milliseconds and times that by 2 gives you 2 minutes.
 	}
 	
@@ -142,13 +137,15 @@ public class GameController
 	 * @throws IOException
 	 * 
 	 */
-	public void stopAutoSave() throws IOException
+	public static void stopAutoSave() throws IOException
 	{
 		// update the json file when the game is closed
-		writeJsonObjectToFile();
+		//writeJsonObjectToFile();
 
+		//writeDriversToJSON("./data/drivers.json");
+		
 		// print status out on console
-		System.out.println("auto-save stopped and game saved");
+		System.out.println("\nauto-save stopped");
 		timer.cancel();
 	}
 
@@ -225,7 +222,7 @@ public class GameController
 	{
 		List<Driver> driversList = new ArrayList<Driver>();
 
-		String[] infos = new String[7];
+		String[] infos = new String[10];
 		infos[0] = "speed";
 		infos[1] = "salary";
 		infos[2] = "number";
@@ -233,6 +230,9 @@ public class GameController
 		infos[4] = "name";
 		infos[5] = "acceleration";
 		infos[6] = "salaryBonus";
+		infos[7] = "id";
+		infos[8] = "teamId";
+		infos[9] = "points";
 
 		String driverString = "Driver";
 		JSONArray driverArray;
@@ -252,7 +252,7 @@ public class GameController
 																	// together with
 																	// the other fields
 
-			for (int d = 0; d < 7; d++)
+			for (int d = 0; d < 10; d++)
 			{
 				String valueOfObject = String.valueOf(object.get(infos[d]));
 				System.out.println(infos[d] + ": " + valueOfObject);
@@ -296,6 +296,24 @@ public class GameController
 				{
 					double salaryBonus = Double.parseDouble(valueOfObject);
 					driver.setSalaryBonus(salaryBonus);
+				}
+				
+				if(d==7)
+				{
+					int id = Integer.parseInt(valueOfObject);
+					driver.setId(id);
+				}
+				
+				if(d==8)
+				{
+					int teamId = Integer.parseInt(valueOfObject);
+					driver.setTeamId(teamId);
+				}
+				
+				if(d==9)
+				{
+					int points = Integer.parseInt(valueOfObject);
+					driver.setPoints(points);
 				}
 			}
 
@@ -445,7 +463,7 @@ public class GameController
 	}
 
 	/**
-	 * Writes everything to the data.dat file in json format
+	 * Writes everything to the data.json file in json format
 	 * 
 	 * @throws IOException
 	 */
@@ -470,14 +488,16 @@ public class GameController
 			// standard upon creating a game until you add drivers
 			JSONObject info = new JSONObject(); // create an object {}
 			info.put("name", Profile.getDrivers().get(i).getName()); // "Name":""
+			info.put("points", String.valueOf(Profile.getDrivers().get(i).getPoints())); // "points":""
+			info.put("id", String.valueOf(Profile.getDrivers().get(i).getId())); //id
 			info.put("speed", String.valueOf(Profile.getDrivers().get(i).getSpeed())); // "Speed":""
 			info.put("number", String.valueOf(Profile.getDrivers().get(i).getNumber())); // "Number":""
 			info.put("acceleration", Profile.getDrivers().get(i).getAcceleration()); // "Acceleration":""
 			info.put("turning", Profile.getDrivers().get(i).getTurning()); // "Turning":""
-			info.put("averagePerformance", String.valueOf(Profile.getDrivers().get(i).getAveragePerformance()));// "AveragePerformance":""
+			info.put("teamId", Profile.getDrivers().get(i).getTeamId()); // "teamId":""
 			info.put("salary", String.valueOf(Profile.getDrivers().get(i).getSalary())); // "Salary":""
 			info.put("salaryBonus", String.valueOf(Profile.getDrivers().get(i).getSalaryBonus())); //salaryBonus
-
+			
 			JSONArray driver = new JSONArray(); // create an array [], name is added later
 			driver.add(info); // you get this [{}]
 			obj.put("Driver" + (i + 1), driver); // "Driver":[{}]
@@ -535,6 +555,12 @@ public class GameController
 		// ReadUpgrades.readNestedJsonObjects(path, new String[] {}) + "");
 
 		int nDrivers = ((JSONObject) readNestedObject(path, new String[] {})).size();
+		int driverId1 = Profile.getDrivers().get(0).getId();
+		int driverId2 = Profile.getDrivers().get(1).getId();
+		System.out.println("driver 1: " + driverId1);
+		System.out.println("driver 2: " + driverId2);
+		System.out.println("nDrivers: " + nDrivers);
+		
 		for (int i = 1; i <= nDrivers; i++)
 		{
 			String name = (String) readNestedObject(path, new String[] { i + "", "name" });
@@ -552,7 +578,6 @@ public class GameController
 			Driver driver = new Driver(id, teamId, name, points, number, speed, acceleration, turning, salary);
 			driver.setSalaryBonus(salaryBonus);
 			drivers.add(driver);
-			// System.out.println(driver);
 		}
 
 		// System.out.println(drivers);
@@ -580,6 +605,7 @@ public class GameController
 			driver.put("turning", drivers.get(i).getTurning());
 			driver.put("salary", drivers.get(i).getSalary());
 			driver.put("salaryBonus",  drivers.get(i).getSalaryBonus());
+			
 
 			allDrivers.put("" + drivers.get(i).getId() + "", driver);
 		}
@@ -642,13 +668,5 @@ public class GameController
 	public static Profile getProfile()
 	{
 		return profile;
-	}
-
-	public static SceneCatalog getSceneCatalog() {
-		return sceneCatalog;
-	}
-
-	public static void setSceneCatalog(SceneCatalog sceneCatalog) {
-		GameController.sceneCatalog = sceneCatalog;
 	}
 }

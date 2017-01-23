@@ -1,6 +1,5 @@
 package manager.GUIController;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -87,8 +86,13 @@ public class MainMenuController extends SceneLoadController implements Initializ
 				startGame.setOnMousePressed(event -> {
 					try
 					{
-						GameController.getProfile().resetProfile();
+						Profile profile = GameController.getProfile();
+						
+						//since we are starting a new game let's make ids of drivers in data.json equal to 0
+						//and update cars.json with standard values
+						profile.resetProfile();
 						Profile.setBudget(200000000);
+						
 						gotoFxmlScene("ChooseTeam", (Stage) startGame.getScene().getWindow());
 						playAudio("click.wav", 1.0);
 						Profile.setStrategy(2);
@@ -122,6 +126,15 @@ public class MainMenuController extends SceneLoadController implements Initializ
 						// empty
 						if (!(formulaApplication.getTeamName().equals("")))
 						{
+							/*
+							 *start the auto save 
+							 *and read the drivers.json file and initialize 
+							 */
+							GameController.getProfile().setAllDrivers(GameController.getDrivers("./data/drivers.json"));
+							
+							GameController.autoSave(); 
+							
+							
 							gotoFxmlScene("Dashboard", (Stage) resume.getScene().getWindow());
 							playAudio("click.wav", 1.0);
 						}
@@ -178,7 +191,7 @@ public class MainMenuController extends SceneLoadController implements Initializ
 					
 					try 
 					{
-						gamecontroller.stopAutoSave();
+						GameController.stopAutoSave();
 						playAudio("click.wav", 1.0);
 					} 
 					
