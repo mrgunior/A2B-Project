@@ -89,10 +89,9 @@ public class formulaApplication extends Application
 	
 	// Setup for stage
 	public void start(Stage stage) throws Exception
-	{
+	{		
 		// Creates a gamecontroller object at the starting up of the application
 		gamecontroller = new GameController("./data.json");
-		
 		Parent root = FXMLLoader.load(getClass().getResource("../view/MainMenu.fxml"));
 		theScene = new Scene(root);
 		stage.setTitle("Formula 1 Manager v1.6.2");

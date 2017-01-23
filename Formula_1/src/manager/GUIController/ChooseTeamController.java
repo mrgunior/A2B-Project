@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import javafx.animation.AnimationTimer;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.Image;
@@ -12,9 +11,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
-import javafx.scene.shape.Rectangle;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import manager.controller.SceneLoadController;
 import manager.model.GameController;
@@ -65,7 +61,6 @@ public class ChooseTeamController extends SceneLoadController implements Initial
 			{
 				if (!(currentlySelectedString.equals("")))
 				{	
-					
 					// where team is being set in the Profile object
 					//when user starts a new game then this must happen to refresh
 					//the drivers.json later on

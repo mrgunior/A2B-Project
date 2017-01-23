@@ -110,12 +110,23 @@ public class ChooseDriverController extends SceneLoadController implements Initi
 										
 					int d1 = Integer.parseInt(driver1.getId());
 					int d2 = Integer.parseInt(driver2.getId());
+					
+					//extract first before it gets overwritten
+					int teamId = Profile.getTeamID(); 
+					
+					GameController gamecontroller = formulaApplication.getGameController();
+					gamecontroller.initializeDriversInProfile(obj);
+					Profile.setTeamID(teamId);
 								
 					int backUpTeamId1 = 0;
 					int backUpTeamId2 = 0;
-					int teamId = Profile.getTeamID(); 
 					int driverId1 = 0;
 					int driverId2 = 0;
+					
+					
+					//now set this specific driver with a new teamId 
+					Profile.getDrivers().get(0).setTeamId(teamId);
+					Profile.getDrivers().get(1).setTeamId(teamId);
 					
 					for(int i = 0; i<22; i++)
 					{
@@ -127,9 +138,10 @@ public class ChooseDriverController extends SceneLoadController implements Initi
 							//save the id of the driver so I can compare it later
 							driverId1 = Profile.getAllDrivers().get(i).getId();
 							
-							//now set this specific driver with a new teamId 
-							Profile.getDrivers().get(0).setTeamId(teamId);
-							Profile.getAllDrivers().get(i).setTeamId(teamId); 
+							Profile.getDrivers().get(0).setId(driverId1);
+							
+							Profile.getAllDrivers().get(i).setTeamId(teamId);
+							System.out.println("I'm in d1 " +Profile.getAllDrivers().get(i).toString());
 						}
 						
 						if(d2 == Profile.getAllDrivers().get(i).getId())
@@ -139,33 +151,36 @@ public class ChooseDriverController extends SceneLoadController implements Initi
 							//save the id of the driver so I can compare it later
 							driverId2 = Profile.getAllDrivers().get(i).getId();
 							
-							//now set this specific driver with a new teamId 
-							Profile.getDrivers().get(1).setTeamId(teamId); 
+							Profile.getDrivers().get(1).setId(driverId2);
+							
 							Profile.getAllDrivers().get(i).setTeamId(teamId); 
+							System.out.println("I'm in d2 " +Profile.getAllDrivers().get(i).toString());
 						}
 					}
 					
-					//why a second loop? one driver might have been skipped that we need
+					int counter = 1;
 					for(int i = 0; i<22; i++)
 					{
-						//here 2 drivers already have a teamId that is equal to zero
-						//so nothing will happen to them
-						if(Profile.getAllDrivers().get(i).getTeamId()==Profile.getTeamID()&& driverId1 != Profile.getDrivers().get(0).getId())
+						if(Profile.getAllDrivers().get(i).getId()!=driverId1 && Profile.getAllDrivers().get(i).getId()!=driverId2)
 						{
-							Profile.getAllDrivers().get(i).setTeamId(backUpTeamId1);
-						}
-						
-						if(Profile.getAllDrivers().get(i).getTeamId()==Profile.getTeamID()&& driverId2 != Profile.getDrivers().get(1).getId())
-						{
-							Profile.getAllDrivers().get(i).setTeamId(backUpTeamId2);
+							if(Profile.getAllDrivers().get(i).getTeamId()==Profile.getTeamID())
+							{
+								if(counter==1)
+								{
+									Profile.getAllDrivers().get(i).setTeamId(backUpTeamId1);
+									counter++;
+								}
+								
+								else
+								{
+									Profile.getAllDrivers().get(i).setTeamId(backUpTeamId2);
+									counter = 1;
+								}
+							}
 						}
 					}
-								
-					GameController gamecontroller = formulaApplication.getGameController();
-
-					gamecontroller.initializeDriversInProfile(obj);
-					
-					//update the json file
+																	 
+					//update the json file directly
 					GameController.writeJsonObjectToFile();
 					GameController.writeDriversToJSON("./data/drivers.json"); 
 				}				

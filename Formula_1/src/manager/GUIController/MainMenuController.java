@@ -115,8 +115,9 @@ public class MainMenuController extends SceneLoadController implements Initializ
 							 *start the auto save 
 							 *and read the drivers.json file and initialize 
 							 */
-							GameController.autoSave(); 
 							GameController.getProfile().setAllDrivers(GameController.getDrivers("./data/drivers.json"));
+							
+							GameController.autoSave(); 
 							
 							
 							gotoFxmlScene("Dashboard", (Stage) resume.getScene().getWindow());
