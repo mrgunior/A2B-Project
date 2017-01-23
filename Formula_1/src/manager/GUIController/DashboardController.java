@@ -10,9 +10,12 @@ import java.text.DecimalFormat;
 import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 
+import com.sun.xml.internal.ws.api.streaming.XMLStreamReaderFactory.Default;
+
 import javafx.animation.AnimationTimer;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Cursor;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -63,23 +66,13 @@ public class DashboardController extends SceneLoadController implements Initiali
 		raceText.setText(" Race " + Profile.getCurrentRace());
 		balance.setText("$ " + numberFormat.format(formulaApplication.getBalance()/1000000).toString() + " Million");
 
-		if(Profile.getBudget() <= -20000000){
-			popup.setVisible(true);
-			try {
-				TimeUnit.MILLISECONDS.sleep(1000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			playAudio("fail.wav", 1.0);
-			
-		}
 		
 		AnimationTimer animationTimer = new AnimationTimer()
 		{	
 			@Override
 			public void handle(long now)
 			{
+				if(Profile.getBudget() >= 0) {
 				// Car Management Button
 				carManagement.setOnMousePressed(event -> {
 					try
@@ -102,15 +95,6 @@ public class DashboardController extends SceneLoadController implements Initiali
 				carManagement.setOnMouseExited(event -> {
 					carManagement.setStyle("-fx-background-color: rgba(0,0,0,0); -fx-border-color: #7c7a7a96; -fx-border-width: 1;");
 					// carManagement.setImage(new Image("file:images/menu/Back.png"));
-				});
-
-				popupNext.setOnMousePressed(event -> { 
-					try {
-						gotoFxmlScene("MainMenu", (Stage) popupNext.getScene().getWindow());
-					} catch (IOException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
 				});
 				
 				// Team Management Button
@@ -218,10 +202,41 @@ public class DashboardController extends SceneLoadController implements Initiali
 				back.setOnMouseExited(event -> {
 					back.setImage(new Image("file:images/menu/Back.png"));
 				});
+				
+			}
+				else {
+					carManagement.setCursor(Cursor.DEFAULT);
+					teamManagement.setCursor(Cursor.DEFAULT);
+					race.setCursor(Cursor.DEFAULT);
+					standings.setCursor(Cursor.DEFAULT);
+					back.setCursor(Cursor.DEFAULT);
+					
+				}
 
+				popupNext.setOnMousePressed(event -> { 
+					try {
+						gotoFxmlScene("MainMenu", (Stage) popupNext.getScene().getWindow());
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				});
 			}
 		};
 		
 		animationTimer.start();
+		if(Profile.getBudget() < 0){
+			popup.setVisible(true);
+			/*try {
+				TimeUnit.MILLISECONDS.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			*/
+			playAudio("fail.wav", 1.0);
+			
+		}
 	}
+	
 }

@@ -131,6 +131,7 @@ public class MainMenuController extends SceneLoadController implements Initializ
 						{
 							System.out.println("user does not exist!");
 							popup.setVisible(true);
+							playAudio("error.wav", 1.0);
 							
 						}
 					}

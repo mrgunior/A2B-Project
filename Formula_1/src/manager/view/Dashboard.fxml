@@ -44,7 +44,7 @@
          </cursor>
       </ImageView>
       <Rectangle fill="#807b7b47" height="200.0" stroke="#ff2800" strokeType="INSIDE" strokeWidth="0.0" width="1920.0" />
-      <Text fill="#ff2800" layoutX="8.0" layoutY="171.0" stroke="#a4a4a4" strokeType="OUTSIDE" strokeWidth="0.0" text="Balance:" textAlignment="CENTER" translateY="30.0" AnchorPane.leftAnchor="8.37109375" AnchorPane.topAnchor="79.2763671875">
+      <Text fill="#ff2800" layoutX="8.0" layoutY="171.0" stroke="#a4a4a4" strokeType="OUTSIDE" strokeWidth="0.0" text="Balance:" textAlignment="CENTER" translateY="40.0" AnchorPane.leftAnchor="8.37109375" AnchorPane.topAnchor="79.2763671875">
          <font>
             <Font name="Yu Gothic UI Semilight" size="65.0" />
          </font>
@@ -68,7 +68,7 @@
             </Text>
          </children>
       </HBox>
-      <Text fx:id="balance" fill="#216a2a" layoutX="8.0" layoutY="173.6044921875" stroke="#a4a4a4" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;balance&gt;" textAlignment="CENTER" translateX="275.0" translateY="30.0" AnchorPane.topAnchor="87.2763671875">
+      <Text fx:id="balance" fill="#216a2a" layoutX="8.0" layoutY="173.6044921875" stroke="#a4a4a4" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;balance&gt;" textAlignment="CENTER" translateX="275.0" translateY="40.0" AnchorPane.topAnchor="87.2763671875">
          <font>
             <Font name="Yu Gothic UI Semilight" size="60.0" />
          </font>
