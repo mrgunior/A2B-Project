@@ -8,6 +8,9 @@ import java.util.ResourceBundle;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
+import com.sun.corba.se.impl.ior.GenericTaggedProfile;
+import com.sun.xml.internal.ws.resources.TubelineassemblyMessages;
+
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.Image;
@@ -62,8 +65,7 @@ public class ChooseDriverController extends SceneLoadController implements Initi
 		background.fitWidthProperty().bind(root.widthProperty());
 		background.fitHeightProperty().bind(root.heightProperty());
 		
-		GameController.getProfile();
-		drivers = Profile.getAllDrivers();
+		drivers = Profile.getAllDrivers(); //this is getting cleandriverss
 		drivers.sort(Driver.sortById());
 		
 		Text[] salaries = {alonsoSalary, bottasSalary, buttonSalary, ericssonSalary, grosjeanSalary, gutierrezSalary,
@@ -71,7 +73,8 @@ public class ChooseDriverController extends SceneLoadController implements Initi
 				palmerSalary, perezSalary, raikkonnenSalary, ricciardoSalary, rosbergSalary, sainzSalary, verstappenSalary,
 				vettelSalary, wehrleinSalary};
 
-		for (int i = 0; i < 22; i++) {
+		for (int i = 0; i < 22; i++) 
+		{
 			salaries[i].setText("$ " + drivers.get(i).getSalary()/1000000 + " Mill/race");
 		}
 		
@@ -84,6 +87,9 @@ public class ChooseDriverController extends SceneLoadController implements Initi
 
 		next.setOnMousePressed(event -> {
 
+				/*
+				 * Might be a little inefficient, will adjust this.
+				 */
 			try {
 				if (driver1 != null && driver2 != null) 
 				{		
@@ -101,20 +107,89 @@ public class ChooseDriverController extends SceneLoadController implements Initi
 					JSONArray driverArray2 = new JSONArray(); // create an array [], name is added later
 					driverArray2.add(jsonDriverObject2); // you get this [{}]
 					obj.put("Driver2", driverArray2);
-					
-					System.out.println(obj);
-					
+										
 					int d1 = Integer.parseInt(driver1.getId());
 					int d2 = Integer.parseInt(driver2.getId());
 					
+					//extract first before it gets overwritten
+					int teamId = Profile.getTeamID(); 
+					
 					GameController gamecontroller = formulaApplication.getGameController();
 					gamecontroller.initializeDriversInProfile(obj);
-				}
-				
-				//GameController.writeJsonObjectToFile();
+					Profile.setTeamID(teamId);
+								
+					int backUpTeamId1 = 0;
+					int backUpTeamId2 = 0;
+					int driverId1 = 0;
+					int driverId2 = 0;
+					
+					
+					//now set this specific driver with a new teamId 
+					Profile.getDrivers().get(0).setTeamId(teamId);
+					Profile.getDrivers().get(1).setTeamId(teamId);
+					
+					for(int i = 0; i<22; i++)
+					{
+						if(d1 == Profile.getAllDrivers().get(i).getId())
+						{
+							//back it up so I can see later how to re-arrange them
+							//since I know he came from this team I know which team is missing a driver
+							backUpTeamId1 = Profile.getAllDrivers().get(i).getTeamId();
+							//save the id of the driver so I can compare it later
+							driverId1 = Profile.getAllDrivers().get(i).getId();
+							
+							Profile.getDrivers().get(0).setId(driverId1);
+							
+							Profile.getAllDrivers().get(i).setTeamId(teamId);
+							System.out.println("I'm in d1 " +Profile.getAllDrivers().get(i).toString());
+						}
+						
+						if(d2 == Profile.getAllDrivers().get(i).getId())
+						{
+							//back it up so I can see later how to re-arrange them
+							backUpTeamId2 = Profile.getAllDrivers().get(i).getTeamId();
+							//save the id of the driver so I can compare it later
+							driverId2 = Profile.getAllDrivers().get(i).getId();
+							
+							Profile.getDrivers().get(1).setId(driverId2);
+							
+							Profile.getAllDrivers().get(i).setTeamId(teamId); 
+							System.out.println("I'm in d2 " +Profile.getAllDrivers().get(i).toString());
+						}
+					}
+					
+					int counter = 1;
+					for(int i = 0; i<22; i++)
+					{
+						if(Profile.getAllDrivers().get(i).getId()!=driverId1 && Profile.getAllDrivers().get(i).getId()!=driverId2)
+						{
+							if(Profile.getAllDrivers().get(i).getTeamId()==Profile.getTeamID())
+							{
+								if(counter==1)
+								{
+									Profile.getAllDrivers().get(i).setTeamId(backUpTeamId1);
+									counter++;
+								}
+								
+								else
+								{
+									Profile.getAllDrivers().get(i).setTeamId(backUpTeamId2);
+									counter = 1;
+								}
+							}
+						}
+					}
+																	 
+					//update the json file directly
+					GameController.writeJsonObjectToFile();
+					GameController.writeDriversToJSON("./data/drivers.json"); 
+				}				
 
 				playAudio("click.wav", 1.0);
 				gotoFxmlScene("Dashboard", (Stage) next.getScene().getWindow());
+				
+				//start the autosave
+				GameController.autoSave(); 
 			} 
 			
 			catch (IOException e) {
