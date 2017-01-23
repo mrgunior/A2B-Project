@@ -96,8 +96,8 @@ public class Driver
 	{
 		calculateAveragePerformance();
 		double avgPerf = getAveragePerformance();
-		double salaryFactor = 20000;
-		this.salary = (avgPerf * salaryFactor * salaryBonus);
+		double salaryFactor = 3;
+		this.salary = ((Math.pow(avgPerf,3.4) * salaryFactor * salaryBonus)/2);
 	}
 
 	public double getSalary()

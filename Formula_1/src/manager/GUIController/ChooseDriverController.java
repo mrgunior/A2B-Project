@@ -2,6 +2,7 @@ package manager.GUIController;
 
 import java.io.IOException;
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -73,9 +74,11 @@ public class ChooseDriverController extends SceneLoadController implements Initi
 				palmerSalary, perezSalary, raikkonnenSalary, ricciardoSalary, rosbergSalary, sainzSalary, verstappenSalary,
 				vettelSalary, wehrleinSalary};
 
+		DecimalFormat numberFormat = new DecimalFormat("#.##");
+		
 		for (int i = 0; i < 22; i++) 
 		{
-			salaries[i].setText("$ " + drivers.get(i).getSalary()/1000000 + " Mill/race");
+			salaries[i].setText("$ " + numberFormat.format(drivers.get(i).getSalary()/1000000) + " Mill/race");
 		}
 		
 		driver1 = alonso;
