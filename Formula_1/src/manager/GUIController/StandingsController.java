@@ -152,7 +152,8 @@ public class StandingsController extends SceneLoadController implements Initiali
 				points11, points12, points13, points14, points15, points16, points17, points18, points19, points20,
 				points21, points22 };
 
-		for (int i = 0; i < drivers.size(); i++) {
+		for (int i = 0; i < drivers.size(); i++) 
+		{
 			points[i].setText(drivers.get(i).getPoints() + "");
 		}
 	}
