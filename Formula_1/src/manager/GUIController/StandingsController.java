@@ -71,10 +71,9 @@ public class StandingsController extends SceneLoadController implements Initiali
 		drivers.sort(Driver.sortByPoints());
 
 		Standings standings = new Standings();
-		Profile.setCurrentRace(Profile.getCurrentRace() + 1);
 		
-		if (Profile.getCurrentRace() > Profile.getRacesPerSeason()) {
-			if (standings.getStandings().get(Profile.getTeamID() - 1) == standings.getMaxScore() && Profile.getCurrentRace() == Profile.getRacesPerSeason()) {
+		if (Profile.getCurrentRace() == Profile.getRacesPerSeason() + 1) {
+			if (standings.getStandings().get(Profile.getTeamID() - 1) == standings.getMaxScore()) {
 				popup.setVisible(true);
 				Profile.setBudget(Profile.getBudget() + 200000000);
 			}

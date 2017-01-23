@@ -1,0 +1,58 @@
+Date: 23-01-2017
+Secretary: Rowdy Chotkan
+
+Attendance: 
+Bas (TA)
+Mika
+Rowdy
+Thijmen
+Victor 
+
+-------------------------------------------------------------------
+
+Notes:
+
+Report:
+
+- Use more formal language --> no "-ing", "us", "we", "the team".
+- No guidelines on amount of pages: het taalgebruik moet bonding en objectief zijn.
+
+-------------------------------------------------------------------
+
+Updates:
+
+Thijmen:
+
+- Crash
+- Teammanagement
+- Report
+- Tests
+
+Mika:
+
+- General bugfixes
+- Report
+- Tests
+
+Victor: 
+
+- Driver selection
+- Report
+- UML
+- Tests
+
+Rowdy: 
+
+- Bugfixes
+- Audio
+- Report
+- Tests
+
+-------------------------------------------------------------------
+
+Tips:
+
+- Check slack for important dates and info
+- Send everything on time to Andy
+
+-------------------------------------------------------------------
