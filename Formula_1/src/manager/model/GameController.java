@@ -14,6 +14,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import Templates.ReadUpgrades;
+import manager.controller.SceneCatalog;
 
 /**
  * @author Victor Wernet
@@ -26,6 +27,8 @@ public class GameController
 	private static Profile	profile;
 	private Timer			timer;
 	private static String			jsonFile;
+	
+	private static SceneCatalog sceneCatalog;
 	private static ArrayList<Car> cars;
 
 	/**
@@ -37,6 +40,7 @@ public class GameController
 	public GameController(String jsonFile) throws IOException
 	{
 		GameController.jsonFile = jsonFile;
+		GameController.setSceneCatalog(new SceneCatalog());
 
 		readJsonObjectAndInitialize();
 		timer = new Timer();
@@ -638,5 +642,13 @@ public class GameController
 	public static Profile getProfile()
 	{
 		return profile;
+	}
+
+	public static SceneCatalog getSceneCatalog() {
+		return sceneCatalog;
+	}
+
+	public static void setSceneCatalog(SceneCatalog sceneCatalog) {
+		GameController.sceneCatalog = sceneCatalog;
 	}
 }
