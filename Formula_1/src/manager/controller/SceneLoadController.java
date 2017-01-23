@@ -19,6 +19,7 @@ import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import jdk.internal.dynalink.beans.StaticClass;
+import jdk.nashorn.internal.runtime.Undefined;
 import manager.model.formulaApplication;
 import manager.model.GameController;
 
@@ -31,11 +32,25 @@ public class SceneLoadController
 	public static MediaPlayer mainthemePlayer = new MediaPlayer(maintheme);
 	public static MediaPlayer racesoundPlayer = new MediaPlayer(racesound);
 	public static MediaPlayer mediaPlayer;
+	
+	public static boolean isMuted = false;
+	
+	public static double volume = -1.0;
+	public static double effectsVolume = -1.0;
 
 
 	public void startMaintheme() {
+		if(isMuted != true){
 		mainthemePlayer.stop();
+		if(volume != -1.0){
+			mainthemePlayer.setVolume(volume);
+		}
 		mainthemePlayer.play();
+		}
+	}
+	
+	public void stopMainTheme() {
+		mainthemePlayer.stop();
 	}
 	
 	public void gotoFxmlScene(String name, Stage stage) throws IOException
@@ -50,31 +65,50 @@ public class SceneLoadController
 	}
 	
 	public void playRaceSound() {
+		if (isMuted != true){	
+		if (effectsVolume != -1.0) {
+			racesoundPlayer.setVolume(effectsVolume);
+		}
 		racesoundPlayer.play();
+		}
 	}
 	
 	public void stopRaceSound() {
+		if (isMuted != true){
 		racesoundPlayer.stop();
+		}
 	}
 	
 	public void pauseMaintheme() {
+		if (isMuted != true){
 		mainthemePlayer.pause();
+		}
 	}
 	
 	public void resumeMaintheme() {
+		if (isMuted != true){
 		mainthemePlayer.play();
+		}
 	}
 
 	public void playAudio(String name, Double volume) {
+		if (isMuted != true){
 		String musicFile = "audio/" + name;
 		Media sound = new Media(new File(musicFile).toURI().toString());
 		mediaPlayer = new MediaPlayer(sound);
+		if(effectsVolume != -1.0){
+			mediaPlayer.setVolume(effectsVolume);
+		}
+		else{
 		mediaPlayer.setVolume(volume);
+		}
 		mediaPlayer.play();
+		}
 	}
 
 	public void fadeOutMaintheme(){
-		double i = 1;
+		if (isMuted != true){
+		double i = volume;
 		while(i > 0.1){
 			try {
 				TimeUnit.MILLISECONDS.sleep(150);
@@ -84,12 +118,19 @@ public class SceneLoadController
 			mainthemePlayer.setVolume(i);
 			i = i - 0.1;
 		}
-		mainthemePlayer.setVolume(1.0);
+		if (volume != -1.0) {
+			mainthemePlayer.setVolume(volume);
+		}
+		else {
+			mainthemePlayer.setVolume(1.0);
+		}
 		mainthemePlayer.pause();
+		}
 	}
 	
 	public void fadeOutRaceSound(){
-		double i = 1;
+		if (isMuted != true){
+		double i = effectsVolume;
 		while(i > 0.1){
 			try {
 				TimeUnit.MILLISECONDS.sleep(150);
@@ -99,12 +140,20 @@ public class SceneLoadController
 			racesoundPlayer.setVolume(i);
 			i = i - 0.1;
 		}
-		racesoundPlayer.setVolume(1.0);
+		if (volume != -1.0) {
+			racesoundPlayer.setVolume(effectsVolume);
+		}
+		else {
+			racesoundPlayer.setVolume(1.0);
+		}
 		racesoundPlayer.stop();
+		}
 	}
 	
 	public void StopAudio(String name) {
+		if (isMuted != true){
 		mediaPlayer.stop();
+		}
 	}
 
 	public Duration getAudioDuration(String name) {

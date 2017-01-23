@@ -143,7 +143,7 @@ public class ResultController extends SceneLoadController implements Initializab
 			popup.setVisible(false);
 			playAudio("click.wav", 1.0);
 		});
-		
+
 		popupNext.setOnMouseEntered(event -> {
 			playAudio("hover.wav", 1.0);
 		});
@@ -170,6 +170,11 @@ public class ResultController extends SceneLoadController implements Initializab
 			top10Drivers[i].setText(resultsResult.getResult(i).getName());
 			top10Timings[i].setText(
 					Stopwatch.formatMilli(resultsResult.getResult(i).getTime() * RaceController.getTimeFactor()));
+			if (resultsResult.getResult(i).getDriver().getTeamId() == Profile.getTeamID()) {
+				top10Drivers[i].setStyle("-fx-fill: green");
+				top10Timings[i].setStyle("-fx-fill: green");
+			}
+
 		}
 	}
 
@@ -193,15 +198,14 @@ public class ResultController extends SceneLoadController implements Initializab
 			totalPointsText[i].setText(resultsResult.getResult(i).getDriver().getPoints() + "");
 		}
 	}
-	
-	private void setLogos()
-	{
-		ImageView[] logos = new ImageView[] { logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8, logo9, logo10};
+
+	private void setLogos() {
+		ImageView[] logos = new ImageView[] { logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8, logo9, logo10 };
 		resultsResult.sortResultsByTime();
-		
-		for (int i = 0; i < logos.length; i++)
-		{
-			logos[i].setImage(new Image("file:images/Logos/" + resultsResult.getResult(i).getDriver().getTeamId() + ".png"));
+
+		for (int i = 0; i < logos.length; i++) {
+			logos[i].setImage(
+					new Image("file:images/Logos/" + resultsResult.getResult(i).getDriver().getTeamId() + ".png"));
 		}
 	}
 
