@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.NotActiveException;
 import java.net.URL;
 import java.security.KeyStore.PrivateKeyEntry;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -283,7 +284,8 @@ public class CarManagementController extends SceneLoadController implements Init
 
 	private void displayUpgrades()
 	{
-		balance.setText("$ " + Double.toString(formulaApplication.getBalance() / 1000000) + " Million");
+		DecimalFormat numberFormat = new DecimalFormat("#.00");
+		balance.setText("$ " + numberFormat.format(formulaApplication.getBalance()/1000000).toString() + " Million");
 		displayUpgrades("down");
 		displayUpgrades("aero");
 		displayUpgrades("gearbox");

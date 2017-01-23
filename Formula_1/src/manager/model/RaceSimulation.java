@@ -1,17 +1,15 @@
 package manager.model;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
-
-import jdk.nashorn.internal.ir.LiteralNode.ArrayLiteralNode;
+import manager.GUIController.RaceController;
 
 public class RaceSimulation {
 
 	/*
 	 * Using drivers: Max Verstappen: Average 96 Nico Rosberg: Average 95 Lewis
 	 * Hamilton: Average 94.7 Sebastian Vettel: Average 94 Daniel Ricciardo:
-	 * Average 92.3 Kimi Raikkonnen: Average 90.7 Sergio Pérez: Average 85.7
+	 * Average 92.3 Kimi Raikkonnen: Average 90.7 Sergio PÃ©rez: Average 85.7
 	 * Fernando Alonso: Average 84 Valtteri Bottas: Average 82.3 Nicolas
 	 * Hulkenberg: Average 79.7 Carloz Sainz Junior: Average 79 Kevin Magnussen:
 	 * Average 78.7 Felipe Massa: Average 77.7 Jensen Button: Average 77.3
@@ -69,14 +67,15 @@ public class RaceSimulation {
 		System.out.println("Result: " + results.toString());
 	}
 
-	private static ArrayList<Driver> getDriverList() {
-		return GameController.getDrivers();
+	private static ArrayList<Driver> getDriverList()
+	{
+		return GameController.getDrivers("./data/drivers.json");
 	}
 
 	private static ArrayList<Car> getCarList() {
-
-		return GameController.readCarsFromJSON();
-
+		
+		return GameController.readCarsFromJSON("./data/cars.json");
+		
 	}
 
 	public static double calculateResult(double avgCar, double avgDriver, double trackDiff, double random) {
@@ -117,6 +116,13 @@ public class RaceSimulation {
 		double random = 0.9 + (1.1 - 0.9) * randomDouble;
 		return random;
 	}
+	
+	private static double crashedRandom() {
+		// Generating a random value between 0.0 and 1.0
+		Random value = new Random();
+		double random = value.nextDouble();
+		return random;
+	}
 
 	public static Results runSimulation(double trackDiff) {
 		// Real results to be returned
@@ -124,24 +130,50 @@ public class RaceSimulation {
 		// Raw results
 		double results[] = new double[22];
 
-		for (int i = 0; i < 22; i++) {
+		for (int i = 0; i < 22; i++)
+		{
 			double random = random(false);
-
+			double randomCrashChance = crashedRandom();
+			boolean hasCrashed = false;
+			double time = 0;
+			
 			Car car;
-			if (drivers.get(i).getTeamId() == Profile.getTeamID()) {
+			
+			if (drivers.get(i).getTeamId() == Profile.getTeamID())
+			{
 				car = Profile.getCar();
 			} else {
 				car = cars.get(drivers.get(i).getTeamId() - 1);
 			}
 			double carAverage = 0;
-			carAverage = ((car.getAcceleration() + car.getBraking() + car.getHandling() + car.getSpeed()) / 4);
 
+			carAverage = ((car.getAcceleration() + car.getBraking() + car.getHandling() + car.getSpeed())/4);
+			
+			double crashChance = car.getCrashChance();
+			crashChance = crashChance/100;
+			
+			double riskMultiplier = car.getRiskMultiplier();
+			riskMultiplier = riskMultiplier/100;
+			
+			if (randomCrashChance <= crashChance) {
+				hasCrashed = true;
+				RaceController.carFinished();
+			}
+			
 			double driverAverage = drivers.get(i).getAveragePerformance();
-
-			results[i] = calculateResult(carAverage, driverAverage, trackDiff, random);
+			
+			if (hasCrashed) {
+				results[i] = 9999999;
+			} else {
+				results[i] = calculateResult(carAverage, driverAverage, trackDiff, random) * riskMultiplier;
+			}
 
 			// Normalize time for simulation
-			double time = 200 / (results[i] - 30);
+			if (results[i] == 9999999) {
+				time = Double.MAX_VALUE/1000;
+			} else {
+				time = 200 / (results[i] - 30);
+			}
 
 			// Create result for the driver and add to the results
 			DriverResult resultForLoop = new DriverResult(i + 1, drivers.get(i), time * 1000);
