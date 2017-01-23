@@ -83,39 +83,35 @@ public class DriverResult
 		this.time = time;
 	} 
 
+	
+
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
 	@Override
-	public boolean equals(Object obj)
-	{
-		if (this == obj)
-		{
+	public boolean equals(Object obj) {
+		if (this == obj) {
 			return true;
 		}
-		if (obj == null)
-		{
+		if (obj == null) {
 			return false;
 		}
-		if (!(obj instanceof DriverResult))
-		{
+		if (getClass() != obj.getClass()) {
 			return false;
 		}
 		DriverResult other = (DriverResult) obj;
-		if (carId != other.carId)
-		{
+		if (carId != other.carId) {
 			return false;
 		}
-		if (driver.getName() == null)
-		{
-			if (other.driver.getName() != null)
-			{
+		if (driver == null) {
+			if (other.driver != null) {
 				return false;
 			}
-		}
-		else if (!driver.getName().equals(other.driver.getName()))
-		{
+		} else if (!driver.equals(other.driver)) {
 			return false;
 		}
-		if (Double.doubleToLongBits(time) != Double.doubleToLongBits(other.time))
-		{
+		if (Double.doubleToLongBits(time) != Double.doubleToLongBits(other.time)) {
 			return false;
 		}
 		return true;

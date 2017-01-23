@@ -66,4 +66,33 @@ public class Team {
 		this.car = car;
 	}
 
+	public boolean equals(Team obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (!(obj instanceof Team)) {
+			return false;
+		}
+		Team other = (Team) obj;
+		if (!(name.equals(other.name))) {
+			return false;
+		}
+		if (balance != other.balance) {
+			return false;
+		}
+		if (teamID != other.teamID) {
+			return false;
+		}
+		if (!(driver1.equals(other.driver1))) {
+			return false;
+		}
+		if (!(driver2.equals(other.driver2))) {
+			return false;
+		}
+		if (!(car.equals(other.car))) {
+			return false;
+		}
+		return true;
+	}
+	
 }

@@ -2,15 +2,15 @@ package manager.test;
 
 import static org.junit.Assert.*;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
 
 import manager.model.Car;
 import manager.model.Driver;
-import manager.model.Engine;
+import manager.model.GameController;
 import manager.model.Profile;
 import manager.model.Upgrades;
 
@@ -21,10 +21,10 @@ public class ProfileTest
 	private Profile profile;
 	private double highScore, budget;
 	private String teamName, name;
-	private int id, teamId, points, number, speed, acceleration, turning, handling, braking, weight;
+	private int id1, id2, teamId, points, number, speed, acceleration, turning, handling, braking, weight, crashChance, riskMultiplier;
 	private double averagePerformance, salary;
 	private Upgrades upgrades;
-	private List<Driver> drivers;
+	private ArrayList<Driver> drivers;
 	private Car car;
 
 	@Before
@@ -37,13 +37,16 @@ public class ProfileTest
 		
 		//driver & car stuff
 		name = "Victor Wernet";
-		id = 1;
+		id1 = 1;
+		id2 = 1;
 		teamId = 2;
-		points = 0;
+		points = 10;
 		number = 33;
 		speed = 80;
 		acceleration = 75;
 		turning = 69;
+		crashChance = 0;
+		riskMultiplier = 0;
 		averagePerformance = 138000.0;
 		salary = 3.0; //3 mil
 		
@@ -51,10 +54,10 @@ public class ProfileTest
 		upgrades = new Upgrades(0,0,0,0,0,0,0);
 		
 		drivers = new ArrayList<Driver>();
-		drivers.add(new Driver(id, teamId, name, points, number, speed, acceleration, turning, salary));
-		drivers.add(new Driver(id, teamId, name, points, number, speed, acceleration, turning, salary));
+		drivers.add(new Driver(id1, teamId, name, points, number, speed, acceleration, turning, salary));
+		drivers.add(new Driver(id2, teamId, name, points, number, speed, acceleration, turning, salary));
 		
-		car = new Car(speed, acceleration, handling, braking, weight, upgrades);
+		car = new Car(speed, acceleration, handling, braking, weight, upgrades, crashChance, riskMultiplier);
 	}
 
 	@Test
@@ -189,5 +192,94 @@ public class ProfileTest
 	{
 		profile.setCar(car); // not empty
 		assertEquals("Method set cars is setting it correctly when full", Profile.getCar(), car);
+	}
+	
+	@Test
+	public void testSetAllDrivers()
+	{
+		profile.setAllDrivers(drivers);
+		assertEquals("ArrayList of drivers should be equal to drivers",Profile.getAllDrivers(), drivers);
+	}
+	
+	@Test
+	public void testGetCurrentRace()
+	{
+		Profile.setCurrentRace(10);
+		assertEquals("Should be equal to 10 if set is working properly", Profile.getCurrentRace(),10);
+	}
+	
+	@Test
+	public void testGetCurrentSeason()
+	{
+		Profile.setCurrentSeason(2);
+		assertEquals("Should be equal to 2 if set is working properly", Profile.getCurrentSeason(),2);
+	}
+	
+	@Test
+	public void testGetRacesPerSeason()
+	{
+		//something is odd here
+		assertEquals("Should be equal to 10 if called", Profile.getRacesPerSeason(),10);
+	}
+	
+	@Test
+	public void testSetRacesPerSeason()
+	{
+		Profile.setRacesPerSeason(10);
+		assertEquals("Should be equal to 10 if set is called", Profile.getRacesPerSeason(),10);
+	}
+	
+	@Test
+	public void testresetProfileResetDriverPoints() throws Exception
+	{
+		GameController gamecontroller = new GameController("./data.json");
+		profile.setAllDrivers(drivers);
+		
+		profile.resetProfile();
+		
+		assertEquals("Points should be equal to 0 now", Profile.getAllDrivers().get(0).getPoints(),0);
+		assertEquals("Points should be equal to 0 now", Profile.getAllDrivers().get(1).getPoints(),0);
+	}
+	
+	@Test
+	public void testresetProfileResetDriverPointsNot() throws Exception
+	{
+		GameController gamecontroller = new GameController("./data.json");
+		profile.setAllDrivers(drivers);
+		
+		//profile.resetProfile();
+		
+		assertEquals("Points should be equal to 10 now", Profile.getAllDrivers().get(0).getPoints(),10);
+		assertEquals("Points should be equal to 10 now", Profile.getAllDrivers().get(1).getPoints(),10);
+	}
+	
+	@Test
+	public void testresetProfileResetDriverSalaryBonus() throws Exception
+	{
+		GameController gamecontroller = new GameController("./data.json");
+		profile.setAllDrivers(drivers);
+		
+		Profile.getAllDrivers().get(0).setSalaryBonus(10.0);
+		Profile.getAllDrivers().get(0).setSalaryBonus(10.0);
+		
+		profile.resetProfile();
+		
+		assertEquals("Salary bonus should be equal to 1.0 now", Profile.getAllDrivers().get(0).getSalaryBonus(),1.0,0.01);
+		assertEquals("Salary bonus should be equal to 1.0 now", Profile.getAllDrivers().get(1).getSalaryBonus(),1.0,0.01);
+	}
+	
+	@Test
+	public void testresetProfileResetDriverSalaryBonusNot() throws Exception
+	{
+		GameController gamecontroller = new GameController("./data.json");
+		profile.setAllDrivers(drivers);
+	
+		Profile.getAllDrivers().get(0).setSalaryBonus(10.0);
+		Profile.getAllDrivers().get(1).setSalaryBonus(10.0);
+		
+		//profile.resetProfile();
+		
+		assertEquals("Points should be equal to 10.0 now", Profile.getAllDrivers().get(0).getSalaryBonus(),10.0,0.01);
+		assertEquals("Points should be equal to 10.0 now", Profile.getAllDrivers().get(1).getSalaryBonus(),10.0,0.01);
 	}
 }

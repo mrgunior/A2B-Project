@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.NotActiveException;
 import java.net.URL;
 import java.security.KeyStore.PrivateKeyEntry;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -16,9 +17,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import manager.controller.GameController;
 import manager.controller.SceneLoadController;
 import manager.model.Car;
+import manager.model.GameController;
 import manager.model.Profile;
 import manager.model.Upgrades;
 import manager.model.formulaApplication;
@@ -64,6 +65,7 @@ public class CarManagementController extends SceneLoadController implements Init
 	private String maxMessageLong = "Max level achieved!";
 	private String maxMessageShort = "-";
 	private String consoleCantBuyMessage = "Not enough money or level maxed out";
+	private int soundNumber;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources)
@@ -71,6 +73,8 @@ public class CarManagementController extends SceneLoadController implements Init
 		background.fitWidthProperty().bind(root.widthProperty());
 		background.fitHeightProperty().bind(root.heightProperty());
 
+		soundNumber = 1;
+		
 		car = Profile.getCar();
 		upgrades = car.getUpgrades();
 
@@ -81,6 +85,8 @@ public class CarManagementController extends SceneLoadController implements Init
 			try
 			{
 				gotoFxmlScene("Dashboard", (Stage) back.getScene().getWindow());
+				playAudio("click.wav", 1.0);
+
 			}
 			catch (IOException e)
 			{
@@ -90,6 +96,7 @@ public class CarManagementController extends SceneLoadController implements Init
 		// Hover on
 		back.setOnMouseEntered(event -> {
 			back.setImage(new Image("file:images/menu/BackHover.png"));
+			playAudio("hover.wav", 1.0);
 		});
 		// Hover off
 		back.setOnMouseExited(event -> {
@@ -102,12 +109,23 @@ public class CarManagementController extends SceneLoadController implements Init
 			{
 				car.upgrade("down");
 				Profile.setBudget(downPriceDouble, true);
+				if (soundNumber == 1) {
+					playSound(1);
+					soundNumber = 2;
+				} else {
+					playSound(2);
+					soundNumber = 1;
+				}
 			}
 			else
 			{
 				System.out.println(consoleCantBuyMessage);
 			}
 			displayUpgrades();
+		});
+		
+		downUpgrade.setOnMouseEntered(event -> {
+			playAudio("hover.wav", 1.0);
 		});
 
 		aeroUpgrade.setOnMousePressed(event -> {
@@ -116,12 +134,23 @@ public class CarManagementController extends SceneLoadController implements Init
 			{
 				car.upgrade("aero");
 				Profile.setBudget(aeroPriceDouble, true);
+				if (soundNumber == 1) {
+					playSound(1);
+					soundNumber = 2;
+				} else {
+					playSound(2);
+					soundNumber = 1;
+				}
 			}
 			else
 			{
 				System.out.println(consoleCantBuyMessage);
 			}
 			displayUpgrades();
+		});
+
+		aeroUpgrade.setOnMouseEntered(event -> {
+			playAudio("hover.wav", 1.0);
 		});
 
 		gearboxUpgrade.setOnMousePressed(event -> {
@@ -129,6 +158,13 @@ public class CarManagementController extends SceneLoadController implements Init
 			{
 				car.upgrade("gearbox");
 				Profile.setBudget(gearboxPriceDouble, true);
+				if (soundNumber == 1) {
+					playSound(1);
+					soundNumber = 2;
+				} else {
+					playSound(2);
+					soundNumber = 1;
+				}
 			}
 			else
 			{
@@ -136,18 +172,33 @@ public class CarManagementController extends SceneLoadController implements Init
 			}
 			displayUpgrades();
 		});
-
+		
+		gearboxUpgrade.setOnMouseEntered(event -> {
+			playAudio("hover.wav", 1.0);
+		});
+		
 		engineUpgrade.setOnMousePressed(event -> {
 			if (Profile.getBudget() > enginePriceDouble && car.getUpgrades().getEngine() < 5)
 			{
 				car.upgrade("engine");
 				Profile.setBudget(enginePriceDouble, true);
+				if (soundNumber == 1) {
+					playSound(1);
+					soundNumber = 2;
+				} else {
+					playSound(2);
+					soundNumber = 1;
+				}
 			}
 			else
 			{
 				System.out.println(consoleCantBuyMessage);
 			}
 			displayUpgrades();
+		});
+		
+		engineUpgrade.setOnMouseEntered(event -> {
+			playAudio("hover.wav", 1.0);
 		});
 
 		suspUpgrade.setOnMousePressed(event -> {
@@ -155,12 +206,23 @@ public class CarManagementController extends SceneLoadController implements Init
 			{
 				car.upgrade("susp");
 				Profile.setBudget(suspPriceDouble, true);
+				if (soundNumber == 1) {
+					playSound(1);
+					soundNumber = 2;
+				} else {
+					playSound(2);
+					soundNumber = 1;
+				}
 			}
 			else
 			{
 				System.out.println(consoleCantBuyMessage);
 			}
 			displayUpgrades();
+		});
+		
+		suspUpgrade.setOnMouseEntered(event -> {
+			playAudio("hover.wav", 1.0);
 		});
 
 		tiresUpgrade.setOnMousePressed(event -> {
@@ -168,12 +230,23 @@ public class CarManagementController extends SceneLoadController implements Init
 			{
 				car.upgrade("tires");
 				Profile.setBudget(tiresPriceDouble, true);
+				if (soundNumber == 1) {
+					playSound(1);
+					soundNumber = 2;
+				} else {
+					playSound(2);
+					soundNumber = 1;
+				}
 			}
 			else
 			{
 				System.out.println(consoleCantBuyMessage);
 			}
 			displayUpgrades();
+		});
+		
+		tiresUpgrade.setOnMouseEntered(event -> {
+			playAudio("hover.wav", 1.0);
 		});
 
 		weightUpgrade.setOnMousePressed(event -> {
@@ -181,6 +254,13 @@ public class CarManagementController extends SceneLoadController implements Init
 			{
 				car.upgrade("weightRed");
 				Profile.setBudget(weightPriceDouble, true);
+				if (soundNumber == 1) {
+					playSound(1);
+					soundNumber = 2;
+				} else {
+					playSound(2);
+					soundNumber = 1;
+				}
 			}
 			else
 			{
@@ -188,11 +268,24 @@ public class CarManagementController extends SceneLoadController implements Init
 			}
 			displayUpgrades();
 		});
+		
+		weightUpgrade.setOnMouseEntered(event -> {
+			playAudio("hover.wav", 1.0);
+		});
+	}
+	
+	private void playSound(int i) {
+		if (i == 1) {
+			playAudio("pitSound1.wav", 0.2);
+		} else if (i == 2) {
+			playAudio("pitSound2.wav", 0.2);
+		}
 	}
 
 	private void displayUpgrades()
 	{
-		balance.setText("$ " + Double.toString(formulaApplication.getBalance() / 1000000) + " Million");
+		DecimalFormat numberFormat = new DecimalFormat("#.00");
+		balance.setText("$ " + numberFormat.format(formulaApplication.getBalance()/1000000).toString() + " Million");
 		displayUpgrades("down");
 		displayUpgrades("aero");
 		displayUpgrades("gearbox");

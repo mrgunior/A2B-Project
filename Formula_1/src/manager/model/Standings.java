@@ -3,8 +3,6 @@ package manager.model;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import manager.controller.GameController;
-
 public class Standings
 {
 	private static ArrayList<Integer> standings;
@@ -24,7 +22,7 @@ public class Standings
 	
 	private static void calculateStandings()
 	{
-		ArrayList<Driver> drivers = GameController.getDrivers();
+		ArrayList<Driver> drivers = GameController.getDrivers("./data/drivers.json");
 		
 		for (int i = 1; i <= 11; i++)
 		{

@@ -5,8 +5,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import manager.controller.GameController;
-
 public class Profile
 {
 	private double						highScore;
@@ -164,13 +162,16 @@ public class Profile
 		resetCarUpgrades();
 		Profile.setCurrentSeason(1);
 		Profile.setCurrentRace(1);
+		Profile.getCar().setCrashChance(7);
+		Profile.getCar().setRiskMultiplier(100);
 
 		try
 		{
-			GameController.writeDriversToJSON();
+			GameController.writeDriversToJSON("./data/drivers.json");
 			formulaApplication.getGameController();
 			GameController.writeJsonObjectToFile();
 		}
+		
 		catch (IOException e)
 		{
 			e.printStackTrace();

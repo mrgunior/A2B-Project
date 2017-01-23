@@ -15,9 +15,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import manager.controller.GameController;
 import manager.controller.SceneLoadController;
 import manager.model.Driver;
+import manager.model.GameController;
 import manager.model.Profile;
 import manager.model.Standings;
 import manager.model.formulaApplication;
@@ -71,9 +71,8 @@ public class StandingsController extends SceneLoadController implements Initiali
 		drivers.sort(Driver.sortByPoints());
 
 		Standings standings = new Standings();
-		Profile.setCurrentRace(Profile.getCurrentRace() + 1);
 		
-		if (Profile.getCurrentRace() > Profile.getRacesPerSeason()) {
+		if (Profile.getCurrentRace() == Profile.getRacesPerSeason() + 1) {
 			if (standings.getStandings().get(Profile.getTeamID() - 1) == standings.getMaxScore()) {
 				popup.setVisible(true);
 				Profile.setBudget(Profile.getBudget() + 200000000);
@@ -100,11 +99,17 @@ public class StandingsController extends SceneLoadController implements Initiali
 		
 		popupNext.setOnMousePressed(event -> {
 			popup.setVisible(false);
+			playAudio("click.wav", 1.0);
+		});
+		
+		popupNext.setOnMouseEntered(event -> {
+			playAudio("hover.wav", 1.0);
 		});
 		
 		back.setOnMousePressed(event -> {
 			try {
 				gotoFxmlScene("Dashboard", (Stage) back.getScene().getWindow());
+				playAudio("click.wav", 1.0);
 			}
 
 			catch (IOException e) {
@@ -114,6 +119,7 @@ public class StandingsController extends SceneLoadController implements Initiali
 		// Hover on
 		back.setOnMouseEntered(event -> {
 			back.setImage(new Image("file:images/menu/BackHover.png"));
+			playAudio("hover.wav", 1.0);
 		});
 		// Hover off
 		back.setOnMouseExited(event -> {

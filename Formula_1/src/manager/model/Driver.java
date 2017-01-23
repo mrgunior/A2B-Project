@@ -79,7 +79,12 @@ public class Driver
 	
 	public void salaryPercentageBonus(double percentage)
 	{
-		salaryBonus += (percentage/100);
+		this.salaryBonus += (percentage/100);
+	}
+	
+	public double getSalaryPercentageBonus()
+	{
+		return this.salaryBonus;
 	}
 
 	public void calculateSalary()
@@ -115,6 +120,11 @@ public class Driver
 	public void addPoints(int points)
 	{
 		this.points += points;
+	}
+	
+	public int getAddPoints()
+	{
+		return this.points;
 	}
 
 	public void setId(int id)
@@ -155,6 +165,56 @@ public class Driver
 	public void setSalaryBonus(double salaryBonus)
 	{
 		this.salaryBonus = salaryBonus;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null) {
+			return false;
+		}
+		if (!(obj instanceof Driver)) {
+			return false;
+		}
+		Driver other = (Driver) obj;
+		if (acceleration != other.acceleration) {
+			return false;
+		}
+		if (Double.doubleToLongBits(averagePerformance) != Double.doubleToLongBits(other.averagePerformance)) {
+			return false;
+		}
+		if (id != other.id) {
+			return false;
+		}
+		if (name == null && (other.getName() != null)) {
+			return false;
+		} else if (!name.equals(other.name)) {
+			return false;
+		}
+		if (number != other.number) {
+			return false;
+		}
+		if (points != other.points) {
+			return false;
+		}
+		if (Double.doubleToLongBits(salary) != Double.doubleToLongBits(other.salary)) {
+			return false;
+		}
+		if (Double.doubleToLongBits(salaryBonus) != Double.doubleToLongBits(other.salaryBonus)) {
+			return false;
+		}
+		if (speed != other.speed) {
+			return false;
+		}
+		if (teamId != other.teamId) {
+			return false;
+		}
+		if (turning != other.turning) {
+			return false;
+		}
+		return true;
 	}
 
 	/**

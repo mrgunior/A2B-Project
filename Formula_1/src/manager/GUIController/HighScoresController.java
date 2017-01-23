@@ -31,6 +31,7 @@ public class HighScoresController extends SceneLoadController implements Initial
 			try
 			{
 				gotoFxmlScene("MainMenu", (Stage) back.getScene().getWindow());
+				playAudio("click.wav", 1.0);
 			} catch (IOException e)
 			{
 				e.printStackTrace();
@@ -38,6 +39,7 @@ public class HighScoresController extends SceneLoadController implements Initial
 		});	
 		back.setOnMouseEntered(event -> {
 			back.setImage(new Image("file:images/menu/BackHover.png"));
+			playAudio("hover.wav", 1.0);
 		});
 		back.setOnMouseExited(event -> {
 			back.setImage(new Image("file:images/menu/Back.png"));
