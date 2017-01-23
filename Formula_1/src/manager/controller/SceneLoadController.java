@@ -20,6 +20,7 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 import jdk.internal.dynalink.beans.StaticClass;
 import manager.model.formulaApplication;
+import manager.model.GameController;
 
 public class SceneLoadController
 {	
@@ -35,6 +36,17 @@ public class SceneLoadController
 	public void startMaintheme() {
 		mainthemePlayer.stop();
 		mainthemePlayer.play();
+	}
+	
+	public void gotoFxmlScene(String name, Stage stage) throws IOException
+	{
+		Parent root = FXMLLoader.load(this.getClass().getResource("../view/" + name + ".fxml"));
+		
+		formulaApplication.setSceneRoot(root);
+		
+		//stage.setFullScreen(formulaApplication.isFullscreen());
+		stage.setResizable(formulaApplication.isResizable());
+		stage.show();
 	}
 	
 	public void playRaceSound() {
@@ -67,7 +79,6 @@ public class SceneLoadController
 			try {
 				TimeUnit.MILLISECONDS.sleep(150);
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			mainthemePlayer.setVolume(i);
@@ -83,7 +94,6 @@ public class SceneLoadController
 			try {
 				TimeUnit.MILLISECONDS.sleep(150);
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			racesoundPlayer.setVolume(i);
@@ -102,17 +112,6 @@ public class SceneLoadController
 
 		Media sound = new Media(new File(musicFile).toURI().toString());
 		return sound.getDuration();
-	}
-	
-	public void gotoFxmlScene(String name, Stage stage) throws IOException
-	{
-		Parent root = FXMLLoader.load(this.getClass().getResource("../view/" + name + ".fxml"));
-		
-		formulaApplication.setSceneRoot(root);
-		
-		//stage.setFullScreen(formulaApplication.isFullscreen());
-		stage.setResizable(formulaApplication.isResizable());
-		stage.show();
 	}
 	
 //	public void bindBackground(ImageView _background, AnchorPane _root)

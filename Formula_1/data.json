@@ -1,1 +1,56 @@
-{"CurrentRace":"1","Driver2":[{"number":"33","acceleration":94,"salaryBonus":"1.0","turning":90,"name":"Daniel Ricciardo","averagePerformance":"92.0","salary":"1840000.0","speed":"93"}],"Car":[{"Speed":"53","Upgrades":{"WeightRed":"1","Down":"2","Susp":"2","Tires":"2","Gearbox":"2","Aero":"2","Engine":"2"},"CrashChance":"7","Braking":"63","RiskMultiplier":"100","Acceleration":"60","Weight":"58","Handling":"58"}],"CurrentSeason":"2","Driver1":[{"number":"11","acceleration":96,"salaryBonus":"1.0","turning":96,"name":"Max Verstappen","averagePerformance":"96.0","salary":"1920000.0","speed":"96"}],"Highscore":"50.0","Teamname":"Mercedes AMG Petronas","Budget":"3.5285E7","TeamID":6}
+{
+	"CurrentRace": "2",
+	"Driver2": [
+		{
+			"number": "33",
+			"acceleration": 95,
+			"salaryBonus": "1.0",
+			"turning": 95,
+			"teamId": 3,
+			"name": "Lewis Hamilton",
+			"id": "7",
+			"salary": "1880000.0",
+			"speed": "94",
+			"points": "12"
+		}
+	],
+	"Car": [
+		{
+			"Speed": "53",
+			"Upgrades": {
+				"WeightRed": "2",
+				"Down": "1",
+				"Susp": "1",
+				"Tires": "0",
+				"Gearbox": "0",
+				"Aero": "1",
+				"Engine": "0"
+			},
+			"CrashChance": "7",
+			"Braking": "51",
+			"RiskMultiplier": "100",
+			"Acceleration": "50",
+			"Weight": "30",
+			"Handling": "52"
+		}
+	],
+	"CurrentSeason": "3",
+	"Driver1": [
+		{
+			"number": "11",
+			"acceleration": 72,
+			"salaryBonus": "1.0",
+			"turning": 71,
+			"teamId": 3,
+			"name": "Jolyon Palmer",
+			"id": "14",
+			"salary": "1440000.0",
+			"speed": "73",
+			"points": "0"
+		}
+	],
+	"Highscore": "50.0",
+	"Teamname": "Haas F1 Team",
+	"Budget": "7.394E7",
+	"TeamID": 3
+}

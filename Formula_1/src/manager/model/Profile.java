@@ -157,8 +157,8 @@ public class Profile
 
 	public void resetProfile()
 	{
-		resetDriverPoints();
-		resetDriverSalaryBonus();
+		//resetDriverPoints();
+		//resetDriverSalaryBonus();
 		resetCarUpgrades();
 		Profile.setCurrentSeason(1);
 		Profile.setCurrentRace(1);
@@ -167,7 +167,14 @@ public class Profile
 
 		try
 		{
-			GameController.writeDriversToJSON("./data/drivers.json");
+			//make the drivers id to 0 to update the data.json
+			//good for when it needs to read what it needs to delete from the
+			//drivers.json and adjust.
+			Profile.getDrivers().get(0).setId(0);
+			Profile.getDrivers().get(1).setId(0);
+			
+			//GameController.writeDriversToJSON("./data/drivers.json");
+			
 			formulaApplication.getGameController();
 			GameController.writeJsonObjectToFile();
 		}
@@ -178,6 +185,7 @@ public class Profile
 		}
 	}
 
+	/*
 	public void resetDriverPoints()
 	{
 		for (int i = 0; i < allDrivers.size(); i++)
@@ -186,8 +194,9 @@ public class Profile
 		}
 
 		System.out.println("All driver points have been reset...");
-	}
+	}*/
 
+	/*
 	public void resetDriverSalaryBonus()
 	{
 		for (int i = 0; i < allDrivers.size(); i++)
@@ -197,7 +206,7 @@ public class Profile
 		}
 
 		System.out.println("All driver salaries have been reset...");
-	}
+	}*/
 
 	public void resetCarUpgrades()
 	{
@@ -210,7 +219,7 @@ public class Profile
 		// Set all upgrades to 0 with an Upgrades object where all the upgrades are level
 		car.setUpgrades(new Upgrades(0));
 
-		System.out.println("Current car's upgrades have been reset...");
+		System.out.println("\nCurrent car's upgrades have been reset...");
 	}
 
 	public void sortDriversById()

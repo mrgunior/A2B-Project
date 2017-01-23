@@ -8,6 +8,8 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.input.KeyCombination;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
@@ -89,31 +91,27 @@ public class formulaApplication extends Application
 	
 	// Setup for stage
 	public void start(Stage stage) throws Exception
-	{
+	{		
 		// Creates a gamecontroller object at the starting up of the application
 		gamecontroller = new GameController("./data.json");
-		GameController.getProfile().setAllDrivers(GameController.getDrivers("./data/drivers.json"));
-		
-		//why this?? why are you writing everything after reading it from the json to the json?? @Mika
-		//GameController.writeDriversToJSON();
-		
 		Parent root = FXMLLoader.load(getClass().getResource("../view/MainMenu.fxml"));
 		theScene = new Scene(root);
 		stage.setTitle("Formula 1 Manager v1.6.2");
 		stage.setScene(theScene);
+		stage.getIcons().add(new Image("file:images/icon.png"));
 		stage.setFullScreen(fullscreen);
 		stage.setResizable(resizable);
+		stage.setFullScreenExitHint("");
 		stage.show();
 		
 		stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
 	          public void handle(WindowEvent we) {
 	              	try
 					{
-						gamecontroller.stopAutoSave();
+						GameController.stopAutoSave();
 					}
 					catch (IOException e)
 					{
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 	          }
