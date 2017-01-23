@@ -2,9 +2,12 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.LinearGradient?>
 <?import javafx.scene.paint.Stop?>
@@ -112,5 +115,43 @@
             </ImageView>
          </children>
       </VBox>
+             <Pane fx:id="popup" layoutX="660.0" layoutY="340.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" visible="false">
+         <children>
+            <Pane prefHeight="75.0" prefWidth="600.0" style="-fx-background-color: #ff2800;">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="75.0" prefWidth="600.0">
+                     <children>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Error" translateY="-5.0">
+                           <font>
+                              <Font name="Yu Gothic UI Regular" size="50.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </HBox>
+               </children>
+            </Pane>
+            <HBox alignment="CENTER" layoutY="75.0" prefHeight="325.0" prefWidth="600.0">
+               <children>
+                  <Text lineSpacing="15.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You have no profile. Please start a new game." textAlignment="CENTER" translateY="-50.0" wrappingWidth="392.0">
+                     <font>
+                        <Font name="Yu Gothic UI Light" size="37.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox prefHeight="400.0" prefWidth="600.0">
+               <children>
+                  <Button fx:id="popupNext" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #ff2800;" text="Continue" textFill="WHITE" translateX="425.0" translateY="325.0">
+                     <font>
+                        <Font name="Yu Gothic UI Semibold" size="25.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

@@ -6,11 +6,14 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.animation.AnimationTimer;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
@@ -27,6 +30,10 @@ public class MainMenuController extends SceneLoadController implements Initializ
 	private AnchorPane	root;
 	@FXML
 	private ImageView	background;
+	@FXML
+	private Button popupNext;
+	@FXML
+	private Pane popup;
 
 	// Buttons
 	@FXML
@@ -123,13 +130,18 @@ public class MainMenuController extends SceneLoadController implements Initializ
 						else
 						{
 							System.out.println("user does not exist!");
+							popup.setVisible(true);
+							
 						}
 					}
-
 					catch (IOException e)
 					{
 						e.printStackTrace();
 					}
+				});
+				
+				popupNext.setOnMousePressed(event -> {
+					popup.setVisible(false);
 				});
 				resume.setOnMouseEntered(event -> {
 					resume.setImage(new Image("file:images/menu/ResumeHover.png"));
