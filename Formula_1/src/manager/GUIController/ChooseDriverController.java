@@ -165,7 +165,7 @@ public class ChooseDriverController extends SceneLoadController implements Initi
 						{
 							if(Profile.getAllDrivers().get(i).getTeamId()==Profile.getTeamID())
 							{
-								if(counter==1)
+								if(Profile.getAllDrivers().get(i).getTeamId()!=backUpTeamId1)
 								{
 									Profile.getAllDrivers().get(i).setTeamId(backUpTeamId1);
 									counter++;
