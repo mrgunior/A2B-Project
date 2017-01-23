@@ -221,7 +221,7 @@ public class GameController
 	{
 		List<Driver> driversList = new ArrayList<Driver>();
 
-		String[] infos = new String[9];
+		String[] infos = new String[10];
 		infos[0] = "speed";
 		infos[1] = "salary";
 		infos[2] = "number";
@@ -231,6 +231,7 @@ public class GameController
 		infos[6] = "salaryBonus";
 		infos[7] = "id";
 		infos[8] = "teamId";
+		infos[9] = "points";
 
 		String driverString = "Driver";
 		JSONArray driverArray;
@@ -250,7 +251,7 @@ public class GameController
 																	// together with
 																	// the other fields
 
-			for (int d = 0; d < 9; d++)
+			for (int d = 0; d < 10; d++)
 			{
 				String valueOfObject = String.valueOf(object.get(infos[d]));
 				System.out.println(infos[d] + ": " + valueOfObject);
@@ -306,6 +307,12 @@ public class GameController
 				{
 					int teamId = Integer.parseInt(valueOfObject);
 					driver.setTeamId(teamId);
+				}
+				
+				if(d==9)
+				{
+					int points = Integer.parseInt(valueOfObject);
+					driver.setPoints(points);
 				}
 			}
 
@@ -480,6 +487,7 @@ public class GameController
 			// standard upon creating a game until you add drivers
 			JSONObject info = new JSONObject(); // create an object {}
 			info.put("name", Profile.getDrivers().get(i).getName()); // "Name":""
+			info.put("points", String.valueOf(Profile.getDrivers().get(i).getPoints())); // "points":""
 			info.put("id", String.valueOf(Profile.getDrivers().get(i).getId())); //id
 			info.put("speed", String.valueOf(Profile.getDrivers().get(i).getSpeed())); // "Speed":""
 			info.put("number", String.valueOf(Profile.getDrivers().get(i).getNumber())); // "Number":""
