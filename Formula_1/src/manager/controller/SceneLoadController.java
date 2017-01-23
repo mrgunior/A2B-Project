@@ -40,21 +40,7 @@ public class SceneLoadController
 	
 	public void gotoFxmlScene(String name, Stage stage) throws IOException
 	{
-		Parent root = null;
-		//System.out.println("Using SceneCatalog " + GameController.getSceneCatalog());
-		SceneFile sceneFile = GameController.getSceneCatalog().getScene(name);
-		if (sceneFile == null || name.equals("Race"))
-		{
-			//System.out.println("Found a new scene " + name);
-			root = FXMLLoader.load(this.getClass().getResource("../view/" + name + ".fxml"));
-		}
-		else
-		{
-			//System.out.println("Using stored scene " + sceneFile.getName());
-			root = sceneFile.getRoot();
-		}
-		GameController.getSceneCatalog().addSceneFile(new SceneFile(name, root));
-		
+		Parent root = FXMLLoader.load(this.getClass().getResource("../view/" + name + ".fxml"));
 		
 		formulaApplication.setSceneRoot(root);
 		
@@ -93,7 +79,6 @@ public class SceneLoadController
 			try {
 				TimeUnit.MILLISECONDS.sleep(150);
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			mainthemePlayer.setVolume(i);
@@ -109,7 +94,6 @@ public class SceneLoadController
 			try {
 				TimeUnit.MILLISECONDS.sleep(150);
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			racesoundPlayer.setVolume(i);
@@ -129,17 +113,6 @@ public class SceneLoadController
 		Media sound = new Media(new File(musicFile).toURI().toString());
 		return sound.getDuration();
 	}
-	
-//	public void gotoFxmlScene(String name, Stage stage) throws IOException
-//	{
-//		Parent root = FXMLLoader.load(this.getClass().getResource("../view/" + name + ".fxml"));
-//		
-//		formulaApplication.setSceneRoot(root);
-//		
-//		//stage.setFullScreen(formulaApplication.isFullscreen());
-//		stage.setResizable(formulaApplication.isResizable());
-//		stage.show();
-//	}
 	
 //	public void bindBackground(ImageView _background, AnchorPane _root)
 //	{
