@@ -227,15 +227,9 @@ public class DashboardController extends SceneLoadController implements Initiali
 		animationTimer.start();
 		if(Profile.getBudget() < 0){
 			popup.setVisible(true);
-			/*try {
-				TimeUnit.MILLISECONDS.sleep(1000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+			if(popup.isVisible()){
+			playFailSound();
 			}
-			*/
-			playAudio("fail.wav", 1.0);
-			
 		}
 	}
 	

@@ -183,9 +183,6 @@ public class ResultController extends SceneLoadController implements Initializab
 		Text[] pointsEarnedText = { points1, points2, points3, points4, points5, points6, points7, points8, points9,
 				points10 };
 
-		for (int i = 0; i < 10; i++) {
-			pointsEarnedText[i].setText("+" + points[i]);
-		}
 
 		// Set total points text boxes
 		Text[] totalPointsText = { totalPoints1, totalPoints2, totalPoints3, totalPoints4, totalPoints5, totalPoints6,
@@ -196,6 +193,13 @@ public class ResultController extends SceneLoadController implements Initializab
 				resultsResult.getResult(i).getDriver().salaryPercentageBonus(10);
 			}
 			totalPointsText[i].setText(resultsResult.getResult(i).getDriver().getPoints() + "");
+			pointsEarnedText[i].setText("+" + points[i]);
+			
+			if (resultsResult.getResult(i).getDriver().getTeamId() == Profile.getTeamID()) {
+				totalPointsText[i].setStyle("-fx-fill: green");
+				pointsEarnedText[i].setStyle("-fx-fill: green");
+			}
+			
 		}
 	}
 
