@@ -1,61 +1,78 @@
-GUI:
-	General:
-		Next button
-	Choose Team:
-		Add custom team selection.
-		Button: Text select red, rectangle stroke white.
-	Custom Team Creation:
-		Set the name of the team.
-	Choose Drivers:
-		All 22 drivers, choose 2.
-		3rd choice will replace 1st choice.
-		Cannot continue if 1 driver is chosen.
-		If Verstappen and Hamilton are chosen with team Mercedes, Rosberg will go to Red Bull.
- 	Car Management:
-		Grid vertical:
-			Down-Force
-			Aerodynamics
-			Gearbox
-			Engine
-			Suspension
-			Tires
-			Weight Reduction
-		Grid horizontal:
-			What to upgrade,
-			Current level,
-			Stats change next level,
-			Price for next level,
-			Level up button
-	Team management:
-		Check blackboard if you need to hire drivers
-	Standings:
-		2 columns, 11 rows:
-			First 11, last 11
-			3 columns, 11 rows:
-			Team logo, Driver name, points	
-	Result:
-		Top 10
-		Team logo, Driver name, Team name, Points gained, Current points
+Date: 16-12-2016
+Secretary: Mika Kuijpers
 
-Tasks:
-	Rowdy:
-		Next button
-		GUI:
-			General
-			Choose Team
-			Custom Team Creation
-			Choose Drivers
-	Thijmen:
-		Simulation and data connection
-	Mika:
-		GUI:
-			Car Management
-			Team Management
-			Standings
-			Result
-	Victor:
-		Simulation and data connection
+Attendance:
+Mika
+Rowdy
+Thijmen
+Victor
 
-		
-		
+------------------------------------------------------------------------
 
+This meeting was a small meeting just to recap on the things that had 
+to be done. We made a quick overview of what we had to do, that's why
+these notes are not in the usual not template layout. 
+
+------------------------------------------------------------------------
+
+What to do next:
+- GUI:
+	- General:
+		- Next button
+	- Choose Team:
+		- Add custom team selection.
+		- Button: Text select red, rectangle stroke white.
+	- Custom Team Creation:
+		- Set the name of the team.
+	- Choose Drivers:
+		- All 22 drivers, choose 2.
+		- 3rd choice will replace 1st choice.
+		- Cannot continue if 1 driver is chosen.
+		- If Verstappen (Red Bull) and Hamilton (Mercedes) are chosen with team Mercedes, 
+			Rosberg (Mercedes) will go to Red Bull.
+ 	- Car Management:
+		- Grid vertical:
+			- Down-Force
+			- Aerodynamics
+			- Gearbox
+			- Engine
+			- Suspension
+			- Tires
+			- Weight Reduction
+		- Grid horizontal:
+			- What to upgrade,
+			- Current level,
+			- Stats change next level,
+			- Price for next level,
+			- Level up button
+	- Team management:
+		- Check blackboard if you need to hire drivers
+	- Standings:
+		- 2 columns, 11 rows:
+			- First 11, last 11
+			- 3 columns, 11 rows:
+			- Team logo, Driver name, points	
+	- Result:
+		- Top 10
+		- Team logo, Driver name, Team name, Points gained, Current points
+
+------------------------------------------------------------------------
+
+Indiviual tasks:
+	- Rowdy:
+		- Next button
+		- GUI:
+			- General
+			- Choose Team
+			- Custom Team Creation
+			- Choose Drivers
+	- Thijmen:
+		- Simulation and data connection
+	- Mika:
+		- GUI:
+			- Car Management
+			- Team Management
+			- Standings
+			- Result
+	- Victor:
+		- Simulation and data connection
