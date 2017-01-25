@@ -1,0 +1,39 @@
+Date: dd-mm-yyy
+Secretary: <Name>
+
+Attendance:
+Bas (TA)
+<rest>
+
+<non attending and reason>
+
+------------------------------------------------------------------------
+
+Reflection:
+  - <Attendee 1>
+  - ...
+  - <Attendee N>
+
+Notes on Refleciton:
+  - <Note 1>
+  - ...
+  - <Note N>
+  
+-------------------------------------------------------------------------
+
+Meeting:
+  - <Note 1>
+  - ...
+  - <Note N>
+
+What to do next:
+  - <Attendee 1>
+  - ...
+  - <Attendee N>
+  
+-------------------------------------------------------------------------
+
+Client Expectations/Discussion
+  - <Note from TA 1>
+  - ...
+  - <Note from TA N>

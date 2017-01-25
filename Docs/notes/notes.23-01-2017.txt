@@ -10,49 +10,23 @@ Victor
 
 -------------------------------------------------------------------
 
-Notes:
-
-Report:
-
-- Use more formal language --> no "-ing", "us", "we", "the team".
-- No guidelines on amount of pages: het taalgebruik moet bonding en objectief zijn.
-
--------------------------------------------------------------------
-
-Updates:
-
-Thijmen:
-
-- Crash
-- Teammanagement
-- Report
-- Tests
-
-Mika:
-
-- General bugfixes
-- Report
-- Tests
-
-Victor: 
-
-- Driver selection
-- Report
-- UML
-- Tests
-
-Rowdy: 
-
-- Bugfixes
-- Audio
-- Report
-- Tests
+Reflection:
+  - Thijmen:  Added car crashing, audio effects and working teammanagement. Also worked on the report and wrote tests.
+  - Mika:     Did general bugfixes. Also worked on the report and wrote tests.
+  - Victor:   Added driver selection and updated the UML. Also worked on the report and wrote tests.
+  - Rowdy:    Did general bugfixed and added audio effects. Also worked on the report and wrote tests.
 
 -------------------------------------------------------------------
 
-Tips:
-
-- Check slack for important dates and info
-- Send everything on time to Andy
+What to do next:
+  - All:
+    - Check slack for important dates and info
+    - Send everything on time to Andy
+    - Voorbereidingen op presentation
+    - Finish report
 
 -------------------------------------------------------------------
+
+Client Expectations/Discussion:
+  - Use more formal language --> no "-ing", "us", "we", "the team".
+  - No guidelines on amount of pages: het taalgebruik moet bonding en objectief zijn.
