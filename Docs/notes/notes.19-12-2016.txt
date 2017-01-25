@@ -7,14 +7,15 @@ Rowdy
 Mika
 Thijmen
 
---------------------------------------------------------
+------------------------------------------------------------------------
 
 What to do next:
   - All:
     - Market of drivers and such.
     - Driver luring: Simple: If you chose stock drivers, lure from other teams. Advanced: If you chose different drivers, hire others.
     - Merging all aspects from GUI.
---------------------------------------------------------------------------------
+    
+------------------------------------------------------------------------
 
 Client Expectations/Discussion:
   - Merge GUI + Simulatie --> Working game.
