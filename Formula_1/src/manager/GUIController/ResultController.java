@@ -94,7 +94,7 @@ public class ResultController extends SceneLoadController implements Initializab
 
 		for (int i = 0; i < points.length; i++) {
 			if (resultsResult.getResult(i).getDriver().getTeamId() == Profile.getTeamID()) {
-				winBonus += points[i] * 1000000;
+				winBonus += points[i] * 2000000;
 				System.out.println(winBonus);
 			}
 		}

@@ -215,7 +215,7 @@ public class Profile
 		car.setBraking(50);
 		car.setHandling(50);
 		car.setSpeed(50);
-		car.setWeight(50);
+		car.setWeight(750);
 		// Set all upgrades to 0 with an Upgrades object where all the upgrades are level
 		car.setUpgrades(new Upgrades(0));
 

@@ -276,9 +276,9 @@ public class CarManagementController extends SceneLoadController implements Init
 	
 	private void playSound(int i) {
 		if (i == 1) {
-			playAudio("pitSound1.wav", 0.1);
+			playAudio("pitSound1.wav", 0.4);
 		} else if (i == 2) {
-			playAudio("pitSound2.wav", 0.1);
+			playAudio("pitSound2.wav", 0.3);
 		}
 	}
 

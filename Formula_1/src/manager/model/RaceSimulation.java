@@ -147,7 +147,7 @@ public class RaceSimulation {
 			}
 			double carAverage = 0;
 
-			carAverage = ((car.getAcceleration() + car.getBraking() + car.getHandling() + car.getSpeed())/4);
+			carAverage = ((car.getAcceleration() + car.getBraking() + car.getHandling() + car.getSpeed() + 100*(750/car.getWeight()))/6);
 			
 			double crashChance = car.getCrashChance();
 			crashChance = crashChance/100;
