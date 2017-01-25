@@ -12,14 +12,11 @@ Victor
 
 Notes:
 
-Report:
-
 - Use more formal language --> no "-ing", "us", "we", "the team".
 - No guidelines on amount of pages: het taalgebruik moet bonding en objectief zijn.
 
 -------------------------------------------------------------------
-
-Updates:
+Reflection:
 
 Thijmen:
 
@@ -49,10 +46,11 @@ Rowdy:
 - Tests
 
 -------------------------------------------------------------------
-
-Tips:
+What to do next:
 
 - Check slack for important dates and info
 - Send everything on time to Andy
+- Voorbereidingen op presentation
+- Finish report
 
 -------------------------------------------------------------------
