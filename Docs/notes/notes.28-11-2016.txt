@@ -1,5 +1,3 @@
-General scrum team meeting 
-
 Date: 28-11-2016
 Secretary: Nichelle Fleming
 
@@ -11,46 +9,60 @@ Rowdy
 Thijmen
 Victor 
 
-Reflection
-1. Productivity week 2.2
-   Most tasks are done. Brainstorming simulation (must have) should be finished.
-   Skeleton report (must have) has less priority at this moment, but is not much work. 
-   Team work is going well. 
+-------------------------------------------------------------------
 
-   Adjustments:
-   Uploading files to GitHub should happen on schedule.
-   Maven should be installed and working.
+Meeting:
+   - Productivity week 2.2
+   - Most tasks are done. Brainstorming simulation (must have) should be finished.
+   - Skeleton report (must have) has less priority at this moment, but is not much work. 
+   - Team work is going well. 
 
-2. Planning and assignment week 2.3
+   - Adjustments:
+     - Uploading files to GitHub should happen on schedule.
+     - Maven should be installed and working.
 
-Discussion of topics/tasks Bas presented:
-- Demo is next week Monday (5-12-2016).
-  Deliverables:
-  Demo should be in the master branch.
-  Mockup GUI (should work)
-  Main menu is not required, but a basic setup is appreciated.
-  GUI storyboard is necessary and 2 buttons with back/next function should be implemented. 
-  Singleton: creating object of windows and loading them in one main window (changing from window)
-  Dynamic loading: only loading things when you really need them. 
-- Read/Write to JSON should be ready, ability to load the gamestate should be present.
-- Ability to save the gamestate
+   - Planning and assignment week 2.3
 
-  Testing:
-  When reading and writing files, test that the data that is read is equal to the written data.
+   - Discussion of topics/tasks Bas presented:
+     - Demo is next week Monday (5-12-2016).
+     - Deliverables:
+       - Demo should be in the master branch.
+       - Mockup GUI (should work)
+       - Main menu is not required, but a basic setup is appreciated.
+       - GUI storyboard is necessary and 2 buttons with back/next function should be implemented. 
+       - Singleton: creating object of windows and loading them in one main window (changing from window)
+       - Dynamic loading: only loading things when you really need them. 
+     - Read/Write to JSON should be ready, ability to load the gamestate should be present.
+     - Ability to save the gamestate
 
-  Tasks:
-  Each member should continue to work on and improve previous work.
+   - Testing:
+     - When reading and writing files, test that the data that is read is equal to the written data.
 
-3. Client expectations/renegotiations
+   - Tasks:
+     - Each member should continue to work on and improve previous work.
 
-Adjustments week 2.3
-- UML should make a clear distinction between Model, View and Controller.
-  The model is the data, the view is GUI and the controller is the gateway between MVC model and application logic.
-  Tip: use packages!
-- UML: gamestate should be changed to gamecontroller.
-- Uploaded images on GitHub should be moved to Google Drive (if necessary).
-- Each member should be able to run the main application. Fix all problems as soon as possible.
+   - Client expectations/renegotiations
 
+   - Adjustments week 2.3
+     - UML should make a clear distinction between Model, View and Controller.
+     - The model is the data, the view is GUI and the controller is the gateway between MVC model and application logic.
+  
+   - Tip: use packages!
+     - UML: gamestate should be changed to gamecontroller.
+     - Uploaded images on GitHub should be moved to Google Drive (if necessary).
+     - Each member should be able to run the main application. Fix all problems as soon as possible.
 
+-------------------------------------------------------------------
 
+What to do next:
+	- demo1:
+	- a basic gui application, it can have buttons but it at minimum it should be a window.
+	- work on the UML, adjust where needed nd work on the skeleton report
 
+-------------------------------------------------------------------------
+
+Client Expectations/Discussion
+
+  - Feedback on our group:
+    - There's good communication within the group.
+    - make sure every one is doing a part in the code. It will be checked later.
