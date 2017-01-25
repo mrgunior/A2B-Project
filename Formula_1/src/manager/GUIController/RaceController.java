@@ -170,6 +170,7 @@ public class RaceController extends SceneLoadController implements Initializable
 
 		for (int i = 0; i < cars.size(); i++)
 		{
+			System.out.println(cars.get(i).toString());
 			cars.get(i).setX(startCarsX);
 		}
 

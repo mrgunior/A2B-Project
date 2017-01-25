@@ -555,10 +555,6 @@ public class GameController
 		// ReadUpgrades.readNestedJsonObjects(path, new String[] {}) + "");
 
 		int nDrivers = ((JSONObject) readNestedObject(path, new String[] {})).size();
-		int driverId1 = Profile.getDrivers().get(0).getId();
-		int driverId2 = Profile.getDrivers().get(1).getId();
-		System.out.println("driver 1: " + driverId1);
-		System.out.println("driver 2: " + driverId2);
 		System.out.println("nDrivers: " + nDrivers);
 		
 		for (int i = 1; i <= nDrivers; i++)
