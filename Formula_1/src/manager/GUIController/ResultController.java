@@ -143,7 +143,7 @@ public class ResultController extends SceneLoadController implements Initializab
 			popup.setVisible(false);
 			playAudio("click.wav", 1.0);
 		});
-		
+
 		popupNext.setOnMouseEntered(event -> {
 			playAudio("hover.wav", 1.0);
 		});
@@ -170,6 +170,11 @@ public class ResultController extends SceneLoadController implements Initializab
 			top10Drivers[i].setText(resultsResult.getResult(i).getName());
 			top10Timings[i].setText(
 					Stopwatch.formatMilli(resultsResult.getResult(i).getTime() * RaceController.getTimeFactor()));
+			if (resultsResult.getResult(i).getDriver().getTeamId() == Profile.getTeamID()) {
+				top10Drivers[i].setStyle("-fx-fill: green");
+				top10Timings[i].setStyle("-fx-fill: green");
+			}
+
 		}
 	}
 
@@ -178,9 +183,6 @@ public class ResultController extends SceneLoadController implements Initializab
 		Text[] pointsEarnedText = { points1, points2, points3, points4, points5, points6, points7, points8, points9,
 				points10 };
 
-		for (int i = 0; i < 10; i++) {
-			pointsEarnedText[i].setText("+" + points[i]);
-		}
 
 		// Set total points text boxes
 		Text[] totalPointsText = { totalPoints1, totalPoints2, totalPoints3, totalPoints4, totalPoints5, totalPoints6,
@@ -191,17 +193,23 @@ public class ResultController extends SceneLoadController implements Initializab
 				resultsResult.getResult(i).getDriver().salaryPercentageBonus(10);
 			}
 			totalPointsText[i].setText(resultsResult.getResult(i).getDriver().getPoints() + "");
+			pointsEarnedText[i].setText("+" + points[i]);
+			
+			if (resultsResult.getResult(i).getDriver().getTeamId() == Profile.getTeamID()) {
+				totalPointsText[i].setStyle("-fx-fill: green");
+				pointsEarnedText[i].setStyle("-fx-fill: green");
+			}
+			
 		}
 	}
-	
-	private void setLogos()
-	{
-		ImageView[] logos = new ImageView[] { logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8, logo9, logo10};
+
+	private void setLogos() {
+		ImageView[] logos = new ImageView[] { logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8, logo9, logo10 };
 		resultsResult.sortResultsByTime();
-		
-		for (int i = 0; i < logos.length; i++)
-		{
-			logos[i].setImage(new Image("file:images/Logos/" + resultsResult.getResult(i).getDriver().getTeamId() + ".png"));
+
+		for (int i = 0; i < logos.length; i++) {
+			logos[i].setImage(
+					new Image("file:images/Logos/" + resultsResult.getResult(i).getDriver().getTeamId() + ".png"));
 		}
 	}
 

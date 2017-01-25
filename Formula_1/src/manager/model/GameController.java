@@ -26,6 +26,7 @@ public class GameController
 	private static Profile	profile;
 	private static Timer			timer;
 	private static String			jsonFile;
+	
 	private static ArrayList<Car> cars;
 
 	/**
@@ -128,7 +129,7 @@ public class GameController
 				}
 			}
 
-		}, 2 * 60 * 1000, 2 * 60 * 1000); // in 1 minute you have 60 seconds and each second is 1000
+		}, 2 * 60 * 1000, 1 * 60 * 1000); // in 1 minute you have 60 seconds and each second is 1000
 											// milliseconds and times that by 2 gives you 2 minutes.
 	}
 	
@@ -554,10 +555,6 @@ public class GameController
 		// ReadUpgrades.readNestedJsonObjects(path, new String[] {}) + "");
 
 		int nDrivers = ((JSONObject) readNestedObject(path, new String[] {})).size();
-		int driverId1 = Profile.getDrivers().get(0).getId();
-		int driverId2 = Profile.getDrivers().get(1).getId();
-		System.out.println("driver 1: " + driverId1);
-		System.out.println("driver 2: " + driverId2);
 		System.out.println("nDrivers: " + nDrivers);
 		
 		for (int i = 1; i <= nDrivers; i++)

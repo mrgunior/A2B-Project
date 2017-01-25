@@ -2,6 +2,7 @@ package manager.GUIController;
 
 import java.io.IOException;
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -73,9 +74,11 @@ public class ChooseDriverController extends SceneLoadController implements Initi
 				palmerSalary, perezSalary, raikkonnenSalary, ricciardoSalary, rosbergSalary, sainzSalary, verstappenSalary,
 				vettelSalary, wehrleinSalary};
 
+		DecimalFormat numberFormat = new DecimalFormat("#.##");
+		
 		for (int i = 0; i < 22; i++) 
 		{
-			salaries[i].setText("$ " + drivers.get(i).getSalary()/1000000 + " Mill/race");
+			salaries[i].setText("$ " + numberFormat.format(drivers.get(i).getSalary()/1000000) + " Mill/race");
 		}
 		
 		driver1 = alonso;
@@ -128,6 +131,7 @@ public class ChooseDriverController extends SceneLoadController implements Initi
 					Profile.getDrivers().get(0).setTeamId(teamId);
 					Profile.getDrivers().get(1).setTeamId(teamId);
 					
+					System.out.println("\nSelected drivers:");
 					for(int i = 0; i<22; i++)
 					{
 						if(d1 == Profile.getAllDrivers().get(i).getId())
@@ -135,51 +139,104 @@ public class ChooseDriverController extends SceneLoadController implements Initi
 							//back it up so I can see later how to re-arrange them
 							//since I know he came from this team I know which team is missing a driver
 							backUpTeamId1 = Profile.getAllDrivers().get(i).getTeamId();
+							
+							System.out.println("backUpTeamId1: " + backUpTeamId1);
+							
+							System.out.println("I'm in d1 without teamId adjusted: " +Profile.getAllDrivers().get(i).toString());
 							//save the id of the driver so I can compare it later
 							driverId1 = Profile.getAllDrivers().get(i).getId();
 							
 							Profile.getDrivers().get(0).setId(driverId1);
 							
 							Profile.getAllDrivers().get(i).setTeamId(teamId);
-							System.out.println("I'm in d1 " +Profile.getAllDrivers().get(i).toString());
+							System.out.println("I'm in d1 with teamId adjusted: " +Profile.getAllDrivers().get(i).toString());
 						}
 						
 						if(d2 == Profile.getAllDrivers().get(i).getId())
 						{
 							//back it up so I can see later how to re-arrange them
 							backUpTeamId2 = Profile.getAllDrivers().get(i).getTeamId();
+							
+							System.out.println("backUpTeamId2: " + backUpTeamId2);
+							
+							System.out.println("I'm in d2 without teamId adjusted: " +Profile.getAllDrivers().get(i).toString());
 							//save the id of the driver so I can compare it later
 							driverId2 = Profile.getAllDrivers().get(i).getId();
 							
 							Profile.getDrivers().get(1).setId(driverId2);
 							
 							Profile.getAllDrivers().get(i).setTeamId(teamId); 
-							System.out.println("I'm in d2 " +Profile.getAllDrivers().get(i).toString());
+							System.out.println("I'm in d2 with teamId adjusted: " +Profile.getAllDrivers().get(i).toString());
 						}
 					}
 					
-					int counter = 1;
+					int counterFor2DriversOf2DifferentTeamsThanWhatYouSelected = 1;
+					int activate = 1;
+					
+					//2 drivers of 2 different teams than what you selected
 					for(int i = 0; i<22; i++)
 					{
+						//filter the drivers we selected out
 						if(Profile.getAllDrivers().get(i).getId()!=driverId1 && Profile.getAllDrivers().get(i).getId()!=driverId2)
 						{
 							if(Profile.getAllDrivers().get(i).getTeamId()==Profile.getTeamID())
 							{
-								if(counter==1)
+								if(counterFor2DriversOf2DifferentTeamsThanWhatYouSelected==1)
 								{
-									Profile.getAllDrivers().get(i).setTeamId(backUpTeamId1);
-									counter++;
+									if(Profile.getAllDrivers().get(i).getTeamId()!=backUpTeamId1)
+									{
+										System.out.println("\nbackUpTeamId1 first if: " + backUpTeamId1);
+										Profile.getAllDrivers().get(i).setTeamId(backUpTeamId1);
+									}
 								}
 								
-								else
+								if(counterFor2DriversOf2DifferentTeamsThanWhatYouSelected==2)
 								{
-									Profile.getAllDrivers().get(i).setTeamId(backUpTeamId2);
-									counter = 1;
+									if(Profile.getAllDrivers().get(i).getTeamId()!=backUpTeamId2)
+									{
+										System.out.println("backUpTeamId2: first if" + backUpTeamId2);
+										Profile.getAllDrivers().get(i).setTeamId(backUpTeamId2);
+										
+										//if this becomes to it means we have option 2: (2 drivers of 2 different teams)
+										activate = 2;
+									}
+									
+								}
+								
+								counterFor2DriversOf2DifferentTeamsThanWhatYouSelected++;
+							}
+						}
+					}
+					
+					if(activate == 1)
+					{
+						for(int i = 0; i<22; i++)
+						{
+							if(Profile.getAllDrivers().get(i).getTeamId()!=Profile.getTeamID()
+									&& Profile.getAllDrivers().get(i).getTeamId()==backUpTeamId2)
+							{
+								if(activate==1)
+								{
+									if(Profile.getAllDrivers().get(i).getTeamId()!=backUpTeamId1)
+									{
+										System.out.println("backUpTeamId1 (active 2):  " + backUpTeamId1);
+										System.out.println(Profile.getAllDrivers().get(i).toString());
+										Profile.getAllDrivers().get(i).setTeamId(backUpTeamId1);
+										activate=2;//only 1 option should be found
+									}
+									
+									else
+									{
+										System.out.println("backUpTeamId2 (active 2):  " + backUpTeamId2);
+										System.out.println(Profile.getAllDrivers().get(i).toString());
+										Profile.getAllDrivers().get(i).setTeamId(backUpTeamId2);
+										activate=2;//only 1 option should be found
+									}	
 								}
 							}
 						}
 					}
-																	 
+										
 					//update the json file directly
 					GameController.writeJsonObjectToFile();
 					GameController.writeDriversToJSON("./data/drivers.json"); 

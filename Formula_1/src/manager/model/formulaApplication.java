@@ -8,6 +8,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
@@ -96,8 +97,10 @@ public class formulaApplication extends Application
 		theScene = new Scene(root);
 		stage.setTitle("Formula 1 Manager v1.6.2");
 		stage.setScene(theScene);
+		stage.getIcons().add(new Image("file:images/icon.png"));
 		stage.setFullScreen(fullscreen);
 		stage.setResizable(resizable);
+		stage.setFullScreenExitHint("");
 		stage.show();
 		
 		stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
@@ -108,7 +111,6 @@ public class formulaApplication extends Application
 					}
 					catch (IOException e)
 					{
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 	          }

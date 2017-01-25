@@ -14,7 +14,6 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.paint.LinearGradient?>
 <?import javafx.scene.paint.Stop?>
-<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
@@ -54,7 +53,6 @@
             </Text>
          </children>
       </HBox>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff99" height="730.0" layoutX="445.0" layoutY="220.0" stroke="#ffffffb2" strokeType="OUTSIDE" strokeWidth="3.0" visible="false" width="1010.0" AnchorPane.bottomAnchor="126.0" AnchorPane.leftAnchor="451.0" AnchorPane.rightAnchor="453.0" AnchorPane.topAnchor="218.0" />
       <HBox id="teamsContainer" alignment="CENTER" layoutX="100.0" layoutY="225.0" prefHeight="720.0" prefWidth="1700.0" AnchorPane.bottomAnchor="135.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="225.0">
          <children>
             <GridPane gridLinesVisible="true" prefHeight="731.0" prefWidth="1130.0" style="-fx-background-color: rgba(255,255,255,0.6); -fx-border-color: rgba(255,255,255,.7); -fx-border-width: 4;">

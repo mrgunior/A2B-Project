@@ -98,7 +98,7 @@
 	"18": {
 		"number": 11,
 		"acceleration": 95,
-		"salaryBonus": 1.1,
+		"salaryBonus": 1.0,
 		"turning": 93,
 		"teamId": 6,
 		"name": "Nico Rosberg",

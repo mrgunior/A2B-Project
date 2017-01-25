@@ -6,24 +6,28 @@ Bas (TA)
 Mika
 Thijmen
 
-Rowdy is sick at home
-Victor personal came up
-Nichelle personal came up.
+Rowdy isn't here because he is sick at home
+Victor isn't here because personal came up
+Nichelle isn't here because personal came up.
 
--------------------------------------------------------------------
+------------------------------------------------------------------------
 
-Notes:
+Reflection:
+  - Thijmen:	Improved the race simulation and sorted results after the race.
+  - Mika:	Fixed fullscreen bug and did some work on the gui.
+  
+------------------------------------------------------------------------
 
-Week progress:
-Thijmen:
-	Improved race simulation
-	Sort results
-Mika:
-	Fixed fullscreen bug
-	Some work on gui
+Meeting:
+  - Focus now on getting the game up and running.
+  - Gamedata should be done.
+  - The backbone of the game should be working like a command line game.
+  
+What to do next:
+  - Thijmen:	Get the racing running in the game.
+  - Mika:	Get the racing running in the game.
+  
+------------------------------------------------------------------------
 
-Sorting, java has sorting functions built in
-
-Focus now on getting the game up and running
-Gamedata should be done
-The backbone of the game should be working like a command line game
+Client Expectations/Discussion:
+  - Disappointed that the race wasn't working in the game  yet, should've been done by now.
