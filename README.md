@@ -10,5 +10,5 @@ Contributors to this project:
 | :-----------: | :-----------: | :--------------------: | :--------------: | :-----------: |
 | vwernet       | mikakuijpers  | tlangendam             | nfleming         |rchotkan       |
 | ![alt tag](http://tinyurl.com/haegpqr "Victor Wernet")| ![alt tag](http://i.picresize.com/images/2016/11/26/NLcbA.png "Mika Kuijpers")  | ![alt tag](http://i.picresize.com/images/2016/11/26/6B9XO.png "Thijmen Langendam")|![alt tag](http://i.picresize.com/images/2016/11/26/s8xH1.jpg "Nichelle Fleming") |![alt tag](https://goo.gl/HT2Z0o "Rowdy Chotkan")|
-
+|               |               |                        | Dropped out      |               |
 

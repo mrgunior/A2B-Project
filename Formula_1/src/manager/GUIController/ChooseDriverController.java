@@ -126,7 +126,6 @@ public class ChooseDriverController extends SceneLoadController implements Initi
 					int driverId1 = 0;
 					int driverId2 = 0;
 					
-					
 					//now set this specific driver with a new teamId 
 					Profile.getDrivers().get(0).setTeamId(teamId);
 					Profile.getDrivers().get(1).setTeamId(teamId);
@@ -200,7 +199,6 @@ public class ChooseDriverController extends SceneLoadController implements Initi
 										//if this becomes to it means we have option 2: (2 drivers of 2 different teams)
 										activate = 2;
 									}
-									
 								}
 								
 								counterFor2DriversOf2DifferentTeamsThanWhatYouSelected++;
