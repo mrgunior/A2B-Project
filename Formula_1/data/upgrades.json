@@ -397,7 +397,7 @@
 			"level3": 
 			{
 				"name": "Frontal Wing Upgrade",
-				"price": 6990000,
+				"price": 69900000,
 				"positive": 
 				{
 					"braking": 7,
@@ -412,7 +412,7 @@
 			"level4": 
 			{
 				"name": "Single Airfoil Wing",
-				"price": 9290000,
+				"price": 92900000,
 				"positive": 
 				{
 					"braking": 8,
