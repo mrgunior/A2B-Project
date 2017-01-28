@@ -10,6 +10,8 @@ public class Driver
 	private double	salary;
 	private double	salaryBonus	= 1;
 	private double	averagePerformance;
+	
+	double salaryFactor = 3;
 
 	public Driver(int id, int teamId, String name, int points, int number, int speed, int acceleration, int turning, double salary)
 	{
@@ -91,12 +93,17 @@ public class Driver
 	{
 		return this.salaryBonus;
 	}
+	
+	public double getSalaryFactor()
+	{
+		return salaryFactor;
+	}
 
 	public void calculateSalary()
 	{
 		calculateAveragePerformance();
 		double avgPerf = getAveragePerformance();
-		double salaryFactor = 3;
+		
 		this.salary = ((Math.pow(avgPerf,3.4) * salaryFactor * salaryBonus)/2);
 	}
 

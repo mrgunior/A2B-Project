@@ -79,6 +79,7 @@ public class StopwatchTest {
 
 	@Test
 	public void testElapsedTimeRunning() throws InterruptedException {
+		stopwatch.stop();
 		stopwatch.start();
 		double time = 23;
 		Thread.sleep((long) time);

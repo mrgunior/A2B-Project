@@ -176,14 +176,19 @@ public class DriverTest
 	@Test
 	public void testGetSalary()
 	{
-		assertEquals("Salary should be equal", driver.getSalary(), 1480000.0, 0.001);
+		double avgPerf = driver.getAveragePerformance();
+		double salaryFactor = driver.getSalaryFactor();
+		double salaryBonus = driver.getSalaryBonus();
+		assertEquals("Salary should be equal", driver.getSalary(), ((Math.pow(avgPerf,3.4) * salaryFactor * salaryBonus)/2), 0.001);
 	}
 	
 	@Test
 	public void testSetSalary()
 	{
+		double salary = driver.getSalary();
+		double bonus = 4.0;
 		driver.setSalaryBonus(4.0);
-		assertTrue("driver salary has been set correctly via setSalary()", driver.getSalary()==5920000.0);
+		assertTrue("driver salary has been set correctly via setSalary()", driver.getSalary() == salary*bonus);
 	}
 	
 	@Test
