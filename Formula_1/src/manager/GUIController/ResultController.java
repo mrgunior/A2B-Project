@@ -129,8 +129,10 @@ public class ResultController extends SceneLoadController implements Initializab
 					gotoFxmlScene("Standings", (Stage) next.getScene().getWindow());
 
 					Profile.setCurrentRace(1);
-					//GameController.getProfile().resetDriverPoints();
+					GameController.getProfile().resetDriverPoints();
 					Profile.setCurrentSeason(Profile.getCurrentSeason() + 1);
+					GameController.writeJsonObjectToFile();
+					GameController.writeDriversToJSON("./data/drivers.json");
 				} else {
 					gotoFxmlScene("Dashboard", (Stage) next.getScene().getWindow());
 				}

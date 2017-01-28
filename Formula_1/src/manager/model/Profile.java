@@ -157,8 +157,8 @@ public class Profile
 
 	public void resetProfile()
 	{
-		//resetDriverPoints();
-		//resetDriverSalaryBonus();
+		resetDriverPoints();
+		resetDriverSalaryBonus();
 		resetCarUpgrades();
 		Profile.setCurrentSeason(1);
 		Profile.setCurrentRace(1);
@@ -185,7 +185,7 @@ public class Profile
 		}
 	}
 
-	/*
+	
 	public void resetDriverPoints()
 	{
 		for (int i = 0; i < allDrivers.size(); i++)
@@ -194,9 +194,9 @@ public class Profile
 		}
 
 		System.out.println("All driver points have been reset...");
-	}*/
+	}
 
-	/*
+	
 	public void resetDriverSalaryBonus()
 	{
 		for (int i = 0; i < allDrivers.size(); i++)
@@ -206,7 +206,7 @@ public class Profile
 		}
 
 		System.out.println("All driver salaries have been reset...");
-	}*/
+	}
 
 	public void resetCarUpgrades()
 	{
