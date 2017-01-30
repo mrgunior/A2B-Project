@@ -31,14 +31,12 @@ public class SettingsController extends SceneLoadController implements Initializ
 	private AnchorPane root;
 	@FXML
 	private ImageView background;
-	@FXML
-	private Button reset, mute;
 
 	@FXML
 	private Slider slider, effectsSlider;
 	// Scene elements
 	@FXML
-	private ImageView back;
+	private ImageView back, mute, sound;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -64,15 +62,6 @@ public class SettingsController extends SceneLoadController implements Initializ
 					back.setImage(new Image("file:images/menu/Back.png"));
 				});
 
-				reset.setOnMousePressed(event -> {
-					GameController.getProfile().resetProfile();
-					playAudio("click.wav", 1.0);
-				});
-
-				reset.setOnMouseEntered(event -> {
-					playAudio("hover.wav", 1.0);
-				});
-
 				mute.setOnMousePressed(event -> {
 					if (manager.controller.SceneLoadController.isMuted) {
 						manager.controller.SceneLoadController.isMuted = false;
@@ -83,8 +72,32 @@ public class SettingsController extends SceneLoadController implements Initializ
 					}
 					playAudio("click.wav", 1.0);
 				});
+				
+				if(isMuted){
+					sound.setVisible(false);
+					mute.setVisible(true);
+				}
+				else{
+					mute.setVisible(false);
+					sound.setVisible(true);
+				}
 
+				sound.setOnMousePressed(event -> {
+					if (manager.controller.SceneLoadController.isMuted) {
+						manager.controller.SceneLoadController.isMuted = false;
+						startMaintheme();
+					} else {
+						manager.controller.SceneLoadController.isMuted = true;
+						stopMainTheme();
+					}
+					playAudio("click.wav", 1.0);
+				});
+				
 				mute.setOnMouseEntered(event -> {
+					playAudio("hover.wav", 1.0);
+				});
+				
+				sound.setOnMouseEntered(event -> {
 					playAudio("hover.wav", 1.0);
 				});
 
@@ -93,7 +106,6 @@ public class SettingsController extends SceneLoadController implements Initializ
 					@Override
 					public void changed(ObservableValue arg0, Object arg1, Object arg2) {
 						manager.controller.SceneLoadController.volume = (slider.getValue()/100);
-						System.out.println(manager.controller.SceneLoadController.volume);
 						mainthemePlayer.setVolume(manager.controller.SceneLoadController.volume);
 					}
 				});
@@ -103,7 +115,6 @@ public class SettingsController extends SceneLoadController implements Initializ
 					@Override
 					public void changed(ObservableValue arg0, Object arg1, Object arg2) {
 						manager.controller.SceneLoadController.effectsVolume = (effectsSlider.getValue()/100);
-						System.out.println(manager.controller.SceneLoadController.effectsVolume);
 					}
 				});
 
