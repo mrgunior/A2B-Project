@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+<rss version="0.91">
+  <channel>
+    <title>Formula 1 management - Checkstyle report</title>
+    <link>${project.url}</link>
+    <description>Formula 1 management - Checkstyle report</description>
+    <language>en-us</language>
+    <copyright>&#169;2017</copyright>
+    <item>
+      <title>File: 40,
+             Errors: 0,
+             Warnings: 15629,
+             Infos: 0
+      </title>
+            <link>${project.url}/checkstyle.html</link>
+      <description>
+        <p>Click <a href="${project.url}/checkstyle.html">here</a> for the full Checkstyle report.</p>
+
+        <table summary="Files" boder="1">
+          <thead>
+            <tr>
+              <th>Files</th>
+              <th style="width:30px;"><abbr title="Info">I</abbr></th>
+              <th style="width:30px;"><abbr title="Warning">W</abbr></th>
+              <th style="width:30px;"><abbr title="Error">E</abbr></th>
+            </tr>
+          </thead>
+          <tbody>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#manager.test.ProfileTest.java">manager/test/ProfileTest.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  516
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#manager.model.DriverResult.java">manager/model/DriverResult.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  258
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#manager.model.Driver.java">manager/model/Driver.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  503
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#manager.test.UpgradesTest.java">manager/test/UpgradesTest.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  474
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#manager.GUIController.ChooseTeamController.java">manager/GUIController/ChooseTeamController.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  253
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#manager.test.StandingsTest.java">manager/test/StandingsTest.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  55
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#Templates.ReadUpgrades.java">Templates/ReadUpgrades.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  150
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#manager.model.Stopwatch.java">manager/model/Stopwatch.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  292
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#manager.model.Engine.java">manager/model/Engine.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  195
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#manager.GUIController.TeamManagementController.java">manager/GUIController/TeamManagementController.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  225
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#manager.GUIController.CarManagementController.java">manager/GUIController/CarManagementController.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1057
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#manager.GUIController.ChooseDriverController.java">manager/GUIController/ChooseDriverController.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  769
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#manager.test.ResultsTest.java">manager/test/ResultsTest.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  212
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#manager.GUIController.HighScoresController.java">manager/GUIController/HighScoresController.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  67
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#manager.model.Team.java">manager/model/Team.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  166
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#manager.test.EngineTest.java">manager/test/EngineTest.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  173
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#manager.model.formulaApplication.java">manager/model/formulaApplication.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  206
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#manager.GUIController.RaceController.java">manager/GUIController/RaceController.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  783
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#manager.model.RaceSimulation.java">manager/model/RaceSimulation.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  286
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#manager.test.TeamTest.java">manager/test/TeamTest.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  512
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#manager.GUIController.ResultController.java">manager/GUIController/ResultController.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  355
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#manager.model.Results.java">manager/model/Results.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  134
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#manager.GUIController.DashboardController.java">manager/GUIController/DashboardController.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  401
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#manager.model.Profile.java">manager/model/Profile.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  435
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#manager.GUIController.MainMenuController.java">manager/GUIController/MainMenuController.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  386
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#manager.model.Car.java">manager/model/Car.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  518
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#manager.test.DriverResultTest.java">manager/test/DriverResultTest.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  376
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#manager.model.Upgrades.java">manager/model/Upgrades.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  493
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#manager.controller.GUICar.java">manager/controller/GUICar.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  385
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#manager.controller.SceneLoadController.java">manager/controller/SceneLoadController.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  367
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#manager.test.CarTest.java">manager/test/CarTest.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  749
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#manager.test.DriverTest.java">manager/test/DriverTest.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  711
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#manager.GUIController.StandingsController.java">manager/GUIController/StandingsController.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  279
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#manager.test.GameControllerTest.java">manager/test/GameControllerTest.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  230
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#Templates.RaceSimulationTemplatesBackup.java">Templates/RaceSimulationTemplatesBackup.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  683
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#manager.test.RaceSimulationTest.java">manager/test/RaceSimulationTest.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  153
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#manager.model.GameController.java">manager/model/GameController.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1319
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#manager.GUIController.SettingsController.java">manager/GUIController/SettingsController.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  177
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#manager.model.Standings.java">manager/model/Standings.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  109
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#manager.test.StopwatchTest.java">manager/test/StopwatchTest.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  217
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                      </tbody>
+        </table>
+        
+      </description>
+    </item>
+  </channel>
+</rss>
+

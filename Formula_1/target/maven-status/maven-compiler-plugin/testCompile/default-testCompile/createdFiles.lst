@@ -1,0 +1,14 @@
+test\java\CarTest$upgradesVar.class
+test\java\CarTest.class
+test\java\TeamTest.class
+test\java\DriverTest.class
+test\java\CarTest$carVar.class
+test\java\EngineTest.class
+test\java\UpgradesTest.class
+test\java\StandingsTest.class
+test\java\GameControllerTest.class
+test\java\DriverResultTest.class
+test\java\RaceSimulationTest.class
+test\java\ResultsTest.class
+test\java\StopwatchTest.class
+test\java\ProfileTest.class
