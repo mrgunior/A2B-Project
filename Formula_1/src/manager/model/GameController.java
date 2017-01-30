@@ -38,6 +38,8 @@ public class GameController
 	public GameController(String jsonFile) throws IOException
 	{
 		GameController.jsonFile = jsonFile;
+		
+		Profile.setAllDrivers(getDrivers("./data/drivers.json"));
 
 		readJsonObjectAndInitialize();
 		timer = new Timer();

@@ -107,7 +107,7 @@ public class Profile
 		Profile.drivers = drivers;
 	}
 
-	public void setAllDrivers(ArrayList<Driver> drivers)
+	public static void setAllDrivers(ArrayList<Driver> drivers)
 	{
 		Profile.allDrivers = drivers;
 	}
