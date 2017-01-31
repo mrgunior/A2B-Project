@@ -95,7 +95,7 @@ public class formulaApplication extends Application
 		gamecontroller = new GameController("./data.json");
 		Parent root = FXMLLoader.load(getClass().getResource("../view/MainMenu.fxml"));
 		theScene = new Scene(root);
-		stage.setTitle("Formula 1 Manager v1.6.2");
+		stage.setTitle("Formula TU Manager v1.6.2");
 		stage.setScene(theScene);
 		stage.getIcons().add(new Image("file:images/icon.png"));
 		stage.setFullScreen(fullscreen);

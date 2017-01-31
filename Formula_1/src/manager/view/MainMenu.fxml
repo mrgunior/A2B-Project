@@ -30,7 +30,7 @@
       </ImageView>
       
             <!-- Formula string and settings -->
-      <Text fill="#ff2800" layoutX="118.0" layoutY="173.0" strokeLineJoin="ROUND" strokeType="OUTSIDE" text="FORMULA 1 ">
+      <Text fill="#ff2800" layoutX="118.0" layoutY="173.0" strokeLineJoin="ROUND" strokeType="OUTSIDE" text="FORMULA TU ">
          <font>
             <Font name="Haettenschweiler" size="130.0" />
          </font>
@@ -47,7 +47,7 @@
       </Text>
       
       <!-- Manager string and settings-->
-      <Text fill="#ff2800" layoutX="268.0" layoutY="303.0" strokeLineJoin="ROUND" strokeType="OUTSIDE" text="MANAGER">
+      <Text fill="#ff2800" layoutX="333.0" layoutY="302.0" strokeLineJoin="ROUND" strokeType="OUTSIDE" text="MANAGER">
          <font>
             <Font name="Haettenschweiler" size="130.0" />
          </font>
