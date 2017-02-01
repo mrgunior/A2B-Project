@@ -17,7 +17,7 @@ public class Profile
 
 	private static int	currentRace		= 1;
 	private static int	currentSeason	= 1;
-	private static int	racesPerSeason	= 2;
+	private static int	racesPerSeason	= 22;
 	private static int	teamID;
 
 	public Profile(double highScore, double budget, String teamName)
