@@ -1,4 +1,4 @@
-The vision of this project is creating a realistic F1 manager updated to the latest season.
+The vision of this project is to create a realistic F1 manager updated to the latest season.
 All the teams, all the drivers, tires and engines will be included in the full game.
 Players are able to select a team, buy drivers, race, upgrade and become the best in the world!
 
